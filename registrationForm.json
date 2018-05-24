@@ -4,11 +4,90 @@
   "formType": "IndividualProfile",
   "formElementGroups": [
     {
+      "uuid": "07ab55d5-2d35-40b3-b14a-870aa444c14f",
+      "name": "Demographic Details",
+      "displayOrder": 1,
+      "display": "Demographic Details",
+      "formElements": [
+        {
+          "name": "Household number",
+          "uuid": "8a426313-06dd-4f92-ab3b-52710bf8a37d",
+          "concept": {
+            "name": "Household number",
+            "uuid": "24dabc3a-6562-4521-bd42-5fff11ea5c46"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        },
+        {
+          "name": "Floor",
+          "uuid": "93cabad1-dba6-4152-ac4f-53e57b29a8f5",
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Floor",
+            "uuid": "dd5b53f1-7508-4be8-aec2-ef782946e0f2"
+          },
+          "displayOrder": 2,
+          "mandatory": true
+        },
+        {
+          "name": "Room number",
+          "uuid": "cb5f8162-cd1c-49dd-9a9f-1f877b95f9f6",
+          "concept": {
+            "name": "Room number",
+            "uuid": "f374fc29-52f5-42cb-964e-b9af65a1d618"
+          },
+          "displayOrder": 3
+        },
+        {
+          "name": "Street",
+          "uuid": "20b9e579-7632-40b8-921e-aec0ee0be651",
+          "concept": {
+            "name": "Street",
+            "uuid": "07cf0ae9-9738-418f-b1bd-bf69ebd20e3c"
+          },
+          "displayOrder": 4,
+          "mandatory": true
+        },
+        {
+          "name": "Phone number",
+          "uuid": "b64d0032-0104-4424-9f44-94087ec91bbd",
+          "keyValues": [],
+          "concept": {
+            "uuid": "82fa0dbb-92f9-4ec2-9263-49054e64d909"
+          },
+          "displayOrder": 5
+        },
+        {
+          "name": "Alternative phone number",
+          "uuid": "4358e863-02a7-41d5-8dda-b361f282a23b",
+          "keyValues": [],
+          "concept": {
+            "name": "Alternative contact number",
+            "uuid": "928b4521-98d0-4cb3-a38e-42a775bf814e"
+          },
+          "displayOrder": 6
+        }
+      ]
+    },
+    {
       "name": "Family Details",
       "uuid": "cefe66c0-6c52-46ce-9177-53c737c4d01f",
-      "displayOrder": 1,
+      "displayOrder": 2,
       "display": "Family Details",
       "formElements": [
+        {
+          "name": "Is mother the primary caregiver",
+          "uuid": "ca04fc99-a441-4be4-9677-651708bb12a5",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Is mother the primary caregiver",
+            "uuid": "47dec150-90f5-4db4-9ff5-6e96472176d7"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        },
         {
           "name": "Husband/Father name",
           "uuid": "76fc2a31-b8d4-4eaa-83ad-05d7fec8572a",
@@ -17,15 +96,15 @@
             "uuid": "4edb709d-a0ad-44fd-9132-2884054cd114",
             "name": "Father/Husband"
           },
-          "displayOrder": 1,
-          "mandatory": true
+          "displayOrder": 2,
+          "mandatory": false
         }
       ]
     },
     {
       "name": "Medical Details",
       "uuid": "e22b0f03-8a36-408c-90cb-3bc615f11e2a",
-      "displayOrder": 2,
+      "displayOrder": 3,
       "display": "Medical Details",
       "formElements": [
         {
@@ -37,7 +116,8 @@
             "uuid": "3493c80a-8af5-40e6-b598-8385c4db2bd7",
             "name": "Blood Group"
           },
-          "displayOrder": 1
+          "displayOrder": 1,
+          "mandatory": true
         },
         {
           "name": "Medical History",
@@ -63,7 +143,7 @@
     {
       "name": "Personal Habits",
       "uuid": "14642070-9f74-4157-9d32-dee067073cfe",
-      "displayOrder": 3,
+      "displayOrder": 4,
       "display": "Personal Habits",
       "formElements": [
         {
