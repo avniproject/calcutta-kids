@@ -1,0 +1,5 @@
+{
+  "organisationName": "Calcutta Kids",
+  "encounterTypes": ["SocioEconomicStatus", "ANC", "PNC", "Delivery", "Abortion", "Child Delivery", "Child Default"],
+  "programs": ["Mother", "Child"]
+}
