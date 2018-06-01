@@ -479,6 +479,11 @@
     ]
   },
   {
+    "name": "Other accommodation",
+    "uuid": "c2f29f03-38eb-48d7-8d90-32b25dbf3e9a",
+    "dataType": "Text"
+  },
+  {
     "name": "Does the household own a television?",
     "uuid": "960a2d02-352a-48b3-9704-48bc6709ea85",
     "dataType": "Coded",
@@ -770,6 +775,11 @@
     ]
   },
   {
+    "name": "Other facility where ANC was provided",
+    "uuid": "a02b5d7b-f883-47f7-b4c2-8a945986c00c",
+    "dataType": "Text"
+  },
+  {
     "name": "Receiving GMP services for child?",
     "uuid": "e65b2360-c965-44b9-91f1-9a0467bc34a2",
     "dataType": "Coded",
@@ -783,6 +793,11 @@
         "comment": "No"
       }
     ]
+  },
+  {
+    "name": "Other facility where GMP services were provided",
+    "uuid": "125fae1f-d0c7-465b-8546-f021a66a1141",
+    "dataType": "Text"
   },
   {
     "name": "Receiving food rations for child?",
@@ -800,6 +815,11 @@
     ]
   },
   {
+    "name": "Other facility where food rations were provided",
+    "uuid": "ec266fb3-9221-412b-a7a8-048488ebcea8",
+    "dataType": "Text"
+  },
+  {
     "name": "Receiving curative health services for self and child?",
     "uuid": "3873335f-d20d-498b-b174-61b14c0b40f2",
     "dataType": "Coded",
@@ -813,6 +833,11 @@
         "comment": "No"
       }
     ]
+  },
+  {
+    "name": "Other facility where curative health services were provided",
+    "uuid": "becfa0ba-1bc9-426d-a25d-b88f2591bf11",
+    "dataType": "Text"
   },
   {
     "name": "Received immunizations for child?",
@@ -830,6 +855,11 @@
     ]
   },
   {
+    "name": "Other facility where immunization was provided",
+    "uuid": "fea01561-6275-43d2-907e-c0530306686d",
+    "dataType": "Text"
+  },
+  {
     "name": "Used emergency services for self or child?",
     "uuid": "cd4a9f19-f914-4939-a144-a63732e8d534",
     "dataType": "Coded",
@@ -845,6 +875,11 @@
     ]
   },
   {
+    "name": "Other facility where emergency services were provided",
+    "uuid": "fb7d1279-74c3-4d77-b8cc-d38691a4ea35",
+    "dataType": "Text"
+  },
+  {
     "name": "Received any other medical assistance?",
     "uuid": "ebe61471-b499-4b2c-9aa5-7a3c3b43767c",
     "dataType": "Coded",
@@ -858,6 +893,11 @@
         "comment": "No"
       }
     ]
+  },
+  {
+    "name": "Other facility where other medical assistance was provided",
+    "uuid": "91f43230-a79c-41f7-88bc-9c8c8c0f0917",
+    "dataType": "Text"
   },
   {
     "name": "Number of children currently enrolled in Calcutta Kids",

@@ -239,6 +239,7 @@
         {
           "uuid": "14608467-3be1-494f-a95e-982e25fe0529",
           "name": "B15: Is this work done at home or outside of the home?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "9c7f710f-b05f-44dc-9000-a550f31c12c4"
           },
@@ -257,6 +258,7 @@
         {
           "uuid": "8cfb6411-9d6b-4f4b-86d9-30bbdd23e26f",
           "name": "B17: Is there are any other income earner in the household?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2cc56b84-460c-4e5e-8ee2-74db082e9759"
           },
@@ -275,6 +277,7 @@
         {
           "uuid": "db1a71de-cc43-4702-9f85-49111befb959",
           "name": "B19: Principal occupation of the household",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "219069ed-b150-4779-81f2-5c4c53b50239"
           },
@@ -301,6 +304,7 @@
         {
           "uuid": "3ea98847-0118-497d-9f15-f5c98f37f4ab",
           "name": "C1: Location of house",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "7570b4df-e0e0-4ec4-b98b-445d6f27203b"
           },
@@ -310,6 +314,7 @@
         {
           "uuid": "9a0f2bdb-4ebd-4304-b517-565d1feae033",
           "name": "C2: Accommodation",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "07147a87-f0a6-4cf5-8ece-b11b4703d3d0"
           },
@@ -318,9 +323,9 @@
         },
         {
           "uuid": "62e27300-b161-4cfd-bd8c-37e693fd7678",
-          "name": "C2.1: Specify Other",
+          "name": "C2.1: Which accommodation if other?",
           "concept": {
-            "uuid": "bcf88019-5cf6-44c6-9e13-16c7e93eef4c"
+            "uuid": "c2f29f03-38eb-48d7-8d90-32b25dbf3e9a"
           },
           "displayOrder": 3,
           "mandatory": true
@@ -328,6 +333,7 @@
         {
           "uuid": "82847ce1-468a-40f7-9978-1576fc39b061",
           "name": "C3: Does the household own a television?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "960a2d02-352a-48b3-9704-48bc6709ea85"
           },
@@ -337,6 +343,7 @@
         {
           "uuid": "be5adc75-2585-447d-81d1-6d42be7770b2",
           "name": "C4: Does the household own a bicycle, scooter, or motor cycle?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "6ece3471-2e32-44e6-9f1b-999e549cf0c1"
           },
@@ -346,6 +353,7 @@
         {
           "uuid": "874b69dd-ebaf-4cda-bd2f-d4c9493c37e9",
           "name": "C5: Does the household own an almirah/dressing table?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "8d144679-9089-4af6-9f5d-b55ffe5600df"
           },
@@ -355,6 +363,7 @@
         {
           "uuid": "4208d640-e30b-437e-922f-df303adf1a2b",
           "name": "C6: Does the household own a sewing machine?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "b59b3a8f-8b40-4dd1-b79a-ee3eb2c1f32a"
           },
@@ -364,6 +373,7 @@
         {
           "uuid": "babd7c05-3f0d-43e5-a0c3-c536e848ea60",
           "name": "C7: How many pressure cookers or pressure pans does the household own?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "c8fa6f94-956f-4988-b12b-93f4367a050d"
           },
@@ -373,6 +383,7 @@
         {
           "uuid": "6b4c86a0-31e2-42b9-ba56-4a3dbd5cf331",
           "name": "C8: How many electric fans does the household own?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "c8fa6f94-956f-4988-b12b-93f4367a050d"
           },
@@ -382,6 +393,7 @@
         {
           "uuid": "0086ac2c-5540-4c15-8cd3-b04f92f0bdf4",
           "name": "C9: What is household’s primary source of energy for cooking?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "bf982fb0-a128-4e99-9172-484861f2bcd7"
           },
@@ -391,6 +403,7 @@
         {
           "uuid": "43087078-94ca-40a0-9d4a-a3e30a11833d",
           "name": "C10: What type of toilet facility do you usually use for defecation?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2d146780-4b72-46f0-bab0-b81b87baf797"
           },
@@ -408,6 +421,7 @@
         {
           "uuid": "98e80afb-c04a-400c-8ea9-d1c48a68f514",
           "name": "When you were pregnant, did you receive pregnancy care?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "591b140e-cce0-4433-bcf3-6c0b17aefb9f"
           },
@@ -417,6 +431,7 @@
         {
           "uuid": "f1423730-18d7-4425-8203-e12cb55abde9",
           "name": "Where did you receive this care?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852"
           },
@@ -427,7 +442,7 @@
           "uuid": "9dd58646-044d-4c0d-94e7-9f0524a028b1",
           "name": "Which other facility?",
           "concept": {
-            "uuid": "bcf88019-5cf6-44c6-9e13-16c7e93eef4c"
+            "uuid": "a02b5d7b-f883-47f7-b4c2-8a945986c00c"
           },
           "displayOrder": 3,
           "mandatory": true
@@ -435,6 +450,7 @@
         {
           "uuid": "aff32105-5add-42e7-bd1c-44a73c7ce2cc",
           "name": "Does your child get weighed each month?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "e65b2360-c965-44b9-91f1-9a0467bc34a2"
           },
@@ -444,6 +460,7 @@
         {
           "uuid": "81c29a21-f8ea-4069-a433-b8b221696040",
           "name": "Where did you receive this care?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852"
           },
@@ -454,7 +471,7 @@
           "uuid": "40f7cd4c-51d6-4739-8c0a-93f9cbf5b9c9",
           "name": "Which other facility?",
           "concept": {
-            "uuid": "bcf88019-5cf6-44c6-9e13-16c7e93eef4c"
+            "uuid": "125fae1f-d0c7-465b-8546-f021a66a1141"
           },
           "displayOrder": 6,
           "mandatory": true
@@ -462,6 +479,7 @@
         {
           "uuid": "7a903d43-9ba1-432b-b380-30540e5415ae",
           "name": "Do you get food rations for your child?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "5141a616-56d0-48ab-a7bb-ad1e94f3035d"
           },
@@ -471,6 +489,7 @@
         {
           "uuid": "8225cff9-cc25-4318-97ab-3965e5bea899",
           "name": "Where did you receive this care?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852"
           },
@@ -481,7 +500,7 @@
           "uuid": "d11b380b-a867-45ba-941d-f5b127b64e11",
           "name": "Which other facility?",
           "concept": {
-            "uuid": "bcf88019-5cf6-44c6-9e13-16c7e93eef4c"
+            "uuid": "ec266fb3-9221-412b-a7a8-048488ebcea8"
           },
           "displayOrder": 9,
           "mandatory": true
@@ -489,6 +508,7 @@
         {
           "uuid": "34d71792-bc14-414d-aaec-4cd179d9f1d7",
           "name": "Do you seek medical attention when you or your child are ill or hurt?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "3873335f-d20d-498b-b174-61b14c0b40f2"
           },
@@ -498,6 +518,7 @@
         {
           "uuid": "b4de5284-d5a9-4f14-94a4-7ac371d310b1",
           "name": "Where did you receive this care?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852"
           },
@@ -508,7 +529,7 @@
           "uuid": "63870dfc-cd35-4a0e-bd8f-5ae158af7f8d",
           "name": "Which other facility?",
           "concept": {
-            "uuid": "bcf88019-5cf6-44c6-9e13-16c7e93eef4c"
+            "uuid": "becfa0ba-1bc9-426d-a25d-b88f2591bf11"
           },
           "displayOrder": 12,
           "mandatory": true
@@ -516,6 +537,7 @@
         {
           "uuid": "38029e61-7648-476c-870b-59a7bbd4b573",
           "name": "Has your child received immunizations?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "b5301e37-9c86-4ba0-b7d3-1a563335ef26"
           },
@@ -525,6 +547,7 @@
         {
           "uuid": "9acf3542-7959-4041-8537-ade887975895",
           "name": "Where did you receive this care?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852"
           },
@@ -535,7 +558,7 @@
           "uuid": "1b4d2a9d-51e3-447a-9e2b-6d4a70ad2541",
           "name": "Which other facility?",
           "concept": {
-            "uuid": "bcf88019-5cf6-44c6-9e13-16c7e93eef4c"
+            "uuid": "fea01561-6275-43d2-907e-c0530306686d"
           },
           "displayOrder": 15,
           "mandatory": true
@@ -543,6 +566,7 @@
         {
           "uuid": "e6fae7c6-d40e-4d35-9e0b-daf035dd7df5",
           "name": "Have you needed to use emergency services for yourself or your child?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "cd4a9f19-f914-4939-a144-a63732e8d534"
           },
@@ -552,6 +576,7 @@
         {
           "uuid": "a1f35eab-8c94-4a9e-b61e-8fef3e8db03b",
           "name": "Where did you receive this care?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852"
           },
@@ -562,7 +587,7 @@
           "uuid": "f3ce8306-4230-4d56-9acd-0aef7972c1fc",
           "name": "Which other facility?",
           "concept": {
-            "uuid": "bcf88019-5cf6-44c6-9e13-16c7e93eef4c"
+            "uuid": "fb7d1279-74c3-4d77-b8cc-d38691a4ea35"
           },
           "displayOrder": 18,
           "mandatory": true
@@ -570,6 +595,7 @@
         {
           "uuid": "3f558960-c6c3-46c0-831c-cbead228dc13",
           "name": "Have you sought medical assistance for any other reasons?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "ebe61471-b499-4b2c-9aa5-7a3c3b43767c"
           },
@@ -579,6 +605,7 @@
         {
           "uuid": "3b1088be-320e-407d-ae22-ccbe28a4a288",
           "name": "Where did you receive this care?",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852"
           },
@@ -589,7 +616,7 @@
           "uuid": "4cd0187f-91d0-4fb0-b1a5-e91bb2ff1129",
           "name": "Which other facility?",
           "concept": {
-            "uuid": "bcf88019-5cf6-44c6-9e13-16c7e93eef4c"
+            "uuid": "91f43230-a79c-41f7-88bc-9c8c8c0f0917"
           },
           "displayOrder": 21,
           "mandatory": true
@@ -686,6 +713,7 @@
         {
           "uuid": "45a15a54-6769-4640-b2cc-0da993e05260",
           "name": "E4: Gender of oldest child not enrolled in CK",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "8a4db95b-e01b-47fd-abad-15c661e6ed1c"
           },
@@ -704,6 +732,7 @@
         {
           "uuid": "37c6c7f0-a216-4205-b7cf-76e061abcaba",
           "name": "E6: Gender of second oldest child not enrolled in CK",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "82a5f5bf-711d-4a14-88e6-eb989615c51a"
           },
@@ -722,6 +751,7 @@
         {
           "uuid": "91d54560-646c-45e1-aabe-63b7b66c216d",
           "name": "E8: Gender of third oldest child not enrolled in CK",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "d27aba15-edd7-4e33-b6c0-8921b51a8341"
           },
@@ -740,6 +770,7 @@
         {
           "uuid": "8403bd0e-ee51-4b4d-a8d8-8fc9d8f7a4a7",
           "name": "E10: Gender of fourth oldest child not enrolled in CK",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "f46cb123-5bd7-4952-9fe8-87dc2b464c24"
           },
@@ -758,6 +789,7 @@
         {
           "uuid": "4f0b452d-0e9e-4518-81ff-bf528f1d374b",
           "name": "E12: Gender of fifth oldest child not enrolled in CK",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "2151751c-e279-4e9e-a18a-c3061631b1dd"
           },
@@ -776,6 +808,7 @@
         {
           "uuid": "8c385fff-7989-429e-bc05-aa43f1bfd190",
           "name": "E14: Gender of sixth oldest child not enrolled in CK",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "d51a049a-2091-4de7-83f6-0389c48cc411"
           },
