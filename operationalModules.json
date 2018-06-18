@@ -1,5 +1,5 @@
 {
   "organisationName": "Calcutta Kids",
-  "encounterTypes": ["SES Survey", "ANC", "PNC", "Delivery", "Abortion", "Child Delivery", "Child Default"],
+  "encounterTypes": ["SES Survey", "ANC", "PNC", "Delivery", "Abortion"],
   "programs": ["Mother", "Child"]
 }

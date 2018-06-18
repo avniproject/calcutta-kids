@@ -1,10 +1,7 @@
 {
   "name": "Calcutta Kids Demographic/SES Form",
-  "uuid": "",
+  "uuid": "6ae07f4d-c639-4cfa-a78b-9f39e0b24c60",
   "formType": "Encounter",
-  "encounterTypes": [
-    "SES Survey"
-  ],
   "formElementGroups": [
     {
       "uuid": "50ba5f9c-c03c-404e-84a9-2f67fa321d84",

@@ -32,10 +32,19 @@ create_org: ## Create Calcutta Kids org and user+privileges
 
 # <refdata>
 deploy_refdata: ## Creates reference data by POSTing it to the server
+	@echo
 	$(call _curl,POST,catchments,@catchments.json)
+	@echo
 	$(call _curl,POST,concepts,@concepts.json)
+	@echo
 	$(call _curl,POST,forms,@registrationForm.json)
+	@echo
 	$(call _curl,POST,forms,@sesForm.json)
+	@echo
+	$(call _curl,POST,encounterTypes,@encounterTypes.json)
+	@echo
+	$(call _curl,POST,formMappings,@formMappings.json)
+	@echo
 	$(call _curl,POST,operationalModules,@operationalModules.json)
 # </refdata>
 
