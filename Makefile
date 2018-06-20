@@ -19,11 +19,14 @@ server:= $(if $(server),$(server),http://localhost)
 su:=$(shell id -un)
 org_name=Calcutta Kids
 
-_curl = \
+define _curl
 	curl -X $(1) $(server):$(port)/$(2) -d $(3)  \
 		-H "Content-Type: application/json"  \
 		-H "ORGANISATION-NAME: $(org_name)"  \
-		-H "AUTH-TOKEN: $(token)" \
+		-H "AUTH-TOKEN: $(token)"
+	@echo
+	@echo
+endef
 
 # <create_org>
 create_org: ## Create Calcutta Kids org and user+privileges
@@ -32,20 +35,15 @@ create_org: ## Create Calcutta Kids org and user+privileges
 
 # <refdata>
 deploy_refdata: ## Creates reference data by POSTing it to the server
-	@echo
 	$(call _curl,POST,catchments,@catchments.json)
-	@echo
 	$(call _curl,POST,concepts,@concepts.json)
-	@echo
 	$(call _curl,POST,forms,@registrationForm.json)
-	@echo
 	$(call _curl,POST,forms,@sesForm.json)
-	@echo
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
-	@echo
 	$(call _curl,POST,formMappings,@formMappings.json)
-	@echo
 	$(call _curl,POST,operationalModules,@operationalModules.json)
+	$(call _curl,PATCH,forms,@mother/enrolmentAdditions.json)
+	$(call _curl,DELETE,forms,@mother/enrolmentDeletions.json)
 # </refdata>
 
 # <deploy>

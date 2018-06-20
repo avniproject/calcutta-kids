@@ -1086,5 +1086,29 @@
     "uuid": "331de3bd-7dc6-43ee-a8b8-45ee1d8a8617",
     "name": "Other medical history",
     "dataType": "Text"
+  },
+  {
+    "uuid": "b3e9c088-90ed-45d9-8c99-102d1bda66e1",
+    "name": "Number of living children",
+    "dataType": "Numeric",
+    "lowAbsolute": 0
+  },
+  {
+    "uuid": "99c9d0a3-6ffc-41a7-8641-d79e2e83a4c6",
+    "name": "Number of miscarriages",
+    "dataType": "Numeric",
+    "lowAbsolute": 0
+  },
+  {
+    "uuid": "74de4054-0e8b-4088-aae8-bd5f2933d300",
+    "name": "Number of stillbirths",
+    "dataType": "Numeric",
+    "lowAbsolute": 0
+  },
+  {
+    "uuid": "d7ae1329-9e09-47f1-ad7d-3c73474d973f",
+    "name": "Number of child deaths",
+    "dataType": "Numeric",
+    "lowAbsolute": 0
   }
 ]
