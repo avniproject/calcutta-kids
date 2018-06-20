@@ -137,6 +137,7 @@
               "key": "ExcludedAnswers",
               "value": [
                 "Hepatitis B Positive",
+                "Sickle Cell",
                 "Nephrotic syndrome"
               ]
             }
@@ -147,6 +148,17 @@
             "name": "Medical History"
           },
           "displayOrder": 2
+        },
+        {
+          "uuid": "c7cad492-6ebe-4813-94c0-f4ca000771ee",
+          "name": "Other medical history",
+          "keyValues": [],
+          "type": "Text",
+          "concept": {
+            "uuid": "331de3bd-7dc6-43ee-a8b8-45ee1d8a8617",
+            "comment": "Other medical history"
+          },
+          "displayOrder": 3
         }
       ]
     },
@@ -159,14 +171,58 @@
         {
           "name": "Addiction Details",
           "uuid": "0bd10116-da69-4bcb-a21a-fe7cd4c761f2",
-          "keyValues": [],
-          "type": "SingleSelect",
+          "keyValues": [
+            {
+              "key": "ExcludedAnswers",
+              "value": [
+                "Both",
+                "No Addiction"
+              ]
+            }
+          ],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "2ebca9be-3be3-4d11-ada0-187563ff04f8",
             "name": "Addiction Details"
           },
           "displayOrder": 1,
-          "mandatory": true
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "19a980cf-01cd-4b80-acf1-c3c9e9dcb40b",
+      "name": "Drug allergies",
+      "display": "Drug allergies",
+      "displayOrder": 5,
+      "formElements": [
+        {
+          "uuid": "57dde426-c1a3-4383-9806-0ed2add4e8a5",
+          "name": "Drug allergies",
+          "keyValues": [],
+          "concept": {
+            "comment": "Drug allergies",
+            "uuid": "41c792c1-3038-4baa-a71e-946de3131bc6"
+          },
+          "displayOrder": 1
+        }
+      ]
+    },
+    {
+      "uuid": "431b2f52-19b0-4e50-92cf-6a43b426d4b1",
+      "name": "Current medications",
+      "display": "Current medications",
+      "displayOrder": 6,
+      "formElements": [
+        {
+          "uuid": "1fb15dc7-881f-45db-918e-48a2731801ea",
+          "name": "Current medications",
+          "keyValues": [],
+          "concept": {
+            "comment": "Medications",
+            "uuid": "a3d999d4-57f4-40ee-99ab-4f1ee1bd1e1b"
+          },
+          "displayOrder": 1
         }
       ]
     }
