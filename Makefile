@@ -39,6 +39,7 @@ deploy_refdata: ## Creates reference data by POSTing it to the server
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,POST,forms,@sesForm.json)
+	$(call _curl,POST,forms,@testForm.json)
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
 	$(call _curl,POST,formMappings,@formMappings.json)
 	$(call _curl,POST,operationalModules,@operationalModules.json)
@@ -47,11 +48,11 @@ deploy_refdata: ## Creates reference data by POSTing it to the server
 # </refdata>
 
 # <deploy>
-deploy: deploy_refdata ##  
+deploy: deploy_refdata ##
 # </deploy>
 
 # <c_d>
-create_deploy: create_org deploy_refdata ##  
+create_deploy: create_org deploy_refdata ##
 # </c_d>
 
 # <package>
