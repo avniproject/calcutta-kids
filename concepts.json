@@ -1112,6 +1112,7 @@
     "lowAbsolute": 0
   },
   {
+<<<<<<< HEAD
     "uuid": "5e792921-ce4f-4627-a978-7b35df8541dd",
     "name": "Name of test 1",
     "dataType": "Text"
@@ -1154,6 +1155,26 @@
   {
     "uuid": "aab92297-7313-4830-b8d2-b53a9accc745",
     "name": "Results of test 3",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "86c51ab1-7f19-4fa7-b5e1-980f3aff73eb",
+    "name": "Date of urine/stool test",
+    "dataType": "Date"
+  },
+  {
+    "uuid": "8bdc2cfe-d754-488f-a236-7ad2dcd62037",
+    "name": "Urine routine examination",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "df70db7d-6cc6-44c2-a78a-facc1ff09eeb",
+    "name": "Urine culture",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "ed49a5a3-dc1d-4277-a71c-c1b73f444f3d",
+    "name": "Stool OPC",
     "dataType": "Text"
   }
 ]

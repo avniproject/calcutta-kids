@@ -1,0 +1,57 @@
+{
+  "uuid": "9ed7e0a9-6122-41ee-8413-1cef6792e2c6",
+  "formElementGroups": [
+    {
+      "display": "Urine/Stool Results",
+      "name": "Urine/Stool Results",
+      "uuid": "89342fc6-42ed-4e32-ab54-78b2ba994c55",
+      "displayOrder": 3,
+      "formElements": [
+        {
+          "uuid": "0d2e0e20-422a-45ff-9007-1a268d2d1be9",
+          "name": "Date of Urine/Stool Test",
+          "display": "Date of Urine/Stool Test",
+          "concept": {
+            "uuid": "86c51ab1-7f19-4fa7-b5e1-980f3aff73eb",
+            "comment": "Date of urine/stool test"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "uuid": "1929be97-9633-4e16-a690-04574ee37ab2",
+          "name": "Urine Routine Examination",
+          "display": "Urine Routine Examination",
+          "concept": {
+            "uuid": "8bdc2cfe-d754-488f-a236-7ad2dcd62037",
+            "comment": "Urine routine examination"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "uuid": "f96426cf-53c4-4747-9589-333933e68c11",
+          "name": "Urine Culture",
+          "display": "Urine Culture",
+          "concept": {
+            "uuid": "df70db7d-6cc6-44c2-a78a-facc1ff09eeb",
+            "comment": "Urine culture"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "uuid": "2f3cd226-435d-4195-ac1b-9a628ced4043",
+          "name": "Stool OPC",
+          "display": "Stool OPC",
+          "concept": {
+            "uuid": "ed49a5a3-dc1d-4277-a71c-c1b73f444f3d",
+            "comment": "Stool OPC"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        }
+      ]
+    }
+  ]
+}
