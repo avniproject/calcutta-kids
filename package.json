@@ -1,0 +1,17 @@
+{
+  "name": "calcutta-kids-config",
+  "version": "0.0.1",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenCHS/calcutta-kids.git"
+  },
+  "license": "AGPL-3.0",
+  "scripts": {},
+  "dependencies": {
+    "webpack": "^4.12.0"
+  },
+  "devDependencies": {
+    "rules-config": "openchs/rules-config"
+  }
+}

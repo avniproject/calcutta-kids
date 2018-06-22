@@ -45,6 +45,7 @@ deploy_refdata: ## Creates reference data by POSTing it to the server
 	$(call _curl,POST,operationalModules,@operationalModules.json)
 	$(call _curl,PATCH,forms,@mother/enrolmentAdditions.json)
 	$(call _curl,DELETE,forms,@mother/enrolmentDeletions.json)
+	node index.js
 # </refdata>
 
 # <deploy>
@@ -54,6 +55,9 @@ deploy: deploy_refdata ##
 # <c_d>
 create_deploy: create_org deploy_refdata ##
 # </c_d>
+
+deps:
+	npm i
 
 # <package>
 #build_package: ## Builds a deployable package
