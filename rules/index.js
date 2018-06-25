@@ -1,13 +1,44 @@
-const {RuleFactory} = require('rules-config/rules');
+const { RuleFactory, FormElementStatusBuilder } = require('rules-config/rules');
 
-//TODO  REMOVE THIS FORM DECISION WHEN YOU ADD YOUR FIRST RULE. IT WAS ADDED JUST TO MAKE THIS THING WORK.
-const ANCFormProgramEncounterDecisions = RuleFactory("3a95e9b0-731a-4714-ae7c-10e1d03cebfe", "decision");
+//The following ViewFilter logics to be validated.
+//Kept on hold as rules-config library is not ready yet.
 
-@ANCFormProgramEncounterDecisions("d35e3039-eeb7-4c1b-b02f-88f492163500", "Calcium 1g/Day", {ruleData: "more"})
-class DefunctRule {
-    static exec(programEncounter, decisions, today) {
-        return {"name": "Treatment", "value": "e4ccf02c-9767-4641-ab76-5128e2a1f0d9"};
-    }
+const MotherProgramEnrolmentRules = RuleFactory('026e2f5c-8670-4e4b-9a54-cb03bbf3093d', 'ViewFilter');
+const hideOnFirstPregnancy = (programEnrolment, formElement) => {
+    let statusBuilder = new FormElementStatusBuilder({ programEnrolment, formElement });
+    statusBuilder.show().when.valueInEnrolment('Is this your first pregnancy?').is.yes.why.no;
+    return statusBuilder.build();
 }
 
-module.exports = {DefunctRule};
+@MotherProgramEnrolmentRules('40202177-7142-45c1-bf70-3d3b432799c0', 'Number of miscarriages', {})
+class NumberOfMiscarriages {
+    static exec = hideOnFirstPregnancy
+}
+
+@MotherProgramEnrolmentRules('d2967b54-83d5-4567-9e25-9da429ab159d', 'Number of medically terminated pregnancies', {})
+class NumberOfMedicallyTerminatedPregnancies {
+    static exec = hideOnFirstPregnancy
+}
+
+@MotherProgramEnrolmentRules('a02e495b-2b22-4767-aaad-0dfb701434c6', 'Number of stillbirths', {})
+class NumberOfStillbirths {
+    static exec = hideOnFirstPregnancy
+}
+
+@MotherProgramEnrolmentRules('4b438345-395c-48d9-84b1-30e0900c8052', 'Number of child deaths', {})
+class NumberOfChildDeaths {
+    static exec = hideOnFirstPregnancy
+}
+
+@MotherProgramEnrolmentRules('c2ce5fb9-8480-4d50-8d28-419059f32f12', 'Number of living children', {})
+class NumberOfLivingChildren {
+    static exec = hideOnFirstPregnancy
+}
+
+module.exports = {
+    NumberOfMiscarriages,
+    NumberOfMedicallyTerminatedPregnancies,
+    NumberOfStillbirths,
+    NumberOfChildDeaths,
+    NumberOfLivingChildren
+};

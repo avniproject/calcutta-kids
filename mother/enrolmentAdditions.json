@@ -3,11 +3,66 @@
   "userUUID": "f5117600-c1b8-4690-af45-6282ff9b6bb7",
   "formElementGroups": [
     {
+      "uuid": "2dff8c09-bed3-4848-943f-b2240b70d7ed",
+      "comment": "ANC Enrolment Basic Details",
+      "formElements": [
+        {
+          "uuid": "24484f16-f02f-4ddd-924e-32cf35c489b4",
+          "name": "Weight",
+          "displayOrder": 4.1,
+          "comment": "4.1 - show immediately down to Height",
+          "display": "Weight",
+          "concept": {
+            "comment": "Weight",
+            "uuid": "75b1656e-2777-4753-9612-ce03a766a5e1"
+          }
+        },
+        {
+          "name": "BMI",
+          "uuid": "09098650-eb05-43a6-bcdf-7c61609833c7",
+          "displayOrder": 4.2,
+          "comment": "4.2 - show immediately down to Weight",
+          "keyValues": [
+            {
+              "key": "editable",
+              "value": false
+            }
+          ],
+          "concept": {
+            "uuid": "7ac0d759-c50d-4971-88e0-84274224c839"
+          }
+        },
+        {
+          "name": "Service commitment number",
+          "uuid": "97cd1b37-fa25-45cf-b103-f217ddba4c00",
+          "display": "Service commitment number",
+          "displayOrder": 5.1,
+          "keyValues": [],
+          "concept": {
+            "uuid": "73a3fdd7-3087-4d53-b8be-753e2cdfa6c2",
+            "comment": "Service commitment number"
+          }
+        }
+      ]
+    },
+    {
       "uuid": "7c3e193b-0dd9-4984-9de8-30a76e2d7cb4",
       "name": "GPAL",
       "displayOrder": 1.9,
+      "comment": "1.9 - show just before pregnancy details",
       "display": "GPAL",
       "formElements": [
+        {
+          "uuid": "149908f1-842e-4479-8ba8-ff56b1fa290d",
+          "name": "Is this your first pregnancy?",
+          "display": "Is this your first pregnancy?",
+          "displayOrder": 0,
+          "type":"SingleSelect",
+          "concept": {
+            "uuid": "c357b704-49e2-4c4b-a153-21b8867c152b",
+            "comment": "Is this your first pregnancy?"
+          }
+        },
         {
           "uuid": "d75c35d5-508a-4239-b861-afe7b6b98483",
           "name": "Number of miscarriages",

@@ -1175,5 +1175,25 @@
     "uuid": "ed49a5a3-dc1d-4277-a71c-c1b73f444f3d",
     "name": "Stool OPC",
     "dataType": "Text"
+  },
+  {
+    "name": "Service commitment number",
+    "uuid": "73a3fdd7-3087-4d53-b8be-753e2cdfa6c2",
+    "dataType": "Numeric"
+  },
+  {
+    "uuid": "c357b704-49e2-4c4b-a153-21b8867c152b",
+    "name": "Is this your first pregnancy?",
+    "dataType": "Coded",
+    "answers":[
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
   }
 ]
