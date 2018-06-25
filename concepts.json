@@ -1177,6 +1177,40 @@
     "dataType": "Text"
   },
   {
+    "uuid": "81d0ef28-8a9f-4a09-bc66-1ed81aa02386",
+    "name": "First trimester (0-3 months)",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "7191645f-c836-4755-beab-ca3c6cec5665",
+    "name": "Second trimester (4-6 months)",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "364e9f9b-5e81-4ec3-a935-89b239967840",
+    "name": "Third trimester (7+ months)",
+    "dataType": "NA"
+  },
+  {
+    "name": "Service commitment type",
+    "uuid": "e0c80ed9-908c-4c93-b3e2-56ac0dfa7087",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "81d0ef28-8a9f-4a09-bc66-1ed81aa02386",
+        "comment": "First trimester (0-3 months)"
+      },
+      {
+        "uuid": "7191645f-c836-4755-beab-ca3c6cec5665",
+        "comment": "Second trimester (4-6 months)"
+      },
+      {
+        "uuid": "364e9f9b-5e81-4ec3-a935-89b239967840",
+        "comment": "Third trimester (7+ months)"
+      }
+    ]
+  },
+  {
     "name": "Service commitment number",
     "uuid": "73a3fdd7-3087-4d53-b8be-753e2cdfa6c2",
     "dataType": "Numeric"
@@ -1338,6 +1372,10 @@
       {
         "uuid": "c2704449-4981-47f1-b6e8-9d68884334c6",
         "comment": "Infant with congenital malformation"
+      },
+      {
+        "uuid":"ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment":"None"
       }
     ]
   }

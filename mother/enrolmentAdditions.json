@@ -33,10 +33,22 @@
           }
         },
         {
+          "name": "Service commitment type",
+          "uuid": "b6f69c60-9e28-4e7e-8bf9-e97bc024b499",
+          "display": "Service commitment type",
+          "displayOrder": 5.1,
+          "keyValues": [],
+          "type":"SingleSelect",
+          "concept": {
+            "uuid": "e0c80ed9-908c-4c93-b3e2-56ac0dfa7087",
+            "comment": "Service commitment type"
+          }
+        },
+        {
           "name": "Service commitment number",
           "uuid": "97cd1b37-fa25-45cf-b103-f217ddba4c00",
           "display": "Service commitment number",
-          "displayOrder": 5.1,
+          "displayOrder": 5.2,
           "keyValues": [],
           "concept": {
             "uuid": "73a3fdd7-3087-4d53-b8be-753e2cdfa6c2",
@@ -66,6 +78,17 @@
             "uuid": "8a4ab436-6767-45d5-95d7-075d9459609e"
           },
           "displayOrder": 0.9,
+          "mandatory": true
+        },
+        {
+          "name": "Family History",
+          "uuid": "4d8b4fd7-f285-4f2c-b00c-605250843749",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "18fa9773-bf4b-47f8-9535-f1573a477940"
+          },
+          "displayOrder": 2.9,
           "mandatory": true
         }
       ]

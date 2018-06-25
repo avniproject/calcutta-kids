@@ -18,6 +18,10 @@
         {
           "uuid": "4ae32d41-7c2e-4d7d-8ac6-566c9331f3a1",
           "comment": "Obstetrics history"
+        },
+        {
+          "uuid":"955713c1-ea0e-439f-8d95-8fdef38a9a49",
+          "comment":"Family History"
         }
       ]
     }
