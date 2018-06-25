@@ -46,6 +46,31 @@
       ]
     },
     {
+      "uuid": "50a2d045-88fe-44e3-86e0-0dba16f53818",
+      "comment": "Past pregnancy complications: replace Obstetrics history",
+      "formElements": [
+        {
+          "name": "Obstetrics history",
+          "uuid": "988f714b-04e6-4a83-acd2-f43d90d3269d",
+          "comment": "replace Obstetrics history",
+          "keyValues": [
+            {
+              "key": "ExcludedAnswers",
+              "value": [
+                "Intrapartum Death"
+              ]
+            }
+          ],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "8a4ab436-6767-45d5-95d7-075d9459609e"
+          },
+          "displayOrder": 0.9,
+          "mandatory": true
+        }
+      ]
+    },
+    {
       "uuid": "7c3e193b-0dd9-4984-9de8-30a76e2d7cb4",
       "name": "GPAL",
       "displayOrder": 1.9,
@@ -57,10 +82,21 @@
           "name": "Is this your first pregnancy?",
           "display": "Is this your first pregnancy?",
           "displayOrder": 0,
-          "type":"SingleSelect",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "c357b704-49e2-4c4b-a153-21b8867c152b",
             "comment": "Is this your first pregnancy?"
+          },
+          "mandatory": true
+        },
+        {
+          "uuid": "93c9f370-2723-49b9-8bbb-ff0d70980d47",
+          "name": "Age at first pregnancy",
+          "display": "Age at first pregnancy",
+          "displayOrder": 0.5,
+          "concept": {
+            "comment": "Age at first pregnancy",
+            "uuid": "73037237-15b7-43ba-b375-2a34af9cc1f5"
           }
         },
         {
@@ -112,6 +148,64 @@
             "uuid": "b3e9c088-90ed-45d9-8c99-102d1bda66e1",
             "comment": "Number of living children"
           }
+        }
+      ]
+    },
+    {
+      "uuid": "717d59bf-0403-4bf3-a0ca-38652257688d",
+      "name": "Vaccinations",
+      "display": "Vaccinations",
+      "displayOrder": 2.9,
+      "formElements": [
+        {
+          "uuid": "832b31e1-57a6-4bac-8f02-226bbd30e21a",
+          "name": "TT1 Date",
+          "concept": {
+            "comment": "TT1 Date",
+            "uuid": "f91604a8-89ac-4a99-a3cb-9edd764c8b0e"
+          },
+          "display": "TT1 Date",
+          "displayOrder": 1
+        },
+        {
+          "uuid": "30b2a32f-ba92-48a8-9785-c09230862ff7",
+          "name": "TT2 Date",
+          "concept": {
+            "comment": "TT2 Date",
+            "uuid": "57f66ff5-e050-4a72-ad03-94d99dad4630"
+          },
+          "display": "TT2 Date",
+          "displayOrder": 2
+        },
+        {
+          "uuid": "0161296e-7211-4343-9bb0-d2c25e127a22",
+          "name": "TT3 Date",
+          "concept": {
+            "comment": "TT3 Date",
+            "uuid": "d9861ff2-3ba2-4296-8ada-4a1773412e3d"
+          },
+          "display": "TT3 Date",
+          "displayOrder": 3
+        },
+        {
+          "uuid": "cf5cb7e0-7f7f-4f21-8b5e-eeb4961b788e",
+          "name": "TT Booster Date",
+          "concept": {
+            "comment": "TT Booster Date",
+            "uuid": "e1b7ce95-8c73-46fa-8354-19a14f5ca17f"
+          },
+          "display": "TT Booster Date",
+          "displayOrder": 4
+        },
+        {
+          "uuid": "6b2b5e04-2958-425a-8275-1c07d7c03e32",
+          "name": "Date of deworming",
+          "concept": {
+            "comment": "Date of deworming",
+            "uuid": "e638d96b-ad09-4fec-9e01-2e4b1a243c6d"
+          },
+          "display": "Date of deworming",
+          "displayOrder": 5
         }
       ]
     }
