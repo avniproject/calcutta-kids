@@ -46,11 +46,15 @@ deploy_refdata: ## Creates reference data by POSTing it to the server
 	$(call _curl,DELETE,forms,@mother/enrolmentDeletions.json)
 	$(call _curl,PATCH,forms,@mother/enrolmentAdditions.json)
 	$(call _curl,PATCH,forms,@mother/ancLabTestResultsAdditions.json)
-	node index.js
 # </refdata>
 
 # <deploy>
-deploy: deploy_refdata ##
+deploy: deploy_refdata deploy_rules##
+# </deploy>
+
+# <deploy>
+deploy_rules: ##
+	node index.js
 # </deploy>
 
 # <c_d>
