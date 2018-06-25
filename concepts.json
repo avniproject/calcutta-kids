@@ -1378,5 +1378,11 @@
         "comment":"None"
       }
     ]
+  },
+  {
+    "name":"Counselling checklist for CK mother enrolment",
+    "uuid":"f5329c16-50ba-490e-af8c-fbea3e385baf",
+    "dataType":"Coded",
+    "answers":[]
   }
 ]

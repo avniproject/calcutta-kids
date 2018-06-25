@@ -38,7 +38,7 @@
           "display": "Service commitment type",
           "displayOrder": 5.1,
           "keyValues": [],
-          "type":"SingleSelect",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "e0c80ed9-908c-4c93-b3e2-56ac0dfa7087",
             "comment": "Service commitment type"
@@ -229,6 +229,26 @@
           },
           "display": "Date of deworming",
           "displayOrder": 5
+        }
+      ]
+    },
+    {
+      "uuid": "1c418b84-4304-4cdf-9ca4-6a26b3b6433d",
+      "name": "Counselling",
+      "display": "Counselling",
+      "displayOrder": 5.9,
+      "comment": "Counselling advice",
+      "formElements": [
+        {
+          "uuid": "a7d44052-2b23-4ce9-b2e2-e60638a51b32",
+          "name": "Counselling checklist for CK mother enrolment",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "f5329c16-50ba-490e-af8c-fbea3e385baf",
+            "comment": "Counselling checklist for CK mother enrolment"
+          },
+          "displayOrder": 1
         }
       ]
     }
