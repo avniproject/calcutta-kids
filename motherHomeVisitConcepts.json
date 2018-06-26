@@ -246,41 +246,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Animal protein",
-    "uuid": "224f4824-6115-4936-9203-ff8ed2a507ca",
-    "dataType": "NA"
-  },
-  {
-    "name": "Vegetable protein",
-    "uuid": "95201c58-6478-42b5-87bc-46e333c640ba",
-    "dataType": "NA"
-  },
-  {
-    "name": "Starch",
-    "uuid": "8cad0fa6-fd5b-41b3-b5fb-9c319a274bf4",
-    "dataType": "NA"
-  },
-  {
-    "name": "Vegetable",
-    "uuid": "90f29252-2dc9-42c5-b30f-9cfb53c8448c",
-    "dataType": "NA"
-  },
-  {
-    "name": "Dairy",
-    "uuid": "ce1e5c91-7435-4d07-9308-298ace5fb1ea",
-    "dataType": "NA"
-  },
-  {
-    "name": "Fruit",
-    "uuid": "ee1d7bf2-f4ea-4d46-beb0-bf919c196b62",
-    "dataType": "NA"
-  },
-  {
-    "name": "Snack food",
-    "uuid": "f72c86f9-8c58-4887-b588-cc903f02d141",
-    "dataType": "NA"
-  },
-  {
     "name": "Nothing",
     "uuid": "050c0ac0-9f03-4302-9b3c-2a451cdb0471",
     "dataType": "NA"
@@ -291,15 +256,15 @@
     "dataType": "Coded",
     "answers": [
       {
-        "uuid": "224f4824-6115-4936-9203-ff8ed2a507ca",
+        "uuid": "e825f97d-26d4-4a44-b2fe-024d9e26d875",
         "abnormal": false
       },
       {
-        "uuid": "95201c58-6478-42b5-87bc-46e333c640ba",
+        "uuid": "14405510-d8ea-45c0-a0cb-d5dc55260d33",
         "abnormal": false
       },
       {
-        "uuid": "8cad0fa6-fd5b-41b3-b5fb-9c319a274bf4",
+        "uuid": "a8c837f4-345c-4041-ac0a-b91945bad804",
         "abnormal": false
       },
       {
@@ -307,11 +272,11 @@
         "abnormal": false
       },
       {
-        "uuid": "ce1e5c91-7435-4d07-9308-298ace5fb1ea",
+        "uuid": "351f31c1-5f14-4859-8585-3d395556b1f8",
         "abnormal": false
       },
       {
-        "uuid": "ee1d7bf2-f4ea-4d46-beb0-bf919c196b62",
+        "uuid": "323c3c9b-a4a6-40e1-938f-f62755805ecc",
         "abnormal": false
       },
       {

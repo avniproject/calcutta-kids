@@ -413,36 +413,6 @@
     ]
   },
   {
-    "uuid": "e825f97d-26d4-4a44-b2fe-024d9e26d875",
-    "name": "Animal protein",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "14405510-d8ea-45c0-a0cb-d5dc55260d33",
-    "name": "Vegetable protein",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "323c3c9b-a4a6-40e1-938f-f62755805ecc",
-    "name": "Fruit",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "351f31c1-5f14-4859-8585-3d395556b1f8",
-    "name": "Dairy",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "a8c837f4-345c-4041-ac0a-b91945bad804",
-    "name": "Starch",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "d74412da-9cce-41fa-a141-c07cc8c60ec0",
-    "name": "Instant food",
-    "dataType": "NA"
-  },
-  {
     "name": "What type of semi-solid/solid foods do you feed your child?",
     "uuid": "5dd91413-2b15-414d-9047-a02bd9601b13",
     "dataType": "Coded",
