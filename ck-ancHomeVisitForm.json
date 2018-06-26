@@ -170,7 +170,7 @@
           "uuid": "cc30f6c8-c2ca-4074-a737-9022760a0112",
           "keyValues": [{"key": "Select", "value": "Multi"}],
           "concept": {
-            "uuid": "955f355d-f741-4246-952e-f539296764f8"
+            "uuid": "955f355d-f741-4246c-952e-f539296764f8"
           },
           "displayOrder": 10,
           "mandatory": true
