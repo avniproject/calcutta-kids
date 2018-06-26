@@ -36,7 +36,7 @@ create_org: ## Create Calcutta Kids org and user+privileges
 # <refdata>
 deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
-	$(call _curl,POST,concepts,@child/homeVisitconcepts.json)
+	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
 	$(call _curl,POST,concepts,@mother/motherHomeVisitConcepts.json)
 
 deploy_refdata: deploy_concepts
