@@ -1,0 +1,21 @@
+{
+  "organisationName": "Calcutta Kids",
+  "operationalPrograms": [
+    {
+      "uuid": "61383d58-82b4-44fb-96d0-6449f0e68c1b",
+      "name": "Mother",
+      "program": {
+        "uuid": "076ddb2d-a499-4314-af95-4178553d279b",
+        "comment": "Mother"
+      }
+    },
+    {
+      "uuid": "fc3cfcbe-9427-49d0-a497-8294d16725af",
+      "name": "Child",
+      "program": {
+        "uuid": "352d906c-b386-496c-ba23-91b1468a5613",
+        "comment": "Child"
+      }
+    }
+  ]
+}

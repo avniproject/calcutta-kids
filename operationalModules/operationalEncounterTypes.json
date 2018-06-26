@@ -1,0 +1,61 @@
+{
+  "organisationName": "Calcutta Kids",
+  "operationalEncounterTypes": [
+    {
+      "uuid": "160c7f42-392c-41f9-af82-5e483109918a",
+      "name": "ANC",
+      "encounterType": {
+        "uuid": "b1efaffa-c8df-4801-8bbb-bf7c7bd6a0bd",
+        "comment": "ANC"
+      }
+    },
+    {
+      "uuid": "93617150-2536-46ad-9879-0ba4fccd1f4e",
+      "name": "ANC Lab Test Results",
+      "encounterType": {
+        "uuid": "63486b57-67b9-4236-b36c-e7bbe5ac0411",
+        "comment": "ANC Lab Test Results"
+      }
+    },
+    {
+      "uuid": "9b4fa8ec-fd62-487a-aa35-8f74f3c20db2",
+      "name": "Delivery",
+      "encounterType": {
+        "uuid": "7b6a93c7-e1e1-4e73-842d-df8a1935bde2",
+        "comment": "Delivery"
+      }
+    },
+    {
+      "uuid": "ec3d643a-6da4-417e-8ee5-2654344f1756",
+      "name": "Abortion",
+      "encounterType": {
+        "uuid": "1dec6355-4abd-45b7-89ab-bae1f5f9cc07",
+        "comment": "Abortion"
+      }
+    },
+    {
+      "uuid": "f30945dd-7768-4a7e-bce9-2c96a6834373",
+      "name": "PNC",
+      "encounterType": {
+        "uuid": "e9971396-b74f-411c-956d-da44073922f5",
+        "comment": "PNC"
+      }
+    },
+    {
+      "uuid": "9df0dbb2-a1d9-4d3d-86f1-530dc811c6fb",
+      "name": "SES Survey",
+      "encounterType": {
+        "uuid": "af181460-b5f0-46b0-9474-4dd0a34981af",
+        "comment": "SES Survey"
+      }
+    },
+    {
+      "uuid": "662f87d7-a0c0-495a-957f-2e09f6fedb3d",
+      "name": "Test Entry",
+      "encounterType": {
+        "uuid": "8ceb5b02-69a9-4858-9cca-49721c754663",
+        "comment": "Test Entry"
+      }
+    }
+  ]
+}
