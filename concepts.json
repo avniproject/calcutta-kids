@@ -1384,5 +1384,405 @@
     "uuid":"f5329c16-50ba-490e-af8c-fbea3e385baf",
     "dataType":"Coded",
     "answers":[]
+  },
+  {
+    "name": "Away at village?",
+    "uuid": "5b30a5b5-8ab5-4643-a424-2992f2b8df11",
+    "dataType": "Coded",
+    "type": "SingleSelect",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
+  },
+  {
+    "name": "High fever (above 102°C)",
+    "uuid": "f6628b6c-0c6e-4deb-bc5c-faaf6d22a4be",
+    "dataType": "NA"
+  },
+  {
+    "name": "Foul smelling vaginal discharge or blood",
+    "uuid": "57c3c31b-341c-4ab9-ac65-de75a432a089",
+    "dataType": "NA"
+  },
+  {
+    "name": "Moderate to severe abdominal pain",
+    "uuid": "94a22fed-e9a5-438e-8a17-ec4ae40c5d4f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Problems with any stitches or discharge from the wound",
+    "uuid": "b7c9ce09-c05e-4cfc-8649-9bc6cadfd08d",
+    "dataType": "NA"
+  },
+  {
+    "name": "Vaginal/urethral problems",
+    "uuid": "e3acaede-e67c-4d72-a1a7-06954b862408",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other health problems",
+    "uuid": "7d708690-ba0a-41f7-87ff-cbe0e45f6008",
+    "dataType": "Text"
+  },
+  {
+    "name": "Mother's health problems",
+    "uuid": "38a2939d-cba7-48d8-9bde-9a77ec2a43b2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "f6628b6c-0c6e-4deb-bc5c-faaf6d22a4be",
+        "abnormal": true
+      },
+      {
+        "uuid": "57c3c31b-341c-4ab9-ac65-de75a432a089",
+        "abnormal": true
+      },
+      {
+        "uuid": "94a22fed-e9a5-438e-8a17-ec4ae40c5d4f",
+        "abnormal": true
+      },
+      {
+        "uuid": "b7c9ce09-c05e-4cfc-8649-9bc6cadfd08d",
+        "abnormal": true
+      },
+      {
+        "uuid": "e3acaede-e67c-4d72-a1a7-06954b862408",
+        "abnormal": true
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": true
+      }
+    ]
+  },
+  {
+    "name": "Did mother receive stitches during delivery?",
+    "uuid": "97778056-7da6-4e48-9687-aaa4e8d0a294",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Are mother's stitches open or loose?",
+    "uuid": "4d5c7ea4-1f3b-43da-a942-20b1e8311ffe",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Is there discharge from the wound?",
+    "uuid": "dbc5a44b-b42f-4531-93c1-1ee9e3dfa7ea",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "NA",
+    "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
+    "dataType": "NA"
+  },
+  {
+    "name": "Where does mother get IFA tablets from?",
+    "uuid": "aa9462ca-9312-41df-8a92-741d81f77ee7",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "comment": "Calcutta Kids"
+      },
+      {
+        "uuid": "f866daf5-9e36-4ec5-976c-b4a73a5ed45a",
+        "comment": "Private"
+      },
+      {
+        "uuid": "7f1ceee8-415b-47df-97ff-c9ff74aab4f7",
+        "comment": "Government"
+      },
+      {
+        "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
+        "comment": "NA"
+      }
+    ]
+  },
+  {
+    "name": "How many IFA tablets mother consumed since last visit?",
+    "uuid": "0dcf9cee-b2c7-4751-86a2-142fd924068f",
+    "dataType": "Numeric",
+    "unit": "tablet(s)"
+  },
+  {
+    "name": "Where does mother get Calcium tablets from?",
+    "uuid": "3c31a93d-d731-49b3-8adf-5d7fdb930fb9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "comment": "Calcutta Kids"
+      },
+      {
+        "uuid": "f866daf5-9e36-4ec5-976c-b4a73a5ed45a",
+        "comment": "Private"
+      },
+      {
+        "uuid": "7f1ceee8-415b-47df-97ff-c9ff74aab4f7",
+        "comment": "Government"
+      },
+      {
+        "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
+        "comment": "NA"
+      }
+    ]
+  },
+  {
+    "name": "How many Calcium tablets mother consumed since last visit?",
+    "uuid": "7ec86ef7-36a2-4643-91c6-06838891fedb",
+    "dataType": "Numeric",
+    "unit": "tablet(s)"
+  },
+  {
+    "name": "More than pre-pregnancy",
+    "uuid": "7f47a447-6cfc-4c9e-bb8c-482eadc47d4b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Same as pre-pregnancy",
+    "uuid": "00cd6cc2-00d9-4c1a-8d9d-73b4de026159",
+    "dataType": "NA"
+  },
+  {
+    "name": "Less than pre-pregnancy",
+    "uuid": "bb957725-fb96-49c1-861c-65a46cbf22c6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Food consumption compared to pre-pregnancy food intake?",
+    "uuid": "43f91cf9-2d6e-4926-9286-dae94351c353",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "7f47a447-6cfc-4c9e-bb8c-482eadc47d4b",
+        "abnormal": false
+      },
+      {
+        "uuid": "00cd6cc2-00d9-4c1a-8d9d-73b4de026159",
+        "abnormal": true
+      },
+      {
+        "uuid": "bb957725-fb96-49c1-861c-65a46cbf22c6",
+        "abnormal": true
+      }
+    ]
+  },
+  {
+    "name": "Food is not available/sufficient",
+    "uuid": "e584cf1a-4cbf-4fef-aa5f-c91fb0dea64b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family pressure or belief to eat less",
+    "uuid": "7a53dcb6-23c9-4995-bda7-7cc1722e59fc",
+    "dataType": "NA"
+  },
+  {
+    "name": "Work pressure",
+    "uuid": "9e58c378-e27e-4ba7-81f3-349c1c17c984",
+    "dataType": "NA"
+  },
+  {
+    "name": "Lack of family support",
+    "uuid": "5e7da32d-42cb-410c-a17f-38af82e6c858",
+    "dataType": "NA"
+  },
+  {
+    "name": "Reasons for eating the same or less than pre-pregnancy",
+    "uuid": "0131409a-72db-4d45-ab0c-8851c2ee8281",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "e584cf1a-4cbf-4fef-aa5f-c91fb0dea64b",
+        "abnormal": false
+      },
+      {
+        "uuid": "47e93f5b-3bfb-4fb7-826f-278d8d0e04ce",
+        "abnormal": false
+      },
+      {
+        "uuid": "7a53dcb6-23c9-4995-bda7-7cc1722e59fc",
+        "abnormal": false
+      },
+      {
+        "uuid": "9e58c378-e27e-4ba7-81f3-349c1c17c984",
+        "abnormal": false
+      },
+      {
+        "uuid": "5e7da32d-42cb-410c-a17f-38af82e6c858",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other reasons for eating same or less than pre-pregnancy",
+    "uuid": "aea13efa-f200-4bcc-b613-f24b341ff50a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Is mother drinking at least one glass of milk per day?",
+    "uuid": "d60670cb-becd-4a25-b854-14f9e7e60add",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Is mother using any family planning methods?",
+    "uuid": "57827fec-7350-4acb-b648-29569b61d80b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Condom",
+    "uuid": "eda4af16-e747-4fc2-b267-8d65b819b30d",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pill",
+    "uuid": "5a548cae-aca3-494f-9ca0-058bcdf3551c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Copper T / IUD",
+    "uuid": "cfb6bf16-97bc-45b0-bbfe-e1a613344bd3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Tubectomy",
+    "uuid": "6c02c7cd-b067-401c-80eb-25e6b0b9ed09",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other family planning methods used by mother",
+    "uuid": "c89a29a9-7ff9-4f23-8030-b86253b3d11e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Type of family planning methods used by mother",
+    "uuid": "ad6a45e7-242a-4eb3-961e-c52c3ef862c0",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "eda4af16-e747-4fc2-b267-8d65b819b30d",
+        "abnormal": false
+      },
+      {
+        "uuid": "5a548cae-aca3-494f-9ca0-058bcdf3551c",
+        "abnormal": false
+      },
+      {
+        "uuid": "cfb6bf16-97bc-45b0-bbfe-e1a613344bd3",
+        "abnormal": false
+      },
+      {
+        "uuid": "6c02c7cd-b067-401c-80eb-25e6b0b9ed09",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Engorged breast",
+    "uuid": "99c858bc-b257-476a-b7ce-fd4e239b6b2a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Mother unwilling to breastfeed",
+    "uuid": "d3f67692-2fa9-486c-bc8e-97e470f1736a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Possible breast infection (severe pain, abscess, foul smelling discharge, fever) ",
+    "uuid": "765a3256-78c3-4a5f-9a6c-d4334eb5e8a5",
+    "dataType": "NA"
+  },
+  {
+    "name": "Breast-feeding problems",
+    "uuid": "0c9b6203-be8c-40a4-a035-b9cb61f126c9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "804a3c4c-e42e-47b0-923b-43c808c631bc",
+        "comment": "Cracked Nipple",
+        "abnormal": false
+      },
+      {
+        "uuid": "c95ab0ea-46bb-41fb-995a-24a2db3681a2",
+        "comment": "Retracted Nipples",
+        "abnormal": false
+      },
+      {
+        "uuid": "99c858bc-b257-476a-b7ce-fd4e239b6b2a",
+        "abnormal": false
+      },
+      {
+        "uuid": "d3f67692-2fa9-486c-bc8e-97e470f1736a",
+        "abnormal": false
+      },
+      {
+        "uuid": "765a3256-78c3-4a5f-9a6c-d4334eb5e8a5",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other breast-feeding problems",
+    "uuid": "9901bdcc-d562-4486-a5d4-b6e9681e9da8",
+    "dataType": "Text"
   }
 ]

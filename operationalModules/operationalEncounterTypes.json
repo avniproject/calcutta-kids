@@ -56,6 +56,14 @@
         "uuid": "8ceb5b02-69a9-4858-9cca-49721c754663",
         "comment": "Test Entry"
       }
+    },
+    {
+      "uuid": "66ff5381-9565-4640-a664-e1d4698b2b56",
+      "name": "Mother Home Visit",
+      "encounterType": {
+        "uuid": "0c0e810e-40bb-4365-af55-51aeba6548bf",
+        "comment": "Mother Home Visit"
+      }
     }
   ]
 }
