@@ -34,14 +34,15 @@ create_org: ## Create Calcutta Kids org and user+privileges
 # </create_org>
 
 # <refdata>
-deploy_refdata: ## Creates reference data by POSTing it to the server
-	$(call _curl,POST,catchments,@catchments.json)
+deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
+	$(call _curl,POST,concepts,@homeVisitconcepts.json)
+
+deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,POST,forms,@sesForm.json)
 	$(call _curl,POST,forms,@testForm.json)
-	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
-	$(call _curl,POST,forms,@child/childHomeVisit.json)
+#	$(call _curl,POST,forms,@child/childHomeVisit.json)
 
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)
@@ -53,6 +54,7 @@ deploy_refdata: ## Creates reference data by POSTing it to the server
 	$(call _curl,POST,forms,@mother/motherHomeVisitForm.json)
 	$(call _curl,POST,forms,@child/childGMPForm.json)
 	$(call _curl,POST,formMappings,@formMappings.json)
+	$(call _curl,POST,catchments,@catchments.json)
 # </refdata>
 
 # <deploy>

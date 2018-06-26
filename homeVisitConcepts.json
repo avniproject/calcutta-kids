@@ -1,0 +1,484 @@
+[
+  {
+    "name": "Leak of amniotic fluid",
+    "uuid": "442ef688-5567-43c7-a7f7-4925d8664eb2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Moderate ankle, body or face swelling",
+    "uuid": "a3d14ff5-8142-436d-99fb-eb84dd6d489e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Painful or difficult urination",
+    "uuid": "39379c57-8f29-4d46-a600-d28b90b963da",
+    "dataType": "NA"
+  },
+  {
+    "name": "Convulsions without fever",
+    "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Dizziness",
+    "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Excess fatigue",
+    "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "0adc4170-9ebb-4feb-8b81-450fbf9a04dc",
+    "answers": [
+      {
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456"
+      },
+      {
+        "uuid": "a3d14ff5-8142-436d-99fb-eb84dd6d489e"
+      },
+      {
+        "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a"
+      },
+      {
+        "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e"
+      },
+      {
+        "uuid": "39379c57-8f29-4d46-a600-d28b90b963da"
+      },
+      {
+        "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6"
+      },
+      {
+        "uuid": "442ef688-5567-43c7-a7f7-4925d8664eb2"
+      },
+      {
+        "uuid": "6471787c-fd94-4231-8d22-90b53bd28788"
+      }
+    ]
+  },
+  {
+    "name": "Registered for institutional delivery",
+    "uuid": "1d3d368a-3180-4bda-bf42-bee1351844f3",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Name of institution",
+    "uuid": "13c1458f-b4fe-442a-9b0b-b5ec6e62da11",
+    "dataType": "Text"
+  },
+  {
+    "name": "TT",
+    "uuid": "42a6728b-947a-438f-9192-189ff9d8651b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Urine test",
+    "uuid": "8f2741f1-28ec-458d-9f86-8b968bf950f4",
+    "dataType": "NA"
+  },
+  {
+    "name": "Blood tests",
+    "uuid": "e53b6e6c-9351-4d2c-876b-cf7e9d28e137",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ultrasonography",
+    "uuid": "26fa9d6b-4184-4d54-a7de-a5821f0fecaa",
+    "dataType": "NA"
+  },
+  {
+    "name": "Abdominal examination",
+    "uuid": "fbf759b7-ca99-4b2b-85f5-6be8e01b7037",
+    "dataType": "NA"
+  },
+  {
+    "name": "Services received outside",
+    "uuid": "12638203-bf5f-45ce-a419-d51bb94ec0e1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "42a6728b-947a-438f-9192-189ff9d8651b",
+        "abnormal": false
+      },
+      {
+        "uuid": "8f2741f1-28ec-458d-9f86-8b968bf950f4",
+        "abnormal": false
+      },
+      {
+        "uuid": "e53b6e6c-9351-4d2c-876b-cf7e9d28e137",
+        "abnormal": false
+      },
+      {
+        "uuid": "26fa9d6b-4184-4d54-a7de-a5821f0fecaa",
+        "abnormal": false
+      },
+      {
+        "uuid": "fbf759b7-ca99-4b2b-85f5-6be8e01b7037",
+        "abnormal": false
+      },
+      {
+        "uuid": "8425af99-4a07-4d99-97b2-cf955713a560",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other services received outside",
+    "uuid": "af4d58ae-7233-4c68-9caa-7ba53a6c5f94",
+    "dataType": "Text"
+  },
+  {
+    "name": "Not applicable",
+    "uuid": "5575ce2f-0d0e-4d90-a787-867cf10fc04a",
+    "dataType": "NA"
+  },
+  {
+    "name": "FA tablets received from",
+    "uuid": "c6053dc3-593b-4f24-91f9-3d0e33b4af36",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "abnormal": false
+      },
+      {
+        "uuid": "f866daf5-9e36-4ec5-976c-b4a73a5ed45a",
+        "abnormal": false
+      },
+      {
+        "uuid": "7f1ceee8-415b-47df-97ff-c9ff74aab4f7",
+        "abnormal": false
+      },
+      {
+        "uuid": "5575ce2f-0d0e-4d90-a787-867cf10fc04a",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Number of FA tablets consumed since last visit",
+    "uuid": "1a28299c-de6e-4c4d-9afd-1c8129b40c77",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "More",
+    "uuid": "42146907-9b2b-45c7-ada0-ce4db4a0e224",
+    "dataType": "NA"
+  },
+  {
+    "name": "Same",
+    "uuid": "57f67648-23dd-4d83-96dc-481b7e219a75",
+    "dataType": "NA"
+  },
+  {
+    "name": "Less",
+    "uuid": "46c5a087-db39-43f8-bbdd-778c70eeaf91",
+    "dataType": "NA"
+  },
+  {
+    "name": "Eating compared to your pre-pregnancy food intake",
+    "uuid": "bd925c49-1315-405a-999b-cd6509668281",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "42146907-9b2b-45c7-ada0-ce4db4a0e224",
+        "abnormal": false
+      },
+      {
+        "uuid": "57f67648-23dd-4d83-96dc-481b7e219a75",
+        "abnormal": false
+      },
+      {
+        "uuid": "46c5a087-db39-43f8-bbdd-778c70eeaf91",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Food not available or sufficient",
+    "uuid": "957ea4ab-d3a0-4b52-a056-dd103d9a164f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Reason for eating less than pre-pregnancy",
+    "uuid": "bc8a4300-6a51-411f-a81b-198135fdf236",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "957ea4ab-d3a0-4b52-a056-dd103d9a164f",
+        "abnormal": false
+      },
+      {
+        "uuid": "47e93f5b-3bfb-4fb7-826f-278d8d0e04ce",
+        "abnormal": false
+      },
+      {
+        "uuid": "7a53dcb6-23c9-4995-bda7-7cc1722e59fc",
+        "abnormal": false
+      },
+      {
+        "uuid": "5e7da32d-42cb-410c-a17f-38af82e6c858",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other reason for eating less than pre-pregnancy",
+    "uuid": "70cad8f7-722e-4186-aa89-4acc7acb2ed7",
+    "dataType": "Text"
+  },
+  {
+    "name": "Animal protein",
+    "uuid": "224f4824-6115-4936-9203-ff8ed2a507ca",
+    "dataType": "NA"
+  },
+  {
+    "name": "Vegetable protein",
+    "uuid": "95201c58-6478-42b5-87bc-46e333c640ba",
+    "dataType": "NA"
+  },
+  {
+    "name": "Starch",
+    "uuid": "8cad0fa6-fd5b-41b3-b5fb-9c319a274bf4",
+    "dataType": "NA"
+  },
+  {
+    "name": "Vegetable",
+    "uuid": "90f29252-2dc9-42c5-b30f-9cfb53c8448c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Dairy",
+    "uuid": "ce1e5c91-7435-4d07-9308-298ace5fb1ea",
+    "dataType": "NA"
+  },
+  {
+    "name": "Fruit",
+    "uuid": "ee1d7bf2-f4ea-4d46-beb0-bf919c196b62",
+    "dataType": "NA"
+  },
+  {
+    "name": "Snack food",
+    "uuid": "f72c86f9-8c58-4887-b588-cc903f02d141",
+    "dataType": "NA"
+  },
+  {
+    "name": "Nothing",
+    "uuid": "050c0ac0-9f03-4302-9b3c-2a451cdb0471",
+    "dataType": "NA"
+  },
+  {
+    "name": "Food eaten yesterday",
+    "uuid": "2a5f655e-3351-42c4-87fd-e3a447eeedaa",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "224f4824-6115-4936-9203-ff8ed2a507ca",
+        "abnormal": false
+      },
+      {
+        "uuid": "95201c58-6478-42b5-87bc-46e333c640ba",
+        "abnormal": false
+      },
+      {
+        "uuid": "8cad0fa6-fd5b-41b3-b5fb-9c319a274bf4",
+        "abnormal": false
+      },
+      {
+        "uuid": "90f29252-2dc9-42c5-b30f-9cfb53c8448c",
+        "abnormal": false
+      },
+      {
+        "uuid": "ce1e5c91-7435-4d07-9308-298ace5fb1ea",
+        "abnormal": false
+      },
+      {
+        "uuid": "ee1d7bf2-f4ea-4d46-beb0-bf919c196b62",
+        "abnormal": false
+      },
+      {
+        "uuid": "f72c86f9-8c58-4887-b588-cc903f02d141",
+        "abnormal": false
+      },
+      {
+        "uuid": "050c0ac0-9f03-4302-9b3c-2a451cdb0471",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Hours of rest yesterday",
+    "uuid": "8543f637-c896-4082-8fc9-6fa3f8263c0a",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Work inside the home",
+    "uuid": "8e86a749-39d0-4a4c-a9fd-3acb3f7298e9",
+    "dataType": "NA"
+  },
+  {
+    "name": "Work outside the home",
+    "uuid": "d3b3e242-1085-4114-a3f4-1183a8ae084f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Reason for resting less than 2 hours",
+    "uuid": "955f355d-f741-4246c-952e-f539296764f8",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "8e86a749-39d0-4a4c-a9fd-3acb3f7298e9",
+        "abnormal": false
+      },
+      {
+        "uuid": "d3b3e242-1085-4114-a3f4-1183a8ae084f",
+        "abnormal": false
+      },
+      {
+        "uuid": "5e7da32d-42cb-410c-a17f-38af82e6c858",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Manual labour being done compared to pre-pregnancy",
+    "uuid": "cac85c5d-d0eb-46a7-b30a-0a01836f8c0c",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "42146907-9b2b-45c7-ada0-ce4db4a0e224",
+        "abnormal": false
+      },
+      {
+        "uuid": "57f67648-23dd-4d83-96dc-481b7e219a75",
+        "abnormal": false
+      },
+      {
+        "uuid": "46c5a087-db39-43f8-bbdd-778c70eeaf91",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Nobody at home to help",
+    "uuid": "a3456f51-9722-412b-b4ef-402cddd8c160",
+    "dataType": "NA"
+  },
+  {
+    "name": "Reason for same or more manual labour",
+    "uuid": "5a96f634-8107-46f6-8981-c356415ab654",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "5e7da32d-42cb-410c-a17f-38af82e6c858",
+        "abnormal": false
+      },
+      {
+        "uuid": "a3456f51-9722-412b-b4ef-402cddd8c160",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Saving money for delivery",
+    "uuid": "65b19077-0b47-4ce7-a608-9efcf0cd8f27",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "No extra money to save",
+    "uuid": "89757176-5146-41c5-bd1f-4a36e7d0709b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family not interested in saving",
+    "uuid": "9c3ca6d6-e749-4992-876b-8548f02d0ecf",
+    "dataType": "NA"
+  },
+  {
+    "name": "Reason for not saving money",
+    "uuid": "74eb771a-f9e8-4b51-a078-3a13e2044b0d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "9c3ca6d6-e749-4992-876b-8548f02d0ecf",
+        "abnormal": false
+      },
+      {
+        "uuid": "89757176-5146-41c5-bd1f-4a36e7d0709b",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Money saved so far",
+    "uuid": "4362911d-ac02-447c-9812-dfc5271eb499",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "Date of decrease in foetal movements",
+    "uuid": "599190b5-1875-48e4-961b-b653177b8aa5",
+    "dataType": "Date"
+  },
+  {
+    "name": "Calcium tablets received from",
+    "uuid": "370721b6-7d28-4993-b408-9266e408b5a1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "abnormal": false
+      },
+      {
+        "uuid": "f866daf5-9e36-4ec5-976c-b4a73a5ed45a",
+        "abnormal": false
+      },
+      {
+        "uuid": "7f1ceee8-415b-47df-97ff-c9ff74aab4f7",
+        "abnormal": false
+      },
+      {
+        "uuid": "5575ce2f-0d0e-4d90-a787-867cf10fc04a",
+        "abnormal": false
+      }
+    ]
+  }
+]
