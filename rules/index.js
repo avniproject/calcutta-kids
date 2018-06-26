@@ -10,7 +10,7 @@ class MotherProgramEnrolmentHandler {
     constructor() {
         const hideOnFirstPregnancy = (programEnrolment, formElement) => {
             let statusBuilder = new FormElementStatusBuilder({programEnrolment, formElement});
-            statusBuilder.show().when.valueInEnrolment('Is this your first pregnancy?').is.yes;
+            statusBuilder.show().when.valueInEnrolment('Is this your first pregnancy?').is.no;
             return statusBuilder.build();
         };
         this.numberOfMiscarriages = hideOnFirstPregnancy;
@@ -25,7 +25,7 @@ class MotherProgramEnrolmentHandler {
 class HideNAFirstPregnancyQuestions {
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper
-            .getFormElementsStatuses(new MotherProgramEnrolmentHandler(), programEncounter, formElementGroup, today);
+            .getFormElementsStatusesWithoutDefaults(new MotherProgramEnrolmentHandler(), programEncounter, formElementGroup, today);
     }
 }
 
