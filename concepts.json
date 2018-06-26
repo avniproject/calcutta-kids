@@ -1681,11 +1681,6 @@
     ]
   },
   {
-    "name": "Condom",
-    "uuid": "eda4af16-e747-4fc2-b267-8d65b819b30d",
-    "dataType": "NA"
-  },
-  {
     "name": "Pill",
     "uuid": "5a548cae-aca3-494f-9ca0-058bcdf3551c",
     "dataType": "NA"
@@ -1711,7 +1706,7 @@
     "dataType": "Coded",
     "answers": [
       {
-        "uuid": "eda4af16-e747-4fc2-b267-8d65b819b30d",
+        "uuid": "8f975508-8179-450b-9a27-d11b7818677b",
         "abnormal": false
       },
       {
