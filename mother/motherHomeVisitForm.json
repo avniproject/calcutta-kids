@@ -105,7 +105,7 @@
           "name": "Where do you get your Calcium tablets?",
           "uuid": "ddaaded7-b72d-43c6-b4bb-025165e78eba",
           "keyValues": [],
-          "type": "Select",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "3c31a93d-d731-49b3-8adf-5d7fdb930fb9"
           },
