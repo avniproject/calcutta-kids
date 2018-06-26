@@ -1,0 +1,701 @@
+[
+  {
+    "uuid": "502dcb33-a589-4e9d-99c7-29f5659f5074",
+    "name": "Cow's milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "128d0a18-37c5-4243-a6ea-1794765fa1cd",
+    "name": "Water",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "7b07a014-53f8-44fb-adac-0740c2c2f109",
+    "name": "Buffalo's milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "980d5b47-8cd2-4c03-9f76-ce7bc77c8797",
+    "name": "Packet milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "7df97c63-a2e9-472c-90f2-584f2e64015b",
+    "name": "Formula",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "851c9fb8-af13-4205-91e4-6a63dc1b91fa",
+    "name": "Water based liquids (sugar water, juice etc)",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "223badf4-2fa5-4eb9-abac-c7ba443ba4fa",
+    "name": "Semi-Solid liquid (barley, sago etc)",
+    "dataType": "NA"
+  },
+  {
+    "name": "Have you fed your child any of the following?",
+    "uuid": "fa9f52fd-300f-4521-9bd6-6bca192fe24c",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "502dcb33-a589-4e9d-99c7-29f5659f5074",
+        "name": "Cow's milk"
+      },
+      {
+        "uuid": "128d0a18-37c5-4243-a6ea-1794765fa1cd",
+        "name": "Water"
+      },
+      {
+        "uuid": "7b07a014-53f8-44fb-adac-0740c2c2f109",
+        "name": "Buffalo's milk"
+      },
+      {
+        "uuid": "980d5b47-8cd2-4c03-9f76-ce7bc77c8797",
+        "name": "Packet milk"
+      },
+      {
+        "uuid": "7df97c63-a2e9-472c-90f2-584f2e64015b",
+        "name": "Formula"
+      },
+      {
+        "uuid": "851c9fb8-af13-4205-91e4-6a63dc1b91fa",
+        "name": "Water based liquids (sugar water, juice etc)"
+      },
+      {
+        "uuid": "223badf4-2fa5-4eb9-abac-c7ba443ba4fa",
+        "name": "Semi-Solid liquid (barley, sago etc)"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "unique": true
+      }
+    ]
+  },
+  {
+    "name": "What else did feed your child?",
+    "uuid": "185c6430-e920-4f91-93a6-611affa05794",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
+    "name": "Once",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "5fc9ad18-34e1-4661-9e16-4c6e6997046c",
+    "name": "Twice",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
+    "name": "Thrice",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "ba04b615-f4af-4b5e-87aa-1ce70f28a1b1",
+    "name": "Daily",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "124ea16a-a244-4c4d-aa4a-8e5bcd3ca4bc",
+    "name": "Four Times",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "5ef6fb68-5fc8-477a-9a92-6433e186c7e3",
+    "name": "Frequency of cow's milk",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
+        "name": "Once"
+      },
+      {
+        "uuid": "5fc9ad18-34e1-4661-9e16-4c6e6997046c",
+        "name": "Twice"
+      },
+      {
+        "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
+        "name": "Thrice"
+      },
+      {
+        "uuid": "ba04b615-f4af-4b5e-87aa-1ce70f28a1b1",
+        "name": "Daily"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Other frequency of cow's milk",
+    "uuid": "552ff095-19a4-493b-840b-d2ae92f59e2e",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "43ee0a28-b689-470a-9e34-838231f63700",
+    "name": "Frequency of formula",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
+        "name": "Once"
+      },
+      {
+        "uuid": "5fc9ad18-34e1-4661-9e16-4c6e6997046c",
+        "name": "Twice"
+      },
+      {
+        "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
+        "name": "Thrice"
+      },
+      {
+        "uuid": "ba04b615-f4af-4b5e-87aa-1ce70f28a1b1",
+        "name": "Daily"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Other frequency of formula",
+    "uuid": "2e6d9291-b5a2-4a53-846f-7319935fdb20",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "258eb2a9-6cbf-4969-83ea-f2709e6490e9",
+    "name": "Frequency of water",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
+        "name": "Once"
+      },
+      {
+        "uuid": "5fc9ad18-34e1-4661-9e16-4c6e6997046c",
+        "name": "Twice"
+      },
+      {
+        "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
+        "name": "Thrice"
+      },
+      {
+        "uuid": "ba04b615-f4af-4b5e-87aa-1ce70f28a1b1",
+        "name": "Daily"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Other frequency of water",
+    "uuid": "6b2522c8-d312-4d06-8123-0e18abfebf41",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "c1dd8ebe-601d-49a2-9221-0196905e683f",
+    "name": "Frequency of water-based liquids",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
+        "name": "Once"
+      },
+      {
+        "uuid": "5fc9ad18-34e1-4661-9e16-4c6e6997046c",
+        "name": "Twice"
+      },
+      {
+        "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
+        "name": "Thrice"
+      },
+      {
+        "uuid": "ba04b615-f4af-4b5e-87aa-1ce70f28a1b1",
+        "name": "Daily"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Other frequency of water-based liquids",
+    "uuid": "b26cad75-8f36-400a-a0c8-1e593d7b2eb4",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "0b20efea-07c1-4581-a585-9e3db16735de",
+    "name": "Frequency of other",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
+        "name": "Once"
+      },
+      {
+        "uuid": "5fc9ad18-34e1-4661-9e16-4c6e6997046c",
+        "name": "Twice"
+      },
+      {
+        "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
+        "name": "Thrice"
+      },
+      {
+        "uuid": "ba04b615-f4af-4b5e-87aa-1ce70f28a1b1",
+        "name": "Daily"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Other frequency of other",
+    "uuid": "a1457219-9ce3-48c7-817b-7324707c7510",
+    "dataType": "Text"
+  },
+  {
+    "name": "Not producing enough breast milk",
+    "uuid": "4875d665-1e9a-4f65-a58d-7293be93d263",
+    "dataType": "NA"
+  },
+  {
+    "name": "Child requires more nourishment",
+    "uuid": "db76e594-4454-4a53-9507-7dee83b279c3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Formula is better",
+    "uuid": "2a67c5ef-3839-46ce-a433-a044d97e5e29",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "53b7549d-f5f2-49b8-9df9-5ab6dcdcb4d3",
+    "name": "Why did you feed your baby something other than breast milk?",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Not producing enough breast milk",
+        "uuid": "4875d665-1e9a-4f65-a58d-7293be93d263",
+        "dataType": "NA"
+      },
+      {
+        "name": "Child requires more nourishment",
+        "uuid": "db76e594-4454-4a53-9507-7dee83b279c3",
+        "dataType": "NA"
+      },
+      {
+        "name": "Formula is better",
+        "uuid": "2a67c5ef-3839-46ce-a433-a044d97e5e29",
+        "dataType": "NA"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Any other reason why you fed something other than breast milk",
+    "uuid": "60e2eddd-4e45-4002-bcfd-eea11fb3ac7c",
+    "dataType": "Text"
+  },
+  {
+    "name": "Are you still breast feeding your child?",
+    "uuid": "9fa6eeb5-c3b9-4052-897e-09c5d4c2119d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "What was the child's age when you stopped breast feeding?",
+    "uuid": "a0c7b32c-fdb1-4cb6-9bbc-800e74e50cea",
+    "dataType": "Numeric",
+    "lowAbsolute": 0,
+    "lowNormal": 0,
+    "highNormal": 50,
+    "highAbsolute": 50,
+    "unit": "months"
+  },
+  {
+    "name": "Are you feeding your child any other liquids?",
+    "uuid": "5a9efcab-a615-4eb0-baf8-b3f799018dca",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "What was the child's age when you started feeding these liquids?",
+    "uuid": "038c0eb4-30d0-487c-b564-6e3bc7c4954b",
+    "dataType": "Numeric",
+    "lowAbsolute": 0,
+    "lowNormal": 0,
+    "highNormal": 50,
+    "highAbsolute": 50,
+    "unit": "months"
+  },
+  {
+    "name": "Have you been feeding solids/semi-solids to the child?",
+    "uuid": "d1c40171-24f2-440b-bd28-d936a9f0e2d2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "What was the child's age when you started feeding them solids/semi-solids?",
+    "uuid": "0e5f2f1a-ef95-44aa-9a6f-0dc0d1199c37",
+    "dataType": "Numeric",
+    "lowAbsolute": 0,
+    "lowNormal": 0,
+    "highNormal": 50,
+    "highAbsolute": 50,
+    "unit": "months"
+  },
+  {
+    "name": "How many times a day is the child eating homemade semi-solid/solid foods?",
+    "uuid": "fce06b29-21c5-4ee6-ba49-42c14b7ec112",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
+        "name": "Once"
+      },
+      {
+        "uuid": "5fc9ad18-34e1-4661-9e16-4c6e6997046c",
+        "name": "Twice"
+      },
+      {
+        "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
+        "name": "Thrice"
+      },
+      {
+        "uuid": "124ea16a-a244-4c4d-aa4a-8e5bcd3ca4bc",
+        "name": "Four Times"
+      }
+    ]
+  },
+  {
+    "uuid": "e825f97d-26d4-4a44-b2fe-024d9e26d875",
+    "name": "Animal protein",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "14405510-d8ea-45c0-a0cb-d5dc55260d33",
+    "name": "Vegetable protein",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "323c3c9b-a4a6-40e1-938f-f62755805ecc",
+    "name": "Fruit",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "351f31c1-5f14-4859-8585-3d395556b1f8",
+    "name": "Dairy",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "a8c837f4-345c-4041-ac0a-b91945bad804",
+    "name": "Starch",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "d74412da-9cce-41fa-a141-c07cc8c60ec0",
+    "name": "Instant food",
+    "dataType": "NA"
+  },
+  {
+    "name": "What type of semi-solid/solid foods do you feed your child?",
+    "uuid": "5dd91413-2b15-414d-9047-a02bd9601b13",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "e825f97d-26d4-4a44-b2fe-024d9e26d875",
+        "name": "Animal protein"
+      },
+      {
+        "uuid": "14405510-d8ea-45c0-a0cb-d5dc55260d33",
+        "name": "Vegetable protein"
+      },
+      {
+        "uuid": "323c3c9b-a4a6-40e1-938f-f62755805ecc",
+        "name": "Fruit"
+      },
+      {
+        "uuid": "351f31c1-5f14-4859-8585-3d395556b1f8",
+        "name": "Dairy"
+      },
+      {
+        "uuid": "a8c837f4-345c-4041-ac0a-b91945bad804",
+        "name": "Starch"
+      },
+      {
+        "uuid": "d74412da-9cce-41fa-a141-c07cc8c60ec0",
+        "name": "Instant food"
+      }
+    ]
+  },
+  {
+    "name": "How many times a day is the child eating snacks?",
+    "uuid": "3cc301da-e4df-4e0b-add8-9d03f7383310",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "name": "None"
+      },
+      {
+        "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
+        "name": "Once"
+      },
+      {
+        "uuid": "5fc9ad18-34e1-4661-9e16-4c6e6997046c",
+        "name": "Twice"
+      },
+      {
+        "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
+        "name": "Thrice"
+      }
+    ]
+  },
+  {
+    "uuid": "2634b005-54f5-49eb-a684-23b34fc2043d",
+    "name": "Chips",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "72c2c658-93f2-480f-8a9f-a61adc742884",
+    "name": "Nimki",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "cb23c46f-263a-467a-a42d-f81d25ac14f3",
+    "name": "Biscuits",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "93d22de6-a9a0-4401-9b25-8047995343d2",
+    "name": "Kachori",
+    "dataType": "NA"
+  },
+  {
+    "name": "Tea-bread/Tea-patty",
+    "uuid": "b5187e11-a2e8-4f38-94e1-bc2cbbc06ed1",
+    "dataType": "NA"
+  },
+  {
+    "name": "What snacks are being fed?",
+    "uuid": "a23d8b82-e94c-42db-a67f-394db58cf904",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "2634b005-54f5-49eb-a684-23b34fc2043d",
+        "name": "Chips"
+      },
+      {
+        "uuid": "72c2c658-93f2-480f-8a9f-a61adc742884",
+        "name": "Nimki"
+      },
+      {
+        "uuid": "cb23c46f-263a-467a-a42d-f81d25ac14f3",
+        "name": "Biscuits"
+      },
+      {
+        "uuid": "93d22de6-a9a0-4401-9b25-8047995343d2",
+        "name": "Kachori"
+      },
+      {
+        "name": "Tea-bread/Tea-patty",
+        "uuid": "b5187e11-a2e8-4f38-94e1-bc2cbbc06ed1"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "What other snacks are being fed?",
+    "uuid": "be8c1e1e-ca8d-4f84-86cb-7304722d0ff4",
+    "dataType": "Text"
+  },
+  {
+    "name": "How many times is your child fed in 24 hours?",
+    "uuid": "0f071c2a-82a7-45cf-8198-90c12ec7a6f3",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "How many times has your child urinated in the last 24 hours?",
+    "uuid": "8883313f-8d55-4da3-8896-035fffd3a030",
+    "dataType": "Numeric"
+  },
+  {
+    "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
+    "name": "Lethargy",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
+    "name": "Redness or discharge on the skin around the belly button",
+    "dataType": "NA"
+  },
+  {
+    "name": "Is your baby having any of the following problems?",
+    "uuid": "23032ec0-3ea7-47f0-a13a-2975dda164f9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
+        "name": "Lethargy",
+        "abnormal": true
+      },
+      {
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "name": "Fever",
+        "abnormal": true
+      },
+      {
+        "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
+        "name": "Redness or discharge on the skin around the belly button",
+        "abnormal": true
+      }
+    ]
+  },
+  {
+    "name": "Has your child been sick in the last 2 weeks?",
+    "uuid": "b37d402b-0439-49d9-8bdd-b13786a1f2b1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "abnormal": true
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Skin conditions",
+    "uuid": "34ec6d43-8beb-46b1-b4ee-7bac53e14d94",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ear problem",
+    "uuid": "7120f1d1-c840-407e-b56b-968ae4386ff3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Cough and Cold",
+    "uuid": "cd2b8ad3-c147-4787-94b0-ef9013a16ddb",
+    "dataType": "NA"
+  },
+  {
+    "name": "What illness did the child have?",
+    "uuid": "c18ef97f-f3ba-4d60-9420-c8f0afa73863",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Cough and Cold",
+        "uuid": "cd2b8ad3-c147-4787-94b0-ef9013a16ddb",
+        "abnormal": true
+      },
+      {
+        "name": "Vomiting",
+        "uuid": "8126ae79-28d5-4587-bca1-1c8f518b48f4",
+        "abnormal": true
+      },
+      {
+        "name": "Fever",
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "abnormal": true
+      },
+      {
+        "name": "Loss of appetite",
+        "uuid": "47e93f5b-3bfb-4fb7-826f-278d8d0e04ce",
+        "abnormal": true
+      },
+      {
+        "name": "Diarrhea",
+        "uuid": "eaacc06f-a678-4588-a864-a1a21da2286e",
+        "abnormal": true
+      },
+      {
+        "name": "Skin conditions",
+        "uuid": "34ec6d43-8beb-46b1-b4ee-7bac53e14d94",
+        "abnormal": true
+      },
+      {
+        "name": "Ear problem",
+        "uuid": "7120f1d1-c840-407e-b56b-968ae4386ff3",
+        "abnormal": true
+      },
+      {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": true
+      }
+    ]
+  },
+  {
+    "name": "Any other illness?",
+    "uuid": "f90022c0-e236-4a10-872e-1ed73d50a61b",
+    "dataType": "Text"
+  },
+  {
+    "name": "Is your child sick right now?",
+    "uuid": "cd923b01-b535-490d-8816-1d4eb682eaec",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "abnormal": true
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  }
+]

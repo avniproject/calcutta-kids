@@ -71,6 +71,14 @@
       "encounterType": {
         "uuid": "5059adff-9aaf-4e76-ac58-684156f6d1b5"
       }
+    },
+    {
+      "uuid": "a43c2b61-7fef-4561-ae55-b58e419a63ce",
+      "name": "Child Home Visit",
+      "encounterType": {
+        "uuid": "21f346a4-dc45-4aa1-a34c-aff9c12438f8",
+        "comment": "Child Home Visit"
+      }
     }
   ]
 }
