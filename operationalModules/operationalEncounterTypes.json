@@ -64,6 +64,13 @@
         "uuid": "0c0e810e-40bb-4365-af55-51aeba6548bf",
         "comment": "Mother Home Visit"
       }
+    },
+    {
+      "uuid": "8281d9a4-9a44-4869-8b92-47feefc5d1f6",
+      "name": "Child GMP",
+      "encounterType": {
+        "uuid": "5059adff-9aaf-4e76-ac58-684156f6d1b5"
+      }
     }
   ]
 }

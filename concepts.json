@@ -1784,5 +1784,20 @@
     "name": "Other breast-feeding problems",
     "uuid": "9901bdcc-d562-4486-a5d4-b6e9681e9da8",
     "dataType": "Text"
+  },
+  {
+    "name": "Child Illness notes",
+    "uuid": "65f5d269-9e46-4d6a-9745-5636051b90b6",
+    "dataType": "Text"
+  },
+  {
+    "name": "Child Diarrhoea notes",
+    "uuid": "aa1c49fa-bf45-446b-b221-b9b9ba70b0f5",
+    "dataType": "Text"
+  },
+  {
+    "name": "Absent reason",
+    "uuid": "da35884c-2792-4852-abad-df24fe47a51d",
+    "dataType": "Text"
   }
 ]
