@@ -480,5 +480,10 @@
         "abnormal": false
       }
     ]
+  },
+  {
+    "name": "Number of calcium tablets consumed since last last visit",
+    "uuid": "c2b21d7d-447a-4f97-9775-199c316921e4",
+    "dataType": "Numeric"
   }
 ]
