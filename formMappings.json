@@ -33,5 +33,17 @@
     "formUUID": "2a13df4b-6d61-4f11-850d-1ea6d13860df",
     "encounterTypeUUID": "0c0e810e-40bb-4365-af55-51aeba6548bf",
     "programUUID": "076ddb2d-a499-4314-af95-4178553d279b"
+  },
+  {
+    "uuid": "1eb73f8b-4f58-4fec-bd89-d6bc8103078c",
+    "formUUID": "b80646b2-b74e-415f-974c-f8f48d67b27e",
+    "encounterTypeUUID": "5a18fd93-7db8-47a2-9c26-4807d89d13e7",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b"
+  },
+  {
+    "uuid": "72c105bb-865e-4767-933d-183ca8abced6",
+    "formUUID": "b80646b2-b74e-415f-974c-f8f48d67b27e",
+    "encounterTypeUUID": "5a18fd93-7db8-47a2-9c26-4807d89d13e7",
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613"
   }
 ]

@@ -18,5 +18,9 @@
   {
     "uuid": "0c0e810e-40bb-4365-af55-51aeba6548bf",
     "name": "Mother Home Visit"
+  },
+  {
+    "name": "Doctor visit",
+    "uuid": "5a18fd93-7db8-47a2-9c26-4807d89d13e7"
   }
 ]

@@ -13,6 +13,7 @@
           "name": "Do you have any of the following health issues?",
           "uuid": "ae1765e5-cfdc-4fd7-b335-cb860a310dcd",
           "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "0adc4170-9ebb-4feb-8b81-450fbf9a04dc"
           },
@@ -23,6 +24,7 @@
           "name": "Have you felt any decreased fetal movement or no fetal movement?",
           "uuid": "58a57bd0-09e3-467a-ae24-b566b6fc4b8d",
           "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "d4276c48-2db2-494b-b041-97ffc1146c83"
           },
@@ -53,7 +55,8 @@
           "concept": {
             "uuid": "1d3d368a-3180-4bda-bf42-bee1351844f3"
           },
-          "keyValues": [{"key": "Select", "value": "Single"}],
+          "keyValues": [],
+          "type": "SingleSelect",
           "displayOrder": 1,
           "mandatory": true
         },
@@ -78,7 +81,8 @@
         {
           "name": "What services have you received from an outside institution or from Calcutta Kids?",
           "uuid": "54fc74c5-b824-4446-a3c5-6e11c1d46a17",
-          "keyValues": [{"key": "Select", "value": "Multi"}],
+          "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "12638203-bf5f-45ce-a419-d51bb94ec0e1"
           },
@@ -88,7 +92,8 @@
         {
           "name": "Where do you get your FA tablets?",
           "uuid": "904141a0-b337-4859-81c8-739a760b0bf9",
-          "keyValues": [{"key": "Select", "value": "Multi"}],
+          "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "c6053dc3-593b-4f24-91f9-3d0e33b4af36"
           },
@@ -128,7 +133,8 @@
         {
           "name": "How much are you eating compared to your pre-pregnancy food intake?",
           "uuid": "bc4c7a08-142d-4834-a391-9d6d87451aa5",
-          "keyValues": [{"key": "Select", "value": "Single"}],
+          "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "bd925c49-1315-405a-999b-cd6509668281"
           },
@@ -138,7 +144,8 @@
         {
           "name": "WHY eating same or less? (Counsel accordingly)",
           "uuid": "74031f60-181c-4801-8d1b-9c232f7ba87a",
-          "keyValues": [{"key": "Select", "value": "Multi"}],
+          "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "bc8a4300-6a51-411f-a81b-198135fdf236"
           },
@@ -148,7 +155,8 @@
         {
           "name": "What did you eat yesterday?",
           "uuid": "05bdbe43-75cb-435e-8d18-551ec7555ded",
-          "keyValues": [{"key": "Select", "value": "Multi"}],
+          "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "2a5f655e-3351-42c4-87fd-e3a447eeedaa"
           },
@@ -168,7 +176,8 @@
         {
           "name": "Reason for resting less than 2 hours",
           "uuid": "cc30f6c8-c2ca-4074-a737-9022760a0112",
-          "keyValues": [{"key": "Select", "value": "Multi"}],
+          "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "955f355d-f741-4246c-952e-f539296764f8"
           },
@@ -178,7 +187,8 @@
         {
           "name": "How much manual labor are you doing compared to your pre-pregnancy manual labor?",
           "uuid": "9f6fecf8-cdeb-4b91-a2d8-8a9a0e44376b",
-          "keyValues": [{"key": "Select", "value": "Single"}],
+          "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "cac85c5d-d0eb-46a7-b30a-0a01836f8c0c"
           },
@@ -188,7 +198,8 @@
         {
           "name": "Reason for some or more manual labour",
           "uuid": "6a23df0d-1a77-413a-8f01-c7ed406a9d65",
-          "keyValues": [{"key": "Select", "value": "Multi"}],
+          "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "5a96f634-8107-46f6-8981-c356415ab654"
           },
@@ -198,7 +209,8 @@
         {
           "name": "Are you saving money for delivery?",
           "uuid": "bfb6a38b-e4e2-4164-9e9b-fbb1d3f1cf76",
-          "keyValues": [{"key": "Select", "value": "Single"}],
+          "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "65b19077-0b47-4ce7-a608-9efcf0cd8f27"
           },
@@ -208,7 +220,8 @@
         {
           "name": "Reason for not saving money",
           "uuid": "e3b6695f-990e-4935-bdc9-9ce952446b24",
-          "keyValues": [{"key": "Select", "value": "Multi"}],
+          "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "74eb771a-f9e8-4b51-a078-3a13e2044b0d"
           },

@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Vitamin intake",
+    "uuid": "78509061-12c1-480f-9ed3-2a5b4b02e6d7",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Iron",
+    "uuid": "e5a11f2d-85c7-475c-99f9-4057005d172d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Calcium",
+    "uuid": "f16747ff-2a3d-4878-90cd-8f21e3fb59b9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Congenital or developmental",
+    "uuid": "4fae5191-c85b-4a01-b655-a36170c03762"
+  },
+  {
+    "name": "Dermatological",
+    "uuid": "657f0174-ef68-4154-914e-6866f638faf2"
+  },
+  {
+    "name": "Endocrinological disorder",
+    "uuid": "2a2608bf-ea5a-4d9e-b161-a876673d8b53"
+  },
+  {
+    "name": "ENT",
+    "uuid": "8297bab2-b6d6-4bdd-8e26-df7d5d3c94fa"
+  },
+  {
+    "name": "Fever of unknown origin or rash)",
+    "uuid": "ea48b732-da83-4210-b152-1152fa55342f"
+  },
+  {
+    "name": "Gastrointestinal",
+    "uuid": "bdd57514-539e-4df9-b433-dbba76207aef"
+  },
+  {
+    "name": "General trauma / burn",
+    "uuid": "79b29375-73fe-4e85-bc08-719fc4891120"
+  },
+  {
+    "name": "Genitourinary",
+    "uuid": "b2e7ecc1-7b0a-4961-b419-c8e2c841d94b"
+  },
+  {
+    "name": "Gynecological",
+    "uuid": "146b2b2c-5360-4bbc-abb0-97e55e737f06"
+  },
+  {
+    "name": "Infectious disease",
+    "uuid": "792eac0c-5e5f-47ff-963d-b016e5368795"
+  },
+  {
+    "name": "Childbirth / Puerperium",
+    "uuid": "6cf65a9d-a358-458b-aef2-df44c164b9ea"
+  },
+  {
+    "name": "Neurological",
+    "uuid": "5df74cd2-f532-4ec4-af04-f1b5ccad9b94"
+  },
+  {
+    "name": "Nutritional deficiency",
+    "uuid": "18ee1769-8b8c-43a1-8bef-53d6d6156e28"
+  },
+  {
+    "name": "Ophthalmic infection /allergy",
+    "uuid": "f29a383f-fdbe-40d8-9521-74306ad888cd"
+  },
+  {
+    "name": "Respiratory",
+    "uuid": "b1c58306-0535-4cc6-b231-8a0c9c002f9a"
+  },
+  {
+    "name": "Health problem / Classification",
+    "uuid": "4771de9a-2fe1-4be8-8d8f-a0fded63b9b5",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Congenital or developmental",
+        "uuid": "4fae5191-c85b-4a01-b655-a36170c03762"
+      },
+      {
+        "name": "Dermatological",
+        "uuid": "657f0174-ef68-4154-914e-6866f638faf2"
+      },
+      {
+        "name": "Endocrinological disorder",
+        "uuid": "2a2608bf-ea5a-4d9e-b161-a876673d8b53"
+      },
+      {
+        "name": "ENT",
+        "uuid": "8297bab2-b6d6-4bdd-8e26-df7d5d3c94fa"
+      },
+      {
+        "name": "Fever of unknown origin or rash)",
+        "uuid": "ea48b732-da83-4210-b152-1152fa55342f"
+      },
+      {
+        "name": "Gastrointestinal",
+        "uuid": "bdd57514-539e-4df9-b433-dbba76207aef"
+      },
+      {
+        "name": "General trauma / burn",
+        "uuid": "79b29375-73fe-4e85-bc08-719fc4891120"
+      },
+      {
+        "name": "Genitourinary / Gynecological",
+        "uuid": "b2e7ecc1-7b0a-4961-b419-c8e2c841d94b"
+      },
+      {
+        "name": "Infectious disease",
+        "uuid": "792eac0c-5e5f-47ff-963d-b016e5368795"
+      },
+      {
+        "name": "Pregnancy",
+        "uuid": "adc37af2-06c1-4adf-9f10-0e121b8a49b8"
+      },
+      {
+        "name": "Childbirth / Puerperium",
+        "uuid": "6cf65a9d-a358-458b-aef2-df44c164b9ea"
+      },
+      {
+        "name": "Neurological",
+        "uuid": "5df74cd2-f532-4ec4-af04-f1b5ccad9b94"
+      },
+      {
+        "name": "Nutritional deficiency",
+        "uuid": "18ee1769-8b8c-43a1-8bef-53d6d6156e28"
+      },
+      {
+        "name": "Ophthalmic infection /allergy",
+        "uuid": "f29a383f-fdbe-40d8-9521-74306ad888cd"
+      },
+      {
+        "name": "Respiratory",
+        "uuid": "b1c58306-0535-4cc6-b231-8a0c9c002f9a"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other health problem or classification",
+    "uuid": "e2ce737e-87c8-4ce5-b73f-3569772acf86",
+    "dataType": "Text"
+  },
+  {
+    "name": "Chief complaint",
+    "uuid": "6caeddd6-ffb4-4824-80cc-f7dbda85e9db",
+    "dataType": "Text"
+  },
+  {
+    "name": "Assessment",
+    "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Diagnosis",
+    "uuid": "5bc49865-4911-48ed-8517-ff9a7b3e365d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Refer to hospital",
+    "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Followup date",
+    "uuid": "1aeda2b1-25e6-4f65-8225-e25293b08344",
+    "dataType": "Date"
+  }
+]

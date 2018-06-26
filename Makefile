@@ -39,6 +39,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
 	$(call _curl,POST,concepts,@mother/motherHomeVisitConcepts.json)
 	$(call _curl,POST,concepts,@mother/ancDoctorVisitConcepts.json)
+	$(call _curl,POST,concepts,@doctorVisitConcepts.json)
 
 deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@registrationForm.json)
@@ -46,6 +47,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@testForm.json)
 	$(call _curl,POST,forms,@child/childHomeVisit.json)
 	$(call _curl,POST,forms,@mother/ck-ancHomeVisitForm.json)
+	$(call _curl,POST,forms,@doctorVisitForm.json)
 
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)

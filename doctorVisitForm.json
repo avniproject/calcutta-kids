@@ -1,0 +1,170 @@
+{
+  "name": "Doctor visit",
+  "uuid": "b80646b2-b74e-415f-974c-f8f48d67b27e",
+  "formType": "ProgramEncounter",
+  "formElementGroups": [
+    {
+      "uuid": "dff30836-c5a9-4cf4-9538-65f01582f840",
+      "name": "Examination",
+      "display": "Examination",
+      "displayOrder": 1,
+      "formElements": [
+        {
+          "name": "Weight",
+          "uuid": "dadc1df3-d8ad-4790-8072-3d76313c97e9",
+          "keyValues": [],
+          "concept": {
+            "uuid": "75b1656e-2777-4753-9612-ce03a766a5e1"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        },
+        {
+          "name": "Height",
+          "uuid": "68d55ffb-d091-408f-abd6-ad1eaa2087ab",
+          "keyValues": [],
+          "concept": {
+            "uuid": "d883d5fe-e17d-4136-b989-089fa0295e34"
+          },
+          "displayOrder": 2,
+          "mandatory": true
+        },
+        {
+          "name": "Temperature",
+          "uuid": "9042d2dc-929c-45a1-ba50-7362173720d5",
+          "keyValues": [],
+          "concept": {
+            "uuid": "e6edb61c-c3d9-44c8-abf7-4fd09fe39ec9"
+          },
+          "displayOrder": 3,
+          "mandatory": true
+        },
+        {
+          "name": "Systolic",
+          "uuid": "2e44eee8-a146-420d-80d3-8cc2a4bf911f",
+          "keyValues": [],
+          "concept": {
+            "uuid": "2a04bf88-6346-4eda-a86c-8a2afc011b22"
+          },
+          "displayOrder": 4,
+          "mandatory": true
+        },
+        {
+          "name": "Diastolic",
+          "uuid": "b47d6f7e-8200-4eeb-87d0-a5558643baa3",
+          "keyValues": [],
+          "concept": {
+            "uuid": "1e2d41a2-5b6a-4ad7-ab91-51d3cdf122bd"
+          },
+          "displayOrder": 5,
+          "mandatory": true
+        },
+        {
+          "name": "Vitamin intake",
+          "uuid": "bd4f8a7b-9b36-4c44-a4ce-ef35a629784e",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "78509061-12c1-480f-9ed3-2a5b4b02e6d7"
+          },
+          "displayOrder": 6,
+          "mandatory": false
+        },
+        {
+          "name": "Iron",
+          "uuid": "aab994d4-9ba4-4129-8c56-2907adcbb862",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "e5a11f2d-85c7-475c-99f9-4057005d172d"
+          },
+          "displayOrder": 7,
+          "mandatory": false
+        },
+        {
+          "name": "Calcium",
+          "uuid": "ef825377-948c-4baf-9eda-ee1aa821ee1f",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "f16747ff-2a3d-4878-90cd-8f21e3fb59b9"
+          },
+          "displayOrder": 8,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "f74ca395-08e7-43f5-b657-f4e86ff00a54",
+      "name": "Assessment",
+      "display": "Assessment",
+      "displayOrder": 2,
+      "formElements": [
+        {
+          "name": "Health Problem / Classification",
+          "uuid": "6c38638e-0819-4bd9-a673-f914afbe59f2",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "f16747ff-2a3d-4878-90cd-8f21e3fb59b9"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Chief complaint",
+          "uuid": "96074116-eef8-48b2-a98a-af28d977e760",
+          "keyValues": [],
+          "concept": {
+            "uuid": "6caeddd6-ffb4-4824-80cc-f7dbda85e9db"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Assessment",
+          "uuid": "3cfe5667-6d56-4583-9591-45e83523b715",
+          "keyValues": [],
+          "concept": {
+            "name": "Assessment",
+            "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
+            "dataType": "Text"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Diagnosis",
+          "uuid": "514a3f27-3ad2-435f-adeb-aa49323ecd31",
+          "keyValues": [],
+          "concept": {
+            "uuid": "5bc49865-4911-48ed-8517-ff9a7b3e365d"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        },
+        {
+          "name": "Patient should visit hospital",
+          "uuid": "698fe375-6302-494a-87a2-7bc7ea9a01b3",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e"
+          },
+          "displayOrder": 5,
+          "mandatory": false
+        },
+        {
+          "name": "Follow up on",
+          "uuid": "530f2361-eff8-4d80-8178-03c378a1ae87",
+          "keyValues": [],
+          "concept": {
+            "uuid": "1aeda2b1-25e6-4f65-8225-e25293b08344"
+          },
+          "displayOrder": 6,
+          "mandatory": false
+        }
+      ]
+    }
+  ]
+}
