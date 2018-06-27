@@ -1,5 +1,25 @@
 [
   {
+    "name": "General Advice",
+    "uuid": "72f1ecc4-9f6d-4bab-ba01-a11c822bfb5a",
+    "dataType": "Text"
+  },
+  {
+    "name": "USG Scanning Report - Viability",
+    "uuid": "401e603c-e5a9-4612-98eb-5a7faf9a4f8b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
+  },
+  {
     "comment": "Pregnancy complications",
     "uuid": "0adc4170-9ebb-4feb-8b81-450fbf9a04dc",
     "dataType": "Coded",
@@ -45,5 +65,29 @@
         "abnormal": true
       }
     ]
+  },
+  {
+    "name": "Nutrients",
+    "uuid": "e1754fdb-1015-4d9e-a6e1-3b9dc8fc0317",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "comment": "Vitamin intake",
+        "uuid": "78509061-12c1-480f-9ed3-2a5b4b02e6d7"
+      },
+      {
+        "uuid": "e5a11f2d-85c7-475c-99f9-4057005d172d",
+        "comment": "Iron"
+      },
+      {
+        "uuid": "f16747ff-2a3d-4878-90cd-8f21e3fb59b9",
+        "comment": "Calcium"
+      }
+    ]
+  },
+  {
+    "uuid": "1af1cc0b-0f35-42ad-91be-46e7663042cf",
+    "name": "Trimester",
+    "dataType": "Numeric"
   }
 ]

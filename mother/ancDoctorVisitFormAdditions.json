@@ -1,0 +1,126 @@
+{
+  "comment": "ANC",
+  "uuid": "3a95e9b0-731a-4714-ae7c-10e1d03cebfe",
+  "userUUID": "5fed2907-df3a-4867-aef5-c87f4c78a31a",
+  "formElementGroups": [
+    {
+      "uuid": "e2737f19-7f9a-4d12-bf02-c676091a09be",
+      "comment": "ANC General",
+      "formElements": [
+        {
+          "name": "Trimester",
+          "uuid": "18c4b316-c012-42f7-b559-19dc41e5bab9",
+          "displayOrder": 1.9,
+          "keyValues": [
+            {
+              "key": "editable",
+              "value": false
+            }
+          ],
+          "concept": {
+            "uuid": "1af1cc0b-0f35-42ad-91be-46e7663042cf"
+          }
+        },
+        {
+          "name": "Height",
+          "uuid": "a98581c6-99ac-43ac-ac7e-90f40d646a7f",
+          "keyValues": [],
+          "concept": {
+            "comment": "Height",
+            "uuid": "d883d5fe-e17d-4136-b989-089fa0295e34"
+          },
+          "displayOrder": 3.2
+        },
+        {
+          "name": "Nutrients",
+          "uuid": "b4198c4d-cf9c-419c-b2c7-009a308367fc",
+          "keyValues": [],
+          "concept": {
+            "uuid": "e1754fdb-1015-4d9e-a6e1-3b9dc8fc0317",
+            "comment": "Nutrients"
+          },
+          "displayOrder": 4.3
+        }
+      ]
+    },
+    {
+      "uuid": "353eec4f-052f-466b-9acb-7a740e5c19e5",
+      "comment": "ANC Lab Diagnostics - USG",
+      "formElements": [
+        {
+          "name": "Viability",
+          "uuid": "94599241-13ca-48d3-b9f3-a49217d40d6f",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "401e603c-e5a9-4612-98eb-5a7faf9a4f8b",
+            "comment": "USG Scanning Report - Viability"
+          },
+          "displayOrder": 3.9,
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "uuid": "30d7754e-f948-48c0-8936-ffd9f5b512e8",
+      "name": "Notes",
+      "display": "Notes",
+      "displayOrder": 8.1,
+      "formElements": [
+        {
+          "name": "Treatment notes",
+          "uuid": "a6295e24-1c43-4b6a-8852-c7b2782a280c",
+          "keyValues": [],
+          "concept": {
+            "comment": "Treatment Advice",
+            "uuid": "cdbdd5f9-6522-4c63-82bc-93e96a301a9f"
+          },
+          "displayOrder": 0,
+          "mandatory": false
+        },
+        {
+          "name": "Other notes",
+          "uuid": "6ed84b74-4323-4566-8d68-bf490c456185",
+          "keyValues": [],
+          "concept": {
+            "uuid": "72f1ecc4-9f6d-4bab-ba01-a11c822bfb5a",
+            "comment": "General Advice"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "1dc961c3-63fe-4b42-9ef0-0148e112aee7",
+      "name": "Referral & Followup",
+      "display": "Referral & Followup",
+      "displayOrder": 8.2,
+      "formElements": [
+        {
+          "name": "Patient should visit hospital",
+          "uuid": "92d7ca08-fb7c-443b-90b7-3a95edd8f197",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
+            "comment": "Refer to the hospital"
+          },
+          "displayOrder": 0,
+          "mandatory": false
+        },
+        {
+          "name": "Follow up on",
+          "uuid": "2b976512-a3c1-4dff-9d14-3ac59c303d22",
+          "keyValues": [],
+          "concept": {
+            "comment": "Followup date",
+            "uuid": "1aeda2b1-25e6-4f65-8225-e25293b08344"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        }
+      ]
+    }
+  ]
+}

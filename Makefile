@@ -40,6 +40,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@mother/ancHomeVisitConcepts.json)
 	$(call _curl,POST,concepts,@doctorVisitConcepts.json)
 	$(call _curl,POST,concepts,@mother/deliveryConcepts.json)
+	$(call _curl,POST,concepts,@mother/ancDoctorVisitConcepts.json)
 
 deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@registrationForm.json)
@@ -54,6 +55,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,operationalPrograms,@operationalModules/operationalPrograms.json)
 
 	$(call _curl,PATCH,forms,@mother/enrolmentAdditions.json)
+	$(call _curl,PATCH,forms,@mother/ancDoctorVisitFormAdditions.json)
 	$(call _curl,PATCH,forms,@mother/ancLabTestResultsAdditions.json)
 	$(call _curl,PATCH,forms,@mother/motherDeliveryFormAdditions.json)
 

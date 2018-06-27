@@ -3,7 +3,7 @@
   "operationalEncounterTypes": [
     {
       "uuid": "160c7f42-392c-41f9-af82-5e483109918a",
-      "name": "ANC Doctor visit",
+      "name": "ANC",
       "encounterType": {
         "uuid": "b1efaffa-c8df-4801-8bbb-bf7c7bd6a0bd",
         "comment": "ANC"
