@@ -38,6 +38,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
 	$(call _curl,POST,concepts,@mother/motherHomeVisitConcepts.json)
+	$(call _curl,POST,concepts,@mother/ancDoctorVisitConcepts.json)
 
 deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@registrationForm.json)
