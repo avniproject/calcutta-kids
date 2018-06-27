@@ -43,29 +43,29 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@mother/ancDoctorVisitConcepts.json)
 
 deploy_refdata: deploy_concepts
-	$(call _curl,POST,forms,@registrationForm.json)
-	$(call _curl,POST,forms,@sesForm.json)
-	$(call _curl,POST,forms,@testForm.json)
-	$(call _curl,POST,forms,@child/childHomeVisit.json)
-	$(call _curl,POST,forms,@mother/ck-ancHomeVisitForm.json)
-	$(call _curl,POST,forms,@doctorVisitForm.json)
-
+	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)
 	$(call _curl,POST,operationalPrograms,@operationalModules/operationalPrograms.json)
+
+	$(call _curl,DELETE,forms,@mother/enrolmentDeletions.json)
+	$(call _curl,DELETE,forms,@mother/motherDeliveryFormDeletions.json)
 
 	$(call _curl,PATCH,forms,@mother/enrolmentAdditions.json)
 	$(call _curl,PATCH,forms,@mother/ancDoctorVisitFormAdditions.json)
 	$(call _curl,PATCH,forms,@mother/ancLabTestResultsAdditions.json)
 	$(call _curl,PATCH,forms,@mother/motherDeliveryFormAdditions.json)
 
-	$(call _curl,DELETE,forms,@mother/enrolmentDeletions.json)
-	$(call _curl,DELETE,forms,@mother/motherDeliveryFormDeletions.json)
-
+	$(call _curl,POST,forms,@registrationForm.json)
+	$(call _curl,POST,forms,@sesForm.json)
+	$(call _curl,POST,forms,@testForm.json)
+	$(call _curl,POST,forms,@child/childHomeVisit.json)
+	$(call _curl,POST,forms,@mother/ck-ancHomeVisitForm.json)
+	$(call _curl,POST,forms,@doctorVisitForm.json)
 	$(call _curl,POST,forms,@mother/motherHomeVisitForm.json)
 	$(call _curl,POST,forms,@child/childGMPForm.json)
+
 	$(call _curl,POST,formMappings,@formMappings.json)
-	$(call _curl,POST,catchments,@catchments.json)
 # </refdata>
 
 # <deploy>

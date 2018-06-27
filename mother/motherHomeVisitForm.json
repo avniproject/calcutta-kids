@@ -217,6 +217,36 @@
           "mandatory": true
         }
       ]
+    },
+    {
+      "uuid": "04c1a9fa-9ea7-4220-b6a0-05317cc15acf",
+      "name": "Referral",
+      "display": "Referral",
+      "displayOrder": 3,
+      "formElements": [
+        {
+          "name": "Refer mother to",
+          "uuid": "79ccb016-0a51-4672-9d41-daadfd193948",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "d5372690-d699-4bd0-ad6e-6d8f0ba559a0"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Should this person be considered a special case?",
+          "uuid": "8708bbb8-8293-454e-a6ea-637ad65a025d",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "24c0eb2b-d6bf-4099-a8d5-0ac2217e98b7"
+          },
+          "displayOrder": 2,
+          "mandatory": true
+        }
+      ]
     }
   ]
 }
