@@ -74,18 +74,10 @@
     },
     {
       "uuid": "66ff5381-9565-4640-a664-e1d4698b2b56",
-      "name": "Home Visit",
+      "name": "Mother Home Visit",
       "encounterType": {
         "uuid": "0c0e810e-40bb-4365-af55-51aeba6548bf",
         "comment": "Mother Home Visit"
-      }
-    },
-    {
-      "uuid": "ecac81f1-09d9-4103-839c-dddc57bddf7b",
-      "name": "Home Visit Followup",
-      "encounterType": {
-        "uuid": "ec42d72b-f270-4946-9a02-577fe88982ba",
-        "comment": "Mother Home Visit Followup"
       }
     },
     {
