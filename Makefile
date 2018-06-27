@@ -37,7 +37,7 @@ create_org: ## Create Calcutta Kids org and user+privileges
 deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
-	$(call _curl,POST,concepts,@mother/motherHomeVisitConcepts.json)
+	$(call _curl,POST,concepts,@mother/ancHomeVisitConcepts.json)
 	$(call _curl,POST,concepts,@doctorVisitConcepts.json)
 	$(call _curl,POST,concepts,@mother/deliveryConcepts.json)
 
