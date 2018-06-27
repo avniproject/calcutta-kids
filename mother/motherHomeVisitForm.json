@@ -110,7 +110,7 @@
             "uuid": "3c31a93d-d731-49b3-8adf-5d7fdb930fb9"
           },
           "displayOrder": 8,
-          "mandatory": true
+          "mandatory": false
         },
         {
           "name": "How many Calcium tablets have you consumed since your last visit?",
@@ -134,7 +134,7 @@
           "mandatory": true
         },
         {
-          "name": "If eating the same or less than pre-pregnancy, WHY?",
+          "name": "Why are you eating the same or less?",
           "uuid": "9cba0efa-c7c9-42de-a47c-4a6383b6ef1f",
           "keyValues": [],
           "type": "MultiSelect",
@@ -207,7 +207,7 @@
           "mandatory": true
         },
         {
-          "name": "What other breast-feeding problems?",
+          "name": "What other breast feeding problems?",
           "uuid": "5d05b836-dd25-4f0b-a986-ac9489e34cb1",
           "keyValues": [],
           "concept": {
