@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Private hospital",
+    "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
+  },
+  {
+    "name": "Home in FB",
+    "uuid": "6263ef00-3a5c-46ea-8733-55c4c02cc061"
+  },
+  {
+    "name": "Home outside FB",
+    "uuid": "efd12180-21ac-49df-8988-340721137789"
+  },
+  {
+    "uuid": "a0405799-1e3c-40ef-90ba-84c9c0931660",
+    "answers": [
+      {
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168",
+        "abnormal": false
+      },
+      {
+        "name": "Home in FB",
+        "uuid": "6263ef00-3a5c-46ea-8733-55c4c02cc061"
+      },
+      {
+        "name": "Home outside FB",
+        "uuid": "efd12180-21ac-49df-8988-340721137789"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other place of delivery",
+    "uuid": "3a751617-2cc6-40f7-a045-dab175c363dc",
+    "dataType": "Text"
+  },
+  {
+    "name": "Financial constraints",
+    "uuid": "8b01af76-82f0-4f58-b62e-a044c2d73914"
+  },
+  {
+    "name": "Family pressure or belief",
+    "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3"
+  },
+  {
+    "name": "Short labour",
+    "uuid": "6fa388e6-82a9-4efe-b168-44a93e2992a2"
+  },
+  {
+    "name": "Distance to health facility",
+    "uuid": "17fec1c8-806d-4882-9674-e7883d9ba9dc"
+  },
+  {
+    "name": "Reason to have birth at home",
+    "uuid": "c41b67c4-62be-4ea4-9064-6a188777407e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Family pressure or belief",
+        "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3"
+      },
+      {
+        "name": "Short labour",
+        "uuid": "6fa388e6-82a9-4efe-b168-44a93e2992a2"
+      },
+      {
+        "name": "Distance to health facility",
+        "uuid": "17fec1c8-806d-4882-9674-e7883d9ba9dc"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other reason to have birth at home",
+    "uuid": "842b3382-09ce-4c9f-ba5e-20b5a6c1086a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Received JSY",
+    "uuid": "59086cb8-f1cd-4f2a-bb78-accb03fe301a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Labour time",
+    "uuid": "bc7c8d69-596b-4607-b858-41c500a5a3cf",
+    "dataType": "Numeric",
+    "unit": "Hours"
+  },
+  {
+    "name": "Vitamin A given",
+    "uuid": "ad4da876-15f6-4e57-a040-7c4e9a7152a9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Health volunteer",
+    "uuid": "60058049-0a5d-4f2f-ad27-e5b2342b73f4"
+  },
+  {
+    "uuid": "58b6367a-825f-43e2-b6b7-b35a5cbc3a09",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60",
+        "abnormal": false
+      },
+      {
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56",
+        "abnormal": false
+      },
+      {
+        "uuid": "5dcdbebc-913e-46a5-a254-dd38d2956c80",
+        "abnormal": false
+      },
+      {
+        "name": "Health volunteer",
+        "uuid": "60058049-0a5d-4f2f-ad27-e5b2342b73f4"
+      }
+    ]
+  },
+  {
+    "name": "Premature delivery",
+    "uuid": "c8465c3a-cb35-47df-b44f-eb8268583a7d"
+  },
+  {
+    "name": "Pre-eclampsia / Eclampsia",
+    "uuid": "4af5db8d-ebea-456d-8bab-a87b1aac19d2"
+  },
+  {
+    "name": "Heavy bleeding after delivery",
+    "uuid": "3c286ec4-14ab-478a-92dc-97c4f7af5a2d"
+  }
+]
