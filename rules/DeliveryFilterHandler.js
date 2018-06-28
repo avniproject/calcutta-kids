@@ -14,7 +14,9 @@ class DeliveryFilterHandler {
             return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Place of delivery', 'Other');
         };
         this.whyDidYouChooseToHaveABirthAtHome = (programEncounter, formElement) => {
-            return new FormElementStatusBuilder({programEncounter, formElement}).show().when.valueInEncounter('Place of delivery').containsAnyAnswerConceptName('Home in FB', 'Home outside FB').build();
+            let formElementStatusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+            formElementStatusBuilder.show().when.valueInEncounter('Place of delivery').containsAnyAnswerConceptName('Home in FB', 'Home outside FB');
+            return formElementStatusBuilder.build();
         };
         this.otherReasonToHaveBirthAtHome = (programEncounter, formElement) => {
             return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason to have birth at home', 'Other');
