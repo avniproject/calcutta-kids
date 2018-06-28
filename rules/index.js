@@ -21,7 +21,7 @@ class MotherProgramEnrolmentHandler {
     }
 }
 
-@DeliveryFilter('39f152ec-4b3a-4b08-b4cd-49c569d8a404', 'Skip logic for delivery form')
+@DeliveryFilter('39f152ec-4b3a-4b08-b4cd-49c569d8a404', 'Skip logic for delivery form', 100.0, {})
 class DeliveryFilterHandler {
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper
