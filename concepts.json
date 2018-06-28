@@ -1385,12 +1385,6 @@
     ]
   },
   {
-    "name": "Counselling checklist for CK mother enrolment",
-    "uuid": "f5329c16-50ba-490e-af8c-fbea3e385baf",
-    "dataType": "Coded",
-    "answers": []
-  },
-  {
     "name": "Away at village?",
     "uuid": "5b30a5b5-8ab5-4643-a424-2992f2b8df11",
     "dataType": "Coded",

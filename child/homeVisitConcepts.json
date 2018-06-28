@@ -674,17 +674,5 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Child post natal discussion topics LBW",
-    "uuid": "29ac7a1f-8983-4555-bd7c-40f5e5378276",
-    "dataType": "Coded",
-    "answers": []
-  },
-  {
-    "name": "Child post natal discussion topics",
-    "uuid": "2303a1c3-a987-4a11-8ae5-4afa86c04110",
-    "dataType": "Coded",
-    "answers": []
   }
 ]

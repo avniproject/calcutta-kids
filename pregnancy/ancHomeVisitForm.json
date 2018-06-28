@@ -267,6 +267,44 @@
           "mandatory": true
         }
       ]
+    },
+    {
+      "uuid": "6f100392-ea83-4040-bd63-fd8e7fa2c3cc",
+      "name": "Discussion items",
+      "display": "Discussion items",
+      "displayOrder": 5,
+      "formElements": [
+        {
+          "name": "ANC discussion item 1",
+          "uuid": "7555f429-23d9-4faf-8e50-3ada9de9c817",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "ANC discussion item 2",
+          "uuid": "826b5279-40dd-4c6f-bb60-6abf1dcd9da9",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "ANC discussion item 3",
+          "uuid": "d8b186c1-aa5b-4f3d-ae0a-85a05e8668c4",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }

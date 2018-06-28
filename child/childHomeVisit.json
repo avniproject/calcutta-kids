@@ -429,7 +429,7 @@
           "keyValues": [],
           "type": "SingleSelect",
           "concept": {
-            "uuid": "29ac7a1f-8983-4555-bd7c-40f5e5378276"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -440,7 +440,7 @@
           "keyValues": [],
           "type": "SingleSelect",
           "concept": {
-            "uuid": "2303a1c3-a987-4a11-8ae5-4afa86c04110"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 2,
           "mandatory": false

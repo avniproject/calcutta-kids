@@ -59,6 +59,12 @@ class ANCHomeVisitFilterHandler {
         this.howManyCalciumTabletsHaveYouConsumedSinceYourLastVisit = (programEncounter, formElement) => {
             return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
         };
+        this.ancDiscussionItem2 = (programEncounter, formElement) => {
+            return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 1);
+        };
+        this.ancDiscussionItem3 = (programEncounter, formElement) => {
+            return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
+        };
     }
 
     static afterTrimester(programEncounter, formElement, trimesterNumber) {
