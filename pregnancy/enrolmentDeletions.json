@@ -20,8 +20,12 @@
           "comment": "Obstetrics history"
         },
         {
-          "uuid":"955713c1-ea0e-439f-8d95-8fdef38a9a49",
-          "comment":"Family History"
+          "uuid": "ea8e0c8c-ca3f-46e7-b64b-2dedb0391c03",
+          "comment": "Other obstetrics history"
+        },
+        {
+          "uuid": "955713c1-ea0e-439f-8d95-8fdef38a9a49",
+          "comment": "Family History"
         }
       ]
     }

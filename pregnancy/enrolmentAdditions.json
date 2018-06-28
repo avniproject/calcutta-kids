@@ -59,7 +59,7 @@
     },
     {
       "uuid": "50a2d045-88fe-44e3-86e0-0dba16f53818",
-      "comment": "Past pregnancy complications: replace Obstetrics history",
+      "comment": "Past pregnancy complications",
       "formElements": [
         {
           "name": "Obstetrics history",
@@ -78,6 +78,17 @@
             "uuid": "8a4ab436-6767-45d5-95d7-075d9459609e"
           },
           "displayOrder": 0.9,
+          "mandatory": true
+        },
+        {
+          "name": "Any other complications/complaints",
+          "uuid": "657d50eb-e4b4-442f-979c-36252bb1f4b3",
+          "keyValues": [],
+          "concept": {
+            "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
+            "comment":"Other pregnancy complaints"
+          },
+          "displayOrder": 0.91,
           "mandatory": true
         },
         {

@@ -89,5 +89,10 @@
     "uuid": "1af1cc0b-0f35-42ad-91be-46e7663042cf",
     "name": "Trimester",
     "dataType": "Numeric"
+  },
+  {
+    "name": "Other pregnancy complaints",
+    "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
+    "dataType": "Text"
   }
 ]

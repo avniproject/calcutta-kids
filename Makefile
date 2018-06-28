@@ -23,7 +23,7 @@ define _curl
 	curl -X $(1) $(server):$(port)/$(2) -d $(3)  \
 		-H "Content-Type: application/json"  \
 		-H "ORGANISATION-NAME: $(org_name)"  \
-		-H "AUTH-TOKEN: $(token)"
+		$(if $(token),-H "AUTH-TOKEN: $(token)",)
 	@echo
 	@echo
 endef
