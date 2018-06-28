@@ -239,6 +239,44 @@
           "mandatory": true
         }
       ]
+    },
+    {
+      "uuid": "5ea9b686-4e71-424a-8869-bcc0562ecee2",
+      "name": "Follow up",
+      "display": "Follow up",
+      "displayOrder": 4,
+      "formElements": [
+        {
+          "name": "Refer to doctor",
+          "uuid": "1f668732-ac75-4e1f-838f-35df80f31eb0",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "9ec4b19c-4e46-4150-ac35-4a191fdad234"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        },
+        {
+          "name": "Refer to hospital",
+          "uuid": "a57b4620-5a46-4921-bd17-28c911a315ac",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e"
+          },
+          "displayOrder": 2,
+          "mandatory": true
+        },
+        {
+          "name": "Consider a special case",
+          "uuid": "6c25e2b9-8460-4860-b887-8eee29e83489",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "4016280b-db7d-4b62-bf67-d1f7af56d942"
+          },
+          "displayOrder": 3,
+          "mandatory": true
+        }
+      ]
     }
   ]
 }

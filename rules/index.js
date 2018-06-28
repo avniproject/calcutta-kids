@@ -1,11 +1,11 @@
 const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper} = require('rules-config/rules');
 const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./childHomeVisit");
+const deliveryFilterHandler = require('DeliveryFilterHandler');
 
 //The following ViewFilter logics to be validated.
 //Kept on hold as rules-config library is not ready yet.
 
 const MotherProgramEnrolmentFilter = RuleFactory('026e2f5c-8670-4e4b-9a54-cb03bbf3093d', 'ViewFilter');
-const DeliveryFilter = RuleFactory("cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2", 'ViewFilter');
 
 class MotherProgramEnrolmentHandler {
     constructor() {
@@ -20,55 +20,6 @@ class MotherProgramEnrolmentHandler {
         this.numberOfChildDeaths = hideOnFirstPregnancy;
         this.numberOfLivingChildren = hideOnFirstPregnancy;
     }
-}
-
-@DeliveryFilter('39f152ec-4b3a-4b08-b4cd-49c569d8a404', 'Skip logic for delivery form', 100.0, {})
-class DeliveryFilterHandler {
-    otherPlaceOfDelivery(programEncounter, formElement) {
-        return DeliveryFilterHandler.encounterCodedObsHas(programEncounter, formElement, 'Place of delivery', 'Other');
-    }
-
-    whyDidYouChooseToHaveABirthAtHome(programEncounter, formElement) {
-        const statusBuilder = new FormElementStatusBuilder({
-            programEncounter,
-            formElement
-        });
-        statusBuilder.show().when.valueInEncounter('Place of delivery').containsAnyAnswerConceptName('Home in FB', 'Home outside FB');
-        return statusBuilder.build();
-    }
-
-    otherReasonToHaveBirthAtHome(programEncounter, formElement) {
-        return DeliveryFilterHandler.encounterCodedObsHas(programEncounter, formElement, 'Reason to have birth at home', 'Other');
-    }
-
-    didYouReceiveJsy(programEncounter, formElement) {
-        return DeliveryFilterHandler.encounterCodedObsHas(programEncounter, formElement, 'Place of delivery', 'Government Hospital');
-    }
-
-    labourTime(programEncounter, formElement) {
-        return DeliveryFilterHandler.encounterCodedObsHas(programEncounter, formElement, 'Place of delivery', 'Private hospital');
-    }
-
-    dateOfDischarge(programEncounter, formElement) {
-        const statusBuilder = new FormElementStatusBuilder({
-            programEncounter,
-            formElement
-        });
-        statusBuilder.show().when.valueInEncounter('Place of delivery').not.containsAnyAnswerConceptName('Home in FB', 'Home outside FB');
-        return statusBuilder.build();
-    }
-
-    static encounterCodedObsHas(programEncounter, formElement, conceptName, answerConceptName) {
-        const statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-        statusBuilder.show().when.valueInEncounter(conceptName).containsAnswerConceptName(answerConceptName);
-        return statusBuilder.build();
-    }
-
-    static exec(programEncounter, formElementGroup, today) {
-        return FormElementsStatusHelper
-            .getFormElementsStatusesWithoutDefaults(new DeliveryFilterHandler(), programEncounter, formElementGroup, today);
-    }
-
 }
 
 @MotherProgramEnrolmentFilter('40202177-7142-45c1-bf70-3d3b432799c0', 'Hide non applicable questions for first pregnancy', 100.0, {})
@@ -154,5 +105,5 @@ module.exports = {
     CKHomeVisitFormRules,
     HomeVisitDecisions,
     ChildHomeVisitFilter,
-    DeliveryFilterHandler
+    deliveryFilterHandler
 };
