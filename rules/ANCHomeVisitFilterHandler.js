@@ -26,7 +26,11 @@ class ANCHomeVisitFilterHandler {
         this.reasonForNotSavingMoney = (programEncounter, formElement) => {
             return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Saving money for delivery', 'Yes');
         };
-
+        this.whenDidTheMovementStopOrDecrease = (programEncounter, formElement) => {
+            let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+            statusBuilder.show().when.valueInEncounter('Foetal movements').containsAnswerConceptName('Reduced').or.when.valueInEncounter('Foetal movements').containsAnswerConceptName('Absent');
+            return statusBuilder.build();
+        };
     }
 }
 

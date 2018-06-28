@@ -450,31 +450,5 @@
     "name": "Number of calcium tablets consumed since last last visit",
     "uuid": "c2b21d7d-447a-4f97-9775-199c316921e4",
     "dataType": "Numeric"
-  },
-  {
-    "name": "Refer to doctor",
-    "uuid": "9ec4b19c-4e46-4150-ac35-4a191fdad234",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
-      },
-      {
-        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-      }
-    ]
-  },
-  {
-    "name": "Consider a special case",
-    "uuid": "4016280b-db7d-4b62-bf67-d1f7af56d942",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
-      },
-      {
-        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-      }
-    ]
   }
 ]

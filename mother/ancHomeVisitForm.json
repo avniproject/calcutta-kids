@@ -26,7 +26,7 @@
           "keyValues": [],
           "type": "SingleSelect",
           "concept": {
-            "uuid": "d4276c48-2db2-494b-b041-97ffc1146c83"
+            "uuid": "f90bb5df-c7fa-4266-8141-3534f3e47e6c"
           },
           "displayOrder": 2,
           "mandatory": true
@@ -247,23 +247,13 @@
       "displayOrder": 4,
       "formElements": [
         {
-          "name": "Refer to doctor",
+          "name": "Refer to",
           "uuid": "1f668732-ac75-4e1f-838f-35df80f31eb0",
           "type": "SingleSelect",
           "concept": {
-            "uuid": "9ec4b19c-4e46-4150-ac35-4a191fdad234"
+            "uuid": "d5372690-d699-4bd0-ad6e-6d8f0ba559a0"
           },
           "displayOrder": 1,
-          "mandatory": true
-        },
-        {
-          "name": "Refer to hospital",
-          "uuid": "a57b4620-5a46-4921-bd17-28c911a315ac",
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e"
-          },
-          "displayOrder": 2,
           "mandatory": true
         },
         {
@@ -271,9 +261,9 @@
           "uuid": "6c25e2b9-8460-4860-b887-8eee29e83489",
           "type": "SingleSelect",
           "concept": {
-            "uuid": "4016280b-db7d-4b62-bf67-d1f7af56d942"
+            "uuid": "24c0eb2b-d6bf-4099-a8d5-0ac2217e98b7"
           },
-          "displayOrder": 3,
+          "displayOrder": 2,
           "mandatory": true
         }
       ]

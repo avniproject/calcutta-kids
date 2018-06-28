@@ -1502,11 +1502,6 @@
     ]
   },
   {
-    "name": "NA",
-    "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
-    "dataType": "NA"
-  },
-  {
     "name": "Where does mother get IFA tablets from?",
     "uuid": "aa9462ca-9312-41df-8a92-741d81f77ee7",
     "dataType": "Coded",
@@ -1861,7 +1856,7 @@
     ]
   },
   {
-    "name": "Should this person be considered a special case?",
+    "name": "Consider a special case",
     "uuid": "24c0eb2b-d6bf-4099-a8d5-0ac2217e98b7",
     "dataType": "Coded",
     "answers": [
