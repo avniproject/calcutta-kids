@@ -20,7 +20,11 @@
     "name": "Mother Home Visit"
   },
   {
-    "name": "Doctor visit",
+    "name": "Doctor Visit",
     "uuid": "5a18fd93-7db8-47a2-9c26-4807d89d13e7"
+  },
+  {
+    "name": "Doctor Visit Followup",
+    "uuid": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0"
   }
 ]

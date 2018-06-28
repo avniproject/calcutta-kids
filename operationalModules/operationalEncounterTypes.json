@@ -86,6 +86,20 @@
       "encounterType": {
         "uuid": "7b6a93c7-e1e1-4e73-842d-df8a1935bde2"
       }
+    },
+    {
+      "uuid": "4469bcb5-c10c-45dc-ae6e-1b337341c6f8",
+      "name": "Doctor Visit",
+      "encounterType": {
+        "uuid": "5a18fd93-7db8-47a2-9c26-4807d89d13e7"
+      }
+    },
+    {
+      "uuid": "67f5215a-20e5-4276-b37b-464157e58643",
+      "name": "Doctor Visit Followup",
+      "encounterType": {
+        "uuid": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0"
+      }
     }
   ]
 }

@@ -1,0 +1,129 @@
+{
+  "name": "Doctor Visit Followup",
+  "uuid": "db80ea16-8538-41ca-bd6a-53abc9be088b",
+  "formType": "ProgramEncounter",
+  "formElementGroups": [
+    {
+      "uuid": "5a6b6e4b-2dd1-44ab-835e-9ee0d0c2474f",
+      "name": "Followup Information",
+      "display": "Followup Information",
+      "displayOrder": 1,
+      "formElements": [
+        {
+          "name": "Is the patient taking the prescribed medicine?",
+          "uuid": "8a456510-3748-4229-8b48-aec64c3d0410",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "e6afc39f-33d3-43f9-8654-47eafac05d1f"
+          },
+          "displayOrder": 1
+        },
+        {
+          "name": "Why is the patient taking only some of the prescribed medicines?",
+          "uuid": "49d3cd30-36ef-4b0b-a986-31211ada22b4",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "deb87336-2717-4871-b46f-b65fa69c9552"
+          },
+          "displayOrder": 2
+        },
+        {
+          "name": "Other reasons for taking only some prescribed medicines",
+          "uuid": "f4847c7f-9593-4d4c-b123-59bbee581d0e",
+          "concept": {
+            "uuid": "fba49ad0-cb8f-4bc9-b709-370c49e801a3"
+          },
+          "displayOrder": 3
+        },
+        {
+          "name": "For all medicines the patient is taking, is the patient taking the medicine correctly? (Check yes if patient is taking the correct dose and completing the full course of the medicine)",
+          "uuid": "4aec16b4-226f-4fc4-b2af-74d722110b67",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "e9ab26e2-9285-4206-9bec-0f030e7af662"
+          },
+          "displayOrder": 4
+        },
+        {
+          "name": "In what way is the patient taking their medicine incorrectly? (Please encourage patient to take their medicine correctly)",
+          "uuid": "60642a4d-0cc0-47d3-be15-1aa066b02b70",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "dd22131d-100c-4d96-bc5a-475392adde28"
+          },
+          "displayOrder": 5
+        },
+        {
+          "name": "Was an outside doctor consulted?",
+          "uuid": "76a69007-dea0-493f-b930-c81b4a096f2a",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "9c758a95-24f0-4bf9-86b9-70a412991efb"
+          },
+          "displayOrder": 6
+        },
+        {
+          "name": "Is patient taking any medicine beyond the prescribed medicine?",
+          "uuid": "bdee37e6-025d-4fa0-8bd2-1bb21d789096",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "49c80501-adc9-4a81-8a7a-c5783fac4f01"
+          },
+          "displayOrder": 7
+        },
+        {
+          "name": "Names of non-prescribed medicines being taken",
+          "uuid": "927a8003-e33c-48cd-93e2-f0842b75a0a9",
+          "concept": {
+            "uuid": "55b03a4a-0546-400e-a9ba-e6afe6a61267"
+          },
+          "displayOrder": 8
+        },
+        {
+          "name": "Was the patient referred to the hospital during their visit to our clinic?",
+          "uuid": "0cc0d268-6e7e-4a2f-b394-430f15baf481",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "0d4f3fb2-cf02-4041-8674-7422d0688b6e"
+          },
+          "displayOrder": 9
+        },
+        {
+          "name": "Why was the patient referred to the hospital?",
+          "uuid": "78adc4c9-ed30-4963-8919-8436c71de4b7",
+          "concept": {
+            "uuid": "9598b758-b8dd-4609-b891-1216596c8cfc"
+          },
+          "displayOrder": 10
+        },
+        {
+          "name": "Did patient take referral advice and go to hospital?",
+          "uuid": "10891ad2-c7f7-41d6-a6b8-7e6dd90294e4",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "4ff3e6b8-eedb-491b-a94c-57825bc52e2b"
+          },
+          "displayOrder": 11
+        },
+        {
+          "name": "Patient didn't go to hospital as per referral advice because",
+          "uuid": "756ce27e-e6e5-40b5-a71e-8d1a654d9b71",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "67d175bb-0c6e-47e1-b272-4b103cd208fa"
+          },
+          "displayOrder": 12
+        },
+        {
+          "name": "Improvement in patient",
+          "uuid": "3c83b2c0-0827-400f-ab4a-f8e8de268178",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "dcbfccc2-6209-4000-85dd-49bc0c241ca4"
+          },
+          "displayOrder": 13
+        }
+      ]
+    }
+  ]
+}

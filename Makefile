@@ -62,6 +62,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@child/childHomeVisit.json)
 	$(call _curl,POST,forms,@pregnancy/ancHomeVisitForm.json)
 	$(call _curl,POST,forms,@doctorVisitForm.json)
+	$(call _curl,POST,forms,@doctorVisitFollowupForm.json)
 	$(call _curl,POST,forms,@mother/motherHomeVisitForm.json)
 	$(call _curl,POST,forms,@child/childGMPForm.json)
 
