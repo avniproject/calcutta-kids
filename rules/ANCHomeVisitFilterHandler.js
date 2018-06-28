@@ -31,7 +31,7 @@ class ANCHomeVisitFilterHandler {
             let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
 
             if (currentTrimester < 2) {
-                statusBuilder.show().whenItem(false).is.truthy();
+                statusBuilder.show().whenItem(false).is.truthy;
             } else {
                 statusBuilder.show().when.valueInEncounter('Foetal movements').containsAnswerConceptName('Reduced').or.when.valueInEncounter('Foetal movements').containsAnswerConceptName('Absent');
             }

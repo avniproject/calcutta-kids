@@ -121,6 +121,23 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "uuid": "139162e9-1da5-4a8d-a8b3-3ed870de110b",
+      "comment": "ANC Pregnancy Complications",
+      "formElements": [
+        {
+          "name": "Any other complications/complaints",
+          "uuid": "b678517a-700c-4387-bcc2-dbdfc420190c",
+          "keyValues": [],
+          "concept": {
+            "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
+            "comment":"Other pregnancy complaints"
+          },
+          "displayOrder": 1.1,
+          "mandatory": true
+        }
+      ]
     }
   ]
 }

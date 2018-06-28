@@ -39,6 +39,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/ancHomeVisitConcepts.json)
 	$(call _curl,POST,concepts,@doctorVisitConcepts.json)
+	$(call _curl,POST,concepts,@pregnancy/pregnancyConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/deliveryConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/ancDoctorVisitConcepts.json)
 
@@ -50,6 +51,7 @@ deploy_refdata: deploy_concepts
 
 	$(call _curl,DELETE,forms,@pregnancy/enrolmentDeletions.json)
 	$(call _curl,DELETE,forms,@pregnancy/motherDeliveryFormDeletions.json)
+	$(call _curl,DELETE,forms,@pregnancy/ancDoctorVisitFormDeletions.json)
 
 	$(call _curl,PATCH,forms,@pregnancy/enrolmentAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/ancDoctorVisitFormAdditions.json)

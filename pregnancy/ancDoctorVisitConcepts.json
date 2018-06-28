@@ -20,53 +20,6 @@
     ]
   },
   {
-    "comment": "Pregnancy complications",
-    "uuid": "0adc4170-9ebb-4feb-8b81-450fbf9a04dc",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "comment": "Difficulty in breathing",
-        "uuid": "8e1ef29f-c2d6-4586-97a1-5c791251c4f0",
-        "abnormal": true
-      },
-      {
-        "comment": "Blurred vision",
-        "uuid": "2367268e-5988-4db3-a0ca-19438bd5931c",
-        "abnormal": true
-      },
-      {
-        "uuid": "a3d14ff5-8142-436d-99fb-eb84dd6d489e",
-        "comment": "Moderate ankle, body or face swelling",
-        "abnormal": true
-      },
-      {
-        "comment": "Dizziness",
-        "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a",
-        "abnormal": true
-      },
-      {
-        "comment": "Excess fatigue",
-        "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e",
-        "abnormal": true
-      },
-      {
-        "comment": "Painful or difficult urination",
-        "uuid": "39379c57-8f29-4d46-a600-d28b90b963da",
-        "abnormal": true
-      },
-      {
-        "comment": "Convulsions without fever",
-        "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6",
-        "abnormal": true
-      },
-      {
-        "comment": "Leak of amniotic fluid",
-        "uuid": "442ef688-5567-43c7-a7f7-4925d8664eb2",
-        "abnormal": true
-      }
-    ]
-  },
-  {
     "name": "Nutrients",
     "uuid": "e1754fdb-1015-4d9e-a6e1-3b9dc8fc0317",
     "dataType": "Coded",

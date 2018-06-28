@@ -30,35 +30,6 @@
     "dataType": "NA"
   },
   {
-    "uuid": "0adc4170-9ebb-4feb-8b81-450fbf9a04dc",
-    "answers": [
-      {
-        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456"
-      },
-      {
-        "uuid": "a3d14ff5-8142-436d-99fb-eb84dd6d489e"
-      },
-      {
-        "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a"
-      },
-      {
-        "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e"
-      },
-      {
-        "uuid": "39379c57-8f29-4d46-a600-d28b90b963da"
-      },
-      {
-        "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6"
-      },
-      {
-        "uuid": "442ef688-5567-43c7-a7f7-4925d8664eb2"
-      },
-      {
-        "uuid": "6471787c-fd94-4231-8d22-90b53bd28788"
-      }
-    ]
-  },
-  {
     "name": "Registered for institutional delivery",
     "uuid": "1d3d368a-3180-4bda-bf42-bee1351844f3",
     "dataType": "Coded",

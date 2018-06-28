@@ -81,17 +81,6 @@
           "mandatory": true
         },
         {
-          "name": "Any other complications/complaints",
-          "uuid": "657d50eb-e4b4-442f-979c-36252bb1f4b3",
-          "keyValues": [],
-          "concept": {
-            "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
-            "comment":"Other pregnancy complaints"
-          },
-          "displayOrder": 0.91,
-          "mandatory": true
-        },
-        {
           "name": "Family History",
           "uuid": "4d8b4fd7-f285-4f2c-b00c-605250843749",
           "keyValues": [],
