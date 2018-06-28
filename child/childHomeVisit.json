@@ -15,7 +15,7 @@
             "name": "Have you fed your child any of the following?",
             "uuid": "fa9f52fd-300f-4521-9bd6-6bca192fe24c"
           },
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "name": "Have you fed your child any of the following?",
           "displayOrder": 1,
           "uuid": "b02a3653-4142-424d-9da4-d404526e9044",
@@ -149,7 +149,7 @@
             "name": "Why did you feed your baby something other than breast milk?",
             "uuid": "53b7549d-f5f2-49b8-9df9-5ab6dcdcb4d3"
           },
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "name": "Why did you feed your baby something other than breast milk?",
           "displayOrder": 13,
           "uuid": "8ef0e5aa-4f24-40e4-abe8-11d8eee83790",
@@ -199,6 +199,27 @@
         },
         {
           "concept": {
+            "name": "Have you fed your child any of the following?",
+            "uuid": "fa9f52fd-300f-4521-9bd6-6bca192fe24c"
+          },
+          "type": "MultiSelect",
+          "name": "Have you fed your child any of the following liquids?",
+          "displayOrder": 17.5,
+          "uuid": "88d5f2c0-e910-424c-b9ca-1262ce0146eb",
+          "mandatory": true
+        },
+        {
+          "concept": {
+            "name": "What else did feed your child?",
+            "uuid": "185c6430-e920-4f91-93a6-611affa05794"
+          },
+          "name": "What else did feed your child?",
+          "displayOrder": 17.6,
+          "uuid": "c4d3f7db-0d46-4f67-ba59-46ce2c3d1a49",
+          "mandatory": true
+        },
+        {
+          "concept": {
             "name": "What was the child's age when you started feeding these liquids?",
             "uuid": "038c0eb4-30d0-487c-b564-6e3bc7c4954b"
           },
@@ -244,7 +265,7 @@
             "name": "What type of semi-solid/solid foods do you feed your child?",
             "uuid": "5dd91413-2b15-414d-9047-a02bd9601b13"
           },
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "name": "What type of semi-solid/solid foods do you feed your child?",
           "displayOrder": 22,
           "uuid": "1d5748e3-2d68-46a7-ad53-7ed8ab61b095",
@@ -266,7 +287,7 @@
             "name": "What snacks are being fed?",
             "uuid": "a23d8b82-e94c-42db-a67f-394db58cf904"
           },
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "name": "What snacks are being fed?",
           "displayOrder": 24,
           "uuid": "90f96312-a817-46d8-9494-7837dd1fcaf1",
@@ -315,7 +336,7 @@
             "name": "Is your baby having any of the following problems?",
             "uuid": "23032ec0-3ea7-47f0-a13a-2975dda164f9"
           },
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "name": "Is your baby having any of the following problems?",
           "displayOrder": 28,
           "uuid": "3d0dddf6-2d85-4480-8a4b-a0c19a14b28e",
@@ -337,7 +358,7 @@
             "name": "What illness did the child have?",
             "uuid": "c18ef97f-f3ba-4d60-9420-c8f0afa73863"
           },
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "name": "What illness did the child have?",
           "displayOrder": 30,
           "uuid": "0204fe55-fe8b-4444-94cb-fa290ca24e20",
