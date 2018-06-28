@@ -1,6 +1,6 @@
 const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper} = require('rules-config/rules');
 const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./childHomeVisit");
-const deliveryFilterHandler = require('DeliveryFilterHandler');
+const DeliveryFilterHandler = require('./DeliveryFilterHandler');
 
 //The following ViewFilter logics to be validated.
 //Kept on hold as rules-config library is not ready yet.
@@ -105,5 +105,5 @@ module.exports = {
     CKHomeVisitFormRules,
     HomeVisitDecisions,
     ChildHomeVisitFilter,
-    deliveryFilterHandler
+    DeliveryFilterHandler
 };
