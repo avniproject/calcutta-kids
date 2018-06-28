@@ -1,4 +1,5 @@
 const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper} = require('rules-config/rules');
+const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./childHomeVisit");
 
 //The following ViewFilter logics to be validated.
 //Kept on hold as rules-config library is not ready yet.
@@ -33,7 +34,10 @@ class DeliveryFilterHandler {
             return DeliveryFilterHandler.encounterCodedObsHas(programEncounter, formElement, 'Place of delivery', 'Other');
         };
         this.whyDidYouChooseToHaveABirthAtHome = (programEncounter, formElement) => {
-            return new FormElementStatusBuilder({programEncounter, formElement}).show().when.valueInEncounter('Place of delivery').containsAnyAnswerConceptName('Home in FB', 'Home outside FB').build();
+            return new FormElementStatusBuilder({
+                programEncounter,
+                formElement
+            }).show().when.valueInEncounter('Place of delivery').containsAnyAnswerConceptName('Home in FB', 'Home outside FB').build();
         };
         this.otherReasonToHaveBirthAtHome = (programEncounter, formElement) => {
             return DeliveryFilterHandler.encounterCodedObsHas(programEncounter, formElement, 'Reason to have birth at home', 'Other');
@@ -45,7 +49,10 @@ class DeliveryFilterHandler {
             return DeliveryFilterHandler.encounterCodedObsHas(programEncounter, formElement, 'Place of delivery', 'Private hospital');
         };
         this.dateOfDischarge = (programEncounter, formElement) => {
-            return new FormElementStatusBuilder({programEncounter, formElement}).show().when.valueInEncounter('Place of delivery').not.containsAnyAnswerConceptName('Home in FB', 'Home outside FB').build();
+            return new FormElementStatusBuilder({
+                programEncounter,
+                formElement
+            }).show().when.valueInEncounter('Place of delivery').not.containsAnyAnswerConceptName('Home in FB', 'Home outside FB').build();
         };
     }
 
@@ -135,5 +142,7 @@ class CKHomeVisitFormRules {
 
 module.exports = {
     HideNAFirstPregnancyQuestions,
-    CKHomeVisitFormRules
+    CKHomeVisitFormRules,
+    HomeVisitDecisions,
+    ChildHomeVisitFilter
 };

@@ -1872,5 +1872,52 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
+  },
+  {
+    "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
+    "name": "Lethargy",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
+    "name": "Redness or discharge on the skin around the belly button",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "b2b23da9-17f3-4c77-8e20-5f91652d50ab",
+    "name": "Insufficient urination",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "aaec4cd0-947f-4731-890d-ef1b06afdf05",
+    "name": "Refer to doctor for",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
+        "name": "Lethargy",
+        "abnormal": true
+      },
+      {
+        "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
+        "name": "Redness or discharge on the skin around the belly button",
+        "abnormal": true
+      },
+      {
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "name": "Fever",
+        "abnormal": true
+      },
+      {
+        "uuid": "49c44725-b3f1-4004-a150-0c7f7377f5c2",
+        "name": "Illness",
+        "abnormal": true
+      },
+      {
+        "uuid": "b2b23da9-17f3-4c77-8e20-5f91652d50ab",
+        "name": "Insufficient urination",
+        "abnormal": true
+      }
+    ]
   }
 ]

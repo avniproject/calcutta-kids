@@ -538,16 +538,6 @@
     "dataType": "Numeric"
   },
   {
-    "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
-    "name": "Lethargy",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
-    "name": "Redness or discharge on the skin around the belly button",
-    "dataType": "NA"
-  },
-  {
     "name": "Is your baby having any of the following problems?",
     "uuid": "23032ec0-3ea7-47f0-a13a-2975dda164f9",
     "dataType": "Coded",
@@ -667,5 +657,34 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
+  },
+  {
+    "name": "Refer child to",
+    "uuid": "3e417584-87dc-41dd-9fd9-87497d560de9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60",
+        "abnormal": false
+      },
+      {
+        "name": "Hospital",
+        "uuid": "8359bf16-d329-4752-927c-24a9364f12bf",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Child post natal discussion topics LBW",
+    "uuid": "29ac7a1f-8983-4555-bd7c-40f5e5378276",
+    "dataType": "Coded",
+    "answers": []
+  },
+  {
+    "name": "Child post natal discussion topics",
+    "uuid": "2303a1c3-a987-4a11-8ae5-4afa86c04110",
+    "dataType": "Coded",
+    "answers": []
   }
 ]
