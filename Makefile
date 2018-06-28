@@ -37,10 +37,10 @@ create_org: ## Create Calcutta Kids org and user+privileges
 deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
-	$(call _curl,POST,concepts,@mother/ancHomeVisitConcepts.json)
+	$(call _curl,POST,concepts,@pregnancy/ancHomeVisitConcepts.json)
 	$(call _curl,POST,concepts,@doctorVisitConcepts.json)
-	$(call _curl,POST,concepts,@mother/deliveryConcepts.json)
-	$(call _curl,POST,concepts,@mother/ancDoctorVisitConcepts.json)
+	$(call _curl,POST,concepts,@pregnancy/deliveryConcepts.json)
+	$(call _curl,POST,concepts,@pregnancy/ancDoctorVisitConcepts.json)
 
 deploy_refdata: deploy_concepts
 	$(call _curl,POST,catchments,@catchments.json)
@@ -48,19 +48,19 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)
 	$(call _curl,POST,operationalPrograms,@operationalModules/operationalPrograms.json)
 
-	$(call _curl,DELETE,forms,@mother/enrolmentDeletions.json)
-	$(call _curl,DELETE,forms,@mother/motherDeliveryFormDeletions.json)
+	$(call _curl,DELETE,forms,@pregnancy/enrolmentDeletions.json)
+	$(call _curl,DELETE,forms,@pregnancy/motherDeliveryFormDeletions.json)
 
-	$(call _curl,PATCH,forms,@mother/enrolmentAdditions.json)
-	$(call _curl,PATCH,forms,@mother/ancDoctorVisitFormAdditions.json)
-	$(call _curl,PATCH,forms,@mother/ancLabTestResultsAdditions.json)
-	$(call _curl,PATCH,forms,@mother/motherDeliveryFormAdditions.json)
+	$(call _curl,PATCH,forms,@pregnancy/enrolmentAdditions.json)
+	$(call _curl,PATCH,forms,@pregnancy/ancDoctorVisitFormAdditions.json)
+	$(call _curl,PATCH,forms,@pregnancy/ancLabTestResultsAdditions.json)
+	$(call _curl,PATCH,forms,@pregnancy/motherDeliveryFormAdditions.json)
 
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,POST,forms,@sesForm.json)
 	$(call _curl,POST,forms,@testForm.json)
 	$(call _curl,POST,forms,@child/childHomeVisit.json)
-	$(call _curl,POST,forms,@mother/ancHomeVisitForm.json)
+	$(call _curl,POST,forms,@pregnancy/ancHomeVisitForm.json)
 	$(call _curl,POST,forms,@doctorVisitForm.json)
 	$(call _curl,POST,forms,@mother/motherHomeVisitForm.json)
 	$(call _curl,POST,forms,@child/childGMPForm.json)
