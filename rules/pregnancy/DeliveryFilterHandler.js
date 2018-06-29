@@ -27,7 +27,9 @@ class DeliveryFilterHandler {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Place of delivery', 'Private hospital');
     }
     dateOfDischarge(programEncounter, formElement) {
-        return new FormElementStatusBuilder({ programEncounter, formElement }).show().when.valueInEncounter('Place of delivery').not.containsAnyAnswerConceptName('Home in FB', 'Home outside FB').build();
+        let formElementStatusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
+        formElementStatusBuilder.show().when.valueInEncounter('Place of delivery').not.containsAnyAnswerConceptName('Home in FB', 'Home outside FB');
+        return formElementStatusBuilder.build();
     }
 }
 

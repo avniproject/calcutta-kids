@@ -17,7 +17,13 @@
   },
   {
     "uuid": "0c0e810e-40bb-4365-af55-51aeba6548bf",
-    "name": "Mother Home Visit"
+    "name": "Mother Home Visit",
+    "comment": "CK Mother"
+  },
+  {
+    "uuid": "a6f8c24e-f56f-456b-aa41-7aada038390c",
+    "name": "ANC Home Visit",
+    "comment": "CK pregnancy, not mother"
   },
   {
     "name": "Doctor Visit",

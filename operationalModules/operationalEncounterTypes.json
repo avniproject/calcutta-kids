@@ -81,13 +81,6 @@
       }
     },
     {
-      "uuid": "f738822d-8b28-4a60-bda3-45baadf5295b",
-      "name": "Delivery",
-      "encounterType": {
-        "uuid": "7b6a93c7-e1e1-4e73-842d-df8a1935bde2"
-      }
-    },
-    {
       "uuid": "4469bcb5-c10c-45dc-ae6e-1b337341c6f8",
       "name": "Doctor Visit",
       "encounterType": {

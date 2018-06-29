@@ -14,32 +14,11 @@
     "comment": "Pregnancy program (core mother program), Test entry"
   },
   {
-    "uuid": "919815d0-6fc2-4b03-8967-11b16ef5796a",
-    "formUUID": "2a13df4b-6d61-4f11-850d-1ea6d13860df",
-    "encounterTypeUUID": "0c0e810e-40bb-4365-af55-51aeba6548bf",
-    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
-    "comment": "Pregnancy program (core mother program), Home Visit"
-  },
-  {
-    "uuid": "1eb73f8b-4f58-4fec-bd89-d6bc8103078c",
-    "formUUID": "b80646b2-b74e-415f-974c-f8f48d67b27e",
-    "encounterTypeUUID": "5a18fd93-7db8-47a2-9c26-4807d89d13e7",
-    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
-    "comment": "Pregnancy program (core mother program), Doctor Visit"
-  },
-  {
-    "uuid": "74b568d5-c146-4bf1-aefd-aa41b0212c20",
-    "formUUID": "cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2",
-    "encounterTypeUUID": "7b6a93c7-e1e1-4e73-842d-df8a1935bde2",
-    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
-    "comment": "Pregnancy program (core mother program), Doctor Visit"
-  },
-  {
     "uuid": "307ebdc8-902f-4249-9f6d-5700e3c7d2e0",
     "formUUID": "5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99",
-    "encounterTypeUUID": "b1efaffa-c8df-4801-8bbb-bf7c7bd6a0bd",
+    "encounterTypeUUID": "a6f8c24e-f56f-456b-aa41-7aada038390c",
     "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
-    "comment": "Pregnancy program (core mother program), Doctor Visit"
+    "comment": "Pregnancy program (core mother program), ANC Home"
   },
   {
     "uuid": "dfc27c34-db1e-4e01-ba6b-04b516a02cf4",
@@ -94,6 +73,13 @@
     "formUUID": "db80ea16-8538-41ca-bd6a-53abc9be088b",
     "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
     "programUUID": "5103e1e2-a4df-498b-818d-61df4db3fb97",
-    "comment": "CK Mother (not core mother) program, Doctor Visit"
+    "comment": "CK Mother (not core mother) program, Doctor Visit Followup"
+  },
+  {
+    "uuid": "919815d0-6fc2-4b03-8967-11b16ef5796a",
+    "formUUID": "2a13df4b-6d61-4f11-850d-1ea6d13860df",
+    "encounterTypeUUID": "0c0e810e-40bb-4365-af55-51aeba6548bf",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "CK Mother (not core mother) program, Home Visit"
   }
 ]
