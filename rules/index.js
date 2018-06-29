@@ -1,9 +1,9 @@
 const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper} = require('rules-config/rules');
-const MotherHomeVisitFormRules = require("./motherHomeVisitHandler");
-const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./childHomeVisit");
-const DeliveryFilterHandler = require('./DeliveryFilterHandler');
-const ANCHomeVisitFilterHandler = require('./ANCHomeVisitFilterHandler');
-import {ANCDoctorVisitAbdominalExamination} from './ANCDoctorVisitHandler';
+const MotherHomeVisitFormRules = require("./mother/motherHomeVisitHandler");
+const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./child/childHomeVisit");
+const DeliveryFilterHandler = require('./pregnancy/DeliveryFilterHandler');
+const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler');
+import {ANCDoctorVisitAbdominalExamination} from './pregnancy/ANCDoctorVisitHandler';
 
 //The following ViewFilter logics to be validated.
 //Kept on hold as rules-config library is not ready yet.
