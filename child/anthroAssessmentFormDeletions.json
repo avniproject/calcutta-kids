@@ -1,0 +1,21 @@
+{
+  "comment": "Anthropometry Assessment",
+  "uuid": "d062907a-690c-44ca-b699-f8b2f688b075",
+  "formType": "ProgramEncounter",
+  "formElementGroups": [
+    {
+      "uuid": "124d7b8b-0baf-4bdf-8f8a-5de8a4c95218",
+      "comment": "Child Anthropometry",
+      "formElements": [
+        {
+          "uuid": "219bfbb0-03ff-4be4-a8c1-5eb98ab6fe6c",
+          "comment": "Height"
+        },
+        {
+          "comment": "Weight",
+          "uuid": "e6e54c47-290c-4c8b-a2b3-dd30c39a361f"
+        }
+      ]
+    }
+  ]
+}

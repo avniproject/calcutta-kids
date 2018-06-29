@@ -1,17 +1,17 @@
 {
-  "name": "Child GMP Form",
-  "uuid": "555bd229-a026-48e1-91bd-c87f2ecf5fb4",
+  "comment": "Child GMP Form",
+  "uuid": "d062907a-690c-44ca-b699-f8b2f688b075",
   "formType": "ProgramEncounter",
   "formElementGroups": [
     {
-      "uuid": "fde73978-5274-4803-8c9c-c897729ca881",
+      "uuid": "720fe449-7cff-4617-bf9b-62925c7d0e6c",
       "name": "Child GMP Details",
       "display": "GMP Details",
-      "displayOrder": 1,
+      "displayOrder": 2,
       "formElements": [
         {
           "name": "Weight",
-          "uuid": "aade518c-50fb-4ea7-a948-64689e2283f1",
+          "uuid": "15fbe206-ed0d-451a-b5a5-1f6c4d25e81a",
           "keyValues": [],
           "concept": {
             "uuid": "75b1656e-2777-4753-9612-ce03a766a5e1"
@@ -21,17 +21,17 @@
         },
         {
           "name": "Height",
-          "uuid": "97eaf2ef-bb11-4761-9b70-f85b788060ff",
+          "uuid": "c7e838ac-e2bb-4c9c-9776-bbba47e9f128",
           "keyValues": [],
           "concept": {
             "uuid": "d883d5fe-e17d-4136-b989-089fa0295e34"
           },
           "displayOrder": 2,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "Any illness?",
-          "uuid": "255a60a5-d44a-40f4-aeb7-f35169f423c0",
+          "uuid": "289b7085-2f78-4e8f-98c4-346784a1d8c1",
           "keyValues": [],
           "concept": {
             "uuid": "65f5d269-9e46-4d6a-9745-5636051b90b6",
@@ -42,7 +42,7 @@
         },
         {
           "name": "Diarrhoea",
-          "uuid": "a9fbb25e-c0ce-4cd4-80f4-72b773440c3a",
+          "uuid": "f52965c3-32fe-4639-a12b-e2d6a9e29aa6",
           "keyValues": [],
           "concept": {
             "uuid": "aa1c49fa-bf45-446b-b221-b9b9ba70b0f5"
@@ -52,13 +52,14 @@
         },
         {
           "name": "Absent reason",
-          "uuid": "a05a8cb8-efe2-4823-8f71-6597ab7c105f",
+          "uuid": "3f9f8edf-3aa6-4de8-8298-0fef214a7279",
           "keyValues": [],
           "concept": {
             "uuid": "da35884c-2792-4852-abad-df24fe47a51d"
           },
           "displayOrder": 5,
-          "mandatory": false
+          "mandatory": false,
+          "voided": true
         }
       ]
     }

@@ -53,11 +53,13 @@ deploy_refdata: deploy_concepts
 	$(call _curl,DELETE,forms,@pregnancy/enrolmentDeletions.json)
 	$(call _curl,DELETE,forms,@pregnancy/motherDeliveryFormDeletions.json)
 	$(call _curl,DELETE,forms,@pregnancy/ancDoctorVisitFormDeletions.json)
+	$(call _curl,DELETE,forms,@child/anthroAssessmentFormDeletions.json)
 
 	$(call _curl,PATCH,forms,@pregnancy/enrolmentAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/ancDoctorVisitFormAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/ancLabTestResultsAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/motherDeliveryFormAdditions.json)
+	$(call _curl,PATCH,forms,@child/anthroAssessmentFormAdditions.json)
 
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,POST,forms,@sesForm.json)
@@ -67,7 +69,6 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@doctorVisitForm.json)
 	$(call _curl,POST,forms,@doctorVisitFollowupForm.json)
 	$(call _curl,POST,forms,@mother/motherHomeVisitForm.json)
-	$(call _curl,POST,forms,@child/childGMPForm.json)
 
 	$(call _curl,POST,formMappings,@formMappings.json)
 # </refdata>
