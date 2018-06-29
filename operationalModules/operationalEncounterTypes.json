@@ -58,6 +58,13 @@
       }
     },
     {
+      "uuid": "37ad819f-3700-466d-9af9-565c1a43b52c",
+      "name": "Birth",
+      "encounterType": {
+        "uuid": "1f07ae8c-faa4-4934-8e06-9038e62fc2ac"
+      }
+    },
+    {
       "uuid": "8281d9a4-9a44-4869-8b92-47feefc5d1f6",
       "name": "Child GMP",
       "encounterType": {

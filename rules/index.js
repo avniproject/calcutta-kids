@@ -6,6 +6,8 @@ const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler
 const {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions} = require('./pregnancy/ANCDoctorVisitHandler');
 const DoctorVisitFollowupFormRules = require("./doctorVisitFollowupHandler");
 const {DoctorFollowUpHomeVisit} = require('./visitSchedule');
+const BirthFormRules = require("./child/childBirthHandler");
+
 
 //The following ViewFilter logics to be validated.
 //Kept on hold as rules-config library is not ready yet.
@@ -40,6 +42,7 @@ module.exports = {
     HideNAFirstPregnancyQuestions,
     MotherHomeVisitFormRules,
     HomeVisitDecisions,
+    BirthFormRules,
     ChildHomeVisitFilter,
     DeliveryFilterHandler,
     ANCHomeVisitFilterHandler,

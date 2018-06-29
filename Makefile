@@ -54,12 +54,14 @@ deploy_refdata: deploy_concepts
 	$(call _curl,DELETE,forms,@pregnancy/motherDeliveryFormDeletions.json)
 	$(call _curl,DELETE,forms,@pregnancy/ancDoctorVisitFormDeletions.json)
 	$(call _curl,DELETE,forms,@child/anthroAssessmentFormDeletions.json)
+	$(call _curl,DELETE,forms,@child/birthFormDeletions.json)
 
 	$(call _curl,PATCH,forms,@pregnancy/enrolmentAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/ancDoctorVisitFormAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/ancLabTestResultsAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/motherDeliveryFormAdditions.json)
 	$(call _curl,PATCH,forms,@child/anthroAssessmentFormAdditions.json)
+	$(call _curl,PATCH,forms,@child/birthFormAdditions.json)
 
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,POST,forms,@sesForm.json)

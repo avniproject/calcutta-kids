@@ -2167,5 +2167,150 @@
         "abnormal": false
       }
     ]
+  },
+  {
+    "name": "Child was first breast fed",
+    "uuid": "6016d125-448b-48ac-9e2f-d3589433a92a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "c85afc9a-7b61-4be2-98a0-adbfde065b73",
+        "abnormal": false
+      },
+      {
+        "uuid": "e87f1249-2a4e-4b4a-8ebd-233d04ee4274",
+        "abnormal": false
+      },
+      {
+        "uuid": "3b80c10a-dfc1-4323-bb0d-4ee590b0089e",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Family pressure or belief",
+    "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3"
+  },
+  {
+    "name": "Did the baby receive colostrums (first milk)?",
+    "uuid": "81c4fa06-e287-4d99-873f-8dd23141ed6a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Medical issue",
+    "uuid": "c1b08b43-1ac9-4ae1-b908-ace9c8345ae3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Baby did not receive colostrum because",
+    "uuid": "628dd4d4-c25b-4615-970b-667408500aee",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3",
+        "abnormal": false
+      },
+      {
+        "uuid": "c1b08b43-1ac9-4ae1-b908-ace9c8345ae3",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other reasons for baby not receiving colostrum",
+    "uuid": "635884c4-dcd6-41a9-85d0-39b19735f80a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Was the baby fed anything else before breastfeeding?",
+    "uuid": "c41d7a74-716b-4b59-a2eb-61fc688c68bb",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "uuid": "502dcb33-a589-4e9d-99c7-29f5659f5074",
+    "name": "Cow's milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "128d0a18-37c5-4243-a6ea-1794765fa1cd",
+    "name": "Water",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "7b07a014-53f8-44fb-adac-0740c2c2f109",
+    "name": "Buffalo's milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "980d5b47-8cd2-4c03-9f76-ce7bc77c8797",
+    "name": "Packet milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "7df97c63-a2e9-472c-90f2-584f2e64015b",
+    "name": "Formula",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "851c9fb8-af13-4205-91e4-6a63dc1b91fa",
+    "name": "Water based liquids (sugar water, juice etc)",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "223badf4-2fa5-4eb9-abac-c7ba443ba4fa",
+    "name": "Semi-Solid liquid (barley, sago etc)",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other things baby was fed before breastfeeding",
+    "uuid": "ea65d8cf-5244-4d38-90f9-67ffc804da8e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "502dcb33-a589-4e9d-99c7-29f5659f5074",
+        "abnormal": false
+      },
+      {
+        "uuid": "128d0a18-37c5-4243-a6ea-1794765fa1cd",
+        "abnormal": false
+      },
+      {
+        "uuid": "7df97c63-a2e9-472c-90f2-584f2e64015b",
+        "abnormal": false
+      },
+      {
+        "uuid": "851c9fb8-af13-4205-91e4-6a63dc1b91fa",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Any other thing baby was fed before breastfeeding",
+    "uuid": "d1466ada-80e5-4a35-8f7b-a3c7567b685c",
+    "dataType": "Text"
   }
 ]

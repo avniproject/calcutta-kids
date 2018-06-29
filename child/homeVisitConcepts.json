@@ -1,40 +1,5 @@
 [
   {
-    "uuid": "502dcb33-a589-4e9d-99c7-29f5659f5074",
-    "name": "Cow's milk",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "128d0a18-37c5-4243-a6ea-1794765fa1cd",
-    "name": "Water",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "7b07a014-53f8-44fb-adac-0740c2c2f109",
-    "name": "Buffalo's milk",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "980d5b47-8cd2-4c03-9f76-ce7bc77c8797",
-    "name": "Packet milk",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "7df97c63-a2e9-472c-90f2-584f2e64015b",
-    "name": "Formula",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "851c9fb8-af13-4205-91e4-6a63dc1b91fa",
-    "name": "Water based liquids (sugar water, juice etc)",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "223badf4-2fa5-4eb9-abac-c7ba443ba4fa",
-    "name": "Semi-Solid liquid (barley, sago etc)",
-    "dataType": "NA"
-  },
-  {
     "name": "Have you fed your child any of the following?",
     "uuid": "fa9f52fd-300f-4521-9bd6-6bca192fe24c",
     "dataType": "Coded",
