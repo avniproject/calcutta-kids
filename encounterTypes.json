@@ -36,5 +36,9 @@
   {
     "name": "ANC GMP",
     "uuid": "89f6fd3d-e1ff-4da0-89d1-a3572f84b4e0"
+  },
+  {
+    "name": "Pregnancy Test Followup",
+    "uuid": "9ece8cc4-4619-4bda-ab08-42b473cb6f9c"
   }
 ]
