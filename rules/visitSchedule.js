@@ -11,7 +11,7 @@ class DoctorFollowUpHomeVisit {
             programEncounter: programEncounter
         });
         const encounterDateTime = programEncounter.encounterDateTime || new Date();
-        visitSchedule.forEach(vs => scheduleBuilder.add(vs));
+        visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
         scheduleBuilder.add({
                 name: "Doctor Visit Followup",
                 encounterType: "Doctor Visit Followup",
