@@ -12,6 +12,6 @@
     "webpack": "^4.12.0"
   },
   "devDependencies": {
-    "rules-config": "github:openchs/rules-config#7eee06dbfe2e67ed875c87988a199c162a2b7e21"
+    "rules-config": "github:openchs/rules-config#b8d6cac5fbf44f2cfe6a5b7120fcd0608da9fdd6"
   }
 }
