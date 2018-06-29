@@ -36,9 +36,44 @@ class ANCDoctorVisitAbdominalExamination {
         statusBuilder.show().whenItem(true).is.truthy;
     }
 
+    @WithStatusBuilder
+    anyOtherComplicationsComplaints([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Pregnancy complications').containsAnyAnswerConceptName('Other');
+    }
+
+    @WithStatusBuilder
+    gestationalAge([programEncounter], statusBuilder) {
+        // // it does not work because of a product bug.
+        // // user have to edit 'Gestational Age' field to see the field getting auto updated.
+        // // Before first edit it does not update the field.
+        // // After first edit whatever you do, you cannot change the value in the form.
+        // // To understand more uncomment deploy and see it yourself.
+
+        // const lmp = programEncounter.programEnrolment.getObservationValue('Last menstrual period');
+        // const td = _.get(programEncounter, "encounterDateTime", new Date());
+        
+        // const status = statusBuilder.build();
+        // status.value = FormElementsStatusHelper.weeksBetween(td, lmp);
+        // return status;
+    }
+
     static exec(programEncounter, formElementGroup, today) {
-        return FormElementsStatusHelper.getFormElementsStatuses(new ANCDoctorVisitAbdominalExamination(), programEncounter, formElementGroup, today)
+        return FormElementsStatusHelper.getFormElementsStatusesWithoutDefaults(new ANCDoctorVisitAbdominalExamination(), programEncounter, formElementGroup, today)
     }
 }
 
-module.exports = {ANCDoctorVisitAbdominalExamination};
+const ANCDoctorVisitDecision = RuleFactory("3a95e9b0-731a-4714-ae7c-10e1d03cebfe", "Decision");
+
+@ANCDoctorVisitDecision("2710ffc6-7c71-4da3-a606-799ca9227697", "ANC Doctor Visit Decision'", 100.0, {})
+class ANCDoctorVisitRemoveAllDecisions {
+    static exec(programEncounter, decisions, context, today) {
+        decisions = {
+            "enrolmentDecisions": [],
+            "encounterDecisions": [],
+            "registrationDecisions": []
+        }
+        return decisions;
+    }
+}
+
+module.exports = {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions};
