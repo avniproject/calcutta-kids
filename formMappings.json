@@ -130,5 +130,10 @@
     "encounterTypeUUID": "0c0e810e-40bb-4365-af55-51aeba6548bf",
     "programUUID": "5103e1e2-a4df-498b-818d-61df4db3fb97",
     "comment": "CK Mother (not core mother) program, Home Visit Cancel"
+  },
+  {
+    "uuid": "5004fa1a-1964-4041-b0dd-56bab20b68d7",
+    "formUUID": "c5e2244d-8f9a-4120-a410-2be9cabab605",
+    "encounterTypeUUID": "9ece8cc4-4619-4bda-ab08-42b473cb6f9c"
   }
 ]

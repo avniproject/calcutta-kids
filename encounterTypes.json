@@ -32,5 +32,9 @@
   {
     "name": "Doctor Visit Followup",
     "uuid": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0"
+  },
+  {
+    "name": "Pregnancy Test Followup",
+    "uuid": "9ece8cc4-4619-4bda-ab08-42b473cb6f9c"
   }
 ]

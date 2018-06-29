@@ -3,7 +3,7 @@ const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./child/childHomeVis
 const DeliveryFilterHandler = require('./pregnancy/DeliveryFilterHandler');
 const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler');
 const {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions} = require('./pregnancy/ANCDoctorVisitHandler');
-const DoctorVisitFollowupFormRules = require("./doctorVisitFollowupHandler");
+const DoctorVisitFollowupFormRules = require("./general/doctorVisitFollowupHandler");
 const {
     DoctorFollowUpHomeVisit,
     ANCHomeVisit,
@@ -21,6 +21,7 @@ const {
 } = require('./visitSchedule');
 const {BirthFormRules, BirthDecisions} = require("./child/childBirthHandler");
 const {HideNAFirstPregnancyQuestions} = require('./pregnancy/EnrolmentFilter');
+const PregnancyTestFollowupFormHandler = require('./general/pregnancyTestFollowupFormHandler');
 
 module.exports = {
     HideNAFirstPregnancyQuestions,
@@ -47,5 +48,6 @@ module.exports = {
     ChildHomeVisitRecurring,
     ChildHomeVisitInitial,
     MotherRecurringHomeVisit,
-    MotherProgramEnrolmentHomeVisit
+    MotherProgramEnrolmentHomeVisit,
+    PregnancyTestFollowupFormHandler
 };

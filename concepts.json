@@ -2194,6 +2194,25 @@
     ]
   },
   {
+    "name": "Pregnancy test status",
+    "uuid": "6716b050-420f-4234-953a-8385f06121f0",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "479cd95a-54ef-4818-b84a-09b478fc68b8",
+        "comment": "Positive"
+      },
+      {
+        "uuid": "ad1f0481-a8ed-411a-ac00-d0435a670269",
+        "comment": "Negative"
+      },
+      {
+        "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
+        "comment": "NA"
+      }
+    ]
+  },
+  {
     "name": "Family pressure or belief",
     "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3"
   },
@@ -2231,6 +2250,25 @@
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Do you want to keep your child?",
+    "uuid": "cb5ec484-9ff3-4cc0-b468-9a7560dcffce",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      },
+      {
+        "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
+        "comment": "NA"
       }
     ]
   },
@@ -2321,7 +2359,7 @@
   },
   {
     "uuid": "739f9a56-c02c-4f81-927b-69842d78c1e8",
-    "commend": "Visit cancel reason",
+    "comment": "Visit cancel reason",
     "answers": [
       {
         "uuid": "5b30a5b5-8ab5-4643-a424-2992f2b8df11",
@@ -2330,6 +2368,25 @@
       {
         "uuid": "10885638-561a-42b6-8b24-8daa01864c89",
         "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Do you plan to go to a hospital to pursue an abortion?",
+    "uuid": "f940c67b-9bc0-40af-aa9c-4d58b538926e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      },
+      {
+        "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
+        "comment": "NA"
       }
     ]
   }

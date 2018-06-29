@@ -114,6 +114,13 @@
       "encounterType": {
         "uuid": "330d954c-ab5f-4ea1-be8b-ba26a12bdfbc"
       }
+    },
+    {
+      "uuid": "fbfafb6a-e274-4f41-a77f-465c7f7b626a",
+      "name": "Pregnancy Test Followup",
+      "encounterType": {
+        "uuid": "9ece8cc4-4619-4bda-ab08-42b473cb6f9c"
+      }
     }
   ]
 }
