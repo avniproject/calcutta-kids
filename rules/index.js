@@ -4,6 +4,7 @@ const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./child/childHomeVis
 const DeliveryFilterHandler = require('./pregnancy/DeliveryFilterHandler');
 const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler');
 import {ANCDoctorVisitAbdominalExamination} from './pregnancy/ANCDoctorVisitHandler';
+const DoctorVisitFollowupFormRules = require("./doctorVisitFollowupHandler");
 
 //The following ViewFilter logics to be validated.
 //Kept on hold as rules-config library is not ready yet.
@@ -41,5 +42,6 @@ module.exports = {
     ChildHomeVisitFilter,
     DeliveryFilterHandler,
     ANCHomeVisitFilterHandler,
-    ANCDoctorVisitAbdominalExamination
+    ANCDoctorVisitAbdominalExamination,
+    DoctorVisitFollowupFormRules
 };

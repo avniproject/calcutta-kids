@@ -72,7 +72,7 @@
           "displayOrder": 7
         },
         {
-          "name": "Names of non-prescribed medicines being taken",
+          "name": "Names of non prescribed medicines being taken",
           "uuid": "927a8003-e33c-48cd-93e2-f0842b75a0a9",
           "concept": {
             "uuid": "55b03a4a-0546-400e-a9ba-e6afe6a61267"
@@ -106,7 +106,7 @@
           "displayOrder": 11
         },
         {
-          "name": "Patient didn't go to hospital as per referral advice because",
+          "name": "Patient didn't go to hospital as per referral advice because?",
           "uuid": "756ce27e-e6e5-40b5-a71e-8d1a654d9b71",
           "type": "SingleSelect",
           "concept": {
