@@ -96,8 +96,8 @@
     },
     {
       "uuid": "30d7754e-f948-48c0-8936-ffd9f5b512e8",
-      "name": "Notes",
-      "display": "Notes",
+      "name": "Treatment (Medicine and Frequency)",
+      "display": "Treatment (Medicine and Frequency)",
       "displayOrder": 8.1,
       "formElements": [
         {
