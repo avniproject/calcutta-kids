@@ -48,6 +48,17 @@
       "comment": "ANC Lab Diagnostics - USG",
       "formElements": [
         {
+          "name": "Gestational Age",
+          "uuid": "aa547459-4ee5-4bb2-bc31-d2a118b8a7e6",
+          "keyValues": [],
+          "concept": {
+            "comment": "Gestational Age",
+            "uuid": "4b7fcf0b-3ecb-49fe-882d-959b58e7229d"
+          },
+          "displayOrder": 2.1,
+          "mandatory": false
+        },
+        {
           "name": "Viability",
           "uuid": "94599241-13ca-48d3-b9f3-a49217d40d6f",
           "keyValues": [],
@@ -58,6 +69,28 @@
           },
           "displayOrder": 3.9,
           "mandatory": true
+        },
+        {
+          "name": "Remarks",
+          "uuid": "3d5d20ca-aa89-400a-b090-8d02e0dfad3f",
+          "keyValues": [],
+          "concept": {
+            "comment": "USG Scanning Report - Remarks",
+            "uuid": "65fbbd13-0126-45cc-b1a2-a5db40843d16"
+          },
+          "displayOrder": 6.9,
+          "mandatory": false
+        },
+        {
+          "name": "Diagnosis",
+          "uuid": "1bfa7dee-7843-4eb1-8547-df6317e8c763",
+          "keyValues": [],
+          "concept": {
+            "uuid": "fbe9cc17-9d7d-40c8-8a05-51ed7ecb553a",
+            "comment":"USG Scanning Report - Diagnosis"
+          },
+          "displayOrder": 6.95,
+          "mandatory": false
         }
       ]
     },
@@ -136,6 +169,34 @@
           },
           "displayOrder": 1.1,
           "mandatory": true
+        }
+      ]
+    },
+    {
+      "uuid":"07458686-88c5-448f-92ed-c150c0629b4f",
+      "comment":"Lab diagnostics blood",
+      "formElements":[
+        {
+          "name": "Blood Sugar - Fasting",
+          "uuid": "53d4dea9-a3ef-420b-b40a-6cb1b32c0c20",
+          "keyValues": [],
+          "concept": {
+            "uuid": "3de126a4-719a-4dbe-b884-85f7196b5b54",
+            "comment":"Blood Sugar - Fasting"
+          },
+          "displayOrder": 4.01,
+          "mandatory": false
+        },
+        {
+          "name": "Blood Sugar - Random",
+          "uuid": "7a8df1dc-11c9-47d3-8ce8-481a1c9ba09d",
+          "keyValues": [],
+          "concept": {
+            "uuid": "6a069dc8-2ace-4ad3-a481-f4afff4fb276",
+            "comment":"Blood Sugar - Random"
+          },
+          "displayOrder": 4.02,
+          "mandatory": false
         }
       ]
     }

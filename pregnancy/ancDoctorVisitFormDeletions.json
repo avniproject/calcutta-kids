@@ -8,8 +8,18 @@
       "comment": "ANC Pregnancy Complications",
       "formElements": [
         {
-          "uuid":"20a01e2f-cbb4-4bf4-853b-20c871f0004d",
+          "uuid": "20a01e2f-cbb4-4bf4-853b-20c871f0004d",
           "comment": "Other complications?"
+        }
+      ]
+    },
+    {
+      "uuid": "07458686-88c5-448f-92ed-c150c0629b4f",
+      "comment": "ANC Lab Diagnostics - Blood",
+      "formElements": [
+        {
+          "uuid": "53899c85-3e5e-45e8-ab03-e05d7d295e11",
+          "comment": "Blood Sugar"
         }
       ]
     }

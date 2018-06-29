@@ -47,5 +47,25 @@
     "name": "Other pregnancy complaints",
     "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
     "dataType": "Text"
+  },
+  {
+    "name": "USG Scanning Report - Remarks",
+    "uuid": "65fbbd13-0126-45cc-b1a2-a5db40843d16",
+    "dataType": "Text"
+  },
+  {
+    "name": "USG Scanning Report - Diagnosis",
+    "uuid": "fbe9cc17-9d7d-40c8-8a05-51ed7ecb553a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Blood Sugar - Random",
+    "uuid": "6a069dc8-2ace-4ad3-a481-f4afff4fb276",
+    "dataType": "Text"
+  },
+  {
+    "name": "Blood Sugar - Fasting",
+    "uuid": "3de126a4-719a-4dbe-b884-85f7196b5b54",
+    "dataType": "Text"
   }
 ]
