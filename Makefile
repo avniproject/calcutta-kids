@@ -45,6 +45,7 @@ deploy_concepts:
 
 deploy_refdata: deploy_concepts
 	$(call _curl,POST,catchments,@catchments.json)
+	$(call _curl,POST,programs,@programs.json)
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)
 	$(call _curl,POST,operationalPrograms,@operationalModules/operationalPrograms.json)

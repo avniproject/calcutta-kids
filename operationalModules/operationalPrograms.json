@@ -6,7 +6,7 @@
       "name": "Pregnancy",
       "program": {
         "uuid": "076ddb2d-a499-4314-af95-4178553d279b",
-        "comment": "Mother"
+        "comment": "Mother from core"
       }
     },
     {
@@ -15,6 +15,14 @@
       "program": {
         "uuid": "352d906c-b386-496c-ba23-91b1468a5613",
         "comment": "Child"
+      }
+    },
+    {
+      "uuid": "86d07259-efc0-4690-ab7b-4542d2606588",
+      "name": "Mother",
+      "program": {
+        "uuid": "5103e1e2-a4df-498b-818d-61df4db3fb97",
+        "comment": "Mother for CK"
       }
     }
   ]

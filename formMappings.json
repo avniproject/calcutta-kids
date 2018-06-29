@@ -1,61 +1,99 @@
 [
   {
-    "uuid": "4da96e79-6e64-4d0a-aec4-febb0f7f5b19",
-    "formUUID": "6ae07f4d-c639-4cfa-a78b-9f39e0b24c60",
-    "encounterTypeUUID": "af181460-b5f0-46b0-9474-4dd0a34981af"
+    "uuid": "37fe7f9d-8e90-42cd-a2d5-fa83e7bd8329",
+    "formUUID": "db80ea16-8538-41ca-bd6a-53abc9be088b",
+    "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "Pregnancy program (core mother program), Doctor Visit Followup"
   },
   {
     "uuid": "3eeabf4d-01f8-48e4-9729-9f35acbb4529",
     "formUUID": "02ab8763-c489-41f7-88ad-0b3bba3f99fc",
     "encounterTypeUUID": "8ceb5b02-69a9-4858-9cca-49721c754663",
-    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b"
-  },
-  {
-    "uuid": "dfc27c34-db1e-4e01-ba6b-04b516a02cf4",
-    "formUUID": "02ab8763-c489-41f7-88ad-0b3bba3f99fc",
-    "encounterTypeUUID": "8ceb5b02-69a9-4858-9cca-49721c754663",
-    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613"
-  },
-  {
-    "uuid": "95243b66-5c9f-4961-962c-d46ab52ade23",
-    "formUUID": "555bd229-a026-48e1-91bd-c87f2ecf5fb4",
-    "encounterTypeUUID": "5059adff-9aaf-4e76-ac58-684156f6d1b5",
-    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613"
-  },
-  {
-    "uuid": "dc8234df-3285-4891-97da-25b52e07856d",
-    "formUUID": "35aa9007-fe7a-4a59-b985-0a1c038df889",
-    "encounterTypeUUID": "21f346a4-dc45-4aa1-a34c-aff9c12438f8",
-    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613"
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "Pregnancy program (core mother program), Test entry"
   },
   {
     "uuid": "919815d0-6fc2-4b03-8967-11b16ef5796a",
     "formUUID": "2a13df4b-6d61-4f11-850d-1ea6d13860df",
     "encounterTypeUUID": "0c0e810e-40bb-4365-af55-51aeba6548bf",
-    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b"
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "Pregnancy program (core mother program), Home Visit"
   },
   {
     "uuid": "1eb73f8b-4f58-4fec-bd89-d6bc8103078c",
     "formUUID": "b80646b2-b74e-415f-974c-f8f48d67b27e",
     "encounterTypeUUID": "5a18fd93-7db8-47a2-9c26-4807d89d13e7",
-    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b"
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "Pregnancy program (core mother program), Doctor Visit"
+  },
+  {
+    "uuid": "74b568d5-c146-4bf1-aefd-aa41b0212c20",
+    "formUUID": "cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2",
+    "encounterTypeUUID": "7b6a93c7-e1e1-4e73-842d-df8a1935bde2",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "Pregnancy program (core mother program), Doctor Visit"
+  },
+  {
+    "uuid": "307ebdc8-902f-4249-9f6d-5700e3c7d2e0",
+    "formUUID": "5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99",
+    "encounterTypeUUID": "b1efaffa-c8df-4801-8bbb-bf7c7bd6a0bd",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "Pregnancy program (core mother program), Doctor Visit"
+  },
+  {
+    "uuid": "dfc27c34-db1e-4e01-ba6b-04b516a02cf4",
+    "formUUID": "02ab8763-c489-41f7-88ad-0b3bba3f99fc",
+    "encounterTypeUUID": "8ceb5b02-69a9-4858-9cca-49721c754663",
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+    "comment": "Child, Test Entry"
+  },
+  {
+    "uuid": "95243b66-5c9f-4961-962c-d46ab52ade23",
+    "formUUID": "555bd229-a026-48e1-91bd-c87f2ecf5fb4",
+    "encounterTypeUUID": "5059adff-9aaf-4e76-ac58-684156f6d1b5",
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+    "comment": "Child, GMP"
+  },
+  {
+    "uuid": "dc8234df-3285-4891-97da-25b52e07856d",
+    "formUUID": "35aa9007-fe7a-4a59-b985-0a1c038df889",
+    "encounterTypeUUID": "21f346a4-dc45-4aa1-a34c-aff9c12438f8",
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+    "comment": "Child, Home Visit"
   },
   {
     "uuid": "72c105bb-865e-4767-933d-183ca8abced6",
     "formUUID": "b80646b2-b74e-415f-974c-f8f48d67b27e",
     "encounterTypeUUID": "5a18fd93-7db8-47a2-9c26-4807d89d13e7",
-    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613"
-  },
-  {
-    "uuid": "37fe7f9d-8e90-42cd-a2d5-fa83e7bd8329",
-    "formUUID": "db80ea16-8538-41ca-bd6a-53abc9be088b",
-    "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
-    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b"
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+    "comment": "Child, Doctor Visit"
   },
   {
     "uuid": "13b0e374-f7b0-4dc6-bf51-2103a6d58597",
     "formUUID": "db80ea16-8538-41ca-bd6a-53abc9be088b",
     "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
-    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613"
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+    "comment": "Child, Doctor Visit Followup"
+  },
+  {
+    "uuid": "4da96e79-6e64-4d0a-aec4-febb0f7f5b19",
+    "formUUID": "6ae07f4d-c639-4cfa-a78b-9f39e0b24c60",
+    "encounterTypeUUID": "af181460-b5f0-46b0-9474-4dd0a34981af",
+    "comment": "SES Survey"
+  },
+  {
+    "uuid": "6a5cc944-2fe3-4496-ad7a-33c70f38a9b7",
+    "formUUID": "b80646b2-b74e-415f-974c-f8f48d67b27e",
+    "encounterTypeUUID": "5a18fd93-7db8-47a2-9c26-4807d89d13e7",
+    "programUUID": "5103e1e2-a4df-498b-818d-61df4db3fb97",
+    "comment": "CK Mother (not core mother) program, Doctor Visit"
+  },
+  {
+    "uuid": "e6370227-ff3e-462c-be3e-81791eb2cbd5",
+    "formUUID": "db80ea16-8538-41ca-bd6a-53abc9be088b",
+    "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
+    "programUUID": "5103e1e2-a4df-498b-818d-61df4db3fb97",
+    "comment": "CK Mother (not core mother) program, Doctor Visit"
   }
 ]
