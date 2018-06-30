@@ -107,6 +107,13 @@
       "encounterType": {
         "uuid": "a6f8c24e-f56f-456b-aa41-7aada038390c"
       }
+    },
+    {
+      "uuid": "73854e01-75db-4043-acbd-c9d4838e4705",
+      "name": "Child PNC",
+      "encounterType": {
+        "uuid": "330d954c-ab5f-4ea1-be8b-ba26a12bdfbc"
+      }
     }
   ]
 }
