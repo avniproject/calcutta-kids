@@ -6,7 +6,6 @@ const {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions} = r
 const DoctorVisitFollowupFormRules = require("./doctorVisitFollowupHandler");
 const {DoctorFollowUpHomeVisit} = require('./visitSchedule');
 const {BirthFormRules, BirthDecisions} = require("./child/childBirthHandler");
-const BirthFormRules = require("./child/childBirthHandler");
 const {HideNAFirstPregnancyQuestions} = require('./pregnancy/EnrolmentFilter');
 
 module.exports = {
