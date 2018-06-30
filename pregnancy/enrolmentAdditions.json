@@ -15,7 +15,8 @@
           "concept": {
             "comment": "Weight",
             "uuid": "75b1656e-2777-4753-9612-ce03a766a5e1"
-          }
+          },
+          "mandatory": true
         },
         {
           "name": "BMI",
