@@ -16,6 +16,8 @@ const {
     ChildHomeVisit,
     ChildHomeVisitRecurring,
     ChildHomeVisitInitial,
+    MotherRecurringHomeVisit,
+    MotherProgramEnrolmentHomeVisit
 } = require('./visitSchedule');
 const {BirthFormRules, BirthDecisions} = require("./child/childBirthHandler");
 const {HideNAFirstPregnancyQuestions} = require('./pregnancy/EnrolmentFilter');
@@ -43,4 +45,6 @@ module.exports = {
     ChildHomeVisit,
     ChildHomeVisitRecurring,
     ChildHomeVisitInitial,
+    MotherRecurringHomeVisit,
+    MotherProgramEnrolmentHomeVisit
 };
