@@ -1,6 +1,29 @@
 const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder} = require('rules-config/rules');
+const ComplicationsBuilder = complicationsBuilder;
 
+const childBirthDecisions = RuleFactory("901e2f48-2fb8-402b-9073-ee2fac33fce4", "Decision");
 const childBirthFilter = RuleFactory("901e2f48-2fb8-402b-9073-ee2fac33fce4", "ViewFilter");
+
+@childBirthDecisions("6a4d0bb3-a3e7-4c14-b44d-cfb2fc308fa1", "Child Birth decisions [CK]", 100.0, {})
+class BirthDecisions {
+    static immediateReferral(programEncounter) {
+        const complicationsBuilder = new ComplicationsBuilder({
+            programEncounter: programEncounter,
+            complicationsConcept: 'Refer to the hospital immediately for'
+        });
+
+        complicationsBuilder.addComplication("Child born Underweight")
+            .valueInEncounter("Birth Weight").lessThan(2.6);
+
+        return complicationsBuilder.getComplications();
+    }
+
+    static exec(programEncounter, decisions, context, today) {
+        decisions.encounterDecisions.push(BirthDecisions.immediateReferral(programEncounter));
+        return decisions;
+    }
+}
+
 
 @childBirthFilter("36df512b-d2dd-4ece-b64b-09b09420b4e0", "Child Birth form rules [CK]", 100.0, {})
 class BirthFormRules {
@@ -52,4 +75,4 @@ class BirthFormRules {
 }
 
 
-module.exports = BirthFormRules;
+module.exports = {BirthFormRules, BirthDecisions};

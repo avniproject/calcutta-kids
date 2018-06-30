@@ -6,7 +6,7 @@ const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler
 const {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions} = require('./pregnancy/ANCDoctorVisitHandler');
 const DoctorVisitFollowupFormRules = require("./doctorVisitFollowupHandler");
 const {DoctorFollowUpHomeVisit} = require('./visitSchedule');
-const BirthFormRules = require("./child/childBirthHandler");
+const {BirthFormRules, BirthDecisions} = require("./child/childBirthHandler");
 
 
 //The following ViewFilter logics to be validated.
@@ -43,6 +43,7 @@ module.exports = {
     MotherHomeVisitFormRules,
     HomeVisitDecisions,
     BirthFormRules,
+    BirthDecisions,
     ChildHomeVisitFilter,
     DeliveryFilterHandler,
     ANCHomeVisitFilterHandler,
