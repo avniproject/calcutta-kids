@@ -15,11 +15,14 @@ class DoctorFollowUpHomeVisit {
         });
         const encounterDateTime = programEncounter.encounterDateTime || new Date();
         visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+        const followUpDate = programEncounter.getObservationValue("Follow up on");
+        let earliestDate = followUpDate || moment(encounterDateTime).add(3, 'days').toDate();
+        let maxDate = moment(earliestDate).add(7, 'days').toDate();
         scheduleBuilder.add({
                 name: "Doctor Visit Followup",
                 encounterType: "Doctor Visit Followup",
-                earliestDate: moment(encounterDateTime).add(3, 'days').toDate(),
-                maxDate: moment(encounterDateTime).add(10, 'days').toDate()
+                earliestDate: earliestDate,
+                maxDate: maxDate
             }
         );
         return scheduleBuilder.getAllUnique("encounterType");
