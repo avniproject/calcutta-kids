@@ -33,7 +33,7 @@
             "uuid": "842b3382-09ce-4c9f-ba5e-20b5a6c1086a"
           },
           "displayOrder": 1.3,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "Did you receive JSY?",
@@ -66,6 +66,22 @@
             "uuid": "ad4da876-15f6-4e57-a040-7c4e9a7152a9"
           },
           "displayOrder": 1.6,
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "uuid": "fa392acd-d9bf-4b90-b520-bc28d61300b8",
+      "comment": "Mother Delivery Medical Details",
+      "formElements": [
+        {
+          "name": "Other delivery complications",
+          "uuid": "98a822e2-4f35-401a-832c-547310a1340e",
+          "keyValues": [],
+          "concept": {
+            "uuid": "cae75c6e-4611-49a0-8356-be1fa12ceba9"
+          },
+          "displayOrder": 4.1,
           "mandatory": true
         }
       ]

@@ -150,5 +150,60 @@
   {
     "name": "Heavy bleeding after delivery",
     "uuid": "3c286ec4-14ab-478a-92dc-97c4f7af5a2d"
+  },
+  {
+    "name": "IUD",
+    "uuid": "47dad509-8617-4c93-a1b9-17d789bfa0d3"
+  },
+  {
+    "comment": "Delivery outcome",
+    "uuid": "36b7b1a8-d191-4bbe-ad3c-0e25a48334e0",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "fb079822-6338-46fe-9919-112686850e2d",
+        "abnormal": false
+      },
+      {
+        "uuid": "03dddd29-c1bb-4231-a17b-55445e247e7d",
+        "abnormal": false
+      },
+      {
+        "uuid": "47dad509-8617-4c93-a1b9-17d789bfa0d3",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "comment": "Delivery Complications",
+    "uuid": "42fcfd17-4e35-4981-96b3-1d028915d808",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "c8465c3a-cb35-47df-b44f-eb8268583a7d",
+        "abnormal": false
+      },
+      {
+        "uuid": "2156deeb-bec7-4614-873f-eed4807a74f3",
+        "abnormal": false
+      },
+      {
+        "uuid": "4af5db8d-ebea-456d-8bab-a87b1aac19d2",
+        "abnormal": false
+      },
+      {
+        "uuid": "3c286ec4-14ab-478a-92dc-97c4f7af5a2d",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other delivery complications",
+    "uuid": "cae75c6e-4611-49a0-8356-be1fa12ceba9",
+    "dataType": "Text"
   }
 ]
