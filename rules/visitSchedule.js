@@ -1,7 +1,7 @@
 const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
 const moment = require("moment");
 const {ANCHomeVisit, ANCHomeVisitRecurring, MotherPNC1VisitSchedule} = require('./pregnancy/visitSchedule');
-const {PNC1Visit, PNC2Visit} = require('./child/visitSchedule');
+const {PNC1Visit, PNC2Visit, BirthVisitSchedule} = require('./child/visitSchedule');
 
 const DoctorVisit = RuleFactory("b80646b2-b74e-415f-974c-f8f48d67b27e", "VisitSchedule");
 
@@ -31,5 +31,6 @@ module.exports = {
     ANCHomeVisitRecurring,
     PNC1Visit,
     MotherPNC1VisitSchedule,
-    PNC2Visit
+    PNC2Visit,
+    BirthVisitSchedule,
 };
