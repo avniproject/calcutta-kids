@@ -7,6 +7,13 @@
     "comment": "Pregnancy program (core mother program), Doctor Visit Followup"
   },
   {
+      "uuid": "52cdbaa8-f566-45e7-8eef-837c62c3f4e8",
+      "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
+      "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
+      "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+      "comment": "Pregnancy program (core mother program), Doctor Visit Followup, Cancel"
+  },
+  {
     "uuid": "3eeabf4d-01f8-48e4-9729-9f35acbb4529",
     "formUUID": "02ab8763-c489-41f7-88ad-0b3bba3f99fc",
     "encounterTypeUUID": "8ceb5b02-69a9-4858-9cca-49721c754663",
@@ -18,7 +25,14 @@
     "formUUID": "5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99",
     "encounterTypeUUID": "a6f8c24e-f56f-456b-aa41-7aada038390c",
     "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
-    "comment": "Pregnancy program (core mother program), ANC Home"
+    "comment": "Pregnancy program (core mother program), ANC Home (not regular ANC)"
+  },
+  {
+      "uuid": "fa0d38ec-8014-420f-999e-3012eb57af39",
+      "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
+      "encounterTypeUUID": "a6f8c24e-f56f-456b-aa41-7aada038390c",
+      "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+      "comment": "Pregnancy program (core mother program), ANC Home (not regular ANC) Cancel"
   },
   {
     "uuid": "dfc27c34-db1e-4e01-ba6b-04b516a02cf4",
@@ -49,11 +63,25 @@
     "comment": "Child, Doctor Visit"
   },
   {
+    "uuid": "a0c73299-4832-401e-98c1-d10d7b20d17f",
+    "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
+    "encounterTypeUUID": "21f346a4-dc45-4aa1-a34c-aff9c12438f8",
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+    "comment": "Child, Home Visit, Cancel"
+  },
+  {
     "uuid": "13b0e374-f7b0-4dc6-bf51-2103a6d58597",
     "formUUID": "db80ea16-8538-41ca-bd6a-53abc9be088b",
     "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
     "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
     "comment": "Child, Doctor Visit Followup"
+  },
+  {
+      "uuid": "582350fa-b94a-4ed4-bf2e-6e9c87462b5a",
+      "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
+      "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
+      "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+      "comment": "Child, Doctor Visit Followup, Cancel"
   },
   {
     "uuid": "4da96e79-6e64-4d0a-aec4-febb0f7f5b19",
@@ -76,10 +104,24 @@
     "comment": "CK Mother (not core mother) program, Doctor Visit Followup"
   },
   {
+      "uuid": "a8ea6bc1-48ed-4836-927b-3e0388a850e1",
+      "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
+      "encounterTypeUUID": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0",
+      "programUUID": "5103e1e2-a4df-498b-818d-61df4db3fb97",
+      "comment": "CK Mother (not core mother) program, Doctor Visit Followup, Cancel"
+  },
+  {
     "uuid": "919815d0-6fc2-4b03-8967-11b16ef5796a",
     "formUUID": "2a13df4b-6d61-4f11-850d-1ea6d13860df",
     "encounterTypeUUID": "0c0e810e-40bb-4365-af55-51aeba6548bf",
     "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
     "comment": "CK Mother (not core mother) program, Home Visit"
+  },
+  {
+    "uuid": "c381a97b-76be-4f9f-b890-18ef0d58dac1",
+    "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
+    "encounterTypeUUID": "0c0e810e-40bb-4365-af55-51aeba6548bf",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "CK Mother (not core mother) program, Home Visit Cancel"
   }
 ]

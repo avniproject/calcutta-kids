@@ -1380,7 +1380,7 @@
     ]
   },
   {
-    "name": "Away at village?",
+    "name": "Away at village",
     "uuid": "5b30a5b5-8ab5-4643-a424-2992f2b8df11",
     "dataType": "Coded",
     "type": "SingleSelect",
@@ -2312,5 +2312,19 @@
     "name": "Any other thing baby was fed before breastfeeding",
     "uuid": "d1466ada-80e5-4a35-8f7b-a3c7567b685c",
     "dataType": "Text"
+  },
+  {
+    "uuid": "739f9a56-c02c-4f81-927b-69842d78c1e8",
+    "commend": "Visit cancel reason",
+    "answers": [
+      {
+        "uuid": "5b30a5b5-8ab5-4643-a424-2992f2b8df11",
+        "abnormal": false
+      },
+      {
+        "uuid": "10885638-561a-42b6-8b24-8daa01864c89",
+        "abnormal": false
+      }
+    ]
   }
 ]
