@@ -45,7 +45,8 @@ class ANCHomeVisitFilterHandler {
         };
         this.reasonForRestingLessThan2Hours = (programEncounter, formElement) => {
             let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-            return statusBuilder.show().when.valueInEncounter('Hours of rest yesterday').lessThan(2).build();
+            statusBuilder.show().when.valueInEncounter('Hours of rest yesterday').lessThan(2);
+            return statusBuilder.build();
         };
         this.reasonForSomeOrMoreManualLabour = (programEncounter, formElement) => {
             return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Manual labour being done compared to pre-pregnancy', 'Less');
