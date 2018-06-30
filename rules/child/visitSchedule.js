@@ -2,6 +2,8 @@ const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
 const moment = require("moment");
 const ChildBirthVisit = RuleFactory("901e2f48-2fb8-402b-9073-ee2fac33fce4", "VisitSchedule");
 const ChildEnrolment = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
+const ChildPNC = RuleFactory("e09dddeb-ed72-40c4-ae8d-112d8893f18b", "VisitSchedule");
+const ChildHomeVisitSchedule = RuleFactory("35aa9007-fe7a-4a59-b985-0a1c038df889", "VisitSchedule");
 
 
 const schedulePNC1 = (programEncounter, visitSchedule, currentDateTime = new Date()) => {
@@ -40,6 +42,25 @@ const schedulePNC2 = (programEncounter, visitSchedule, currentDateTime = new Dat
     return scheduleBuilder.getAllUnique("name");
 };
 
+const scheduleHomeVisit = (programEncounter, visitSchedule, currentDateTime = new Date()) => {
+    const scheduleBuilder = new VisitScheduleBuilder({
+        programEncounter,
+    });
+    const encounterDateTime = currentDateTime;
+    visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+    let currentDateMoment = moment(encounterDateTime);
+    let earliestDate = currentDateMoment.month(currentDateMoment.month() + 1).date(1).toDate();
+    let maxDate = moment(earliestDate).add(21, 'days').toDate();
+    scheduleBuilder.add({
+            name: "Home Visit",
+            encounterType: "Child Home Visit",
+            earliestDate: earliestDate,
+            maxDate: maxDate
+        }
+    );
+    return scheduleBuilder.getAllUnique("encounterType");
+};
+
 
 @ChildEnrolment("df647850-916a-47c9-8ba7-309fdb60d85e", "Schedule a birth visit immediately after enrolment", 10.0)
 class BirthVisitSchedule {
@@ -76,4 +97,18 @@ class PNC2Visit {
     }
 }
 
-module.exports = {PNC1Visit, PNC2Visit, BirthVisitSchedule};
+@ChildPNC("1d3da9c2-675b-4128-9437-f02f27b7c61e", "Child Home Visit - PNC", 11.0)
+class ChildHomeVisit {
+    static exec(programEncounter, visitSchedule = []) {
+        return scheduleHomeVisit(programEncounter, visitSchedule, programEncounter.encounterDateTime);
+    }
+}
+
+@ChildHomeVisitSchedule("0dbb84ef-494d-4992-8809-beaa45710a3a", "Recurring Child Home Visit", 12.0)
+class ChildHomeVisitRecurring {
+    static exec(programEncounter, visitSchedule = []) {
+        return scheduleHomeVisit(programEncounter, visitSchedule, programEncounter.encounterDateTime);
+    }
+}
+
+module.exports = {PNC1Visit, PNC2Visit, BirthVisitSchedule, ChildHomeVisit, ChildHomeVisitRecurring};
