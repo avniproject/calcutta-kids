@@ -18,7 +18,7 @@ const _gravidaBreakup = [
 ];
 const _computeGravida = (programEnrolment) => _gravidaBreakup.map((cn) => programEnrolment.getObservationValue(cn))
     .filter(Number.isFinite)
-    .reduce((a, b) => a + b, 0);
+    .reduce((a, b) => a + b, 1);
 
 @MotherProgramEnrolmentFilter('40202177-7142-45c1-bf70-3d3b432799c0', 'Hide non applicable questions for first pregnancy', 100.0, {})
 class HideNAFirstPregnancyQuestions {
