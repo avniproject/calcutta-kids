@@ -203,7 +203,7 @@
       "uuid": "04c1a9fa-9ea7-4220-b6a0-05317cc15acf",
       "name": "Referral",
       "display": "Referral",
-      "displayOrder": 3,
+      "displayOrder": 2,
       "formElements": [
         {
           "name": "Refer mother to",
