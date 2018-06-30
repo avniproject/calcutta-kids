@@ -172,6 +172,21 @@
             "uuid": "b3e9c088-90ed-45d9-8c99-102d1bda66e1",
             "comment": "Number of living children"
           }
+        },
+        {
+          "name": "Gravida",
+          "uuid": "6005cd36-e65d-45cb-b379-418c69ea43a8",
+          "keyValues": [
+            {
+              "key": "editable",
+              "value": false
+            }
+          ],
+          "concept": {
+            "comment": "Gravida",
+            "uuid": "dc2c23e9-19ad-471f-81d1-213069ccc975"
+          },
+          "displayOrder": 6
         }
       ]
     },
