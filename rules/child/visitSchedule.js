@@ -42,9 +42,9 @@ const schedulePNC2 = (programEncounter, visitSchedule, currentDateTime = new Dat
     return scheduleBuilder.getAllUnique("name");
 };
 
-const scheduleHomeVisit = (programEncounter, visitSchedule, currentDateTime = new Date()) => {
+const scheduleHomeVisit = (programEnrolment, visitSchedule, currentDateTime = new Date()) => {
     const scheduleBuilder = new VisitScheduleBuilder({
-        programEncounter,
+        programEnrolment,
     });
     const encounterDateTime = currentDateTime;
     visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
@@ -99,16 +99,30 @@ class PNC2Visit {
 
 @ChildPNC("1d3da9c2-675b-4128-9437-f02f27b7c61e", "Child Home Visit - PNC", 11.0)
 class ChildHomeVisit {
-    static exec(programEncounter, visitSchedule = []) {
-        return scheduleHomeVisit(programEncounter, visitSchedule, programEncounter.encounterDateTime);
+    static exec({programEnrolment, encounterDateTime}, visitSchedule = []) {
+        return scheduleHomeVisit(programEnrolment, visitSchedule, encounterDateTime);
     }
 }
 
 @ChildHomeVisitSchedule("0dbb84ef-494d-4992-8809-beaa45710a3a", "Recurring Child Home Visit", 12.0)
 class ChildHomeVisitRecurring {
-    static exec(programEncounter, visitSchedule = []) {
-        return scheduleHomeVisit(programEncounter, visitSchedule, programEncounter.encounterDateTime);
+    static exec({programEnrolment, encounterDateTime}, visitSchedule = []) {
+        return scheduleHomeVisit(programEnrolment, visitSchedule, encounterDateTime);
     }
 }
 
-module.exports = {PNC1Visit, PNC2Visit, BirthVisitSchedule, ChildHomeVisit, ChildHomeVisitRecurring};
+@ChildEnrolment("df647850-916a-47c9-8ba7-309fdb60d85e", "Child Home Visit Next Month On Enrolment", 10.0)
+class ChildHomeVisitInitial {
+    static exec(programEnrolment, visitSchedule = []) {
+        return scheduleHomeVisit(programEnrolment, visitSchedule, programEnrolment.enrolmentDateTime);
+    }
+}
+
+module.exports = {
+    PNC1Visit,
+    PNC2Visit,
+    BirthVisitSchedule,
+    ChildHomeVisit,
+    ChildHomeVisitRecurring,
+    ChildHomeVisitInitial
+};
