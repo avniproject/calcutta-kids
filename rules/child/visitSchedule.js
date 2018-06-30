@@ -111,7 +111,7 @@ class ChildHomeVisitRecurring {
     }
 }
 
-@ChildEnrolment("df647850-916a-47c9-8ba7-309fdb60d85e", "Child Home Visit Next Month On Enrolment", 10.0)
+@ChildEnrolment("0bdfd933-1ba5-4fc1-989f-b4226ae010bd", "Child Home Visit Next Month On Enrolment", 10.0)
 class ChildHomeVisitInitial {
     static exec(programEnrolment, visitSchedule = []) {
         return scheduleHomeVisit(programEnrolment, visitSchedule, programEnrolment.enrolmentDateTime);

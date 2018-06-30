@@ -1396,6 +1396,16 @@
     ]
   },
   {
+    "name": "Refer to Calcutta Kids doctor for",
+    "uuid": "daced408-70e7-4d7b-9bda-7245df407285",
+    "dataType": "NA"
+  },
+  {
+    "name": "Refer to Hospital or Calcutta Kids doctor for",
+    "uuid": "abf8ba39-d12d-421e-aab1-e36e88bcd89a",
+    "dataType": "NA"
+  },
+  {
     "name": "High fever (above 102°C)",
     "uuid": "f6628b6c-0c6e-4deb-bc5c-faaf6d22a4be",
     "dataType": "NA"
@@ -1411,7 +1421,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Problems with any stitches or discharge from the wound",
+    "name": "Problems with stitches or discharge from wound",
     "uuid": "b7c9ce09-c05e-4cfc-8649-9bc6cadfd08d",
     "dataType": "NA"
   },
@@ -1440,10 +1450,6 @@
       },
       {
         "uuid": "94a22fed-e9a5-438e-8a17-ec4ae40c5d4f",
-        "abnormal": true
-      },
-      {
-        "uuid": "b7c9ce09-c05e-4cfc-8649-9bc6cadfd08d",
         "abnormal": true
       },
       {
@@ -1727,7 +1733,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Possible breast infection (severe pain, abscess, foul smelling discharge, fever) ",
+    "name": "Possible breast infection (severe pain, abscess, foul smelling discharge, fever)",
     "uuid": "765a3256-78c3-4a5f-9a6c-d4334eb5e8a5",
     "dataType": "NA"
   },

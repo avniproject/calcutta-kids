@@ -13,7 +13,7 @@ class BirthDecisions {
         });
 
         complicationsBuilder.addComplication("Child born Underweight")
-            .valueInEncounter("Birth Weight").lessThan(2.6);
+            .when.valueInEncounter("Birth Weight").lessThan(2.6);
 
         return complicationsBuilder.getComplications();
     }

@@ -4,29 +4,10 @@
   "formType": "ProgramEncounter",
   "formElementGroups": [
     {
-      "uuid": "89f8eac8-f27f-4c5d-a2ba-e16b847173ff",
-      "name": "Mother Home Visit Landing Page",
-      "display": "Availability",
-      "displayOrder": 1,
-      "formElements": [
-        {
-          "name": "Away at village?",
-          "uuid": "3b0970f7-560d-430f-9db8-df89d3bf773e",
-          "keyValues": [],
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "5b30a5b5-8ab5-4643-a424-2992f2b8df11"
-          },
-          "displayOrder": 1,
-          "mandatory": true
-        }
-      ]
-    },
-    {
       "uuid": "1a83dbb8-2370-42f5-9fcc-2ce36bf81592",
       "name": "Mother Health/Behaviour Monitoring",
       "display": "Health/Behaviour Monitoring",
-      "displayOrder": 2,
+      "displayOrder": 1,
       "formElements": [
         {
           "name": "Do you have any of the following health problems?",
