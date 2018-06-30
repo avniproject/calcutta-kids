@@ -11,7 +11,7 @@ const _calculateBMI = (weight, height) => {
 };
 const _gravidaBreakup = [
     'Number of miscarriages',
-    'Number of Abortions',
+    'Number of abortions',
     'Number of stillbirths',
     'Number of child deaths',
     'Number of living children'
