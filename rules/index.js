@@ -4,7 +4,8 @@ const DeliveryFilterHandler = require('./pregnancy/DeliveryFilterHandler');
 const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler');
 const {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions} = require('./pregnancy/ANCDoctorVisitHandler');
 const DoctorVisitFollowupFormRules = require("./doctorVisitFollowupHandler");
-const {DoctorFollowUpHomeVisit} = require('./visitSchedule');
+
+const {DoctorFollowUpHomeVisit, ANCHomeVisit} = require('./visitSchedule');
 const {BirthFormRules, BirthDecisions} = require("./child/childBirthHandler");
 const {HideNAFirstPregnancyQuestions} = require('./pregnancy/EnrolmentFilter');
 
@@ -19,6 +20,7 @@ module.exports = {
     ANCHomeVisitFilterHandler,
     ANCDoctorVisitAbdominalExamination,
     DoctorVisitFollowupFormRules,
+    ANCHomeVisit,
     DoctorFollowUpHomeVisit,
     ANCDoctorVisitRemoveAllDecisions
 };

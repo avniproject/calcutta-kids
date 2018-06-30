@@ -1,5 +1,6 @@
 const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
 const moment = require("moment");
+const ANCHomeVisit = require('./pregnancy/visitSchedule');
 
 const DoctorVisit = RuleFactory("b80646b2-b74e-415f-974c-f8f48d67b27e", "VisitSchedule");
 
@@ -23,4 +24,4 @@ class DoctorFollowUpHomeVisit {
     }
 }
 
-module.exports = {DoctorFollowUpHomeVisit};
+module.exports = {DoctorFollowUpHomeVisit, ANCHomeVisit};

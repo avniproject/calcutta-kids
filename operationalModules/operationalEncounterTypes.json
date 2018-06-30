@@ -100,6 +100,13 @@
       "encounterType": {
         "uuid": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0"
       }
+    },
+    {
+      "uuid": "b6973054-9ca4-47be-88e9-db1bfb0f708e",
+      "name": "ANC Home Visit",
+      "encounterType": {
+        "uuid": "a6f8c24e-f56f-456b-aa41-7aada038390c"
+      }
     }
   ]
 }
