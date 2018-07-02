@@ -78,7 +78,8 @@ class BirthVisitSchedule {
                 earliestDate: earliestDate,
                 maxDate: maxDate
             }
-        ).whenItem(new Date()).lessThan(maxDate);
+        ).whenItem(new Date()).lessThan(maxDate)
+            .and.ageInDays.lessThan(2);
         return scheduleBuilder.getAllUnique("name");
     }
 }

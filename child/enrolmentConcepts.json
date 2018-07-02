@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Mother associated with CK during pregnancy",
+    "uuid": "598ba0e4-ead6-43ac-b6e3-409ac96476e7",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
+  }
+]

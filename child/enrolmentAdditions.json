@@ -1,0 +1,41 @@
+{
+  "comment": "Child Enrolment",
+  "uuid": "1608c2c0-0334-41a6-aab0-5c61ea1eb069",
+  "formType": "ProgramEnrolment",
+  "formElementGroups": [
+    {
+      "uuid": "062ffc31-c311-485b-baf3-d5a95d10e97c",
+      "comment": "Basic Details",
+      "formElements": [
+        {
+          "uuid": "6654d8f8-7468-4c78-93e6-bcd14127d2a3",
+          "name": "Was mother associated with CK during Pregnancy?",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "598ba0e4-ead6-43ac-b6e3-409ac96476e7"
+          },
+          "displayOrder": 100,
+          "mandatory": true
+        },
+        {
+          "uuid": "cd7cb5b5-b877-4f17-9ca1-db0d77233f6b",
+          "name": "Baby's current weight",
+          "concept": {
+            "uuid": "75b1656e-2777-4753-9612-ce03a766a5e1"
+          },
+          "displayOrder": 101,
+          "mandatory": true
+        },
+        {
+          "uuid": "c7f56244-129a-4553-9b76-209a2df878f6",
+          "name": "Baby's birth weight",
+          "concept": {
+            "uuid": "7ff327c5-8678-41e3-af39-c86f214c6f14"
+          },
+          "displayOrder": 102,
+          "mandatory": true
+        }
+      ]
+    }
+  ]
+}
