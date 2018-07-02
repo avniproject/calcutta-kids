@@ -20,11 +20,11 @@ const {
     MotherProgramEnrolmentHomeVisit
 } = require('./visitSchedule');
 const {BirthFormRules, BirthDecisions} = require("./child/childBirthHandler");
-const {HideNAFirstPregnancyQuestions} = require('./pregnancy/EnrolmentFilter');
+const {PregnancyEnrolmentViewFilterHandler} = require('./pregnancy/EnrolmentFilter');
 const PregnancyTestFollowupFormHandler = require('./general/pregnancyTestFollowupFormHandler');
 
 module.exports = {
-    HideNAFirstPregnancyQuestions,
+    PregnancyEnrolmentViewFilterHandler,
     MotherHomeVisitFormRules,
     MotherHomeVisitDecisions,
     HomeVisitDecisions,
