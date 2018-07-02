@@ -1287,6 +1287,11 @@
     "dataType": "NA"
   },
   {
+    "name": "Malaria in the past 6 months",
+    "uuid": "595ba20e-1ab5-45fa-8a75-8b84a6b9b41a",
+    "dataType": "NA"
+  },
+  {
     "name": "Obstetrics history",
     "uuid": "8a4ab436-6767-45d5-95d7-075d9459609e",
     "dataType": "Coded",
@@ -1330,6 +1335,16 @@
         "uuid": "1092e3aa-80b9-4dec-b5cd-9318fd7c0fb2",
         "abnormal": true,
         "comment": "Spinal deformities, such as scoliosis/kyphosis/polio"
+      },
+      {
+        "uuid": "595ba20e-1ab5-45fa-8a75-8b84a6b9b41a",
+        "comment": "Malaria in the past 6 months",
+        "abnormal": true
+      },
+      {
+        "uuid": "79e2f5b7-f8c7-4f12-aec9-7e3d3382cf1a",
+        "comment": "Infertility treatment",
+        "abnormal": true
       }
     ]
   },
