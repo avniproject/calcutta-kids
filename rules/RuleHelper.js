@@ -7,6 +7,13 @@ class RuleHelper {
         return statusBuilder.build();
     }
 
+    static encounterCodedObsNotHave(programEncounter, formElement, conceptName, answerConceptName) {
+        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        statusBuilder.show().when.valueInEncounter(conceptName).not.containsAnswerConceptName(answerConceptName);
+        return statusBuilder.build();
+    }
+
+
     static generalObservationMatcher(context, scope, conceptName, matchingFn, [...answers] /*always array*/) {
         let statusBuilder = new FormElementStatusBuilder(context);
         statusBuilder.show().when['valueIn'+scope](conceptName)[matchingFn](...answers);
