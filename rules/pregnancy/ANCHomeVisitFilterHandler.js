@@ -12,67 +12,87 @@ class ANCHomeVisitFilterHandler {
     }
 
     static gestationalAge(enrolment, toDate = new Date()) {
-        FormElementsStatusHelper.weeksBetween(toDate, enrolment.getObservationValue("Last menstrual period"));
+        return FormElementsStatusHelper.weeksBetween(toDate, enrolment.getObservationValue("Last menstrual period"));
     }
 
     static currentTrimester(enrolment, toDate = new Date()) {
-        [...TRIMESTER_MAPPING.keys()]
+        return [...TRIMESTER_MAPPING.keys()]
             .find((trimester) =>
                 ANCHomeVisitFilterHandler.gestationalAge(enrolment, toDate) <= TRIMESTER_MAPPING.get(trimester).to &&
                 ANCHomeVisitFilterHandler.gestationalAge(enrolment, toDate) >= TRIMESTER_MAPPING.get(trimester).from);
     }
-
-    constructor() {
-        this.haveYouFeltAnyDecreasedFetalMovementOrNoFetalMovement = (programEncounter, formElement) => {
-            return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 1);
-        };
-        this.whenDidTheMovementStopOrDecrease = (programEncounter, formElement) => {
-            const currentTrimester = ANCHomeVisitFilterHandler.currentTrimester(programEncounter['programEnrolment'], programEncounter['encounterDateTime']);
-            let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-
-            if (currentTrimester < 2) {
-                statusBuilder.show().whenItem(false).is.truthy;
-            } else {
-                statusBuilder.show().when.valueInEncounter('Foetal movements').containsAnswerConceptName('Reduced').or.when.valueInEncounter('Foetal movements').containsAnswerConceptName('Absent');
-            }
-            return statusBuilder.build();
-        };
-        this.whatIsTheNameOfTheInstitution = (programEncounter, formElement) => {
-            return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Name of institution', 'Yes');
-        };
-        this.whyEatingSameOrLessCounselAccordingly = (programEncounter, formElement) => {
-            return RuleHelper.encounterCodedObsNotHave(programEncounter, formElement, 'Eating compared to your pre-pregnancy food intake', 'More');
-        };
-        this.reasonForRestingLessThan2Hours = (programEncounter, formElement) => {
-            let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-            statusBuilder.show().when.valueInEncounter('Hours of rest yesterday').lessThan(2);
-            return statusBuilder.build();
-        };
-        this.reasonForSomeOrMoreManualLabour = (programEncounter, formElement) => {
-            return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Manual labour being done compared to pre-pregnancy', 'Less');
-        };
-        this.reasonForNotSavingMoney = (programEncounter, formElement) => {
-            return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Saving money for delivery', 'Yes');
-        };
-        this.fromWhereDoYouGetYourCalciumTablets = (programEncounter, formElement) => {
-            return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
-        };
-        this.howManyCalciumTabletsHaveYouConsumedSinceYourLastVisit = (programEncounter, formElement) => {
-            return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
-        };
-        this.ancDiscussionItem2 = (programEncounter, formElement) => {
-            return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 1);
-        };
-        this.ancDiscussionItem3 = (programEncounter, formElement) => {
-            return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
-        };
-    }
-
+    
     static afterTrimester(programEncounter, formElement, trimesterNumber) {
         const currentTrimester = ANCHomeVisitFilterHandler.currentTrimester(programEncounter['programEnrolment'], programEncounter['encounterDateTime']);
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         statusBuilder.show().whenItem(currentTrimester).greaterThan(trimesterNumber);
         return statusBuilder.build();
+    }
+
+    haveYouFeltAnyDecreasedFetalMovementOrNoFetalMovement(programEncounter, formElement) {
+        return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 1);
+    }
+
+    whenDidTheMovementStopOrDecrease(programEncounter, formElement) {
+        const currentTrimester = ANCHomeVisitFilterHandler.currentTrimester(programEncounter['programEnrolment'], programEncounter['encounterDateTime']);
+        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+
+        if (currentTrimester < 2) {
+            statusBuilder.show().whenItem(false).is.truthy;
+        } else {
+            statusBuilder.show().when.valueInEncounter('Foetal movements').containsAnyAnswerConceptName('Reduced', 'Absent');
+        }
+        return statusBuilder.build();
+    }
+
+    whatIsTheNameOfTheInstitution(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Name of institution', 'Yes');
+    }
+
+    otherServicesReceivedOutside(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Services received outside', 'Other');
+    }
+
+    whyEatingSameOrLessCounselAccordingly(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Eating compared to your pre-pregnancy food intake', 'More');
+    }
+
+    reasonForRestingLessThan2Hours(programEncounter, formElement) {
+        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        statusBuilder.show().when.valueInEncounter('Hours of rest yesterday').lessThan(2);
+        return statusBuilder.build();
+    }
+
+    reasonForSomeOrMoreManualLabour(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Manual labour being done compared to pre-pregnancy', 'Less');
+    }
+
+    reasonForNotSavingMoney(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Saving money for delivery', 'No');
+    }
+
+    otherReasonForManualLabour(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for same or more manual labour', '');
+    }
+
+    fromWhereDoYouGetYourCalciumTablets(programEncounter, formElement) {
+        return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
+    }
+
+    howManyCalciumTabletsHaveYouConsumedSinceYourLastVisit(programEncounter, formElement) {
+        return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
+    }
+
+    ancDiscussionItem2(programEncounter, formElement) {
+        return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 1);
+    }
+
+    ancDiscussionItem3(programEncounter, formElement) {
+        return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
+    }
+
+    whatIsTheNameOfTheInstitution(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Registered for institutional delivery', 'Yes');
     }
 }
 
