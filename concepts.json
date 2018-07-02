@@ -2374,5 +2374,10 @@
     "name": "myCHI Id",
     "uuid": "1d6ac236-2ab4-4eaa-aa3d-e18924d93ba3",
     "dataType": "Text"
+  },
+  {
+    "name": "Referral",
+    "uuid": "15916909-1512-4e8c-800f-9c22409d7012",
+    "dataType": "Text"
   }
 ]

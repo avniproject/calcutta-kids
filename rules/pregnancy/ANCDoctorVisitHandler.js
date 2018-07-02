@@ -71,7 +71,7 @@ class ANCDoctorVisitRemoveAllDecisions {
             "enrolmentDecisions": [],
             "encounterDecisions": [],
             "registrationDecisions": []
-        }
+        };
         return decisions;
     }
 }
