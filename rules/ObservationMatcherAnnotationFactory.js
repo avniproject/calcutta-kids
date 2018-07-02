@@ -7,7 +7,7 @@ const ObservationMatcherAnnotationFactory = function (scope, matchingFn) {
             contextMap[argName] = args[index];
         });
         return contextMap;
-    }
+    };
 
     return function ([...argNames]) {
         return function ObsMatcherAnnotation(conceptName, [...answerConceptNames]) {
@@ -15,7 +15,7 @@ const ObservationMatcherAnnotationFactory = function (scope, matchingFn) {
                 descriptor.value = function (...args) {
                     const context = argToContextMapper(args, argNames);
                     return RuleHelper.generalObservationMatcher(context, scope, conceptName, matchingFn, answerConceptNames);
-                }
+                };
                 return descriptor;
             };
         };

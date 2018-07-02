@@ -421,5 +421,15 @@
     "name": "Number of calcium tablets consumed since last last visit",
     "uuid": "c2b21d7d-447a-4f97-9775-199c316921e4",
     "dataType": "Numeric"
+  },
+  {
+    "name": "Other reason for manual labour",
+    "uuid": "cd5a83e3-b5f0-4179-8c9e-d00c0af1602a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other reason for not saving money",
+    "uuid": "642685db-63dc-4abd-94bf-333bda7a96a8",
+    "dataType": "Text"
   }
 ]

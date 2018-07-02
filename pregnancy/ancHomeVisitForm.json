@@ -68,7 +68,7 @@
             "uuid": "13c1458f-b4fe-442a-9b0b-b5ec6e62da11"
           },
           "displayOrder": 2,
-          "mandatory": false
+          "mandatory": true
         }
       ]
     },
@@ -88,6 +88,16 @@
           },
           "displayOrder": 1,
           "mandatory": false
+        },
+        {
+          "name": "Other services received outside",
+          "uuid": "8af4e098-240c-4926-899e-6d6b216548ec",
+          "keyValues": [],
+          "concept": {
+            "uuid": "af4d58ae-7233-4c68-9caa-7ba53a6c5f94"
+          },
+          "displayOrder": 1.1,
+          "mandatory": true
         },
         {
           "name": "Where do you get your FA tablets?",
@@ -207,6 +217,16 @@
           "mandatory": true
         },
         {
+          "name": "Other reason for manual labour",
+          "uuid": "ee078119-26cf-4325-9b3c-e5f0bf3f43da",
+          "keyValues": [],
+          "concept": {
+            "uuid": "cd5a83e3-b5f0-4179-8c9e-d00c0af1602a"
+          },
+          "displayOrder": 13,
+          "mandatory": true
+        },
+        {
           "name": "Are you saving money for delivery?",
           "uuid": "bfb6a38b-e4e2-4164-9e9b-fbb1d3f1cf76",
           "keyValues": [],
@@ -214,7 +234,7 @@
           "concept": {
             "uuid": "65b19077-0b47-4ce7-a608-9efcf0cd8f27"
           },
-          "displayOrder": 13,
+          "displayOrder": 14,
           "mandatory": true
         },
         {
@@ -225,7 +245,17 @@
           "concept": {
             "uuid": "74eb771a-f9e8-4b51-a078-3a13e2044b0d"
           },
-          "displayOrder": 14,
+          "displayOrder": 15,
+          "mandatory": true
+        },
+        {
+          "name": "Other reason for not saving money",
+          "uuid": "f3639045-0097-49e5-9cd0-16ffd1ac7137",
+          "keyValues": [],
+          "concept": {
+            "uuid": "642685db-63dc-4abd-94bf-333bda7a96a8"
+          },
+          "displayOrder": 15.1,
           "mandatory": true
         },
         {
@@ -235,7 +265,7 @@
           "concept": {
             "uuid": "4362911d-ac02-447c-9812-dfc5271eb499"
           },
-          "displayOrder": 15,
+          "displayOrder": 16,
           "mandatory": true
         }
       ]
@@ -254,7 +284,7 @@
             "uuid": "d5372690-d699-4bd0-ad6e-6d8f0ba559a0"
           },
           "displayOrder": 1,
-          "mandatory": true
+          "mandatory": false
         },
         {
           "name": "Consider a special case",
