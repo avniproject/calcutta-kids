@@ -41,6 +41,9 @@ class HideNAFirstPregnancyQuestions {
     @CodedObservationMatcher('Is this your first pregnancy?', ['No'])
     numberOfLivingChildren() { }
 
+    @CodedObservationMatcher('Family history', ['Other'])
+    otherFamilyHistory() { }
+
     bmi(programEnrolment, formElement, today) {
         let value;
         let height = programEnrolment.findLatestObservationInEntireEnrolment("Height", programEnrolment);
