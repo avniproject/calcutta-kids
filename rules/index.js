@@ -7,6 +7,8 @@ const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler
 const {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions} = require('./pregnancy/ANCDoctorVisitHandler');
 const {GMPDecision} = require("./pregnancy/ANCGmpHandler");
 const DoctorVisitFollowupFormRules = require("./general/doctorVisitFollowupHandler");
+const {SESFormRules, SESDecisions} = require("./sesHandler");
+
 const {
     DoctorFollowUpHomeVisit,
     ANCHomeVisit,
@@ -55,5 +57,7 @@ module.exports = {
     GMPDecision,
     PregnancyTestFollowupFormHandler,
     ChildEnrolmentDecisions,
-    PNCFormHandler
+    PNCFormHandler,
+    SESFormRules,
+    SESDecisions
 };

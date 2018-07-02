@@ -87,6 +87,11 @@
     "dataType": "Text"
   },
   {
+    "name": "Other marital status",
+    "uuid": "04f0888b-d0b5-43ac-905d-ae3b5a9b1015",
+    "dataType": "Text"
+  },
+  {
     "name": "Age at first marriage",
     "uuid": "f1919fdc-5003-4ebc-82c7-059e6a4e8a21",
     "dataType": "Numeric"
@@ -163,7 +168,7 @@
     ]
   },
   {
-    "name": "Have you migrated to Kolkata from another place?",
+    "name": "Migrated to Kolkata from another place",
     "uuid": "e955a293-df11-4d9f-b0b5-c8f57cfe71df",
     "dataType": "Coded",
     "answers": [
@@ -203,7 +208,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Where did you migrate from?",
+    "name": "Migrated from",
     "uuid": "ceaef306-a4bd-4e8e-b9d2-6baec7dc8d66",
     "dataType": "Coded",
     "answers": [
@@ -234,14 +239,9 @@
     ]
   },
   {
-    "name": "If from other place, name of place",
+    "name": "Other place of migration",
     "uuid": "a3e4ab44-9f95-4aaa-8dd7-c0d93e391a14",
     "dataType": "Text"
-  },
-  {
-    "name": "Advice about reading card",
-    "uuid": "9318bbe3-ae44-4d7e-acba-0a5a5b2fc997",
-    "dataType": "NA"
   },
   {
     "name": "Could the woman read the passage?",
@@ -264,7 +264,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Can your husband read?",
+    "name": "Can husband read?",
     "uuid": "d4829479-b0b4-48ab-9263-61d85c0dd769",
     "dataType": "Coded",
     "answers": [
@@ -289,7 +289,7 @@
     "dataType": "NA"
   },
   {
-    "name": "What is your occupation?",
+    "name": "Occupation",
     "uuid": "cd83afec-d147-42b2-bd50-0ca460dbd55f",
     "dataType": "Coded",
     "answers": [
@@ -308,7 +308,12 @@
     ]
   },
   {
-    "name": "What is the additional work you do?",
+    "name": "Other occupation",
+    "uuid": "9d16f047-3108-468a-a9cb-10b392f8b012",
+    "dataType": "Text"
+  },
+  {
+    "name": "Additional work done besides housework",
     "uuid": "c202bc3a-8e15-45af-9bc2-50f070997cd6",
     "dataType": "Text"
   },
@@ -343,7 +348,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Is there are any other income earner in the household?",
+    "name": "Any other income earner in the household?",
     "uuid": "2cc56b84-460c-4e5e-8ee2-74db082e9759",
     "dataType": "Coded",
     "answers": [
@@ -358,7 +363,7 @@
     ]
   },
   {
-    "name": "What is his/her occupation?",
+    "name": "Occupation of other income earner",
     "uuid": "5a5cb414-483d-4c4f-bc7f-7b96c505d9b5",
     "dataType": "Text"
   },
@@ -392,10 +397,36 @@
     ]
   },
   {
-    "name": "Total monthly income",
+    "name": "Household income",
     "uuid": "76c1a980-9a20-462f-aa77-3f815a319727",
     "dataType": "Numeric",
     "unit": "Rs."
+  },
+  {
+    "name": "Weekly",
+    "uuid": "e4473e3d-608c-4142-9f51-8a6578a963b9",
+    "dataType": "NA"
+  },
+  {
+    "name": "Monthly",
+    "uuid": "9ec63ce6-c410-44c6-b2f8-d86229489bbd",
+    "dataType": "NA"
+  },
+  {
+    "name": "Wage frequency",
+    "uuid": "2534f7cb-b4ae-4aa5-938c-9855c99b0a2b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ba04b615-f4af-4b5e-87aa-1ce70f28a1b1"
+      },
+      {
+        "uuid": "e4473e3d-608c-4142-9f51-8a6578a963b9"
+      },
+      {
+        "uuid": "9ec63ce6-c410-44c6-b2f8-d86229489bbd"
+      }
+    ]
   },
   {
     "name": "Ground level, Talibari",
@@ -540,7 +571,7 @@
     "dataType": "NA"
   },
   {
-    "name": "How many pressure cookers or pressure pans does the household own?",
+    "name": "Pressure cookers or pressure pans owned by household",
     "uuid": "c8fa6f94-956f-4988-b12b-93f4367a050d",
     "dataType": "Coded",
     "answers": [
@@ -559,8 +590,8 @@
     ]
   },
   {
-    "name": "How many electric fans does the household own?",
-    "uuid": "c8fa6f94-956f-4988-b12b-93f4367a050d",
+    "name": "Electric fans owned by household",
+    "uuid": "bef73755-c9f6-45d1-8a95-c048feb4d4de",
     "dataType": "Coded",
     "answers": [
       {
@@ -593,7 +624,7 @@
     "dataType": "NA"
   },
   {
-    "name": "What is household’s primary source of energy for cooking?",
+    "name": "Primary source of energy for cooking in the household",
     "uuid": "bf982fb0-a128-4e99-9172-484861f2bcd7",
     "dataType": "Coded",
     "answers": [
@@ -708,7 +739,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Service received from?",
+    "name": "ANC service received from",
     "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852",
     "dataType": "Coded",
     "answers": [
@@ -751,7 +782,265 @@
     ]
   },
   {
-    "name": "Received ANC services when pregnant?",
+    "name": "GMP service received from",
+    "uuid": "0ac89224-baff-416d-959b-2854369d8530",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "ICDS",
+        "uuid": "30de2a66-746e-4d36-92b9-ce72acd02f97"
+      },
+      {
+        "name": "Ward Health Center",
+        "uuid": "7a5b00c3-e693-4510-ae8a-25fbd2905c74"
+      },
+      {
+        "name": "District Hospital",
+        "uuid": "6e3cb48a-5428-49d3-bccb-6964f958fdf3"
+      },
+      {
+        "name": "Jaiswal Hospital",
+        "uuid": "658ccd6f-5c7c-4214-a29e-9e2e526f71bd"
+      },
+      {
+        "name": "Satyabala Hospital",
+        "uuid": "57c583bf-fd86-4e8e-8475-78c527a5259d"
+      },
+      {
+        "name": "Private Nursing Home",
+        "uuid": "ed45b918-885a-4874-94e7-3aa397876b10"
+      },
+      {
+        "name": "NGOs",
+        "uuid": "99e43d73-3a44-49f4-83c6-e8536984f8f6"
+      },
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "comment": "Calcutta Kids"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Food rations received from",
+    "uuid": "cdcafa55-25da-4158-b2ae-163d92528a28",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "ICDS",
+        "uuid": "30de2a66-746e-4d36-92b9-ce72acd02f97"
+      },
+      {
+        "name": "Ward Health Center",
+        "uuid": "7a5b00c3-e693-4510-ae8a-25fbd2905c74"
+      },
+      {
+        "name": "District Hospital",
+        "uuid": "6e3cb48a-5428-49d3-bccb-6964f958fdf3"
+      },
+      {
+        "name": "Jaiswal Hospital",
+        "uuid": "658ccd6f-5c7c-4214-a29e-9e2e526f71bd"
+      },
+      {
+        "name": "Satyabala Hospital",
+        "uuid": "57c583bf-fd86-4e8e-8475-78c527a5259d"
+      },
+      {
+        "name": "Private Nursing Home",
+        "uuid": "ed45b918-885a-4874-94e7-3aa397876b10"
+      },
+      {
+        "name": "NGOs",
+        "uuid": "99e43d73-3a44-49f4-83c6-e8536984f8f6"
+      },
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "comment": "Calcutta Kids"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Curative health services received from",
+    "uuid": "4806adf8-1120-4550-8703-faab343fdd9b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "ICDS",
+        "uuid": "30de2a66-746e-4d36-92b9-ce72acd02f97"
+      },
+      {
+        "name": "Ward Health Center",
+        "uuid": "7a5b00c3-e693-4510-ae8a-25fbd2905c74"
+      },
+      {
+        "name": "District Hospital",
+        "uuid": "6e3cb48a-5428-49d3-bccb-6964f958fdf3"
+      },
+      {
+        "name": "Jaiswal Hospital",
+        "uuid": "658ccd6f-5c7c-4214-a29e-9e2e526f71bd"
+      },
+      {
+        "name": "Satyabala Hospital",
+        "uuid": "57c583bf-fd86-4e8e-8475-78c527a5259d"
+      },
+      {
+        "name": "Private Nursing Home",
+        "uuid": "ed45b918-885a-4874-94e7-3aa397876b10"
+      },
+      {
+        "name": "NGOs",
+        "uuid": "99e43d73-3a44-49f4-83c6-e8536984f8f6"
+      },
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "comment": "Calcutta Kids"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Immunization received from",
+    "uuid": "3be0f140-2c04-4b40-9af2-46ee2e133e64",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "ICDS",
+        "uuid": "30de2a66-746e-4d36-92b9-ce72acd02f97"
+      },
+      {
+        "name": "Ward Health Center",
+        "uuid": "7a5b00c3-e693-4510-ae8a-25fbd2905c74"
+      },
+      {
+        "name": "District Hospital",
+        "uuid": "6e3cb48a-5428-49d3-bccb-6964f958fdf3"
+      },
+      {
+        "name": "Jaiswal Hospital",
+        "uuid": "658ccd6f-5c7c-4214-a29e-9e2e526f71bd"
+      },
+      {
+        "name": "Satyabala Hospital",
+        "uuid": "57c583bf-fd86-4e8e-8475-78c527a5259d"
+      },
+      {
+        "name": "Private Nursing Home",
+        "uuid": "ed45b918-885a-4874-94e7-3aa397876b10"
+      },
+      {
+        "name": "NGOs",
+        "uuid": "99e43d73-3a44-49f4-83c6-e8536984f8f6"
+      },
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "comment": "Calcutta Kids"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Emergency services received from",
+    "uuid": "5339fc25-ef4f-42fe-9b4f-307efb9a8173",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "ICDS",
+        "uuid": "30de2a66-746e-4d36-92b9-ce72acd02f97"
+      },
+      {
+        "name": "Ward Health Center",
+        "uuid": "7a5b00c3-e693-4510-ae8a-25fbd2905c74"
+      },
+      {
+        "name": "District Hospital",
+        "uuid": "6e3cb48a-5428-49d3-bccb-6964f958fdf3"
+      },
+      {
+        "name": "Jaiswal Hospital",
+        "uuid": "658ccd6f-5c7c-4214-a29e-9e2e526f71bd"
+      },
+      {
+        "name": "Satyabala Hospital",
+        "uuid": "57c583bf-fd86-4e8e-8475-78c527a5259d"
+      },
+      {
+        "name": "Private Nursing Home",
+        "uuid": "ed45b918-885a-4874-94e7-3aa397876b10"
+      },
+      {
+        "name": "NGOs",
+        "uuid": "99e43d73-3a44-49f4-83c6-e8536984f8f6"
+      },
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "comment": "Calcutta Kids"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Medical assistance received from",
+    "uuid": "b47198e4-8bda-4b46-9020-4dd693135ab3",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "ICDS",
+        "uuid": "30de2a66-746e-4d36-92b9-ce72acd02f97"
+      },
+      {
+        "name": "Ward Health Center",
+        "uuid": "7a5b00c3-e693-4510-ae8a-25fbd2905c74"
+      },
+      {
+        "name": "District Hospital",
+        "uuid": "6e3cb48a-5428-49d3-bccb-6964f958fdf3"
+      },
+      {
+        "name": "Jaiswal Hospital",
+        "uuid": "658ccd6f-5c7c-4214-a29e-9e2e526f71bd"
+      },
+      {
+        "name": "Satyabala Hospital",
+        "uuid": "57c583bf-fd86-4e8e-8475-78c527a5259d"
+      },
+      {
+        "name": "Private Nursing Home",
+        "uuid": "ed45b918-885a-4874-94e7-3aa397876b10"
+      },
+      {
+        "name": "NGOs",
+        "uuid": "99e43d73-3a44-49f4-83c6-e8536984f8f6"
+      },
+      {
+        "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+        "comment": "Calcutta Kids"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Received ANC services when pregnant",
     "uuid": "591b140e-cce0-4433-bcf3-6c0b17aefb9f",
     "dataType": "Coded",
     "answers": [
@@ -831,7 +1120,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Received immunizations for child?",
+    "name": "Received immunizations for child",
     "uuid": "b5301e37-9c86-4ba0-b7d3-1a563335ef26",
     "dataType": "Coded",
     "answers": [
@@ -851,7 +1140,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Used emergency services for self or child?",
+    "name": "Used emergency services for self or child",
     "uuid": "cd4a9f19-f914-4939-a144-a63732e8d534",
     "dataType": "Coded",
     "answers": [
@@ -871,7 +1160,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Received any other medical assistance?",
+    "name": "Received other medical assistance",
     "uuid": "ebe61471-b499-4b2c-9aa5-7a3c3b43767c",
     "dataType": "Coded",
     "answers": [
@@ -2379,5 +2668,10 @@
     "name": "Referral",
     "uuid": "15916909-1512-4e8c-800f-9c22409d7012",
     "dataType": "Text"
+  },
+  {
+    "name": "PPI",
+    "uuid": "5378de40-3b4b-435b-a6b2-8c4641a0e501",
+    "dataType": "Numeric"
   }
 ]

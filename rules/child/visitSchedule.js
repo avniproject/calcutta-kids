@@ -84,7 +84,7 @@ class BirthVisitSchedule {
     }
 }
 
-@ChildBirthVisit("f94d4f18-9ff6-4f7b-988e-e7956d947bb0", "Child Birth Visit Schedule - PNC1", 10.0)
+@ChildBirthVisit("2f21603a-0bdb-4732-b8fb-cb0bb58cbdc1", "Child Birth Visit Schedule - PNC1", 10.0)
 class PNC1Visit {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         return schedulePNC1(programEncounter, visitSchedule, programEncounter.encounterDateTime);
