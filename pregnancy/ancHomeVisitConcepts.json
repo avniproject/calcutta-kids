@@ -299,6 +299,11 @@
     ]
   },
   {
+    "name": "Other reason for resting less than 2 hours",
+    "uuid": "dda37984-052d-41e2-b255-0cb9a67d580f",
+    "dataType": "Text"
+  },
+  {
     "name": "Manual labour being done compared to pre-pregnancy",
     "uuid": "cac85c5d-d0eb-46a7-b30a-0a01836f8c0c",
     "dataType": "Coded",
@@ -398,6 +403,7 @@
     "name": "Calcium tablets received from",
     "uuid": "370721b6-7d28-4993-b408-9266e408b5a1",
     "dataType": "Coded",
+    "type": "MultiSelect",
     "answers": [
       {
         "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",

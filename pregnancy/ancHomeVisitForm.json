@@ -69,6 +69,17 @@
           },
           "displayOrder": 2,
           "mandatory": true
+        },
+        {
+          "name": "Encourage registration at institution",
+          "uuid": "72c4470c-e613-43ab-b4e1-ef1aeac26f67",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 3,
+          "mandatory": false
         }
       ]
     },
@@ -152,7 +163,7 @@
           "mandatory": true
         },
         {
-          "name": "WHY eating same or less? (Counsel accordingly)",
+          "name": "WHY eating same or less?",
           "uuid": "74031f60-181c-4801-8d1b-9c232f7ba87a",
           "keyValues": [],
           "type": "MultiSelect",
@@ -171,6 +182,17 @@
           },
           "displayOrder": 7.1,
           "mandatory": true
+        },
+        {
+          "name": "Counsel for eating same or less",
+          "uuid": "6a07e168-6791-425d-8406-448368000ba6",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 7.2,
+          "mandatory": false
         },
         {
           "name": "What did you eat yesterday?",
@@ -205,6 +227,27 @@
           "mandatory": true
         },
         {
+          "name": "Other reason for resting less than 2 hours",
+          "uuid": "2ff27a88-9c89-4b20-81e7-578140073a12",
+          "keyValues": [],
+          "concept": {
+            "uuid": "dda37984-052d-41e2-b255-0cb9a67d580f"
+          },
+          "displayOrder": 10.1,
+          "mandatory": true
+        },
+        {
+          "name": "Counselling for resting during pregnancy",
+          "uuid": "4ec12bb2-a500-4578-ad85-f178d3d9964a",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 10.2,
+          "mandatory": false
+        },
+        {
           "name": "How much manual labor are you doing compared to your pre-pregnancy manual labor?",
           "uuid": "9f6fecf8-cdeb-4b91-a2d8-8a9a0e44376b",
           "keyValues": [],
@@ -237,6 +280,17 @@
           "mandatory": true
         },
         {
+          "name": "Counsel against manual labour during pregnancy",
+          "uuid": "3dda111f-983a-450b-9a82-b17ab61f975a",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 13.1,
+          "mandatory": false
+        },
+        {
           "name": "Are you saving money for delivery?",
           "uuid": "bfb6a38b-e4e2-4164-9e9b-fbb1d3f1cf76",
           "keyValues": [],
@@ -267,6 +321,17 @@
           },
           "displayOrder": 15.1,
           "mandatory": true
+        },
+        {
+          "name": "Counsel for saving money",
+          "uuid": "ced30ce8-b0ef-4fa9-a702-89b183f535ab",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 15.2,
+          "mandatory": false
         },
         {
           "name": "How much money have you saved so far?",
@@ -318,6 +383,7 @@
           "name": "ANC discussion item 1",
           "uuid": "7555f429-23d9-4faf-8e50-3ada9de9c817",
           "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
@@ -328,6 +394,7 @@
           "name": "ANC discussion item 2",
           "uuid": "826b5279-40dd-4c6f-bb60-6abf1dcd9da9",
           "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
@@ -338,6 +405,7 @@
           "name": "ANC discussion item 3",
           "uuid": "d8b186c1-aa5b-4f3d-ae0a-85a05e8668c4",
           "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },

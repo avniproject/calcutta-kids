@@ -45,10 +45,13 @@ class ANCHomeVisitFilterHandler {
         return statusBuilder.build();
     }
 
+    // Registration at institution
     whatIsTheNameOfTheInstitution(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Registered for institutional delivery', 'Yes');
     }
-
+    encourageRegistrationAtInstitution(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Registered for institutional delivery', 'No');
+    }
     otherServicesReceivedOutside(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Services received outside or at Calcutta Kids', 'Other');
     }
@@ -60,6 +63,9 @@ class ANCHomeVisitFilterHandler {
     otherReasonForEatingSameOrLess(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for eating less than pre-pregnancy', 'Other');
     }
+    counselForEatingSameOrLess(programEncounter, formElement) {
+        return this.whyEatingSameOrLessCounselAccordingly(programEncounter, formElement);
+    }
 
     // Resting
     reasonForRestingLessThan2Hours(programEncounter, formElement) {
@@ -67,8 +73,11 @@ class ANCHomeVisitFilterHandler {
         statusBuilder.show().when.valueInEncounter('Hours of rest yesterday').lessThan(2);
         return statusBuilder.build();
     }
-    reasonForRestingLessThan2Hours(programEncounter, formElement) {
+    otherReasonForRestingLessThan2Hours(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for resting less than 2 hours', 'Other');
+    }
+    counsellingForRestingDuringPregnancy(programEncounter, formElement) {
+        return this.reasonForRestingLessThan2Hours(programEncounter, formElement);
     }
 
     // Manual Labour
@@ -78,6 +87,9 @@ class ANCHomeVisitFilterHandler {
     otherReasonForManualLabour(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for same or more manual labour', 'Other');
     }
+    counselAgainstManualLabourDuringPregnancy(programEncounter, formElement) {
+        return this.reasonForSomeOrMoreManualLabour(programEncounter, formElement);
+    }
 
     // Saving money
     reasonForNotSavingMoney(programEncounter, formElement) {
@@ -85,6 +97,9 @@ class ANCHomeVisitFilterHandler {
     }
     otherReasonForNotSavingMoney(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for not saving money', 'Other');
+    }
+    counselForSavingMoney(programEncounter, formElement) {
+        return this.reasonForNotSavingMoney(programEncounter, formElement);
     }
 
     // Calcium tablets
