@@ -1,9 +1,9 @@
 const { FormElementStatusBuilder } = require('rules-config/rules');
 
 class RuleHelper {
-    static encounterCodedObsHas(programEncounter, formElement, conceptName, answerConceptName) {
+    static encounterCodedObsHas(programEncounter, formElement, conceptName, ...answerConceptNames) {
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-        statusBuilder.show().when.valueInEncounter(conceptName).containsAnswerConceptName(answerConceptName);
+        statusBuilder.show().when.valueInEncounter(conceptName).containsAnyAnswerConceptName(...answerConceptNames);
         return statusBuilder.build();
     }
 

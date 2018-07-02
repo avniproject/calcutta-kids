@@ -46,39 +46,51 @@ class ANCHomeVisitFilterHandler {
     }
 
     whatIsTheNameOfTheInstitution(programEncounter, formElement) {
-        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Name of institution', 'Yes');
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Registered for institutional delivery', 'Yes');
     }
 
     otherServicesReceivedOutside(programEncounter, formElement) {
-        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Services received outside', 'Other');
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Services received outside or at Calcutta Kids', 'Other');
     }
 
+    // Eating less
     whyEatingSameOrLessCounselAccordingly(programEncounter, formElement) {
-        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Eating compared to your pre-pregnancy food intake', 'More');
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Eating compared to your pre-pregnancy food intake', 'Less', 'Same');
+    }
+    otherReasonForEatingSameOrLess(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for eating less than pre-pregnancy', 'Other');
     }
 
+    // Resting
     reasonForRestingLessThan2Hours(programEncounter, formElement) {
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         statusBuilder.show().when.valueInEncounter('Hours of rest yesterday').lessThan(2);
         return statusBuilder.build();
     }
-
-    reasonForSomeOrMoreManualLabour(programEncounter, formElement) {
-        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Manual labour being done compared to pre-pregnancy', 'Less');
+    reasonForRestingLessThan2Hours(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for resting less than 2 hours', 'Other');
     }
 
+    // Manual Labour
+    reasonForSomeOrMoreManualLabour(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Manual labour being done compared to pre-pregnancy', 'Some', 'More');
+    }
+    otherReasonForManualLabour(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for same or more manual labour', 'Other');
+    }
+
+    // Saving money
     reasonForNotSavingMoney(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Saving money for delivery', 'No');
     }
-
-    otherReasonForManualLabour(programEncounter, formElement) {
-        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for same or more manual labour', '');
+    otherReasonForNotSavingMoney(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for not saving money', 'Other');
     }
 
+    // Calcium tablets
     fromWhereDoYouGetYourCalciumTablets(programEncounter, formElement) {
         return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
     }
-
     howManyCalciumTabletsHaveYouConsumedSinceYourLastVisit(programEncounter, formElement) {
         return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
     }
@@ -86,13 +98,8 @@ class ANCHomeVisitFilterHandler {
     ancDiscussionItem2(programEncounter, formElement) {
         return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 1);
     }
-
     ancDiscussionItem3(programEncounter, formElement) {
         return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
-    }
-
-    whatIsTheNameOfTheInstitution(programEncounter, formElement) {
-        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Registered for institutional delivery', 'Yes');
     }
 }
 
