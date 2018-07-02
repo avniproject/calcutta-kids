@@ -1,0 +1,16 @@
+{
+  "uuid": "9ed7e0a9-6122-41ee-8413-1cef6792e2c6",
+  "comment": "Lab Tests",
+  "formElementGroups": [
+    {
+      "comment": "Blood Investigation",
+      "uuid": "fff4c8e6-7adb-4caa-a79a-3e7d77a42111",
+      "formElements": [
+        {
+          "uuid": "ef186966-f4f4-4d39-93c3-ff2a4e2ae62b",
+          "comment": "Urine Pregnancy Test"
+        }
+      ]
+    }
+  ]
+}
