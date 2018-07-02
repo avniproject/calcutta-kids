@@ -11,10 +11,10 @@
     },
     {
       "uuid": "93617150-2536-46ad-9879-0ba4fccd1f4e",
-      "name": "ANC Lab Test Results",
+      "name": "Lab Tests",
       "encounterType": {
         "uuid": "63486b57-67b9-4236-b36c-e7bbe5ac0411",
-        "comment": "ANC Lab Test Results"
+        "comment": "Lab Tests"
       }
     },
     {
@@ -47,14 +47,6 @@
       "encounterType": {
         "uuid": "af181460-b5f0-46b0-9474-4dd0a34981af",
         "comment": "SES Survey"
-      }
-    },
-    {
-      "uuid": "662f87d7-a0c0-495a-957f-2e09f6fedb3d",
-      "name": "Test Entry",
-      "encounterType": {
-        "uuid": "8ceb5b02-69a9-4858-9cca-49721c754663",
-        "comment": "Test Entry"
       }
     },
     {

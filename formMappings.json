@@ -14,13 +14,6 @@
       "comment": "Pregnancy program (core mother program), Doctor Visit Followup, Cancel"
   },
   {
-    "uuid": "3eeabf4d-01f8-48e4-9729-9f35acbb4529",
-    "formUUID": "02ab8763-c489-41f7-88ad-0b3bba3f99fc",
-    "encounterTypeUUID": "8ceb5b02-69a9-4858-9cca-49721c754663",
-    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
-    "comment": "Pregnancy program (core mother program), Test entry"
-  },
-  {
     "uuid": "307ebdc8-902f-4249-9f6d-5700e3c7d2e0",
     "formUUID": "5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99",
     "encounterTypeUUID": "a6f8c24e-f56f-456b-aa41-7aada038390c",
@@ -36,10 +29,10 @@
   },
   {
     "uuid": "dfc27c34-db1e-4e01-ba6b-04b516a02cf4",
-    "formUUID": "02ab8763-c489-41f7-88ad-0b3bba3f99fc",
-    "encounterTypeUUID": "8ceb5b02-69a9-4858-9cca-49721c754663",
+    "formUUID": "9ed7e0a9-6122-41ee-8413-1cef6792e2c6",
+    "encounterTypeUUID": "63486b57-67b9-4236-b36c-e7bbe5ac0411",
     "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
-    "comment": "Child, Test Entry"
+    "comment": "Child, Lab Tests"
   },
   {
     "uuid": "95243b66-5c9f-4961-962c-d46ab52ade23",
@@ -130,6 +123,13 @@
     "encounterTypeUUID": "0c0e810e-40bb-4365-af55-51aeba6548bf",
     "programUUID": "5103e1e2-a4df-498b-818d-61df4db3fb97",
     "comment": "CK Mother (not core mother) program, Home Visit Cancel"
+  },
+  {
+    "uuid": "3b48fbe7-009c-490b-a4ec-7e8af917fd1c",
+    "formUUID": "9ed7e0a9-6122-41ee-8413-1cef6792e2c6",
+    "encounterTypeUUID": "63486b57-67b9-4236-b36c-e7bbe5ac0411",
+    "programUUID": "5103e1e2-a4df-498b-818d-61df4db3fb97",
+    "comment": "CK Mother (not core mother) program, Lab Tests"
   },
   {
     "uuid": "5004fa1a-1964-4041-b0dd-56bab20b68d7",
