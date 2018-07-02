@@ -1,0 +1,192 @@
+{
+  "uuid": "78b1400e-8100-4ba6-b78e-fef580f7fb77",
+  "formElementGroups": [
+    {
+      "uuid": "bd0672b5-bc94-45c3-a24e-210a7c7b0d93",
+      "name": "Mother PNC Danger Signs",
+      "display": "Danger Signs",
+      "formElements": [
+        {
+          "name": "Any other problems?",
+          "uuid": "0371f3af-541b-4bd1-8ee5-c9419ba82321",
+          "keyValues": [],
+          "concept": {
+            "uuid": "6f1019e6-91ba-47ae-98f6-4535f9d38a75",
+            "comment": "Other complications"
+          },
+          "displayOrder": 100.1,
+          "mandatory": false
+        },
+        {
+          "name": "Did you receive stitches during delivery?",
+          "uuid": "dcb22748-afb2-4875-98d2-e0be554b97d9",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "581471f2-fa16-4082-abc8-3c74de7b0561",
+            "comment": "Stitches during delivery"
+          },
+          "displayOrder": 101.2,
+          "mandatory": true
+        },
+        {
+          "name": "Are your stitches open or loose?",
+          "uuid": "b1a50973-45d6-4b5a-b0bf-1b670b91e8ea",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "75235180-0625-4bb2-9a89-fae17b6a0100",
+            "comment": "Open or loose stitches"
+          },
+          "displayOrder": 102.3,
+          "mandatory": true
+        },
+        {
+          "name": "Is there any discharge from the wound?",
+          "uuid": "076f5dff-a0b5-4194-86a2-28b2b9d0432d",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b289dac9-c2fe-4111-babd-502a691fb461",
+            "comment": "Discharge from wound"
+          },
+          "displayOrder": 103.4,
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "uuid": "cd9e1235-f599-4e79-ab8a-055c7e2be4c3",
+      "name": "Mother PNC Diet and Medication",
+      "display": "Diet and Medication",
+      "displayOrder": 9,
+      "formElements": [
+        {
+          "name": "Where do you get your IFA tablets from?",
+          "uuid": "9b60c17d-5a4c-43f2-b0bb-c97fb013e945",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "aa9462ca-9312-41df-8a92-741d81f77ee7"
+          },
+          "displayOrder": 1.1,
+          "mandatory": false
+        },
+        {
+          "name": "How many IFA tablets have you consumed since your last visit?",
+          "uuid": "1c25008f-4a6c-4c0a-99b8-4d5285074c0f",
+          "keyValues": [],
+          "concept": {
+            "uuid": "0dcf9cee-b2c7-4751-86a2-142fd924068f"
+          },
+          "displayOrder": 2.2,
+          "mandatory": false
+        },
+        {
+          "name": "Where do you get your calcium tablets from?",
+          "uuid": "3fd43a41-fbfc-40f1-836b-a3e7299a8390",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "370721b6-7d28-4993-b408-9266e408b5a1"
+          },
+          "displayOrder": 3.3,
+          "mandatory": false
+        },
+        {
+          "name": "How many calcium tablets have you consumed since your last visit?",
+          "uuid": "62db9687-6517-4672-931a-5596805e203f",
+          "keyValues": [],
+          "concept": {
+            "uuid": "c2b21d7d-447a-4f97-9775-199c316921e4"
+          },
+          "displayOrder": 4.4,
+          "mandatory": false
+        },
+        {
+          "name": "How much are you eating compared to your pre-pregnancy food intake?",
+          "uuid": "aac07328-febc-43bf-a359-f4ff1bd5b64c",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "bd925c49-1315-405a-999b-cd6509668281"
+          },
+          "displayOrder": 5.5,
+          "mandatory": false
+        },
+        {
+          "name": "Why eating same or less?",
+          "uuid": "095696b2-02da-451f-a7f7-2834b36373bb",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "bc8a4300-6a51-411f-a81b-198135fdf236"
+          },
+          "displayOrder": 5.6,
+          "mandatory": false
+        },
+        {
+          "name": "Specify other reason for eating less",
+          "uuid": "1c570680-cdda-45ec-b6b5-cf3e7633327b",
+          "keyValues": [],
+          "concept": {
+            "uuid": "70cad8f7-722e-4186-aa89-4acc7acb2ed7"
+          },
+          "displayOrder": 6.6,
+          "mandatory": false
+        },
+        {
+          "name": "Are you drinking at least one glass of milk per day?",
+          "uuid": "5c54f78b-1074-40bb-9bed-d540e2763087",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "d60670cb-becd-4a25-b854-14f9e7e60add"
+          },
+          "displayOrder": 7.7,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "19fb300e-9ebb-49df-841d-939113904214",
+      "name": "Mother PNC Discussion Items",
+      "display": "Discussion Items",
+      "displayOrder": 10,
+      "formElements": [
+        {
+          "name": "Postnatal care for mother",
+          "uuid": "83b86560-6645-4562-9369-fe26fc6e4d5d",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 1.1,
+          "mandatory": false
+        },
+        {
+          "name": "Postnatal care for child",
+          "uuid": "1102290b-96b9-4ebd-9005-fb910fa5d46d",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 2.2,
+          "mandatory": false
+        },
+        {
+          "name": "Inform the mother to come for her routine PNC check up with the CK doctor",
+          "uuid": "5707b0ba-8282-496e-8e14-a13448886891",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 3.3,
+          "mandatory": false
+        }
+      ]
+    }
+  ]
+}
