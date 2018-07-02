@@ -1354,6 +1354,11 @@
     "dataType": "NA"
   },
   {
+    "uuid": "2ea977b5-23cb-4833-a5ca-831b12409e41",
+    "name": "Other family history",
+    "dataType": "Text"
+  },
+  {
     "comment": "Family history",
     "uuid": "18fa9773-bf4b-47f8-9535-f1573a477940",
     "answers": [
@@ -1375,7 +1380,12 @@
       },
       {
         "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
-        "comment": "None"
+        "comment": "None",
+        "unique": true
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other"
       }
     ]
   },

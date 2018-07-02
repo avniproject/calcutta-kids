@@ -91,6 +91,17 @@
           },
           "displayOrder": 2.9,
           "mandatory": true
+        },
+        {
+          "name": "Other family history",
+          "uuid": "d7134915-9c63-48b8-ace7-03dced54f884",
+          "keyValues": [],
+          "concept": {
+            "uuid": "2ea977b5-23cb-4833-a5ca-831b12409e41",
+            "comment": "Other family history"
+          },
+          "displayOrder": 2.95,
+          "mandatory": true
         }
       ]
     },
