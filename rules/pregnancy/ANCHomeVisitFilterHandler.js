@@ -41,7 +41,7 @@ class ANCHomeVisitFilterHandler {
             return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Name of institution', 'Yes');
         };
         this.whyEatingSameOrLessCounselAccordingly = (programEncounter, formElement) => {
-            return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Eating compared to your pre-pregnancy food intake', 'More');
+            return RuleHelper.encounterCodedObsNotHave(programEncounter, formElement, 'Eating compared to your pre-pregnancy food intake', 'More');
         };
         this.reasonForRestingLessThan2Hours = (programEncounter, formElement) => {
             let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
