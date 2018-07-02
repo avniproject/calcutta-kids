@@ -37,6 +37,7 @@ create_org: ## Create Calcutta Kids org and user+privileges
 deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
+	$(call _curl,POST,concepts,@child/enrolmentConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/ancHomeVisitConcepts.json)
 	$(call _curl,POST,concepts,@doctorVisitConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/pregnancyConcepts.json)
@@ -62,6 +63,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,PATCH,forms,@pregnancy/motherDeliveryFormAdditions.json)
 	$(call _curl,PATCH,forms,@child/anthroAssessmentFormAdditions.json)
 	$(call _curl,PATCH,forms,@child/birthFormAdditions.json)
+	$(call _curl,PATCH,forms,@child/enrolmentAdditions.json)
 
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,POST,forms,@sesForm.json)

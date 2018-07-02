@@ -1,5 +1,6 @@
 const {MotherHomeVisitFormRules, MotherHomeVisitDecisions} = require("./mother/motherHomeVisitHandler");
 const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./child/childHomeVisit");
+const {ChildEnrolmentDecisions} = require("./child/childEnrolmentHandler");
 const DeliveryFilterHandler = require('./pregnancy/DeliveryFilterHandler');
 const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler');
 const {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions} = require('./pregnancy/ANCDoctorVisitHandler');
@@ -52,4 +53,5 @@ module.exports = {
     MotherProgramEnrolmentHomeVisit,
     GMPDecision,
     PregnancyTestFollowupFormHandler,
+    ChildEnrolmentDecisions,
 };

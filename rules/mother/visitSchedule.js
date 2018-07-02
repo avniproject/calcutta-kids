@@ -11,8 +11,8 @@ const scheduleHomeVisit = (programEnrolment, visitSchedule, currentDateTime = ne
     });
     const encounterDateTime = currentDateTime;
     visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
-    let currentDateMoment = moment(encounterDateTime);
-    let earliestDate = currentDateMoment.month(currentDateMoment.month() + 1).date(1).toDate();
+    const currentDateMoment = moment(encounterDateTime);
+    let earliestDate = currentDateMoment.month(currentDateMoment.month() + 1).date(currentDateMoment.date() + 1).toDate();
     let maxDate = moment(earliestDate).add(21, 'days').toDate();
     scheduleBuilder.add({
             name: "Home Visit",
