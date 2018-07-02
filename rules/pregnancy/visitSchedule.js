@@ -52,9 +52,9 @@ const schedulePNC2Visit = (programEncounter, visitSchedule, currentDateTime = ne
     visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
     let earliestDate = encounterDateTime;
     let maxDate = moment(encounterDateTime).add(7, 'days').toDate();
+    let dateOfDelivery = programEncounter.findObservationInEntireEnrolment("Date of delivery");
     const hoursBetweenPNC = moment(encounterDateTime)
-        .diff(programEncounter.findObservationInEntireEnrolment("Date of delivery")
-            .getValue(), 'hours');
+        .diff(_.isNil(dateOfDelivery) ? new Date() : dateOfDelivery.getValue(), 'hours');
     scheduleBuilder.add({
             name: "PNC 2",
             encounterType: "PNC",

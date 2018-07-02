@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Other complications",
+    "uuid": "6f1019e6-91ba-47ae-98f6-4535f9d38a75",
+    "dataType": "Text"
+  },
+  {
+    "name": "Stitches during delivery",
+    "uuid": "581471f2-fa16-4082-abc8-3c74de7b0561",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
+  },
+  {
+    "name": "Open or loose stitches",
+    "uuid": "75235180-0625-4bb2-9a89-fae17b6a0100",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
+  },
+  {
+    "name": "Any discharge from wound",
+    "uuid": "b289dac9-c2fe-4111-babd-502a691fb461",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
+  }
+]

@@ -43,6 +43,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@pregnancy/pregnancyConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/deliveryConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/ancDoctorVisitConcepts.json)
+	$(call _curl,POST,concepts,@pregnancy/pncConcepts.json)
 
 deploy_refdata: deploy_concepts
 	$(call _curl,POST,catchments,@catchments.json)
@@ -64,6 +65,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,PATCH,forms,@child/anthroAssessmentFormAdditions.json)
 	$(call _curl,PATCH,forms,@child/birthFormAdditions.json)
 	$(call _curl,PATCH,forms,@child/enrolmentAdditions.json)
+	$(call _curl,PATCH,forms,@pregnancy/pncAdditions.json)
 
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,POST,forms,@sesForm.json)
