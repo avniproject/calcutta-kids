@@ -2414,5 +2414,10 @@
         "comment": "NA"
       }
     ]
+  },
+  {
+    "name": "myCHI Id",
+    "uuid": "1d6ac236-2ab4-4eaa-aa3d-e18924d93ba3",
+    "dataType": "Text"
   }
 ]

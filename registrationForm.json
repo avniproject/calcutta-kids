@@ -10,6 +10,16 @@
       "display": "Demographic Details",
       "formElements": [
         {
+          "name": "myCHI Id",
+          "uuid": "edffeb62-f0b9-4efa-9888-22a26d3a57bb",
+          "keyValues": [],
+          "concept": {
+            "uuid": "1d6ac236-2ab4-4eaa-aa3d-e18924d93ba3",
+            "comment": "myCHI Id"
+          },
+          "displayOrder": 0
+        },
+        {
           "name": "Household number",
           "uuid": "8a426313-06dd-4f92-ab3b-52710bf8a37d",
           "concept": {
@@ -85,8 +95,7 @@
             "name": "Is mother the primary caregiver",
             "uuid": "47dec150-90f5-4db4-9ff5-6e96472176d7"
           },
-          "displayOrder": 1,
-          "mandatory": true
+          "displayOrder": 1
         },
         {
           "name": "Husband/Father name",
@@ -97,16 +106,6 @@
             "name": "Father/Husband"
           },
           "displayOrder": 2,
-          "mandatory": false
-        },
-        {
-          "name": "Mother's name",
-          "uuid": "e50ff026-b5e7-48b0-92cd-1cb25b23102d",
-          "keyValues": [],
-          "concept": {
-            "uuid": "36525e7b-575f-4b34-aae8-9a031adb84eb"
-          },
-          "displayOrder": 3,
           "mandatory": false
         }
       ]
@@ -126,8 +125,7 @@
             "uuid": "3493c80a-8af5-40e6-b598-8385c4db2bd7",
             "name": "Blood Group"
           },
-          "displayOrder": 1,
-          "mandatory": true
+          "displayOrder": 1
         },
         {
           "name": "Medical History",
