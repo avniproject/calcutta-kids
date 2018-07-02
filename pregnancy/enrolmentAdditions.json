@@ -278,6 +278,25 @@
           "displayOrder": 1
         }
       ]
+    },
+    {
+      "uuid": "e3f71866-12fe-40f0-b3e1-28c981419147",
+      "name": "Other notes",
+      "display": "Other notes",
+      "displayOrder": 5.8,
+      "formElements": [
+        {
+          "name": "Other notes",
+          "uuid": "252e27bd-5094-42db-8d40-e711311f7f2a",
+          "keyValues": [],
+          "concept": {
+            "comment": "General Advice",
+            "uuid": "72f1ecc4-9f6d-4bab-ba01-a11c822bfb5a"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }

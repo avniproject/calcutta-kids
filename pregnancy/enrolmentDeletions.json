@@ -28,6 +28,34 @@
           "comment": "Family History"
         }
       ]
+    },
+    {
+      "uuid": "a9edaaef-c93b-4039-8fab-ef8b836cf19a",
+      "comment": "ANC Enrolment other medical complications",
+      "formElements": [
+        {
+          "comment": "Malaria in the past 6 months?",
+          "uuid": "3f4c9772-02d8-4632-9ba9-0c7de065e340"
+        },
+        {
+          "comment": "Infertility treatment",
+          "uuid": "72d82a0a-162a-461f-a0c3-bb317412f35b"
+        },
+        {
+          "uuid": "06458e0b-9b1c-45a0-9d29-eac854953bd1",
+          "comment": "Other notes"
+        }
+      ]
+    },
+    {
+      "uuid": "2dff8c09-bed3-4848-943f-b2240b70d7ed",
+      "comment": "ANC Enrolment Basic Details",
+      "formElements": [
+        {
+          "comment": "Urine pregnancy test",
+          "uuid": "1e23c808-5932-484b-b913-1d78f81cc11f"
+        }
+      ]
     }
   ]
 }
