@@ -23,5 +23,14 @@ class ChildEnrolmentDecisions {
     }
 }
 
+const EnrolmentChecklists = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "Checklists");
 
-module.exports = {ChildEnrolmentDecisions};
+@EnrolmentChecklists("203e1c1f-4718-4c4d-9906-f3f14821118b", "Child empty checklists", 100.0)
+class ChildChecklists {
+    static exec(enrolment, checklists = []) {
+        return [];
+    }
+}
+
+
+module.exports = {ChildEnrolmentDecisions, ChildChecklists};
