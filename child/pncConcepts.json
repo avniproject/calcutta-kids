@@ -59,5 +59,50 @@
     "name": "Number of times urinated in the last 24 hours",
     "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
     "dataType": "Numeric"
+  },
+  {
+    "uuid": "f123fea3-5051-4b1f-9431-332e76e622f0",
+    "name": "Refer child to doctor",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Refer child to hospital",
+    "uuid": "2f1bfcdb-343b-4c9e-85c1-63f74607ee6e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Child's case should be treated as a special case",
+    "uuid": "87199275-bc93-47ef-ba2b-089bbb54d927",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   }
 ]
