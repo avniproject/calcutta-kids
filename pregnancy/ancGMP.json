@@ -5,11 +5,12 @@
   "formElementGroups": [
     {
       "uuid": "3fceb3da-e70d-4905-812a-e27cbbe32236",
-      "name": "mother gmp details",
+      "name": "Mother GMP details",
       "displayOrder": 1,
-      "display": "gmp details",
+      "display": "GMP details",
       "formElements": [
-        {"name": "weight",
+        {
+          "name": "Weight",
           "uuid": "ca48c08b-4959-43af-93ac-5abf249d543f",
           "keyvalues": [],
           "concept": {

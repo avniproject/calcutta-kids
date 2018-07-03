@@ -13,8 +13,8 @@ class GMPDecision {
             complicationsConcept: 'Refer to the hospital immediately for'
         });
 
-        complicationsBuilder.addComplication("Pregnant Women Weight gain problem")
-            .when.valueInEncounter("weight").lessThan(35);
+        complicationsBuilder.addComplication("Irregular weight gain")
+            .when.valueInEncounter("Weight").lessThan(35);
 
         return complicationsBuilder.getComplications();
     }
