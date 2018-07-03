@@ -323,6 +323,16 @@
         },
         {
           "concept": {
+            "comment": "Counselling placeholder",
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "name": "Counselling for feeding your child frequently",
+          "displayOrder": 26.5,
+          "uuid": "249f109b-f197-412f-9060-785a4266e66e",
+          "mandatory": false
+        },
+        {
+          "concept": {
             "name": "How many times has your child urinated in the last 24 hours?",
             "uuid": "8883313f-8d55-4da3-8896-035fffd3a030"
           },
@@ -413,7 +423,7 @@
             "uuid": "24c0eb2b-d6bf-4099-a8d5-0ac2217e98b7"
           },
           "displayOrder": 2,
-          "mandatory": true
+          "mandatory": false
         }
       ]
     },
