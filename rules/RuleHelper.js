@@ -1,4 +1,4 @@
-const { FormElementStatusBuilder } = require('rules-config/rules');
+const { FormElementStatusBuilder, FormElementStatus } = require('rules-config/rules');
 
 class RuleHelper {
     static encounterCodedObsHas(programEncounter, formElement, conceptName, ...answerConceptNames) {
@@ -24,6 +24,20 @@ class RuleHelper {
         Enrolment:'Enrolment',
         Encounter:'Encounter',
         EntireEnrolment:'EntireEnrolment'
+    };
+
+    static _calculateBMI = (weight, height) => {
+        return Math.ceil((weight / Math.pow(height, 2)) * 10000, 1);
+    };
+
+    static createBMIFormElementStatus(height, weight, formElement) {
+        let value;
+        height = height && height.getValue();
+        weight = weight && weight.getValue();
+        if (Number.isFinite(weight) && Number.isFinite(height)) {
+            value = RuleHelper._calculateBMI(weight, height);
+        }
+        return new FormElementStatus(formElement.uuid, true, value);
     }
 }
 

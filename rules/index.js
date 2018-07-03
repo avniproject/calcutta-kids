@@ -27,6 +27,7 @@ const {
 const {BirthFormRules, BirthDecisions} = require("./child/childBirthHandler");
 const {PregnancyEnrolmentViewFilterHandler} = require('./pregnancy/EnrolmentFilter');
 const PregnancyTestFollowupFormHandler = require('./general/pregnancyTestFollowupFormHandler');
+const DoctorVisitFormHandler = require('./general/DoctorVisitFormHandler');
 
 module.exports = {
     PregnancyEnrolmentViewFilterHandler,
@@ -61,4 +62,5 @@ module.exports = {
     SESFormRules,
     SESDecisions,
     MotherPNCDecision,
+    DoctorVisitFormHandler
 };

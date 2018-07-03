@@ -30,6 +30,21 @@
           "mandatory": true
         },
         {
+          "name": "BMI",
+          "uuid": "1e253176-dc52-4a91-a5e1-783279151a9c",
+          "keyValues": [
+            {
+              "key": "editable",
+              "value": false
+            }
+          ],
+          "concept": {
+            "uuid": "7ac0d759-c50d-4971-88e0-84274224c839"
+          },
+          "displayOrder": 2.1,
+          "mandatory": false
+        },
+        {
           "name": "Temperature",
           "uuid": "9042d2dc-929c-45a1-ba50-7362173720d5",
           "keyValues": [],

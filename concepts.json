@@ -1665,7 +1665,7 @@
     ]
   },
   {
-    "name": "Refer to Calcutta Kids doctor for",
+    "name": "Refer to Calcutta Kids doctor",
     "uuid": "daced408-70e7-4d7b-9bda-7245df407285",
     "dataType": "NA"
   },
@@ -2665,13 +2665,38 @@
     "dataType": "Text"
   },
   {
-    "name": "Referral",
-    "uuid": "15916909-1512-4e8c-800f-9c22409d7012",
-    "dataType": "Text"
+    "name": "Refer to hospital",
+    "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   },
   {
     "name": "PPI",
     "uuid": "5378de40-3b4b-435b-a6b2-8c4641a0e501",
     "dataType": "Numeric"
+  },
+  {
+    "name": "Referral",
+    "uuid": "15916909-1512-4e8c-800f-9c22409d7012",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "daced408-70e7-4d7b-9bda-7245df407285",
+        "comment": "Refer to Calcutta Kids doctor",
+        "abnormal": false
+      },
+      {
+        "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
+        "abnormal": false,
+        "comment": "Refer to hospital"
+      }
+    ]
   }
 ]
