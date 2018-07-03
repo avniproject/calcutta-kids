@@ -1,66 +1,18 @@
-const {MotherHomeVisitFormRules, MotherHomeVisitDecisions} = require("./mother/motherHomeVisitHandler");
-const {HomeVisitDecisions, ChildHomeVisitFilter} = require("./child/childHomeVisit");
-const {ChildEnrolmentDecisions} = require("./child/childEnrolmentHandler");
-const {PNCFormHandler, MotherPNCDecision} = require("./pregnancy/PNCFormHandler");
-const DeliveryFilterHandler = require('./pregnancy/DeliveryFilterHandler');
-const ANCHomeVisitFilterHandler = require('./pregnancy/ANCHomeVisitFilterHandler');
-const {ANCDoctorVisitAbdominalExamination, ANCDoctorVisitRemoveAllDecisions} = require('./pregnancy/ANCDoctorVisitHandler');
-const {GMPDecision} = require("./pregnancy/ANCGmpHandler");
-const DoctorVisitFollowupFormRules = require("./general/doctorVisitFollowupHandler");
-const {SESFormRules, SESDecisions} = require("./sesHandler");
+const _ = require('lodash');
 
-const {
-    DoctorFollowUpHomeVisit,
-    ANCHomeVisit,
-    ANCHomeVisitRecurring,
-    PNC1Visit,
-    PNC2Visit,
-    BirthVisitSchedule,
-    MotherPNC1VisitSchedule,
-    MotherSecondPNCVisit,
-    ChildHomeVisit,
-    ChildHomeVisitRecurring,
-    ChildHomeVisitInitial,
-    MotherRecurringHomeVisit,
-    MotherProgramEnrolmentHomeVisit
-} = require('./visitSchedule');
-const {BirthFormRules, BirthDecisions} = require("./child/childBirthHandler");
-const {PregnancyEnrolmentViewFilterHandler} = require('./pregnancy/EnrolmentFilter');
-const PregnancyTestFollowupFormHandler = require('./general/pregnancyTestFollowupFormHandler');
-const DoctorVisitFormHandler = require('./general/DoctorVisitFormHandler');
-
-module.exports = {
-    PregnancyEnrolmentViewFilterHandler,
-    MotherHomeVisitFormRules,
-    MotherHomeVisitDecisions,
-    HomeVisitDecisions,
-    BirthFormRules,
-    BirthDecisions,
-    ChildHomeVisitFilter,
-    DeliveryFilterHandler,
-    ANCHomeVisitFilterHandler,
-    ANCDoctorVisitAbdominalExamination,
-    DoctorVisitFollowupFormRules,
-    ANCHomeVisit,
-    ANCHomeVisitRecurring,
-    DoctorFollowUpHomeVisit,
-    ANCDoctorVisitRemoveAllDecisions,
-    PNC1Visit,
-    PNC2Visit,
-    BirthVisitSchedule,
-    MotherPNC1VisitSchedule,
-    MotherSecondPNCVisit,
-    ChildHomeVisit,
-    ChildHomeVisitRecurring,
-    ChildHomeVisitInitial,
-    MotherRecurringHomeVisit,
-    MotherProgramEnrolmentHomeVisit,
-    GMPDecision,
-    PregnancyTestFollowupFormHandler,
-    ChildEnrolmentDecisions,
-    PNCFormHandler,
-    SESFormRules,
-    SESDecisions,
-    MotherPNCDecision,
-    DoctorVisitFormHandler
-};
+module.exports = _.merge({},
+    require('./child/childBirthHandler'),
+    require('./child/childEnrolmentHandler'),
+    require('./child/childHomeVisit'),
+    require('./general/doctorVisitFollowupHandler'),
+    require('./general/DoctorVisitFormHandler'),
+    require('./general/pregnancyTestFollowupFormHandler'),
+    require('./mother/motherHomeVisitHandler'),
+    require('./pregnancy/ANCDoctorVisitHandler'),
+    require('./pregnancy/ANCGmpHandler'),
+    require('./pregnancy/ANCHomeVisitFilterHandler'),
+    require('./pregnancy/DeliveryFilterHandler'),
+    require('./pregnancy/EnrolmentFilter'),
+    require('./pregnancy/PNCFormHandler'),
+    require('./sesHandler'),
+    require('./visitSchedule'));
