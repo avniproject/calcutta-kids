@@ -38,6 +38,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
 	$(call _curl,POST,concepts,@child/enrolmentConcepts.json)
+	$(call _curl,POST,concepts,@child/pncConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/ancHomeVisitConcepts.json)
 	$(call _curl,POST,concepts,@doctorVisitConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/pregnancyConcepts.json)
@@ -58,6 +59,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,DELETE,forms,@pregnancy/ancDoctorVisitFormDeletions.json)
 	$(call _curl,DELETE,forms,@child/anthroAssessmentFormDeletions.json)
 	$(call _curl,DELETE,forms,@child/birthFormDeletions.json)
+	$(call _curl,DELETE,forms,@child/pncDeletions.json)
 
 	$(call _curl,PATCH,forms,@general/labTestsAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/enrolmentAdditions.json)
@@ -66,6 +68,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,PATCH,forms,@child/anthroAssessmentFormAdditions.json)
 	$(call _curl,PATCH,forms,@child/birthFormAdditions.json)
 	$(call _curl,PATCH,forms,@child/enrolmentAdditions.json)
+	$(call _curl,PATCH,forms,@child/pncAdditions.json)
 	$(call _curl,PATCH,forms,@pregnancy/pncAdditions.json)
 
 	$(call _curl,POST,forms,@registrationForm.json)
