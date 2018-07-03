@@ -104,5 +104,49 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
+  },
+  {
+    "uuid": "18cfc41a-2110-484e-a3c6-3f5592387324",
+    "comment": "Refer to the hospital for",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "comment": "Fever",
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "abnormal": true
+      },
+      {
+        "comment": "Lethargy",
+        "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
+        "abnormal": true
+      },
+      {
+        "comment": "Redness or discharge on the skin around the belly button",
+        "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
+        "abnormal": true
+      }
+    ]
+  },
+  {
+    "comment": "Refer to Calcutta Kids doctor",
+    "uuid": "daced408-70e7-4d7b-9bda-7245df407285",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "comment": "Fever",
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "abnormal": true
+      },
+      {
+        "comment": "Lethargy",
+        "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
+        "abnormal": true
+      },
+      {
+        "comment": "Redness or discharge on the skin around the belly button",
+        "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
+        "abnormal": true
+      }
+    ]
   }
 ]
