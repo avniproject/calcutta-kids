@@ -24,7 +24,7 @@
     ]
   },
   {
-    "name": "Other things baby was fed since beginning breastfeeding",
+    "name": "Things baby was fed since beginning breastfeeding",
     "uuid": "49967ea8-e777-41cc-991a-31cb510dc27a",
     "dataType": "Coded",
     "answers": [
@@ -49,6 +49,11 @@
         "abnormal": false
       }
     ]
+  },
+  {
+    "uuid":"dd4e86e4-3c9b-41e2-9852-59d77558b1b8",
+    "name":"Other things baby was fed since beginning breastfeeding",
+    "dataType":"Text"
   },
   {
     "name": "Number of times breastfed in the last 24 hours",
