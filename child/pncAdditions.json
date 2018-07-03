@@ -33,16 +33,25 @@
         {
           "uuid": "d42785bf-0687-4a30-a993-7b4584be2e84",
           "name": "How soon did the child start breastfeeding after delivery?",
-          "displayOrder": 0,
+          "displayOrder": 1,
           "concept": {
             "uuid": "6016d125-448b-48ac-9e2f-d3589433a92a",
             "comment": "Child was first breast fed"
           }
         },
         {
+          "name": "After how many days did the child start breastfeeding?",
+          "uuid": "0295c24d-014c-4db1-afdf-e50355dd886e",
+          "keyValues": [],
+          "concept": {
+            "uuid": "05a76d7c-aa02-4023-9d98-639c36a269a7"
+          },
+          "displayOrder": 2
+        },
+        {
           "uuid": "35c8858b-2a62-428c-a31c-3e93739a63de",
           "name": "Did the baby receive colostrums (first milk)?",
-          "displayOrder": 1,
+          "displayOrder": 3,
           "type": "SingleSelect",
           "concept": {
             "uuid": "81c4fa06-e287-4d99-873f-8dd23141ed6a",
@@ -52,7 +61,7 @@
         {
           "uuid": "be93efe6-3388-4806-b331-df76691bd6b2",
           "name": "Why did the baby not receive colostrums?",
-          "displayOrder": 2,
+          "displayOrder": 4,
           "concept": {
             "uuid": "628dd4d4-c25b-4615-970b-667408500aee",
             "comment": "Baby did not receive colostrum because"
@@ -61,7 +70,7 @@
         {
           "uuid": "e3e3b8a5-6f28-4b4c-b8e4-631a4c51f533",
           "name": "Did the baby receive anything before s/he started breastfeeding?",
-          "displayOrder": 3,
+          "displayOrder": 5,
           "concept": {
             "uuid": "c41d7a74-716b-4b59-a2eb-61fc688c68bb",
             "comment": "Was the baby fed anything else before breastfeeding?"
@@ -70,7 +79,7 @@
         {
           "uuid": "c6bcd62c-3158-4cc2-b67e-54723e668ea3",
           "name": "What did the baby receive before breastfeeding?",
-          "displayOrder": 4,
+          "displayOrder": 6,
           "concept": {
             "uuid": "ea65d8cf-5244-4d38-90f9-67ffc804da8e",
             "comment": "Other things baby was fed before breastfeeding"
@@ -79,7 +88,7 @@
         {
           "uuid": "106c935d-b6a6-42aa-8c4a-62f49f8513be",
           "name": "Have you fed your child any of the following since beginning breastfeeding?",
-          "displayOrder": 5,
+          "displayOrder": 7,
           "concept": {
             "uuid": "49967ea8-e777-41cc-991a-31cb510dc27a",
             "comment": "Other things baby was fed since beginning breastfeeding"
@@ -92,9 +101,8 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of cow's milk",
-          "displayOrder": 6,
-          "uuid": "0bf7856c-36e6-4e26-b478-9105a5e79251",
-          "mandatory": true
+          "displayOrder": 8,
+          "uuid": "0bf7856c-36e6-4e26-b478-9105a5e79251"
         },
         {
           "concept": {
@@ -102,9 +110,8 @@
             "uuid": "552ff095-19a4-493b-840b-d2ae92f59e2e"
           },
           "name": "Other frequency of cow's milk",
-          "displayOrder": 7,
-          "uuid": "183dfb7e-b936-412c-8f0f-addc65d9c1c9",
-          "mandatory": true
+          "displayOrder": 9,
+          "uuid": "183dfb7e-b936-412c-8f0f-addc65d9c1c9"
         },
         {
           "concept": {
@@ -113,9 +120,8 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of formula",
-          "displayOrder": 8,
-          "uuid": "e3f075a0-326a-4b73-bd2c-4c31d48506a1",
-          "mandatory": true
+          "displayOrder": 10,
+          "uuid": "e3f075a0-326a-4b73-bd2c-4c31d48506a1"
         },
         {
           "concept": {
@@ -123,9 +129,8 @@
             "uuid": "2e6d9291-b5a2-4a53-846f-7319935fdb20"
           },
           "name": "Other frequency of formula",
-          "displayOrder": 9,
-          "uuid": "1315edca-2681-4daf-bbd4-21591458c6a6",
-          "mandatory": true
+          "displayOrder": 11,
+          "uuid": "1315edca-2681-4daf-bbd4-21591458c6a6"
         },
         {
           "concept": {
@@ -134,9 +139,8 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of water",
-          "displayOrder": 10,
-          "uuid": "eba22045-1a3b-48d7-88a5-39382c9e232c",
-          "mandatory": true
+          "displayOrder": 12,
+          "uuid": "eba22045-1a3b-48d7-88a5-39382c9e232c"
         },
         {
           "concept": {
@@ -144,9 +148,8 @@
             "uuid": "6b2522c8-d312-4d06-8123-0e18abfebf41"
           },
           "name": "Other frequency of water",
-          "displayOrder": 11,
-          "uuid": "3fa0edc7-bf89-4832-a947-7211dd5ac2ff",
-          "mandatory": true
+          "displayOrder": 13,
+          "uuid": "3fa0edc7-bf89-4832-a947-7211dd5ac2ff"
         },
         {
           "concept": {
@@ -155,9 +158,8 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of water-based liquids",
-          "displayOrder": 12,
-          "uuid": "e5eb0c6f-cc15-4bce-b6ef-35f4868d77ac",
-          "mandatory": true
+          "displayOrder": 14,
+          "uuid": "e5eb0c6f-cc15-4bce-b6ef-35f4868d77ac"
         },
         {
           "concept": {
@@ -165,9 +167,8 @@
             "uuid": "b26cad75-8f36-400a-a0c8-1e593d7b2eb4"
           },
           "name": "Other frequency of water-based liquids",
-          "displayOrder": 13,
-          "uuid": "7683559f-b780-4854-a985-6c0e816e4cc2",
-          "mandatory": true
+          "displayOrder": 15,
+          "uuid": "7683559f-b780-4854-a985-6c0e816e4cc2"
         },
         {
           "concept": {
@@ -176,9 +177,8 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of other",
-          "displayOrder": 14,
-          "uuid": "7b6359e5-11dd-4d8f-9b3c-067d35b53fe5",
-          "mandatory": true
+          "displayOrder": 16,
+          "uuid": "7b6359e5-11dd-4d8f-9b3c-067d35b53fe5"
         },
         {
           "concept": {
@@ -186,9 +186,8 @@
             "uuid": "a1457219-9ce3-48c7-817b-7324707c7510"
           },
           "name": "Other frequency of other",
-          "displayOrder": 15,
-          "uuid": "754fdada-a550-451f-8514-7d57d4290c37",
-          "mandatory": true
+          "displayOrder": 17,
+          "uuid": "754fdada-a550-451f-8514-7d57d4290c37"
         },
         {
           "concept": {
@@ -197,9 +196,8 @@
           },
           "type": "MultiSelect",
           "name": "Why did you feed your baby something other than breast milk?",
-          "displayOrder": 16,
-          "uuid": "cb690202-9496-450a-9a80-5a3c68e0a5f9",
-          "mandatory": true
+          "displayOrder": 18,
+          "uuid": "cb690202-9496-450a-9a80-5a3c68e0a5f9"
         },
         {
           "concept": {
@@ -207,24 +205,22 @@
             "uuid": "60e2eddd-4e45-4002-bcfd-eea11fb3ac7c"
           },
           "name": "Any other reason why you fed something other than breast milk",
-          "displayOrder": 17,
-          "uuid": "2cec61be-ed77-4513-a261-5b6f4c77fbaa",
-          "mandatory": true
+          "displayOrder": 19,
+          "uuid": "2cec61be-ed77-4513-a261-5b6f4c77fbaa"
         },
         {
           "uuid": "916c10f8-a265-46ad-ac41-c7f9ecd2ccca",
           "name": "Are you having any of the following breastfeeding problems?",
-          "displayOrder": 18,
+          "displayOrder": 20,
           "concept": {
             "uuid": "0c9b6203-be8c-40a4-a035-b9cb61f126c9",
-            "comment": "Breast-feeding problems",
             "comment": "(Counsel accordingly)"
           }
         },
         {
           "uuid": "bf72b632-ff65-43bf-8787-06b33555675c",
           "name": "How many times was your baby breastfed in the last 24 hours?",
-          "displayOrder": 19,
+          "displayOrder": 21,
           "concept": {
             "uuid": "16e7abb8-1dee-4f1f-88e0-d9e24f43f720",
             "comment": "Number of times breastfed in the last 24 hours"
@@ -233,11 +229,29 @@
         {
           "uuid": "38e7ea33-2d5c-4246-9996-99b5fd17c82e",
           "name": "How many times has your baby urinated in the past 24 hours?",
-          "displayOrder": 20,
+          "displayOrder": 22,
           "concept": {
             "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
             "comment": "Number of times urinated in the last 24 hours"
           }
+        }
+      ]
+    },
+    {
+      "uuid": "1d70b455-95c1-43dd-bb3d-4e85722a5f23",
+      "name": "Discussion items",
+      "display": "Discussion items",
+      "displayOrder": 5.9,
+      "formElements": [
+        {
+          "name": "Child PNC Discussion items",
+          "uuid": "199cf46f-4ec8-4f59-81c3-165c84f7bdd4",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 0
         }
       ]
     }
