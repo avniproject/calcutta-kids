@@ -42,13 +42,6 @@
     "comment": "Child, Lab Tests"
   },
   {
-    "uuid": "95243b66-5c9f-4961-962c-d46ab52ade23",
-    "formUUID": "d062907a-690c-44ca-b699-f8b2f688b075",
-    "encounterTypeUUID": "5059adff-9aaf-4e76-ac58-684156f6d1b5",
-    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
-    "comment": "Child, GMP"
-  },
-  {
     "uuid": "dc8234df-3285-4891-97da-25b52e07856d",
     "formUUID": "35aa9007-fe7a-4a59-b985-0a1c038df889",
     "encounterTypeUUID": "21f346a4-dc45-4aa1-a34c-aff9c12438f8",
