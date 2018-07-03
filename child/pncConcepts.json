@@ -6,8 +6,58 @@
     "answers": [
       {
         "uuid": "56157f43-d681-4fcd-a414-171dee9af787",
-        "comment": "Does not feed well"
+        "comment": "Does not feed well",
+        "abnormal": true
       }
     ]
+  },
+  {
+    "comment": "Child PNC eye problems",
+    "uuid": "2010e1e0-468d-424c-85ef-290612f3eae8",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "352bb8a4-1569-492f-9a53-14e3b134c104",
+        "comment": "Jaundice",
+        "abnormal": true
+      }
+    ]
+  },
+  {
+    "name": "Other things baby was fed since beginning breastfeeding",
+    "uuid": "49967ea8-e777-41cc-991a-31cb510dc27a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "502dcb33-a589-4e9d-99c7-29f5659f5074",
+        "abnormal": false
+      },
+      {
+        "uuid": "128d0a18-37c5-4243-a6ea-1794765fa1cd",
+        "abnormal": false
+      },
+      {
+        "uuid": "7df97c63-a2e9-472c-90f2-584f2e64015b",
+        "abnormal": false
+      },
+      {
+        "uuid": "851c9fb8-af13-4205-91e4-6a63dc1b91fa",
+        "abnormal": false
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Number of times breastfed in the last 24 hours",
+    "uuid": "16e7abb8-1dee-4f1f-88e0-d9e24f43f720",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Number of times urinated in the last 24 hours",
+    "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
+    "dataType": "Numeric"
   }
 ]

@@ -18,6 +18,11 @@ class ChildPNCFormHandler {
         statusBuilder.skipAnswers('Wrinkled Skin','Sunken fontanelle','Skin blisters');
     }
 
+    @WithStatusBuilder
+    anyEyeProblems([], statusBuilder) {
+        statusBuilder.skipAnswers('Icterus present');
+    }
+
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper
             .getFormElementsStatusesWithoutDefaults(new ChildPNCFormHandler(), programEncounter, formElementGroup, today);
