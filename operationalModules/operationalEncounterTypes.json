@@ -114,6 +114,14 @@
       "encounterType": {
         "uuid": "330d954c-ab5f-4ea1-be8b-ba26a12bdfbc"
       }
+    },
+    {
+      "uuid": "9b3460bf-73a4-4af9-a21e-41e5cbbc3b97",
+      "name": "ANC GMP",
+      "encounterType": {
+        "uuid": "89f6fd3d-e1ff-4da0-89d1-a3572f84b4e0",
+        "comment": "ancGMP"
+      }
     }
   ]
 }

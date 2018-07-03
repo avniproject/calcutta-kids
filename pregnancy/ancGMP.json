@@ -1,0 +1,24 @@
+{
+  "name": "ANC GMP",
+  "uuid": "4632c1f5-59cd-4e65-899c-beb2c87a3bff",
+  "formType": "ProgramEncounter",
+  "formElementGroups": [
+    {
+      "uuid": "3fceb3da-e70d-4905-812a-e27cbbe32236",
+      "name": "mother gmp details",
+      "displayOrder": 1,
+      "display": "gmp details",
+      "formElements": [
+        {"name": "weight",
+          "uuid": "ca48c08b-4959-43af-93ac-5abf249d543f",
+          "keyvalues": [],
+          "concept": {
+            "uuid": "75b1656e-2777-4753-9612-ce03a766a5e1"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        }
+      ]
+    }
+  ]
+}
