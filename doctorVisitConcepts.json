@@ -190,6 +190,16 @@
     "dataType": "Text"
   },
   {
+    "name": "Open/Loose stitches",
+    "uuid": "a8b70653-ac63-4170-bdeb-39ba5b51d75d",
+    "dataType": "NA"
+  },
+  {
+    "name": "Discharge from stitches wound",
+    "uuid": "6135149b-f390-47b3-bc43-c39e53410c4a",
+    "dataType": "NA"
+  },
+  {
     "name": "Refer to hospital",
     "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
     "dataType": "Coded",
@@ -199,6 +209,14 @@
       },
       {
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Open/Loose stitches",
+        "uuid": "a8b70653-ac63-4170-bdeb-39ba5b51d75d"
+      },
+      {
+        "name": "Discharge from stitches wound",
+        "uuid": "6135149b-f390-47b3-bc43-c39e53410c4a"
       }
     ]
   },
