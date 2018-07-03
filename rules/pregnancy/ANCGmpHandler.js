@@ -1,7 +1,6 @@
 const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder} = require('rules-config/rules');
 const ComplicationsBuilder = complicationsBuilder;
 
-//const childBirthDecisions = RuleFactory("901e2f48-2fb8-402b-9073-ee2fac33fce4", "Decision");
 const pregnancyGMPDecision = RuleFactory("4632c1f5-59cd-4e65-899c-beb2c87a3bff", "Decision");
 
 
@@ -10,11 +9,13 @@ class GMPDecision {
     static immediateReferral(programEncounter) {
         const complicationsBuilder = new ComplicationsBuilder({
             programEncounter: programEncounter,
-            complicationsConcept: 'Refer to the hospital immediately for'
+            complicationsConcept: 'High Risk Conditions'
         });
 
         complicationsBuilder.addComplication("Irregular weight gain")
-            .when.valueInEncounter("Weight").lessThan(35);
+            .when.valueInEncounter("Weight").lessThanOrEqualTo(35);
+        complicationsBuilder.addComplication("Diet Advice Do's")
+            .when.valueInEncounter("Weight").lessThanOrEqualTo(35);
 
         return complicationsBuilder.getComplications();
     }
