@@ -276,6 +276,13 @@ class ChildHomeVisitFilter {
         return statusBuilder.build();
     }
 
+    counsellingForFeedingYourChildFrequently(programEncounter, formElement) {
+        const statusBuilder = this._statusBuilder(programEncounter, formElement);
+        statusBuilder.show().when.ageInMonths.is.lessThan(6)
+            .and.valueInEncounter("How many times is your child fed in 24 hours?").lessThan(8);
+        return statusBuilder.build();
+    }
+
     _statusBuilder(programEncounter, formElement) {
         return new FormElementStatusBuilder({
             programEncounter: programEncounter,
