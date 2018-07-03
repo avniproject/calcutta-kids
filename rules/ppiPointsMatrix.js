@@ -1,3 +1,4 @@
+// NOTE: Object keys are valid concepts
 const ppiPointsMatrix = {
     'Number of people 0-17 in the household': {
         'Five or more': 0,
