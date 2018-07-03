@@ -57,14 +57,14 @@ class ANCHomeVisitFilterHandler {
     }
 
     // Eating less
-    whyEatingSameOrLessCounselAccordingly(programEncounter, formElement) {
+    whyEatingSameOrLess(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Eating compared to your pre-pregnancy food intake', 'Less', 'Same');
     }
     otherReasonForEatingSameOrLess(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for eating less than pre-pregnancy', 'Other');
     }
     counselForEatingSameOrLess(programEncounter, formElement) {
-        return this.whyEatingSameOrLessCounselAccordingly(programEncounter, formElement);
+        return this.whyEatingSameOrLess(programEncounter, formElement);
     }
 
     // Resting

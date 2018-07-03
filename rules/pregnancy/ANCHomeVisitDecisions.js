@@ -20,11 +20,10 @@ class ANCHomeVisitDecisions {
         return referralBuilder.getComplications();
     }
 
-    static exec(programEnrolment, decisions, context, today) {
-        decisions.enrolmentDecisions.push(ChildEnrolmentDecisions.highRisk(programEnrolment));
+    static exec(programEncounter, decisions, context, today) {
+        decisions.encounterDecisions.push(ANCHomeVisitDecisions.referral(programEncounter));
         return decisions;
     }
 }
 
-
-module.exports = {ANCHomeVisitDecisions: ANCHomeVisitDecisions};
+module.exports = ANCHomeVisitDecisions;

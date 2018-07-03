@@ -163,7 +163,7 @@
           "mandatory": true
         },
         {
-          "name": "WHY eating same or less?",
+          "name": "Why eating same or less?",
           "uuid": "74031f60-181c-4801-8d1b-9c232f7ba87a",
           "keyValues": [],
           "type": "MultiSelect",
