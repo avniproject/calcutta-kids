@@ -27,7 +27,10 @@ class ChildPNCFormHandler {
         statusBuilder.skipAnswers('Icterus present');
     }
 
-    @CodedObservationMatcher('PNC stool related complaints', ['Loose stools'])
+    @CodedObservationMatcher('Child was first breast fed', ['After a day'])
+    afterHowManyDaysDidTheChildStartBreastfeeding(){}
+
+    @CodedObservationMatcher('Child PNC stool related complaints', ['Loose stools'])
     looseMotionSinceHowManyDays() { }
 
     @CodedObservationMatcher('Did the baby receive colostrums (first milk)?', ['No'])
@@ -36,7 +39,7 @@ class ChildPNCFormHandler {
     @CodedObservationMatcher('Baby did not receive colostrum because', ['Other'])
     whatOtherReasonForBabyNotReceivingColostrum() { }
 
-    @CodedObservationMatcher('Did the baby receive anything before s/he started breastfeeding?', ['Yes'])
+    @CodedObservationMatcher('Was the baby fed anything else before breastfeeding?', ['Yes'])
     whatDidTheBabyReceiveBeforeBreastfeeding() { }
 
     @CodedObservationMatcher('Other things baby was fed before breastfeeding', ['Other'])
@@ -75,10 +78,13 @@ class ChildPNCFormHandler {
     @CodedObservationMatcher('Frequency of other', ['Other'])
     otherFrequencyOfOther() { }
 
+    @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Other'])
+    whyDidYouFeedYourBabySomethingOtherThanBreastMilk() { }
+
     @CodedObservationMatcher('Why did you feed your baby something other than breast milk?', ['Other'])
     otherReasonWhyYouFedSomethingOtherThanBreastMilk() { }
 
-    @CodedObservationMatcher('Are you having any of the following breastfeeding problems?', ['Other'])
+    @CodedObservationMatcher('Breast-feeding problems', ['Other'])
     specifyOtherBreastfeedingProblems() { }
 
     static exec(programEncounter, formElementGroup, today) {

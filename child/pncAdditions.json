@@ -62,15 +62,26 @@
           "uuid": "be93efe6-3388-4806-b331-df76691bd6b2",
           "name": "Why did the baby not receive colostrums?",
           "displayOrder": 4,
+          "type": "MultiSelect",
           "concept": {
             "uuid": "628dd4d4-c25b-4615-970b-667408500aee",
             "comment": "Baby did not receive colostrum because"
           }
         },
         {
+          "name": "What other reason for baby not receiving colostrum?",
+          "uuid": "802aa49b-2d2b-4f36-8110-2c1db8235e0a",
+          "keyValues": [],
+          "concept": {
+            "uuid": "635884c4-dcd6-41a9-85d0-39b19735f80a"
+          },
+          "displayOrder": 5,
+          "mandatory": true
+        },
+        {
           "uuid": "e3e3b8a5-6f28-4b4c-b8e4-631a4c51f533",
           "name": "Did the baby receive anything before s/he started breastfeeding?",
-          "displayOrder": 5,
+          "displayOrder": 6,
           "concept": {
             "uuid": "c41d7a74-716b-4b59-a2eb-61fc688c68bb",
             "comment": "Was the baby fed anything else before breastfeeding?"
@@ -79,7 +90,8 @@
         {
           "uuid": "c6bcd62c-3158-4cc2-b67e-54723e668ea3",
           "name": "What did the baby receive before breastfeeding?",
-          "displayOrder": 6,
+          "type": "MultiSelect",
+          "displayOrder": 7,
           "concept": {
             "uuid": "ea65d8cf-5244-4d38-90f9-67ffc804da8e"
           }
@@ -91,12 +103,12 @@
           "concept": {
             "uuid": "d1466ada-80e5-4a35-8f7b-a3c7567b685c"
           },
-          "displayOrder": 7
+          "displayOrder": 8
         },
         {
           "uuid": "106c935d-b6a6-42aa-8c4a-62f49f8513be",
           "name": "Have you fed your child any of the following since beginning breastfeeding?",
-          "displayOrder": 8,
+          "displayOrder": 9,
           "type": "MultiSelect",
           "concept": {
             "uuid": "49967ea8-e777-41cc-991a-31cb510dc27a",
@@ -111,7 +123,7 @@
             "uuid": "dd4e86e4-3c9b-41e2-9852-59d77558b1b8",
             "comment": "Other things baby was fed since beginning breastfeeding"
           },
-          "displayOrder": 9
+          "displayOrder": 10
         },
         {
           "concept": {
@@ -120,7 +132,7 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of cow's milk",
-          "displayOrder": 10,
+          "displayOrder": 11,
           "uuid": "0bf7856c-36e6-4e26-b478-9105a5e79251"
         },
         {
@@ -129,7 +141,7 @@
             "uuid": "552ff095-19a4-493b-840b-d2ae92f59e2e"
           },
           "name": "Other frequency of cow's milk",
-          "displayOrder": 11,
+          "displayOrder": 12,
           "uuid": "183dfb7e-b936-412c-8f0f-addc65d9c1c9"
         },
         {
@@ -139,7 +151,7 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of formula",
-          "displayOrder": 12,
+          "displayOrder": 13,
           "uuid": "e3f075a0-326a-4b73-bd2c-4c31d48506a1"
         },
         {
@@ -148,7 +160,7 @@
             "uuid": "2e6d9291-b5a2-4a53-846f-7319935fdb20"
           },
           "name": "Other frequency of formula",
-          "displayOrder": 13,
+          "displayOrder": 14,
           "uuid": "1315edca-2681-4daf-bbd4-21591458c6a6"
         },
         {
@@ -158,7 +170,7 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of water",
-          "displayOrder": 14,
+          "displayOrder": 15,
           "uuid": "eba22045-1a3b-48d7-88a5-39382c9e232c"
         },
         {
@@ -167,7 +179,7 @@
             "uuid": "6b2522c8-d312-4d06-8123-0e18abfebf41"
           },
           "name": "Other frequency of water",
-          "displayOrder": 15,
+          "displayOrder": 16,
           "uuid": "3fa0edc7-bf89-4832-a947-7211dd5ac2ff"
         },
         {
@@ -177,7 +189,7 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of water-based liquids",
-          "displayOrder": 16,
+          "displayOrder": 17,
           "uuid": "e5eb0c6f-cc15-4bce-b6ef-35f4868d77ac"
         },
         {
@@ -186,7 +198,7 @@
             "uuid": "b26cad75-8f36-400a-a0c8-1e593d7b2eb4"
           },
           "name": "Other frequency of water-based liquids",
-          "displayOrder": 17,
+          "displayOrder": 18,
           "uuid": "7683559f-b780-4854-a985-6c0e816e4cc2"
         },
         {
@@ -196,7 +208,7 @@
           },
           "type": "SingleSelect",
           "name": "Frequency of other",
-          "displayOrder": 18,
+          "displayOrder": 19,
           "uuid": "7b6359e5-11dd-4d8f-9b3c-067d35b53fe5"
         },
         {
@@ -205,7 +217,7 @@
             "uuid": "a1457219-9ce3-48c7-817b-7324707c7510"
           },
           "name": "Other frequency of other",
-          "displayOrder": 19,
+          "displayOrder": 20,
           "uuid": "754fdada-a550-451f-8514-7d57d4290c37"
         },
         {
@@ -215,7 +227,7 @@
           },
           "type": "MultiSelect",
           "name": "Why did you feed your baby something other than breast milk?",
-          "displayOrder": 20,
+          "displayOrder": 21,
           "uuid": "cb690202-9496-450a-9a80-5a3c68e0a5f9"
         },
         {
@@ -224,13 +236,14 @@
             "uuid": "60e2eddd-4e45-4002-bcfd-eea11fb3ac7c"
           },
           "name": "Other reason why you fed something other than breast milk",
-          "displayOrder": 21,
+          "displayOrder": 22,
           "uuid": "2cec61be-ed77-4513-a261-5b6f4c77fbaa"
         },
         {
           "uuid": "916c10f8-a265-46ad-ac41-c7f9ecd2ccca",
           "name": "Are you having any of the following breastfeeding problems?",
-          "displayOrder": 22,
+          "displayOrder": 23,
+          "type": "MultiSelect",
           "concept": {
             "uuid": "0c9b6203-be8c-40a4-a035-b9cb61f126c9",
             "comment": "(Counsel accordingly)"
@@ -239,7 +252,7 @@
         {
           "uuid": "f13f3185-a289-4844-a6d0-cef1051063c1",
           "name": "Specify other breastfeeding problems",
-          "displayOrder": 23,
+          "displayOrder": 24,
           "concept": {
             "comment": "Other breast-feeding problems",
             "uuid": "9901bdcc-d562-4486-a5d4-b6e9681e9da8"
@@ -248,7 +261,7 @@
         {
           "uuid": "bf72b632-ff65-43bf-8787-06b33555675c",
           "name": "How many times was your baby breastfed in the last 24 hours?",
-          "displayOrder": 24,
+          "displayOrder": 25,
           "concept": {
             "uuid": "16e7abb8-1dee-4f1f-88e0-d9e24f43f720",
             "comment": "Number of times breastfed in the last 24 hours"
@@ -257,7 +270,7 @@
         {
           "uuid": "38e7ea33-2d5c-4246-9996-99b5fd17c82e",
           "name": "How many times has your baby urinated in the past 24 hours?",
-          "displayOrder": 25,
+          "displayOrder": 26,
           "concept": {
             "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
             "comment": "Number of times urinated in the last 24 hours"
