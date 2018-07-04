@@ -28,7 +28,7 @@ class ChildPNCFormHandler {
     }
 
     @CodedObservationMatcher('Child was first breast fed', ['After a day'])
-    afterHowManyDaysDidTheChildStartBreastfeeding(){}
+    afterHowManyDaysDidTheChildStartBreastfeeding() { }
 
     @CodedObservationMatcher('Child PNC stool related complaints', ['Loose stools'])
     looseMotionSinceHowManyDays() { }
@@ -87,6 +87,11 @@ class ChildPNCFormHandler {
     @CodedObservationMatcher('Breast-feeding problems', ['Other'])
     specifyOtherBreastfeedingProblems() { }
 
+    @WithStatusBuilder
+    counsellingForFeedingYourChildFrequently([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Number of times breastfed in the last 24 hours").lessThan(8);
+    }
+
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper
             .getFormElementsStatusesWithoutDefaults(new ChildPNCFormHandler(), programEncounter, formElementGroup, today);
@@ -101,11 +106,13 @@ class ChildPNCFormDecisions {
             complicationsConcept: 'Refer to hospital'
         });
 
-        ['Lethargy', 'Fever', 'Redness or discharge on the skin around the belly button'].forEach((c) => {
-            builder.addComplication(c)
-                .ageInMonths.lessThanOrEqualTo(1).and
-                .valueInEncounter('Is your baby having any of the following problems?').containsAnyAnswerConceptName(c);
-        });
+        ['Lethargy', 'Fever', 'Redness or discharge on the skin around the belly button']
+            .forEach((c) =>
+                builder.addComplication(c)
+                    .ageInMonths.lessThanOrEqualTo(1).and
+                    .valueInEncounter('Is your baby having any of the following problems?')
+                    .containsAnyAnswerConceptName(c));
+
         return builder.getComplications();
     }
 
@@ -115,12 +122,17 @@ class ChildPNCFormDecisions {
             complicationsConcept: 'Refer to Calcutta Kids doctor'
         });
 
-        ['Lethargy', 'Fever', 'Redness or discharge on the skin around the belly button'].forEach((c) => {
-            builder.addComplication(c)
-                .ageInMonths.lessThanOrEqualTo(3).and
-                .ageInMonths.greaterThan(1).and
-                .valueInEncounter('Is your baby having any of the following problems?').containsAnyAnswerConceptName(c);
-        });
+        ['Lethargy', 'Fever', 'Redness or discharge on the skin around the belly button']
+            .forEach((c) =>
+                builder.addComplication(c)
+                    .ageInMonths.lessThanOrEqualTo(3).and
+                    .ageInMonths.greaterThan(1).and
+                    .valueInEncounter('Is your baby having any of the following problems?')
+                    .containsAnyAnswerConceptName(c));
+
+        builder.addComplication('Insufficient urination')
+            .valueInEncounter('Number of times urinated in the last 24 hours').lessThan(6);
+
         return builder.getComplications();
     }
 

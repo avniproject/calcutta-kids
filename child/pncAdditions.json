@@ -75,8 +75,7 @@
           "concept": {
             "uuid": "635884c4-dcd6-41a9-85d0-39b19735f80a"
           },
-          "displayOrder": 5,
-          "mandatory": true
+          "displayOrder": 5
         },
         {
           "uuid": "e3e3b8a5-6f28-4b4c-b8e4-631a4c51f533",
@@ -268,9 +267,19 @@
           }
         },
         {
+          "name": "Counselling for feeding your child frequently",
+          "displayOrder": 26,
+          "uuid": "e9909da1-8b80-4595-a6ac-f2853f0acfb2",
+          "concept": {
+            "comment": "Counselling placeholder",
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "mandatory": false
+        },
+        {
           "uuid": "38e7ea33-2d5c-4246-9996-99b5fd17c82e",
           "name": "How many times has your baby urinated in the past 24 hours?",
-          "displayOrder": 26,
+          "displayOrder": 27,
           "concept": {
             "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
             "comment": "Number of times urinated in the last 24 hours"
