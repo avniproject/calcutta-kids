@@ -21,6 +21,16 @@
           "mandatory": false
         },
         {
+          "name": "Other health issues",
+          "uuid": "f244ee16-906e-4227-afd7-5c2f420b1deb",
+          "keyValues": [],
+          "concept": {
+            "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8"
+          },
+          "displayOrder": 1.1,
+          "mandatory": true
+        },
+        {
           "name": "Have you felt any decreased fetal movement or no fetal movement?",
           "uuid": "58a57bd0-09e3-467a-ae24-b566b6fc4b8d",
           "keyValues": [],

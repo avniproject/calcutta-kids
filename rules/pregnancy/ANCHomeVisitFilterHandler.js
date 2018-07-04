@@ -29,6 +29,10 @@ class ANCHomeVisitFilterHandler {
         return statusBuilder.build();
     }
 
+    otherHealthIssues(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Pregnancy complications', 'Other');
+    }
+
     haveYouFeltAnyDecreasedFetalMovementOrNoFetalMovement(programEncounter, formElement) {
         return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 1);
     }
