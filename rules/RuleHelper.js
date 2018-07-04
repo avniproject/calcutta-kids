@@ -1,4 +1,5 @@
 const { FormElementStatusBuilder, FormElementStatus } = require('rules-config/rules');
+import lib from './lib';
 
 class RuleHelper {
     static encounterCodedObsHas(programEncounter, formElement, conceptName, ...answerConceptNames) {
@@ -35,7 +36,7 @@ class RuleHelper {
         height = height && height.getValue();
         weight = weight && weight.getValue();
         if (Number.isFinite(weight) && Number.isFinite(height)) {
-            value = RuleHelper._calculateBMI(weight, height);
+            value = lib.C.calculateBMI(weight, height);
         }
         return new FormElementStatus(formElement.uuid, true, value);
     }
