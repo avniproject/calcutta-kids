@@ -64,4 +64,4 @@ class DoctorVisitFollowupFormRules {
     }
 }
 
-module.exports = DoctorVisitFollowupFormRules;
+module.exports = { DoctorVisitFollowupFormRules };

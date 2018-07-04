@@ -26,4 +26,4 @@ class ANCHomeVisitDecisions {
     }
 }
 
-module.exports = ANCHomeVisitDecisions;
+module.exports = { ANCHomeVisitDecisions };

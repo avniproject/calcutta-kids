@@ -118,4 +118,4 @@ class ANCHomeVisitFilterHandler {
     }
 }
 
-module.exports = ANCHomeVisitFilterHandler;
+module.exports =  { ANCHomeVisitFilterHandler };

@@ -59,4 +59,4 @@ class DeliveryFilterHandler {
 
 }
 
-module.exports = DeliveryFilterHandler;
+module.exports = { DeliveryFilterHandler };

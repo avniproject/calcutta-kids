@@ -27,4 +27,4 @@ class PregnancyTestFollowupFormHandler {
     }
 }
 
-module.exports = PregnancyTestFollowupFormHandler;
+module.exports = { PregnancyTestFollowupFormHandler };

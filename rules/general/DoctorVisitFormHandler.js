@@ -17,4 +17,4 @@ class DoctorVisitFormHandler {
     }
 }
 
-module.exports = DoctorVisitFormHandler;
+module.exports = { DoctorVisitFormHandler };
