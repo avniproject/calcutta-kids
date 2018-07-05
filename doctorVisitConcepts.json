@@ -180,11 +180,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Assessment",
-    "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
-    "dataType": "Text"
-  },
-  {
     "name": "Diagnosis",
     "uuid": "5bc49865-4911-48ed-8517-ff9a7b3e365d",
     "dataType": "Text"

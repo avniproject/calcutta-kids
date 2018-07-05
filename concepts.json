@@ -2703,5 +2703,10 @@
     "name": "Other pregnancy complaints",
     "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
     "dataType": "Text"
+  },
+  {
+    "name": "Assessment",
+    "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
+    "dataType": "Text"
   }
 ]
