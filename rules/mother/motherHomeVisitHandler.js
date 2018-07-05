@@ -15,23 +15,23 @@ class MotherHomeVisitDecisions {
 
         complicationsBuilder.addComplication("High fever (above 102°C)")
             .when.valueInEncounter("Mother's health problems")
-                .containsAnswerConceptName("High fever (above 102°C)");
+            .containsAnswerConceptName("High fever (above 102°C)");
 
         complicationsBuilder.addComplication("Foul smelling vaginal discharge or blood")
             .when.valueInEncounter("Mother's health problems")
-                .containsAnswerConceptName("Foul smelling vaginal discharge or blood");
+            .containsAnswerConceptName("Foul smelling vaginal discharge or blood");
 
         complicationsBuilder.addComplication("Moderate to severe abdominal pain")
             .when.valueInEncounter("Mother's health problems")
-                .containsAnswerConceptName("Moderate to severe abdominal pain");
+            .containsAnswerConceptName("Moderate to severe abdominal pain");
 
         complicationsBuilder.addComplication("Vaginal/urethral problems")
             .when.valueInEncounter("Mother's health problems")
-                .containsAnswerConceptName("Vaginal/urethral problems");
+            .containsAnswerConceptName("Vaginal/urethral problems");
 
         complicationsBuilder.addComplication("Possible breast infection (severe pain, abscess, foul smelling discharge, fever)")
             .when.valueInEncounter("Breast-feeding problems")
-                .containsAnswerConceptName("Possible breast infection (severe pain, abscess, foul smelling discharge, fever)");
+            .containsAnswerConceptName("Possible breast infection (severe pain, abscess, foul smelling discharge, fever)");
 
         return complicationsBuilder.getComplications();
     }
@@ -60,33 +60,33 @@ class MotherHomeVisitDecisions {
 class MotherHomeVisitFormRules {
 
     @withStatusBuilder
-    doYouHaveAnyOfTheFollowingHealthProblems([{programEnrolment, encounterDateTime}, formElement], statusBuilder) {
+    doYouHaveAnyOfTheFollowingHealthProblems([{ programEnrolment, encounterDateTime }, formElement], statusBuilder) {
         const youngestChild = lib.C.getYoungestChild(programEnrolment.individual);
         statusBuilder.show().whenItem(youngestChild.getAgeInMonths(encounterDateTime)).is.lessThan(3);
     }
 
     specifyOtherProblem(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Mother's health problems").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
 
     areYourStitchesOpenOrLoose(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Did mother receive stitches during delivery?")
             .containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
     isThereDischargeFromTheWound(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Did mother receive stitches during delivery?")
             .containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
     whyAreYouEatingTheSameOrLess(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Food consumption compared to pre-pregnancy food intake?")
             .containsAnswerConceptName("Same as pre-pregnancy")
             .or.containsAnswerConceptName("Less than pre-pregnancy");
@@ -94,28 +94,28 @@ class MotherHomeVisitFormRules {
     }
 
     otherReasonsForEatingSameOrLess(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Reasons for eating the same or less than pre-pregnancy")
             .containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
 
     whatTypeOfFamilyPlanningMethodsAreYouUsing(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Is mother using any family planning methods?")
             .containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
     whichOtherFamilyPlanningMethodsAreBeingUsed(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Type of family planning methods used by mother")
             .containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
 
     whatOtherBreastFeedingProblems(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Breast-feeding problems")
             .containsAnswerConceptName("Other");
         return statusBuilder.build();
@@ -127,4 +127,4 @@ class MotherHomeVisitFormRules {
     }
 }
 
-module.exports = {MotherHomeVisitFormRules, MotherHomeVisitDecisions} ;
+module.exports = { MotherHomeVisitFormRules, MotherHomeVisitDecisions };
