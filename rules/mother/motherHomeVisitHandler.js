@@ -1,16 +1,19 @@
 import { FormElementStatusBuilder, RuleFactory, FormElementsStatusHelper, StatusBuilderAnnotationFactory, complicationsBuilder as ComplicationsBuilder } from 'rules-config/rules';
+import ObservationMatcherAnnotationFactory from '../ObservationMatcherAnnotationFactory';
+import RuleHelper from '../RuleHelper';
 import lib from '../lib';
 
 const homeVisitDecisions = RuleFactory("2a13df4b-6d61-4f11-850d-1ea6d13860df", "Decision");
 const homeVisitFilter = RuleFactory('2a13df4b-6d61-4f11-850d-1ea6d13860df', 'ViewFilter');
 const withStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
+const codedObservationMatcher = ObservationMatcherAnnotationFactory(RuleHelper.Scope.Encounter, 'containsAnyAnswerConceptName')(['programEncounter', 'formElement']);
 
 @homeVisitDecisions("41d2cf55-720e-4633-aeac-e005a887bd26", "Mother Home Visit decisions [CK]", 100.0, {})
 class MotherHomeVisitDecisions {
     static referToCkDoctor(programEncounter) {
         const complicationsBuilder = new ComplicationsBuilder({
             programEncounter: programEncounter,
-            complicationsConcept: 'Refer to Calcutta Kids doctor for'
+            complicationsConcept: 'Refer to Calcutta Kids doctor'
         });
 
         complicationsBuilder.addComplication("High fever (above 102°C)")
@@ -56,70 +59,94 @@ class MotherHomeVisitDecisions {
     }
 }
 
+const getAgeOfYoungestChildInMonths = (programEncounter) => {
+    const youngestChild = lib.C.getYoungestChild(programEncounter.programEnrolment.individual);
+    return youngestChild.getAgeInMonths(programEncounter.encounterDateTime);
+}
+
 @homeVisitFilter("a0018a51-4cac-4690-9aa1-91505d3d4759", "Mother Home Visit form rules", 100.0, {})
 class MotherHomeVisitFormRules {
 
     @withStatusBuilder
-    doYouHaveAnyOfTheFollowingHealthProblems([{ programEnrolment, encounterDateTime }, formElement], statusBuilder) {
-        const youngestChild = lib.C.getYoungestChild(programEnrolment.individual);
-        statusBuilder.show().whenItem(youngestChild.getAgeInMonths(encounterDateTime)).is.lessThan(3);
+    doYouHaveAnyOfTheFollowingHealthProblems([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(3);
     }
 
-    specifyOtherProblem(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Mother's health problems").containsAnswerConceptName("Other");
-        return statusBuilder.build();
+    @codedObservationMatcher("Mother's health problems", ['Other'])
+    specifyOtherProblem() { }
+
+    @withStatusBuilder
+    didYouReceiveStitchesDuringDelivery([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(3);
     }
 
-    areYourStitchesOpenOrLoose(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Did mother receive stitches during delivery?")
-            .containsAnswerConceptName("Yes");
-        return statusBuilder.build();
+    @withStatusBuilder
+    areYourStitchesOpenOrLoose([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show()
+            .when.valueInEncounter("Did mother receive stitches during delivery?").containsAnswerConceptName("Yes")
+            .and.whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(3);
     }
 
-    isThereDischargeFromTheWound(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Did mother receive stitches during delivery?")
-            .containsAnswerConceptName("Yes");
-        return statusBuilder.build();
+    @withStatusBuilder
+    isThereDischargeFromTheWound([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show()
+            .when.valueInEncounter("Did mother receive stitches during delivery?").containsAnswerConceptName("Yes")
+            .and.whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(3);
     }
 
-    whyAreYouEatingTheSameOrLess(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Food consumption compared to pre-pregnancy food intake?")
-            .containsAnswerConceptName("Same as pre-pregnancy")
-            .or.containsAnswerConceptName("Less than pre-pregnancy");
-        return statusBuilder.build();
+    @withStatusBuilder
+    whereDoYouGetYourIfaTablets([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(3);
     }
 
-    otherReasonsForEatingSameOrLess(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Reasons for eating the same or less than pre-pregnancy")
-            .containsAnswerConceptName("Other");
-        return statusBuilder.build();
+    @withStatusBuilder
+    howManyIfaTabletsHaveYouConsumedSinceYourLastVisit([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(3);
     }
 
-    whatTypeOfFamilyPlanningMethodsAreYouUsing(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Is mother using any family planning methods?")
-            .containsAnswerConceptName("Yes");
-        return statusBuilder.build();
+    @withStatusBuilder
+    whereDoYouGetYourCalciumTablets([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6);
     }
 
-    whichOtherFamilyPlanningMethodsAreBeingUsed(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Type of family planning methods used by mother")
-            .containsAnswerConceptName("Other");
-        return statusBuilder.build();
+    @withStatusBuilder
+    howManyCalciumTabletsHaveYouConsumedSinceYourLastVisit([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6);
     }
 
-    whatOtherBreastFeedingProblems(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Breast-feeding problems")
-            .containsAnswerConceptName("Other");
-        return statusBuilder.build();
+    @withStatusBuilder
+    howMuchAreYouEatingComparedToYourPrePregnancyFoodIntake([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6);
     }
+
+    @withStatusBuilder
+    whyAreYouEatingTheSameOrLess([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6)
+            .and.valueInEncounter('Food consumption compared to pre-pregnancy food intake?')
+            .containsAnyAnswerConceptName('Same as pre-pregnancy', 'Less than pre-pregnancy');
+    }
+
+    @codedObservationMatcher('Reasons for eating the same or less than pre-pregnancy', ['Other'])
+    otherReasonsForEatingSameOrLess() { }
+
+    @withStatusBuilder
+    areYouDrinkingAtLeastOneGlassOfMilkPerDay([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6);
+    }
+
+    @codedObservationMatcher('Is mother using any family planning methods?', ['Yes'])
+    whatTypeOfFamilyPlanningMethodsAreYouUsing() { }
+
+    @codedObservationMatcher('Type of family planning methods used by mother', ['Other'])
+    whichOtherFamilyPlanningMethodsAreBeingUsed() { }
+
+    @withStatusBuilder
+    areYouHavingAnyOfTheFollowingBreastFeedingProblems([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6);
+    }
+
+    @codedObservationMatcher('Breast-feeding problems', ['Other'])
+    whatOtherBreastFeedingProblems() { }
 
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper
