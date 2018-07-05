@@ -1,8 +1,9 @@
-const { RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder} = require('rules-config/rules');
-const ComplicationsBuilder = complicationsBuilder;
+import { FormElementStatusBuilder, RuleFactory, FormElementsStatusHelper, StatusBuilderAnnotationFactory, complicationsBuilder as ComplicationsBuilder } from 'rules-config/rules';
+import lib from '../lib';
 
 const homeVisitDecisions = RuleFactory("2a13df4b-6d61-4f11-850d-1ea6d13860df", "Decision");
 const homeVisitFilter = RuleFactory('2a13df4b-6d61-4f11-850d-1ea6d13860df', 'ViewFilter');
+const withStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 
 @homeVisitDecisions("41d2cf55-720e-4633-aeac-e005a887bd26", "Mother Home Visit decisions [CK]", 100.0, {})
 class MotherHomeVisitDecisions {
@@ -57,6 +58,13 @@ class MotherHomeVisitDecisions {
 
 @homeVisitFilter("a0018a51-4cac-4690-9aa1-91505d3d4759", "Mother Home Visit form rules", 100.0, {})
 class MotherHomeVisitFormRules {
+
+    @withStatusBuilder
+    doYouHaveAnyOfTheFollowingHealthProblems([{programEnrolment, encounterDateTime}, formElement], statusBuilder) {
+        const youngestChild = lib.C.getYoungestChild(programEnrolment.individual);
+        statusBuilder.show().whenItem(youngestChild.getAgeInMonths(encounterDateTime)).is.lessThan(3);
+    }
+
     specifyOtherProblem(programEncounter, formElement) {
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         statusBuilder.show().when.valueInEncounter("Mother's health problems").containsAnswerConceptName("Other");
