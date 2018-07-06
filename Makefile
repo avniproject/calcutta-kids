@@ -15,12 +15,13 @@ help:
 
 port:= $(if $(port),$(port),8021)
 server:= $(if $(server),$(server),http://localhost)
+server_url:=$(server):$(port)
 
 su:=$(shell id -un)
 org_name=Calcutta Kids
 
 define _curl
-	curl -X $(1) $(server):$(port)/$(2) -d $(3)  \
+	curl -X $(1) $(server_url)/$(2) -d $(3)  \
 		-H "Content-Type: application/json"  \
 		-H "ORGANISATION-NAME: $(org_name)"  \
 		$(if $(token),-H "AUTH-TOKEN: $(token)",)
@@ -93,7 +94,7 @@ deploy: deploy_refdata deploy_rules##
 
 # <deploy>
 deploy_rules: ##
-	node index.js
+	node index.js "$(server_url)" "$(token)"
 # </deploy>
 
 # <c_d>
