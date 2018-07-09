@@ -18,6 +18,10 @@
         {
           "uuid": "ee2966d4-035c-4282-9314-a4453f260f28",
           "comment": "When did breast feeding start?"
+        },
+        {
+          "uuid": "4f3017e8-baf9-4b41-b1fb-02bac76b7bfa",
+          "comment": "Did the baby cry soon after birth?"
         }
       ]
     },

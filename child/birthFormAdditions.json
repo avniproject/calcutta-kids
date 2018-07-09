@@ -110,6 +110,23 @@
           "mandatory": true
         }
       ]
+    },
+    {
+      "uuid": "187479ba-7c41-4cd4-beac-9d0cf7735852",
+      "comment": "General",
+      "formElements": [
+        {
+          "name": "Did the baby cry soon after birth?",
+          "uuid": "eae80a5d-8c3a-485c-821e-0e108c2de624",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "e3158f7c-6349-4e96-8e63-6223f8444500",
+            "name": "Cried soon after birth"
+          },
+          "displayOrder": 4.1,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }
