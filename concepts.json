@@ -1,5 +1,10 @@
 [
   {
+    "name": "Not breastfeeding",
+    "uuid": "f42fc7dc-399c-4bbe-a4dd-8a7559dc37f2",
+    "dataType": "NA"
+  },
+  {
     "uuid": "db623589-cfa1-4611-b7e9-6b4e3a4ad802",
     "name": "History of UTI",
     "dataType": "NA"
@@ -2459,6 +2464,11 @@
       {
         "uuid": "3b80c10a-dfc1-4323-bb0d-4ee590b0089e",
         "abnormal": false
+      },
+      {
+        "uuid": "f42fc7dc-399c-4bbe-a4dd-8a7559dc37f2",
+        "comment": "Not breastfeeding",
+        "abnormal": true
       }
     ]
   },
