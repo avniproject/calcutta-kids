@@ -77,6 +77,13 @@
     "comment": "Child, Doctor Visit Followup, Cancel"
   },
   {
+    "uuid": "f0a9cc12-a9ca-4379-b27c-d3c7de6bc3e8",
+    "formUUID": "1aef21a6-e629-4cb5-8d63-ef252a9ad7d1",
+    "encounterTypeUUID": "11d3085e-c44c-467c-abd3-6af215740959",
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+    "comment": "Child, PNC Doctor Checkup"
+  },
+  {
     "uuid": "4da96e79-6e64-4d0a-aec4-febb0f7f5b19",
     "formUUID": "6ae07f4d-c639-4cfa-a78b-9f39e0b24c60",
     "encounterTypeUUID": "af181460-b5f0-46b0-9474-4dd0a34981af",

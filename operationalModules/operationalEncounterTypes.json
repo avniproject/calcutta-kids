@@ -121,6 +121,14 @@
       "encounterType": {
         "uuid": "9ece8cc4-4619-4bda-ab08-42b473cb6f9c"
       }
+    },
+    {
+      "uuid": "17606192-9d5a-4354-8e86-67f52229ba1c",
+      "name": "PNC Doctor Checkup",
+      "encounterType": {
+        "uuid": "11d3085e-c44c-467c-abd3-6af215740959",
+        "comment": "PNC Doctor Checkup"
+      }
     }
   ]
 }

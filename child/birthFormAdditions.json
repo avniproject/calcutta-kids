@@ -8,6 +8,28 @@
       "comment": "Physical Examination",
       "formElements": [
         {
+          "name": "Colour of child",
+          "uuid": "ce69d85e-6886-48d4-969b-24d188685f2b",
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Colour of child",
+            "uuid": "747f9b96-5b88-4f08-b52c-e1a060df4c30"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Muscle Tone",
+          "uuid": "3a87865b-f066-49bb-8546-53da23e743b9",
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Muscle tone",
+            "uuid": "8ae7a140-900c-4bae-bb20-15b8c883869a"
+          },
+          "displayOrder": 4.1,
+          "mandatory": false
+        },
+        {
           "uuid": "cee6eef8-ba4f-4972-9c0c-33dad19b43a3",
           "name": "Icterus (Jaundice)",
           "type": "SingleSelect",
