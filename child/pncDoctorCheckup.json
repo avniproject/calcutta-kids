@@ -64,6 +64,41 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "uuid": "c1dcc99c-fa1e-495b-bf0d-6e8a74ce11fa",
+      "name": "Vitals",
+      "displayOrder": 2,
+      "display": "Vitals",
+      "formElements": [
+        {
+          "name": "Pulse",
+          "uuid": "fb7551df-0f66-452d-80be-cc4accdd954c",
+          "concept": {
+            "uuid": "4629403c-7d38-4984-89cb-8be929b66e69"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Temperature",
+          "uuid": "221bb64a-0cb8-4136-aeca-f4546451749b",
+          "concept": {
+            "uuid": "c5e0d0e0-4ff7-40be-a929-292d7c4b17d0"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Respiratory Rate",
+          "uuid": "22cdf198-91ad-4eb6-9f1c-655b9c48821f",
+          "concept": {
+            "uuid": "a669a751-574e-4f7b-8c34-d3d755adecf8"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }

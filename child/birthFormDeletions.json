@@ -54,6 +54,24 @@
           "comment": "Muscle Tone"
         }
       ]
+    },
+    {
+      "uuid": "5d1cff96-3a19-430d-92bf-0244a2562154",
+      "comment": "Vitals",
+      "formElements": [
+        {
+          "comment": "Pulse",
+          "uuid": "e9097f25-cb68-44d5-8709-f7ccfa3d36d6"
+        },
+        {
+          "comment": "Temperature",
+          "uuid": "c31449fa-9102-4a46-8264-022d529d4f38"
+        },
+        {
+          "comment": "Respiratory Rate",
+          "uuid": "ceed29aa-0145-4c77-a032-2c1546682612"
+        }
+      ]
     }
   ]
 }
