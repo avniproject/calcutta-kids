@@ -240,7 +240,8 @@
             "comment": "Placeholder for counselling form element"
           },
           "displayOrder": 1,
-          "mandatory": false
+          "mandatory": false,
+          "voided": true
         }
       ]
     }
