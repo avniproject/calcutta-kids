@@ -46,6 +46,7 @@
       "name": "Breastfeeding",
       "display": "Breastfeeding",
       "displayOrder": 4,
+      "voided": true,
       "formElements": [
         {
           "name": "How soon did the child start breastfeeding after delivery?",
