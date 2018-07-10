@@ -62,6 +62,16 @@
           },
           "displayOrder": 4,
           "mandatory": false
+        },
+        {
+          "uuid": "dd82b801-73c6-46ed-87a5-6bc273788253",
+          "name": "Icterus (Jaundice)",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "78cb1fb0-9e7c-4012-872c-00589fda661d"
+          },
+          "displayOrder": 5,
+          "mandatory": false
         }
       ]
     },
