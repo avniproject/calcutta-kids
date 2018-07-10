@@ -21,6 +21,30 @@
             "comment": "Is your baby having any of the following problems?"
           },
           "displayOrder": 0.5
+        },
+        {
+          "name": "Does baby feel hot?",
+          "uuid": "03ab4bc4-f772-4f7b-af43-e1b58a249918",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Baby feels hot",
+            "uuid": "690af7fc-50d1-4a38-a864-58219ee14da6"
+          },
+          "displayOrder": 7.1,
+          "mandatory": true
+        },
+        {
+          "name": "Does baby have the chills?",
+          "uuid": "ff80b179-d8b5-40f1-93b7-ee2cea382b3c",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Baby feels chill",
+            "uuid": "a15faeac-ae32-4acb-aca4-546e0a661fda"
+          },
+          "displayOrder": 7.2,
+          "mandatory": true
         }
       ]
     },

@@ -153,5 +153,37 @@
         "abnormal": true
       }
     ]
+  },
+  {
+    "name": "Baby feels hot",
+    "uuid": "690af7fc-50d1-4a38-a864-58219ee14da6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "abnormal": true
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Baby feels chill",
+    "uuid": "a15faeac-ae32-4acb-aca4-546e0a661fda",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "abnormal": true
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   }
 ]
