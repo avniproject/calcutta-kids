@@ -81,7 +81,7 @@
     },
     {
       "uuid": "4469bcb5-c10c-45dc-ae6e-1b337341c6f8",
-      "name": "Doctor Visit",
+      "name": "Doctor Checkup",
       "encounterType": {
         "uuid": "5a18fd93-7db8-47a2-9c26-4807d89d13e7"
       }
