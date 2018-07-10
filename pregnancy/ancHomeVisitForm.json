@@ -423,6 +423,150 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "uuid": "c672d409-3051-4bdc-96a5-a1479bd0dc72",
+      "name": "Nutritional Counselling",
+      "displayOrder": 6,
+      "display": "Nutritional Counselling",
+      "formElements": [
+        {
+          "name": "CK Diet Advice Dos",
+          "uuid": "9e7f3153-884f-44cf-94ea-30b3c15984ac",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "98d5f572-2aff-4973-941e-5459fce82f45",
+            "name": "Diet Advice Do's"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "CK Diet Advice Donts",
+          "uuid": "19c4ad25-8bd8-4615-b9f9-7489b3c5eb11",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "3f0de760-cb91-428f-928d-164b9c8b0e6c",
+            "name": "Diet Advice Don'ts"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Supplementary nutritional therapy",
+          "uuid": "57e7ee2e-668a-462d-9d63-cf1b512f1ec0",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "1307241d-92c2-4660-8ed9-c5da899aa06e",
+            "name": "Supplementary nutritional therapy (advice)"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "a58ee76b-a70c-47e1-a013-da21f1c3998f",
+      "name": "General Counselling",
+      "displayOrder": 7,
+      "display": "General Counselling",
+      "formElements": [
+        {
+          "name": "CK Rest and sleep",
+          "uuid": "894909da-0937-4d98-ba19-c5e284510b28",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "d070cf73-16f3-4fb7-bf4b-94b95ce753a1",
+            "name": "Rest and sleep (advice)"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Immunization Counselling",
+          "uuid": "53d762b5-be37-4f44-b068-d300954935d0",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "c210a202-78e4-493f-bcf6-11ed6e79d61c",
+            "name": "Immunization Counselling (advice)"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Coitus/Sex Counselling",
+          "uuid": "7bf85b5d-a913-4c7c-b8f6-e3da6d8bf986",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "22d263c5-033a-487f-b237-2ebf6c8698e4",
+            "name": "Coitus/Sex Counselling (advice)"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Illness management",
+          "uuid": "f17f3424-9431-484f-9500-36189eb04743",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b5639c14-30a2-43d3-b818-21cd0cc0a2ff",
+            "name": "Illness management (advice)"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        },
+        {
+          "name": "Finance management",
+          "uuid": "b436afaf-8179-444e-9362-0ef5c39e5d41",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "0dddfa30-74ee-47a4-b212-1918499f4c92",
+            "name": "Finance management (advice)"
+          },
+          "displayOrder": 5,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "8fc6d03c-03c5-426b-a8f7-e8c5848f271a",
+      "name": "Administrative Counselling",
+      "displayOrder": 8,
+      "display": "Administrative Counselling",
+      "formElements": [
+        {
+          "name": "Government scheme information",
+          "uuid": "9bef445c-3379-4615-b254-9b287bdcc5ec",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "fd8fcbd8-278f-4417-9696-176ff46c3bcc",
+            "name": "Government scheme information (advice)"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Ambulance services information",
+          "uuid": "84f9c969-782c-4d5a-b49b-7d6c503fed44",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "8b01c973-206a-42a7-9ecb-2471ee51be88",
+            "name": "Ambulance services information (advice)"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }

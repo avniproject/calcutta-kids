@@ -22,6 +22,64 @@
           "comment": "Blood Sugar"
         }
       ]
+    },
+    {
+      "uuid": "70025486-e617-423c-98e7-016c5e9c59f5",
+      "comment": "Nutritional Counselling",
+      "formElements": [
+        {
+          "comment": "Diet Advice Dos",
+          "uuid": "d84f114c-2c52-475e-b78a-f346c2ef3321"
+        },
+        {
+          "comment": "Diet Advice Donts",
+          "uuid": "a9337716-980e-4223-aea7-a2ece6147581"
+        },
+        {
+          "comment": "Supplementary nutritional therapy",
+          "uuid": "af2b1579-175a-4ce9-9c40-d97912002be9"
+        }
+      ]
+    },
+    {
+      "uuid": "40f81e13-bcd8-4190-9651-f04f504b9f09",
+      "comment": "General Counselling",
+      "formElements": [
+        {
+          "comment": "Rest and sleep",
+          "uuid": "292c2e5b-23d4-40cd-a2a4-7b426f5e64c8"
+        },
+        {
+          "comment": "Immunization Counselling",
+          "uuid": "21b2dc49-e6b3-4284-9201-a458c1207276"
+        },
+        {
+          "comment": "Coitus/Sex Counselling",
+          "uuid": "a5b16727-5cf4-4a49-8732-03dddf6ed311"
+        },
+        {
+          "comment": "Illness management",
+          "uuid": "2443614a-fe92-4667-9baa-51392342ec39"
+        },
+        {
+          "comment": "Finance management",
+          "uuid": "db534cf4-aaaa-4e21-a096-da10d7cb32de"
+        }
+      ]
+    },
+    {
+      "uuid": "55dcd6c1-a406-4006-9d08-0c71c624d1c4",
+      "comment": "Administrative Counselling",
+      "formElements": [
+        {
+          "comment": "Government scheme information",
+          "uuid": "2363acaa-e9d3-48df-8753-cac4c708a2fc"
+        },
+        {
+          "comment": "Ambulance services information",
+          "uuid": "8041f3fc-fc3e-4360-b732-105d9d599ee3"
+        }
+      ]
     }
   ]
 }
