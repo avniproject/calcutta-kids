@@ -21,6 +21,20 @@
           "uuid": "fe794b79-cd35-4a43-a203-e56fdfe08b63"
         }
       ]
+    },
+    {
+      "uuid": "550cc969-4021-4d13-8ad3-d8759388205b",
+      "comment": "Child Anthropometry",
+      "formElements": [
+        {
+          "comment": "Height",
+          "uuid": "94a659ce-dd98-44a1-a3ea-2a8abc622990"
+        },
+        {
+          "comment": "Weight",
+          "uuid": "786fa276-8baa-4315-8f72-1da2e0c888a6"
+        }
+      ]
     }
   ]
 }
