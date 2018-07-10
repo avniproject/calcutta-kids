@@ -48,36 +48,6 @@ class ChildPNCFormHandler {
     @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Other'])
     whatOtherThingsDidYouFeedYourChildSinceBeginningBreastfeeding() { }
 
-    @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ["Cow's milk"])
-    frequencyOfCowsMilk() { }
-
-    @CodedObservationMatcher("Frequency of cow's milk", ['Other'])
-    otherFrequencyOfCowsMilk() { }
-
-    @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Formula'])
-    frequencyOfFormula() { }
-
-    @CodedObservationMatcher("Frequency of formula", ['Other'])
-    otherFrequencyOfFormula() { }
-
-    @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Water'])
-    frequencyOfWater() { }
-
-    @CodedObservationMatcher("Frequency of water", ['Other'])
-    otherFrequencyOfWater() { }
-
-    @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Water based liquids (sugar water, juice etc)'])
-    frequencyOfWaterBasedLiquids() { }
-
-    @CodedObservationMatcher("Frequency of water-based liquids", ['Other'])
-    otherFrequencyOfWaterBasedLiquids() { }
-
-    @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Other'])
-    frequencyOfOther() { }
-
-    @CodedObservationMatcher('Frequency of other', ['Other'])
-    otherFrequencyOfOther() { }
-
     @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Other'])
     whyDidYouFeedYourBabySomethingOtherThanBreastMilk() { }
 

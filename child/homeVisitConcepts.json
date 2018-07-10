@@ -93,12 +93,14 @@
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "name": "Other"
       }
-    ]
+    ],
+    "voided": true
   },
   {
     "name": "Other frequency of cow's milk",
     "uuid": "552ff095-19a4-493b-840b-d2ae92f59e2e",
-    "dataType": "Text"
+    "dataType": "Text",
+    "voided": true
   },
   {
     "uuid": "43ee0a28-b689-470a-9e34-838231f63700",
@@ -125,12 +127,14 @@
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "name": "Other"
       }
-    ]
+    ],
+    "voided": true
   },
   {
     "name": "Other frequency of formula",
     "uuid": "2e6d9291-b5a2-4a53-846f-7319935fdb20",
-    "dataType": "Text"
+    "dataType": "Text",
+    "voided": true
   },
   {
     "uuid": "258eb2a9-6cbf-4969-83ea-f2709e6490e9",
@@ -157,12 +161,14 @@
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "name": "Other"
       }
-    ]
+    ],
+    "voided": true
   },
   {
     "name": "Other frequency of water",
     "uuid": "6b2522c8-d312-4d06-8123-0e18abfebf41",
-    "dataType": "Text"
+    "dataType": "Text",
+    "voided": true
   },
   {
     "uuid": "c1dd8ebe-601d-49a2-9221-0196905e683f",
@@ -189,12 +195,14 @@
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "name": "Other"
       }
-    ]
+    ],
+    "voided": true
   },
   {
     "name": "Other frequency of water-based liquids",
     "uuid": "b26cad75-8f36-400a-a0c8-1e593d7b2eb4",
-    "dataType": "Text"
+    "dataType": "Text",
+    "voided": true
   },
   {
     "uuid": "0b20efea-07c1-4581-a585-9e3db16735de",
@@ -221,12 +229,14 @@
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "name": "Other"
       }
-    ]
+    ],
+    "voided": true
   },
   {
     "name": "Other frequency of other",
     "uuid": "a1457219-9ce3-48c7-817b-7324707c7510",
-    "dataType": "Text"
+    "dataType": "Text",
+    "voided": true
   },
   {
     "name": "Not producing enough breast milk",
