@@ -34,8 +34,8 @@
           "uuid": "289b7085-2f78-4e8f-98c4-346784a1d8c1",
           "keyValues": [],
           "concept": {
-            "uuid": "65f5d269-9e46-4d6a-9745-5636051b90b6",
-            "comment": "Child Illness"
+            "uuid": "e366e7b5-9c6d-46c3-b3d4-47caecdaa521",
+            "comment": "Child is ill"
           },
           "displayOrder": 3,
           "mandatory": false
@@ -45,7 +45,8 @@
           "uuid": "f52965c3-32fe-4639-a12b-e2d6a9e29aa6",
           "keyValues": [],
           "concept": {
-            "uuid": "aa1c49fa-bf45-446b-b221-b9b9ba70b0f5"
+            "uuid": "227033ee-3a01-4ae6-ba1d-7d54b3091393",
+            "comment": "Child has Diarrhoea"
           },
           "displayOrder": 4,
           "mandatory": false

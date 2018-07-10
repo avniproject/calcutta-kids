@@ -2052,12 +2052,44 @@
   {
     "name": "Child Illness notes",
     "uuid": "65f5d269-9e46-4d6a-9745-5636051b90b6",
-    "dataType": "Text"
+    "dataType": "Text",
+    "voided": true
   },
   {
     "name": "Child Diarrhoea notes",
     "uuid": "aa1c49fa-bf45-446b-b221-b9b9ba70b0f5",
-    "dataType": "Text"
+    "dataType": "Text",
+    "voided": true
+  },
+  {
+    "name": "Child is ill",
+    "uuid": "e366e7b5-9c6d-46c3-b3d4-47caecdaa521",
+    "dataType": "Coded",
+    "answers":[
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
+  },
+  {
+    "name": "Child has Diarrhoea",
+    "uuid": "227033ee-3a01-4ae6-ba1d-7d54b3091393",
+    "dataType": "Coded",
+    "answers":[
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No"
+      }
+    ]
   },
   {
     "name": "Absent reason",
