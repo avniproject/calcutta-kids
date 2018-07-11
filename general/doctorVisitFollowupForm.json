@@ -122,6 +122,46 @@
             "uuid": "dcbfccc2-6209-4000-85dd-49bc0c241ca4"
           },
           "displayOrder": 13
+        },
+        {
+          "name": "Do you want to keep your child?",
+          "uuid": "d25f52ed-7de6-4605-a605-405075fa4606",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "cb5ec484-9ff3-4cc0-b468-9a7560dcffce"
+          },
+          "displayOrder": 14,
+          "mandatory": true
+        },
+        {
+          "name": "Encourage woman to register her pregnancy in office",
+          "uuid": "76614979-893b-4a58-949d-50de5ed2490c",
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 15,
+          "mandatory": false
+        },
+        {
+          "name": "Do you plan to go to a hospital to pursue an abortion?",
+          "uuid": "4104a5ab-a5b3-434d-a1d7-a6d20cf91593",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "f940c67b-9bc0-40af-aa9c-4d58b538926e"
+          },
+          "displayOrder": 16,
+          "mandatory": true
+        },
+        {
+          "name": "Counsel against home abortion kits and encourage to visit the hospital for an abortion",
+          "uuid": "34264ab4-9bf6-4be2-be6c-d3ff66932397",
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 17,
+          "mandatory": false
         }
       ]
     }

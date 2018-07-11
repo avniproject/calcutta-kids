@@ -1,8 +1,15 @@
-const { RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper } = require('rules-config/rules');
+const { StatusBuilderAnnotationFactory, RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper } = require('rules-config/rules');
 
 const DoctorVisitFollowupFilter = RuleFactory("db80ea16-8538-41ca-bd6a-53abc9be088b", "ViewFilter");
+const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 
-class DoctorVisitFollowupHandler {
+const pregnancyTestResult = (programEncounter) => {
+    const pregnancyTestObs = programEncounter.findLatestObservationInEntireEnrolment('Pregnancy test', programEncounter);
+    return pregnancyTestObs && pregnancyTestObs.getReadableValue();
+}
+
+@DoctorVisitFollowupFilter("d54dafdf-34d7-44ac-b0ca-8071486a48e9", "Doctor Visit Followup form rules", 100.0, {})
+class DoctorVisitFollowupFormRules {
     whyIsThePatientTakingOnlySomeOfThePrescribedMedicines(programEncounter, formElement) {
         let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
         statusBuilder.show().when.valueInEncounter("Is patient taking medicines as prescribed?")
@@ -53,14 +60,36 @@ class DoctorVisitFollowupHandler {
             .containsAnswerConceptName("No");
         return statusBuilder.build();
     }
-}
 
+    @WithStatusBuilder
+    doYouWantToKeepYourChild([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(pregnancyTestResult(programEncounter)).is.equals('Positive')
+    }
 
-@DoctorVisitFollowupFilter("d54dafdf-34d7-44ac-b0ca-8071486a48e9", "Doctor Visit Followup form rules", 100.0, {})
-class DoctorVisitFollowupFormRules {
+    @WithStatusBuilder
+    encourageWomanToRegisterHerPregnancyInOffice([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show()
+            .whenItem(pregnancyTestResult(programEncounter)).is.equals('Positive')
+            .and.valueInEncounter('Do you want to keep your child?').is.yes;
+    }
+
+    @WithStatusBuilder
+    doYouPlanToGoToAHospitalToPursueAnAbortion([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show()
+            .whenItem(pregnancyTestResult(programEncounter)).is.equals('Positive')
+            .and.valueInEncounter('Do you want to keep your child?').is.no;
+    }
+
+    @WithStatusBuilder
+    counselAgainstHomeAbortionKitsAndEncourageToVisitTheHospitalForAnAbortion([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show()
+            .whenItem(pregnancyTestResult(programEncounter)).is.equals('Positive')
+            .and.valueInEncounter('Do you plan to go to a hospital to pursue an abortion?').is.no;
+    }
+
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper
-            .getFormElementsStatusesWithoutDefaults(new DoctorVisitFollowupHandler(), programEncounter, formElementGroup, today);
+            .getFormElementsStatusesWithoutDefaults(new DoctorVisitFollowupFormRules(), programEncounter, formElementGroup, today);
     }
 }
 
