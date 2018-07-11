@@ -64,7 +64,7 @@ class ChildPNCFormHandler {
     specifyOtherBreastfeedingProblems() { }
 
     @WithStatusBuilder
-    counsellingForFeedingYourChildFrequently([], statusBuilder) {
+    ckCounsellingForFeedingYourChildFrequently([], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Number of times breastfed in the last 24 hours").lessThan(8);
     }
 
