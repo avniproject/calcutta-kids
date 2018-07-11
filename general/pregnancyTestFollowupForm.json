@@ -1,4 +1,5 @@
 {
+  "voided": true,
   "name": "Pregnancy Test Followup",
   "uuid": "c5e2244d-8f9a-4120-a410-2be9cabab605",
   "formType": "Encounter",

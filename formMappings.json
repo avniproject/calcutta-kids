@@ -148,7 +148,8 @@
   {
     "uuid": "5004fa1a-1964-4041-b0dd-56bab20b68d7",
     "formUUID": "c5e2244d-8f9a-4120-a410-2be9cabab605",
-    "encounterTypeUUID": "9ece8cc4-4619-4bda-ab08-42b473cb6f9c"
+    "encounterTypeUUID": "9ece8cc4-4619-4bda-ab08-42b473cb6f9c",
+    "voided": true
   },
   {
     "uuid": "cf7f010d-79d2-47e9-8638-5a64cd29719e",
