@@ -15,16 +15,16 @@ class HomeVisitDecisions {
     static referral(programEncounter) {
         const complicationsBuilder = new ComplicationsBuilder({
             programEncounter: programEncounter,
-            complicationsConcept: 'Refer to doctor for'
+            complicationsConcept: 'Refer to Calcutta Kids doctor'
         });
         complicationsBuilder.addComplication("Insufficient urination")
             .when.ageInMonths.lessThanOrEqualTo(1).and
-            .valueInEncounter("How many times has your child urinated in the last 24 hours?").lessThan(6);
+            .valueInEncounter("Number of times urinated in the last 24 hours").lessThan(6);
 
         complicationsBuilder.addComplication("Insufficient urination")
             .when.ageInMonths.greaterThan(1).and
             .when.ageInMonths.lessThan(3).and
-            .when.valueInEncounter("How many times has your child urinated in the last 24 hours?").lessThan(8);
+            .when.valueInEncounter("Number of times urinated in the last 24 hours").lessThan(8);
 
         ["Lethargy", "Redness or discharge on the skin around the belly button", "Fever"]
             .forEach(complication =>

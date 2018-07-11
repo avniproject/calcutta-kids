@@ -505,7 +505,8 @@
   {
     "name": "How many times has your child urinated in the last 24 hours?",
     "uuid": "8883313f-8d55-4da3-8896-035fffd3a030",
-    "dataType": "Numeric"
+    "dataType": "Numeric",
+    "voided": true
   },
   {
     "name": "Is your baby having any of the following problems?",
