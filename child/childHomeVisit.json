@@ -19,7 +19,8 @@
           "name": "Have you fed your child any of the following?",
           "displayOrder": 1,
           "uuid": "b02a3653-4142-424d-9da4-d404526e9044",
-          "mandatory": true
+          "mandatory": true,
+          "voided": true
         },
         {
           "concept": {
@@ -29,16 +30,38 @@
           "name": "What else did feed your child?",
           "displayOrder": 2,
           "uuid": "e5674f05-424f-43e5-8361-323c7e9e0fed",
-          "mandatory": true
+          "mandatory": true,
+          "voided": true
         }
       ]
     },
     {
       "uuid": "10e71011-999a-4854-9db5-9fe38baa9716",
-      "name": "Breast feeding continued",
+      "name": "Breast feeding",
       "displayOrder": 2,
-      "display": "Breast feeding continued",
+      "display": "Breast feeding",
       "formElements": [
+        {
+          "concept": {
+            "name": "Have you fed your child any of the following?",
+            "uuid": "fa9f52fd-300f-4521-9bd6-6bca192fe24c"
+          },
+          "type": "MultiSelect",
+          "name": "Have you fed your child any of the following?",
+          "displayOrder": 12.8,
+          "uuid": "39e90b31-e658-4567-8c15-2fe7d875e7dd",
+          "mandatory": true
+        },
+        {
+          "concept": {
+            "name": "What else did feed your child?",
+            "uuid": "185c6430-e920-4f91-93a6-611affa05794"
+          },
+          "name": "What else did feed your child?",
+          "displayOrder": 12.9,
+          "uuid": "0c9742bf-0445-4095-ae78-0493d3884b4d",
+          "mandatory": true
+        },
         {
           "concept": {
             "name": "Why did you feed your baby something other than breast milk?",
@@ -101,7 +124,8 @@
           "name": "Have you fed your child any of the following liquids?",
           "displayOrder": 17.5,
           "uuid": "88d5f2c0-e910-424c-b9ca-1262ce0146eb",
-          "mandatory": true
+          "mandatory": true,
+          "voided": true
         },
         {
           "concept": {
@@ -111,7 +135,8 @@
           "name": "What else did feed your child?",
           "displayOrder": 17.6,
           "uuid": "c4d3f7db-0d46-4f67-ba59-46ce2c3d1a49",
-          "mandatory": true
+          "mandatory": true,
+          "voided": true
         },
         {
           "concept": {
