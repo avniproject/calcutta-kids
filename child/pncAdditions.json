@@ -5,8 +5,7 @@
     {
       "uuid": "00595000-54fb-40f2-9493-a57f01881aad",
       "comment": "Child Recent History",
-      "formElements": [
-      ]
+      "formElements": []
     },
     {
       "uuid": "daea5603-e7c8-449f-85ad-da9be62c2288",
@@ -147,6 +146,17 @@
             "comment": "Other things baby was fed since beginning breastfeeding"
           },
           "displayOrder": 10
+        },
+        {
+          "name": "CK Counsell to promote exclusive breastfeeding",
+          "uuid": "884b026c-d37f-4904-a3ca-e98c23eacf5b",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 10.1,
+          "mandatory": false
         },
         {
           "concept": {

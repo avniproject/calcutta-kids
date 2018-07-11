@@ -163,7 +163,7 @@
           },
           "type": "MultiSelect",
           "name": "Have you fed your child any of the following?",
-          "displayOrder": 12.8,
+          "displayOrder": 12.7,
           "uuid": "39e90b31-e658-4567-8c15-2fe7d875e7dd",
           "mandatory": true
         },
@@ -173,9 +173,20 @@
             "uuid": "185c6430-e920-4f91-93a6-611affa05794"
           },
           "name": "What else did feed your child?",
-          "displayOrder": 12.9,
+          "displayOrder": 12.8,
           "uuid": "0c9742bf-0445-4095-ae78-0493d3884b4d",
           "mandatory": true
+        },
+        {
+          "name": "CK Counsell to promote exclusive breastfeeding",
+          "uuid": "218200c0-a9c4-4c4b-b053-70a09c06f369",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 12.9,
+          "mandatory": false
         },
         {
           "concept": {

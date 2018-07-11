@@ -45,6 +45,12 @@ class ChildPNCFormHandler {
     @CodedObservationMatcher('Other things baby was fed before breastfeeding', ['Other'])
     whatOtherThingsWasBabyFedBeforeBreastfeeding() { }
 
+    @WithStatusBuilder
+    ckCounsellToPromoteExclusiveBreastfeeding([], statusBuilder) {
+        statusBuilder.show().when
+            .valueInEncounter('Things baby was fed since beginning breastfeeding').is.defined;
+    }
+
     @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Other'])
     whatOtherThingsDidYouFeedYourChildSinceBeginningBreastfeeding() { }
 

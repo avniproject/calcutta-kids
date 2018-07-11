@@ -1,8 +1,14 @@
-const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder} = require('rules-config/rules');
-const ComplicationsBuilder = complicationsBuilder;
+import {
+    RuleFactory,
+    FormElementStatusBuilder,
+    FormElementsStatusHelper,
+    StatusBuilderAnnotationFactory,
+    complicationsBuilder as ComplicationsBuilder
+} from 'rules-config/rules';
 
 const HomeVisitFilter = RuleFactory("35aa9007-fe7a-4a59-b985-0a1c038df889", "ViewFilter");
 const HomeVisitDecision = RuleFactory("35aa9007-fe7a-4a59-b985-0a1c038df889", "Decision");
+const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 
 @HomeVisitDecision("f7b6f668-af02-4dff-8b0f-c74427262e37", "Child Home Visit Decision", 100.0, {})
 class HomeVisitDecisions {
@@ -54,10 +60,18 @@ class ChildHomeVisitFilter {
         return statusBuilder.build();
     }
 
+    @WithStatusBuilder
+    ckCounsellToPromoteExclusiveBreastfeeding([], statusBuilder) {
+        statusBuilder.show().when
+            .valueInEncounter('Have you fed your child any of the following?').is.defined
+            .and.valueInEncounter('Have you fed your child any of the following?').not.containsAnswerConceptName('No');
+    }
+
     whyDidYouFeedYourBabySomethingOtherThanBreastMilk(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
         statusBuilder.show()
             .when.ageInMonths.lessThan(6)
+            .and.valueInEncounter('Have you fed your child any of the following?').is.defined
             .and.when.valueInEncounter("Have you fed your child any of the following?").not.containsAnswerConceptName("No");
 
         return statusBuilder.build();
@@ -225,4 +239,4 @@ class ChildHomeVisitFilter {
     }
 }
 
-module.exports = {ChildHomeVisitFilter, HomeVisitDecisions};
+module.exports = { ChildHomeVisitFilter, HomeVisitDecisions };
