@@ -401,8 +401,8 @@
           "uuid": "0ef8cffd-1615-4e91-9ffb-dbefbc181707",
           "keyValues": [],
           "concept": {
-            "comment": "Child's case should be treated as a special case",
-            "uuid": "87199275-bc93-47ef-ba2b-089bbb54d927"
+            "comment": "Consider a special case",
+            "uuid": "24c0eb2b-d6bf-4099-a8d5-0ac2217e98b7"
           },
           "displayOrder": 2,
           "mandatory": false

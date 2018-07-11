@@ -379,7 +379,7 @@
             "uuid": "24c0eb2b-d6bf-4099-a8d5-0ac2217e98b7"
           },
           "displayOrder": 2,
-          "mandatory": true
+          "mandatory": false
         }
       ]
     },
