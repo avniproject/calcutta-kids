@@ -1,5 +1,9 @@
 // NOTE: Object keys are valid concepts
 const ppiPointsMatrix = new Map([
+    ['Is the residence pucca?', {
+        'No': 0,
+        'Yes': 4
+    }],
     ['Number of people 0-17 in the household', {
         'Five or more': 0,
         'Four': 4,
@@ -47,7 +51,7 @@ const ppiPointsMatrix = new Map([
     ['Primary source of energy for cooking in the household', {
         'Firewood and chips, charcoal': 0,
         'Other': 5,
-        'Electric': 5, // Keeping it same as Other since not mentioned in doc
+        'Electric': 17,
         'LPG': 17
     }]
 ]);

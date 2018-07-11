@@ -511,6 +511,19 @@
     "dataType": "Text"
   },
   {
+    "name": "Is the residence pucca?",
+    "uuid": "0fbf8c35-2cf0-4591-8e83-914d3b8e8242",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
     "name": "Does the household own a television?",
     "uuid": "960a2d02-352a-48b3-9704-48bc6709ea85",
     "dataType": "Coded",
