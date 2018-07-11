@@ -149,6 +149,16 @@
           "mandatory": false
         },
         {
+          "name": "Pregnancy test",
+          "uuid": "d564cebb-0d0f-436c-a7a3-47c87607546f",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "6716b050-420f-4234-953a-8385f06121f0"
+          },
+          "displayOrder": 3.5,
+          "mandatory": false
+        },
+        {
           "name": "Diagnosis",
           "uuid": "514a3f27-3ad2-435f-adeb-aa49323ecd31",
           "keyValues": [],

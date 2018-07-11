@@ -2518,7 +2518,7 @@
     ]
   },
   {
-    "name": "Pregnancy test status",
+    "name": "Pregnancy test",
     "uuid": "6716b050-420f-4234-953a-8385f06121f0",
     "dataType": "Coded",
     "answers": [
@@ -2532,7 +2532,8 @@
       },
       {
         "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
-        "comment": "NA"
+        "comment": "NA",
+        "voided": true
       }
     ]
   },
