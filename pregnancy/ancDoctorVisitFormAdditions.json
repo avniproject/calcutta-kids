@@ -19,7 +19,8 @@
           ],
           "concept": {
             "uuid": "1af1cc0b-0f35-42ad-91be-46e7663042cf"
-          }
+          },
+          "voided": true
         },
         {
           "name": "Height",
