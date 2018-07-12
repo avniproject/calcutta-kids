@@ -2726,9 +2726,11 @@
     "dataType": "Coded",
     "answers": [
       {
+        "comment": "Yes",
         "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
       },
       {
+        "comment": "No",
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
@@ -2750,8 +2752,8 @@
       },
       {
         "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
-        "abnormal": false,
-        "comment": "Refer to hospital"
+        "comment": "Refer to hospital",
+        "abnormal": false
       }
     ]
   },

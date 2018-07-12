@@ -79,7 +79,7 @@ class ChildPNCFormDecisions {
     static referToHospital(programEncounter) {
         const builder = new ComplicationsBuilder({
             programEncounter: programEncounter,
-            complicationsConcept: 'Refer to hospital'
+            complicationsConcept: 'Refer to the hospital for'
         });
 
         ['Lethargy', 'Fever', 'Redness or discharge on the skin around the belly button']

@@ -43,7 +43,7 @@ class MotherPNCDecision {
     static exec(programEncounter, decisions, context, today) {
         const complicationsBuilder = new ComplicationsBuilder({
             programEncounter: programEncounter,
-            complicationsConcept: 'Refer to hospital'
+            complicationsConcept: 'Refer to the hospital for'
         });
         complicationsBuilder.addComplication("Open/Loose stitches")
             .valueInEncounter("Open or loose stitches").is.yes;

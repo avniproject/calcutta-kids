@@ -195,9 +195,10 @@
     "dataType": "NA"
   },
   {
-    "name": "Refer to hospital",
+    "comment": "Refer to hospital",
     "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
     "dataType": "Coded",
+    "comment": "its a boolean concept",
     "answers": [
       {
         "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
@@ -205,6 +206,23 @@
       {
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       },
+      {
+        "comment": "Open/Loose stitches",
+        "uuid": "a8b70653-ac63-4170-bdeb-39ba5b51d75d",
+        "voided": true
+      },
+      {
+        "comment": "Discharge from stitches wound",
+        "uuid": "6135149b-f390-47b3-bc43-c39e53410c4a",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "comment": "Refer to the hospital for",
+    "uuid": "18cfc41a-2110-484e-a3c6-3f5592387324",
+    "dataType": "Coded",
+    "answers": [
       {
         "name": "Open/Loose stitches",
         "uuid": "a8b70653-ac63-4170-bdeb-39ba5b51d75d"
