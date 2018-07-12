@@ -52,6 +52,34 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "comment": "Blood Investigation",
+      "uuid": "fff4c8e6-7adb-4caa-a79a-3e7d77a42111",
+      "formElements": [
+        {
+          "name": "Blood Sugar - Fasting",
+          "uuid": "50e11b13-1a5d-40fa-99e0-dcbed3eb0034",
+          "keyValues": [],
+          "concept": {
+            "uuid": "3de126a4-719a-4dbe-b884-85f7196b5b54",
+            "comment": "Blood Sugar - Fasting"
+          },
+          "displayOrder": 4.01,
+          "mandatory": false
+        },
+        {
+          "name": "Blood Sugar - Random",
+          "uuid": "d24b3521-f157-432f-b1bd-90ee7bb6027e",
+          "keyValues": [],
+          "concept": {
+            "uuid": "6a069dc8-2ace-4ad3-a481-f4afff4fb276",
+            "comment": "Blood Sugar - Random"
+          },
+          "displayOrder": 4.02,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }

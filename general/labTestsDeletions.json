@@ -9,6 +9,10 @@
         {
           "uuid": "ef186966-f4f4-4d39-93c3-ff2a4e2ae62b",
           "comment": "Urine Pregnancy Test"
+        },
+        {
+          "name": "Blood Sugar",
+          "uuid": "203c05e5-1a71-4e32-b695-3f88be9c7c56"
         }
       ]
     }

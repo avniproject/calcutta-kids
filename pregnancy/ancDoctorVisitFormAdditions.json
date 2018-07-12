@@ -196,7 +196,8 @@
             "comment":"Blood Sugar - Fasting"
           },
           "displayOrder": 4.01,
-          "mandatory": false
+          "mandatory": false,
+          "voided": true
         },
         {
           "name": "Blood Sugar - Random",
@@ -207,7 +208,8 @@
             "comment":"Blood Sugar - Random"
           },
           "displayOrder": 4.02,
-          "mandatory": false
+          "mandatory": false,
+          "voided": true
         }
       ]
     },

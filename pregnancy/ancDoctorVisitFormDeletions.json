@@ -20,6 +20,52 @@
         {
           "uuid": "53899c85-3e5e-45e8-ab03-e05d7d295e11",
           "comment": "Blood Sugar"
+        },
+        {
+          "comment": "Blood Examination Date",
+          "uuid": "4854821e-d478-4b95-afed-00b2c233ce41"
+        },
+        {
+          "comment": "Paracheck",
+          "uuid": "f09992f0-ef48-4fb8-ad08-0f9a718aee54"
+        },
+        {
+          "comment": "Hb",
+          "uuid": "549367fb-a795-472d-9ad2-06e281dfc17e"
+        },
+        {
+          "comment": "VDRL",
+          "uuid": "bdab2e43-5e2c-43b9-bd1d-26707aa9806d"
+        },
+        {
+          "comment": "HIV/AIDS Test",
+          "uuid": "44a88f6b-8b20-4a1b-835a-ad37193d7dc4"
+        },
+        {
+          "comment": "HbsAg",
+          "uuid": "63987b56-7200-4a0d-9db5-4f01470da996"
+        },
+        {
+          "comment": "Sickling Test",
+          "uuid": "b21c3ad3-d3df-4e3b-997a-d184a26a377d"
+        },
+        {
+          "comment": "Hb Electrophoresis",
+          "uuid": "456f4de6-c474-43a3-8417-08ec374a27b7"
+        }
+      ]
+    },
+    {
+      "uuid": "33b4dfd6-2b49-4230-8132-46bd2232c2db",
+      "comment": "Lab Diagnostics - Urine",
+      "formElements": [
+        {
+          "name": "Urine Albumin",
+          "uuid": "97759fac-b25e-449b-b9da-2be2818a978c"
+        },
+        {
+          "name": "Urine Sugar",
+          "uuid": "c961c4c8-22e1-47fd-8e4d-bef66c962303"
         }
       ]
     },
