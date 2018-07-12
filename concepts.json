@@ -2078,7 +2078,7 @@
     "name": "Child is ill",
     "uuid": "e366e7b5-9c6d-46c3-b3d4-47caecdaa521",
     "dataType": "Coded",
-    "answers":[
+    "answers": [
       {
         "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
         "comment": "Yes"
@@ -2093,7 +2093,7 @@
     "name": "Child has Diarrhoea",
     "uuid": "227033ee-3a01-4ae6-ba1d-7d54b3091393",
     "dataType": "Coded",
-    "answers":[
+    "answers": [
       {
         "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
         "comment": "Yes"
@@ -2763,6 +2763,11 @@
   {
     "name": "Assessment",
     "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Checkup notes",
+    "uuid": "d658b4a4-8ec3-4eb7-9ef3-dd3a73ca29f9",
     "dataType": "Text"
   }
 ]

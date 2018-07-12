@@ -209,6 +209,25 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "uuid": "e1823b91-1cd6-4eb5-85b3-6dbfa9328509",
+      "name": "Notes",
+      "display": "Notes",
+      "displayOrder": 99.9,
+      "formElements": [
+        {
+          "name": "Notes",
+          "uuid": "3314a7bd-bd1d-4d6f-a8b9-a3c9a128fa9a",
+          "keyValues": [],
+          "concept": {
+            "comment": "Checkup notes",
+            "uuid": "d658b4a4-8ec3-4eb7-9ef3-dd3a73ca29f9"
+          },
+          "displayOrder": 0,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }
