@@ -10,13 +10,19 @@ const pregnancyTestResult = (programEncounter) => {
 
 @DoctorVisitFollowupFilter("d54dafdf-34d7-44ac-b0ca-8071486a48e9", "Doctor Visit Followup form rules", 100.0, {})
 class DoctorVisitFollowupFormRules {
-    whyIsThePatientTakingOnlySomeOfThePrescribedMedicines(programEncounter, formElement) {
-        let statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
-        statusBuilder.show().when.valueInEncounter("Is patient taking medicines as prescribed?")
-            .containsAnswerConceptName("SOME of the prescribed medicines")
-            .or.containsAnswerConceptName("NONE of the prescribed medicines")
-            .or.containsAnswerConceptName("NA");
-        return statusBuilder.build();
+    
+    @WithStatusBuilder
+    whyIsThePatientTakingOnlySomeOfThePrescribedMedicines([], statusBuilder) {
+        statusBuilder.show().when
+            .valueInEncounter("Is patient taking medicines as prescribed?")
+            .not.containsAnyAnswerConceptName("NONE of the prescribed medicines")
+    }
+
+    @WithStatusBuilder
+    forAllMedicinesThePatientIsTakingIsThePatientTakingTheMedicineCorrectlyCheckYesIfPatientIsTakingTheCorrectDoseAndCompletingTheFullCourseOfTheMedicine([], statusBuilder){
+        statusBuilder.show().when
+            .valueInEncounter("Is patient taking medicines as prescribed?")
+            .not.containsAnyAnswerConceptName("NONE of the prescribed medicines")
     }
 
     otherReasonsForTakingOnlySomePrescribedMedicines(programEncounter, formElement) {
