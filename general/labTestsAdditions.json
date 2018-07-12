@@ -5,7 +5,7 @@
       "display": "Urine/Stool Results",
       "name": "Urine/Stool Results",
       "uuid": "89342fc6-42ed-4e32-ab54-78b2ba994c55",
-      "displayOrder": 3.1,
+      "displayOrder": 2.9,
       "formElements": [
         {
           "uuid": "0d2e0e20-422a-45ff-9007-1a268d2d1be9",
