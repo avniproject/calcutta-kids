@@ -90,6 +90,15 @@
           "uuid": "f95fedd2-1dc1-4952-91be-f08ef80e11c1"
         }
       ]
+    },
+    {
+      "uuid": "1ca46e2e-36bc-415b-ba50-9021588e676a",
+      "formElements": [
+        {
+          "uuid": "3170cf31-535c-4030-bec1-59229f26d81e",
+          "comment": "Fundal height from pubic symphysis"
+        }
+      ]
     }
   ]
 }
