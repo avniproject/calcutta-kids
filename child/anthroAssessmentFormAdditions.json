@@ -50,17 +50,6 @@
           },
           "displayOrder": 4,
           "mandatory": false
-        },
-        {
-          "name": "Absent reason",
-          "uuid": "3f9f8edf-3aa6-4de8-8298-0fef214a7279",
-          "keyValues": [],
-          "concept": {
-            "uuid": "da35884c-2792-4852-abad-df24fe47a51d"
-          },
-          "displayOrder": 5,
-          "mandatory": false,
-          "voided": true
         }
       ]
     }

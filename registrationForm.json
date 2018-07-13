@@ -223,27 +223,6 @@
           "displayOrder": 1
         }
       ]
-    },
-    {
-      "uuid": "a24c43cc-2ed5-45db-b12d-a2ef1d9c7ba3",
-      "name": "Counselling",
-      "display": "Counselling",
-      "displayOrder": 7,
-      "formElements": [
-        {
-          "name": "CK Registration counselling",
-          "uuid": "0a6fd9f9-6cf9-4630-b157-9c6ebe3fd61f",
-          "keyValues": [],
-          "type":"SingleSelect",
-          "concept": {
-            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
-            "comment": "Placeholder for counselling form element"
-          },
-          "displayOrder": 1,
-          "mandatory": false,
-          "voided": true
-        }
-      ]
     }
   ]
 }

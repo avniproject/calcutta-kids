@@ -8,21 +8,6 @@
       "uuid": "e2737f19-7f9a-4d12-bf02-c676091a09be",
       "formElements": [
         {
-          "name": "Trimester",
-          "uuid": "18c4b316-c012-42f7-b559-19dc41e5bab9",
-          "displayOrder": 1.9,
-          "keyValues": [
-            {
-              "key": "editable",
-              "value": false
-            }
-          ],
-          "concept": {
-            "uuid": "1af1cc0b-0f35-42ad-91be-46e7663042cf"
-          },
-          "voided": true
-        },
-        {
           "name": "Height",
           "uuid": "a98581c6-99ac-43ac-ac7e-90f40d646a7f",
           "keyValues": [],
@@ -88,7 +73,7 @@
           "keyValues": [],
           "concept": {
             "uuid": "fbe9cc17-9d7d-40c8-8a05-51ed7ecb553a",
-            "comment":"USG Scanning Report - Diagnosis"
+            "comment": "USG Scanning Report - Diagnosis"
           },
           "displayOrder": 6.95,
           "mandatory": false
@@ -176,40 +161,10 @@
           "keyValues": [],
           "concept": {
             "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
-            "comment":"Other pregnancy complaints"
+            "comment": "Other pregnancy complaints"
           },
           "displayOrder": 1.1,
           "mandatory": true
-        }
-      ]
-    },
-    {
-      "comment":"Lab diagnostics blood",
-      "uuid":"07458686-88c5-448f-92ed-c150c0629b4f",
-      "formElements":[
-        {
-          "name": "Blood Sugar - Fasting",
-          "uuid": "53d4dea9-a3ef-420b-b40a-6cb1b32c0c20",
-          "keyValues": [],
-          "concept": {
-            "uuid": "3de126a4-719a-4dbe-b884-85f7196b5b54",
-            "comment":"Blood Sugar - Fasting"
-          },
-          "displayOrder": 4.01,
-          "mandatory": false,
-          "voided": true
-        },
-        {
-          "name": "Blood Sugar - Random",
-          "uuid": "7a8df1dc-11c9-47d3-8ce8-481a1c9ba09d",
-          "keyValues": [],
-          "concept": {
-            "uuid": "6a069dc8-2ace-4ad3-a481-f4afff4fb276",
-            "comment":"Blood Sugar - Random"
-          },
-          "displayOrder": 4.02,
-          "mandatory": false,
-          "voided": true
         }
       ]
     },

@@ -2063,18 +2063,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Child Illness notes",
-    "uuid": "65f5d269-9e46-4d6a-9745-5636051b90b6",
-    "dataType": "Text",
-    "voided": true
-  },
-  {
-    "name": "Child Diarrhoea notes",
-    "uuid": "aa1c49fa-bf45-446b-b221-b9b9ba70b0f5",
-    "dataType": "Text",
-    "voided": true
-  },
-  {
     "name": "Child is ill",
     "uuid": "e366e7b5-9c6d-46c3-b3d4-47caecdaa521",
     "dataType": "Coded",
@@ -2529,11 +2517,6 @@
       {
         "uuid": "ad1f0481-a8ed-411a-ac00-d0435a670269",
         "comment": "Negative"
-      },
-      {
-        "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
-        "comment": "NA",
-        "voided": true
       }
     ]
   },

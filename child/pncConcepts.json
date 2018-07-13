@@ -96,22 +96,6 @@
     ]
   },
   {
-    "name": "Child's case should be treated as a special case",
-    "uuid": "87199275-bc93-47ef-ba2b-089bbb54d927",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "name": "Yes",
-        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
-      },
-      {
-        "name": "No",
-        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-      }
-    ],
-    "voided": true
-  },
-  {
     "uuid": "18cfc41a-2110-484e-a3c6-3f5592387324",
     "comment": "Refer to the hospital for",
     "dataType": "Coded",

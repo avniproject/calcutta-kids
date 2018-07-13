@@ -57,17 +57,6 @@
           },
           "displayOrder": 1.5,
           "mandatory": true
-        },
-        {
-          "name": "Were you given Vitamin A?",
-          "uuid": "45ef8635-0dd5-4021-8cdd-11cd9ed0089c",
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "ad4da876-15f6-4e57-a040-7c4e9a7152a9"
-          },
-          "displayOrder": 1.6,
-          "mandatory": true,
-          "voided": true
         }
       ]
     },
