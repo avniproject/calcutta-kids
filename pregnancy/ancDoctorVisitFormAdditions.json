@@ -66,57 +66,6 @@
           },
           "displayOrder": 6.9,
           "mandatory": false
-        },
-        {
-          "name": "Diagnosis",
-          "uuid": "1bfa7dee-7843-4eb1-8547-df6317e8c763",
-          "keyValues": [],
-          "concept": {
-            "uuid": "fbe9cc17-9d7d-40c8-8a05-51ed7ecb553a",
-            "comment": "USG Scanning Report - Diagnosis"
-          },
-          "displayOrder": 6.95,
-          "mandatory": false
-        }
-      ]
-    },
-    {
-      "name": "Medicine and Frequency",
-      "uuid": "30d7754e-f948-48c0-8936-ffd9f5b512e8",
-      "display": "Medicine and Frequency",
-      "displayOrder": 8.1,
-      "formElements": [
-        {
-          "name": "Assessment",
-          "uuid": "fcf5b1d9-b993-4d58-a785-3ef2c4c3824d",
-          "keyValues": [],
-          "concept": {
-            "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e"
-          },
-          "displayOrder": 1,
-          "mandatory": false
-        },
-        {
-          "name": "Treatment notes",
-          "uuid": "a6295e24-1c43-4b6a-8852-c7b2782a280c",
-          "keyValues": [],
-          "concept": {
-            "comment": "Treatment Advice",
-            "uuid": "cdbdd5f9-6522-4c63-82bc-93e96a301a9f"
-          },
-          "displayOrder": 2,
-          "mandatory": false
-        },
-        {
-          "name": "Other notes",
-          "uuid": "6ed84b74-4323-4566-8d68-bf490c456185",
-          "keyValues": [],
-          "concept": {
-            "uuid": "72f1ecc4-9f6d-4bab-ba01-a11c822bfb5a",
-            "comment": "General Advice"
-          },
-          "displayOrder": 3,
-          "mandatory": false
         }
       ]
     },
@@ -152,23 +101,6 @@
       ]
     },
     {
-      "comment": "ANC Pregnancy Complications",
-      "uuid": "139162e9-1da5-4a8d-a8b3-3ed870de110b",
-      "formElements": [
-        {
-          "name": "Any other complications/complaints",
-          "uuid": "b678517a-700c-4387-bcc2-dbdfc420190c",
-          "keyValues": [],
-          "concept": {
-            "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
-            "comment": "Other pregnancy complaints"
-          },
-          "displayOrder": 1.1,
-          "mandatory": true
-        }
-      ]
-    },
-    {
       "uuid": "e1823b91-1cd6-4eb5-85b3-6dbfa9328509",
       "name": "Notes",
       "display": "Notes",
@@ -183,6 +115,96 @@
             "uuid": "d658b4a4-8ec3-4eb7-9ef3-dd3a73ca29f9"
           },
           "displayOrder": 0,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "614d66d9-6993-4dd7-9a90-44cb2e4b29da",
+      "name": "Chief Complications",
+      "displayOrder": 2.1,
+      "display": "Chief Complications",
+      "formElements": [
+        {
+          "name": "Pregnancy complications",
+          "uuid": "57ed2b84-8b2b-4cc7-8342-5f5f8bee763c",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "0adc4170-9ebb-4feb-8b81-450fbf9a04dc"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        },
+        {
+          "name": "Other pregnancy complications",
+          "uuid": "a3746db3-4814-495e-875e-274ffd4ecab4",
+          "keyValues": [],
+          "concept": {
+            "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
+            "comment": "Other pregnancy complaints"
+          },
+          "displayOrder": 2,
+          "mandatory": true
+        },
+        {
+          "name": "Other chief complaints",
+          "uuid": "39d64c6a-c0a7-4ba3-b895-ed8f6ab5d3bd",
+          "keyValues": [],
+          "concept": {
+            "uuid": "0d9cc8ee-fd6e-4516-aa16-bf158edee132"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "be638034-24b1-4cb1-82bf-a2703adacfcf",
+      "name": "Assessment",
+      "display": "Assessment",
+      "displayOrder": 2.2,
+      "formElements": [
+        {
+          "name": "Diagnosis",
+          "uuid": "746e399d-acbc-4684-a960-cd295fc64d6e",
+          "keyValues": [],
+          "concept": {
+            "uuid": "c4b3cee7-e338-4cc5-9027-d105495afbc5",
+            "comment": "Assessment - Diagnosis"
+          },
+          "displayOrder": 0,
+          "mandatory": false
+        },
+        {
+          "name": "Medicine & frequency",
+          "uuid": "6cbc97eb-e0cf-4307-8abf-799b53fea489",
+          "keyValues": [],
+          "concept": {
+            "uuid": "9e2f03e4-d504-406c-8da7-27eb33e2e298",
+            "comment": "Assessment - Medicine & Frequency"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Lab tests advice",
+          "uuid": "5472a1b0-9eca-4dd5-8ffd-60fa8ae2afe0",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4096b8d-7b81-4fb6-989c-4a02189c20b6"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Clinical advice",
+          "uuid": "ae883a79-4f60-41ed-b91f-97d21d4afcc5",
+          "keyValues": [],
+          "concept": {
+            "uuid": "f4b308d3-24a7-4f4a-b06c-bb5432ab989e"
+          },
+          "displayOrder": 3,
           "mandatory": false
         }
       ]

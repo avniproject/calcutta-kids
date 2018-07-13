@@ -8,6 +8,10 @@
       "comment": "ANC Pregnancy Complications",
       "formElements": [
         {
+          "comment": "Has she been dealing with any complications?",
+          "uuid": "4baa133c-82c5-40c6-96dc-cae8c9e10ab9"
+        },
+        {
           "uuid": "20a01e2f-cbb4-4bf4-853b-20c871f0004d",
           "comment": "Other complications?"
         }

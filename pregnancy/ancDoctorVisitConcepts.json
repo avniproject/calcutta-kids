@@ -49,11 +49,6 @@
     "dataType": "Text"
   },
   {
-    "name": "USG Scanning Report - Diagnosis",
-    "uuid": "fbe9cc17-9d7d-40c8-8a05-51ed7ecb553a",
-    "dataType": "Text"
-  },
-  {
     "name": "Blood Sugar - Random",
     "uuid": "6a069dc8-2ace-4ad3-a481-f4afff4fb276",
     "dataType": "Text"
@@ -61,6 +56,31 @@
   {
     "name": "Blood Sugar - Fasting",
     "uuid": "3de126a4-719a-4dbe-b884-85f7196b5b54",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "c4b3cee7-e338-4cc5-9027-d105495afbc5",
+    "name": "Assessment - Diagnosis",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "9e2f03e4-d504-406c-8da7-27eb33e2e298",
+    "name": "Assessment - Medicine & frequency",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "b4096b8d-7b81-4fb6-989c-4a02189c20b6",
+    "name": "Assessment - Lab tests advice",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "f4b308d3-24a7-4f4a-b06c-bb5432ab989e",
+    "name": "Assessment - Clinicla advice",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "0d9cc8ee-fd6e-4516-aa16-bf158edee132",
+    "name": "Other chief complaints",
     "dataType": "Text"
   }
 ]

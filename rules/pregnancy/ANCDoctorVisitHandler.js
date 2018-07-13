@@ -37,7 +37,7 @@ class ANCDoctorVisitAbdominalExamination {
     }
 
     @WithStatusBuilder
-    anyOtherComplicationsComplaints([programEncounter, formElement], statusBuilder) {
+    otherPregnancyComplications([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter('Pregnancy complications').containsAnyAnswerConceptName('Other');
     }
 
