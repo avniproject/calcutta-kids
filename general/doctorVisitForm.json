@@ -137,35 +137,66 @@
           "mandatory": false
         },
         {
-          "name": "Assessment",
-          "uuid": "3cfe5667-6d56-4583-9591-45e83523b715",
-          "keyValues": [],
-          "concept": {
-            "name": "Assessment",
-            "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
-            "dataType": "Text"
-          },
-          "displayOrder": 3,
-          "mandatory": false
-        },
-        {
           "name": "Pregnancy test",
           "uuid": "d564cebb-0d0f-436c-a7a3-47c87607546f",
           "type": "SingleSelect",
           "concept": {
             "uuid": "6716b050-420f-4234-953a-8385f06121f0"
           },
-          "displayOrder": 3.5,
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Assessment",
+          "uuid": "108031d6-fc88-48db-b3a8-a0617388dc35",
+          "keyValues": [],
+          "concept": {
+            "comment": "Assessment - Notes",
+            "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e"
+          },
+          "displayOrder": 4,
           "mandatory": false
         },
         {
           "name": "Diagnosis",
-          "uuid": "514a3f27-3ad2-435f-adeb-aa49323ecd31",
+          "uuid": "dcfbb8dc-bbf8-47e2-9f9f-d1a001c7858f",
           "keyValues": [],
           "concept": {
-            "uuid": "5bc49865-4911-48ed-8517-ff9a7b3e365d"
+            "uuid": "c4b3cee7-e338-4cc5-9027-d105495afbc5",
+            "comment": "Assessment - Diagnosis"
           },
-          "displayOrder": 4,
+          "displayOrder": 5,
+          "mandatory": false
+        },
+        {
+          "name": "Medicine & frequency",
+          "uuid": "e2ddcbf3-c6ad-440e-933f-860d11273968",
+          "keyValues": [],
+          "concept": {
+            "uuid": "9e2f03e4-d504-406c-8da7-27eb33e2e298",
+            "comment": "Assessment - Medicine & Frequency"
+          },
+          "displayOrder": 6,
+          "mandatory": false
+        },
+        {
+          "name": "Lab tests advice",
+          "uuid": "bdd6a6dc-4d10-455f-8b96-4be9b05bbbcc",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4096b8d-7b81-4fb6-989c-4a02189c20b6"
+          },
+          "displayOrder": 7,
+          "mandatory": false
+        },
+        {
+          "name": "Clinical advice",
+          "uuid": "83154650-974c-4c01-a5c0-5fef842ecfca",
+          "keyValues": [],
+          "concept": {
+            "uuid": "f4b308d3-24a7-4f4a-b06c-bb5432ab989e"
+          },
+          "displayOrder": 8,
           "mandatory": false
         },
         {
@@ -177,7 +208,7 @@
             "comment": "Refer to hospital",
             "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e"
           },
-          "displayOrder": 5,
+          "displayOrder": 9,
           "mandatory": false
         },
         {
@@ -187,7 +218,7 @@
           "concept": {
             "uuid": "1aeda2b1-25e6-4f65-8225-e25293b08344"
           },
-          "displayOrder": 6,
+          "displayOrder": 10,
           "mandatory": false
         }
       ]

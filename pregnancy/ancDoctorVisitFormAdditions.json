@@ -166,6 +166,17 @@
       "displayOrder": 2.2,
       "formElements": [
         {
+          "name": "Assessment",
+          "uuid": "f526f76b-7b0f-4a34-beb2-e709db8b1a7d",
+          "keyValues": [],
+          "concept": {
+            "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
+            "comment": "Assessment - Notes"
+          },
+          "displayOrder": 0,
+          "mandatory": false
+        },
+        {
           "name": "Diagnosis",
           "uuid": "746e399d-acbc-4684-a960-cd295fc64d6e",
           "keyValues": [],
@@ -173,7 +184,7 @@
             "uuid": "c4b3cee7-e338-4cc5-9027-d105495afbc5",
             "comment": "Assessment - Diagnosis"
           },
-          "displayOrder": 0,
+          "displayOrder": 1,
           "mandatory": false
         },
         {
@@ -184,7 +195,7 @@
             "uuid": "9e2f03e4-d504-406c-8da7-27eb33e2e298",
             "comment": "Assessment - Medicine & Frequency"
           },
-          "displayOrder": 1,
+          "displayOrder": 2,
           "mandatory": false
         },
         {
@@ -194,7 +205,7 @@
           "concept": {
             "uuid": "b4096b8d-7b81-4fb6-989c-4a02189c20b6"
           },
-          "displayOrder": 2,
+          "displayOrder": 3,
           "mandatory": false
         },
         {
@@ -204,7 +215,7 @@
           "concept": {
             "uuid": "f4b308d3-24a7-4f4a-b06c-bb5432ab989e"
           },
-          "displayOrder": 3,
+          "displayOrder": 4,
           "mandatory": false
         }
       ]
