@@ -27,7 +27,7 @@
           "keyValues": [],
           "type": "SingleSelect",
           "concept": {
-            "name": "Baby feels hot",
+            "comment": "Feels hot",
             "uuid": "690af7fc-50d1-4a38-a864-58219ee14da6"
           },
           "displayOrder": 7.1,
@@ -39,7 +39,7 @@
           "keyValues": [],
           "type": "SingleSelect",
           "concept": {
-            "name": "Baby feels chill",
+            "comment": "Feels chill",
             "uuid": "a15faeac-ae32-4acb-aca4-546e0a661fda"
           },
           "displayOrder": 7.2,

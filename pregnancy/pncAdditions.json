@@ -7,6 +7,30 @@
       "display": "Danger Signs",
       "formElements": [
         {
+          "name": "Does feel hot?",
+          "uuid": "e2e36492-24e5-4703-8b2f-b83084a3aa98",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "comment": "Feels hot",
+            "uuid": "690af7fc-50d1-4a38-a864-58219ee14da6"
+          },
+          "displayOrder": 7.1,
+          "mandatory": true
+        },
+        {
+          "name": "Does have the chills?",
+          "uuid": "020f51fd-afa5-4c5a-bce2-985898fe7074",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "comment": "Feels chill",
+            "uuid": "a15faeac-ae32-4acb-aca4-546e0a661fda"
+          },
+          "displayOrder": 7.2,
+          "mandatory": true
+        },
+        {
           "name": "Any other problems?",
           "uuid": "0371f3af-541b-4bd1-8ee5-c9419ba82321",
           "keyValues": [],
