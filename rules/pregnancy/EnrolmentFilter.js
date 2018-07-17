@@ -1,3 +1,5 @@
+import lib from '../lib';
+
 const { RuleFactory, FormElementStatus, FormElementsStatusHelper } = require('rules-config/rules');
 
 const RuleHelper = require('../RuleHelper');
@@ -5,6 +7,7 @@ const ObservationMatcherAnnotationFactory = require('../ObservationMatcherAnnota
 const CodedObservationMatcher = ObservationMatcherAnnotationFactory(RuleHelper.Scope.Enrolment, 'containsAnyAnswerConceptName')(['programEnrolment', 'formElement']);
 
 const ViewFilter = RuleFactory('026e2f5c-8670-4e4b-9a54-cb03bbf3093d', 'ViewFilter');
+const Decision = RuleFactory("026e2f5c-8670-4e4b-9a54-cb03bbf3093d", "Decision");
 
 const _gravidaBreakup = [
     'Number of miscarriages',
@@ -64,4 +67,20 @@ class PregnancyEnrolmentViewFilterHandler {
     }
 }
 
+const DecisionsUuid = "eb5e5201-c588-4f56-9ff3-dd7cf4baf520";
+@Decision(DecisionsUuid, "Mother Enrolment Decisions [CK]", 100.0, {}, DecisionsUuid)
+class Decisions {
+    static getDecisions({ enrolment, decisions }) {
+        if(RuleHelper.removeRecommendation(decisions, 'enrolmentDecisions', 'Refer to the hospital immediately for', 'TB')) {
+            RuleHelper.addRecommendation(decisions, 'enrolmentDecisions', 'Refer to Calcutta Kids doctor', 'TB');
+        }
+        return decisions;
+    }
+
+    static exec(enrolment, decisions, context, today) {
+        return Decisions.getDecisions({ enrolment, decisions, context, today });
+    }
+}
+
 module.exports = { PregnancyEnrolmentViewFilterHandler };
+module.exports[DecisionsUuid] = Decisions;

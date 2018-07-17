@@ -40,6 +40,26 @@ class RuleHelper {
         }
         return new FormElementStatus(formElement.uuid, true, value);
     }
+
+    static removeRecommendation(decisions, groupName, recommendationName, reason) {
+        const defaultVal = { name: recommendationName , value: [] };
+        const group = decisions[groupName] = decisions[groupName] || [];
+        const recommendation = group.find((d) => d.name == recommendationName) || (group.push(defaultVal), defaultVal);
+        recommendation.value = recommendation.value || [];
+        const withRemoved = recommendation.value.filter((r) => r.toUpperCase() !== reason.toUpperCase());
+        const removedOrNot = (withRemoved.length !== recommendation.value.length);
+        recommendation.value = withRemoved;
+        return removedOrNot;
+    }
+
+    static addRecommendation(decisions, groupName, recommendationName, reason) {
+        const defaultVal = { name: recommendationName , value: [] };
+        const group = decisions[groupName] = decisions[groupName] || [];
+        const recommendation = group.find((d) => d.name == recommendationName) || (group.push(defaultVal), defaultVal);
+        recommendation.value = recommendation.value || [];
+        recommendation.value.push(reason);
+        return decisions;
+    }
 }
 
 module.exports = RuleHelper;
