@@ -351,6 +351,11 @@
         "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
         "name": "Redness or discharge on the skin around the belly button",
         "abnormal": true
+      },
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "unique": true
       }
     ]
   },
