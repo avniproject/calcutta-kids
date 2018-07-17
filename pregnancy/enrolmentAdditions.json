@@ -268,12 +268,11 @@
       "formElements": [
         {
           "uuid": "a7d44052-2b23-4ce9-b2e2-e60638a51b32",
-          "name": "Counselling checklist for CK mother enrolment",
+          "name": "Counselling checklist for CK pregnancy enrolment",
           "keyValues": [],
           "type": "SingleSelect",
           "concept": {
-            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
-            "comment": "Counselling checklist for CK mother enrolment"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1
         }
