@@ -1564,16 +1564,6 @@
         "comment": "Intrapartum fetal death"
       },
       {
-        "uuid": "68bf914f-6218-450b-95e6-cc21a5d66e66",
-        "abnormal": true,
-        "comment": "Instrumental delivery forceps"
-      },
-      {
-        "uuid": "e1086c21-b67f-4a86-aa93-4894e54efa04",
-        "abnormal": true,
-        "comment": "Instrumental delivery vacuum"
-      },
-      {
         "uuid": "214d7302-d655-45cd-909e-2fdc0a64ee11",
         "abnormal": true,
         "comment": "Obstructed labor"
