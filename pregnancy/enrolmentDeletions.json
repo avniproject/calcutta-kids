@@ -54,6 +54,10 @@
         {
           "comment": "Urine pregnancy test",
           "uuid": "1e23c808-5932-484b-b913-1d78f81cc11f"
+        },
+        {
+          "uuid": "cadad826-0b4c-4474-b256-697b49159111",
+          "comment": "ANC registration no"
         }
       ]
     }
