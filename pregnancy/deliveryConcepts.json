@@ -156,7 +156,7 @@
     "uuid": "47dad509-8617-4c93-a1b9-17d789bfa0d3"
   },
   {
-    "comment": "Delivery outcome",
+    "comment": "Pregnancy outcome",
     "uuid": "36b7b1a8-d191-4bbe-ad3c-0e25a48334e0",
     "dataType": "Coded",
     "answers": [
