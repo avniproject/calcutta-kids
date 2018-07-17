@@ -53,6 +53,11 @@ class PregnancyEnrolmentViewFilterHandler {
         return new FormElementStatus(formElement.uuid, true, isFirstPregnancy ? 1 : _computeGravida(programEnrolment));
     }
 
+    obstetricsHistory(programEnrolment, formElement) {
+        const notFirst = programEnrolment.getObservationReadableValue('Gravida') !== 1;
+        return new FormElementStatus(formElement.uuid, notFirst);
+    }
+
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper
             .getFormElementsStatusesWithoutDefaults(new PregnancyEnrolmentViewFilterHandler(), programEncounter, formElementGroup, today);
