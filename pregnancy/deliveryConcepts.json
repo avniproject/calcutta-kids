@@ -156,25 +156,6 @@
     "uuid": "47dad509-8617-4c93-a1b9-17d789bfa0d3"
   },
   {
-    "comment": "Pregnancy outcome",
-    "uuid": "36b7b1a8-d191-4bbe-ad3c-0e25a48334e0",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "fb079822-6338-46fe-9919-112686850e2d",
-        "abnormal": false
-      },
-      {
-        "uuid": "03dddd29-c1bb-4231-a17b-55445e247e7d",
-        "abnormal": false
-      },
-      {
-        "uuid": "47dad509-8617-4c93-a1b9-17d789bfa0d3",
-        "abnormal": false
-      }
-    ]
-  },
-  {
     "comment": "Delivery Complications",
     "uuid": "42fcfd17-4e35-4981-96b3-1d028915d808",
     "dataType": "Coded",
