@@ -75,36 +75,15 @@
           "mandatory": true
         },
         {
-          "name": "Vitamin intake",
+          "name": "Nutrients",
           "uuid": "bd4f8a7b-9b36-4c44-a4ce-ef35a629784e",
           "keyValues": [],
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
-            "uuid": "78509061-12c1-480f-9ed3-2a5b4b02e6d7"
+            "comment": "Nutrients",
+            "uuid": "e1754fdb-1015-4d9e-a6e1-3b9dc8fc0317"
           },
           "displayOrder": 6,
-          "mandatory": false
-        },
-        {
-          "name": "Iron",
-          "uuid": "aab994d4-9ba4-4129-8c56-2907adcbb862",
-          "keyValues": [],
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "e5a11f2d-85c7-475c-99f9-4057005d172d"
-          },
-          "displayOrder": 7,
-          "mandatory": false
-        },
-        {
-          "name": "Calcium",
-          "uuid": "ef825377-948c-4baf-9eda-ee1aa821ee1f",
-          "keyValues": [],
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "f16747ff-2a3d-4878-90cd-8f21e3fb59b9"
-          },
-          "displayOrder": 8,
           "mandatory": false
         }
       ]
