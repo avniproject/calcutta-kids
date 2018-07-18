@@ -117,6 +117,16 @@
           },
           "displayOrder": 0,
           "mandatory": false
+        },
+        {
+          "name": "Doctor name",
+          "uuid": "3620cd6e-6494-44a1-8f0c-e62bb509ae43",
+          "keyValues": [],
+          "concept": {
+            "uuid": "c068248d-81cd-4f1e-922f-486be51312ad"
+          },
+          "displayOrder": 1,
+          "mandatory": true
         }
       ]
     },

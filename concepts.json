@@ -2786,5 +2786,10 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
+  },
+  {
+    "name": "Doctor's name",
+    "uuid": "c068248d-81cd-4f1e-922f-486be51312ad",
+    "dataType": "Text"
   }
 ]
