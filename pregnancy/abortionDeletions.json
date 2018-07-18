@@ -1,0 +1,16 @@
+{
+  "comment": "Abortion",
+  "uuid": "32428a7e-d553-4172-b697-e8df3bbfb61d",
+  "formElementGroups": [
+    {
+      "uuid": "db1d4fbd-f885-4e56-9c25-1bf4dc4e2805",
+      "comment": "Mother Abortion Basic Details",
+      "formElements": [
+        {
+          "uuid": "57e8aa10-728e-4b56-a2b2-78bb762e21e1",
+          "comment": "Period of gestation in weeks at the time of abortion"
+        }
+      ]
+    }
+  ]
+}

@@ -59,6 +59,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,DELETE,forms,@pregnancy/motherDeliveryFormDeletions.json)
 	$(call _curl,DELETE,forms,@pregnancy/ancDoctorVisitFormDeletions.json)
 	$(call _curl,DELETE,forms,@pregnancy/pncDeletions.json)
+	$(call _curl,DELETE,forms,@pregnancy/abortionDeletions.json)
 	$(call _curl,DELETE,forms,@child/anthroAssessmentFormDeletions.json)
 	$(call _curl,DELETE,forms,@child/birthFormDeletions.json)
 	$(call _curl,DELETE,forms,@child/pncDeletions.json)
