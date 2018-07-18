@@ -7,11 +7,19 @@
       "uuid": "fff4c8e6-7adb-4caa-a79a-3e7d77a42111",
       "formElements": [
         {
+          "comment": "Urine Albumin",
+          "uuid": "81cf6b23-151a-4911-9e93-1b8fa8c6b2a6"
+        },
+        {
+          "comment": "Urine Sugar",
+          "uuid": "29f76b3f-fb06-4712-acf9-d69af5e5324b"
+        },
+        {
           "uuid": "ef186966-f4f4-4d39-93c3-ff2a4e2ae62b",
           "comment": "Urine Pregnancy Test"
         },
         {
-          "name": "Blood Sugar",
+          "comment": "Blood Sugar",
           "uuid": "203c05e5-1a71-4e32-b695-3f88be9c7c56"
         }
       ]
