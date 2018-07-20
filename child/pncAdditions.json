@@ -5,7 +5,30 @@
     {
       "uuid": "00595000-54fb-40f2-9493-a57f01881aad",
       "comment": "Child Recent History",
-      "formElements": []
+      "formElements": [
+        {
+          "name": "When did the child pass urine for the first time after birth?",
+          "uuid": "d1fb8e61-6b43-4f57-b159-00d12de03257",
+          "keyValues": [],
+          "concept": {
+            "name": "Duration in hours between birth and first urination",
+            "uuid": "0a3fb6d3-ea49-4902-95ae-e2514d3739b6"
+          },
+          "displayOrder": 1.1,
+          "mandatory": false
+        },
+        {
+          "name": "When did the child pass meconium for the first time after birth?",
+          "uuid": "a913b158-1dee-4241-94da-56ce7166cd9a",
+          "keyValues": [],
+          "concept": {
+            "name": "Duration in hours between birth and meconium",
+            "uuid": "e7766535-327c-481c-8eb9-bc43cdb2fab5"
+          },
+          "displayOrder": 2.1,
+          "mandatory": false
+        }
+      ]
     },
     {
       "uuid": "daea5603-e7c8-449f-85ad-da9be62c2288",

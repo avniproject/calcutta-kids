@@ -35,6 +35,20 @@
           "uuid": "786fa276-8baa-4315-8f72-1da2e0c888a6"
         }
       ]
+    },
+    {
+      "uuid": "00595000-54fb-40f2-9493-a57f01881aad",
+      "comment": "Child Recent History",
+      "formElements": [
+        {
+          "comment": "When did the child pass urine for the first time after birth?",
+          "uuid": "d6b5cb76-843b-48b7-a0f1-645caf9a178e"
+        },
+        {
+          "comment": "When did the child pass meconium for the first time after birth?",
+          "uuid": "4849b8dd-cce8-4302-b77e-5bf28a555229"
+        }
+      ]
     }
   ]
 }
