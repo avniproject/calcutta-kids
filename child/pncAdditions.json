@@ -250,6 +250,47 @@
       ]
     },
     {
+      "uuid": "66a2f7fa-6add-45d8-8066-87ef52ac6993",
+      "name": "Child Vitals",
+      "displayOrder": 3.1,
+      "display": "Vitals",
+      "formElements": [
+        {
+          "name": "Temperature",
+          "uuid": "5a8771da-1ad9-409e-8edc-3a99282f89cd",
+          "keyValues": [],
+          "concept": {
+            "name": "Child Temperature",
+            "uuid": "c5e0d0e0-4ff7-40be-a929-292d7c4b17d0"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Respiratory Rate",
+          "uuid": "f6b86f93-829a-4948-a87a-4a85a3324334",
+          "keyValues": [],
+          "concept": {
+            "name": "Child Respiratory Rate",
+            "uuid": "a669a751-574e-4f7b-8c34-d3d755adecf8"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Pulse",
+          "uuid": "7d7051c5-7586-46f4-95e0-4fd70b5223b0",
+          "keyValues": [],
+          "concept": {
+            "name": "Child Pulse",
+            "uuid": "4629403c-7d38-4984-89cb-8be929b66e69"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        }
+      ]
+    },
+    {
       "uuid": "1d70b455-95c1-43dd-bb3d-4e85722a5f23",
       "name": "Discussion items",
       "display": "Discussion items",
