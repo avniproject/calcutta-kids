@@ -77,6 +77,17 @@
             "uuid": "928b4521-98d0-4cb3-a38e-42a775bf814e"
           },
           "displayOrder": 6
+        },
+        {
+          "name": "Activation status",
+          "uuid": "7e4f7d3d-6915-4805-bbf6-63cb2c3d3274",
+          "keyValues": [],
+          "concept": {
+            "name": "Activation status",
+            "uuid": "b277d2f4-e0e5-44b3-bf94-d7751bc3b7f1"
+          },
+          "displayOrder": 7,
+          "mandatory": false
         }
       ]
     },

@@ -2796,5 +2796,30 @@
     "name": "Most critical",
     "uuid": "274eb51b-6c3e-4d5b-9fe3-e1646094fa7c",
     "dataType": "NA"
+  },
+  {
+    "name": "Active",
+    "uuid": "6b50ae8f-f962-4a47-af3a-a0db7cd3ad75",
+    "dataType": "NA"
+  },
+  {
+    "name": "Inactive",
+    "uuid": "afedc9c2-bd51-48f0-b526-33c8ca52892b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Activation status",
+    "uuid": "b277d2f4-e0e5-44b3-bf94-d7751bc3b7f1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Active",
+        "uuid": "6b50ae8f-f962-4a47-af3a-a0db7cd3ad75"
+      },
+      {
+        "name": "Inactive",
+        "uuid": "afedc9c2-bd51-48f0-b526-33c8ca52892b"
+      }
+    ]
   }
 ]
