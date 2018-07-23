@@ -35,11 +35,11 @@
       "uuid": "353eec4f-052f-466b-9acb-7a740e5c19e5",
       "formElements": [
         {
-          "name": "Gestational Age",
+          "name": "Estimated gestational age",
           "uuid": "aa547459-4ee5-4bb2-bc31-d2a118b8a7e6",
           "keyValues": [],
           "concept": {
-            "comment": "Gestational Age",
+            "comment": "Gestational age",
             "uuid": "4b7fcf0b-3ecb-49fe-882d-959b58e7229d"
           },
           "displayOrder": 2.1,

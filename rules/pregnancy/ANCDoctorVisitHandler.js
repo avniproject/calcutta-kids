@@ -64,7 +64,7 @@ class ANCDoctorVisitAbdominalExamination {
 
 const ANCDoctorVisitDecision = RuleFactory("3a95e9b0-731a-4714-ae7c-10e1d03cebfe", "Decision");
 
-@ANCDoctorVisitDecision("2710ffc6-7c71-4da3-a606-799ca9227697", "ANC Doctor Visit Decision'", 100.0, {})
+@ANCDoctorVisitDecision("2710ffc6-7c71-4da3-a606-799ca9227697", "ANC Doctor Visit Decision", 100.0, {})
 class ANCDoctorVisitRemoveAllDecisions {
     static exec(programEncounter, decisions, context, today) {
         decisions = {
