@@ -1,5 +1,6 @@
-const { FormElementStatusBuilder, FormElementStatus } = require('rules-config/rules');
+const { FormElementStatusBuilder, FormElementStatus, VisitScheduleBuilder } = require('rules-config/rules');
 import lib from './lib';
+const moment = require("moment");
 
 class RuleHelper {
     static encounterCodedObsHas(programEncounter, formElement, conceptName, ...answerConceptNames) {
@@ -44,7 +45,7 @@ class RuleHelper {
     static removeRecommendation(decisions, groupName, recommendationName, reason) {
         const defaultVal = { name: recommendationName , value: [] };
         const group = decisions[groupName] = decisions[groupName] || [];
-        const recommendation = group.find((d) => d.name == recommendationName) || (group.push(defaultVal), defaultVal);
+        const recommendation = group.find((d) => d.name === recommendationName) || (group.push(defaultVal), defaultVal);
         recommendation.value = recommendation.value || [];
         const withRemoved = recommendation.value.filter((r) => r.toUpperCase() !== reason.toUpperCase());
         const removedOrNot = (withRemoved.length !== recommendation.value.length);
@@ -55,10 +56,41 @@ class RuleHelper {
     static addRecommendation(decisions, groupName, recommendationName, reason) {
         const defaultVal = { name: recommendationName , value: [] };
         const group = decisions[groupName] = decisions[groupName] || [];
-        const recommendation = group.find((d) => d.name == recommendationName) || (group.push(defaultVal), defaultVal);
+        const recommendation = group.find((d) => d.name === recommendationName) || (group.push(defaultVal), defaultVal);
         recommendation.value = recommendation.value || [];
         recommendation.value.push(reason);
         return decisions;
+    }
+
+    static createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule) {
+        const scheduleBuilder = new VisitScheduleBuilder({
+            programEncounter,
+        });
+        visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+        return scheduleBuilder;
+    }
+
+    static createEnrolmentScheduleBuilder(programEnrolment, visitSchedule) {
+        const scheduleBuilder = new VisitScheduleBuilder({
+            programEnrolment,
+        });
+        visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+        return scheduleBuilder;
+    }
+
+    static addSchedule(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {
+        scheduleBuilder.add({
+                name: visitName,
+                encounterType: encounterTypeName,
+                earliestDate: earliestDate,
+                maxDate: moment(earliestDate).add(numberOfDaysForMaxOffset, 'days')
+            }
+        );
+    }
+
+    static scheduleOneVisit(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {
+        this.addSchedule(visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset);
+        return scheduleBuilder.getAllUnique("encounterType");
     }
 }
 

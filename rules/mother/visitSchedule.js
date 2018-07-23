@@ -1,41 +1,39 @@
 const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
+const _ = require('lodash');
 const moment = require("moment");
 
-const MotherProgramEnrolment = RuleFactory("c5b2eb03-7ed3-4fbc-95b7-07412219368f", "VisitSchedule");
-const MotherHomeVisit = RuleFactory("2a13df4b-6d61-4f11-850d-1ea6d13860df", "VisitSchedule");
+const EnrolmentRule = RuleFactory("c5b2eb03-7ed3-4fbc-95b7-07412219368f", "VisitSchedule");
+const HomeVisitRule = RuleFactory("2a13df4b-6d61-4f11-850d-1ea6d13860df", "VisitSchedule");
+const RuleHelper = require('../RuleHelper');
 
-
-const scheduleHomeVisit = (programEnrolment, visitSchedule, currentDateTime = new Date()) => {
-    const scheduleBuilder = new VisitScheduleBuilder({
-        programEnrolment,
-    });
-    const encounterDateTime = currentDateTime;
-    visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
-    const currentDateMoment = moment(encounterDateTime);
-    let earliestDate = currentDateMoment.month(currentDateMoment.month() + 1).date(currentDateMoment.date() + 1).toDate();
-    let maxDate = moment(earliestDate).add(21, 'days').toDate();
-    scheduleBuilder.add({
-            name: "Home Visit",
-            encounterType: "Mother Home Visit",
-            earliestDate: earliestDate,
-            maxDate: maxDate
+@EnrolmentRule("cb1f2e59-215b-44a6-afdc-d99bddf6face", "PostMotherProgramEnrolmentVisits", 10.0)
+class PostEnrolmentVisits {
+    static exec(programEnrolment, visitSchedule = []) {
+        let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
+        let dateOfDelivery = getDateOfDelivery(programEnrolment);
+        if (_.isNil(dateOfDelivery)) {
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', programEnrolment.enrolmentDateTime, 0);
+        } else {
+            let earliestDate = moment(dateOfDelivery).add(1, 'months').toDate();
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', earliestDate, 21);
         }
-    );
-    return scheduleBuilder.getAllUnique("encounterType");
+    }
+}
+
+@HomeVisitRule("aa862394-4b02-4879-b582-ab58683dde06", "PostHomeVisitVisits", 10.0)
+class PostHomeVisitVisits {
+    static exec({programEnrolment, encounterDateTime}, visitSchedule = []) {
+        let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
+        let earliestDate = moment(encounterDateTime).add(1, 'months').toDate();
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', earliestDate, 21);
+    }
+}
+
+const getDateOfDelivery = (programEnrolment) => {
+    let previousPregnancyEnrolment = programEnrolment.individual.getPreviousEnrolment('Pregnancy', programEnrolment.uuid);
+    if (!_.isNil(previousPregnancyEnrolment))
+        return previousPregnancyEnrolment.findObservationInEntireEnrolment('Date of delivery');
+    return null;
 };
 
-@MotherProgramEnrolment("cb1f2e59-215b-44a6-afdc-d99bddf6face", "Mother Home visit on enrolment", 10.0)
-class MotherProgramEnrolmentHomeVisit {
-    static exec(programEnrolment, visitSchedule = []) {
-        return scheduleHomeVisit(programEnrolment, visitSchedule, programEnrolment.enrolmentDateTime);
-    }
-}
-
-@MotherHomeVisit("aa862394-4b02-4879-b582-ab58683dde06", "Recurring Home Visit", 10.0)
-class MotherRecurringHomeVisit {
-    static exec({programEnrolment, encounterDateTime}, visitSchedule = []) {
-        return scheduleHomeVisit(programEnrolment, visitSchedule, encounterDateTime);
-    }
-}
-
-module.exports = {MotherRecurringHomeVisit, MotherProgramEnrolmentHomeVisit};
+module.exports = {MotherPostHomeVisitVisits: PostHomeVisitVisits, MotherPostEnrolmentVisits: PostEnrolmentVisits};

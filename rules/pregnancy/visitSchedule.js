@@ -1,97 +1,58 @@
-const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
+const {RuleFactory, VisitScheduleBuilder, RuleHelper} = require('rules-config/rules');
 const moment = require("moment");
-const PregnancyEnrolmentVisit = RuleFactory("026e2f5c-8670-4e4b-9a54-cb03bbf3093d", "VisitSchedule");
-const ANCHomeVisitSchedule = RuleFactory("5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99", "VisitSchedule");
-const MotherDelivery = RuleFactory("cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2", "VisitSchedule");
-const MotherPNC = RuleFactory("78b1400e-8100-4ba6-b78e-fef580f7fb77", "VisitSchedule");
+const EnrolmentRule = RuleFactory("026e2f5c-8670-4e4b-9a54-cb03bbf3093d", "VisitSchedule");
+const ANCHomeVisitRule = RuleFactory("5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99", "VisitSchedule");
+const DeliveryRule = RuleFactory("cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2", "VisitSchedule");
+const PNCRule = RuleFactory("78b1400e-8100-4ba6-b78e-fef580f7fb77", "VisitSchedule");
 
-const scheduleANCHomeVisit = (programEnrolment, visitSchedule, currentDateTime = new Date()) => {
-    const scheduleBuilder = new VisitScheduleBuilder({
-        programEnrolment: programEnrolment
-    });
-    const encounterDateTime = currentDateTime;
-    visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
-    const currentDate = moment(encounterDateTime).date();
-    const month = currentDate > 21 ? moment(encounterDateTime).month() + 1 : moment(encounterDateTime).month();
-    let earliestDate = moment(encounterDateTime).month(month).date(1).toDate();
-    let maxDate = moment(encounterDateTime).month(month).date(21).toDate();
-    scheduleBuilder.add({
-            name: "ANC Home Visit",
-            encounterType: "ANC Home Visit",
-            earliestDate: earliestDate,
-            maxDate: maxDate
-        }
-    ).when.valueInEntireEnrolment("Estimated Date of Delivery").greaterThan(earliestDate);
-    return scheduleBuilder.getAllUnique("encounterType");
-};
-
-
-const schedulePNC1Visit = (programEncounter, visitSchedule, currentDateTime = new Date()) => {
-    const scheduleBuilder = new VisitScheduleBuilder({
-        programEncounter
-    });
-    const encounterDateTime = currentDateTime;
-    visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
-    let earliestDate = encounterDateTime;
-    let maxDate = moment(encounterDateTime).add(48, 'hours').toDate();
-    scheduleBuilder.add({
-            name: "PNC 1",
-            encounterType: "PNC",
-            earliestDate: earliestDate,
-            maxDate: maxDate
-        }
-    );
-    return scheduleBuilder.getAllUnique("name");
-};
-
-const schedulePNC2Visit = (programEncounter, visitSchedule, currentDateTime = new Date()) => {
-    const scheduleBuilder = new VisitScheduleBuilder({
-        programEncounter
-    });
-    const encounterDateTime = currentDateTime;
-    visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
-    let earliestDate = encounterDateTime;
-    let maxDate = moment(encounterDateTime).add(7, 'days').toDate();
-    let dateOfDelivery = programEncounter.findObservationInEntireEnrolment("Date of delivery");
-    const hoursBetweenPNC = moment(encounterDateTime)
-        .diff(_.isNil(dateOfDelivery) ? new Date() : dateOfDelivery.getValue(), 'hours');
-    scheduleBuilder.add({
-            name: "PNC 2",
-            encounterType: "PNC",
-            earliestDate: earliestDate,
-            maxDate: maxDate
-        }
-    ).whenItem(hoursBetweenPNC)
-        .lessThanOrEqualTo(48);
-    return scheduleBuilder.getAllUnique("name");
-};
-
-@PregnancyEnrolmentVisit("f94d4f18-9ff6-4f7b-988e-e7956d947bb0", "ANC Home Visit", 10.0)
-class ANCHomeVisit {
+@EnrolmentRule("f94d4f18-9ff6-4f7b-988e-e7956d947bb0", "PostPregnancyEnrolmentVisits", 10.0)
+class PostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
-        return scheduleANCHomeVisit(programEnrolment, visitSchedule, programEnrolment.enrolmentDateTime);
+        let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
+        let earliestDate = firstOfNextMonth(programEnrolment.enrolmentDateTime);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
     }
 }
 
-@ANCHomeVisitSchedule("a6540db8-d8d1-4e50-96ce-5c4f80561520", "ANC Home Visit Recurring", 10.0)
-class ANCHomeVisitRecurring {
-    static exec({programEnrolment, encounterDateTime}, visitSchedule = [], scheduleConfig) {
-        return scheduleANCHomeVisit(programEnrolment, visitSchedule, encounterDateTime);
-    }
-}
-
-@MotherDelivery("1a3f01f8-792f-4615-acb0-5fc61f4b5198", "Mother PNC1 Schedule Post Delivery", 10.0)
-class MotherPNC1VisitSchedule {
+@ANCHomeVisitRule("a6540db8-d8d1-4e50-96ce-5c4f80561520", "PostANCHomeVisitVisits", 10.0)
+class PostANCHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
-        return schedulePNC1Visit(programEncounter, visitSchedule, programEncounter.encounterDateTime);
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let earliestDate = firstOfNextMonth(programEncounter.encounterDateTime);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
     }
 }
 
-@MotherPNC("4775ad43-acbf-42af-9952-2d4b8896cbfc", "Mother Next PNC Encounter", 11.0)
-class MotherSecondPNCVisit {
+@DeliveryRule("1a3f01f8-792f-4615-acb0-5fc61f4b5198", "PostDeliveryVisits", 10.0)
+class PostDeliveryVisits {
     static exec(programEncounter, visitSchedule = []) {
-        return schedulePNC2Visit(programEncounter, visitSchedule, programEncounter.encounterDateTime);
+        // Check whether PNC visit has already happened, in case PNC form was filled before the delivery form
+        if (programEncounter.programEnrolment.hasEncounterOfType('PNC')) return visitSchedule;
+
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 1', 'PNC', programEncounter.encounterDateTime, 0);
     }
 }
 
-module.exports = {ANCHomeVisit, ANCHomeVisitRecurring, MotherPNC1VisitSchedule, MotherSecondPNCVisit};
+@PNCRule("4775ad43-acbf-42af-9952-2d4b8896cbfc", "PostMotherPNCVisits", 11.0)
+class PostMotherPNCVisits {
+    static exec(programEncounter, visitSchedule = []) {
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let dateOfDelivery = programEncounter.findObservationInEntireEnrolment("Date of delivery");
+        if (_.isNil(dateOfDelivery) && programEncounter.name === 'PNC 1') {
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', programEncounter.encounterDateTime, 5);
+        } else if (programEncounter.name === 'PNC 1') {
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', moment(dateOfDelivery).add(7, 'days').toDate(), 3);
+        } else {
+            return visitSchedule;
+        }
+    }
+}
+
+let firstOfNextMonth = function (realEventDate) {
+    const currentDate = moment(realEventDate).date();
+    const month = currentDate > 21 ? moment(realEventDate).month() + 1 : moment(realEventDate).month();
+    return moment(realEventDate).month(month).date(1).toDate();
+};
+
+module.exports = {PregnancyPostEnrolmentVisits: PostEnrolmentVisits, PostPregnancyANCHomeVisitVisits: PostANCHomeVisitVisits, PregnancyPostDeliveryVisits: PostDeliveryVisits, PregnancyPostMotherPNCVisits: PostMotherPNCVisits};

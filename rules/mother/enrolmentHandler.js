@@ -8,7 +8,7 @@ const validation = RuleFactory('c5b2eb03-7ed3-4fbc-95b7-07412219368f', 'Validati
 class MotherEnrolmentValidationFailureCk {
     validate(programEnrolment) {
         const validationResults = [];
-        if (_.isEmpty(programEnrolment.individual.children)) {
+        if (_.isEmpty(programEnrolment.individual.getRelatives('mother', true))) {
             validationResults.push(lib.C.createValidationError('individualWithoutChildrenCannotBeEnrolledInMotherProgram'));
         }
         return validationResults;
