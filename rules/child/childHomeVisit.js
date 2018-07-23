@@ -23,7 +23,7 @@ class HomeVisitDecisions {
 
         complicationsBuilder.addComplication("Insufficient urination")
             .when.ageInMonths.greaterThan(1).and
-            .when.ageInMonths.lessThan(3).and
+            .when.ageInMonths.lessThan(6).and
             .when.valueInEncounter("Number of times urinated in the last 24 hours").lessThan(8);
 
         ["Lethargy", "Redness or discharge on the skin around the belly button", "Fever"]
@@ -235,8 +235,38 @@ class ChildHomeVisitFilter {
     }
 
     @WithStatusBuilder
-    ckCounsellingForChildBeingSickRightNow([],statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Is your child sick right now?").is.yes;
+    ckCounsellingForChildBeingSickRightNow([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Is your child sick right now?').is.yes;
+    }
+
+    @WithStatusBuilder
+    ckCounselAccordinglyForNotBreastfeeding([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Are you still breast feeding your child?').containsAnswerConceptName("No");
+    }
+
+    @WithStatusBuilder
+    ckCounselAccordinglyForNotFeedingOtherLiquids([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Are you feeding your child any other liquids?').containsAnswerConceptName("No");
+    }
+
+    @WithStatusBuilder
+    ckCounselAccordinglyForNotFeedingSolidsSemiSolids([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Have you been feeding solids/semi-solids to the child?').containsAnswerConceptName("No");
+    }
+
+    @WithStatusBuilder
+    ckCounselAccordinglyForFeedingSolidsSemiSolidsLessFrequently([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('How many times a day is the child eating homemade semi-solid/solid foods?').containsAnswerConceptName("Once");
+    }
+
+    @WithStatusBuilder
+    ckCounselAccordinglyForFeedingSnacksMoreFrequently([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('How many times a day is the child eating snacks?').containsAnswerConceptName("Thrice");
+    }
+
+    @WithStatusBuilder
+    ckCounselAccordinglyForFeedingRandomSnacks([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('What snacks are being fed?').containsAnswerConceptName("Other");
     }
 
     _statusBuilder(programEncounter, formElement) {

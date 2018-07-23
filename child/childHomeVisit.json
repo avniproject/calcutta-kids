@@ -23,6 +23,17 @@
           "mandatory": true
         },
         {
+          "name": "CK Counsel accordingly for not breastfeeding",
+          "uuid": "b9b85b15-1425-43cf-8214-ebb0a79b8ec2",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 1.5,
+          "mandatory": false
+        },
+        {
           "concept": {
             "name": "What was the child's age when you stopped breast feeding?",
             "uuid": "a0c7b32c-fdb1-4cb6-9bbc-800e74e50cea"
@@ -43,6 +54,17 @@
           "uuid": "64fef110-d470-46ae-83fc-055ee6996db9",
           "comment": "counsel accordingly",
           "mandatory": true
+        },
+        {
+          "name": "CK Counsel accordingly for not feeding other liquids",
+          "uuid": "80b0d0f8-63eb-4528-bf19-2732fabfd91d",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 3.5,
+          "mandatory": false
         },
         {
           "concept": {
@@ -120,6 +142,17 @@
           "mandatory": true
         },
         {
+          "name": "CK Counsel accordingly for not feeding solids/semi solids",
+          "uuid": "8ea2b137-dd5b-4291-bb91-9ae527109739",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 10.5,
+          "mandatory": false
+        },
+        {
           "concept": {
             "name": "What was the child's age when you started feeding them solids/semi-solids?",
             "uuid": "0e5f2f1a-ef95-44aa-9a6f-0dc0d1199c37"
@@ -139,6 +172,17 @@
           "displayOrder": 12,
           "uuid": "a92edaaa-a42f-48ec-af11-1d92f948af83",
           "mandatory": true
+        },
+        {
+          "name": "CK Counsel accordingly for feeding solids/semi solids less frequently",
+          "uuid": "6ca6af04-ffcc-4437-ace4-34c28f60470d",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 12.5,
+          "mandatory": false
         },
         {
           "concept": {
@@ -165,6 +209,17 @@
           "mandatory": true
         },
         {
+          "name": "CK Counsel accordingly for feeding snacks more frequently",
+          "uuid": "445b4d7a-7bf8-4498-bde1-00e852151b64",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 14.5,
+          "mandatory": false
+        },
+        {
           "concept": {
             "name": "What snacks are being fed?",
             "uuid": "a23d8b82-e94c-42db-a67f-394db58cf904"
@@ -184,6 +239,17 @@
           "displayOrder": 16,
           "uuid": "2900444b-5ed9-4b35-90ff-052bb4fbee6f",
           "mandatory": true
+        },
+        {
+          "name": "CK Counsel accordingly for feeding random snacks",
+          "uuid": "587ad5aa-1bc7-485f-b550-22b7b9f4da78",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 16.5,
+          "mandatory": false
         }
       ]
     },
