@@ -2791,5 +2791,10 @@
     "name": "Doctor's name",
     "uuid": "c068248d-81cd-4f1e-922f-486be51312ad",
     "dataType": "Text"
+  },
+  {
+    "name": "Most critical",
+    "uuid": "274eb51b-6c3e-4d5b-9fe3-e1646094fa7c",
+    "dataType": "NA"
   }
 ]

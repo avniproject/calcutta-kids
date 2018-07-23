@@ -276,6 +276,17 @@
           "displayOrder": 8,
           "uuid": "0258e416-c703-4390-a0a6-90b9f8eb8659",
           "mandatory": true
+        },
+        {
+          "name": "CK Counselling for child being sick right now",
+          "uuid": "f6ed9e65-7a51-47b7-8fde-da9589079df5",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
+            "comment": "Placeholder for counselling form element"
+          },
+          "displayOrder": 9,
+          "mandatory": false
         }
       ]
     },

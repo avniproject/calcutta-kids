@@ -33,9 +33,14 @@ class HomeVisitDecisions {
                     .valueInEncounter("Is your baby having any of the following problems?")
                     .containsAnswerConceptName(complication));
 
-        complicationsBuilder.addComplication("Illness").when.valueInEncounter("Is your child sick right now?").is.yes
-            .or
-            .when.valueInEncounter("Refer child to").is.defined;
+        complicationsBuilder.addComplication('Most critical')
+            .when.ageInMonths.lessThan(1)
+            .and.when.valueInEncounter('Is your baby having any of the following problems?')
+            .containsAnyAnswerConceptName("Lethargy", "Redness or discharge on the skin around the belly button", "Fever");
+
+        complicationsBuilder.addComplication("Illness")
+            .when.valueInEncounter("Is your child sick right now?").is.yes
+            .or.when.valueInEncounter("Refer child to").is.defined;
         return complicationsBuilder.getComplications();
     }
 
@@ -227,6 +232,11 @@ class ChildHomeVisitFilter {
         statusBuilder.show().when.ageInMonths.is.lessThan(6)
             .and.valueInEncounter("How many times is your child fed in 24 hours?").lessThan(8);
         return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    ckCounsellingForChildBeingSickRightNow([],statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Is your child sick right now?").is.yes;
     }
 
     _statusBuilder(programEncounter, formElement) {
