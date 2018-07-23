@@ -6,7 +6,7 @@ const EnrolmentRule = RuleFactory("c5b2eb03-7ed3-4fbc-95b7-07412219368f", "Visit
 const HomeVisitRule = RuleFactory("2a13df4b-6d61-4f11-850d-1ea6d13860df", "VisitSchedule");
 const RuleHelper = require('../RuleHelper');
 
-@EnrolmentRule("cb1f2e59-215b-44a6-afdc-d99bddf6face", "PostMotherProgramEnrolmentVisits", 10.0)
+@EnrolmentRule("cb1f2e59-215b-44a6-afdc-d99bddf6face", "MotherPostMotherProgramEnrolmentVisits", 10.0)
 class PostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
@@ -20,7 +20,7 @@ class PostEnrolmentVisits {
     }
 }
 
-@HomeVisitRule("aa862394-4b02-4879-b582-ab58683dde06", "PostHomeVisitVisits", 10.0)
+@HomeVisitRule("aa862394-4b02-4879-b582-ab58683dde06", "MotherPostHomeVisitVisits", 10.0)
 class PostHomeVisitVisits {
     static exec({programEnrolment, encounterDateTime}, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);

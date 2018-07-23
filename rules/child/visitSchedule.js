@@ -3,9 +3,10 @@ const moment = require("moment");
 const EnrolmentRule = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
 const PNCRule = RuleFactory("e09dddeb-ed72-40c4-ae8d-112d8893f18b", "VisitSchedule");
 const HomeVisitRule = RuleFactory("35aa9007-fe7a-4a59-b985-0a1c038df889", "VisitSchedule");
+const HomeVisitCancelRule = RuleFactory("", "VisitSchedule");
 const RuleHelper = require('../RuleHelper');
 
-@EnrolmentRule("0bdfd933-1ba5-4fc1-989f-b4226ae010bd", "PostChildEnrolmentVisits", 10.0)
+@EnrolmentRule("0bdfd933-1ba5-4fc1-989f-b4226ae010bd", "ChildPostChildEnrolmentVisits", 10.0)
 class PostChildEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
@@ -15,7 +16,7 @@ class PostChildEnrolmentVisits {
     }
 }
 
-@PNCScheduleRule("2f21603a-0bdb-4732-b8fb-cb0bb58cbdc1", "PostPNC1Visits", 10.0)
+@PNCRule("2f21603a-0bdb-4732-b8fb-cb0bb58cbdc1", "ChildPostPNCVisits", 10.0)
 class PostPNCVisits {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
@@ -29,7 +30,7 @@ class PostPNCVisits {
     }
 }
 
-@HomeVisitRule('702f6b57-f46b-47cb-a413-7e609468402e', 'PostChildVisitVisits', 10.0)
+@HomeVisitRule('702f6b57-f46b-47cb-a413-7e609468402e', 'ChildPostHomeVisitVisits', 10.0)
 class PostHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
