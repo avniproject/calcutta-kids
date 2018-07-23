@@ -47,18 +47,6 @@ class HomeVisitDecisions {
 
 @HomeVisitFilter("11a9fd8b-7234-4fc2-a9be-1895c6783778", "Child Home Visit Filter", 100.0, {})
 class ChildHomeVisitFilter {
-    haveYouFedYourChildAnyOfTheFollowing(programEncounter, formElement) {
-        const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.ageInMonths.lessThan(6);
-        return statusBuilder.build();
-    }
-
-    whatElseDidFeedYourChild(programEncounter, formElement) {
-        const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.valueInEncounter("Have you fed your child any of the following?")
-            .containsAnswerConceptName("Other");
-        return statusBuilder.build();
-    }
 
     @WithStatusBuilder
     ckCounsellToPromoteExclusiveBreastfeeding([], statusBuilder) {
@@ -104,10 +92,18 @@ class ChildHomeVisitFilter {
         return statusBuilder.build();
     }
 
-    haveYouFedYourChildAnyOfTheFollowingLiquids(programEncounter, formElement) {
+    haveYouFedYourChildAnyOfTheFollowing(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.valueInEncounter("Are you feeding your child any other liquids?")
-            .is.yes;
+        statusBuilder.show()
+            .when.valueInEncounter("Are you feeding your child any other liquids?").is.yes
+            .or.when.ageInMonths.lessThan(6);
+        return statusBuilder.build();
+    }
+
+    whatElseDidFeedYourChild(programEncounter, formElement) {
+        const statusBuilder = this._statusBuilder(programEncounter, formElement);
+        statusBuilder.show().when.valueInEncounter("Have you fed your child any of the following?")
+            .containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
 
@@ -133,19 +129,25 @@ class ChildHomeVisitFilter {
 
     howManyTimesADayIsTheChildEatingHomemadeSemiSolidSolidFoods(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
+        statusBuilder.show()
+            .when.ageInMonths.greaterThanOrEqualTo(12)
+            .or.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
         return statusBuilder.build();
     }
 
-    whatTypeOfSemiSolidSolidFoodsDoYouFeedYourChild(programEncounter, formElement) {
+    whatTypeOfSemiSolidSolidFoodsDidYouFeedYourChildYesterday(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
+        statusBuilder.show()
+            .when.ageInMonths.greaterThanOrEqualTo(12)
+            .or.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
         return statusBuilder.build();
     }
 
     howManyTimesADayIsTheChildEatingSnacks(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
+        statusBuilder.show()
+            .when.ageInMonths.greaterThanOrEqualTo(12)
+            .or.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
         return statusBuilder.build();
     }
 
@@ -178,7 +180,7 @@ class ChildHomeVisitFilter {
 
     isYourBabyHavingAnyOfTheFollowingProblems(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.ageInMonths.lessThan(6);
+        statusBuilder.show().when.ageInMonths.lessThan(3);
         return statusBuilder.build();
     }
 

@@ -12,12 +12,46 @@
       "formElements": [
         {
           "concept": {
+            "name": "Are you still breast feeding your child?",
+            "uuid": "9fa6eeb5-c3b9-4052-897e-09c5d4c2119d"
+          },
+          "type": "SingleSelect",
+          "name": "Are you still breast feeding your child?",
+          "displayOrder": 1,
+          "uuid": "026bd129-eb76-4e40-a215-9b76bf87516e",
+          "comment": "counsel accordingly missing",
+          "mandatory": true
+        },
+        {
+          "concept": {
+            "name": "What was the child's age when you stopped breast feeding?",
+            "uuid": "a0c7b32c-fdb1-4cb6-9bbc-800e74e50cea"
+          },
+          "name": "What was the child's age when you stopped breast feeding?",
+          "displayOrder": 2,
+          "uuid": "063b30a3-2b5d-4b53-8070-e08f4198302e",
+          "mandatory": true
+        },
+        {
+          "concept": {
+            "name": "Are you feeding your child any other liquids?",
+            "uuid": "5a9efcab-a615-4eb0-baf8-b3f799018dca"
+          },
+          "type": "SingleSelect",
+          "name": "Are you feeding your child any other liquids?",
+          "displayOrder": 3,
+          "uuid": "64fef110-d470-46ae-83fc-055ee6996db9",
+          "comment": "counsel accordingly",
+          "mandatory": true
+        },
+        {
+          "concept": {
             "name": "Have you fed your child any of the following?",
             "uuid": "fa9f52fd-300f-4521-9bd6-6bca192fe24c"
           },
           "type": "MultiSelect",
           "name": "Have you fed your child any of the following?",
-          "displayOrder": 12.7,
+          "displayOrder": 4,
           "uuid": "39e90b31-e658-4567-8c15-2fe7d875e7dd",
           "mandatory": true
         },
@@ -27,7 +61,7 @@
             "uuid": "185c6430-e920-4f91-93a6-611affa05794"
           },
           "name": "What else did feed your child?",
-          "displayOrder": 12.8,
+          "displayOrder": 5,
           "uuid": "0c9742bf-0445-4095-ae78-0493d3884b4d",
           "mandatory": true
         },
@@ -39,8 +73,18 @@
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4",
             "comment": "Placeholder for counselling form element"
           },
-          "displayOrder": 12.9,
+          "displayOrder": 6,
           "mandatory": false
+        },
+        {
+          "concept": {
+            "name": "What was the child's age when you started feeding these liquids?",
+            "uuid": "038c0eb4-30d0-487c-b564-6e3bc7c4954b"
+          },
+          "name": "What was the child's age when you started feeding these liquids?",
+          "displayOrder": 7,
+          "uuid": "b5e8a0cc-19d0-43a3-93bc-9875665587ef",
+          "mandatory": true
         },
         {
           "concept": {
@@ -49,7 +93,7 @@
           },
           "type": "MultiSelect",
           "name": "Why did you feed your baby something other than breast milk?",
-          "displayOrder": 13,
+          "displayOrder": 8,
           "uuid": "8ef0e5aa-4f24-40e4-abe8-11d8eee83790",
           "mandatory": true
         },
@@ -59,50 +103,8 @@
             "uuid": "60e2eddd-4e45-4002-bcfd-eea11fb3ac7c"
           },
           "name": "Any other reason why you fed something other than breast milk",
-          "displayOrder": 14,
+          "displayOrder": 9,
           "uuid": "e909c98c-2879-4229-9059-0136486a0a9c",
-          "mandatory": true
-        },
-        {
-          "concept": {
-            "name": "Are you still breast feeding your child?",
-            "uuid": "9fa6eeb5-c3b9-4052-897e-09c5d4c2119d"
-          },
-          "type": "SingleSelect",
-          "name": "Are you still breast feeding your child?",
-          "displayOrder": 15,
-          "uuid": "026bd129-eb76-4e40-a215-9b76bf87516e",
-          "mandatory": true
-        },
-        {
-          "concept": {
-            "name": "What was the child's age when you stopped breast feeding?",
-            "uuid": "a0c7b32c-fdb1-4cb6-9bbc-800e74e50cea"
-          },
-          "name": "What was the child's age when you stopped breast feeding?",
-          "displayOrder": 16,
-          "uuid": "063b30a3-2b5d-4b53-8070-e08f4198302e",
-          "mandatory": true
-        },
-        {
-          "concept": {
-            "name": "Are you feeding your child any other liquids?",
-            "uuid": "5a9efcab-a615-4eb0-baf8-b3f799018dca"
-          },
-          "type": "SingleSelect",
-          "name": "Are you feeding your child any other liquids?",
-          "displayOrder": 17,
-          "uuid": "64fef110-d470-46ae-83fc-055ee6996db9",
-          "mandatory": true
-        },
-        {
-          "concept": {
-            "name": "What was the child's age when you started feeding these liquids?",
-            "uuid": "038c0eb4-30d0-487c-b564-6e3bc7c4954b"
-          },
-          "name": "What was the child's age when you started feeding these liquids?",
-          "displayOrder": 18,
-          "uuid": "b5e8a0cc-19d0-43a3-93bc-9875665587ef",
           "mandatory": true
         },
         {
@@ -112,8 +114,9 @@
           },
           "type": "SingleSelect",
           "name": "Have you been feeding solids/semi-solids to the child?",
-          "displayOrder": 19,
+          "displayOrder": 10,
           "uuid": "89d51bc2-001f-4989-8552-e131fa47e73a",
+          "comment": "counsel accordingly",
           "mandatory": true
         },
         {
@@ -122,7 +125,7 @@
             "uuid": "0e5f2f1a-ef95-44aa-9a6f-0dc0d1199c37"
           },
           "name": "What was the child's age when you started feeding them solids/semi-solids?",
-          "displayOrder": 20,
+          "displayOrder": 11,
           "uuid": "31215d9b-3cd6-4a94-9949-dc61fd3f2649",
           "mandatory": true
         },
@@ -133,19 +136,20 @@
           },
           "type": "SingleSelect",
           "name": "How many times a day is the child eating homemade semi-solid/solid foods?",
-          "displayOrder": 21,
+          "displayOrder": 12,
           "uuid": "a92edaaa-a42f-48ec-af11-1d92f948af83",
           "mandatory": true
         },
         {
           "concept": {
-            "name": "What type of semi-solid/solid foods do you feed your child?",
+            "name": "What type of semi-solid/solid foods did you feed your child yesterday?",
             "uuid": "5dd91413-2b15-414d-9047-a02bd9601b13"
           },
           "type": "MultiSelect",
-          "name": "What type of semi-solid/solid foods do you feed your child?",
-          "displayOrder": 22,
+          "name": "What type of semi-solid/solid foods did you feed your child yesterday?",
+          "displayOrder": 13,
           "uuid": "1d5748e3-2d68-46a7-ad53-7ed8ab61b095",
+          "comment": "vegetable as answer is missing",
           "mandatory": true
         },
         {
@@ -155,8 +159,9 @@
           },
           "type": "SingleSelect",
           "name": "How many times a day is the child eating snacks?",
-          "displayOrder": 23,
+          "displayOrder": 14,
           "uuid": "d8eba285-a7c0-4a8b-8e25-ff09f58138f0",
+          "comment": "3+ cousnel accordi",
           "mandatory": true
         },
         {
@@ -166,7 +171,7 @@
           },
           "type": "MultiSelect",
           "name": "What snacks are being fed?",
-          "displayOrder": 24,
+          "displayOrder": 15,
           "uuid": "90f96312-a817-46d8-9494-7837dd1fcaf1",
           "mandatory": true
         },
@@ -176,7 +181,7 @@
             "uuid": "be8c1e1e-ca8d-4f84-86cb-7304722d0ff4"
           },
           "name": "What other snacks are being fed?",
-          "displayOrder": 25,
+          "displayOrder": 16,
           "uuid": "2900444b-5ed9-4b35-90ff-052bb4fbee6f",
           "mandatory": true
         }
@@ -194,7 +199,7 @@
             "uuid": "0f071c2a-82a7-45cf-8198-90c12ec7a6f3"
           },
           "name": "How many times is your child fed in 24 hours?",
-          "displayOrder": 26,
+          "displayOrder": 1,
           "uuid": "66851ada-9f82-431d-bff9-cc795607a349",
           "mandatory": true
         },
@@ -204,7 +209,7 @@
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "name": "CK Counselling for feeding your child frequently",
-          "displayOrder": 26.5,
+          "displayOrder": 2,
           "uuid": "249f109b-f197-412f-9060-785a4266e66e",
           "mandatory": false
         },
@@ -214,7 +219,7 @@
             "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2"
           },
           "name": "How many times has your child urinated in the last 24 hours?",
-          "displayOrder": 27,
+          "displayOrder": 3,
           "uuid": "e0538523-bbd1-4ccc-84b4-960c10985b07",
           "mandatory": true
         },
@@ -225,7 +230,7 @@
           },
           "type": "MultiSelect",
           "name": "Is your baby having any of the following problems?",
-          "displayOrder": 28,
+          "displayOrder": 4,
           "uuid": "3d0dddf6-2d85-4480-8a4b-a0c19a14b28e",
           "mandatory": true
         },
@@ -236,7 +241,7 @@
           },
           "type": "SingleSelect",
           "name": "Has your child been sick in the last 2 weeks?",
-          "displayOrder": 29,
+          "displayOrder": 5,
           "uuid": "6122be2f-6999-4842-a6b5-41a0a60f454c",
           "mandatory": true
         },
@@ -247,7 +252,7 @@
           },
           "type": "MultiSelect",
           "name": "What illness did the child have?",
-          "displayOrder": 30,
+          "displayOrder": 6,
           "uuid": "0204fe55-fe8b-4444-94cb-fa290ca24e20",
           "mandatory": true
         },
@@ -257,7 +262,7 @@
             "uuid": "f90022c0-e236-4a10-872e-1ed73d50a61b"
           },
           "name": "Any other illness?",
-          "displayOrder": 31,
+          "displayOrder": 7,
           "uuid": "adc9159f-b120-4a48-b5b4-f26c38dddbd5",
           "mandatory": true
         },
@@ -268,7 +273,7 @@
           },
           "type": "SingleSelect",
           "name": "Is your child sick right now?",
-          "displayOrder": 32,
+          "displayOrder": 8,
           "uuid": "0258e416-c703-4390-a0a6-90b9f8eb8659",
           "mandatory": true
         }
