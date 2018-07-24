@@ -26,7 +26,7 @@ class ChildPostPNCVisits {
         if (programEncounter.name === 'Child PNC 2') {
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child Home Visit', 'Child Home Visit', moment(programEncounter.programEnrolment.individual.dateOfBirth).add(1, 'month').toDate(), 21);
         } else if (programEncounter.name === 'Child PNC 1') {
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child PNC 2', 'Child PNC', moment(programEncounter.programEnrolment.individual.dateOfBirth).add(7).toDate(), 3);
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child PNC 2', 'Child PNC', moment(programEncounter.programEnrolment.individual.dateOfBirth).add(7, 'days').toDate(), 3);
         } else {
             return visitSchedule;
         }

@@ -1,5 +1,7 @@
-const {RuleFactory, VisitScheduleBuilder, RuleHelper} = require('rules-config/rules');
+const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
 const moment = require("moment");
+const RuleHelper = require('../RuleHelper');
+
 const EnrolmentRule = RuleFactory("026e2f5c-8670-4e4b-9a54-cb03bbf3093d", "VisitSchedule");
 const ANCHomeVisitRule = RuleFactory("5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99", "VisitSchedule");
 const DeliveryRule = RuleFactory("cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2", "VisitSchedule");

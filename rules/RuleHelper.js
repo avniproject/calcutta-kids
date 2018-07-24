@@ -89,7 +89,7 @@ class RuleHelper {
     }
 
     static scheduleOneVisit(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {
-        this.addSchedule(visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset);
+        this.addSchedule(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset);
         return scheduleBuilder.getAllUnique("encounterType");
     }
 }
