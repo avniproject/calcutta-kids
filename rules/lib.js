@@ -5,6 +5,9 @@ export default {
         return ruleServiceLibraryInterfaceForSharingModules.log;
     },
     get C() {
-        return ruleServiceLibraryInterfaceForSharingModules.calculations;
+        return ruleServiceLibraryInterfaceForSharingModules.common;
+    },
+    get calculations() {
+        return ruleServiceLibraryInterfaceForSharingModules.motherCalculations;
     }
 }
