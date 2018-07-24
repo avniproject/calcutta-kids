@@ -88,7 +88,7 @@
     },
     {
       "uuid": "67f5215a-20e5-4276-b37b-464157e58643",
-      "name": "Doctor Visit Followup",
+      "name": "Doctor Visit Followup at Home",
       "encounterType": {
         "uuid": "f3b48d34-d2ff-448d-ab18-8fa0602f32f0"
       }

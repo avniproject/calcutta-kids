@@ -7,7 +7,7 @@ const HomeVisitRule = RuleFactory("2a13df4b-6d61-4f11-850d-1ea6d13860df", "Visit
 const RuleHelper = require('../RuleHelper');
 
 @EnrolmentRule("cb1f2e59-215b-44a6-afdc-d99bddf6face", "MotherPostMotherProgramEnrolmentVisits", 10.0)
-class PostEnrolmentVisits {
+class MotherPostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
         let dateOfDelivery = getDateOfDelivery(programEnrolment);
@@ -21,7 +21,7 @@ class PostEnrolmentVisits {
 }
 
 @HomeVisitRule("aa862394-4b02-4879-b582-ab58683dde06", "MotherPostHomeVisitVisits", 10.0)
-class PostHomeVisitVisits {
+class MotherPostHomeVisitVisits {
     static exec({programEnrolment, encounterDateTime}, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
         let earliestDate = moment(encounterDateTime).add(1, 'months').toDate();
@@ -36,4 +36,4 @@ const getDateOfDelivery = (programEnrolment) => {
     return null;
 };
 
-module.exports = {MotherPostHomeVisitVisits: PostHomeVisitVisits, MotherPostEnrolmentVisits: PostEnrolmentVisits};
+module.exports = {MotherPostHomeVisitVisits: MotherPostHomeVisitVisits, MotherPostEnrolmentVisits: MotherPostEnrolmentVisits};

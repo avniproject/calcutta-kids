@@ -7,17 +7,20 @@ const HomeVisitCancelRule = RuleFactory("", "VisitSchedule");
 const RuleHelper = require('../RuleHelper');
 
 @EnrolmentRule("0bdfd933-1ba5-4fc1-989f-b4226ae010bd", "ChildPostChildEnrolmentVisits", 10.0)
-class PostChildEnrolmentVisits {
+class ChildPostChildEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
         RuleHelper.addSchedule(scheduleBuilder, 'Birth', 'Birth', programEnrolment.enrolmentDateTime, 0);
-        RuleHelper.addSchedule(scheduleBuilder, 'Child PNC 1', 'Child PNC', programEnrolment.enrolmentDateTime, 0);
+        if (moment(programEnrolment.individual.dateOfBirth).add(2, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime))
+            RuleHelper.addSchedule(scheduleBuilder, 'Child PNC 1', 'Child PNC', programEnrolment.enrolmentDateTime, 0);
+        else if (moment(programEnrolment.individual.dateOfBirth).add(10, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime))
+            RuleHelper.addSchedule(scheduleBuilder, 'Child PNC 2', 'Child PNC', programEnrolment.enrolmentDateTime, 0);
         return scheduleBuilder.getAllUnique("encounterType");
     }
 }
 
 @PNCRule("2f21603a-0bdb-4732-b8fb-cb0bb58cbdc1", "ChildPostPNCVisits", 10.0)
-class PostPNCVisits {
+class ChildPostPNCVisits {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         if (programEncounter.name === 'Child PNC 2') {
@@ -31,7 +34,7 @@ class PostPNCVisits {
 }
 
 @HomeVisitRule('702f6b57-f46b-47cb-a413-7e609468402e', 'ChildPostHomeVisitVisits', 10.0)
-class PostHomeVisitVisits {
+class ChildPostHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child Home Visit', 'Child Home Visit', moment(programEncounter.encounterDateTime).add(1, 'months').toDate());
@@ -39,7 +42,7 @@ class PostHomeVisitVisits {
 }
 
 module.exports = {
-    ChildPostChildEnrolmentVisits: PostChildEnrolmentVisits,
-    ChildPostPNCVisits: PostPNCVisits,
-    ChildPostHomeVisitVisits: PostHomeVisitVisits
+    ChildPostChildEnrolmentVisits: ChildPostChildEnrolmentVisits,
+    ChildPostPNCVisits: ChildPostPNCVisits,
+    ChildPostHomeVisitVisits: ChildPostHomeVisitVisits
 };

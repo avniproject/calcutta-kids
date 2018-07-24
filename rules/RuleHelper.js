@@ -83,7 +83,7 @@ class RuleHelper {
                 name: visitName,
                 encounterType: encounterTypeName,
                 earliestDate: earliestDate,
-                maxDate: moment(earliestDate).add(numberOfDaysForMaxOffset, 'days')
+                maxDate: moment(earliestDate).add(numberOfDaysForMaxOffset, 'days').toDate()
             }
         );
     }

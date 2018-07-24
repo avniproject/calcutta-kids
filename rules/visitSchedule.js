@@ -16,7 +16,9 @@ class PostProgramEncounterCancelVisits {
         } else if (programEncounter.encounterType.name === 'Mother Home Visit') {
             return MotherPostHomeVisitVisits.exec(programEncounter, visitSchedule);
         } else if (programEncounter.encounterType.name === 'ANC Home Visit') {
-            return PregnancyPostANCHomeVisitVisits.exec(programEncounter, visitSchedule);
+            let visitCancelReason = programEncounter.getObservationReadableValue('Visit cancel reason');
+            if (visitCancelReason === 'Away' || visitCancelReason === 'Absent') //Visit can get cancelled for reasons like delivery in which case it would be "Other"
+                return PregnancyPostANCHomeVisitVisits.exec(programEncounter, visitSchedule);
         }
         return visitSchedule;
     }

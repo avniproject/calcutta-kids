@@ -6,7 +6,7 @@ const DeliveryRule = RuleFactory("cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2", "VisitS
 const PNCRule = RuleFactory("78b1400e-8100-4ba6-b78e-fef580f7fb77", "VisitSchedule");
 
 @EnrolmentRule("f94d4f18-9ff6-4f7b-988e-e7956d947bb0", "PregnancyPostPregnancyEnrolmentVisits", 10.0)
-class PostEnrolmentVisits {
+class PregnancyPostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
         let earliestDate = firstOfNextMonth(programEnrolment.enrolmentDateTime);
@@ -15,7 +15,7 @@ class PostEnrolmentVisits {
 }
 
 @ANCHomeVisitRule("a6540db8-d8d1-4e50-96ce-5c4f80561520", "PregnancyPostANCHomeVisitVisits", 10.0)
-class PostANCHomeVisitVisits {
+class PregnancyPostANCHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let earliestDate = firstOfNextMonth(programEncounter.encounterDateTime);
@@ -24,7 +24,7 @@ class PostANCHomeVisitVisits {
 }
 
 @DeliveryRule("1a3f01f8-792f-4615-acb0-5fc61f4b5198", "PregnancyPostDeliveryVisits", 10.0)
-class PostDeliveryVisits {
+class PregnancyPostDeliveryVisits {
     static exec(programEncounter, visitSchedule = []) {
         // Check whether PNC visit has already happened, in case PNC form was filled before the delivery form
         if (programEncounter.programEnrolment.hasEncounterOfType('PNC')) return visitSchedule;
@@ -35,7 +35,7 @@ class PostDeliveryVisits {
 }
 
 @PNCRule("4775ad43-acbf-42af-9952-2d4b8896cbfc", "PregnancyPostMotherPNCVisits", 11.0)
-class PostPNCVisits {
+class PregnancyPostPNCVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let dateOfDelivery = programEncounter.findObservationInEntireEnrolment("Date of delivery");
@@ -55,4 +55,4 @@ let firstOfNextMonth = function (realEventDate) {
     return moment(realEventDate).month(month).date(1).toDate();
 };
 
-module.exports = {PregnancyPostEnrolmentVisits: PostEnrolmentVisits, PregnancyPostANCHomeVisitVisits: PostANCHomeVisitVisits, PregnancyPostDeliveryVisits: PostDeliveryVisits, PregnancyPostPNCVisits: PostPNCVisits};
+module.exports = {PregnancyPostEnrolmentVisits: PregnancyPostEnrolmentVisits, PregnancyPostANCHomeVisitVisits: PregnancyPostANCHomeVisitVisits, PregnancyPostDeliveryVisits: PregnancyPostDeliveryVisits, PregnancyPostPNCVisits: PregnancyPostPNCVisits};

@@ -9,7 +9,7 @@ const pregnancyTestResultFunc = (programEncounter, formElement) => {
 const filters = {
     formUuid: 'db80ea16-8538-41ca-bd6a-53abc9be088b',
     uuid: 'd54dafdf-34d7-44ac-b0ca-8071486a48e9',
-    name: 'Doctor Visit Followup form rules',
+    name: 'Doctor Visit Followup at Home form rules',
     execOrder: 100.0,
     otherData: {},
     // cached: [pregnancyTestResultFunc]
