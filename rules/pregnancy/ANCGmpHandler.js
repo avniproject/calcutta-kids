@@ -1,8 +1,6 @@
-const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder} = require('rules-config/rules');
-const ComplicationsBuilder = complicationsBuilder;
+import { RuleFactory, complicationsBuilder as ComplicationsBuilder } from 'rules-config/rules';
 
 const pregnancyGMPDecision = RuleFactory("4632c1f5-59cd-4e65-899c-beb2c87a3bff", "Decision");
-
 
 @pregnancyGMPDecision("47b05f6b-dac4-456f-8878-7ccef7cf365e", "ANC GMP decisions [CK]", 100.0, {})
 class GMPDecision {
@@ -26,4 +24,4 @@ class GMPDecision {
     }
 }
 
-module.exports = {GMPDecision};
+module.exports = { GMPDecision };
