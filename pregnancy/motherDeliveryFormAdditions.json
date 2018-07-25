@@ -36,6 +36,17 @@
           "mandatory": true
         },
         {
+          "name": "Were you given Vitamin A",
+          "uuid": "4bf3329d-51b6-40f2-91fe-f1bad0262cc9",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "ad4da876-15f6-4e57-a040-7c4e9a7152a9"
+          },
+          "displayOrder": 1.4,
+          "mandatory": true
+        },
+        {
           "name": "Did you receive JSY?",
           "uuid": "b1ec2e6c-ed45-45df-91dd-6350aec5d0b5",
           "keyValues": [],
@@ -43,7 +54,7 @@
           "concept": {
             "uuid": "59086cb8-f1cd-4f2a-bb78-accb03fe301a"
           },
-          "displayOrder": 1.4,
+          "displayOrder": 1.5,
           "mandatory": true
         },
         {
@@ -55,7 +66,7 @@
             "uuid": "bc7c8d69-596b-4607-b858-41c500a5a3cf",
             "dataType": "Date"
           },
-          "displayOrder": 1.5,
+          "displayOrder": 1.6,
           "mandatory": true
         }
       ]
