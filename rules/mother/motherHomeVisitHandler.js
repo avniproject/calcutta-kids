@@ -62,7 +62,7 @@ class MotherHomeVisitDecisions {
 const getAgeOfYoungestChildInMonths = (programEncounter) => {
     const youngestChild = lib.C.getYoungestChild(programEncounter.programEnrolment.individual);
     return youngestChild.getAgeInMonths(programEncounter.encounterDateTime);
-}
+};
 
 @homeVisitFilter("a0018a51-4cac-4690-9aa1-91505d3d4759", "Mother Home Visit form rules", 100.0, {})
 class MotherHomeVisitFormRules {
