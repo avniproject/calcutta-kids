@@ -1,3 +1,4 @@
+const moment = require('moment');
 import {StatusBuilderAnnotationFactory, RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder as ComplicationsBuilder} from 'rules-config/rules';
 
 const ANCDoctorVisitFilter = RuleFactory("3a95e9b0-731a-4714-ae7c-10e1d03cebfe", "ViewFilter");
@@ -72,7 +73,17 @@ class ANCDoctorVisitRemoveAllDecisions {
             "encounterDecisions": [],
             "registrationDecisions": []
         };
+        if (programEncounter.encounterType.name === 'ANC')
+            this.determineDurationOfPregnancy(programEncounter, decisions['enrolmentDecisions']);
         return decisions;
+    }
+
+    static determineDurationOfPregnancy(programEncounter, enrolmentDecisions) {
+        let estimatedGestationalAge = programEncounter.getObservationReadableValue('Gestational age');
+        if (!_.isNil(estimatedGestationalAge)) {
+            let edd = moment(programEncounter.encounterDateTime).add(40 - estimatedGestationalAge, 'weeks');
+            enrolmentDecisions.push({name: "Estimated Date of Delivery", value: edd.toDate()});
+        }
     }
 }
 
