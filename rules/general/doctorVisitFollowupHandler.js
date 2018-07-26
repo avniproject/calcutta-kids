@@ -16,8 +16,8 @@ const filters = {
 };
 
 filters.rules = [
-    when('Is patient taking medicines as prescribed?', contains('NONE of the prescribed medicines'))
-        .hide('whyIsThePatientTakingOnlySomeOfThePrescribedMedicines',
+    when('Is patient taking medicines as prescribed?', contains('SOME of the prescribed medicines'))
+        .show('whyIsThePatientTakingOnlySomeOfThePrescribedMedicines',
             'forAllMedicinesThePatientIsTakingIsThePatientTakingTheMedicineCorrectlyCheckYesIfPatientIsTakingTheCorrectDoseAndCompletingTheFullCourseOfTheMedicine'),
     when('Reasons for patient taking only some of the prescribed medicines', contains('Other'))
         .show('Other reasons for taking only some prescribed medicines'),
