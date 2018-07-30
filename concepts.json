@@ -2816,5 +2816,17 @@
         "uuid": "afedc9c2-bd51-48f0-b526-33c8ca52892b"
       }
     ]
+  },
+  {
+    "name": "Individual inactive",
+    "uuid": "65ed656a-4d9c-4572-a76f-b00e6aa4de72",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "abnormal": true
+      }
+    ]
   }
 ]

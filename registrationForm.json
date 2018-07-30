@@ -87,6 +87,19 @@
             "uuid": "b277d2f4-e0e5-44b3-bf94-d7751bc3b7f1"
           },
           "displayOrder": 7,
+          "mandatory": false,
+          "voided":true
+        },
+        {
+          "name": "Inactive",
+          "uuid": "3c1bf66e-8fcb-4108-8007-c870366c9e29",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "name": "Individual inactive",
+            "uuid": "65ed656a-4d9c-4572-a76f-b00e6aa4de72"
+          },
+          "displayOrder": 8,
           "mandatory": false
         }
       ]
