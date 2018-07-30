@@ -54,8 +54,12 @@ class ChildPNCFormHandler {
     @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Other'])
     whatOtherThingsDidYouFeedYourChildSinceBeginningBreastfeeding() { }
 
-    @CodedObservationMatcher('Things baby was fed since beginning breastfeeding', ['Other'])
-    whyDidYouFeedYourBabySomethingOtherThanBreastMilk() { }
+    @WithStatusBuilder
+    whyDidYouFeedYourBabySomethingOtherThanBreastMilk([], statusBuilder) {
+        statusBuilder.show()
+            .when.valueInEncounter('Things baby was fed since beginning breastfeeding').is.defined
+            .and.valueInEncounter('Things baby was fed since beginning breastfeeding').not.containsAnswerConceptName('Other');
+    }
 
     @CodedObservationMatcher('Why did you feed your baby something other than breast milk?', ['Other'])
     otherReasonWhyYouFedSomethingOtherThanBreastMilk() { }
