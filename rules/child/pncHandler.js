@@ -18,7 +18,6 @@ class ChildPNCFormHandler {
 
     @WithStatusBuilder
     anySkinProblems([], statusBuilder) {
-        //TODO: 'Umbilical cord is infected' to be unVoided in core and skipped in other implementations
         statusBuilder.skipAnswers('Wrinkled Skin', 'Sunken fontanelle', 'Skin blisters');
     }
 
