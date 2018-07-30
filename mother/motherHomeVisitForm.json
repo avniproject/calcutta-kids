@@ -146,13 +146,22 @@
           "mandatory": true
         },
         {
+          "name": "Counsel to drink sufficient milk",
+          "uuid": "d78d16a9-a955-440b-b82c-05337ef26f1c",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 14,
+          "mandatory": false
+        },
+        {
           "name": "Are you using any family planning methods?",
           "uuid": "bfcfbd1b-a9db-498d-9474-82cd7ff091e6",
           "type": "SingleSelect",
           "concept": {
             "uuid": "57827fec-7350-4acb-b648-29569b61d80b"
           },
-          "displayOrder": 14,
+          "displayOrder": 15,
           "mandatory": true
         },
         {
@@ -163,8 +172,17 @@
           "concept": {
             "uuid": "ad6a45e7-242a-4eb3-961e-c52c3ef862c0"
           },
-          "displayOrder": 15,
+          "displayOrder": 16,
           "mandatory": true
+        },
+        {
+          "name": "Counsel about using pills",
+          "uuid": "5bd4083d-f7c0-423c-8ca1-4e2be1aecde2",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 17,
+          "mandatory": false
         },
         {
           "name": "Which other family planning methods are being used?",
@@ -173,7 +191,7 @@
           "concept": {
             "uuid": "c89a29a9-7ff9-4f23-8030-b86253b3d11e"
           },
-          "displayOrder": 16,
+          "displayOrder": 18,
           "mandatory": true
         },
         {
@@ -184,8 +202,17 @@
           "concept": {
             "uuid": "0c9b6203-be8c-40a4-a035-b9cb61f126c9"
           },
-          "displayOrder": 17,
+          "displayOrder": 19,
           "mandatory": true
+        },
+        {
+          "name": "Counsel about breastfeeding",
+          "uuid": "e31e31aa-acba-4ecb-92d9-00f89a4c0075",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 20,
+          "mandatory": false
         },
         {
           "name": "What other breast feeding problems?",
@@ -194,7 +221,7 @@
           "concept": {
             "uuid": "9901bdcc-d562-4486-a5d4-b6e9681e9da8"
           },
-          "displayOrder": 18,
+          "displayOrder": 21,
           "mandatory": true
         }
       ]

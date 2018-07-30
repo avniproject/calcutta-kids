@@ -134,8 +134,14 @@ class MotherHomeVisitFormRules {
         statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6);
     }
 
+    @codedObservationMatcher('Is mother drinking at least one glass of milk per day?', ['No'])
+    counselToDrinkSufficientMilk() { }
+
     @codedObservationMatcher('Is mother using any family planning methods?', ['Yes'])
     whatTypeOfFamilyPlanningMethodsAreYouUsing() { }
+
+    @codedObservationMatcher('Type of family planning methods used by mother', ['Pill'])
+    counselAboutUsingPills() { }
 
     @codedObservationMatcher('Type of family planning methods used by mother', ['Other'])
     whichOtherFamilyPlanningMethodsAreBeingUsed() { }
@@ -144,6 +150,9 @@ class MotherHomeVisitFormRules {
     areYouHavingAnyOfTheFollowingBreastFeedingProblems([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6);
     }
+
+    @codedObservationMatcher('Breast-feeding problems', ['Cracked Nipple', 'Retracted Nipples', 'Engorged breast', 'Mother unwilling to breastfeed'])
+    counselAboutBreastfeeding() { }
 
     @codedObservationMatcher('Breast-feeding problems', ['Other'])
     whatOtherBreastFeedingProblems() { }
