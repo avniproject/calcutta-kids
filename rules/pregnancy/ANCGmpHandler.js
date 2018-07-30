@@ -31,7 +31,7 @@ class GMPDecision {
             .whenItem(isAbnormalWeightGain(programEncounter)).is.truthy;
 
         complicationsBuilder.addComplication('Intrauterine Growth Retardation')
-            .whenItem(isAbnormalWeightGain(programEncounter)).is.truthy;
+            .whenItem(isBelowNormalWeightGain(programEncounter)).is.truthy;
 
         return complicationsBuilder.getComplications();
     }
@@ -62,8 +62,7 @@ class Filters {
 
     @WithStatusBuilder
     ckCompleteDietAdvice([encounter], statusBuilder) {
-        let belowNormalWeightGain = isBelowNormalWeightGain(encounter) && encounter.getObservationValue("Weight") != null;
-        statusBuilder.show().whenItem(belowNormalWeightGain).is.truthy;
+        statusBuilder.show().whenItem(isBelowNormalWeightGain(encounter)).is.truthy;
     }
 
     static exec(programEncounter, formElementGroup, today) {
