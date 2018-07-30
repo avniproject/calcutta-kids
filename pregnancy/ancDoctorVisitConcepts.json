@@ -46,7 +46,7 @@
   {
     "name": "USG Scanning Report - Remarks",
     "uuid": "65fbbd13-0126-45cc-b1a2-a5db40843d16",
-    "dataType": "Text"
+    "dataType": "Notes"
   },
   {
     "name": "Blood Sugar - Random",
@@ -66,17 +66,17 @@
   {
     "uuid": "9e2f03e4-d504-406c-8da7-27eb33e2e298",
     "name": "Assessment - Medicine & frequency",
-    "dataType": "Text"
+    "dataType": "Notes"
   },
   {
     "uuid": "b4096b8d-7b81-4fb6-989c-4a02189c20b6",
     "name": "Assessment - Lab tests advice",
-    "dataType": "Text"
+    "dataType": "Notes"
   },
   {
     "uuid": "f4b308d3-24a7-4f4a-b06c-bb5432ab989e",
     "name": "Assessment - Clinicla advice",
-    "dataType": "Text"
+    "dataType": "Notes"
   },
   {
     "uuid": "0d9cc8ee-fd6e-4516-aa16-bf158edee132",

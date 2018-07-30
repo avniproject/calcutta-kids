@@ -2733,12 +2733,12 @@
   {
     "name": "Assessment - Notes",
     "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
-    "dataType": "Text"
+    "dataType": "Notes"
   },
   {
     "name": "Checkup notes",
     "uuid": "d658b4a4-8ec3-4eb7-9ef3-dd3a73ca29f9",
-    "dataType": "Text"
+    "dataType": "Notes"
   },
   {
     "name": "Para",
