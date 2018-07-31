@@ -55,13 +55,6 @@ class ANCDoctorVisitAbdominalExamination {
         // // Before first edit it does not update the field.
         // // After first edit whatever you do, you cannot change the value in the form.
         // // To understand more uncomment deploy and see it yourself.
-
-        // const lmp = programEncounter.programEnrolment.getObservationValue('Last menstrual period');
-        // const td = _.get(programEncounter, "encounterDateTime", new Date());
-        
-        // const status = statusBuilder.build();
-        // status.value = FormElementsStatusHelper.weeksBetween(td, lmp);
-        // return status;
     }
 
     static exec(programEncounter, formElementGroup, today) {

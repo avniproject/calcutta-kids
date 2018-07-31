@@ -11,11 +11,11 @@ class ANCHomeVisitFilterHandler {
             .getFormElementsStatusesWithoutDefaults(new ANCHomeVisitFilterHandler(), programEncounter, formElementGroup, today);
     }
 
-    static gestationalAge(enrolment, toDate = new Date()) {
+    static gestationalAge(enrolment, toDate) {
         return FormElementsStatusHelper.weeksBetween(toDate, enrolment.getObservationValue("Last menstrual period"));
     }
 
-    static currentTrimester(enrolment, toDate = new Date()) {
+    static currentTrimester(enrolment, toDate) {
         return [...TRIMESTER_MAPPING.keys()]
             .find((trimester) =>
                 ANCHomeVisitFilterHandler.gestationalAge(enrolment, toDate) <= TRIMESTER_MAPPING.get(trimester).to &&
