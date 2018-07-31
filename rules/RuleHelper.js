@@ -92,6 +92,12 @@ class RuleHelper {
         this.addSchedule(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset);
         return scheduleBuilder.getAllUnique("encounterType");
     }
+
+    static appropriateFirstOfTheMonth(realEventDate) {
+        const currentDate = moment(realEventDate).date();
+        const month = currentDate > 21 ? moment(realEventDate).month() + 1 : moment(realEventDate).month();
+        return moment(realEventDate).month(month).date(1).toDate();
+    };
 }
 
 module.exports = RuleHelper;

@@ -1,0 +1,26 @@
+{
+  "name": "Post abortion form",
+  "uuid": "a7ec8c80-edb2-4751-a5ec-498a9e0240a0",
+  "formType": "ProgramEncounter",
+  "formElementGroups": [
+    {
+      "uuid": "a2a348cb-febe-494e-8bce-cd8b2aa094c8",
+      "name": "Details",
+      "display": "Details",
+      "displayOrder": 1,
+      "formElements": [
+        {
+          "name": "Complaints",
+          "uuid": "3860dca7-bb17-4a05-a598-e80ab7c77ac5",
+          "keyValues": [],
+          "concept": {
+            "uuid": "fc1346b0-57fe-4a84-8d95-f4461d60176f",
+            "comment":"Abortion complaints"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        }
+      ]
+    }
+  ]
+}

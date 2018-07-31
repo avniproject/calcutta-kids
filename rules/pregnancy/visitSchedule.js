@@ -6,13 +6,17 @@ const EnrolmentRule = RuleFactory("026e2f5c-8670-4e4b-9a54-cb03bbf3093d", "Visit
 const ANCHomeVisitRule = RuleFactory("5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99", "VisitSchedule");
 const DeliveryRule = RuleFactory("cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2", "VisitSchedule");
 const PNCRule = RuleFactory("78b1400e-8100-4ba6-b78e-fef580f7fb77", "VisitSchedule");
+const AbortionRule = RuleFactory("32428a7e-d553-4172-b697-e8df3bbfb61d", "VisitSchedule");
+const PostAbortionRule = RuleFactory("a7ec8c80-edb2-4751-a5ec-498a9e0240a0", "VisitSchedule");
 
 @EnrolmentRule("f94d4f18-9ff6-4f7b-988e-e7956d947bb0", "PregnancyPostPregnancyEnrolmentVisits", 10.0)
 class PregnancyPostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
-        let earliestDate = firstOfNextMonth(programEnrolment.enrolmentDateTime);
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
+        let earliestDate = RuleHelper.appropriateFirstOfTheMonth(programEnrolment.enrolmentDateTime);
+        RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
+        RuleHelper.addSchedule(scheduleBuilder, 'ANC GMP', 'ANC GMP', moment(earliestDate).add(21, 'days'), 9);
+        return scheduleBuilder.getAllUnique("encounterType");
     }
 }
 
@@ -20,7 +24,7 @@ class PregnancyPostEnrolmentVisits {
 class PregnancyPostANCHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let earliestDate = firstOfNextMonth(programEncounter.encounterDateTime);
+        let earliestDate = RuleHelper.appropriateFirstOfTheMonth(programEncounter.encounterDateTime);
         return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
     }
 }
@@ -32,7 +36,8 @@ class PregnancyPostDeliveryVisits {
         if (programEncounter.programEnrolment.hasEncounterOfType('PNC')) return visitSchedule;
 
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 1', 'PNC', programEncounter.encounterDateTime, 0);
+        scheduleBuilder.addSchedule(scheduleBuilder, 'PNC 1', 'PNC', programEncounter.encounterDateTime, 1);
+        return scheduleBuilder.getAllUnique("encounterType");
     }
 }
 
@@ -44,17 +49,33 @@ class PregnancyPostPNCVisits {
         if (_.isNil(dateOfDelivery) && programEncounter.name === 'PNC 1') {
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', programEncounter.encounterDateTime, 5);
         } else if (programEncounter.name === 'PNC 1') {
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', moment(dateOfDelivery).add(7, 'days').toDate(), 3);
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', moment(dateOfDelivery).add(7, 'days').toDate(), 8);
         } else {
             return visitSchedule;
         }
     }
 }
 
-let firstOfNextMonth = function (realEventDate) {
-    const currentDate = moment(realEventDate).date();
-    const month = currentDate > 21 ? moment(realEventDate).month() + 1 : moment(realEventDate).month();
-    return moment(realEventDate).month(month).date(1).toDate();
-};
+@AbortionRule("419b7eee-371d-4f2e-ae5d-f495ba1bf82a", "PregnancyPostAbortionVisits", 10.0)
+class PregnancyPostAbortionVisits {
+    static exec(programEncounter, visitSchedule = []) {
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let dateOfAbortion = programEncounter.getObservationValue('Date of abortion');
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'First post abortion home visit', 'Post abortion home visit', dateOfAbortion, 7);
+    }
+}
+
+@PostAbortionRule("9f834276-b63a-4e84-aa5b-d883dc529662", "PregnancyPostPostAbortionVisits", 10.0)
+class PregnancyPostPostAbortionVisits {
+    static exec(programEncounter, visitSchedule = []) {
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let numberOfPostAbortionEncounters = programEncounter.programEnrolment.numberOfEncountersOfType('Post abortion home visit');
+        if (numberOfPostAbortionEncounters < 2) {
+            let gap = numberOfPostAbortionEncounters > 1 ? 14 : 7;
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Post abortion home visit', 'Post abortion home visit', moment(programEncounter.encounterDateTime).add(gap, 'days').toDate(), 7);
+        }
+        return visitSchedule;
+    }
+}
 
 module.exports = {PregnancyPostEnrolmentVisits: PregnancyPostEnrolmentVisits, PregnancyPostANCHomeVisitVisits: PregnancyPostANCHomeVisitVisits, PregnancyPostDeliveryVisits: PregnancyPostDeliveryVisits, PregnancyPostPNCVisits: PregnancyPostPNCVisits};

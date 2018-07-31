@@ -129,6 +129,14 @@
         "uuid": "11d3085e-c44c-467c-abd3-6af215740959",
         "comment": "PNC Doctor Checkup"
       }
+    },
+    {
+      "uuid": "d590d3a6-841c-477d-ab45-f8551ba1d263",
+      "name": "Post abortion home visit",
+      "encounterType": {
+        "uuid": "3f5898b9-aeb9-400e-9440-2c91cb29c551",
+        "comment": "Post abortion home visit"
+      }
     }
   ]
 }

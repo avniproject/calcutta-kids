@@ -49,6 +49,13 @@
     "comment": "Pregnancy program (core mother program), ANC Home (not regular ANC) Cancel"
   },
   {
+    "uuid": "3b44b28a-3054-4a85-b7d1-efc592614ce8",
+    "formUUID": "a7ec8c80-edb2-4751-a5ec-498a9e0240a0",
+    "encounterTypeUUID": "3f5898b9-aeb9-400e-9440-2c91cb29c551",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "Pregnancy program (core mother program), Post abortion"
+  },
+  {
     "uuid": "ad7f68a4-50cf-4299-8c77-d222f724e497",
     "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
     "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
