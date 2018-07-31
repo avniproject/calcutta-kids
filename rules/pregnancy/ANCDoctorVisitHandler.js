@@ -1,5 +1,5 @@
 const moment = require('moment');
-import {StatusBuilderAnnotationFactory, RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder as ComplicationsBuilder} from 'rules-config/rules';
+import {StatusBuilderAnnotationFactory, RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder as ComplicationsBuilder, FormElementStatus} from 'rules-config/rules';
 
 const ANCDoctorVisitFilter = RuleFactory("3a95e9b0-731a-4714-ae7c-10e1d03cebfe", "ViewFilter");
 const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
@@ -40,6 +40,12 @@ class ANCDoctorVisitAbdominalExamination {
     @WithStatusBuilder
     otherPregnancyComplications([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter('Pregnancy complications').containsAnyAnswerConceptName('Other');
+    }
+
+    height(programEncounter, formElement){
+        let value = programEncounter.programEnrolment.getObservationReadableValue("Height");
+        let status = new FormElementStatus(formElement.uuid, true, value);
+        return status;
     }
 
     @WithStatusBuilder

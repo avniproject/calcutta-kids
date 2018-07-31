@@ -142,7 +142,8 @@
           "concept": {
             "uuid": "99c9d0a3-6ffc-41a7-8641-d79e2e83a4c6",
             "comment": "Number of miscarriages"
-          }
+          },
+          "mandatory": true
         },
         {
           "uuid": "ad37abcc-1f3b-4031-bc62-b48b6e351d4a",
@@ -152,7 +153,8 @@
           "concept": {
             "uuid": "38b9986b-76e8-4015-ae51-48152b1cd42c",
             "comment": "Number of Abortions"
-          }
+          },
+          "mandatory": true
         },
         {
           "uuid": "74a2578e-b625-4be0-86c5-6f111afbfff5",
@@ -162,7 +164,8 @@
           "concept": {
             "uuid": "74de4054-0e8b-4088-aae8-bd5f2933d300",
             "comment": "Number of stillbirths"
-          }
+          },
+          "mandatory": true
         },
         {
           "uuid": "5628b492-9aa4-47e8-af8e-ce5dfa048cb3",
@@ -172,7 +175,8 @@
           "concept": {
             "uuid": "d7ae1329-9e09-47f1-ad7d-3c73474d973f",
             "comment": "Number of child deaths"
-          }
+          },
+          "mandatory": true
         },
         {
           "uuid": "b6f2861d-a888-4ba7-92ae-2e8a6b54289d",
@@ -182,7 +186,8 @@
           "concept": {
             "uuid": "b3e9c088-90ed-45d9-8c99-102d1bda66e1",
             "comment": "Number of living children"
-          }
+          },
+          "mandatory": true
         },
         {
           "name": "Gravida",
