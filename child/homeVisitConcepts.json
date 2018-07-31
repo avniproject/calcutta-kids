@@ -59,6 +59,11 @@
     "dataType": "NA"
   },
   {
+    "uuid": "80ccee15-7115-46a7-859c-8d5597240ae7",
+    "name": "Thrice or more",
+    "dataType": "NA"
+  },
+  {
     "uuid": "124ea16a-a244-4c4d-aa4a-8e5bcd3ca4bc",
     "name": "Four Times",
     "dataType": "NA"
@@ -213,10 +218,6 @@
     "dataType": "Coded",
     "answers": [
       {
-        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
-        "name": "None"
-      },
-      {
         "uuid": "4a5be029-cafd-404f-bc67-b59f62760811",
         "name": "Once"
       },
@@ -225,8 +226,12 @@
         "name": "Twice"
       },
       {
-        "uuid": "91b255cd-4855-4cae-8884-6556fa53f38b",
-        "name": "Thrice"
+        "uuid": "80ccee15-7115-46a7-859c-8d5597240ae7",
+        "name": "Thrice or more"
+      },
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "name": "None"
       }
     ]
   },

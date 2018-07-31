@@ -252,7 +252,7 @@ class ChildHomeVisitFilter {
 
     @WithStatusBuilder
     ckCounselAccordinglyForFeedingSnacksMoreFrequently([], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter('How many times a day is the child eating snacks?').containsAnswerConceptName("Thrice");
+        statusBuilder.show().when.valueInEncounter('How many times a day is the child eating snacks?').containsAnswerConceptName("Thrice or more");
     }
 
     @WithStatusBuilder
