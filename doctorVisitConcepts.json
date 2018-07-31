@@ -71,10 +71,6 @@
     "uuid": "b2e7ecc1-7b0a-4961-b419-c8e2c841d94b"
   },
   {
-    "name": "Gynecological",
-    "uuid": "146b2b2c-5360-4bbc-abb0-97e55e737f06"
-  },
-  {
     "name": "Infectious disease",
     "uuid": "792eac0c-5e5f-47ff-963d-b016e5368795"
   },
@@ -170,18 +166,8 @@
     ]
   },
   {
-    "name": "Other health problem or classification",
-    "uuid": "e2ce737e-87c8-4ce5-b73f-3569772acf86",
-    "dataType": "Text"
-  },
-  {
     "name": "Chief complaint",
     "uuid": "6caeddd6-ffb4-4824-80cc-f7dbda85e9db",
-    "dataType": "Text"
-  },
-  {
-    "name": "Diagnosis",
-    "uuid": "5bc49865-4911-48ed-8517-ff9a7b3e365d",
     "dataType": "Text"
   },
   {

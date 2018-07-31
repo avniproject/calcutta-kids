@@ -39,11 +39,6 @@
     ]
   },
   {
-    "uuid": "1af1cc0b-0f35-42ad-91be-46e7663042cf",
-    "name": "Trimester",
-    "dataType": "Numeric"
-  },
-  {
     "name": "USG Scanning Report - Remarks",
     "uuid": "65fbbd13-0126-45cc-b1a2-a5db40843d16",
     "dataType": "Notes"

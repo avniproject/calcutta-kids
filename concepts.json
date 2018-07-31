@@ -67,31 +67,6 @@
     ]
   },
   {
-    "name": "Name of woman",
-    "uuid": "14be72d4-c639-4a1b-8084-53c4decdf35f",
-    "dataType": "Text"
-  },
-  {
-    "name": "ID of woman",
-    "uuid": "9c32affe-bcb2-44a6-a6d3-53c8b58ead56",
-    "dataType": "Text"
-  },
-  {
-    "name": "Name of child",
-    "uuid": "5b29616f-d95b-4368-bda4-6402c2a8e03c",
-    "dataType": "Text"
-  },
-  {
-    "name": "ID of child",
-    "uuid": "f54a4d44-90ca-47fc-bc93-e6a44cd6b0f7",
-    "dataType": "Text"
-  },
-  {
-    "name": "Name of CHW",
-    "uuid": "15f3db8e-c63b-4f87-957a-8eda9a5780c4",
-    "dataType": "Text"
-  },
-  {
     "name": "Other marital status",
     "uuid": "04f0888b-d0b5-43ac-905d-ae3b5a9b1015",
     "dataType": "Text"
@@ -1514,16 +1489,6 @@
     "dataType": "NA"
   },
   {
-    "uuid": "68bf914f-6218-450b-95e6-cc21a5d66e66",
-    "name": "Instrumental delivery forceps",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "e1086c21-b67f-4a86-aa93-4894e54efa04",
-    "name": "Instrumental delivery vacuum",
-    "dataType": "NA"
-  },
-  {
     "uuid": "214d7302-d655-45cd-909e-2fdc0a64ee11",
     "name": "Obstructed labor",
     "dataType": "NA"
@@ -1674,7 +1639,11 @@
   },
   {
     "name": "Refer to Hospital or Calcutta Kids doctor for",
-    "uuid": "abf8ba39-d12d-421e-aab1-e36e88bcd89a",
+    "uuid": "abf8ba39-d12d-421e-aab1-e36e88bcd89a"
+  },
+  {
+    "name": "Refer to Calcutta Kids doctor",
+    "uuid": "daced408-70e7-4d7b-9bda-7245df407285",
     "dataType": "NA"
   },
   {
@@ -1690,11 +1659,6 @@
   {
     "name": "Moderate to severe abdominal pain",
     "uuid": "94a22fed-e9a5-438e-8a17-ec4ae40c5d4f",
-    "dataType": "NA"
-  },
-  {
-    "name": "Problems with stitches or discharge from wound",
-    "uuid": "b7c9ce09-c05e-4cfc-8649-9bc6cadfd08d",
     "dataType": "NA"
   },
   {
@@ -2078,11 +2042,6 @@
     ]
   },
   {
-    "name": "Absent reason",
-    "uuid": "da35884c-2792-4852-abad-df24fe47a51d",
-    "dataType": "Text"
-  },
-  {
     "uuid": "e825f97d-26d4-4a44-b2fe-024d9e26d875",
     "name": "Animal protein",
     "dataType": "NA"
@@ -2174,38 +2133,6 @@
     "uuid": "b2b23da9-17f3-4c77-8e20-5f91652d50ab",
     "name": "Insufficient urination",
     "dataType": "NA"
-  },
-  {
-    "uuid": "aaec4cd0-947f-4731-890d-ef1b06afdf05",
-    "name": "Refer to doctor for",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
-        "name": "Lethargy",
-        "abnormal": true
-      },
-      {
-        "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
-        "name": "Redness or discharge on the skin around the belly button",
-        "abnormal": true
-      },
-      {
-        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
-        "name": "Fever",
-        "abnormal": true
-      },
-      {
-        "uuid": "49c44725-b3f1-4004-a150-0c7f7377f5c2",
-        "name": "Illness",
-        "abnormal": true
-      },
-      {
-        "uuid": "b2b23da9-17f3-4c77-8e20-5f91652d50ab",
-        "name": "Insufficient urination",
-        "abnormal": true
-      }
-    ]
   },
   {
     "name": "ALL of the prescribed medicines",
@@ -2699,9 +2626,21 @@
     ]
   },
   {
-    "name": "PPI",
-    "uuid": "5378de40-3b4b-435b-a6b2-8c4641a0e501",
-    "dataType": "Numeric"
+    "name": "Referral",
+    "uuid": "15916909-1512-4e8c-800f-9c22409d7012",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "daced408-70e7-4d7b-9bda-7245df407285",
+        "comment": "Refer to Calcutta Kids doctor",
+        "abnormal": false
+      },
+      {
+        "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
+        "comment": "Refer to hospital",
+        "abnormal": false
+      }
+    ]
   },
   {
     "name": "Other pregnancy complaints",

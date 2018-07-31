@@ -42,10 +42,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Financial constraints",
-    "uuid": "8b01af76-82f0-4f58-b62e-a044c2d73914"
-  },
-  {
     "name": "Short labour",
     "uuid": "6fa388e6-82a9-4efe-b168-44a93e2992a2"
   },
@@ -150,10 +146,6 @@
   {
     "name": "Heavy bleeding after delivery",
     "uuid": "3c286ec4-14ab-478a-92dc-97c4f7af5a2d"
-  },
-  {
-    "name": "IUD",
-    "uuid": "47dad509-8617-4c93-a1b9-17d789bfa0d3"
   },
   {
     "comment": "Delivery Complications",
