@@ -56,17 +56,14 @@ class ChildHomeVisitFilter {
     @WithStatusBuilder
     ckCounsellToPromoteExclusiveBreastfeeding([], statusBuilder) {
         statusBuilder.show().when
-            .valueInEncounter('Have you fed your child any of the following?').is.defined
-            .and.valueInEncounter('Have you fed your child any of the following?').not.containsAnswerConceptName('No');
+            .valueInEncounter("Are you feeding your child any other liquids?").is.yes;
     }
 
     whyDidYouFeedYourBabySomethingOtherThanBreastMilk(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
         statusBuilder.show()
             .when.ageInMonths.lessThan(6)
-            .and.valueInEncounter('Have you fed your child any of the following?').is.defined
-            .and.when.valueInEncounter("Have you fed your child any of the following?").not.containsAnswerConceptName("No");
-
+            .and.when.valueInEncounter("Are you feeding your child any other liquids?").is.yes;
         return statusBuilder.build();
     }
 
@@ -90,18 +87,10 @@ class ChildHomeVisitFilter {
         return statusBuilder.build();
     }
 
-    areYouFeedingYourChildAnyOtherLiquids(programEncounter, formElement) {
-        const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.ageInMonths.greaterThanOrEqualTo(6)
-            .and.when.ageInMonths.lessThan(12);
-        return statusBuilder.build();
-    }
-
     haveYouFedYourChildAnyOfTheFollowing(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
         statusBuilder.show()
-            .when.valueInEncounter("Are you feeding your child any other liquids?").is.yes
-            .or.when.ageInMonths.lessThan(6);
+            .when.valueInEncounter("Are you feeding your child any other liquids?").is.yes;
         return statusBuilder.build();
     }
 
@@ -246,7 +235,9 @@ class ChildHomeVisitFilter {
 
     @WithStatusBuilder
     ckCounselAccordinglyForNotFeedingOtherLiquids([], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter('Are you feeding your child any other liquids?').containsAnswerConceptName("No");
+        statusBuilder.show().when
+            .valueInEncounter('Are you feeding your child any other liquids?').containsAnswerConceptName("No")
+            .and.when.ageInMonths.is.greaterThanOrEqualTo(6);
     }
 
     @WithStatusBuilder
