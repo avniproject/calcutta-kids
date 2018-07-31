@@ -149,6 +149,36 @@
           "comment": "Fundal height from pubic symphysis"
         }
       ]
+    },
+    {
+      "comment": "ANC Lab Diagnostics - USG",
+      "uuid": "353eec4f-052f-466b-9acb-7a740e5c19e5",
+      "formElements": [
+        {
+          "comment": "US Scanning Done",
+          "uuid": "e5e671fe-0acf-44e1-9629-0796b274fe65"
+        },
+        {
+          "comment": "USG Scanning Date",
+          "uuid": "3a7a4451-dceb-439b-aab3-9e968bd5be1b"
+        },
+        {
+          "comment": "Number of foetus",
+          "uuid": "bbbaa09b-b314-4123-a578-2e4b3f8d0b97"
+        },
+        {
+          "comment": "Liquour",
+          "uuid": "e6126713-09aa-4a04-8f60-414dbd4125e5"
+        },
+        {
+          "comment": "Placenta Previa",
+          "uuid": "6bc5a76c-b45a-4489-b206-a21aca3e7fd3"
+        },
+        {
+          "comment": "Foetal presentation",
+          "uuid": "a4194db7-7d4b-4deb-9b1e-4f42ab5ded94"
+        }
+      ]
     }
   ]
 }

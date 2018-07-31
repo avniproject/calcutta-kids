@@ -108,6 +108,24 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "comment": "USG Scan Results",
+      "uuid": "5b4f6a0d-0f66-4f03-bb06-ea237ddc3af4",
+      "formElements": [
+        {
+          "name": "Viability",
+          "uuid": "15daeb4d-0c0d-4455-af72-5e1f5365ccca",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "401e603c-e5a9-4612-98eb-5a7faf9a4f8b",
+            "comment": "USG Scanning Report - Viability"
+          },
+          "displayOrder": 3.2,
+          "mandatory": true
+        }
+      ]
     }
   ]
 }

@@ -46,12 +46,16 @@
   {
     "name": "Blood Sugar - Random",
     "uuid": "6a069dc8-2ace-4ad3-a481-f4afff4fb276",
-    "dataType": "Text"
+    "dataType": "Numeric",
+    "highNormal": 139,
+    "unit": "mg/dl"
   },
   {
     "name": "Blood Sugar - Fasting",
     "uuid": "3de126a4-719a-4dbe-b884-85f7196b5b54",
-    "dataType": "Text"
+    "dataType": "Numeric",
+    "highNormal": 139,
+    "unit": "mg/dl"
   },
   {
     "uuid": "c4b3cee7-e338-4cc5-9027-d105495afbc5",

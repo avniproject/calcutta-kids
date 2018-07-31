@@ -34,46 +34,6 @@
       ]
     },
     {
-      "comment": "ANC Lab Diagnostics - USG",
-      "uuid": "353eec4f-052f-466b-9acb-7a740e5c19e5",
-      "formElements": [
-        {
-          "name": "Estimated gestational age",
-          "uuid": "aa547459-4ee5-4bb2-bc31-d2a118b8a7e6",
-          "keyValues": [],
-          "concept": {
-            "comment": "Gestational age",
-          "uuid": "4b7fcf0b-3ecb-49fe-882d-959b58e7229d"
-          },
-          "displayOrder": 2.1,
-          "mandatory": false
-        },
-        {
-          "name": "Viability",
-          "uuid": "94599241-13ca-48d3-b9f3-a49217d40d6f",
-          "keyValues": [],
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "401e603c-e5a9-4612-98eb-5a7faf9a4f8b",
-            "comment": "USG Scanning Report - Viability"
-          },
-          "displayOrder": 3.9,
-          "mandatory": true
-        },
-        {
-          "name": "Remarks",
-          "uuid": "3d5d20ca-aa89-400a-b090-8d02e0dfad3f",
-          "keyValues": [],
-          "concept": {
-            "comment": "USG Scanning Report - Remarks",
-            "uuid": "65fbbd13-0126-45cc-b1a2-a5db40843d16"
-          },
-          "displayOrder": 6.9,
-          "mandatory": false
-        }
-      ]
-    },
-    {
       "name": "Referral & Followup",
       "uuid": "1dc961c3-63fe-4b42-9ef0-0148e112aee7",
       "display": "Referral & Followup",
