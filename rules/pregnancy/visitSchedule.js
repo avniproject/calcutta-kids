@@ -8,6 +8,7 @@ const DeliveryRule = RuleFactory("cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2", "VisitS
 const PNCRule = RuleFactory("78b1400e-8100-4ba6-b78e-fef580f7fb77", "VisitSchedule");
 const AbortionRule = RuleFactory("32428a7e-d553-4172-b697-e8df3bbfb61d", "VisitSchedule");
 const PostAbortionRule = RuleFactory("a7ec8c80-edb2-4751-a5ec-498a9e0240a0", "VisitSchedule");
+const PostAncGmpRule = RuleFactory("4632c1f5-59cd-4e65-899c-beb2c87a3bff", "VisitSchedule");
 
 @EnrolmentRule("f94d4f18-9ff6-4f7b-988e-e7956d947bb0", "PregnancyPostPregnancyEnrolmentVisits", 10.0)
 class PregnancyPostEnrolmentVisits {
@@ -15,8 +16,17 @@ class PregnancyPostEnrolmentVisits {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
         let earliestDate = RuleHelper.appropriateFirstOfTheMonth(programEnrolment.enrolmentDateTime);
         RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
-        RuleHelper.addSchedule(scheduleBuilder, 'ANC GMP', 'ANC GMP', moment(earliestDate).add(21, 'days'), 9);
+        RuleHelper.addSchedule(scheduleBuilder, 'First ANC GMP', 'ANC GMP', moment(earliestDate).add(21, 'days').toDate(), 9);
         return scheduleBuilder.getAllUnique("encounterType");
+    }
+}
+
+@PostAncGmpRule("30eabd2e-9352-41e0-a5bc-988bd83bb7a2", "PregnancyPostAncGmpVisits", 10.0)
+class PregnancyPostAncGmpVisits {
+    static exec(programEncounter, visitSchedule = [], scheduleConfig) {
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let earliestDate = RuleHelper.appropriateFirstOfTheMonth(programEncounter.encounterDateTime);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC GMP', 'ANC GMP', moment(earliestDate).add(21, 'days').toDate(), 9);
     }
 }
 
@@ -78,4 +88,12 @@ class PregnancyPostPostAbortionVisits {
     }
 }
 
-module.exports = {PregnancyPostEnrolmentVisits: PregnancyPostEnrolmentVisits, PregnancyPostANCHomeVisitVisits: PregnancyPostANCHomeVisitVisits, PregnancyPostDeliveryVisits: PregnancyPostDeliveryVisits, PregnancyPostPNCVisits: PregnancyPostPNCVisits};
+module.exports = {
+    PregnancyPostEnrolmentVisits: PregnancyPostEnrolmentVisits,
+    PregnancyPostANCHomeVisitVisits: PregnancyPostANCHomeVisitVisits,
+    PregnancyPostDeliveryVisits: PregnancyPostDeliveryVisits,
+    PregnancyPostPNCVisits: PregnancyPostPNCVisits,
+    PregnancyPostAbortionVisits: PregnancyPostAbortionVisits,
+    PregnancyPostPostAbortionVisits: PregnancyPostPostAbortionVisits,
+    PregnancyPostAncGmpVisits: PregnancyPostAncGmpVisits
+};

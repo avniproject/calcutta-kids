@@ -1,5 +1,5 @@
 const {RuleFactory} = require('rules-config/rules');
-const {PregnancyPostANCHomeVisitVisits, PregnancyPostDeliveryVisits, PregnancyPostEnrolmentVisits, PregnancyPostPNCVisits} = require('./pregnancy/visitSchedule');
+const {PregnancyPostANCHomeVisitVisits, PregnancyPostDeliveryVisits, PregnancyPostEnrolmentVisits, PregnancyPostPNCVisits, PregnancyPostAbortionVisits, PregnancyPostPostAbortionVisits, PregnancyPostAncGmpVisits} = require('./pregnancy/visitSchedule');
 const {MotherPostEnrolmentVisits, MotherPostHomeVisitVisits} = require('./mother/visitSchedule');
 const {ChildPostChildEnrolmentVisits, ChildPostHomeVisitVisits, ChildPostPNCVisits} = require('./child/visitSchedule');
 const {GeneralPostDoctorVisitVisits} = require('./general/generalVisitSchedule');
@@ -25,8 +25,20 @@ class PostProgramEncounterCancelVisits {
 }
 
 module.exports = {
-    PregnancyPostANCHomeVisitVisits, PregnancyPostDeliveryVisits, PregnancyPostEnrolmentVisits, PregnancyPostPNCVisits,
-    MotherPostEnrolmentVisits, MotherPostHomeVisitVisits,
-    ChildPostChildEnrolmentVisits, ChildPostHomeVisitVisits, ChildPostPNCVisits,
+    PregnancyPostANCHomeVisitVisits,
+    PregnancyPostDeliveryVisits,
+    PregnancyPostEnrolmentVisits,
+    PregnancyPostPNCVisits,
+    PregnancyPostAbortionVisits,
+    PregnancyPostPostAbortionVisits,
+    PregnancyPostAncGmpVisits,
+
+    MotherPostEnrolmentVisits,
+    MotherPostHomeVisitVisits,
+
+    ChildPostChildEnrolmentVisits,
+    ChildPostHomeVisitVisits,
+    ChildPostPNCVisits,
+
     GeneralPostDoctorVisitVisits
 };
