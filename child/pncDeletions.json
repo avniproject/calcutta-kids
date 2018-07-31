@@ -9,16 +9,18 @@
         {
           "uuid": "a8aba1cf-be72-4bb0-bf04-d051ddbe5857",
           "comment": "Child feeds only on mothers milk?"
-        }
-      ]
-    },
-    {
-      "uuid": "daea5603-e7c8-449f-85ad-da9be62c2288",
-      "comment": "PNC Complaints",
-      "formElements": [
+        },
         {
           "comment": "Does feel hot or have the chills?",
           "uuid": "fe794b79-cd35-4a43-a203-e56fdfe08b63"
+        },
+        {
+          "uuid": "6181ecd8-3bfa-433b-96b1-768186bb03f5",
+          "comment": "Urination complaints (moving to Recent History)"
+        },
+        {
+          "uuid": "6564bc9a-aef4-48cf-b517-69848358f3e0",
+          "comment": "Stool related complaints (moving to Recent History)"
         }
       ]
     },

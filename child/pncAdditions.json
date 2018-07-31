@@ -14,8 +14,29 @@
             "name": "Duration in hours between birth and first urination",
             "uuid": "0a3fb6d3-ea49-4902-95ae-e2514d3739b6"
           },
-          "displayOrder": 1.1,
+          "displayOrder": 1,
           "mandatory": false
+        },
+        {
+          "uuid": "38e7ea33-2d5c-4246-9996-99b5fd17c82e",
+          "name": "How many times has your baby urinated in the past 24 hours?",
+          "concept": {
+            "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
+            "comment": "Number of times urinated in the last 24 hours"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Urination Complaints",
+          "uuid": "d5a1b709-e096-4c93-8997-a990d2f43faf",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "43a78b5a-f4da-440d-9614-80af65090e1f"
+          },
+          "displayOrder": 3,
+          "mandatory": true
         },
         {
           "name": "When did the child pass meconium for the first time after birth?",
@@ -25,8 +46,19 @@
             "name": "Duration in hours between birth and meconium",
             "uuid": "e7766535-327c-481c-8eb9-bc43cdb2fab5"
           },
-          "displayOrder": 2.1,
+          "displayOrder": 4,
           "mandatory": false
+        },
+        {
+          "name": "Stool related complaints",
+          "uuid": "aed60bd0-6b0e-4702-ac46-af4a6c0e1fa9",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "bcd4495f-41fa-494b-a5d9-a766c87f37f9"
+          },
+          "displayOrder": 5,
+          "mandatory": true
         }
       ]
     },
@@ -171,7 +203,7 @@
           "displayOrder": 10
         },
         {
-          "name": "CK Counsell to promote exclusive breastfeeding",
+          "name": "Counsel to promote exclusive breastfeeding",
           "uuid": "884b026c-d37f-4904-a3ca-e98c23eacf5b",
           "keyValues": [],
           "concept": {
@@ -229,7 +261,7 @@
           }
         },
         {
-          "name": "CK Counselling for feeding your child frequently",
+          "name": "Counsel to feed child frequently",
           "displayOrder": 26,
           "uuid": "e9909da1-8b80-4595-a6ac-f2853f0acfb2",
           "concept": {
@@ -237,15 +269,6 @@
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "mandatory": false
-        },
-        {
-          "uuid": "38e7ea33-2d5c-4246-9996-99b5fd17c82e",
-          "name": "How many times has your baby urinated in the past 24 hours?",
-          "displayOrder": 27,
-          "concept": {
-            "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
-            "comment": "Number of times urinated in the last 24 hours"
-          }
         }
       ]
     },

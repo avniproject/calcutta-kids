@@ -12,6 +12,20 @@ const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'fo
 class ChildPNCFormHandler {
 
     @WithStatusBuilder
+    whenDidTheChildPassUrineForTheFirstTimeAfterBirth([], statusBuilder) {
+        statusBuilder.show()
+            .when.valueInEntireEnrolment("Duration in hours between birth and first urination").is.notDefined
+            .or.when.valueInEncounter("Duration in hours between birth and first urination").is.defined;
+    }
+
+    @WithStatusBuilder
+    whenDidTheChildPassMeconiumForTheFirstTimeAfterBirth([], statusBuilder) {
+        statusBuilder.show()
+            .when.valueInEntireEnrolment("Duration in hours between birth and meconium").is.notDefined
+            .or.when.valueInEncounter("Duration in hours between birth and meconium").is.defined;
+    }
+
+    @WithStatusBuilder
     activityRelatedComplaints([], statusBuilder) {
         statusBuilder.skipAnswers('Sluggish movements', 'Unconscious', 'Not sucking milk at all');
     }
@@ -45,7 +59,7 @@ class ChildPNCFormHandler {
     whatOtherThingsWasBabyFedBeforeBreastfeeding() { }
 
     @WithStatusBuilder
-    ckCounsellToPromoteExclusiveBreastfeeding([], statusBuilder) {
+    counselToPromoteExclusiveBreastfeeding([], statusBuilder) {
         statusBuilder.show().when
             .valueInEncounter('Things baby was fed since beginning breastfeeding').is.defined;
     }
@@ -67,7 +81,7 @@ class ChildPNCFormHandler {
     specifyOtherBreastfeedingProblems() { }
 
     @WithStatusBuilder
-    ckCounsellingForFeedingYourChildFrequently([], statusBuilder) {
+    counselToFeedChildFrequently([], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Number of times breastfed in the last 24 hours").lessThan(8);
     }
 
