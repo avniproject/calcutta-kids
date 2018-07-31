@@ -19,7 +19,6 @@
           "name": "Are you still breast feeding your child?",
           "displayOrder": 1,
           "uuid": "026bd129-eb76-4e40-a215-9b76bf87516e",
-          "comment": "counsel accordingly missing",
           "mandatory": true
         },
         {
@@ -52,7 +51,6 @@
           "name": "Are you feeding your child any other liquids?",
           "displayOrder": 3,
           "uuid": "64fef110-d470-46ae-83fc-055ee6996db9",
-          "comment": "counsel accordingly",
           "mandatory": true
         },
         {
@@ -138,7 +136,6 @@
           "name": "Have you been feeding solids/semi-solids to the child?",
           "displayOrder": 10,
           "uuid": "89d51bc2-001f-4989-8552-e131fa47e73a",
-          "comment": "counsel accordingly",
           "mandatory": true
         },
         {
@@ -186,14 +183,13 @@
         },
         {
           "concept": {
-            "name": "What type of semi-solid/solid foods did you feed your child yesterday?",
-            "uuid": "5dd91413-2b15-414d-9047-a02bd9601b13"
+            "uuid": "2a5f655e-3351-42c4-87fd-e3a447eeedaa",
+            "comment": "Food eaten yesterday"
           },
           "type": "MultiSelect",
           "name": "What type of semi-solid/solid foods did you feed your child yesterday?",
           "displayOrder": 13,
           "uuid": "1d5748e3-2d68-46a7-ad53-7ed8ab61b095",
-          "comment": "vegetable as answer is missing",
           "mandatory": true
         },
         {
@@ -205,7 +201,6 @@
           "name": "How many times a day is the child eating snacks?",
           "displayOrder": 14,
           "uuid": "d8eba285-a7c0-4a8b-8e25-ff09f58138f0",
-          "comment": "3+ cousnel accordi",
           "mandatory": true
         },
         {

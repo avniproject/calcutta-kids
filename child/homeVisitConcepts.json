@@ -208,37 +208,6 @@
     ]
   },
   {
-    "name": "What type of semi-solid/solid foods did you feed your child yesterday?",
-    "uuid": "5dd91413-2b15-414d-9047-a02bd9601b13",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "e825f97d-26d4-4a44-b2fe-024d9e26d875",
-        "name": "Animal protein"
-      },
-      {
-        "uuid": "14405510-d8ea-45c0-a0cb-d5dc55260d33",
-        "name": "Vegetable protein"
-      },
-      {
-        "uuid": "323c3c9b-a4a6-40e1-938f-f62755805ecc",
-        "name": "Fruit"
-      },
-      {
-        "uuid": "351f31c1-5f14-4859-8585-3d395556b1f8",
-        "name": "Dairy"
-      },
-      {
-        "uuid": "a8c837f4-345c-4041-ac0a-b91945bad804",
-        "name": "Starch"
-      },
-      {
-        "uuid": "d74412da-9cce-41fa-a141-c07cc8c60ec0",
-        "name": "Instant food"
-      }
-    ]
-  },
-  {
     "name": "How many times a day is the child eating snacks?",
     "uuid": "3cc301da-e4df-4e0b-add8-9d03f7383310",
     "dataType": "Coded",
