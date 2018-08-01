@@ -1,8 +1,8 @@
+import PregnancyHelper from "../PregnancyHelper";
+
 const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper} = require('rules-config/rules');
 const filter = RuleFactory('5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99', 'ViewFilter');
 const RuleHelper = require('../RuleHelper');
-
-const TRIMESTER_MAPPING = new Map([[1, {from: 0, to: 12}], [2, {from: 13, to: 28}], [3, {from: 29, to: 40}]]);
 
 @filter('9fb619f0-bf38-46fb-84db-b64f0574f5b0', 'Skip logic for ANCHomeVisit', 1, {})
 class ANCHomeVisitFilterHandler {
@@ -11,19 +11,8 @@ class ANCHomeVisitFilterHandler {
             .getFormElementsStatusesWithoutDefaults(new ANCHomeVisitFilterHandler(), programEncounter, formElementGroup, today);
     }
 
-    static gestationalAge(enrolment, toDate) {
-        return FormElementsStatusHelper.weeksBetween(toDate, enrolment.getObservationValue("Last menstrual period"));
-    }
-
-    static currentTrimester(enrolment, toDate) {
-        return [...TRIMESTER_MAPPING.keys()]
-            .find((trimester) =>
-                ANCHomeVisitFilterHandler.gestationalAge(enrolment, toDate) <= TRIMESTER_MAPPING.get(trimester).to &&
-                ANCHomeVisitFilterHandler.gestationalAge(enrolment, toDate) >= TRIMESTER_MAPPING.get(trimester).from);
-    }
-    
     static afterTrimester(programEncounter, formElement, trimesterNumber) {
-        const currentTrimester = ANCHomeVisitFilterHandler.currentTrimester(programEncounter['programEnrolment'], programEncounter['encounterDateTime']);
+        const currentTrimester = PregnancyHelper.currentTrimester(programEncounter['programEnrolment'], programEncounter['encounterDateTime']);
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         statusBuilder.show().whenItem(currentTrimester).greaterThan(trimesterNumber);
         return statusBuilder.build();
@@ -38,7 +27,7 @@ class ANCHomeVisitFilterHandler {
     }
 
     whenDidTheMovementStopOrDecrease(programEncounter, formElement) {
-        const currentTrimester = ANCHomeVisitFilterHandler.currentTrimester(programEncounter['programEnrolment'], programEncounter['encounterDateTime']);
+        const currentTrimester = PregnancyHelper.currentTrimester(programEncounter['programEnrolment'], programEncounter['encounterDateTime']);
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
 
         if (currentTrimester < 2) {

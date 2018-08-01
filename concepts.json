@@ -1642,11 +1642,6 @@
     "uuid": "abf8ba39-d12d-421e-aab1-e36e88bcd89a"
   },
   {
-    "name": "Refer to Calcutta Kids doctor",
-    "uuid": "daced408-70e7-4d7b-9bda-7245df407285",
-    "dataType": "NA"
-  },
-  {
     "name": "High fever (above 102°C)",
     "uuid": "f6628b6c-0c6e-4deb-bc5c-faaf6d22a4be",
     "dataType": "NA"
@@ -2762,6 +2757,10 @@
         "abnormal": true
       }
     ]
+  },
+  {
+    "name": "Inform CK program manager",
+    "uuid": "8ad45bf1-cdba-44bd-86cf-fb3e0972da5e"
   },
   {
     "name": "Referral",

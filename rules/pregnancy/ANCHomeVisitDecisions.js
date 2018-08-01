@@ -1,3 +1,5 @@
+import PregnancyHelper from "../PregnancyHelper";
+
 const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper, complicationsBuilder} = require('rules-config/rules');
 const ComplicationsBuilder = complicationsBuilder;
 
@@ -11,12 +13,15 @@ class ANCHomeVisitDecisions {
             complicationsConcept: 'Referral'
         });
 
-        referralBuilder.addComplication("Refer to hospital")
-            .when.valueInEncounter("Pregnancy complications").containsAnyAnswerConceptName("Convulsions without fever", "Leak of amniotic fluid", "Per vaginal bleeding", "Excessive vomiting and inability to consume anything orally");
-
-        referralBuilder.addComplication("Refer to Calcutta Kids doctor")
-            .when.valueInEncounter("Pregnancy complications").is.defined.and.
-            valueInEncounter("Pregnancy complications").not.containsAnyAnswerConceptName("Convulsions without fever", "Leak of amniotic fluid", "Per vaginal bleeding", "Excessive vomiting and inability to consume anything orally");
+        let currentTrimester = PregnancyHelper.currentTrimester(programEncounter.programEnrolment, programEncounter.encounterDateTime);
+        let group2 = ["Convulsions without fever", "PV leaking", "Per vaginal bleeding", "Excessive vomiting and inability to consume anything orally in last 24 hours"];
+        if (currentTrimester === 1) {
+            referralBuilder.addComplication("Refer to Calcutta Kids doctor").when.valueInEncounter("Pregnancy complications").is.defined.and.valueInEncounter("Pregnancy complications").not.containsAnyAnswerConceptName(...group2);
+            referralBuilder.addComplication("Refer to hospital").when.valueInEncounter("Pregnancy complications").containsAnyAnswerConceptName(...group2);
+        } else if (currentTrimester >= 2) {
+            referralBuilder.addComplication("Refer to Calcutta Kids doctor").when.valueInEncounter("Pregnancy complications").is.defined;
+            referralBuilder.addComplication("Inform CK program manager").when.valueInEncounter("Pregnancy complications").containsAnyAnswerConceptName(...group2);
+        }
         return referralBuilder.getComplications();
     }
 
