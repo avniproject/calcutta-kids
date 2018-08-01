@@ -233,16 +233,6 @@
           "displayOrder": 2
         },
         {
-          "uuid": "0161296e-7211-4343-9bb0-d2c25e127a22",
-          "name": "TT3 Date",
-          "concept": {
-            "comment": "TT3 Date",
-            "uuid": "d9861ff2-3ba2-4296-8ada-4a1773412e3d"
-          },
-          "display": "TT3 Date",
-          "displayOrder": 3
-        },
-        {
           "uuid": "cf5cb7e0-7f7f-4f21-8b5e-eeb4961b788e",
           "name": "TT Booster Date",
           "concept": {
