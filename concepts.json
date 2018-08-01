@@ -2621,23 +2621,6 @@
     ]
   },
   {
-    "name": "Referral",
-    "uuid": "15916909-1512-4e8c-800f-9c22409d7012",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "daced408-70e7-4d7b-9bda-7245df407285",
-        "comment": "Refer to Calcutta Kids doctor",
-        "abnormal": false
-      },
-      {
-        "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
-        "comment": "Refer to hospital",
-        "abnormal": false
-      }
-    ]
-  },
-  {
     "name": "Other pregnancy complaints",
     "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
     "dataType": "Text"
