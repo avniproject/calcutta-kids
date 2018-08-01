@@ -46,20 +46,20 @@ class PregnancyPostDeliveryVisits {
         if (programEncounter.programEnrolment.hasEncounterOfType('PNC')) return visitSchedule;
 
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        scheduleBuilder.addSchedule(scheduleBuilder, 'PNC 1', 'PNC', programEncounter.encounterDateTime, 1);
+        RuleHelper.addSchedule(scheduleBuilder, 'PNC 1', 'PNC', programEncounter.encounterDateTime, 1);
         return scheduleBuilder.getAllUnique("encounterType");
     }
 }
 
 @PNCRule("4775ad43-acbf-42af-9952-2d4b8896cbfc", "PregnancyPostMotherPNCVisits", 11.0)
-class PregnancyPostPNCVisits {
+    class PregnancyPostPNCVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let dateOfDelivery = programEncounter.findObservationInEntireEnrolment("Date of delivery");
-        if (_.isNil(dateOfDelivery) && programEncounter.name === 'PNC 1') {
+        let deliveryDateAsOfDate = programEncounter.programEnrolment.findObservationValueInEntireEnrolment("Date of delivery",false);
+        if (_.isNil(deliveryDateAsOfDate) && programEncounter.name === 'PNC 1') {
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', programEncounter.encounterDateTime, 5);
         } else if (programEncounter.name === 'PNC 1') {
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', moment(dateOfDelivery).add(7, 'days').toDate(), 8);
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', moment(deliveryDateAsOfDate.value).add(7, 'days').toDate(), 8);
         } else {
             return visitSchedule;
         }
@@ -80,7 +80,7 @@ class PregnancyPostPostAbortionVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let numberOfPostAbortionEncounters = programEncounter.programEnrolment.numberOfEncountersOfType('Post abortion home visit');
-        if (numberOfPostAbortionEncounters < 2) {
+        if (numberOfPostAbortionEncounters < 3) {
             let gap = numberOfPostAbortionEncounters > 1 ? 14 : 7;
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Post abortion home visit', 'Post abortion home visit', moment(programEncounter.encounterDateTime).add(gap, 'days').toDate(), 7);
         }

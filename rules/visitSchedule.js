@@ -40,5 +40,6 @@ module.exports = {
     ChildPostHomeVisitVisits,
     ChildPostPNCVisits,
 
-    GeneralPostDoctorVisitVisits
+    GeneralPostDoctorVisitVisits,
+    PostProgramEncounterCancelVisits
 };
