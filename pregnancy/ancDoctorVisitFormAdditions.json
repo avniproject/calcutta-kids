@@ -263,6 +263,22 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "comment": "ANC Vaccination",
+      "uuid": "f9301aef-48af-4ee7-8435-e66c1e23fd21",
+      "formElements": [
+        {
+          "uuid": "2a76ccc7-d513-4041-8d86-78bb5dbd9761",
+          "name": "Date of deworming",
+          "concept": {
+            "comment": "Date of deworming",
+            "uuid": "e638d96b-ad09-4fec-9e01-2e4b1a243c6d"
+          },
+          "display": "Date of deworming",
+          "displayOrder": 3.1
+        }
+      ]
     }
   ]
 }
