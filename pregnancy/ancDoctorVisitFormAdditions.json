@@ -10,10 +10,12 @@
         {
           "name": "Height",
           "uuid": "a98581c6-99ac-43ac-ac7e-90f40d646a7f",
-          "keyValues": [{
-            "key": "editable",
-            "value": false
-          }],
+          "keyValues": [
+            {
+              "key": "editable",
+              "value": false
+            }
+          ],
           "concept": {
             "comment": "Height",
             "uuid": "d883d5fe-e17d-4136-b989-089fa0295e34"
@@ -24,7 +26,7 @@
           "name": "Nutrients",
           "uuid": "b4198c4d-cf9c-419c-b2c7-009a308367fc",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "e1754fdb-1015-4d9e-a6e1-3b9dc8fc0317",
             "comment": "Nutrients"
