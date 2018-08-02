@@ -2575,6 +2575,7 @@
   {
     "uuid": "739f9a56-c02c-4f81-927b-69842d78c1e8",
     "comment": "Visit cancel reason",
+    "dataType": "Coded",
     "answers": [
       {
         "uuid": "5b30a5b5-8ab5-4643-a424-2992f2b8df11",

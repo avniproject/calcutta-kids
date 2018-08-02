@@ -44,6 +44,18 @@ deploy_checklists:
 	$(call _curl,POST,checklistDetail,@child/checklist.json)
 	@echo
 
+deploy_non_coded_concepts:
+	node nonCoded ./concepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./child/homeVisitConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./child/enrolmentConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./child/pncConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./pregnancy/ancHomeVisitConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./doctorVisitConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./pregnancy/pregnancyConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./pregnancy/deliveryConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./pregnancy/ancDoctorVisitConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./pregnancy/pncConcepts.json | $(call _curl,POST,concepts,@-)
+
 deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
