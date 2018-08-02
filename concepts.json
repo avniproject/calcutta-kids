@@ -2738,12 +2738,175 @@
         "uuid": "b2b23da9-17f3-4c77-8e20-5f91652d50ab",
         "name": "Insufficient urination",
         "abnormal": true
+      },
+      {
+        "uuid": "a3d14ff5-8142-436d-99fb-eb84dd6d489e",
+        "comment": "Moderate ankle, body or face swelling",
+        "abnormal": true
+      },
+      {
+        "uuid": "39379c57-8f29-4d46-a600-d28b90b963da",
+        "comment": "Painful or difficult urination",
+        "abnormal": true
+      },
+      {
+        "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a",
+        "comment": "Dizziness",
+        "abnormal": true
+      },
+      {
+        "uuid": "2a2768ac-713b-4f74-85af-4a1fc5a832d1",
+        "comment": "Morning Sickness",
+        "abnormal": true
+      },
+      {
+        "uuid": "7cdba040-6fad-4a43-8306-4a284178cf5d",
+        "comment": "Excessive vomiting and inability to consume anything orally in last 24 hours",
+        "abnormal": true
+      },
+      {
+        "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e",
+        "comment": "Excess fatigue",
+        "abnormal": true
+      },
+      {
+        "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6",
+        "comment": "Convulsions without fever",
+        "abnormal": true
+      },
+      {
+        "uuid": "97652252-0024-434d-8749-078b395fb6f2",
+        "comment": "Pain on urination",
+        "abnormal": true
+      },
+      {
+        "uuid": "5ba2d201-a120-4f2d-92e6-ca97d48b60b0",
+        "comment": "Severe Abdominal Pain",
+        "abnormal": true
+      },
+      {
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "comment": "Fever",
+        "abnormal": true
+      },
+      {
+        "uuid": "fe8c09ce-4135-4092-a693-3ad9bd8edb44",
+        "comment": "Difficulty breathing",
+        "abnormal": true
+      },
+      {
+        "uuid": "2367268e-5988-4db3-a0ca-19438bd5931c",
+        "comment": "Blurred vision",
+        "abnormal": true
+      },
+      {
+        "uuid": "d4276c48-2db2-494b-b041-97ffc1146c83",
+        "comment": "Decreased Foetal movements",
+        "abnormal": true
+      },
+      {
+        "uuid": "5a6ab8bb-fb14-4747-a66e-3961d718a83e",
+        "comment": "Severe headache",
+        "abnormal": true
+      },
+      {
+        "uuid": "79865f4d-1946-40b4-a823-28281fc58ba0",
+        "comment": "Per vaginal bleeding",
+        "abnormal": true
+      },
+      {
+        "uuid": "f7a77870-e1c6-47b7-9d72-01eec4adf0f5",
+        "comment": "PV leaking",
+        "abnormal": true
       }
     ]
   },
   {
     "name": "Inform CK program manager",
-    "uuid": "8ad45bf1-cdba-44bd-86cf-fb3e0972da5e"
+    "uuid": "8ad45bf1-cdba-44bd-86cf-fb3e0972da5e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "a3d14ff5-8142-436d-99fb-eb84dd6d489e",
+        "comment": "Moderate ankle, body or face swelling",
+        "abnormal": true
+      },
+      {
+        "uuid": "39379c57-8f29-4d46-a600-d28b90b963da",
+        "comment": "Painful or difficult urination",
+        "abnormal": true
+      },
+      {
+        "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a",
+        "comment": "Dizziness",
+        "abnormal": true
+      },
+      {
+        "uuid": "2a2768ac-713b-4f74-85af-4a1fc5a832d1",
+        "comment": "Morning Sickness",
+        "abnormal": true
+      },
+      {
+        "uuid": "7cdba040-6fad-4a43-8306-4a284178cf5d",
+        "comment": "Excessive vomiting and inability to consume anything orally in last 24 hours",
+        "abnormal": true
+      },
+      {
+        "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e",
+        "comment": "Excess fatigue",
+        "abnormal": true
+      },
+      {
+        "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6",
+        "comment": "Convulsions without fever",
+        "abnormal": true
+      },
+      {
+        "uuid": "97652252-0024-434d-8749-078b395fb6f2",
+        "comment": "Pain on urination",
+        "abnormal": true
+      },
+      {
+        "uuid": "5ba2d201-a120-4f2d-92e6-ca97d48b60b0",
+        "comment": "Severe Abdominal Pain",
+        "abnormal": true
+      },
+      {
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "comment": "Fever",
+        "abnormal": true
+      },
+      {
+        "uuid": "fe8c09ce-4135-4092-a693-3ad9bd8edb44",
+        "comment": "Difficulty breathing",
+        "abnormal": true
+      },
+      {
+        "uuid": "2367268e-5988-4db3-a0ca-19438bd5931c",
+        "comment": "Blurred vision",
+        "abnormal": true
+      },
+      {
+        "uuid": "d4276c48-2db2-494b-b041-97ffc1146c83",
+        "comment": "Decreased Foetal movements",
+        "abnormal": true
+      },
+      {
+        "uuid": "5a6ab8bb-fb14-4747-a66e-3961d718a83e",
+        "comment": "Severe headache",
+        "abnormal": true
+      },
+      {
+        "uuid": "79865f4d-1946-40b4-a823-28281fc58ba0",
+        "comment": "Per vaginal bleeding",
+        "abnormal": true
+      },
+      {
+        "uuid": "f7a77870-e1c6-47b7-9d72-01eec4adf0f5",
+        "comment": "PV leaking",
+        "abnormal": true
+      }
+    ]
   },
   {
     "name": "Referral",
@@ -2759,6 +2922,93 @@
         "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
         "comment": "Refer to hospital",
         "abnormal": false
+      }
+    ]
+  },
+  {
+    "comment": "Refer to the hospital for",
+    "uuid": "18cfc41a-2110-484e-a3c6-3f5592387324",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "a3d14ff5-8142-436d-99fb-eb84dd6d489e",
+        "comment": "Moderate ankle, body or face swelling",
+        "abnormal": true
+      },
+      {
+        "uuid": "39379c57-8f29-4d46-a600-d28b90b963da",
+        "comment": "Painful or difficult urination",
+        "abnormal": true
+      },
+      {
+        "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a",
+        "comment": "Dizziness",
+        "abnormal": true
+      },
+      {
+        "uuid": "2a2768ac-713b-4f74-85af-4a1fc5a832d1",
+        "comment": "Morning Sickness",
+        "abnormal": true
+      },
+      {
+        "uuid": "7cdba040-6fad-4a43-8306-4a284178cf5d",
+        "comment": "Excessive vomiting and inability to consume anything orally in last 24 hours",
+        "abnormal": true
+      },
+      {
+        "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e",
+        "comment": "Excess fatigue",
+        "abnormal": true
+      },
+      {
+        "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6",
+        "comment": "Convulsions without fever",
+        "abnormal": true
+      },
+      {
+        "uuid": "97652252-0024-434d-8749-078b395fb6f2",
+        "comment": "Pain on urination",
+        "abnormal": true
+      },
+      {
+        "uuid": "5ba2d201-a120-4f2d-92e6-ca97d48b60b0",
+        "comment": "Severe Abdominal Pain",
+        "abnormal": true
+      },
+      {
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "comment": "Fever",
+        "abnormal": true
+      },
+      {
+        "uuid": "fe8c09ce-4135-4092-a693-3ad9bd8edb44",
+        "comment": "Difficulty breathing",
+        "abnormal": true
+      },
+      {
+        "uuid": "2367268e-5988-4db3-a0ca-19438bd5931c",
+        "comment": "Blurred vision",
+        "abnormal": true
+      },
+      {
+        "uuid": "d4276c48-2db2-494b-b041-97ffc1146c83",
+        "comment": "Decreased Foetal movements",
+        "abnormal": true
+      },
+      {
+        "uuid": "5a6ab8bb-fb14-4747-a66e-3961d718a83e",
+        "comment": "Severe headache",
+        "abnormal": true
+      },
+      {
+        "uuid": "79865f4d-1946-40b4-a823-28281fc58ba0",
+        "comment": "Per vaginal bleeding",
+        "abnormal": true
+      },
+      {
+        "uuid": "f7a77870-e1c6-47b7-9d72-01eec4adf0f5",
+        "comment": "PV leaking",
+        "abnormal": true
       }
     ]
   }
