@@ -1,5 +1,5 @@
-const { FormElementStatusBuilder, SkipLogic } = require('rules-config/rules');
-const { when, show, contains, is: equals, buildAndExport } = SkipLogic;
+const {FormElementStatusBuilder, SkipLogic} = require('rules-config/rules');
+const {when, show, contains, is: equals, buildAndExport} = SkipLogic;
 
 const pregnancyTestResultFunc = (programEncounter, formElement) => {
     const pregnancyTestObs = programEncounter.findLatestObservationInEntireEnrolment('Pregnancy test', programEncounter);
@@ -29,20 +29,20 @@ filters.rules = [
         .show('whyWasThePatientReferredToTheHospital',
             'didPatientTakeReferralAdviceAndGoToHospital'),
     when(pregnancyTestResultFunc, equals('Positive'))
-        .show('doYouWantToKeepYourChild'),
+        .show('Do you want to keep your child?'),
     when(pregnancyTestResultFunc, equals('Positive'))
         .and(when('Do you want to keep your child?', contains('Yes')))
         .show('Encourage woman to register her pregnancy in office'),
     when(pregnancyTestResultFunc, equals('Positive'))
         .and(when('Do you want to keep your child?', contains('No')))
-        .show('doYouPlanToGoToAHospitalToPursueAnAbortion'),
+        .show('Do you plan to go to a hospital to pursue an abortion?'),
     when(pregnancyTestResultFunc, equals('Positive'))
         .and(when('Do you plan to go to a hospital to pursue an abortion?', contains('No')))
-        .show('counselAgainstHomeAbortionKitsAndEncourageToVisitTheHospitalForAnAbortion')
+        .show('Counsel against home abortion kits and encourage to visit the hospital for an abortion')
 ];
 filters.directFunctions = {
     patientDidntGoToHospitalAsPerReferralAdviceBecause(programEncounter, formElement) {
-        const statusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
+        const statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         statusBuilder.show().when.valueInEncounter('Did patient take referral advice and go to hospital?').is.no;
         return statusBuilder.build();
     }
