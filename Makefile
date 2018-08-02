@@ -35,6 +35,15 @@ create_org: ## Create Calcutta Kids org and user+privileges
 # </create_org>
 
 # <refdata>
+
+deploy_checklists:
+	$(call _curl,POST,concepts,@child/checklistConcepts.json)
+	@echo
+	$(call _curl,POST,forms,@child/checklistForm.json)
+	@echo
+	$(call _curl,POST,checklistDetail,@child/checklist.json)
+	@echo
+
 deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
@@ -94,7 +103,7 @@ deploy_refdata: deploy_concepts
 # </refdata>
 
 # <deploy>
-deploy: deploy_refdata deploy_rules##
+deploy: deploy_refdata deploy_checklists deploy_rules##
 # </deploy>
 
 # <deploy>
