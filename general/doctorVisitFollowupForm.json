@@ -122,45 +122,53 @@
             "uuid": "dcbfccc2-6209-4000-85dd-49bc0c241ca4"
           },
           "displayOrder": 13
-        },
+        }
+      ]
+    },
+    {
+      "uuid": "888a6ad9-fd6d-496d-ac6b-ea00450a7604",
+      "name": "Pregnancy",
+      "display": "Pregnancy",
+      "displayOrder": 2,
+      "formElements": [
         {
           "name": "Do you want to keep your child?",
-          "uuid": "d25f52ed-7de6-4605-a605-405075fa4606",
+          "uuid": "ba8ac268-6940-492b-b2e3-3f5bd15a77b3",
           "type": "SingleSelect",
           "concept": {
             "uuid": "cb5ec484-9ff3-4cc0-b468-9a7560dcffce"
           },
-          "displayOrder": 14,
+          "displayOrder": 1,
           "mandatory": true
         },
         {
           "name": "Encourage woman to register her pregnancy in office",
-          "uuid": "76614979-893b-4a58-949d-50de5ed2490c",
+          "uuid": "6f232cea-6ed4-4203-82f2-fa52d772bd32",
           "type": "MultiSelect",
           "concept": {
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
-          "displayOrder": 15,
+          "displayOrder": 2,
           "mandatory": false
         },
         {
           "name": "Do you plan to go to a hospital to pursue an abortion?",
-          "uuid": "4104a5ab-a5b3-434d-a1d7-a6d20cf91593",
+          "uuid": "d07660a5-deff-4ccf-8be8-d8c3397a714d",
           "type": "SingleSelect",
           "concept": {
             "uuid": "f940c67b-9bc0-40af-aa9c-4d58b538926e"
           },
-          "displayOrder": 16,
+          "displayOrder": 3,
           "mandatory": true
         },
         {
           "name": "Counsel against home abortion kits and encourage to visit the hospital for an abortion",
-          "uuid": "34264ab4-9bf6-4be2-be6c-d3ff66932397",
+          "uuid": "3cb88e9a-2827-4f6c-9801-fb9581feaf5b",
           "type": "MultiSelect",
           "concept": {
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
-          "displayOrder": 17,
+          "displayOrder": 4,
           "mandatory": false
         }
       ]
