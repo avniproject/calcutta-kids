@@ -126,11 +126,17 @@ class ChildPNCFormDecisions {
         builder.addComplication('Insufficient urination')
             .valueInEncounter('Number of times urinated in the last 24 hours').lessThan(6);
 
+        ['No urination', 'Difficulty in urination']
+            .forEach((c) =>
+                builder.addComplication(c)
+                    .when.valueInEncounter("Child PNC urination related complaints").containsAnswerConceptName(c));
+
         return builder.getComplications();
     }
 
     static exec(programEncounter, decisions, context, today) {
         decisions.encounterDecisions.push(ChildPNCFormDecisions.referToHospital(programEncounter), ChildPNCFormDecisions.referToCKDoctor(programEncounter));
+        RuleHelper.removeRecommendation(decisions, 'encounterDecisions', 'Refer to the hospital immediately for', 'Child PNC urination related complaints');
         return decisions;
     }
 }
