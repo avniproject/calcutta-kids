@@ -43,7 +43,7 @@
           "concept": {
             "uuid": "ad4da876-15f6-4e57-a040-7c4e9a7152a9"
           },
-          "displayOrder": 1.4,
+          "displayOrder": 1.41,
           "mandatory": true
         },
         {
@@ -54,7 +54,7 @@
           "concept": {
             "uuid": "59086cb8-f1cd-4f2a-bb78-accb03fe301a"
           },
-          "displayOrder": 1.5,
+          "displayOrder": 1.51,
           "mandatory": true
         },
         {
@@ -66,7 +66,7 @@
             "uuid": "bc7c8d69-596b-4607-b858-41c500a5a3cf",
             "dataType": "Date"
           },
-          "displayOrder": 1.6,
+          "displayOrder": 1.61,
           "mandatory": true
         }
       ]
