@@ -52,8 +52,9 @@ class PregnancyEnrolmentViewFilterHandler {
     }
 
     gravida(programEnrolment, formElement) {
-        const isFirstPregnancy = programEnrolment.getObservationReadableValue('Is this your first pregnancy?') === 'Yes';
-        return new FormElementStatus(formElement.uuid, true, isFirstPregnancy ? 1 : _computeGravida(programEnrolment));
+        const firstPregnancy = programEnrolment.getObservationReadableValue('Is this your first pregnancy?');
+        const value = firstPregnancy === 'Yes' ? 1 : firstPregnancy === 'No' ? _computeGravida(programEnrolment) : undefined;
+        return new FormElementStatus(formElement.uuid, true, value);
     }
 
     obstetricsHistory(programEnrolment, formElement) {
