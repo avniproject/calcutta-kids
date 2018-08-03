@@ -93,9 +93,9 @@ class RuleHelper {
         return scheduleBuilder.getAllUnique("encounterType");
     }
 
-    static appropriateFirstOfTheMonth(realEventDate) {
+    static firstOfNextMonth(realEventDate) {
         const currentDate = moment(realEventDate).date();
-        const month = currentDate > 21 ? moment(realEventDate).month() + 1 : moment(realEventDate).month();
+        const month = moment(realEventDate).month() + 1;
         return moment(realEventDate).month(month).date(1).toDate();
     };
 }

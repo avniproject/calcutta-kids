@@ -11,16 +11,16 @@ class MotherPostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
         let dateOfDelivery = getDateOfDelivery(programEnrolment);
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', RuleHelper.appropriateFirstOfTheMonth(programEnrolment.enrolmentDateTime), 21);
+        let earliestDate = _.isNil(dateOfDelivery) ? programEnrolment.enrolmentDateTime : dateOfDelivery;
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', RuleHelper.firstOfNextMonth(earliestDate), 21);
     }
 }
 
 @HomeVisitRule("aa862394-4b02-4879-b582-ab58683dde06", "MotherPostHomeVisitVisits", 10.0)
 class MotherPostHomeVisitVisits {
-    static exec({programEnrolment, encounterDateTime}, visitSchedule = []) {
-        let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
-        let earliestDate = moment(encounterDateTime).add(1, 'months').toDate();
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', RuleHelper.appropriateFirstOfTheMonth(earliestDate), 21);
+    static exec(programEncounter, visitSchedule = []) {
+        let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEncounter, visitSchedule);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', RuleHelper.firstOfNextMonth(programEncounter.encounterDateTime), 21);
     }
 }
 

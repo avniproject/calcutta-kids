@@ -24,7 +24,7 @@ class ChildPostPNCVisits {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         if (programEncounter.name === 'Child PNC 2') {
-            let earliestDate = RuleHelper.appropriateFirstOfTheMonth(moment(programEncounter.programEnrolment.individual.dateOfBirth).add(1, 'months'));
+            let earliestDate = RuleHelper.firstOfNextMonth(programEncounter.programEnrolment.individual.dateOfBirth);
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child Home Visit', 'Child Home Visit', earliestDate, 21);
         } else if (programEncounter.name === 'Child PNC 1') {
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child PNC 2', 'Child PNC', moment(programEncounter.programEnrolment.individual.dateOfBirth).add(7, 'days').toDate(), 3);
@@ -38,7 +38,7 @@ class ChildPostPNCVisits {
 class ChildPostHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let earliestDate = RuleHelper.appropriateFirstOfTheMonth(moment(programEncounter.encounterDateTime).add(1, 'months')).toDate();
+        let earliestDate = RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate());
         return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child Home Visit', 'Child Home Visit', earliestDate, 21);
     }
 }

@@ -14,7 +14,7 @@ const PostAncGmpRule = RuleFactory("4632c1f5-59cd-4e65-899c-beb2c87a3bff", "Visi
 class PregnancyPostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
-        let earliestDate = RuleHelper.appropriateFirstOfTheMonth(programEnrolment.enrolmentDateTime);
+        let earliestDate = RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
         RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
         RuleHelper.addSchedule(scheduleBuilder, 'First ANC GMP', 'ANC GMP', moment(earliestDate).add(21, 'days').toDate(), 9);
         return scheduleBuilder.getAllUnique("encounterType");
@@ -25,7 +25,7 @@ class PregnancyPostEnrolmentVisits {
 class PregnancyPostAncGmpVisits {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let earliestDate = RuleHelper.appropriateFirstOfTheMonth(programEncounter.encounterDateTime);
+        let earliestDate = RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate());
         return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC GMP', 'ANC GMP', moment(earliestDate).add(21, 'days').toDate(), 9);
     }
 }
@@ -34,7 +34,7 @@ class PregnancyPostAncGmpVisits {
 class PregnancyPostANCHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let earliestDate = RuleHelper.appropriateFirstOfTheMonth(programEncounter.encounterDateTime);
+        let earliestDate = RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate());
         return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
     }
 }
