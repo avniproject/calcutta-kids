@@ -238,8 +238,7 @@
           "displayOrder": 23,
           "type": "MultiSelect",
           "concept": {
-            "uuid": "0c9b6203-be8c-40a4-a035-b9cb61f126c9",
-            "comment": "(Counsel accordingly)"
+            "uuid": "0c9b6203-be8c-40a4-a035-b9cb61f126c9"
           }
         },
         {
