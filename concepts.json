@@ -3032,5 +3032,10 @@
         "abnormal": true
       }
     ]
+  },
+  {
+    "name": "Visit notes",
+    "uuid": "4f1c32ee-16fa-4f13-a363-fd0fbc45b4a0",
+    "dataType": "Notes"
   }
 ]

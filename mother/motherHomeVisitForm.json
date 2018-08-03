@@ -255,6 +255,25 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "uuid": "5d647cf5-3550-4d68-b4d8-964d7fc8e55f",
+      "name": "Notes",
+      "display": "Notes",
+      "displayOrder": 3,
+      "formElements": [
+        {
+          "name": "Notes",
+          "uuid": "a4da17a5-e9b7-489b-afbc-e5b71d04bdfd",
+          "keyValues": [],
+          "concept": {
+            "comment": "Visit notes",
+            "uuid": "4f1c32ee-16fa-4f13-a363-fd0fbc45b4a0"
+          },
+          "displayOrder": 0,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }
