@@ -20,7 +20,7 @@ class MotherPostEnrolmentVisits {
 class MotherPostHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEncounter, visitSchedule);
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', RuleHelper.firstOfNextMonth(programEncounter.encounterDateTime), 21);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate()), 21);
     }
 }
 
