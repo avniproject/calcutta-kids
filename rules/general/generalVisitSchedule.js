@@ -10,7 +10,7 @@ class GeneralPostDoctorVisitVisits {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let followupDate = programEncounter.getObservationReadableValue('Followup date');
         if (!_.isNil(followupDate)) {
-            RuleHelper.addSchedule(scheduleBuilder, 'Doctor visit - followup', 'Doctor visit', followupDate, 3);
+            RuleHelper.addSchedule(scheduleBuilder, 'Doctor visit - followup', 'Doctor Visit', followupDate, 3);
         }
         RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home', 'Doctor Visit Followup at Home', moment(programEncounter.encounterDateTime).add(3, 'days').toDate(), 2);
         return scheduleBuilder.getAllUnique("encounterType");
