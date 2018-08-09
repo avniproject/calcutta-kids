@@ -16,12 +16,18 @@ const postVisitMap = {
 @ProgramEncounterCancelRule("aca832d6-f570-4945-89d8-fe28cdff4bc7", "PostProgramEncounterCancelVisits", 10.0)
 class PostProgramEncounterCancelVisits {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
-        let visitCancelReason = programEncounter.getObservationReadableValue('Visit cancel reason');
+        let visitCancelReason = programEncounter.findCancelEncounterObservationReadableValue('Visit cancel reason');
         if (visitCancelReason === 'Program exit') return visitSchedule;
 
         let postVisit = postVisitMap[programEncounter.encounterType.name];
-        if (!_.isNil(postVisit))
+
+        if (programEncounter.encounterType.name === 'ANC Home Visit') {
+            if (visitCancelReason === 'Away' || visitCancelReason === 'Absent') //Visit can get cancelled for reasons like delivery in which case it would be "Other"
+                return postVisit.exec(programEncounter, visitSchedule);
+        } else if (!_.isNil(postVisit)) {
             return postVisit.exec(programEncounter, visitSchedule);
+        }
+
         return visitSchedule;
     }
 }
