@@ -19,7 +19,7 @@ class MotherPostEnrolmentVisits {
 @HomeVisitRule("aa862394-4b02-4879-b582-ab58683dde06", "MotherPostHomeVisitVisits", 10.0)
 class MotherPostHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
-        let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEncounter, visitSchedule);
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home visit', 'Mother Home Visit', RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate()), 21);
     }
 }

@@ -56,6 +56,13 @@
     "comment": "Pregnancy program (core mother program), Post abortion"
   },
   {
+    "uuid": "cf185c9a-15b0-4b88-bd73-144d2bed3958",
+    "formUUID": "b80646b2-b74e-415f-974c-f8f48d67b27e",
+    "encounterTypeUUID": "5a18fd93-7db8-47a2-9c26-4807d89d13e7",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "comment": "Pregnancy (core mother), Doctor Visit"
+  },
+  {
     "uuid": "ad7f68a4-50cf-4299-8c77-d222f724e497",
     "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
     "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
