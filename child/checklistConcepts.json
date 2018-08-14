@@ -1,16 +1,12 @@
 [
   {
-    "name": "Administered by",
-    "uuid": "b7394f43-b36f-4401-863b-000e49a131ac",
+    "comment": "Administered by",
+    "uuid": "4c98684a-47ef-4e1e-9dc9-2e603f7b6361",
     "dataType": "Coded",
     "answers": [
       {
         "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
         "comment": "Calcutta Kids"
-      },
-      {
-        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
-        "comment": "Other"
       }
     ]
   }

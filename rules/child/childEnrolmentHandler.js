@@ -28,21 +28,18 @@ const EnrolmentChecklists = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", 
 @EnrolmentChecklists("203e1c1f-4718-4c4d-9906-f3f14821118b", "CK Child Vaccination checklists", 100.0)
 class ChildChecklists {
     static exec(enrolment, checklists = [], checklistDetails) {
-        let vaccination = checklistDetails.find(cd => cd.name === 'Vaccination');
-        if (vaccination === undefined) return checklists;
-        const existingChecklist = checklists.find(c => c.detail.uuid === vaccination.uuid);
-        if (!_.isNil(existingChecklist)) {
-            existingChecklist.baseDate = enrolment.individual.dateOfBirth;
-            return checklists.filter(c => c.uuid !== existingChecklist.uuid).concat([existingChecklist]);
-        }
+        checklists = checklists.filter(c => c.detail.uuid !== '28442845-242b-46de-964f-e9e4c9311975');//remove core module vaccination
+        let vaccinationDetails = checklistDetails.find(cd => cd.name === 'Vaccination' && cd.uuid === '8feb5a65-ad3d-4a1f-91d1-44a561995b09');
+        if (vaccinationDetails === undefined) return checklists;
         const vaccinationList = {
             baseDate: enrolment.individual.dateOfBirth,
-            detail: {uuid: vaccination.uuid},
-            items: vaccination.items.map(vi => ({
+            detail: {uuid: vaccinationDetails.uuid},
+            items: vaccinationDetails.items.map(vi => ({
                 detail: {uuid: vi.uuid}
             }))
         };
-        return checklists.concat([vaccinationList]);
+        let isEdit = _.some(checklists, list => list.detail.uuid === vaccinationDetails.uuid);
+        return isEdit ? checklists : [vaccinationList];
     }
 }
 
