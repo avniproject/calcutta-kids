@@ -53,6 +53,7 @@ deploy_non_coded_concepts:
 	node nonCoded ./pregnancy/pncConcepts.json | $(call _curl,POST,concepts,@-)
 
 deploy_concepts:
+	$(if $(shell command -v node 2> /dev/null),make deploy_non_coded_concepts)
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
 	$(call _curl,POST,concepts,@child/enrolmentConcepts.json)
