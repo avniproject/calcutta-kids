@@ -38,8 +38,12 @@ class ChildChecklists {
                 detail: {uuid: vi.uuid}
             }))
         };
-        let isEdit = _.some(checklists, list => list.detail.uuid === vaccinationDetails.uuid);
-        return isEdit ? checklists : [vaccinationList];
+        const noVaccinationList = _.every(checklists, list => list.detail.uuid !== vaccinationDetails.uuid);
+        const creationPhase = _.isEmpty(enrolment.getChecklists());
+        if (noVaccinationList && creationPhase) {
+            checklists.push(vaccinationList);
+        }
+        return checklists;
     }
 }
 
