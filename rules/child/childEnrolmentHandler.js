@@ -27,10 +27,9 @@ const EnrolmentChecklists = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", 
 
 @EnrolmentChecklists("203e1c1f-4718-4c4d-9906-f3f14821118b", "CK Child Vaccination checklists", 100.0)
 class ChildChecklists {
-    static exec(enrolment, checklists = [], checklistDetails) {
-        checklists = checklists.filter(c => c.detail.uuid !== '28442845-242b-46de-964f-e9e4c9311975');//remove core module vaccination
-        let vaccinationDetails = checklistDetails.find(cd => cd.name === 'Vaccination' && cd.uuid === '8feb5a65-ad3d-4a1f-91d1-44a561995b09');
-        if (vaccinationDetails === undefined) return checklists;
+    static exec(enrolment, checklistDetails) {
+        let vaccination = checklistDetails.find(cd => cd.name === 'Vaccination');
+        if (vaccination === undefined) return [];
         const vaccinationList = {
             baseDate: enrolment.individual.dateOfBirth,
             detail: {uuid: vaccinationDetails.uuid},
@@ -38,12 +37,7 @@ class ChildChecklists {
                 detail: {uuid: vi.uuid}
             }))
         };
-        const noVaccinationList = _.every(checklists, list => list.detail.uuid !== vaccinationDetails.uuid);
-        const creationPhase = _.isEmpty(enrolment.getChecklists());
-        if (noVaccinationList && creationPhase) {
-            checklists.push(vaccinationList);
-        }
-        return checklists;
+        return [vaccinationList];
     }
 }
 
