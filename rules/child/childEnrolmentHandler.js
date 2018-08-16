@@ -32,8 +32,8 @@ class ChildChecklists {
         if (vaccination === undefined) return [];
         const vaccinationList = {
             baseDate: enrolment.individual.dateOfBirth,
-            detail: {uuid: vaccinationDetails.uuid},
-            items: vaccinationDetails.items.map(vi => ({
+            detail: {uuid: vaccination.uuid},
+            items: vaccination.items.map(vi => ({
                 detail: {uuid: vi.uuid}
             }))
         };
