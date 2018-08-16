@@ -38,6 +38,7 @@ create_org: ## Create Calcutta Kids org and user+privileges
 
 deploy_checklists:
 	$(call _curl,POST,concepts,@child/checklistConcepts.json)
+	$(call _curl,POST,forms,@child/checklistForm.json)
 	$(call _curl,POST,checklistDetail,@child/checklist.json)
 
 deploy_non_coded_concepts:
@@ -51,6 +52,7 @@ deploy_non_coded_concepts:
 	node nonCoded ./pregnancy/deliveryConcepts.json | $(call _curl,POST,concepts,@-)
 	node nonCoded ./pregnancy/ancDoctorVisitConcepts.json | $(call _curl,POST,concepts,@-)
 	node nonCoded ./pregnancy/pncConcepts.json | $(call _curl,POST,concepts,@-)
+	node nonCoded ./child/checklistConcepts.json | $(call _curl,POST,concepts,@-)
 
 deploy_concepts:
 	$(if $(shell command -v node 2> /dev/null),make deploy_non_coded_concepts)
