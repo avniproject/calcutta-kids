@@ -136,3 +136,7 @@ deps:
 #	cp registrationForm.json catchments.json deploy.sh output/impl
 #	cd output/impl && tar zcvf ../openchs_impl.tar.gz *.*
 # </package>
+
+restore_mychi_db:
+	psql -h localhost -U $(su) -d postgres -c 'create database mychi with owner vsingh';
+	psql -U$(su) mychi -f data-migration/dump.sql
