@@ -5,12 +5,10 @@
       "name": "1",
       "uuid": "9815f0a5-2af0-4d3a-bbc7-7e754512278c",
       "type": "Area",
-      "addressLevels": [
+      "locations": [
         {
           "uuid": "8c00bf9a-3ea0-4a64-bf01-159a5fde67bc",
-          "name": "1",
-          "level": 1,
-          "type": "Area"
+          "comment": "1"
         }
       ]
     },
@@ -18,12 +16,10 @@
       "name": "2",
       "uuid": "ab8fb6ab-708e-4b64-965f-22b1a85d4e10",
       "type": "Area",
-      "addressLevels": [
+      "locations": [
         {
           "uuid": "9bf55aa1-169f-4245-ba79-6d9bb0257161",
-          "name": "2",
-          "level": 1,
-          "type": "Area"
+          "comment": "2"
         }
       ]
     },
@@ -31,12 +27,10 @@
       "name": "3",
       "uuid": "2d7698d8-2e52-47ee-aa12-ff54ca7d4db2",
       "type": "Area",
-      "addressLevels": [
+      "locations": [
         {
           "uuid": "2be78338-ea49-4fba-8018-e1f5c70b6179",
-          "name": "3",
-          "level": 1,
-          "type": "Area"
+          "comment": "3"
         }
       ]
     },
@@ -44,12 +38,10 @@
       "name": "99",
       "uuid": "61d2e9f6-2a13-4b47-88ce-39122f4a52f2",
       "type": "Area",
-      "addressLevels": [
+      "locations": [
         {
           "uuid": "4331d9db-49bf-4b6e-a304-affe08bc9b8f",
-          "name": "99",
-          "level": 1,
-          "type": "Area"
+          "comment": "99"
         }
       ]
     }

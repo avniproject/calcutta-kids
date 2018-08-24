@@ -68,6 +68,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@pregnancy/pncConcepts.json)
 
 deploy_refdata: deploy_concepts
+	$(call _curl,POST,locations,@locations.json)
 	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,programs,@programs.json)
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
