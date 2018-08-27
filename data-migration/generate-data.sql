@@ -54,7 +54,8 @@ FROM mother m
 select
   mother.uuid as individual_uuid,
   pregnancy_registration.*,
-  pregnancy_detail.*
+  pregnancy_detail.*,
+  pregnancy_registration.enrolment_uuid
 from pregnancy_registration
   inner join pregnancy_detail on pregnancy_registration.pregnancydetailid::int = pregnancy_detail.id
 inner join mother on pregnancy_registration.entity_id != '' AND pregnancy_registration.entity_id :: INT = mother.id;
@@ -97,22 +98,33 @@ FROM child c
 -- PROGRAM__ENC_TYPE__ENC_NAME
 -- Pregnancy__ANC__ANC_1
 select
-  mother.uuid,
-  anc_first_trimester.*
-from anc_first_trimester
-  inner join mother on mother.id = anc_first_trimester.entity_id::int;
+  mother.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  tr.*
+from anc_first_trimester tr
+ inner join mother on mother.id = tr.entity_id::int
+ inner join pregnancy_registration reg on reg.entity_id != '' AND reg.entity_id :: INT = tr.entity_id::int
+   and tr.date::DATE BETWEEN lastmenstrualperiod::DATE AND (lastmenstrualperiod::DATE + '4 month'::INTERVAL);
 -- Pregnancy__ANC__ANC_2
 select
-  mother.uuid,
-  anc_second_trimester.*
-from anc_second_trimester
-  inner join mother on mother.id = anc_second_trimester.entity_id::int;
+   m.uuid,
+   reg.enrolment_uuid,
+   tr.*
+from anc_second_trimester tr
+ inner join pregnancy_registration reg on reg.entity_id != '' AND reg.entity_id :: INT = tr.entity_id :: int
+    and tr.date::DATE BETWEEN (lastmenstrualperiod::DATE + '3 month'::INTERVAL) AND (lastmenstrualperiod::DATE + '7 month'::INTERVAL)
+-- 3 & 7 are rough numbers to group encounters of an enrolment, if there are multiple pregnancy for an individual
+ inner join mother m on m.id = tr.entity_id :: int;
 -- Pregnancy__ANC__ANC_3
 select
-  mother.uuid,
-  anc_third_trimester.*
-from anc_third_trimester
-  inner join mother on mother.id = anc_third_trimester.entity_id::int;
+   m.uuid,
+   reg.enrolment_uuid,
+   tr.*
+from anc_third_trimester tr
+ inner join pregnancy_registration reg on reg.entity_id != '' AND reg.entity_id :: INT = tr.entity_id :: int
+    and tr.date::DATE BETWEEN (lastmenstrualperiod::DATE + '6 month'::INTERVAL) AND (lastmenstrualperiod::DATE + '11 month'::INTERVAL)
+-- 6 & 11 are rough numbers to group encounters of an enrolment, if there are multiple pregnancy for an individual
+ inner join mother m on m.id = tr.entity_id :: int;
 
 -- Pregnancy__Lab_Tests
 select
