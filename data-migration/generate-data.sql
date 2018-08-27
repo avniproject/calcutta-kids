@@ -16,6 +16,12 @@ ALTER TABLE child_registration
 ALTER TABLE pregnancy_registration
   ADD COLUMN enrolment_uuid VARCHAR(255) NOT NULL DEFAULT uuid_generate_v4();
 
+CREATE TABLE mother_enrolment (
+  id             SERIAL,
+  enrolment_uuid varchar(255) not null default uuid_generate_v4(),
+  mother_id      int REFERENCES mother (id)
+);
+
 drop view pregnant;
 create view pregnant AS
   select
@@ -25,6 +31,8 @@ create view pregnant AS
   from mother m
     inner join woman_registration wr ON wr.entity_id != '' AND wr.entity_id :: INT = m.id;
 
+insert into mother_enrolment (mother_id)
+select distinct id from mother;
 -- Mother/Pregnant Registration
 SELECT
   m.uuid                                               AS "Individual UUID",
@@ -60,6 +68,11 @@ from pregnancy_registration
   inner join pregnancy_detail on pregnancy_registration.pregnancydetailid::int = pregnancy_detail.id
 inner join mother on pregnancy_registration.entity_id != '' AND pregnancy_registration.entity_id :: INT = mother.id;
 
+-- Mother Enrolment
+select
+  m2.uuid as individual_uuid,
+  reg.enrolment_uuid
+from mother_enrolment reg join mother m2 on reg.mother_id = m2.id;
 
 -- Child Registration and Enrolment
 SELECT
@@ -129,6 +142,7 @@ from anc_third_trimester tr
 -- Pregnancy__Lab_Tests
 select
   mother.uuid individual_uuid,
+  reg.enrolment_uuid,
   woman_lab_test_form.*,
   f.*,
   urinetest_woman_lab_test_form.*,
@@ -137,14 +151,16 @@ from woman_lab_test_form
   left outer join bloodtests_woman_lab_test_form f on woman_lab_test_form.id = f.parent_id
   left outer join mother on mother.id = woman_lab_test_form.entity_id :: int
   left outer join urinetest_woman_lab_test_form on woman_lab_test_form.id = urinetest_woman_lab_test_form.parent_id
+  left outer join test_woman_lab_test_form on woman_lab_test_form.id = test_woman_lab_test_form.parent_id
   left outer join usg_woman_lab_test_form on woman_lab_test_form.id = usg_woman_lab_test_form.parent_id
+  left outer join pregnancy_registration reg on reg.entity_id = woman_lab_test_form.entity_id
+     and woman_lab_test_form.today::DATE between reg.lastmenstrualperiod::DATE AND (reg.lastmenstrualperiod::DATE + '45 week'::INTERVAL)
 where beneficiarytype = 'pregnantWoman' and mother.uuid is not null
-order by woman_lab_test_form.id;
-select *
-from test_woman_lab_test_form;
+order by mother.uuid, reg.enrolment_uuid;
 -- Mother__Lab_Tests
 select
   mother.uuid individual_uuid,
+  reg.enrolment_uuid,
   woman_lab_test_form.*,
   f.*,
   urinetest_woman_lab_test_form.*,
@@ -153,7 +169,9 @@ from woman_lab_test_form
   left outer join bloodtests_woman_lab_test_form f on woman_lab_test_form.id = f.parent_id
   left outer join mother on mother.id = woman_lab_test_form.entity_id :: int
   left outer join urinetest_woman_lab_test_form on woman_lab_test_form.id = urinetest_woman_lab_test_form.parent_id
+  left outer join test_woman_lab_test_form on woman_lab_test_form.id = test_woman_lab_test_form.parent_id
   left outer join usg_woman_lab_test_form on woman_lab_test_form.id = usg_woman_lab_test_form.parent_id
+  left outer join mother_enrolment reg on reg.mother_id = mother.id
 where beneficiarytype = 'mother' and mother.uuid is not null
 order by woman_lab_test_form.id;
 -- Child__Lab_Tests
