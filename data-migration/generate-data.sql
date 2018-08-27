@@ -1,6 +1,9 @@
 -- TODO
 -- Enrolment UUID
--- Some data is in non-event model. But the mapping would need to be done to event model. To deal with we can capture the information in encounter also. In some cases we may have to create multiple encounters on the same date, each capturing certain fields. For date of encounter we can pick some date in the entity model for the encounter date, if possible. Discuss if a suitable date is found
+-- Some data is in non-event model. But the mapping would need to be done to event model.
+-- To deal with we can capture the information in encounter also. In some cases we may have to create multiple encounters
+-- on the same date, each capturing certain fields. For date of encounter we can pick some date in the entity model for
+-- the encounter date, if possible. Discuss if a suitable date is found
 
 -- Pre Scripts
 CREATE EXTENSION "uuid-ossp";
@@ -50,7 +53,8 @@ FROM mother m
 -- Pregnancy Enrolment
 select
   mother.uuid as individual_uuid,
-  pregnancy_registration.*
+  pregnancy_registration.*,
+  pregnancy_detail.*
 from pregnancy_registration
   inner join pregnancy_detail on pregnancy_registration.pregnancydetailid::int = pregnancy_detail.id
 inner join mother on pregnancy_registration.entity_id != '' AND pregnancy_registration.entity_id :: INT = mother.id;
@@ -80,11 +84,15 @@ SELECT
   wr.husband_name || ' ' || wr.husband_last_name                               AS "Father/Husband",
   initcap(cr.medicalhistory)                                                   AS "Other medical history",
   cr.babybirthweight                                                           AS "Birth weight",
-  cr.babyweight                                                                AS "Weight"
+  cr.babyweight                                                                AS "Weight",
+  status.active,
+  status.start_date,
+  status.end_date
 FROM child c
   INNER JOIN child_registration cr ON c.id = cr.entity_id :: INT
   INNER JOIN mother m ON m.id = c.id
-  INNER JOIN woman_registration wr ON wr.entity_id != '' AND wr.entity_id :: INT = m.id;
+  INNER JOIN woman_registration wr ON wr.entity_id != '' AND wr.entity_id :: INT = m.id
+  LEFT OUTER JOIN child_status status on status.child_id = c.id;
 
 -- PROGRAM__ENC_TYPE__ENC_NAME
 -- Pregnancy__ANC__ANC_1
@@ -92,19 +100,19 @@ select
   mother.uuid,
   anc_first_trimester.*
 from anc_first_trimester
-  inner join mother on mother.id = to_number(anc_first_trimester.entity_id, '99G999D9S');
+  inner join mother on mother.id = anc_first_trimester.entity_id::int;
 -- Pregnancy__ANC__ANC_2
 select
   mother.uuid,
   anc_second_trimester.*
 from anc_second_trimester
-  inner join mother on mother.id = to_number(anc_second_trimester.entity_id, '99G999D9S');
+  inner join mother on mother.id = anc_second_trimester.entity_id::int;
 -- Pregnancy__ANC__ANC_3
 select
   mother.uuid,
   anc_third_trimester.*
 from anc_third_trimester
-  inner join mother on mother.id = to_number(anc_third_trimester.entity_id, '99G999D9S');
+  inner join mother on mother.id = anc_third_trimester.entity_id::int;
 
 -- Pregnancy__Lab_Tests
 select
@@ -198,12 +206,16 @@ select
   pnc2.* from pnc2
   inner join mother m2 on pnc2.entity_id::int = m2.id;
 
-select * from child_away_at_village;
-child_death_form
-child_for_pregnancy
-child_gmp
-mother_gmp
-child_home_visit
+-- Child exit form with death as reason
+select c.uuid as inidivual_uuid,
+ child_death_form.*
+ from child_death_form
+ left join child c on c.id::int = child_death_form.entity_id::int;
+
+-- Child GMP
+select c2.uuid as individual_uuid,
+ gmp.*
+ from child_gmp gmp left join child c2 on gmp.child_id = c2.id;
 
 -- SES
 select
@@ -211,21 +223,29 @@ select
   ses_form.* from ses_form
 left outer join mother m2 on ses_form.entity_id::int = m2.id;
 
-child_status
+-- Mother GMP
+select m.uuid as individual_uuid,
+ gmp.*
+ from mother_gmp gmp left join mother m on gmp.mother_id = m.id;
 
-mother_away_at_village
+-- Child Home visit
+select c.uuid as individual_uuid,
+ visit.*
+ from child_home_visit visit left join child c on c.id::int = visit.entity_id::int;
 
-select * from nutrition_corner_attendance;
-
--- Immunisation
-due_immunisation
-taken_immunisation
-immunisation_milestone
-immunisation_schedule
-
-
+-- Immunisation Taken
+select c2.uuid individual_uuid, is2.name as schedule_name, is2.immunisation_window_type as window_type, m.vaccine_name, m.interval_in_days,
+t.given_elsewhere, t.immunisation_date taken_date, t.due_date, t.comments
+ from taken_immunisation t
+ join immunisation_milestone m on t.immunisation_id = m.id
+ join immunisation_schedule is2 on m.immunisation_schedule_id = is2.id
+ join child c2 on t.child_id = c2.id;
 
 -- Tables not to be imported
 -- bloodtests_lab_test_form, lab_test_form, test_lab_test_form, urinetest_lab_test_form, usg_lab_test_form (seems legacy doesn't have any new data), doctor_visit, woman_doctor_visit, tests_woman_doctor_visit, medications_woman_doctor_visit, medications_doctor_visit, tests_doctor_visit, medications_child_doctor_visit, child_lab_test_form, woman_follow_up, follow_up, child_follow_up
 -- no data - woman_death_form
 -- NA - child_ses_form, childcalcuttakids_ses_form, community_meeting_attendance
+-- child_away_at_village, mother_away_at_village
+-- nutrition_corner_attendance
+-- due_immunisation
+-- child_for_pregnancy
