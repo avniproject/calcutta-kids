@@ -1,6 +1,6 @@
 -- TODO
 -- Enrolment UUID
--- Some data is in non-event model. But the mapping would need to be done to event model.
+-- Some data is in non-event model. But the mapping would need to be done to event model. To deal with we can capture the information in encounter also. In some cases we may have to create multiple encounters on the same date, each capturing certain fields. For date of encounter we can pick some date in the entity model for the encounter date, if possible. Discuss if a suitable date is found
 
 -- Pre Scripts
 CREATE EXTENSION "uuid-ossp";
@@ -47,36 +47,13 @@ SELECT
 FROM mother m
   INNER JOIN woman_registration wr ON wr.entity_id != '' AND wr.entity_id :: INT = m.id;
 
--- Mother/Pregnant Enrolment
-select * from pregnancy_registration
-inner join mother on ;
-
-select * from pregnancy_detail;
-
--- Mother who are not pregnant Registration
-SELECT
-  m.uuid                                               AS "Individual UUID",
-  m.first_name                                         AS "First Name",
-  m.last_name                                          AS "Last Name",
-  'Female'                                             AS "Gender",
-  m.area                                               AS "Address Level",
-  coalesce(m.date_of_birth, approxdateofbirth :: DATE) AS "Date Of Birth",
-  coalesce(m.beneficiary_id, '')                       AS "Beneficiary id",
-  coalesce(m.mychi_id, '')                             AS "myChi id",
-  substring(m.address, '([0-9/]+)')                    AS "Household number",
-  initcap(wr.floor)                                    AS "Floor",
-  substring(wr.address, '\((.*)\)')                    AS "Room number",
-  m.phone_number                                       AS "Phone number",
-  wr.altphone                                          AS "Alternate phone number",
-  CASE WHEN wr.primarycaregiver = 'TRUE'
-    THEN 'Yes'
-  WHEN 'FALSE'
-    THEN 'No'
-  END                                                  AS "Is mother the primary caregiver",
-  wr.husband_name || ' ' || wr.husband_last_name       AS "Father/Husband",
-  initcap(wr.medicalhistory)                           AS "Other medical history"
-FROM mother m
-  INNER JOIN woman_registration wr ON wr.entity_id != '' AND wr.entity_id :: INT = m.id;
+-- Pregnancy Enrolment
+select
+  mother.uuid as individual_uuid,
+  pregnancy_registration.*
+from pregnancy_registration
+  inner join pregnancy_detail on pregnancy_registration.pregnancydetailid::int = pregnancy_detail.id
+inner join mother on pregnancy_registration.entity_id != '' AND pregnancy_registration.entity_id :: INT = mother.id;
 
 
 -- Child Registration and Enrolment
@@ -215,37 +192,32 @@ select
   m2.uuid as individual_uuid,
   delivery_details_and_pnc1.* from delivery_details_and_pnc1
   inner join mother m2 on delivery_details_and_pnc1.entity_id::int = m2.id;
-
-select * from pnc2
+-- PNC 2
+select
+  m2.uuid as individual_uuid,
+  pnc2.* from pnc2
   inner join mother m2 on pnc2.entity_id::int = m2.id;
 
 select * from child_away_at_village;
 child_death_form
 child_for_pregnancy
 child_gmp
+mother_gmp
 child_home_visit
 
-ses_form
-child_ses_form
+-- SES
+select
+  m2.uuid as individual_uuid,
+  ses_form.* from ses_form
+left outer join mother m2 on ses_form.entity_id::int = m2.id;
 
 child_status
-childcalcuttakids_ses_form
-community_meeting_attendance
-
-
-select * from delivery_details_and_pnc1
-inner join mother on entity_id::int = mother.id;
-
-select * from pnc2;
-select * from delivery_details_and_pnc1;
 
 mother_away_at_village
-mother_gmp
-nutrition_corner_attendance
 
-pregnancy_detail
-pregnancy_registration
+select * from nutrition_corner_attendance;
 
+-- Immunisation
 due_immunisation
 taken_immunisation
 immunisation_milestone
@@ -256,3 +228,4 @@ immunisation_schedule
 -- Tables not to be imported
 -- bloodtests_lab_test_form, lab_test_form, test_lab_test_form, urinetest_lab_test_form, usg_lab_test_form (seems legacy doesn't have any new data), doctor_visit, woman_doctor_visit, tests_woman_doctor_visit, medications_woman_doctor_visit, medications_doctor_visit, tests_doctor_visit, medications_child_doctor_visit, child_lab_test_form, woman_follow_up, follow_up, child_follow_up
 -- no data - woman_death_form
+-- NA - child_ses_form, childcalcuttakids_ses_form, community_meeting_attendance
