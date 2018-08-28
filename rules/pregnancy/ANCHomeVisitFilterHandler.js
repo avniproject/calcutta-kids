@@ -44,22 +44,30 @@ class ANCHomeVisitFilterHandler {
     whatIsTheNameOfTheInstitution(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Registered for institutional delivery', 'Yes');
     }
+
     encourageRegistrationAtInstitution(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Registered for institutional delivery', 'No');
     }
+
     otherServicesReceivedOutside(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Services received outside or at Calcutta Kids', 'Other');
     }
 
     // Eating less
+    notEating(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, "Food eaten yesterday", "Nothing");
+    }
+
     whyEatingSameOrLess(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Eating compared to your pre-pregnancy food intake', 'Less', 'Same');
     }
+
     otherReasonForEatingSameOrLess(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for eating less than pre-pregnancy', 'Other');
     }
+
     counselForEatingSameOrLess(programEncounter, formElement) {
-        return this.whyEatingSameOrLess(programEncounter, formElement);
+        return this.whyEatingSameOrLess(programEncounter, formElement).or(this.notEating(programEncounter, formElement));
     }
 
     // Resting
@@ -68,9 +76,11 @@ class ANCHomeVisitFilterHandler {
         statusBuilder.show().when.valueInEncounter('Hours of rest yesterday').lessThan(2);
         return statusBuilder.build();
     }
+
     otherReasonForRestingLessThan2Hours(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for resting less than 2 hours', 'Other');
     }
+
     counsellingForRestingDuringPregnancy(programEncounter, formElement) {
         return this.reasonForRestingLessThan2Hours(programEncounter, formElement);
     }
@@ -79,9 +89,11 @@ class ANCHomeVisitFilterHandler {
     reasonForSomeOrMoreManualLabour(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Manual labour being done compared to pre-pregnancy', 'Some', 'More');
     }
+
     otherReasonForManualLabour(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for same or more manual labour', 'Other');
     }
+
     counselAgainstManualLabourDuringPregnancy(programEncounter, formElement) {
         return this.reasonForSomeOrMoreManualLabour(programEncounter, formElement);
     }
@@ -90,24 +102,24 @@ class ANCHomeVisitFilterHandler {
     reasonForNotSavingMoney(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Saving money for delivery', 'No');
     }
+
+    howMuchMoneyHaveYouSavedSoFar(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Saving money for delivery', 'Yes');
+    }
+
     otherReasonForNotSavingMoney(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for not saving money', 'Other');
     }
+
     counselForSavingMoney(programEncounter, formElement) {
         return this.reasonForNotSavingMoney(programEncounter, formElement);
     }
 
     // Calcium tablets
-    fromWhereDoYouGetYourCalciumTablets(programEncounter, formElement) {
-        return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
-    }
-    howManyCalciumTabletsHaveYouConsumedSinceYourLastVisit(programEncounter, formElement) {
-        return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
-    }
-
     ancDiscussionItem2(programEncounter, formElement) {
         return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 1);
     }
+
     ancDiscussionItem3(programEncounter, formElement) {
         return ANCHomeVisitFilterHandler.afterTrimester(programEncounter, formElement, 2);
     }
@@ -115,16 +127,19 @@ class ANCHomeVisitFilterHandler {
     tt1Date(programEncounter, formElement) {
         return VaccinationFilters.filter(programEncounter, formElement);
     }
+
     tt2Date(programEncounter, formElement) {
         return VaccinationFilters.filter(programEncounter, formElement);
     }
+
     ttBoosterDate(programEncounter, formElement) {
         return VaccinationFilters.filter(programEncounter, formElement);
     }
+
     dateOfDeworming(programEncounter, formElement) {
         return VaccinationFilters.filter(programEncounter, formElement);
     }
 
 }
 
-module.exports =  { ANCHomeVisitFilterHandler };
+module.exports = {ANCHomeVisitFilterHandler};

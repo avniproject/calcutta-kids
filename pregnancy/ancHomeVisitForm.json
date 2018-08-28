@@ -103,7 +103,7 @@
           "name": "What services have you received from an outside institution or from Calcutta Kids?",
           "uuid": "54fc74c5-b824-4446-a3c5-6e11c1d46a17",
           "keyValues": [],
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "12638203-bf5f-45ce-a419-d51bb94ec0e1"
           },
@@ -194,17 +194,6 @@
           "mandatory": true
         },
         {
-          "name": "Counsel for eating same or less",
-          "uuid": "6a07e168-6791-425d-8406-448368000ba6",
-          "keyValues": [],
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
-          },
-          "displayOrder": 7.2,
-          "mandatory": false
-        },
-        {
           "name": "What did you eat yesterday?",
           "uuid": "05bdbe43-75cb-435e-8d18-551ec7555ded",
           "keyValues": [],
@@ -214,6 +203,17 @@
           },
           "displayOrder": 8,
           "mandatory": true
+        },
+        {
+          "name": "Counsel for eating same or less",
+          "uuid": "6a07e168-6791-425d-8406-448368000ba6",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 8.1,
+          "mandatory": false
         },
         {
           "name": "How many hours did you rest yesterday during the day?",
