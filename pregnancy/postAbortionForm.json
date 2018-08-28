@@ -13,11 +13,22 @@
           "name": "Complaints",
           "uuid": "3860dca7-bb17-4a05-a598-e80ab7c77ac5",
           "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "fc1346b0-57fe-4a84-8d95-f4461d60176f",
-            "comment":"Abortion complaints"
+            "comment": "Abortion complaints"
           },
           "displayOrder": 1,
+          "mandatory": true
+        },
+        {
+          "name": "Other abortion complaints",
+          "uuid": "3b7252e6-407f-4683-94bd-7a4d53bc601c",
+          "concept": {
+            "uuid": "a7d52633-56ff-486d-b451-b119d74a7760",
+            "comment": "Other abortion complaints"
+          },
+          "displayOrder": 2,
           "mandatory": true
         }
       ]
