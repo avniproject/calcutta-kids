@@ -50,12 +50,6 @@ class DeliveryFilterHandler {
     otherDeliveryComplications() {
     }
 
-    deliveryOutcome(programEncounter, formElement) {
-        let formElementStatusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-        formElementStatusBuilder.skipAnswers("Live birth and Still birth");
-        return formElementStatusBuilder.build();
-    }
-
     placeOfDelivery(programEncounter, formElement) {
         let formElementStatusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         formElementStatusBuilder.skipAnswers("Home", "Sub Center", "Regional Hospital", "NGO Hospital", "During Transportation like in Ambulance etc").whenItem(true).is.truthy;
