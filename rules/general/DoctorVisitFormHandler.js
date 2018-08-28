@@ -19,6 +19,14 @@ class DoctorVisitFormHandler {
         return this._showOnlyForMother(formElement, programEncounter);
     };
 
+    systolic(programEncounter, formElement){
+        return this._showOnlyForMother(formElement, programEncounter);
+    }
+
+    diastolic(programEncounter, formElement){
+        return this._showOnlyForMother(formElement, programEncounter);
+    }
+
     _showOnlyForMother(formElement, programEncounter) {
         return new FormElementStatus(formElement.uuid, programEncounter.programEnrolment.program.name === 'CK Mother');
     }
