@@ -68,6 +68,26 @@
           },
           "displayOrder": 1.61,
           "mandatory": true
+        },
+        {
+          "name": "Delivered by",
+          "uuid": "ad55ab76-5749-421e-9577-7a24300980e3",
+          "keyValues": [
+            {
+              "key": "ExcludedAnswers",
+              "value": [
+                "Non-Skilled Birth Attendant (NSBA)",
+                "TBA (Trained Birth Attendant)",
+                "Medical Officer/ Doctor",
+                "Auxillary Nurse Midwife"
+              ]
+            }
+          ],
+          "concept": {
+            "uuid": "58b6367a-825f-43e2-b6b7-b35a5cbc3a09"
+          },
+          "displayOrder": 3.5,
+          "mandatory": true
         }
       ]
     },

@@ -64,7 +64,9 @@ class DeliveryFilterHandler {
 
     deliveredBy(programEncounter, formElement) {
         let formElementStatusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-        formElementStatusBuilder.skipAnswers("Non-Skilled Birth Attendant (NSBA)", "TBA (Trained Birth Attendant)", "Medical Officer/ Doctor", "Auxillary Nurse Midwife").whenItem(true).is.truthy;
+        formElementStatusBuilder.skipAnswers("Relative", "Health volunteer").when.valueInEncounter("Place of delivery")
+            .containsAnyAnswerConceptName("Private hospital", 'Government Hospital', 'Primary Health Center');
+        formElementStatusBuilder.show().whenItem(true).is.truthy;
         return formElementStatusBuilder.build();
     }
 
