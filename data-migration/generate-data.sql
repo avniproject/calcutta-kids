@@ -245,46 +245,65 @@ from delivery_details_and_pnc1 pnc
   left join pregnancy_detail pd on pd.id = pnc.pregnancydetailid::int
   left join pregnancy_registration reg on reg.pregnancydetailid :: INT = pd.id;
 
--- PNC 2
+-- CHILD PNC
 select
-  m2.uuid as individual_uuid,
-  pnc2.* from pnc2
-  inner join mother m2 on pnc2.entity_id::int = m2.id;
+  c.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  pnc2.*
+from pnc2
+  join child_registration reg on pnc2.entity_id = reg.entity_id
+  join child c on c.id = reg.entity_id :: int;
 
 -- Child exit form with death as reason
-select c.uuid as inidivual_uuid,
- child_death_form.*
- from child_death_form
- left join child c on c.id::int = child_death_form.entity_id::int;
+select
+  c.uuid as inidivual_uuid,
+  reg.enrolment_uuid,
+  child_death_form.*
+from child_death_form
+ left join child c on c.id::int = child_death_form.entity_id::int
+ left join child_registration reg on reg.entity_id::int = c.id;
 
 -- Child GMP
-select c2.uuid as individual_uuid,
- gmp.*
- from child_gmp gmp left join child c2 on gmp.child_id = c2.id;
+select
+  c2.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  gmp.*
+from child_gmp gmp
+  left join child c2 on gmp.child_id = c2.id
+  left join child_registration reg on reg.entity_id::int = c2.id;
 
 -- SES
 select
   m2.uuid as individual_uuid,
+  enrolment.enrolment_uuid,
   ses_form.* from ses_form
-left outer join mother m2 on ses_form.entity_id::int = m2.id;
+left outer join mother m2 on ses_form.entity_id::int = m2.id
+left outer join mother_enrolment enrolment on m2.id = enrolment.mother_id;
 
 -- Mother GMP
 select m.uuid as individual_uuid,
+       enrolment.enrolment_uuid,
  gmp.*
- from mother_gmp gmp left join mother m on gmp.mother_id = m.id;
+ from mother_gmp gmp left join mother m on gmp.mother_id = m.id
+ left outer join mother_enrolment enrolment on m.id = enrolment.mother_id;
 
 -- Child Home visit
 select c.uuid as individual_uuid,
+ child_registration.enrolment_uuid,
  visit.*
- from child_home_visit visit left join child c on c.id::int = visit.entity_id::int;
+ from child_home_visit visit left join child c on c.id::int = visit.entity_id::int
+ left join child_registration on child_registration.entity_id::int = c.id;
 
 -- Immunisation Taken
-select c2.uuid individual_uuid, is2.name as schedule_name, is2.immunisation_window_type as window_type, m.vaccine_name, m.interval_in_days,
+select c2.uuid individual_uuid,
+       child_registration.enrolment_uuid,
+       is2.name as schedule_name, is2.immunisation_window_type as window_type, m.vaccine_name, m.interval_in_days,
 t.given_elsewhere, t.immunisation_date taken_date, t.due_date, t.comments
  from taken_immunisation t
  join immunisation_milestone m on t.immunisation_id = m.id
  join immunisation_schedule is2 on m.immunisation_schedule_id = is2.id
- join child c2 on t.child_id = c2.id;
+ join child c2 on t.child_id = c2.id
+ left join child_registration on child_registration.entity_id::int = c2.id;
 
 -- Tables not to be imported
 -- bloodtests_lab_test_form, lab_test_form, test_lab_test_form, urinetest_lab_test_form, usg_lab_test_form (seems legacy doesn't have any new data), doctor_visit, woman_doctor_visit, tests_woman_doctor_visit, medications_woman_doctor_visit, medications_doctor_visit, tests_doctor_visit, medications_child_doctor_visit, child_lab_test_form, woman_follow_up, follow_up, child_follow_up
