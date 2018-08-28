@@ -305,11 +305,216 @@ t.given_elsewhere, t.immunisation_date taken_date, t.due_date, t.comments
  join child c2 on t.child_id = c2.id
  left join child_registration on child_registration.entity_id::int = c2.id;
 
+-- Lab tests child
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  a.*,
+  t.*
+from child_lab_test_form a
+  inner join test_child_lab_test_form t on a.id = t.parent_id
+  left join child e on e.id = nullif(a.entity_id, '') :: int
+  left join child_registration reg on e.id = nullif(reg.entity_id, '') :: int;
+
+-- Lab tests child
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  f.*,
+  bloodtests.*,
+  test_lab.*,
+  urinetest.*,
+  usg_lab.*
+from lab_test_form f
+  inner join bloodtests_lab_test_form bloodtests on bloodtests.parent_id = f.id
+  inner join test_lab_test_form test_lab on f.id = test_lab.parent_id
+  inner join urinetest_lab_test_form urinetest on f.id = urinetest.parent_id
+  inner join usg_lab_test_form usg_lab on f.id = usg_lab.parent_id
+  left join child e on e.id = nullif(f.entity_id, '')::int
+  left join child_registration reg on e.id = nullif(reg.entity_id, '')::int
+where beneficiarytype = 'child';
+
+-- Lab tests mother
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  f.*,
+  bloodtests.*,
+  test_lab.*,
+  urinetest.*,
+  usg_lab.*
+from lab_test_form f
+  inner join bloodtests_lab_test_form bloodtests on bloodtests.parent_id = f.id
+  inner join test_lab_test_form test_lab on f.id = test_lab.parent_id
+  inner join urinetest_lab_test_form urinetest on f.id = urinetest.parent_id
+  inner join usg_lab_test_form usg_lab on f.id = usg_lab.parent_id
+  left join mother e on e.id = nullif(f.entity_id,'')::int
+  left join mother_enrolment reg on e.id = reg.mother_id
+where beneficiarytype = 'mother';
+
+-- Lab tests pregnancy
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  f.*,
+  bloodtests.*,
+  test_lab.*,
+  urinetest.*,
+  usg_lab.*
+from lab_test_form f
+  inner join bloodtests_lab_test_form bloodtests on bloodtests.parent_id = f.id
+  inner join test_lab_test_form test_lab on f.id = test_lab.parent_id
+  inner join urinetest_lab_test_form urinetest on f.id = urinetest.parent_id
+  inner join usg_lab_test_form usg_lab on f.id = usg_lab.parent_id
+  left join mother e on e.id = nullif(f.entity_id,'')::int
+  left join pregnancy_registration reg on e.id = nullif(reg.entity_id, '')::int
+where beneficiarytype = 'pregnantWoman';
+
+-- Medications Mother
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  dv.*,
+  m2.*,
+  tdv.*
+from doctor_visit dv
+  inner join medications_doctor_visit m2 on dv.id = m2.parent_id
+  inner join tests_doctor_visit tdv on dv.id = tdv.parent_id
+  left join mother e on e.id = nullif(dv.entity_id,'')::int
+  left join mother_enrolment reg on e.id = reg.mother_id
+where beneficiary = 'mother';
+
+-- Medications child
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  dv.*,
+  m2.*,
+  tdv.*
+from doctor_visit dv
+  inner join medications_doctor_visit m2 on dv.id = m2.parent_id
+  inner join tests_doctor_visit tdv on dv.id = tdv.parent_id
+  left join child e on e.id = nullif(dv.entity_id, '')::int
+  left join child_registration reg on e.id = nullif(reg.entity_id, '')::int
+where beneficiary = 'child';
+
+-- Medications pregnancy
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  dv.*,
+  m2.*,
+  tdv.*
+from doctor_visit dv
+  inner join medications_doctor_visit m2 on dv.id = m2.parent_id
+  inner join tests_doctor_visit tdv on dv.id = tdv.parent_id
+  left join mother e on e.id = nullif(dv.entity_id,'')::int
+  left join pregnancy_registration reg on e.id = nullif(reg.entity_id, '')::int
+where beneficiary = 'pregnantWoman';
+
+-- Doctor visit mother
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  dv.*,
+  m2.*,
+  v.*
+from woman_doctor_visit dv
+  inner join medications_woman_doctor_visit m2 on dv.id = m2.parent_id
+  inner join tests_woman_doctor_visit v on dv.id = v.parent_id
+  left join mother e on e.id = nullif(dv.entity_id,'')::int
+  left join mother_enrolment reg on e.id = reg.mother_id
+where beneficiary = 'mother';
+
+-- doctor visit pregnancy
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  dv.*,
+  m2.*,
+  v.*
+from woman_doctor_visit dv
+  inner join medications_woman_doctor_visit m2 on dv.id = m2.parent_id
+  inner join tests_woman_doctor_visit v on dv.id = v.parent_id
+  left join mother e on e.id = nullif(dv.entity_id, '')::int
+  left join pregnancy_registration reg on e.id = nullif(reg.entity_id, '')::int
+where beneficiary = 'pregnantWoman';
+
+-- doctor visit child
+select
+  e.uuid as individual_uuid,
+  reg.enrolment_uuid,
+  dv.*,
+  m2.*,
+  v.*
+from child_doctor_visit dv
+  inner join medications_child_doctor_visit m2 on dv.id = m2.parent_id
+  inner join tests_child_doctor_visit v on dv.id = v.parent_id
+  left join child e on e.id = nullif(dv.entity_id, '')::int
+  left join child_registration reg on e.id = nullif(reg.entity_id, '')::int
+where beneficiary = 'child';
+
+-- Pregnancy followup
+select
+   m.uuid as individual_uuid,
+   reg.enrolment_uuid,
+   w.*
+from woman_follow_up w
+   inner join mother m on m.id = w.entity_id :: int
+   left join pregnancy_registration reg on nullif(reg.entity_id, '') :: int = m.id
+where beneficiarytype = 'pregnantWoman';
+
+-- Mother followup
+select
+   m.uuid as individual_uuid,
+   reg.enrolment_uuid,
+   w.*
+from woman_follow_up w
+   inner join mother m on m.id = w.entity_id :: int
+   left join mother_enrolment reg on reg.mother_id = m.id
+where beneficiarytype = 'mother';
+
+-- child followup
+select
+   c.uuid as individual_uuid,
+   reg.enrolment_uuid,
+   cf.*
+from child_follow_up cf
+   inner join child c on c.id = cf.entity_id::int
+inner join child_registration reg on nullif(reg.entity_id,'')::int = c.id;
+
+-- Mother followup
+select
+   m.uuid as individual_uuid,
+   m2.enrolment_uuid,
+   w.*
+from follow_up w
+   inner join mother m on m.id = w.entity_id:: int
+   left join mother_enrolment m2 on m.id = m2.mother_id
+where beneficiarytype = 'mother';
+
+-- Pregnancy followup
+select
+   m.uuid as individual_uuid,
+   m2.enrolment_uuid,
+   w.*
+from follow_up w
+   inner join mother m on m.id = nullif(w.entity_id,''):: int
+   left join pregnancy_registration m2 on m.id = nullif(m2.entity_id,'')::int
+where beneficiarytype = 'pregnantWoman';
+
+-- Child followup
+select
+   c.uuid as individual_uuid,
+   reg.enrolment_uuid,
+   f.*
+from follow_up f
+   inner join child c on c.id = nullif(f.entity_id,''):: int
+   left join child_registration reg on c.id = nullif(reg.entity_id,'')::int
+where beneficiarytype = 'child';
+
 -- Tables not to be imported
--- bloodtests_lab_test_form, lab_test_form, test_lab_test_form, urinetest_lab_test_form, usg_lab_test_form (seems legacy doesn't have any new data), doctor_visit, woman_doctor_visit, tests_woman_doctor_visit, medications_woman_doctor_visit, medications_doctor_visit, tests_doctor_visit, medications_child_doctor_visit, child_lab_test_form, woman_follow_up, follow_up, child_follow_up
 -- no data - woman_death_form
 -- NA - child_ses_form, childcalcuttakids_ses_form, community_meeting_attendance
--- child_away_at_village, mother_away_at_village
 -- nutrition_corner_attendance
--- due_immunisation
--- child_for_pregnancy
+-- Not needed child_away_at_village, mother_away_at_village, due_immunisation, child_for_pregnancy
