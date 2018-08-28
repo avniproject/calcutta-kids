@@ -1,4 +1,4 @@
-const { RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper } = require('rules-config/rules');
+const {RuleFactory, FormElementStatusBuilder, FormElementsStatusHelper} = require('rules-config/rules');
 const DeliveryFilter = RuleFactory("cc6a3c6a-c3cc-488d-a46c-d9d538fcc9c2", 'ViewFilter');
 const RuleHelper = require('../RuleHelper');
 const ObservationMatcherAnnotationFactory = require('../ObservationMatcherAnnotationFactory');
@@ -13,34 +13,45 @@ class DeliveryFilterHandler {
     }
 
     @CodedObservationMatcher('Place of delivery', ['Other'])
-    otherPlaceOfDelivery(){}
+    otherPlaceOfDelivery() {
+    }
 
-    @CodedObservationMatcher('Place of delivery',['Home in FB', 'Home outside FB'])
-    whyDidYouChooseToHaveABirthAtHome() {}
+    @CodedObservationMatcher('Place of delivery', ['Home in FB', 'Home outside FB'])
+    whyDidYouChooseToHaveABirthAtHome() {
+    }
 
     @CodedObservationMatcher('Reason to have birth at home', ['Other'])
-    otherReasonToHaveBirthAtHome(){}
+    otherReasonToHaveBirthAtHome() {
+    }
 
     @CodedObservationMatcher('Place of delivery', ['Government Hospital'])
-    didYouReceiveJsy(){}
+    didYouReceiveJsy() {
+    }
 
     @CodedObservationMatcher('Place of delivery', ['Private hospital'])
-    labourTime(){}
+    labourTime() {
+    }
 
-    @CodedObservationMatcher('Place of delivery',['Government Hospital', 'Private Hospital'])
-    dateOfDischarge() {}
+
+    dateOfDischarge(programEncounter, formElement) {
+        const statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        statusBuilder.show().when.valueInEncounter("Place of delivery")
+            .not.containsAnyAnswerConceptName("Home in FB", "Home outside FB");
+        return statusBuilder.build();
+    }
 
     deliveryComplications(programEncounter, formElement) {
-        let formElementStatusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
+        let formElementStatusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         formElementStatusBuilder.skipAnswers("Maternal Death");
         return formElementStatusBuilder.build();
     }
 
     @CodedObservationMatcher('Delivery Complications', ['Other'])
-    otherDeliveryComplications() {}
+    otherDeliveryComplications() {
+    }
 
     deliveryOutcome(programEncounter, formElement) {
-        let formElementStatusBuilder = new FormElementStatusBuilder({ programEncounter, formElement });
+        let formElementStatusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         formElementStatusBuilder.skipAnswers("Live birth and Still birth");
         return formElementStatusBuilder.build();
     }
@@ -59,4 +70,4 @@ class DeliveryFilterHandler {
 
 }
 
-module.exports = { DeliveryFilterHandler };
+module.exports = {DeliveryFilterHandler};
