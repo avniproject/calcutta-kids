@@ -19,6 +19,13 @@ class PNCFormHandler {
     }
 
     @WithStatusBuilder
+    anyAbdominalProblems([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().whenItem(true).is.truthy;
+        statusBuilder.skipAnswers("Uterus is soft or tender");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
     whyEatingSameOrLess([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Eating compared to your pre-pregnancy food intake")
             .containsAnyAnswerConceptName("Less", "Same");
