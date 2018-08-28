@@ -5,6 +5,11 @@
     "dataType": "NA"
   },
   {
+    "name": "PPI",
+    "dataType": "Numeric",
+    "uuid": "25bc5050-8130-49f4-b4db-33b5cb5ea5d8"
+  },
+  {
     "name": "Not breastfeeding",
     "uuid": "f42fc7dc-399c-4bbe-a4dd-8a7559dc37f2",
     "dataType": "NA"
