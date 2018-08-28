@@ -177,31 +177,38 @@ order by woman_lab_test_form.id;
 -- Child__Lab_Tests
 select
   child.uuid individual_uuid,
+  cr.enrolment_uuid,
   test_child_lab_test_form.*
 from test_child_lab_test_form
-  inner join child on child.id = test_child_lab_test_form.parent_id :: int;
+  inner join child on child.id = test_child_lab_test_form.parent_id :: int
+  INNER JOIN child_registration cr ON child.id = cr.entity_id :: INT;
 
 -- Child__Doctor_Visit_V1
 select
   child.uuid as individual_uuid,
+  cr.enrolment_uuid,
   child_doctor_visit.*,
   tests_child_doctor_visit.*
 from child_doctor_visit
   left outer join tests_child_doctor_visit on child_doctor_visit.id = tests_child_doctor_visit.parent_id
-  left outer join child on child.id = child_doctor_visit.entity_id :: int;
+  left outer join child on child.id = child_doctor_visit.entity_id :: int
+  left outer JOIN child_registration cr ON child.id = cr.entity_id :: INT;
 -- Child__Doctor_Visit_V2
 select
   child.uuid as individual_uuid,
+  cr.enrolment_uuid,
   child_doctor_visit_and_follow_up.*,
   tests_child_doctor_visit_and_follow_up.*,
   medications_child_doctor_visit_and_follow_up.*
 from child_doctor_visit_and_follow_up
   left outer join tests_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = tests_child_doctor_visit_and_follow_up.parent_id
   left outer join child on child.id = child_doctor_visit_and_follow_up.entity_id :: int
+  left outer join child_registration cr on cr.entity_id :: INT = child.id
   left outer join medications_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = medications_child_doctor_visit_and_follow_up.parent_id;
 
 select
   child.uuid as individual_uuid,
+  cr.enrolment_uuid,
   child_doctor_visit_and_follow_up.*,
   tests_child_doctor_visit_and_follow_up.*,
   medications_child_doctor_visit_and_follow_up.*,
@@ -209,18 +216,21 @@ select
 from child_doctor_visit_and_follow_up
   left outer join tests_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = tests_child_doctor_visit_and_follow_up.parent_id
   left outer join child on child.id = child_doctor_visit_and_follow_up.entity_id :: int
+  INNER JOIN child_registration cr ON child.id = cr.entity_id :: INT
   left outer join medications_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = medications_child_doctor_visit_and_follow_up.parent_id
   left outer join followupform_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = followupform_child_doctor_visit_and_follow_up.parent_id;
 
 -- Doctor visit
 select
   mother.uuid as individual_uuid,
+  me.enrolment_uuid,
   woman_doctor_visit_and_follow_up.*,
   tests_woman_doctor_visit_and_follow_up.*,
   medications_woman_doctor_visit_and_follow_up.*,
   followupform_woman_doctor_visit_and_follow_up.*
 from woman_doctor_visit_and_follow_up
   inner join mother on mother.id = woman_doctor_visit_and_follow_up.entity_id :: int
+  inner join mother_enrolment me on mother.id = me.mother_id
   left outer join tests_woman_doctor_visit_and_follow_up on woman_doctor_visit_and_follow_up.id = tests_woman_doctor_visit_and_follow_up.parent_id
   left outer join medications_woman_doctor_visit_and_follow_up on woman_doctor_visit_and_follow_up.id = medications_woman_doctor_visit_and_follow_up.parent_id
   left outer join followupform_woman_doctor_visit_and_follow_up on woman_doctor_visit_and_follow_up.id = followupform_woman_doctor_visit_and_follow_up.parent_id;
@@ -228,8 +238,13 @@ from woman_doctor_visit_and_follow_up
 -- PNC 1
 select
   m2.uuid as individual_uuid,
-  delivery_details_and_pnc1.* from delivery_details_and_pnc1
-  inner join mother m2 on delivery_details_and_pnc1.entity_id::int = m2.id;
+  reg.enrolment_uuid,
+  pnc.*
+from delivery_details_and_pnc1 pnc
+  inner join mother m2 on pnc.entity_id::int = m2.id
+  left join pregnancy_detail pd on pd.id = pnc.pregnancydetailid::int
+  left join pregnancy_registration reg on reg.pregnancydetailid :: INT = pd.id;
+
 -- PNC 2
 select
   m2.uuid as individual_uuid,
