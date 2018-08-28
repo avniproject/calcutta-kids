@@ -1,5 +1,6 @@
-const { FormElementStatusBuilder, FormElementStatus, VisitScheduleBuilder } = require('rules-config/rules');
+const {FormElementStatusBuilder, FormElementStatus, VisitScheduleBuilder} = require('rules-config/rules');
 import lib from './lib';
+
 const moment = require("moment");
 
 class RuleHelper {
@@ -18,14 +19,14 @@ class RuleHelper {
 
     static generalObservationMatcher(context, scope, conceptName, matchingFn, [...answers] /*always array*/) {
         let statusBuilder = new FormElementStatusBuilder(context);
-        statusBuilder.show().when['valueIn'+scope](conceptName)[matchingFn](...answers);
+        statusBuilder.show().when['valueIn' + scope](conceptName)[matchingFn](...answers);
         return statusBuilder.build();
     }
 
     static Scope = {
-        Enrolment:'Enrolment',
-        Encounter:'Encounter',
-        EntireEnrolment:'EntireEnrolment'
+        Enrolment: 'Enrolment',
+        Encounter: 'Encounter',
+        EntireEnrolment: 'EntireEnrolment'
     };
 
     static _calculateBMI = (weight, height) => {
@@ -43,7 +44,7 @@ class RuleHelper {
     }
 
     static removeRecommendation(decisions, groupName, recommendationName, reason) {
-        const defaultVal = { name: recommendationName , value: [] };
+        const defaultVal = {name: recommendationName, value: []};
         const group = decisions[groupName] = decisions[groupName] || [];
         const recommendation = group.find((d) => d.name === recommendationName) || (group.push(defaultVal), defaultVal);
         recommendation.value = recommendation.value || [];
@@ -54,7 +55,7 @@ class RuleHelper {
     }
 
     static addRecommendation(decisions, groupName, recommendationName, reason) {
-        const defaultVal = { name: recommendationName , value: [] };
+        const defaultVal = {name: recommendationName, value: []};
         const group = decisions[groupName] = decisions[groupName] || [];
         const recommendation = group.find((d) => d.name === recommendationName) || (group.push(defaultVal), defaultVal);
         recommendation.value = recommendation.value || [];
@@ -86,6 +87,10 @@ class RuleHelper {
                 maxDate: moment(earliestDate).add(numberOfDaysForMaxOffset, 'days').toDate()
             }
         );
+    }
+
+    static hideFormElementGroup(formElementGroup) {
+        return formElementGroup.getFormElements().map(fe => new FormElementStatus(fe.uuid, false));
     }
 
     static scheduleOneVisit(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {
