@@ -110,8 +110,7 @@ class ChildHomeVisitFilter {
 
     haveYouBeenFeedingSolidsSemiSolidsToTheChild(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.ageInMonths.greaterThanOrEqualTo(6)
-            .and.when.ageInMonths.lessThan(12);
+        statusBuilder.show().when.ageInMonths.greaterThanOrEqualTo(6);
         return statusBuilder.build();
     }
 
@@ -124,7 +123,7 @@ class ChildHomeVisitFilter {
     howManyTimesADayIsTheChildEatingHomemadeSemiSolidSolidFoods(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
         statusBuilder.show()
-            .when.ageInMonths.greaterThanOrEqualTo(12)
+            .when.ageInMonths.greaterThanOrEqualTo(6)
             .or.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
         return statusBuilder.build();
     }
@@ -132,7 +131,7 @@ class ChildHomeVisitFilter {
     whatTypeOfSemiSolidSolidFoodsDidYouFeedYourChildYesterday(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
         statusBuilder.show()
-            .when.ageInMonths.greaterThanOrEqualTo(12)
+            .when.ageInMonths.greaterThanOrEqualTo(6)
             .or.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
         return statusBuilder.build();
     }
@@ -140,7 +139,7 @@ class ChildHomeVisitFilter {
     howManyTimesADayIsTheChildEatingSnacks(programEncounter, formElement) {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
         statusBuilder.show()
-            .when.ageInMonths.greaterThanOrEqualTo(12)
+            .when.ageInMonths.greaterThanOrEqualTo(6)
             .or.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
         return statusBuilder.build();
     }
