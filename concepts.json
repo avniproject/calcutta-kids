@@ -122,7 +122,7 @@
     "dataType": "Numeric"
   },
   {
-    "name": "Number of people 0-17 in the household",
+    "name": "Number of people aged 0-17 years in the household",
     "uuid": "da79427f-f935-4b17-b6d8-44806323f03d",
     "dataType": "Coded",
     "answers": [
