@@ -378,7 +378,7 @@
         {
           "uuid": "0086ac2c-5540-4c15-8cd3-b04f92f0bdf4",
           "name": "What is household’s primary source of energy for cooking?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "bf982fb0-a128-4e99-9172-484861f2bcd7"
           },
@@ -388,7 +388,7 @@
         {
           "uuid": "43087078-94ca-40a0-9d4a-a3e30a11833d",
           "name": "What type of toilet facility do you usually use for defecation?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "2d146780-4b72-46f0-bab0-b81b87baf797"
           },
@@ -416,7 +416,7 @@
         {
           "uuid": "f1423730-18d7-4425-8203-e12cb55abde9",
           "name": "Pregnancy care received from?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "2b0ba6d4-05b9-441c-9d89-fdc70394f852"
           },
@@ -561,7 +561,7 @@
         {
           "uuid": "a1f35eab-8c94-4a9e-b61e-8fef3e8db03b",
           "name": "Emergency service received from?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "5339fc25-ef4f-42fe-9b4f-307efb9a8173"
           },
