@@ -33,8 +33,8 @@ create view pregnant AS
 
 insert into mother_enrolment (mother_id)
 select distinct id from mother;
--- Mother/Pregnant Registration
-SELECT
+-- Mother/Pregnant Registration [csv created]
+COPY (SELECT
   m.uuid                                               AS "Individual UUID",
   m.first_name                                         AS "First Name",
   m.last_name                                          AS "Last Name",
@@ -56,26 +56,26 @@ SELECT
   wr.husband_name || ' ' || wr.husband_last_name       AS "Father/Husband",
   initcap(wr.medicalhistory)                           AS "Other medical history"
 FROM mother m
-  INNER JOIN woman_registration wr ON wr.entity_id != '' AND wr.entity_id :: INT = m.id;
+  INNER JOIN woman_registration wr ON wr.entity_id != '' AND wr.entity_id :: INT = m.id) TO '/tmp/migrations/MotherAndPregnancyRegistration.csv' (format CSV);
 
--- Pregnancy Enrolment
-select
+-- Pregnancy Enrolment [csv created]
+COPY (select
   mother.uuid as individual_uuid,
+  pregnancy_registration.enrolment_uuid,
   pregnancy_registration.*,
-  pregnancy_detail.*,
-  pregnancy_registration.enrolment_uuid
-from pregnancy_registration
+  pregnancy_detail.*
+  from pregnancy_registration
   inner join pregnancy_detail on pregnancy_registration.pregnancydetailid::int = pregnancy_detail.id
-inner join mother on pregnancy_registration.entity_id != '' AND pregnancy_registration.entity_id :: INT = mother.id;
+inner join mother on pregnancy_registration.entity_id != '' AND pregnancy_registration.entity_id :: INT = mother.id) TO '/tmp/migrations/PregnancyEnrolment.csv' (format CSV);
 
--- Mother Enrolment
-select
+-- Mother Enrolment [csv created]
+COPY(select
   m2.uuid as individual_uuid,
   reg.enrolment_uuid
-from mother_enrolment reg join mother m2 on reg.mother_id = m2.id;
+from mother_enrolment reg join mother m2 on reg.mother_id = m2.id) TO '/tmp/migrations/MotherEnrolment.csv' (format CSV);
 
--- Child Registration and Enrolment
-SELECT
+-- Child Registration and Enrolment [csv created]
+COPY (SELECT
   c.uuid                                                                       AS "Individual UUID",
   cr.enrolment_uuid                                                            AS "Enrolment UUID",
   c.first_name                                                                 AS "First Name",
@@ -106,20 +106,20 @@ FROM child c
   INNER JOIN child_registration cr ON c.id = cr.entity_id :: INT
   INNER JOIN mother m ON m.id = c.id
   INNER JOIN woman_registration wr ON wr.entity_id != '' AND wr.entity_id :: INT = m.id
-  LEFT OUTER JOIN child_status status on status.child_id = c.id;
+  LEFT OUTER JOIN child_status status on status.child_id = c.id) TO '/tmp/migrations/ChildRegistrationAndEnrolment.csv' (format CSV);
 
 -- PROGRAM__ENC_TYPE__ENC_NAME
--- Pregnancy__ANC__ANC_1
-select
+-- Pregnancy__ANC__ANC_1 [csv created]
+COPY (select
   mother.uuid as individual_uuid,
   reg.enrolment_uuid,
   tr.*
 from anc_first_trimester tr
  inner join mother on mother.id = tr.entity_id::int
  inner join pregnancy_registration reg on reg.entity_id != '' AND reg.entity_id :: INT = tr.entity_id::int
-   and tr.date::DATE BETWEEN lastmenstrualperiod::DATE AND (lastmenstrualperiod::DATE + '4 month'::INTERVAL);
--- Pregnancy__ANC__ANC_2
-select
+   and tr.date::DATE BETWEEN lastmenstrualperiod::DATE AND (lastmenstrualperiod::DATE + '4 month'::INTERVAL)) TO '/tmp/migrations/PregnancyANC1.csv' (format CSV);
+-- Pregnancy__ANC__ANC_2 [csv created]
+COPY (select
    m.uuid,
    reg.enrolment_uuid,
    tr.*
@@ -127,9 +127,9 @@ from anc_second_trimester tr
  inner join pregnancy_registration reg on reg.entity_id != '' AND reg.entity_id :: INT = tr.entity_id :: int
     and tr.date::DATE BETWEEN (lastmenstrualperiod::DATE + '3 month'::INTERVAL) AND (lastmenstrualperiod::DATE + '7 month'::INTERVAL)
 -- 3 & 7 are rough numbers to group encounters of an enrolment, if there are multiple pregnancy for an individual
- inner join mother m on m.id = tr.entity_id :: int;
--- Pregnancy__ANC__ANC_3
-select
+ inner join mother m on m.id = tr.entity_id :: int) TO '/tmp/migrations/PregnancyANC2.csv' (format CSV);
+-- Pregnancy__ANC__ANC_3 [csv created]
+COPY (select
    m.uuid,
    reg.enrolment_uuid,
    tr.*
@@ -137,10 +137,10 @@ from anc_third_trimester tr
  inner join pregnancy_registration reg on reg.entity_id != '' AND reg.entity_id :: INT = tr.entity_id :: int
     and tr.date::DATE BETWEEN (lastmenstrualperiod::DATE + '6 month'::INTERVAL) AND (lastmenstrualperiod::DATE + '11 month'::INTERVAL)
 -- 6 & 11 are rough numbers to group encounters of an enrolment, if there are multiple pregnancy for an individual
- inner join mother m on m.id = tr.entity_id :: int;
+ inner join mother m on m.id = tr.entity_id :: int) TO '/tmp/migrations/PregnancyANC3.csv' (format CSV);
 
--- Pregnancy__Lab_Tests
-select
+-- Pregnancy__Lab_Tests [csv created]
+COPY (select
   mother.uuid individual_uuid,
   reg.enrolment_uuid,
   woman_lab_test_form.*,
@@ -156,9 +156,9 @@ from woman_lab_test_form
   left outer join pregnancy_registration reg on reg.entity_id = woman_lab_test_form.entity_id
      and woman_lab_test_form.today::DATE between reg.lastmenstrualperiod::DATE AND (reg.lastmenstrualperiod::DATE + '45 week'::INTERVAL)
 where beneficiarytype = 'pregnantWoman' and mother.uuid is not null
-order by mother.uuid, reg.enrolment_uuid;
--- Mother__Lab_Tests
-select
+order by mother.uuid, reg.enrolment_uuid) TO '/tmp/migrations/PregnancyLabTests.csv' (format CSV);
+-- Mother__Lab_Tests [csv created]
+COPY (select
   mother.uuid individual_uuid,
   reg.enrolment_uuid,
   woman_lab_test_form.*,
@@ -173,18 +173,10 @@ from woman_lab_test_form
   left outer join usg_woman_lab_test_form on woman_lab_test_form.id = usg_woman_lab_test_form.parent_id
   left outer join mother_enrolment reg on reg.mother_id = mother.id
 where beneficiarytype = 'mother' and mother.uuid is not null
-order by woman_lab_test_form.id;
--- Child__Lab_Tests
-select
-  child.uuid individual_uuid,
-  cr.enrolment_uuid,
-  test_child_lab_test_form.*
-from test_child_lab_test_form
-  inner join child on child.id = test_child_lab_test_form.parent_id :: int
-  INNER JOIN child_registration cr ON child.id = cr.entity_id :: INT;
+order by woman_lab_test_form.id) TO '/tmp/migrations/MotherLabTests.csv' (format CSV);
 
--- Child__Doctor_Visit_V1
-select
+-- Child__Doctor_Visit_V1 [csv created]
+COPY (select
   child.uuid as individual_uuid,
   cr.enrolment_uuid,
   child_doctor_visit.*,
@@ -192,21 +184,9 @@ select
 from child_doctor_visit
   left outer join tests_child_doctor_visit on child_doctor_visit.id = tests_child_doctor_visit.parent_id
   left outer join child on child.id = child_doctor_visit.entity_id :: int
-  left outer JOIN child_registration cr ON child.id = cr.entity_id :: INT;
--- Child__Doctor_Visit_V2
-select
-  child.uuid as individual_uuid,
-  cr.enrolment_uuid,
-  child_doctor_visit_and_follow_up.*,
-  tests_child_doctor_visit_and_follow_up.*,
-  medications_child_doctor_visit_and_follow_up.*
-from child_doctor_visit_and_follow_up
-  left outer join tests_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = tests_child_doctor_visit_and_follow_up.parent_id
-  left outer join child on child.id = child_doctor_visit_and_follow_up.entity_id :: int
-  left outer join child_registration cr on cr.entity_id :: INT = child.id
-  left outer join medications_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = medications_child_doctor_visit_and_follow_up.parent_id;
-
-select
+  left outer JOIN child_registration cr ON child.id = cr.entity_id :: INT) TO '/tmp/migrations/ChildDoctorVisitFile1.csv' (format CSV);;
+-- Child__Doctor_Visit_followup [csv created]
+COPY (select
   child.uuid as individual_uuid,
   cr.enrolment_uuid,
   child_doctor_visit_and_follow_up.*,
@@ -218,10 +198,10 @@ from child_doctor_visit_and_follow_up
   left outer join child on child.id = child_doctor_visit_and_follow_up.entity_id :: int
   INNER JOIN child_registration cr ON child.id = cr.entity_id :: INT
   left outer join medications_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = medications_child_doctor_visit_and_follow_up.parent_id
-  left outer join followupform_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = followupform_child_doctor_visit_and_follow_up.parent_id;
+  left outer join followupform_child_doctor_visit_and_follow_up on child_doctor_visit_and_follow_up.id = followupform_child_doctor_visit_and_follow_up.parent_id) TO '/tmp/migrations/ChildDoctorVisitFollowup.csv' (format CSV);;
 
--- Doctor visit
-select
+-- Mother Doctor visit followup [csv created]
+COPY (select
   mother.uuid as individual_uuid,
   me.enrolment_uuid,
   woman_doctor_visit_and_follow_up.*,
@@ -233,69 +213,69 @@ from woman_doctor_visit_and_follow_up
   inner join mother_enrolment me on mother.id = me.mother_id
   left outer join tests_woman_doctor_visit_and_follow_up on woman_doctor_visit_and_follow_up.id = tests_woman_doctor_visit_and_follow_up.parent_id
   left outer join medications_woman_doctor_visit_and_follow_up on woman_doctor_visit_and_follow_up.id = medications_woman_doctor_visit_and_follow_up.parent_id
-  left outer join followupform_woman_doctor_visit_and_follow_up on woman_doctor_visit_and_follow_up.id = followupform_woman_doctor_visit_and_follow_up.parent_id;
+  left outer join followupform_woman_doctor_visit_and_follow_up on woman_doctor_visit_and_follow_up.id = followupform_woman_doctor_visit_and_follow_up.parent_id) TO '/tmp/migrations/MotherDoctorVisitFollowup.csv' (format CSV);;
 
--- PNC 1
-select
+-- Pregnancy Delivery and PNC 1 [csv created]
+COPY (select
   m2.uuid as individual_uuid,
   reg.enrolment_uuid,
   pnc.*
 from delivery_details_and_pnc1 pnc
   inner join mother m2 on pnc.entity_id::int = m2.id
   left join pregnancy_detail pd on pd.id = pnc.pregnancydetailid::int
-  left join pregnancy_registration reg on reg.pregnancydetailid :: INT = pd.id;
+  left join pregnancy_registration reg on reg.pregnancydetailid :: INT = pd.id)TO '/tmp/migrations/PregnancyDeliveryAndPNC1.csv' (format CSV);
 
--- CHILD PNC
-select
+-- CHILD PNC [csv created]
+COPY (select
   c.uuid as individual_uuid,
   reg.enrolment_uuid,
   pnc2.*
 from pnc2
   join child_registration reg on pnc2.entity_id = reg.entity_id
-  join child c on c.id = reg.entity_id :: int;
+  join child c on c.id = reg.entity_id :: int)TO '/tmp/migrations/ChildPNC.csv' (format CSV);
 
--- Child exit form with death as reason
-select
+-- Child exit form with death as reason [csv created]
+COPY (select
   c.uuid as inidivual_uuid,
   reg.enrolment_uuid,
   child_death_form.*
 from child_death_form
  left join child c on c.id::int = child_death_form.entity_id::int
- left join child_registration reg on reg.entity_id::int = c.id;
+ left join child_registration reg on reg.entity_id::int = c.id)TO '/tmp/migrations/ChildExit_Reason-Death.csv' (format CSV);
 
--- Child GMP
-select
+-- Child GMP [csv created]
+COPY (select
   c2.uuid as individual_uuid,
   reg.enrolment_uuid,
   gmp.*
 from child_gmp gmp
   left join child c2 on gmp.child_id = c2.id
-  left join child_registration reg on reg.entity_id::int = c2.id;
+  left join child_registration reg on reg.entity_id::int = c2.id)TO '/tmp/migrations/ChildGMP.csv' (format CSV);
 
--- SES
-select
+-- SES [csv created]
+COPY (select
   m2.uuid as individual_uuid,
   enrolment.enrolment_uuid,
   ses_form.* from ses_form
 left outer join mother m2 on ses_form.entity_id::int = m2.id
-left outer join mother_enrolment enrolment on m2.id = enrolment.mother_id;
+left outer join mother_enrolment enrolment on m2.id = enrolment.mother_id)TO '/tmp/migrations/SES.csv' (format CSV);
 
--- Mother GMP
-select m.uuid as individual_uuid,
+-- Mother GMP [csv created]
+COPY (select m.uuid as individual_uuid,
        enrolment.enrolment_uuid,
  gmp.*
  from mother_gmp gmp left join mother m on gmp.mother_id = m.id
- left outer join mother_enrolment enrolment on m.id = enrolment.mother_id;
+ left outer join mother_enrolment enrolment on m.id = enrolment.mother_id)TO '/tmp/migrations/MotherGMP.csv' (format CSV);
 
--- Child Home visit
-select c.uuid as individual_uuid,
+-- Child Home visit [csv created]
+COPY (select c.uuid as individual_uuid,
  child_registration.enrolment_uuid,
  visit.*
  from child_home_visit visit left join child c on c.id::int = visit.entity_id::int
- left join child_registration on child_registration.entity_id::int = c.id;
+ left join child_registration on child_registration.entity_id::int = c.id)TO '/tmp/migrations/ChildHomeVisit.csv' (format CSV);
 
--- Immunisation Taken
-select c2.uuid individual_uuid,
+-- Immunisation Taken [csv created]
+COPY (select c2.uuid individual_uuid,
        child_registration.enrolment_uuid,
        is2.name as schedule_name, is2.immunisation_window_type as window_type, m.vaccine_name, m.interval_in_days,
 t.given_elsewhere, t.immunisation_date taken_date, t.due_date, t.comments
@@ -303,10 +283,10 @@ t.given_elsewhere, t.immunisation_date taken_date, t.due_date, t.comments
  join immunisation_milestone m on t.immunisation_id = m.id
  join immunisation_schedule is2 on m.immunisation_schedule_id = is2.id
  join child c2 on t.child_id = c2.id
- left join child_registration on child_registration.entity_id::int = c2.id;
+ left join child_registration on child_registration.entity_id::int = c2.id)TO '/tmp/migrations/ChildImmunisationTaken.csv' (format CSV);
 
--- Lab tests child
-select
+-- Lab tests child 1 [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   a.*,
@@ -314,10 +294,10 @@ select
 from child_lab_test_form a
   inner join test_child_lab_test_form t on a.id = t.parent_id
   left join child e on e.id = nullif(a.entity_id, '') :: int
-  left join child_registration reg on e.id = nullif(reg.entity_id, '') :: int;
+  left join child_registration reg on e.id = nullif(reg.entity_id, '') :: int)TO '/tmp/migrations/ChildLabTests1.csv' (format CSV);
 
--- Lab tests child
-select
+-- Lab tests child 2 [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   f.*,
@@ -332,10 +312,10 @@ from lab_test_form f
   inner join usg_lab_test_form usg_lab on f.id = usg_lab.parent_id
   left join child e on e.id = nullif(f.entity_id, '')::int
   left join child_registration reg on e.id = nullif(reg.entity_id, '')::int
-where beneficiarytype = 'child';
+where beneficiarytype = 'child')TO '/tmp/migrations/ChildLabTests2.csv' (format CSV);
 
--- Lab tests mother
-select
+-- Lab tests mother [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   f.*,
@@ -350,10 +330,10 @@ from lab_test_form f
   inner join usg_lab_test_form usg_lab on f.id = usg_lab.parent_id
   left join mother e on e.id = nullif(f.entity_id,'')::int
   left join mother_enrolment reg on e.id = reg.mother_id
-where beneficiarytype = 'mother';
+where beneficiarytype = 'mother')TO '/tmp/migrations/MotherLabTests1.csv' (format CSV);
 
--- Lab tests pregnancy
-select
+-- Lab tests pregnancy [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   f.*,
@@ -368,10 +348,10 @@ from lab_test_form f
   inner join usg_lab_test_form usg_lab on f.id = usg_lab.parent_id
   left join mother e on e.id = nullif(f.entity_id,'')::int
   left join pregnancy_registration reg on e.id = nullif(reg.entity_id, '')::int
-where beneficiarytype = 'pregnantWoman';
+where beneficiarytype = 'pregnantWoman')TO '/tmp/migrations/PregnancyLabTests1.csv' (format CSV);
 
--- Medications Mother
-select
+-- Medications Mother [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   dv.*,
@@ -382,10 +362,10 @@ from doctor_visit dv
   inner join tests_doctor_visit tdv on dv.id = tdv.parent_id
   left join mother e on e.id = nullif(dv.entity_id,'')::int
   left join mother_enrolment reg on e.id = reg.mother_id
-where beneficiary = 'mother';
+where beneficiary = 'mother')TO '/tmp/migrations/MotherMedicationsAndTestsInDoctorVisit.csv' (format CSV);
 
--- Medications child
-select
+-- Medications child [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   dv.*,
@@ -396,10 +376,10 @@ from doctor_visit dv
   inner join tests_doctor_visit tdv on dv.id = tdv.parent_id
   left join child e on e.id = nullif(dv.entity_id, '')::int
   left join child_registration reg on e.id = nullif(reg.entity_id, '')::int
-where beneficiary = 'child';
+where beneficiary = 'child')TO '/tmp/migrations/ChildMedicationsAndTestsInDoctorVisit.csv' (format CSV);
 
--- Medications pregnancy
-select
+-- Medications pregnancy [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   dv.*,
@@ -410,10 +390,10 @@ from doctor_visit dv
   inner join tests_doctor_visit tdv on dv.id = tdv.parent_id
   left join mother e on e.id = nullif(dv.entity_id,'')::int
   left join pregnancy_registration reg on e.id = nullif(reg.entity_id, '')::int
-where beneficiary = 'pregnantWoman';
+where beneficiary = 'pregnantWoman')TO '/tmp/migrations/PregnancyMedicationsAndTestsInDoctorVisit.csv' (format CSV);
 
--- Doctor visit mother
-select
+-- Doctor visit mother [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   dv.*,
@@ -424,10 +404,10 @@ from woman_doctor_visit dv
   inner join tests_woman_doctor_visit v on dv.id = v.parent_id
   left join mother e on e.id = nullif(dv.entity_id,'')::int
   left join mother_enrolment reg on e.id = reg.mother_id
-where beneficiary = 'mother';
+where beneficiary = 'mother')TO '/tmp/migrations/MotherMedicationsAndTestsInDoctorVisit2.csv' (format CSV);
 
--- doctor visit pregnancy
-select
+-- doctor visit pregnancy [csv created]
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   dv.*,
@@ -438,10 +418,10 @@ from woman_doctor_visit dv
   inner join tests_woman_doctor_visit v on dv.id = v.parent_id
   left join mother e on e.id = nullif(dv.entity_id, '')::int
   left join pregnancy_registration reg on e.id = nullif(reg.entity_id, '')::int
-where beneficiary = 'pregnantWoman';
+where beneficiary = 'pregnantWoman')TO '/tmp/migrations/PregnancyMedicationsAndTestsInDoctorVisit2.csv' (format CSV);
 
 -- doctor visit child
-select
+COPY (select
   e.uuid as individual_uuid,
   reg.enrolment_uuid,
   dv.*,
@@ -452,66 +432,66 @@ from child_doctor_visit dv
   inner join tests_child_doctor_visit v on dv.id = v.parent_id
   left join child e on e.id = nullif(dv.entity_id, '')::int
   left join child_registration reg on e.id = nullif(reg.entity_id, '')::int
-where beneficiary = 'child';
+where beneficiary = 'child')TO '/tmp/migrations/ChildMedicationsAndTestsInDoctorVisit2.csv' (format CSV);
 
 -- Pregnancy followup
-select
+COPY (select
    m.uuid as individual_uuid,
    reg.enrolment_uuid,
    w.*
 from woman_follow_up w
    inner join mother m on m.id = w.entity_id :: int
    left join pregnancy_registration reg on nullif(reg.entity_id, '') :: int = m.id
-where beneficiarytype = 'pregnantWoman';
+where beneficiarytype = 'pregnantWoman')TO '/tmp/migrations/PregnancyFollowup.csv' (format CSV);
 
 -- Mother followup
-select
+COPY (select
    m.uuid as individual_uuid,
    reg.enrolment_uuid,
    w.*
 from woman_follow_up w
    inner join mother m on m.id = w.entity_id :: int
    left join mother_enrolment reg on reg.mother_id = m.id
-where beneficiarytype = 'mother';
+where beneficiarytype = 'mother')TO '/tmp/migrations/MotherFollowup.csv' (format CSV);
 
 -- child followup
-select
+COPY (select
    c.uuid as individual_uuid,
    reg.enrolment_uuid,
    cf.*
 from child_follow_up cf
    inner join child c on c.id = cf.entity_id::int
-inner join child_registration reg on nullif(reg.entity_id,'')::int = c.id;
+inner join child_registration reg on nullif(reg.entity_id,'')::int = c.id)TO '/tmp/migrations/ChildFollowup.csv' (format CSV);
 
 -- Mother followup
-select
+COPY (select
    m.uuid as individual_uuid,
    m2.enrolment_uuid,
    w.*
 from follow_up w
    inner join mother m on m.id = w.entity_id:: int
    left join mother_enrolment m2 on m.id = m2.mother_id
-where beneficiarytype = 'mother';
+where beneficiarytype = 'mother')TO '/tmp/migrations/MotherFollowup2.csv' (format CSV);
 
 -- Pregnancy followup
-select
+COPY (select
    m.uuid as individual_uuid,
    m2.enrolment_uuid,
    w.*
 from follow_up w
    inner join mother m on m.id = nullif(w.entity_id,''):: int
    left join pregnancy_registration m2 on m.id = nullif(m2.entity_id,'')::int
-where beneficiarytype = 'pregnantWoman';
+where beneficiarytype = 'pregnantWoman')TO '/tmp/migrations/PregnancyFollowup2.csv' (format CSV);
 
 -- Child followup
-select
+COPY (select
    c.uuid as individual_uuid,
    reg.enrolment_uuid,
    f.*
 from follow_up f
    inner join child c on c.id = nullif(f.entity_id,''):: int
    left join child_registration reg on c.id = nullif(reg.entity_id,'')::int
-where beneficiarytype = 'child';
+where beneficiarytype = 'child')TO '/tmp/migrations/ChildFollowup2.csv' (format CSV);
 
 -- Tables not to be imported
 -- no data - woman_death_form
