@@ -175,7 +175,6 @@
           "uuid": "c7cad492-6ebe-4813-94c0-f4ca000771ee",
           "name": "Other medical history",
           "keyValues": [],
-          "type": "Text",
           "concept": {
             "uuid": "331de3bd-7dc6-43ee-a8b8-45ee1d8a8617",
             "comment": "Other medical history"
