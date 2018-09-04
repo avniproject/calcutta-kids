@@ -2165,7 +2165,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Is patient taking medicines as prescribed?",
+    "name": "Patient taking medicines as prescribed",
     "uuid": "e6afc39f-33d3-43f9-8654-47eafac05d1f",
     "dataType": "Coded",
     "answers": [
@@ -2227,7 +2227,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Does patient take correct dose of medicine and complete course fully?",
+    "name": "Patient taking correct dose of medicine and completing course fully",
     "uuid": "e9ab26e2-9285-4206-9bec-0f030e7af662",
     "dataType": "Coded",
     "answers": [
@@ -2250,7 +2250,7 @@
     "dataType": "NA"
   },
   {
-    "name": "In what way patient takes medicine incorrectly?",
+    "name": "Incorrect way patient is taking medicine",
     "uuid": "dd22131d-100c-4d96-bc5a-475392adde28",
     "dataType": "Coded",
     "answers": [
@@ -2278,7 +2278,7 @@
     ]
   },
   {
-    "name": "Does patient takes medicines other than the prescribed medicine?",
+    "name": "Patient taking other than prescribed medicines",
     "uuid": "49c80501-adc9-4a81-8a7a-c5783fac4f01",
     "dataType": "Coded",
     "answers": [
@@ -2309,12 +2309,12 @@
     ]
   },
   {
-    "name": "Reasons why patient was referred to hospital",
+    "name": "Reasons for patient referral to hospital",
     "uuid": "9598b758-b8dd-4609-b891-1216596c8cfc",
     "dataType": "Text"
   },
   {
-    "name": "Did patient take referral advice and go to hospital?",
+    "name": "Patient went to hospital on referral advice",
     "uuid": "4ff3e6b8-eedb-491b-a94c-57825bc52e2b",
     "dataType": "Coded",
     "answers": [
@@ -2342,7 +2342,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Patient didn't go to hospital as per referral advice because",
+    "name": "Reason patient didn't go to hospital as per referral advice",
     "uuid": "67d175bb-0c6e-47e1-b272-4b103cd208fa",
     "dataType": "Coded",
     "answers": [

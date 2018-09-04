@@ -16,14 +16,14 @@ const filters = {
 };
 
 filters.rules = [
-    when('Is patient taking medicines as prescribed?', contains('SOME of the prescribed medicines'))
+    when('Patient taking medicines as prescribed', contains('SOME of the prescribed medicines'))
         .show('whyIsThePatientTakingOnlySomeOfThePrescribedMedicines',
             'forAllMedicinesThePatientIsTakingIsThePatientTakingTheMedicineCorrectlyCheckYesIfPatientIsTakingTheCorrectDoseAndCompletingTheFullCourseOfTheMedicine'),
     when('Reasons for patient taking only some of the prescribed medicines', contains('Other'))
         .show('Other reasons for taking only some prescribed medicines'),
-    when('Does patient take correct dose of medicine and complete course fully?', contains('No'))
+    when('Patient taking correct dose of medicine and completing course fully', contains('No'))
         .show('In what way is the patient taking their medicine incorrectly? (Please encourage patient to take their medicine correctly)'),
-    when('Does patient takes medicines other than the prescribed medicine?', contains('Yes'))
+    when('Patient taking other than prescribed medicines', contains('Yes'))
         .show('namesOfNonPrescribedMedicinesBeingTaken'),
     when('Was patient referred to the hospital during their visit to clinic?', contains('Yes'))
         .show('whyWasThePatientReferredToTheHospital',
@@ -43,10 +43,10 @@ filters.rules = [
 filters.directFunctions = {
     patientDidntGoToHospitalAsPerReferralAdviceBecause(programEncounter, formElement) {
         const statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-        statusBuilder.show().when.valueInEncounter('Did patient take referral advice and go to hospital?').is.no;
+        statusBuilder.show().when.valueInEncounter('Patient went to hospital on referral advice').is.no;
         return statusBuilder.build();
     }
-}
+};
 
 buildAndExport(filters, exports);
 // exports[DecisionsClass] = DecisionsClass;
