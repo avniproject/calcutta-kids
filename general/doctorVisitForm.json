@@ -106,6 +106,16 @@
           "mandatory": false
         },
         {
+          "name": "Other health problem / classification",
+          "uuid": "3b3bb3a7-00d3-4988-bc99-285d4c15d436",
+          "keyValues": [],
+          "concept": {
+            "uuid": "687e183e-2026-49cc-ba21-783695c313e6"
+          },
+          "displayOrder": 1.2,
+          "mandatory": true
+        },
+        {
           "name": "Chief complaint",
           "uuid": "96074116-eef8-48b2-a98a-af28d977e760",
           "keyValues": [],

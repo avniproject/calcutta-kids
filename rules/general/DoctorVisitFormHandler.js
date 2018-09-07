@@ -39,6 +39,12 @@ class DoctorVisitFormHandler {
         return formElementStatusBuilder.build();
     }
 
+    otherHealthProblemClassification(programEncounter, formElement) {
+        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        statusBuilder.show().when.valueInEncounter("Health problem / Classification").is.defined;
+        return statusBuilder.build();
+    }
+
     gravida(programEncounter, formElement) {
         return this._showOnlyForMother(formElement, programEncounter);
     }

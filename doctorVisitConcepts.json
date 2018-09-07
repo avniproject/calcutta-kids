@@ -166,6 +166,11 @@
     ]
   },
   {
+    "name": "Other health problem / classification",
+    "uuid": "687e183e-2026-49cc-ba21-783695c313e6",
+    "dataType": "Text"
+  },
+  {
     "name": "Chief complaint",
     "uuid": "6caeddd6-ffb4-4824-80cc-f7dbda85e9db",
     "dataType": "Text"
