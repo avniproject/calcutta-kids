@@ -2216,6 +2216,10 @@
         "abnormal": false
       },
       {
+        "uuid": "cc50891b-2664-43d1-bf2c-bb73e712e2d0",
+        "abnormal": false
+      },
+      {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "abnormal": false
       }
@@ -3042,5 +3046,30 @@
     "name": "Visit notes",
     "uuid": "4f1c32ee-16fa-4f13-a363-fd0fbc45b4a0",
     "dataType": "Notes"
+  },
+  {
+    "name": "Could not afford to buy medicines",
+    "uuid": "cc50891b-2664-43d1-bf2c-bb73e712e2d0",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family history of diabetes",
+    "uuid": "2f6f471a-36f6-4e5f-9115-fb077b7ad8fd",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family history of thalessemia",
+    "uuid": "e7526d66-8661-43ee-9413-0987d8438d81",
+    "dataType": "NA"
+  },
+  {
+    "name": "Hypothyroidism",
+    "uuid": "3972ed54-8d8f-45b7-8817-457cd161afec",
+    "dataType": "NA"
+  },
+  {
+    "name": "Episiotomy",
+    "uuid": "d3591b97-f88f-4125-94e0-aa65ad7fb6dd",
+    "dataType": "NA"
   }
 ]
