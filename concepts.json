@@ -122,7 +122,7 @@
     ]
   },
   {
-    "name": "Number of household members (eating  together)",
+    "name": "Number of household members (eating together)",
     "uuid": "25b73ca1-e268-452f-ba05-2595af28ac04",
     "dataType": "Numeric"
   },
