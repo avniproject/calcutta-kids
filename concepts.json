@@ -3071,5 +3071,45 @@
     "name": "Episiotomy",
     "uuid": "d3591b97-f88f-4125-94e0-aa65ad7fb6dd",
     "dataType": "NA"
+  },
+  {
+    "name": "GA (free text)",
+    "uuid": "3c56cdd0-e07a-457a-a247-9a95432afd01",
+    "dataType": "Text"
+  },
+  {
+    "name": "Hb (free text)",
+    "uuid": "ffb8bc9b-b8fd-48a2-874e-486f1737e176",
+    "dataType": "Text"
+  },
+  {
+    "name": "VDRL (free text)",
+    "uuid": "cd1c1922-c351-43ea-8cb2-106d906df9a9",
+    "dataType": "Text"
+  },
+  {
+    "name": "Blood Type (free text)",
+    "uuid": "2fba6f3a-a519-4946-a900-66a255335f47",
+    "dataType": "Text"
+  },
+  {
+    "name": "HBsAg (free text)",
+    "uuid": "2552617d-8b70-46d5-8085-a610c314c089",
+    "dataType": "Text"
+  },
+  {
+    "name": "Blood Sugar - Random (free text)",
+    "uuid": "9ac802d4-de37-4cd9-b53a-90af2f93fbe6",
+    "dataType": "Text"
+  },
+  {
+    "name": "Blood Sugar - Fasting (free text)",
+    "uuid": "935f3d46-3611-4fe8-aaee-c42e89074440",
+    "dataType": "Text"
+  },
+  {
+    "name": "Not Adequate",
+    "uuid": "5ecbe201-43c2-4aff-94a5-d088220d7d1a",
+    "dataType": "NA"
   }
 ]
