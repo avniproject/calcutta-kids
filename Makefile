@@ -29,6 +29,10 @@ define _curl
 	@echo
 endef
 
+auth:
+	$(if $(poolId),$(eval token:=$(shell node scripts/token.js $(poolId) $(clientId) $(username) $(password))))
+	echo $(token)
+
 # <create_org>
 create_org: ## Create Calcutta Kids org and user+privileges
 	psql -U$(su) openchs < create_organisation.sql
@@ -55,7 +59,7 @@ deploy_non_coded_concepts:
 	node nonCoded ./child/checklistConcepts.json | $(call _curl,POST,concepts,@-)
 
 deploy_concepts:
-	$(if $(shell command -v node 2> /dev/null),make deploy_non_coded_concepts)
+	$(if $(shell command -v node 2> /dev/null),make deploy_non_coded_concepts token=$(token))
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
 	$(call _curl,POST,concepts,@child/enrolmentConcepts.json)
@@ -115,10 +119,11 @@ deploy_refdata: deploy_concepts
 # </refdata>
 
 # <deploy>
-deploy: deploy_refdata deploy_checklists deploy_rules##
-# </deploy>
+deploy_staging:
+	make auth deploy poolId=ap-south-1_tuRfLFpm1 clientId=93kp4dj29cfgnoerdg33iev0v server=https://staging.openchs.org port=443 username=admin password=$(STAGING_ADMIN_USER_PASSWORD)
 
-# <deploy>
+deploy: deploy_refdata deploy_checklists deploy_rules##
+
 deploy_rules: ##
 	node index.js "$(server_url)" "$(token)"
 # </deploy>
