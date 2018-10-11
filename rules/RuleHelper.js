@@ -4,6 +4,11 @@ import lib from './lib';
 const moment = require("moment");
 
 class RuleHelper {
+    static getAgeOfYoungestChildInMonths(individual, referenceDate) {
+        const youngestChild = lib.C.getYoungestChild(individual);
+        return youngestChild.getAgeInMonths(referenceDate);
+    };
+
     static encounterCodedObsHas(programEncounter, formElement, conceptName, ...answerConceptNames) {
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         statusBuilder.show().when.valueInEncounter(conceptName).containsAnyAnswerConceptName(...answerConceptNames);

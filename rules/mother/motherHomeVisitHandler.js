@@ -1,7 +1,12 @@
-import { FormElementStatusBuilder, RuleFactory, FormElementsStatusHelper, StatusBuilderAnnotationFactory, complicationsBuilder as ComplicationsBuilder } from 'rules-config/rules';
+import {
+    complicationsBuilder as ComplicationsBuilder,
+    FormElementsStatusHelper,
+    FormElementStatusBuilder,
+    RuleFactory,
+    StatusBuilderAnnotationFactory
+} from 'rules-config/rules';
 import ObservationMatcherAnnotationFactory from '../ObservationMatcherAnnotationFactory';
 import RuleHelper from '../RuleHelper';
-import lib from '../lib';
 
 const homeVisitDecisions = RuleFactory("2a13df4b-6d61-4f11-850d-1ea6d13860df", "Decision");
 const homeVisitFilter = RuleFactory('2a13df4b-6d61-4f11-850d-1ea6d13860df', 'ViewFilter');
@@ -60,8 +65,7 @@ class MotherHomeVisitDecisions {
 }
 
 const getAgeOfYoungestChildInMonths = (programEncounter) => {
-    const youngestChild = lib.C.getYoungestChild(programEncounter.programEnrolment.individual);
-    return youngestChild.getAgeInMonths(programEncounter.encounterDateTime);
+    return RuleHelper.getAgeOfYoungestChildInMonths(programEncounter.programEnrolment.individual, programEncounter.encounterDateTime);
 };
 
 @homeVisitFilter("a0018a51-4cac-4690-9aa1-91505d3d4759", "Mother Home Visit form rules", 100.0, {})
