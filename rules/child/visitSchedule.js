@@ -11,7 +11,7 @@ import lib from '../lib';
 class ChildPostChildEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
-        RuleHelper.addSchedule(scheduleBuilder, 'Birth', 'Birth', programEnrolment.enrolmentDateTime, 0);
+        RuleHelper.addSchedule(scheduleBuilder, 'Birth form', 'Birth', programEnrolment.enrolmentDateTime, 0);
         if (moment(programEnrolment.individual.dateOfBirth).add(2, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime) && !moment(programEnrolment.individual.dateOfBirth).add(10, 'days').isBefore(programEnrolment.enrolmentDateTime))
             RuleHelper.addSchedule(scheduleBuilder, 'Child PNC 1', 'Child PNC', programEnrolment.enrolmentDateTime, 10);
         else if (moment(programEnrolment.individual.dateOfBirth).add(10, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime) && !moment(programEnrolment.individual.dateOfBirth).add(42, 'days').isBefore(programEnrolment.enrolmentDateTime))

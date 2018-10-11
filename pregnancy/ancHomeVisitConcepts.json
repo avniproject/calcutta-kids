@@ -98,11 +98,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Not applicable",
-    "uuid": "5575ce2f-0d0e-4d90-a787-867cf10fc04a",
-    "dataType": "NA"
-  },
-  {
     "name": "FA tablets received from",
     "uuid": "c6053dc3-593b-4f24-91f9-3d0e33b4af36",
     "dataType": "Coded",
@@ -120,7 +115,7 @@
         "abnormal": false
       },
       {
-        "uuid": "5575ce2f-0d0e-4d90-a787-867cf10fc04a",
+        "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
         "abnormal": false,
         "unique": true
       }
@@ -407,7 +402,7 @@
         "abnormal": false
       },
       {
-        "uuid": "5575ce2f-0d0e-4d90-a787-867cf10fc04a",
+        "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
         "abnormal": false,
         "unique": true
       }
