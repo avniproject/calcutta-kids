@@ -101,7 +101,7 @@ class MotherHomeVisitFormRules {
 
     @withStatusBuilder
     howManyIfaTabletsHaveYouConsumedSinceYourLastVisit([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(3);
+        statusBuilder.show().when.valueInEncounter("Where does mother get IFA tablets from?").not.containsAnswerConceptName("NA").and.whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(3);
     }
 
     @withStatusBuilder
@@ -111,7 +111,7 @@ class MotherHomeVisitFormRules {
 
     @withStatusBuilder
     howManyCalciumTabletsHaveYouConsumedSinceYourLastVisit([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6);
+        statusBuilder.show().whenItem(getAgeOfYoungestChildInMonths(programEncounter)).is.lessThan(6).and.when.valueInEncounter("Where does mother get Calcium tablets from?").not.containsAnswerConceptName("NA");
     }
 
     @withStatusBuilder

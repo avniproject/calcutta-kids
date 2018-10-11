@@ -14,6 +14,8 @@ class LabTestHandlerCK {
         switch (`${formElementGroup.name} ${programEncounter.programEnrolment.program.name}`) {
             case "USG Scan Results Child":
                 return RuleHelper.hideFormElementGroup(formElementGroup);
+            case "USG Scan Results CK Mother":
+                return RuleHelper.hideFormElementGroup(formElementGroup);
             default:
                 return FormElementsStatusHelper
                     .getFormElementsStatusesWithoutDefaults(new LabTestHandlerCK(), programEncounter, formElementGroup, today);

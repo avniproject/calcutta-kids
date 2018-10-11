@@ -124,7 +124,7 @@ class ChildHomeVisitFilter {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
         statusBuilder.show()
             .when.ageInMonths.greaterThanOrEqualTo(6)
-            .or.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
+            .and.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
         return statusBuilder.build();
     }
 
@@ -132,7 +132,7 @@ class ChildHomeVisitFilter {
         const statusBuilder = this._statusBuilder(programEncounter, formElement);
         statusBuilder.show()
             .when.ageInMonths.greaterThanOrEqualTo(6)
-            .or.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
+            .and.when.valueInEncounter("Have you been feeding solids/semi-solids to the child?").is.yes;
         return statusBuilder.build();
     }
 

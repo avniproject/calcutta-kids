@@ -144,6 +144,7 @@
         {
           "name": "From where do you get your calcium tablets?",
           "uuid": "3ca63917-dd75-4f4c-af39-93f8fb49975d",
+          "type": "MultiSelect",
           "keyValues": [],
           "concept": {
             "uuid": "370721b6-7d28-4993-b408-9266e408b5a1"

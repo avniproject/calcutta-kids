@@ -121,7 +121,8 @@
       },
       {
         "uuid": "5575ce2f-0d0e-4d90-a787-867cf10fc04a",
-        "abnormal": false
+        "abnormal": false,
+        "unique": true
       }
     ]
   },
@@ -392,7 +393,6 @@
     "name": "Calcium tablets received from",
     "uuid": "370721b6-7d28-4993-b408-9266e408b5a1",
     "dataType": "Coded",
-    "type": "MultiSelect",
     "answers": [
       {
         "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
@@ -408,7 +408,8 @@
       },
       {
         "uuid": "5575ce2f-0d0e-4d90-a787-867cf10fc04a",
-        "abnormal": false
+        "abnormal": false,
+        "unique": true
       }
     ]
   },

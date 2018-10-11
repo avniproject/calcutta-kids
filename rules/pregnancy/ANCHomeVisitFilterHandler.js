@@ -140,6 +140,14 @@ class ANCHomeVisitFilterHandler {
         return VaccinationFilters.filter(programEncounter, formElement);
     }
 
+    howManyCalciumTabletsHaveYouConsumedSinceYourLastVisit(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsNotHave(programEncounter, formElement, "Calcium tablets received from", "NA");
+    }
+
+    howManyFaTabletsHaveYouConsumedSinceYourLastVisit(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsNotHave(programEncounter, formElement, "FA tablets received from", "NA");
+    }
+
 }
 
 module.exports = {ANCHomeVisitFilterHandler};

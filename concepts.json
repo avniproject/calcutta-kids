@@ -1761,7 +1761,8 @@
       },
       {
         "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
-        "comment": "NA"
+        "comment": "NA",
+        "unique": true
       }
     ]
   },
@@ -1775,6 +1776,7 @@
     "name": "Where does mother get Calcium tablets from?",
     "uuid": "3c31a93d-d731-49b3-8adf-5d7fdb930fb9",
     "dataType": "Coded",
+    "type": "MultiSelect",
     "answers": [
       {
         "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
@@ -1790,7 +1792,8 @@
       },
       {
         "uuid": "4d476011-7fc4-432b-98c0-9f6f1847cf39",
-        "comment": "NA"
+        "comment": "NA",
+        "unique": true
       }
     ]
   },

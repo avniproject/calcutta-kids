@@ -19,11 +19,21 @@ server_url:=$(server):$(port)
 
 su:=$(shell id -un)
 org_name=Calcutta Kids
+org_admin_name=ck-admin
 
 define _curl
 	curl -X $(1) $(server_url)/$(2) -d $(3)  \
 		-H "Content-Type: application/json"  \
-		-H "ORGANISATION-NAME: $(org_name)"  \
+		-H "USER-NAME: $(org_admin_name)"  \
+		$(if $(token),-H "AUTH-TOKEN: $(token)",)
+	@echo
+	@echo
+endef
+
+define _curl_as_openchs
+	curl -X $(1) $(server_url)/$(2) -d $(3)  \
+		-H "Content-Type: application/json"  \
+		-H "USER-NAME: admin"  \
 		$(if $(token),-H "AUTH-TOKEN: $(token)",)
 	@echo
 	@echo
@@ -57,6 +67,9 @@ deploy_non_coded_concepts:
 	node nonCoded ./pregnancy/ancDoctorVisitConcepts.json | $(call _curl,POST,concepts,@-)
 	node nonCoded ./pregnancy/pncConcepts.json | $(call _curl,POST,concepts,@-)
 	node nonCoded ./child/checklistConcepts.json | $(call _curl,POST,concepts,@-)
+
+deploy_admin_user:
+	$(call _curl_as_openchs,POST,users,@admin-user.json)
 
 deploy_concepts:
 	$(if $(shell command -v node 2> /dev/null),make deploy_non_coded_concepts token=$(token))
@@ -122,7 +135,7 @@ deploy_refdata: deploy_concepts
 deploy_staging:
 	make auth deploy poolId=ap-south-1_tuRfLFpm1 clientId=93kp4dj29cfgnoerdg33iev0v server=https://staging.openchs.org port=443 username=admin password=$(STAGING_ADMIN_USER_PASSWORD)
 
-deploy: deploy_refdata deploy_checklists deploy_rules##
+deploy: deploy_admin_user deploy_refdata deploy_checklists deploy_rules##
 
 deploy_rules: ##
 	node index.js "$(server_url)" "$(token)"
