@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "b9cfd495-7a54-4369-a354-94b5f45cbe00",
+    "name": "ck-test-master-1",
+    "password": "password",
+    "email": "openchssupport+ck+test+1@samanvayfoundation.org",
+    "phoneNumber": "+919845232929",
+    "organisationUUID": "2a0cc644-5a8f-4bc3-8483-dc1e00adaba4",
+    "catchmentUUID": "0c2d7857-a9cc-44b1-8f56-56a3355ff35c",
+    "operatingIndividualScope": "ByCatchment",
+    "isAdmin": "false",
+    "isOrgAdmin": "false"
+  }
+]
