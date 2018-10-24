@@ -246,6 +246,11 @@
     ]
   },
   {
+    "name": "Reason for not eating yesterday",
+    "uuid": "ea7cd073-704c-4551-a251-5c656f56bc24",
+    "dataType": "Text"
+  },
+  {
     "name": "Hours of rest yesterday",
     "uuid": "8543f637-c896-4082-8fc9-6fa3f8263c0a",
     "dataType": "Numeric"

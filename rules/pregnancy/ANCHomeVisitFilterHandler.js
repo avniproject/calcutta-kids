@@ -66,6 +66,10 @@ class ANCHomeVisitFilterHandler {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Reason for eating less than pre-pregnancy', 'Other');
     }
 
+    reasonForNotEatingYesterday(programEncounter, formElement){
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Food eaten yesterday','Nothing');
+    }
+
     counselForEatingSameOrLess(programEncounter, formElement) {
         return this.whyEatingSameOrLess(programEncounter, formElement).or(this.notEating(programEncounter, formElement));
     }

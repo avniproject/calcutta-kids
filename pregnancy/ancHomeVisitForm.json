@@ -217,6 +217,16 @@
           "mandatory": false
         },
         {
+          "name": "Reason for not eating yesterday.",
+          "uuid": "be1a87c2-1fdd-4afe-991a-0251f81d72fe",
+          "keyValues": [],
+          "concept": {
+            "uuid": "ea7cd073-704c-4551-a251-5c656f56bc24"
+          },
+          "displayOrder": 8.2,
+          "mandatory":true
+        },
+        {
           "name": "How many hours did you rest yesterday during the day?",
           "uuid": "34087100-f354-494b-8940-5a70b12e94f8",
           "keyValues": [],
