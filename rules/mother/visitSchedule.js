@@ -1,4 +1,4 @@
-const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
+const {RuleFactory} = require('rules-config/rules');
 const _ = require('lodash');
 const moment = require("moment");
 

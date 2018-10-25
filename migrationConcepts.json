@@ -1,0 +1,380 @@
+[
+  {
+    "uuid": "0131409a-72db-4d45-ab0c-8851c2ee8281",
+    "comment": "Reasons for eating the same or less than pre-pregnancy",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "957ea4ab-d3a0-4b52-a056-dd103d9a164f",
+        "comment": "Food not available or sufficient",
+        "voided": true
+      },
+      {
+        "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3",
+        "comment": "Family pressure or belief",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "0adc4170-9ebb-4feb-8b81-450fbf9a04dc",
+    "comment": "Pregnancy complications",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "aa30fb91-4b64-438b-b09e-4c7ff2701d71",
+        "comment": "Abnormal vaginal discharge",
+        "voided": true
+      },
+      {
+        "uuid": "ab9596e4-04b6-48f2-9f4d-1c7a2c82dbf8",
+        "comment": "Convulsions",
+        "voided": true
+      },
+      {
+        "uuid": "eb1ec712-8a28-4511-ba59-4254ad301700",
+        "comment": "High Temperature",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "0c9b6203-be8c-40a4-a035-b9cb61f126c9",
+    "comment": "Breast-feeding problems",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "5f2ba759-58ca-4fa9-8fee-3063e076d8fa",
+        "comment": "Breast-related problems",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "370721b6-7d28-4993-b408-9266e408b5a1",
+    "comment": "Calcium tablets received from",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "38a2939d-cba7-48d8-9bde-9a77ec2a43b2",
+    "comment": "Mother's health problems",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "7b8829db-9a5a-4177-bab3-6f8e3bb3832c",
+        "comment": "Abdominal pain",
+        "voided": true
+      },
+      {
+        "uuid": "aa30fb91-4b64-438b-b09e-4c7ff2701d71",
+        "comment": "Abnormal vaginal discharge",
+        "voided": true
+      },
+      {
+        "uuid": "d3591b97-f88f-4125-94e0-aa65ad7fb6dd",
+        "comment": "Episiotomy",
+        "voided": true
+      },
+      {
+        "uuid": "eb1ec712-8a28-4511-ba59-4254ad301700",
+        "comment": "High Temperature",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "42fcfd17-4e35-4981-96b3-1d028915d808",
+    "comment": "Delivery Complications",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "03dddd29-c1bb-4231-a17b-55445e247e7d",
+        "comment": "Abortion",
+        "voided": true
+      },
+      {
+        "uuid": "797c7923-1993-49d9-b759-1706aae62ae9",
+        "comment": "Still Birth",
+        "voided": true
+      },
+      {
+        "uuid": "d225cac9-f306-49ba-b9d3-3826c92995e6",
+        "comment": "Breech",
+        "voided": true
+      },
+      {
+        "uuid": "e27f4a35-c2ae-4d05-8930-e19e432221d1",
+        "comment": "Heavy bleeding",
+        "voided": true
+      },
+      {
+        "uuid": "fb079822-6338-46fe-9919-112686850e2d",
+        "comment": "Miscarriage",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "4771de9a-2fe1-4be8-8d8f-a0fded63b9b5",
+    "comment": "Health problem / Classification",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "0b7f3334-f81e-4d84-a13d-b35011e34456",
+        "comment": "Fever",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "49967ea8-e777-41cc-991a-31cb510dc27a",
+    "comment": "Things baby was fed since beginning breastfeeding",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "4b65c269-1394-40ce-8c1b-58377e791568",
+    "comment": "USG Scanning Report - Liquour",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "5ecbe201-43c2-4aff-94a5-d088220d7d1a",
+        "comment": "Not Adequate",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "58b6367a-825f-43e2-b6b7-b35a5cbc3a09",
+    "comment": "Delivered by",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes",
+        "voided": true
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "6716b050-420f-4234-953a-8385f06121f0",
+    "comment": "Pregnancy test",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes",
+        "voided": true
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "69d0acf1-c32b-4694-9bc2-874b5e7a44c8",
+    "comment": "Type of delivery",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "02df7aad-d88c-4155-ab92-4d3569b64376",
+        "comment": "Instrumental Delivery",
+        "voided": true
+      },
+      {
+        "uuid": "eb68c395-17dc-4679-828c-487753228e9f",
+        "comment": "LSCS/C-section",
+        "voided": true
+      },
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "8a4ab436-6767-45d5-95d7-075d9459609e",
+    "comment": "Obstetrics history",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "045bb6bd-2c56-4f25-8a44-46d74a119d5d",
+        "comment": "Forceps delivery",
+        "voided": true
+      },
+      {
+        "uuid": "c8465c3a-cb35-47df-b44f-eb8268583a7d",
+        "comment": "Premature delivery",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "a0405799-1e3c-40ef-90ba-84c9c0931660",
+    "comment": "Place of delivery",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "8359bf16-d329-4752-927c-24a9364f12bf",
+        "comment": "Hospital",
+        "voided": true
+      },
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "aa9462ca-9312-41df-8a92-741d81f77ee7",
+    "comment": "Where does mother get IFA tablets from?",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "bc8a4300-6a51-411f-a81b-198135fdf236",
+    "comment": "Reason for eating less than pre-pregnancy",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3",
+        "comment": "Family pressure or belief",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "bd925c49-1315-405a-999b-cd6509668281",
+    "comment": "Eating compared to your pre-pregnancy food intake",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "deb87336-2717-4871-b46f-b65fa69c9552",
+    "comment": "Reasons for patient taking only some of the prescribed medicines",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "fba49ad0-cb8f-4bc9-b709-370c49e801a3",
+        "comment": "Other reasons for taking only some prescribed medicines",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "f34f974b-47b0-424d-ae97-d479c80efa49",
+    "comment": "High Risk Conditions",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "02275c43-a60c-47d0-9f72-5293316ec85e",
+        "comment": "History of hepatitis infection",
+        "voided": true
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other",
+        "voided": true
+      },
+      {
+        "uuid": "2f6f471a-36f6-4e5f-9115-fb077b7ad8fd",
+        "comment": "Family history of diabetes",
+        "voided": true
+      },
+      {
+        "uuid": "3972ed54-8d8f-45b7-8817-457cd161afec",
+        "comment": "Hypothyroidism",
+        "voided": true
+      },
+      {
+        "uuid": "49968689-e416-42af-b292-df577c0e45ad",
+        "comment": "Symptoms of anaemia",
+        "voided": true
+      },
+      {
+        "uuid": "79e2f5b7-f8c7-4f12-aec9-7e3d3382cf1a",
+        "comment": "Infertility treatment",
+        "voided": true
+      },
+      {
+        "uuid": "c0276bed-a617-4516-a3c3-6c0649300062",
+        "comment": "Sexually transmitted infection (STI)",
+        "voided": true
+      },
+      {
+        "uuid": "db623589-cfa1-4611-b7e9-6b4e3a4ad802",
+        "comment": "History of UTI",
+        "voided": true
+      },
+      {
+        "uuid": "e7526d66-8661-43ee-9413-0987d8438d81",
+        "comment": "Family history of thalessemia",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "f90bb5df-c7fa-4266-8141-3534f3e47e6c",
+    "comment": "Foetal movements",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "comment": "Yes",
+        "voided": true
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "comment": "No",
+        "voided": true
+      }
+    ]
+  },
+  {
+    "uuid": "fa9f52fd-300f-4521-9bd6-6bca192fe24c",
+    "comment": "Have you fed your child any of the following?",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "voided": true
+      }
+    ]
+  }
+]
+

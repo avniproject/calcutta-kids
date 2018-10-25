@@ -1,12 +1,19 @@
-const {FormElementStatusBuilder, FormElementStatus, VisitScheduleBuilder} = require('rules-config/rules');
+import {FormElementStatusBuilder, FormElementStatus, VisitScheduleBuilder} from 'rules-config/rules';
 import lib from './lib';
+import moment from 'moment';
 
-const moment = require("moment");
+const addSchedule = (builder, visitSchedule) => {
+    if (moment().isSameOrBefore(visitSchedule.maxDate, 'day')) {
+        builder.add(visitSchedule);
+    }
+};
+
+const addSchedules = (builder, visitSchedules) => visitSchedules.forEach((vs) => addSchedule(builder, vs));
 
 class RuleHelper {
     static getAgeOfYoungestChildInMonths(individual, referenceDate) {
         const youngestChild = lib.C.getYoungestChild(individual);
-        return youngestChild.getAgeInMonths(referenceDate);
+        return youngestChild && youngestChild.getAgeInMonths(referenceDate);
     };
 
     static encounterCodedObsHas(programEncounter, formElement, conceptName, ...answerConceptNames) {
@@ -68,30 +75,26 @@ class RuleHelper {
         return decisions;
     }
 
-    static createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule) {
+    static createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedules) {
         const scheduleBuilder = new VisitScheduleBuilder({
             programEncounter,
+            programEnrolment: programEncounter.programEnrolment
         });
-        visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+        addSchedules(scheduleBuilder, visitSchedules);
         return scheduleBuilder;
     }
 
-    static createEnrolmentScheduleBuilder(programEnrolment, visitSchedule) {
+    static createEnrolmentScheduleBuilder(programEnrolment, visitSchedules) {
         const scheduleBuilder = new VisitScheduleBuilder({
             programEnrolment,
         });
-        visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+        addSchedules(scheduleBuilder, visitSchedules);
         return scheduleBuilder;
     }
 
-    static addSchedule(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {
-        scheduleBuilder.add({
-                name: visitName,
-                encounterType: encounterTypeName,
-                earliestDate: earliestDate,
-                maxDate: moment(earliestDate).add(numberOfDaysForMaxOffset, 'days').toDate()
-            }
-        );
+    static addSchedule(scheduleBuilder, name, encounterType, earliestDate, numberOfDaysForMaxOffset) {
+        const maxDate = moment(earliestDate).add(numberOfDaysForMaxOffset, 'days').toDate();
+        addSchedule(scheduleBuilder, {name, encounterType, earliestDate, maxDate});
     }
 
     static hideFormElementGroup(formElementGroup) {

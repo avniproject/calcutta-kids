@@ -86,6 +86,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@pregnancy/deliveryConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/ancDoctorVisitConcepts.json)
 	$(call _curl,POST,concepts,@pregnancy/pncConcepts.json)
+	$(call _curl,POST,concepts,@migrationConcepts.json)
 
 deploy_refdata: deploy_concepts
 	$(call _curl,POST,locations,@locations.json)
