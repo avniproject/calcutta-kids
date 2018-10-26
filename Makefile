@@ -136,12 +136,16 @@ deploy_refdata: deploy_concepts
 # </refdata>
 
 # <deploy>
+deploy_to_local_as_staging:
+	make auth create_deploy poolId=ap-south-1_tuRfLFpm1 clientId=93kp4dj29cfgnoerdg33iev0v server=http://localhost port=8021 username=admin password=$(STAGING_ADMIN_USER_PASSWORD)
+
 deploy_staging:
 	make auth deploy poolId=ap-south-1_tuRfLFpm1 clientId=93kp4dj29cfgnoerdg33iev0v server=https://staging.openchs.org port=443 username=admin password=$(STAGING_ADMIN_USER_PASSWORD)
 
+deploy_prod:
+	make auth deploy poolId=ap-south-1_e1HrpLQnC clientId=4aeeu0e37q1sfsem61qrd0elaq server=https://server.openchs.org port=443 username=admin password=$(OPENCHS_PROD_ADMIN_USER_PASSWORD)
+
 deploy: deploy_admin_user deploy_refdata deploy_checklists deploy_rules deploy_test_users##
-deploy_staging: deploy_admin_user deploy_refdata deploy_checklists deploy_rules deploy_test_users##
-deploy_production: deploy_admin_user deploy_refdata deploy_checklists deploy_rules deploy_users##
 
 deploy_rules: ##
 	node index.js "$(server_url)" "$(token)"
