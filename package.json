@@ -12,7 +12,7 @@
     "webpack": "^4.12.0"
   },
   "devDependencies": {
-    "rules-config": "github:openchs/rules-config#c01529a620ce09f3e22ea2eaca2c45c4d4fbfc6e",
+    "rules-config": "github:openchs/rules-config#400314488a46b610a26e45a47f84a480b1479af7",
     "amazon-cognito-identity-js": "1.28.0"
   }
 }
