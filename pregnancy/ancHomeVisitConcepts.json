@@ -241,7 +241,8 @@
       },
       {
         "uuid": "050c0ac0-9f03-4302-9b3c-2a451cdb0471",
-        "abnormal": true
+        "abnormal": true,
+        "unique":true
       }
     ]
   },
