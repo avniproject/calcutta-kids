@@ -51,6 +51,11 @@ create_org: ## Create Calcutta Kids org and user+privileges
 	psql -U$(su) openchs < create_organisation.sql
 # </create_org>
 
+# <create_views>
+create_views: ## Create Calcutta Kids org and user+privileges
+	psql -U$(su) openchs < create_views.sql
+# </create_views>
+
 # <refdata>
 
 deploy_checklists:
@@ -161,7 +166,7 @@ deploy_rules: ##
 # </deploy>
 
 # <c_d>
-create_deploy: create_org deploy ##
+create_deploy: create_org create_views deploy ##
 # </c_d>
 
 deps:
