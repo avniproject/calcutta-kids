@@ -137,8 +137,6 @@ deploy_refdata: deploy_concepts deploy_patch_concepts
 	$(call _curl,DELETE,forms,@general/labTestsDeletions.json)
 	$(call _curl,POST,forms,@general/doctorVisitForm.json)
 	$(call _curl,POST,forms,@general/doctorVisitFollowupForm.json)
-	$(call _curl,POST,forms,@general/doctorVisitForm.json)
-	$(call _curl,POST,forms,@general/doctorVisitFollowupForm.json)
 
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,POST,forms,@sesForm.json)
