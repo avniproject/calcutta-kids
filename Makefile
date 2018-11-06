@@ -83,7 +83,7 @@ deploy_test_users:
 	$(call _curl,POST,users,@users/test-users.json)
 
 deploy_concepts:
-	$(if $(shell command -v node 2> /dev/null),make deploy_non_coded_concepts token=$(token))
+	$(if $(shell command -v node 2> /dev/null),make deploy_non_coded_concepts token=$(token) poolId=$(poolId) clientId=$(clientId) server=$(server) username=$(username) password=$(password))
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@child/homeVisitConcepts.json)
 	$(call _curl,POST,concepts,@child/enrolmentConcepts.json)
@@ -153,16 +153,20 @@ deploy_to_local_as_staging:
 deploy_staging:
 	make auth deploy poolId=ap-south-1_tuRfLFpm1 clientId=93kp4dj29cfgnoerdg33iev0v server=https://staging.openchs.org port=443 username=admin password=$(STAGING_ADMIN_USER_PASSWORD)
 
-deploy_prod:
-	make auth deploy poolId=ap-south-1_e1HrpLQnC clientId=4aeeu0e37q1sfsem61qrd0elaq server=https://server.openchs.org port=443 username=admin password=$(OPENCHS_PROD_ADMIN_USER_PASSWORD)
-
 deploy_staging_local:
 	make auth deploy poolId=ap-south-1_tuRfLFpm1 clientId=93kp4dj29cfgnoerdg33iev0v server=http://localhost port=8021 username=admin password=$(STAGING_ADMIN_USER_PASSWORD)
 
 
 
 deploy: deploy_admin_user deploy_refdata deploy_checklists deploy_rules deploy_test_users##
-deploy_production: deploy_admin_user deploy_refdata deploy_checklists deploy_rules deploy_users##
+
+deploy_prod_sub: deploy_refdata deploy_checklists deploy_rules deploy_prod_users##
+
+deploy_prod:
+#	there is a bug in server side. which sets both isAdmin, isOrgAdmin to be false. it should be done. also metadata upload should not rely on isAdmin role.
+#	need to be fixed. then uncomment the following line.
+#	make auth deploy_admin_user poolId=ap-south-1_DU27AHJvZ clientId=1d6rgvitjsfoonlkbm07uivgmg server=https://server.openchs.org port=443 username=admin password=
+	make auth deploy_prod_sub poolId=ap-south-1_DU27AHJvZ clientId=1d6rgvitjsfoonlkbm07uivgmg server=https://server.openchs.org port=443 username=ck-admin password=
 
 deploy_rules: ##
 	node index.js "$(server_url)" "$(token)"
