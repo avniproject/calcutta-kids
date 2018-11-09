@@ -1,5 +1,10 @@
 [
   {
+    "name": "Beneficiary id",
+    "uuid": "8e1a06db-3e84-4065-8531-e25d1972f5d5",
+    "dataType": "Text"
+  },
+  {
     "name": "Moderate ankle, body or face swelling",
     "uuid": "a3d14ff5-8142-436d-99fb-eb84dd6d489e",
     "dataType": "NA"
