@@ -10,21 +10,7 @@ const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'fo
 
 @ViewFilter('31a45914-67d6-4294-aa65-9fa87c9f590c', 'Child PNC Form Handler', 100.0, {})
 class ChildPNCFormHandler {
-
-    @WithStatusBuilder
-    whenDidTheChildPassUrineForTheFirstTimeAfterBirth([], statusBuilder) {
-        statusBuilder.show()
-            .when.valueInEntireEnrolment("Duration in hours between birth and first urination").is.notDefined
-            .or.when.valueInEncounter("Duration in hours between birth and first urination").is.defined;
-    }
-
-    @WithStatusBuilder
-    whenDidTheChildPassMeconiumForTheFirstTimeAfterBirth([], statusBuilder) {
-        statusBuilder.show()
-            .when.valueInEntireEnrolment("Duration in hours between birth and meconium").is.notDefined
-            .or.when.valueInEncounter("Duration in hours between birth and meconium").is.defined;
-    }
-
+    
     @WithStatusBuilder
     activityRelatedComplaints([], statusBuilder) {
         statusBuilder.skipAnswers('Sluggish movements', 'Unconscious', 'Not sucking milk at all');
