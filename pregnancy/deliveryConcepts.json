@@ -110,18 +110,6 @@
     "dataType": "Coded",
     "answers": [
       {
-        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60",
-        "abnormal": false
-      },
-      {
-        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56",
-        "abnormal": false
-      },
-      {
-        "uuid": "5dcdbebc-913e-46a5-a254-dd38d2956c80",
-        "abnormal": false
-      },
-      {
         "name": "Health volunteer",
         "uuid": "60058049-0a5d-4f2f-ad27-e5b2342b73f4"
       }
