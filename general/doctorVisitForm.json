@@ -62,7 +62,7 @@
             "uuid": "2a04bf88-6346-4eda-a86c-8a2afc011b22"
           },
           "displayOrder": 4.1,
-          "mandatory": true
+          "mandatory": false
         },
         {
           "name": "Diastolic",
@@ -72,7 +72,7 @@
             "uuid": "1e2d41a2-5b6a-4ad7-ab91-51d3cdf122bd"
           },
           "displayOrder": 5.1,
-          "mandatory": true
+          "mandatory": false
         },
         {
           "name": "Nutrients",
