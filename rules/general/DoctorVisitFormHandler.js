@@ -33,7 +33,7 @@ class DoctorVisitFormHandler {
 
     otherHealthProblemClassification(programEncounter, formElement) {
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
-        statusBuilder.show().when.valueInEncounter("Health problem / Classification").is.defined;
+        statusBuilder.show().when.valueInEncounter("Health problem / Classification").containsAnswerConceptName('Other');
         return statusBuilder.build();
     }
 
