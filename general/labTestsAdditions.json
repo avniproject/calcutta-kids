@@ -123,7 +123,7 @@
             "comment": "USG Scanning Report - Viability"
           },
           "displayOrder": 3.2,
-          "mandatory": true
+          "mandatory": false
         },
         {
           "name": "Amniotic Fluid",
@@ -135,7 +135,7 @@
             "comment": "USG Scanning Report - Amniotic Fluid"
           },
           "displayOrder": 4.1,
-          "mandatory": true
+          "mandatory": false
         }
       ]
     }
