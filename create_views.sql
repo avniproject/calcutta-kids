@@ -13,10 +13,10 @@ from latest_program_encounter encounter
 drop view if exists active_individuals;
 
 create or replace view active_individuals as
-      select distinct i.* from program_encounter pe
+select distinct i.* from program_encounter pe
       inner join program_enrolment e on pe.program_enrolment_id = e.id
       inner join individual i on e.individual_id=i.id
-      where pe.encounter_date_time > current_timestamp - interval '5 months 1 seconds'
+      where pe.encounter_date_time > current_timestamp - interval '5 months 1 seconds' or e.enrolment_date_time > current_timestamp - interval '5 months 1 seconds'
       group by e.individual_id, i.id;
 
 GRANT ALL ON ALL TABLES IN SCHEMA public TO calcutta_kids;
