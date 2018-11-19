@@ -493,6 +493,39 @@
         "comment": "Vitamin A 4"
       },
       "status": [
+        {
+          "displayOrder": 1.0,
+          "from": {
+            "week": 120
+          },
+          "to": {
+            "week": 123
+          },
+          "state": "Due",
+          "color": "#FBF9DA"
+        },
+        {
+          "displayOrder": 2.0,
+          "from": {
+            "week": 123
+          },
+          "to": {
+            "week": 124
+          },
+          "state": "Critical",
+          "color": "#F9DBBF"
+        },
+        {
+          "displayOrder": 3.0,
+          "from": {
+            "week": 124
+          },
+          "to": {
+            "year": 5
+          },
+          "state": "Overdue",
+          "color": "#FFC2C2"
+        }
       ]
     },
     {
@@ -956,6 +989,39 @@
         "uuid": "b56b8747-9f6c-4b16-ac8e-7554e64689a5"
       },
       "status": [
+        {
+          "displayOrder": 1.0,
+          "from": {
+            "week": 6
+          },
+          "to": {
+            "week": 9
+          },
+          "state": "Due",
+          "color": "#FBF9DA"
+        },
+        {
+          "displayOrder": 2.0,
+          "from": {
+            "week": 9
+          },
+          "to": {
+            "week": 10
+          },
+          "state": "Critical",
+          "color": "#F9DBBF"
+        },
+        {
+          "displayOrder": 3.0,
+          "from": {
+            "week": 10
+          },
+          "to": {
+            "year": 5
+          },
+          "state": "Overdue",
+          "color": "#FFC2C2"
+        }
       ],
       "voided": true
     },
@@ -967,6 +1033,39 @@
         "uuid": "a5f54681-291c-4f43-85ee-8f61e1b1f3ca"
       },
       "status": [
+        {
+          "displayOrder": 1.0,
+          "from": {
+            "week": 10
+          },
+          "to": {
+            "week": 13
+          },
+          "state": "Due",
+          "color": "#FBF9DA"
+        },
+        {
+          "displayOrder": 2.0,
+          "from": {
+            "week": 13
+          },
+          "to": {
+            "week": 14
+          },
+          "state": "Critical",
+          "color": "#F9DBBF"
+        },
+        {
+          "displayOrder": 3.0,
+          "from": {
+            "week": 14
+          },
+          "to": {
+            "year": 5
+          },
+          "state": "Overdue",
+          "color": "#FFC2C2"
+        }
       ],
       "voided": true
     },
@@ -978,6 +1077,39 @@
         "uuid": "12fb70a9-a323-4d6d-a145-2ba7ce63ff22"
       },
       "status": [
+        {
+          "displayOrder": 1.0,
+          "from": {
+            "week": 14
+          },
+          "to": {
+            "week": 17
+          },
+          "state": "Due",
+          "color": "#FBF9DA"
+        },
+        {
+          "displayOrder": 2.0,
+          "from": {
+            "week": 17
+          },
+          "to": {
+            "week": 18
+          },
+          "state": "Critical",
+          "color": "#F9DBBF"
+        },
+        {
+          "displayOrder": 3.0,
+          "from": {
+            "week": 18
+          },
+          "to": {
+            "year": 5
+          },
+          "state": "Overdue",
+          "color": "#FFC2C2"
+        }
       ],
       "voided": true
     },
