@@ -2,6 +2,7 @@ const {RuleFactory} = require('rules-config/rules');
 const moment = require("moment");
 const EnrolmentRule = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
 const PNCRule = RuleFactory("e09dddeb-ed72-40c4-ae8d-112d8893f18b", "VisitSchedule");
+const GMPRule = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "VisitSchedule");
 const HomeVisitRule = RuleFactory("35aa9007-fe7a-4a59-b985-0a1c038df889", "VisitSchedule");
 const HomeVisitCancelRule = RuleFactory("", "VisitSchedule");
 const RuleHelper = require('../RuleHelper');
@@ -36,6 +37,16 @@ class ChildPostPNCVisits {
     }
 }
 
+@GMPRule("7a2b9abf-3a53-477d-8625-61a778a2c0af", "Child GMP Monthly", 10.0)
+class ChildGMPMonthly {
+    static exec(programEncounter, visitSchedule = [], scheduleConfig) {
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let earliestDate = RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate());
+        RuleHelper.addSchedule(scheduleBuilder, 'Child GMP', 'Anthropometry Assessment', moment(earliestDate).add(21, 'days').toDate(), 9);
+        return scheduleBuilder.getAllUnique("encounterType");
+    }
+}
+
 @HomeVisitRule('702f6b57-f46b-47cb-a413-7e609468402e', 'ChildPostHomeVisitVisits', 10.0)
 class ChildPostHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
@@ -53,5 +64,6 @@ const visitNameSuffix = (individual, earliestDate) => {
 module.exports = {
     ChildPostChildEnrolmentVisits: ChildPostChildEnrolmentVisits,
     ChildPostPNCVisits: ChildPostPNCVisits,
-    ChildPostHomeVisitVisits: ChildPostHomeVisitVisits
+    ChildPostHomeVisitVisits: ChildPostHomeVisitVisits,
+    ChildGMPMonthly: ChildGMPMonthly
 };
