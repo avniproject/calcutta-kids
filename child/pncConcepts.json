@@ -136,6 +136,19 @@
         "comment": "Redness or discharge on the skin around the belly button",
         "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
         "abnormal": true
+      },
+      {
+        "uuid": "e3acaede-e67c-4d72-a1a7-06954b862408",
+        "comment": "Vaginal/urethral problems",
+        "abnormal": true
+      },
+      {
+        "uuid": "765a3256-78c3-4a5f-9a6c-d4334eb5e8a5",
+        "abnormal": true
+      },
+      {
+        "uuid": "94a22fed-e9a5-438e-8a17-ec4ae40c5d4f",
+        "abnormal": true
       }
     ]
   }
