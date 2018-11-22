@@ -9,6 +9,22 @@ const PNCRule = RuleFactory("78b1400e-8100-4ba6-b78e-fef580f7fb77", "VisitSchedu
 const AbortionRule = RuleFactory("32428a7e-d553-4172-b697-e8df3bbfb61d", "VisitSchedule");
 const PostAbortionRule = RuleFactory("a7ec8c80-edb2-4751-a5ec-498a9e0240a0", "VisitSchedule");
 const PostAncGmpRule = RuleFactory("4632c1f5-59cd-4e65-899c-beb2c87a3bff", "VisitSchedule");
+const ANCDoctorVisitRule = RuleFactory("3a95e9b0-731a-4714-ae7c-10e1d03cebfe", "VisitSchedule");
+
+
+@ANCDoctorVisitRule("dedbf481-0456-463f-9ece-b1639ce1c3ad", "ANC Doctor Visits Followup at home", 100.0)
+class ANCDoctorVisits {
+    static exec(programEncounter, visitSchedule = [], scheduleConfig) {
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let followupDate = programEncounter.getObservationReadableValue('Followup date');
+        if (!_.isNil(followupDate)) {
+            RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home', 'Doctor Visit Followup at Home', followupDate, 3);
+        }
+        RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home', 'Doctor Visit Followup at Home', moment(programEncounter.encounterDateTime).add(3, 'days').toDate(), 2);
+        return scheduleBuilder.getAllUnique("encounterType");
+    }
+}
+
 
 @EnrolmentRule("f94d4f18-9ff6-4f7b-988e-e7956d947bb0", "PregnancyPostPregnancyEnrolmentVisits", 10.0)
 class PregnancyPostEnrolmentVisits {
@@ -52,10 +68,10 @@ class PregnancyPostDeliveryVisits {
 }
 
 @PNCRule("4775ad43-acbf-42af-9952-2d4b8896cbfc", "PregnancyPostMotherPNCVisits", 11.0)
-    class PregnancyPostPNCVisits {
+class PregnancyPostPNCVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let deliveryDateAsOfDate = programEncounter.programEnrolment.findObservationValueInEntireEnrolment("Date of delivery",false);
+        let deliveryDateAsOfDate = programEncounter.programEnrolment.findObservationValueInEntireEnrolment("Date of delivery", false);
         if (_.isNil(deliveryDateAsOfDate) && programEncounter.name === 'PNC 1') {
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', programEncounter.encounterDateTime, 5);
         } else if (programEncounter.name === 'PNC 1') {
@@ -95,5 +111,6 @@ module.exports = {
     PregnancyPostPNCVisits: PregnancyPostPNCVisits,
     PregnancyPostAbortionVisits: PregnancyPostAbortionVisits,
     PregnancyPostPostAbortionVisits: PregnancyPostPostAbortionVisits,
-    PregnancyPostAncGmpVisits: PregnancyPostAncGmpVisits
+    PregnancyPostAncGmpVisits: PregnancyPostAncGmpVisits,
+    ANCDoctorVisits: ANCDoctorVisits,
 };

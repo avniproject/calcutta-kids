@@ -10,4 +10,14 @@ from latest_program_encounter encounter
       inner join program_enrolment enrolment on enrolment.id = encounter.program_enrolment_id
       right join individual i on enrolment.individual_id = i.id);
 
+drop view if exists active_individuals;
+
+create or replace view active_individuals as
+select i.* from individual i
+                    left outer join program_enrolment enrolment on i.id = enrolment.individual_id
+                    left outer join program_encounter encounter on enrolment.id = encounter.program_enrolment_id
+  where (encounter.encounter_date_time > (current_timestamp - interval '5 months 1 seconds')
+           or enrolment.enrolment_date_time > (current_timestamp - interval '5 months 1 seconds'))
+  group by i.id;
+
 GRANT ALL ON ALL TABLES IN SCHEMA public TO calcutta_kids;

@@ -14,7 +14,7 @@
             "name": "Duration in hours between birth and first urination",
             "uuid": "0a3fb6d3-ea49-4902-95ae-e2514d3739b6"
           },
-          "displayOrder": 1,
+          "displayOrder": 1.01,
           "mandatory": false
         },
         {
@@ -24,7 +24,7 @@
             "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
             "comment": "Number of times urinated in the last 24 hours"
           },
-          "displayOrder": 2,
+          "displayOrder": 2.01,
           "mandatory": false
         },
         {
@@ -35,7 +35,7 @@
           "concept": {
             "uuid": "43a78b5a-f4da-440d-9614-80af65090e1f"
           },
-          "displayOrder": 3,
+          "displayOrder": 3.01,
           "mandatory": true
         },
         {
@@ -46,7 +46,7 @@
             "name": "Duration in hours between birth and meconium",
             "uuid": "e7766535-327c-481c-8eb9-bc43cdb2fab5"
           },
-          "displayOrder": 4,
+          "displayOrder": 4.01,
           "mandatory": false
         },
         {
@@ -57,7 +57,7 @@
           "concept": {
             "uuid": "bcd4495f-41fa-494b-a5d9-a766c87f37f9"
           },
-          "displayOrder": 5,
+          "displayOrder": 5.01,
           "mandatory": true
         }
       ]

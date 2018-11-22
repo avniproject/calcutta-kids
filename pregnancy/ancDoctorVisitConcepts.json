@@ -5,6 +5,16 @@
     "dataType": "Text"
   },
   {
+    "name": "Adequate",
+    "uuid": "5672eb02-24ad-460f-bfb3-022a5ef9b95e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Inadequate",
+    "uuid": "7d3ce4b2-5427-4722-871f-b8a1ea6b1463",
+    "dataType": "NA"
+  },
+  {
     "name": "USG Scanning Report - Viability",
     "uuid": "401e603c-e5a9-4612-98eb-5a7faf9a4f8b",
     "dataType": "Coded",
@@ -16,6 +26,21 @@
       {
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
         "comment": "No"
+      }
+    ]
+  },
+  {
+    "name": "USG Scanning Report - Amniotic Fluid",
+    "uuid": "31894771-bae9-4dad-b0f1-ac6d96174f05",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "5672eb02-24ad-460f-bfb3-022a5ef9b95e",
+        "comment": "Adequate"
+      },
+      {
+        "uuid": "7d3ce4b2-5427-4722-871f-b8a1ea6b1463",
+        "comment": "Inadequate"
       }
     ]
   },
