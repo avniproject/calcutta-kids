@@ -96,10 +96,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@pregnancy/pncConcepts.json)
 	$(call _curl,POST,concepts,@migrationConcepts.json)
 
-deploy_patch_concepts:
-	$(call _curl,POST,concepts,@patch-concepts.json)
-
-deploy_refdata: deploy_concepts deploy_patch_concepts
+deploy_refdata: deploy_concepts
 	$(call _curl,POST,locations,@locations.json)
 	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,programs,@programs.json)

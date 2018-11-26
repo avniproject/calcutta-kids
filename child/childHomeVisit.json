@@ -382,10 +382,29 @@
       ]
     },
     {
+      "uuid": "cb7d525c-e54a-4aa0-93aa-ee37a78f0fa4",
+      "name": "Community meeting attendance",
+      "display": "Community meeting attendance",
+      "displayOrder": 4,
+      "formElements": [
+        {
+          "name": "Attended last community meetup?",
+          "uuid": "9e64317d-e93f-43d1-b74a-546c70bdd92d",
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Whether attended last community meetup",
+            "uuid": "1eb2875c-8956-4c50-96dd-d53815397cd9"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        }
+      ]
+    },
+    {
       "uuid": "66917f16-1c07-4879-8e73-94d107d43bf8",
       "name": "Counselling",
       "display": "Counselling",
-      "displayOrder": 4,
+      "displayOrder": 5,
       "formElements": [
         {
           "name": "Child post natal discussion topics LBW",
@@ -408,25 +427,6 @@
           },
           "displayOrder": 2,
           "mandatory": false
-        }
-      ]
-    },
-    {
-      "uuid": "cb7d525c-e54a-4aa0-93aa-ee37a78f0fa4",
-      "name": "Community meeting attendance",
-      "display": "Community meeting attendance",
-      "displayOrder": 5,
-      "formElements": [
-        {
-          "name": "Attended last community meetup?",
-          "uuid": "9e64317d-e93f-43d1-b74a-546c70bdd92d",
-          "type": "SingleSelect",
-          "concept": {
-            "name": "Whether attended last community meetup",
-            "uuid": "1eb2875c-8956-4c50-96dd-d53815397cd9"
-          },
-          "displayOrder": 1,
-          "mandatory": true
         }
       ]
     }
