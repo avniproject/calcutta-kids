@@ -7,7 +7,7 @@
     {
       "uuid": "10e71011-999a-4854-9db5-9fe38baa9716",
       "name": "Breast feeding",
-      "displayOrder": 2,
+      "displayOrder": 1,
       "display": "Breast feeding",
       "formElements": [
         {
@@ -251,7 +251,7 @@
     {
       "uuid": "fd6af5df-1e73-4e30-a9b2-b5285b89b85f",
       "name": "Health of the child",
-      "displayOrder": 3,
+      "displayOrder": 2,
       "display": "Health of the child",
       "formElements": [
         {
@@ -355,7 +355,7 @@
       "uuid": "e5d432a5-4d6d-403a-8f2b-059ce1356410",
       "name": "Referral",
       "display": "Referral",
-      "displayOrder": 4,
+      "displayOrder": 3,
       "formElements": [
         {
           "name": "Refer child to",
@@ -385,7 +385,7 @@
       "uuid": "66917f16-1c07-4879-8e73-94d107d43bf8",
       "name": "Counselling",
       "display": "Counselling",
-      "displayOrder": 5,
+      "displayOrder": 4,
       "formElements": [
         {
           "name": "Child post natal discussion topics LBW",
@@ -408,6 +408,25 @@
           },
           "displayOrder": 2,
           "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "cb7d525c-e54a-4aa0-93aa-ee37a78f0fa4",
+      "name": "Community meeting attendance",
+      "display": "Community meeting attendance",
+      "displayOrder": 5,
+      "formElements": [
+        {
+          "name": "Attended last community meetup?",
+          "uuid": "9e64317d-e93f-43d1-b74a-546c70bdd92d",
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Whether attended last community meetup",
+            "uuid": "1eb2875c-8956-4c50-96dd-d53815397cd9"
+          },
+          "displayOrder": 1,
+          "mandatory": true
         }
       ]
     }

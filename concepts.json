@@ -3114,5 +3114,18 @@
     "name": "Not Adequate",
     "uuid": "5ecbe201-43c2-4aff-94a5-d088220d7d1a",
     "dataType": "NA"
+  },
+  {
+    "name": "Whether attended last community meetup",
+    "uuid": "1eb2875c-8956-4c50-96dd-d53815397cd9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   }
 ]
