@@ -443,6 +443,25 @@
       ]
     },
     {
+      "uuid": "14615338-d15e-4654-b89e-5a2436c025ca",
+      "name": "Community meeting attendance",
+      "display": "Community meeting attendance",
+      "displayOrder": 4.5,
+      "formElements": [
+        {
+          "name": "Attended last community meetup?",
+          "uuid": "e60460a5-cca3-435c-95a5-203029b18313",
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Whether attended last community meetup",
+            "uuid": "1eb2875c-8956-4c50-96dd-d53815397cd9"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        }
+      ]
+    },
+    {
       "uuid": "6f100392-ea83-4040-bd63-fd8e7fa2c3cc",
       "name": "Discussion items",
       "display": "Discussion items",
