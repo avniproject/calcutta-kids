@@ -274,6 +274,25 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "uuid": "e8d7213d-8a35-4d19-bb7e-34675772f6e6",
+      "name": "Community meeting attendance",
+      "display": "Community meeting attendance",
+      "displayOrder": 4,
+      "formElements": [
+        {
+          "name": "Attended last community meetup?",
+          "uuid": "05d43088-59f3-4beb-a659-8f883b179004",
+          "type": "SingleSelect",
+          "concept": {
+            "name": "Whether attended last community meetup",
+            "uuid": "1eb2875c-8956-4c50-96dd-d53815397cd9"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        }
+      ]
     }
   ]
 }
