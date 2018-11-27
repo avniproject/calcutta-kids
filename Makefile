@@ -148,17 +148,20 @@ deploy_refdata: deploy_concepts
 
 deploy: deploy_admin_user deploy_refdata deploy_checklists deploy_rules deploy_test_users##
 
-deploy_live_subtask: deploy_refdata deploy_checklists deploy_rules
+deploy_wo_users: deploy_refdata deploy_checklists deploy_rules
 
 deploy_prod:
 #	there is a bug in server side. which sets both isAdmin, isOrgAdmin to be false. it should be done. also metadata upload should not rely on isAdmin role.
 #	need to be fixed. then uncomment the following line.
 #	make auth deploy_admin_user poolId=$(OPENCHS_PROD_USER_POOL_ID) clientId=$(OPENCHS_PROD_APP_CLIENT_ID) server=https://server.openchs.org port=443 username=admin password=$(password)
-	make auth deploy_live_subtask poolId=$(OPENCHS_PROD_USER_POOL_ID) clientId=$(OPENCHS_PROD_APP_CLIENT_ID) server=https://server.openchs.org port=443 username=ck-admin password=$(password)
+	make auth deploy_wo_users poolId=$(OPENCHS_PROD_USER_POOL_ID) clientId=$(OPENCHS_PROD_APP_CLIENT_ID) server=https://server.openchs.org port=443 username=ck-admin password=$(password)
 
 deploy_staging:
 #	make auth deploy_admin_user poolId=$(OPENCHS_STAGING_USER_POOL_ID) clientId=$(OPENCHS_STAGING_APP_CLIENT_ID) server=https://staging.openchs.org port=443 username=admin password=$(password)
-	make auth deploy_live_subtask poolId=$(OPENCHS_STAGING_USER_POOL_ID) clientId=$(OPENCHS_STAGING_APP_CLIENT_ID) server=https://staging.openchs.org port=443 username=ck-admin password=$(password)
+	make auth deploy_wo_users poolId=$(OPENCHS_STAGING_USER_POOL_ID) clientId=$(OPENCHS_STAGING_APP_CLIENT_ID) server=https://staging.openchs.org port=443 username=ck-admin password=$(password)
+
+deploy_test_users_staging:
+	make auth deploy_test_users poolId=$(OPENCHS_STAGING_USER_POOL_ID) clientId=$(OPENCHS_STAGING_APP_CLIENT_ID) server=https://staging.openchs.org port=443 username=ck-admin password=$(password)
 
 deploy_rules: ##
 	node index.js "$(server_url)" "$(token)"
