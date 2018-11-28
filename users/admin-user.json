@@ -7,7 +7,7 @@
     "phoneNumber": "+919845232929",
     "organisationUUID": "2a0cc644-5a8f-4bc3-8483-dc1e00adaba4",
     "operatingIndividualScope": "None",
-    "isAdmin": "false",
-    "isOrgAdmin": "true"
+    "admin": false,
+    "orgAdmin": true
   }
 ]
