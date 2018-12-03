@@ -1901,16 +1901,6 @@
     ]
   },
   {
-    "name": "Pill",
-    "uuid": "5a548cae-aca3-494f-9ca0-058bcdf3551c",
-    "dataType": "NA"
-  },
-  {
-    "name": "Copper T / IUD",
-    "uuid": "cfb6bf16-97bc-45b0-bbfe-e1a613344bd3",
-    "dataType": "NA"
-  },
-  {
     "name": "Tubectomy",
     "uuid": "6c02c7cd-b067-401c-80eb-25e6b0b9ed09",
     "dataType": "NA"
