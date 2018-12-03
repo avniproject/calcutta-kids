@@ -147,6 +147,38 @@
         {
           "uuid": "3170cf31-535c-4030-bec1-59229f26d81e",
           "comment": "Fundal height from pubic symphysis"
+        },
+        {
+          "uuid": "e7a89295-3b62-403d-9690-814488bc0a3d",
+          "comment": "Fundal Height"
+        },
+        {
+          "uuid": "89136929-82c4-4e5c-a32f-5d00ef1ea4a4",
+          "comment": "Abdominal girth"
+        }
+      ]
+    },
+    {
+      "uuid": "cb8b6812-b58b-428d-afbd-7f53748c684d",
+      "comment": "ANC Mother Vitals",
+      "formElements": [
+        {
+          "uuid": "099dd8f5-ed61-4195-ba8c-2a9f26317642",
+          "comment": "Pulse"
+        },
+        {
+          "uuid": "407b2857-e5cd-4805-9b2c-c43c2e819b04",
+          "comment": "Respiratory Rate"
+        }
+      ]
+    },
+    {
+      "uuid": "36debb83-db66-4da1-88c7-23c0dfc47649",
+      "comment": "ANC Physical Examination",
+      "formElements": [
+        {
+          "comment": "Has she been having convulsions?",
+          "uuid": "e4511f13-5b2a-4df2-9e7b-72729c1f6923"
         }
       ]
     },
