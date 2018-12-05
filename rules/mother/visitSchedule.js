@@ -25,7 +25,7 @@ const visitNameSuffix = (individual, earliestDate) => {
 class MotherPostHomeVisitVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home Visit' + visitNameSuffix(programEncounter.programEnrolment.individual, 'Mother Home Visit', programEncounter.getRealEventDate()), RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate()), 21);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home Visit' + visitNameSuffix(programEncounter.programEnrolment.individual, programEncounter.getRealEventDate()), 'Mother Home Visit', RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate()), 21);
     }
 }
 

@@ -21,10 +21,7 @@ class PostProgramEncounterCancelVisits {
 
         let postVisit = postVisitMap[programEncounter.encounterType.name];
 
-        if (programEncounter.encounterType.name === 'ANC Home Visit') {
-            if (visitCancelReason === 'Away' || visitCancelReason === 'Absent') //Visit can get cancelled for reasons like delivery in which case it would be "Other"
-                return postVisit.exec(programEncounter, visitSchedule);
-        } else if (!_.isNil(postVisit)) {
+        if (!_.isNil(postVisit) && visitCancelReason !== 'Program exit') {
             return postVisit.exec(programEncounter, visitSchedule);
         }
 
