@@ -43,6 +43,8 @@ auth:
 	$(if $(poolId),$(eval token:=$(shell node scripts/token.js $(poolId) $(clientId) $(username) $(password))))
 	echo $(token)
 
+deploy_patch:
+	$(call _curl,POST,forms,@sesForm.json)
 # <create_org>
 create_org: ## Create Calcutta Kids org and user+privileges
 	psql -U$(su) openchs < create_organisation.sql
