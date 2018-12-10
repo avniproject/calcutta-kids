@@ -174,6 +174,18 @@ create_deploy: create_org create_views deploy ##
 deps:
 	npm i
 
+by_org_admin:
+	$(eval username:=$(org_admin_name))
+
+staging:
+	$(eval poolId:=$(OPENCHS_STAGING_USER_POOL_ID))
+	$(eval clientId:=$(OPENCHS_STAGING_APP_CLIENT_ID))
+	$(eval server_url:= https://staging.openchs.org:443)
+
+curl_staging: staging by_org_admin auth #password=password
+	$(eval method:=$(if $(method),$(method),POST))
+	$(call _curl,$(method),$(api),@$(file))
+
 # <package>
 #build_package: ## Builds a deployable package
 #	rm -rf output/impl
