@@ -182,7 +182,16 @@ staging:
 	$(eval clientId:=$(OPENCHS_STAGING_APP_CLIENT_ID))
 	$(eval server_url:= https://staging.openchs.org:443)
 
+dev:
+	$(eval poolId:=)
+	$(eval clientId:=)
+	$(eval server_url:=http://localhost:8021)
+
 curl_staging: staging by_org_admin auth #password=password
+	$(eval method:=$(if $(method),$(method),POST))
+	$(call _curl,$(method),$(api),@$(file))
+
+curl_dev: dev by_org_admin
 	$(eval method:=$(if $(method),$(method),POST))
 	$(call _curl,$(method),$(api),@$(file))
 
