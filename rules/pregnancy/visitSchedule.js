@@ -30,9 +30,15 @@ class ANCDoctorVisits {
 class PregnancyPostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
-        let earliestDate = RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
-        RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', earliestDate, 21);
-        RuleHelper.addSchedule(scheduleBuilder, 'First ANC GMP', 'ANC GMP', moment(earliestDate).add(21, 'days').toDate(), 9);
+        let firstOfNextMonth = RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
+        RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', firstOfNextMonth, 21);
+
+        const enrolmentDayOfMonth = moment(programEnrolment.enrolmentDateTime).date();
+        const earliestDate = enrolmentDayOfMonth < 22 ? moment(RuleHelper.firstOfCurrentMonth(programEnrolment.enrolmentDateTime)).add(21, 'days').toDate() : programEnrolment.enrolmentDateTime;
+        const lastDayOfMonth = moment(programEnrolment.enrolmentDateTime).endOf('month').date();
+        const numberOfDaysForMaxOffset = (lastDayOfMonth - moment(earliestDate).date());
+        RuleHelper.addSchedule(scheduleBuilder, 'First ANC GMP', 'ANC GMP', earliestDate, numberOfDaysForMaxOffset);
+
         return scheduleBuilder.getAllUnique("encounterType");
     }
 }
@@ -41,8 +47,12 @@ class PregnancyPostEnrolmentVisits {
 class PregnancyPostAncGmpVisits {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let earliestDate = RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate());
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC GMP', 'ANC GMP', moment(earliestDate).add(21, 'days').toDate(), 9);
+        const firstOfNextMonth = RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate());
+        const earliestDate = moment(firstOfNextMonth).add(21, 'days').toDate();
+        const lastDayOfMonth = moment(programEncounter.getRealEventDate()).endOf('month').date();
+        const numberOfDaysForMaxOffset = (lastDayOfMonth - moment(firstOfNextMonth).date());
+
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'ANC GMP', 'ANC GMP', earliestDate, numberOfDaysForMaxOffset);
     }
 }
 
