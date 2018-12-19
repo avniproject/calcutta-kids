@@ -111,6 +111,12 @@ class RuleHelper {
         const month = moment(realEventDate).month() + 1;
         return moment(realEventDate).month(month).date(1).toDate();
     };
+
+    static firstOfCurrentMonth(realEventDate) {
+        const currentDate = moment(realEventDate).date();
+        const month = moment(realEventDate).month();
+        return moment(realEventDate).month(month).date(1).toDate();
+    };
 }
 
 module.exports = RuleHelper;

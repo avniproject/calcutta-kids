@@ -14,8 +14,11 @@ class ChildPostChildEnrolmentVisits {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
         RuleHelper.addSchedule(scheduleBuilder, 'Birth form', 'Birth', programEnrolment.enrolmentDateTime, 0);
 
-        let earliestDate = RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
-        RuleHelper.addSchedule(scheduleBuilder, 'Child GMP', 'Anthropometry Assessment', moment(earliestDate).add(21, 'days').toDate(), 9);
+        const enrolmentDayOfMonth = moment(programEnrolment.enrolmentDateTime).date();
+        const earliestDate = enrolmentDayOfMonth < 22 ? moment(RuleHelper.firstOfCurrentMonth(programEnrolment.enrolmentDateTime)).add(21, 'days').toDate() : programEnrolment.enrolmentDateTime;
+        const lastDayOfMonth = moment(programEnrolment.enrolmentDateTime).endOf('month').date();
+        const numberOfDaysForMaxOffset = (lastDayOfMonth - moment(earliestDate).date());
+        RuleHelper.addSchedule(scheduleBuilder, 'Child GMP', 'Anthropometry Assessment', earliestDate, numberOfDaysForMaxOffset);
 
         if (moment(programEnrolment.individual.dateOfBirth).add(2, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime) && !moment(programEnrolment.individual.dateOfBirth).add(10, 'days').isBefore(programEnrolment.enrolmentDateTime)) {
             RuleHelper.addSchedule(scheduleBuilder, 'Child PNC 1', 'Child PNC', programEnrolment.enrolmentDateTime, 10);
@@ -47,8 +50,14 @@ class ChildPostPNCVisits {
 class ChildGMPMonthly {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let earliestDate = RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate());
-        RuleHelper.addSchedule(scheduleBuilder, 'Child GMP', 'Anthropometry Assessment', moment(earliestDate).add(21, 'days').toDate(), 9);
+        let firstOfNextMonth = RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate());
+        let earliestDate = moment(firstOfNextMonth).add(21, 'days').toDate();
+
+        const lastDayOfMonth = moment(programEncounter.getRealEventDate()).endOf('month').date();
+        const numberOfDaysForMaxOffset = (lastDayOfMonth - moment(firstOfNextMonth).date());
+
+
+        RuleHelper.addSchedule(scheduleBuilder, 'Child GMP', 'Anthropometry Assessment', earliestDate, numberOfDaysForMaxOffset);
         return scheduleBuilder.getAllUnique("encounterType");
     }
 }
