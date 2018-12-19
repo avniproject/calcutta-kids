@@ -13,10 +13,16 @@ class ChildPostChildEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
         RuleHelper.addSchedule(scheduleBuilder, 'Birth form', 'Birth', programEnrolment.enrolmentDateTime, 0);
-        if (moment(programEnrolment.individual.dateOfBirth).add(2, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime) && !moment(programEnrolment.individual.dateOfBirth).add(10, 'days').isBefore(programEnrolment.enrolmentDateTime))
+
+        let earliestDate = RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
+        RuleHelper.addSchedule(scheduleBuilder, 'Child GMP', 'Anthropometry Assessment', moment(earliestDate).add(21, 'days').toDate(), 9);
+
+        if (moment(programEnrolment.individual.dateOfBirth).add(2, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime) && !moment(programEnrolment.individual.dateOfBirth).add(10, 'days').isBefore(programEnrolment.enrolmentDateTime)) {
             RuleHelper.addSchedule(scheduleBuilder, 'Child PNC 1', 'Child PNC', programEnrolment.enrolmentDateTime, 10);
-        else if (moment(programEnrolment.individual.dateOfBirth).add(10, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime) && !moment(programEnrolment.individual.dateOfBirth).add(42, 'days').isBefore(programEnrolment.enrolmentDateTime))
+        }
+        else if (moment(programEnrolment.individual.dateOfBirth).add(10, 'days').isSameOrBefore(programEnrolment.enrolmentDateTime) && !moment(programEnrolment.individual.dateOfBirth).add(42, 'days').isBefore(programEnrolment.enrolmentDateTime)) {
             RuleHelper.addSchedule(scheduleBuilder, 'Child PNC 2', 'Child PNC', programEnrolment.enrolmentDateTime, 32);
+        }
         lib.log(JSON.stringify(visitSchedule));
         return scheduleBuilder.getAllUnique("encounterType");
     }
