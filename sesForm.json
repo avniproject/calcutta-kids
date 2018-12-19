@@ -445,7 +445,7 @@
         {
           "uuid": "81c29a21-f8ea-4069-a433-b8b221696040",
           "name": "Weighing service availed from?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "0ac89224-baff-416d-959b-2854369d8530"
           },
@@ -474,7 +474,7 @@
         {
           "uuid": "8225cff9-cc25-4318-97ab-3965e5bea899",
           "name": "Food rations received from?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "cdcafa55-25da-4158-b2ae-163d92528a28"
           },
@@ -503,7 +503,7 @@
         {
           "uuid": "b4de5284-d5a9-4f14-94a4-7ac371d310b1",
           "name": "Health services received from?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "4806adf8-1120-4550-8703-faab343fdd9b"
           },
@@ -532,7 +532,7 @@
         {
           "uuid": "9acf3542-7959-4041-8537-ade887975895",
           "name": "Immunization service received from?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "3be0f140-2c04-4b40-9af2-46ee2e133e64"
           },
@@ -590,7 +590,7 @@
         {
           "uuid": "3b1088be-320e-407d-ae22-ccbe28a4a288",
           "name": "Medical assistance received from?",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "b47198e4-8bda-4b46-9020-4dd693135ab3"
           },
