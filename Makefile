@@ -167,6 +167,10 @@ deploy_test_users_staging:
 
 deploy_rules: ##
 	node index.js "$(server_url)" "$(token)" "$(org_admin_name)"
+
+deploy_rules_prod:
+	make deps auth deploy_rules poolId=$(OPENCHS_PROD_USER_POOL_ID) clientId=$(OPENCHS_PROD_APP_CLIENT_ID) server=https://server.openchs.org port=443 username=ck-admin password=$(password)
+
 # </deploy>
 
 # <c_d>
