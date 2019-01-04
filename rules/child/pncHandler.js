@@ -112,7 +112,7 @@ class ChildPNCFormDecisions {
         builder.addComplication('Insufficient urination')
             .valueInEncounter('Number of times urinated in the last 24 hours').lessThan(6);
 
-        ['No urination', 'Difficulty in urination']
+        ['No urination', 'Child cries before or while passing urine']
             .forEach((c) =>
                 builder.addComplication(c)
                     .when.valueInEncounter("Child PNC urination related complaints").containsAnswerConceptName(c));
