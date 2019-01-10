@@ -455,13 +455,18 @@
     "dataType": "Text"
   },
   {
-    "name": "Milk daily frequency",
+    "name": "Milk frequency",
     "uuid": "76a5fa55-865a-48d4-8db4-3271786e7f3e",
     "dataType": "Text"
   },
   {
     "name": "Milk daily frequency",
     "uuid": "6653c5fa-bf21-4833-ac8d-79009705d4fd",
+    "dataType": "Text"
+  },
+  {
+    "name": "Milk frequency other",
+    "uuid": "c3272f4b-f8bb-4780-b01e-f6872ff425bf",
     "dataType": "Text"
   },
   {
