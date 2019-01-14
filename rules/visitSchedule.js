@@ -1,7 +1,7 @@
 const {RuleFactory} = require('rules-config/rules');
-const {PregnancyPostANCHomeVisitVisits, PregnancyPostDeliveryVisits, PregnancyPostEnrolmentVisits, PregnancyPostPNCVisits, PregnancyPostAbortionVisits, PregnancyPostPostAbortionVisits, PregnancyPostAncGmpVisits} = require('./pregnancy/visitSchedule');
+const {PregnancyPostANCHomeVisitVisits, PregnancyPostDeliveryVisits, PregnancyPostEnrolmentVisits, PregnancyPostPNCVisits, PregnancyPostAbortionVisits, PregnancyPostPostAbortionVisits, PregnancyPostAncGmpVisits, ANCDoctorVisits} = require('./pregnancy/visitSchedule');
 const {MotherPostEnrolmentVisits, MotherPostHomeVisitVisits} = require('./mother/visitSchedule');
-const {ChildPostChildEnrolmentVisits, ChildPostHomeVisitVisits, ChildPostPNCVisits, ChildGMPMonthly} = require('./child/visitSchedule');
+const {ChildPostChildEnrolmentVisits, ChildPostHomeVisitVisits, ChildPostPNCVisits, ChildGMPMonthly, ChildPostBirthVisitsCK} = require('./child/visitSchedule');
 const {GeneralPostDoctorVisitVisits} = require('./general/generalVisitSchedule');
 
 const ProgramEncounterCancelRule = RuleFactory("aac5c57a-aa01-49bb-ad20-70536dd2907f", "VisitSchedule");
@@ -49,4 +49,6 @@ module.exports = {
     GeneralPostDoctorVisitVisits,
     PostProgramEncounterCancelVisits,
     ChildGMPMonthly,
+    ANCDoctorVisits,
+    ChildPostBirthVisitsCK
 };

@@ -10,9 +10,10 @@ const RuleHelper = require('../RuleHelper');
 class MotherPostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
-        let dateOfDelivery = getDateOfDelivery(programEnrolment);
-        let earliestDate = _.isNil(dateOfDelivery) ? programEnrolment.enrolmentDateTime : dateOfDelivery;
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home Visit - ' + visitNameSuffix(programEnrolment.individual, earliestDate), 'Mother Home Visit', RuleHelper.firstOfNextMonth(earliestDate), 21);
+        const enrolmentDayOfMonth = moment(programEnrolment.enrolmentDateTime).date();
+        const homeVisitEarliestDate = enrolmentDayOfMonth < 22 ? programEnrolment.enrolmentDateTime : RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
+        const homeVisitNumberOfDaysForMaxOffset = (21 - moment(homeVisitEarliestDate).date());
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home Visit - ' + visitNameSuffix(programEnrolment.individual, homeVisitEarliestDate), 'Mother Home Visit', homeVisitEarliestDate, homeVisitNumberOfDaysForMaxOffset);
     }
 }
 
@@ -28,12 +29,5 @@ class MotherPostHomeVisitVisits {
         return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Home Visit' + visitNameSuffix(programEncounter.programEnrolment.individual, programEncounter.getRealEventDate()), 'Mother Home Visit', RuleHelper.firstOfNextMonth(programEncounter.getRealEventDate()), 21);
     }
 }
-
-const getDateOfDelivery = (programEnrolment) => {
-    let previousPregnancyEnrolment = programEnrolment.individual.getPreviousEnrolment('Pregnancy', programEnrolment.uuid);
-    if (!_.isNil(previousPregnancyEnrolment))
-        return previousPregnancyEnrolment.findObservationInEntireEnrolment('Date of delivery');
-    return null;
-};
 
 module.exports = {MotherPostHomeVisitVisits: MotherPostHomeVisitVisits, MotherPostEnrolmentVisits: MotherPostEnrolmentVisits};
