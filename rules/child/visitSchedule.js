@@ -13,7 +13,7 @@ class ChildPostChildEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
 
-        if (!programEncounter.programEnrolment.hasEncounterOfType('Birth')){
+        if (!programEnrolment.hasEncounterOfType('Birth')){
             RuleHelper.addSchedule(scheduleBuilder, 'Birth form', 'Birth', programEnrolment.enrolmentDateTime, 0);
         }
 
