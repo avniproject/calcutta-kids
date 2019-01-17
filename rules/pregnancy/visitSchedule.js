@@ -95,8 +95,7 @@ class PregnancyPostPNCVisits {
 class PregnancyPostAbortionVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let dateOfAbortion = programEncounter.getObservationValue('Date of abortion');
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'First post abortion home visit', 'Post abortion home visit', dateOfAbortion, 7);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'First post abortion home visit', 'Post abortion home visit', programEncounter.encounterDateTime, 7);
     }
 }
 
