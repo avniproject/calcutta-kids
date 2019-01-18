@@ -105,8 +105,9 @@ class PregnancyPostPostAbortionVisits {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let numberOfPostAbortionEncounters = programEncounter.programEnrolment.numberOfEncountersOfType('Post abortion home visit');
         if (numberOfPostAbortionEncounters < 3) {
-            let gap = numberOfPostAbortionEncounters > 1 ? 14 : 7;
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Post abortion home visit', 'Post abortion home visit', moment(programEncounter.encounterDateTime).add(gap, 'days').toDate(), 7);
+            let earliestDateTime = numberOfPostAbortionEncounters > 1 ? moment(programEncounter.getRealEventDate()).add(14, 'days').toDate() : programEncounter.getRealEventDate();
+            let name = numberOfPostAbortionEncounters > 1 ? 'Third post abortion home visit' : 'Second post abortion home visit';
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, name, 'Post abortion home visit', earliestDateTime, 7);
         }
         return visitSchedule;
     }
