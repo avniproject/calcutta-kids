@@ -40,10 +40,11 @@ define _curl_as_openchs
 endef
 
 define _gen_extract_report
+	@mkdir -p /tmp/ck/
 	curl -X GET '$(server_url)/query/program/$(1)'  \
 		-H "Content-Type: application/json"  \
 		-H "USER-NAME: $(org_admin_name)"  \
-		$(if $(token),-H "AUTH-TOKEN: $(token)",)
+		$(if $(token),-H "AUTH-TOKEN: $(token)",) > /tmp/ck/$(1).json
 	@echo
 	@echo
 endef
