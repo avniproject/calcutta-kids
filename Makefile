@@ -39,9 +39,20 @@ define _curl_as_openchs
 	@echo
 endef
 
+define _gen_extract_report
+	curl -X GET '$(server_url)/query/program/$(1)'  \
+		-H "Content-Type: application/json"  \
+		-H "USER-NAME: $(org_admin_name)"  \
+		$(if $(token),-H "AUTH-TOKEN: $(token)",)
+	@echo
+	@echo
+endef
+
 auth:
 	$(if $(poolId),$(eval token:=$(shell node scripts/token.js $(poolId) $(clientId) $(username) $(password))))
-	echo $(token)
+
+auth-print: auth
+	@echo $(token)
 
 deploy_patch:
 	$(call _curl,POST,forms,@sesForm.json)
@@ -210,6 +221,29 @@ curl_prod: prod by_org_admin auth #password=password
 curl_dev: dev by_org_admin
 	$(eval method:=$(if $(method),$(method),POST))
 	$(call _curl,$(method),$(api),@$(file))
+
+program=
+password=
+gen_all_reports_dev: dev by_org_admin
+	@$(call _gen_extract_report,$(program))
+
+gen_all_reports_staging: staging by_org_admin auth
+	@$(call _gen_extract_report,$(program))
+
+gen_all_reports_prod: prod by_org_admin auth
+	@$(call _gen_extract_report,$(program))
+
+gen_all_reports_uat: uat by_org_admin auth
+	@$(call _gen_extract_report,$(program))
+
+
+encounter_type=
+gen_encounter_report_dev: dev by_org_admin auth
+	@$(call _gen_extract_report,$(program)/encounter/$(encounter_type))
+
+gen_encounter_report_uat: uat by_org_admin auth
+	@$(call _gen_extract_report,$(program)/encounter/$(encounter_type))
+
 
 # <package>
 #build_package: ## Builds a deployable package
