@@ -11,7 +11,8 @@ const postVisitMap = {
     "Mother Home Visit": MotherPostHomeVisitVisits,
     "ANC Home Visit": PregnancyPostANCHomeVisitVisits,
     "ANC GMP": PregnancyPostAncGmpVisits,
-    "Anthropometry Assessment": ChildGMPMonthly
+    "Anthropometry Assessment": ChildGMPMonthly,
+    "Post abortion home visit": PregnancyPostPostAbortionVisits
 };
 
 @ProgramEncounterCancelRule("aca832d6-f570-4945-89d8-fe28cdff4bc7", "PostProgramEncounterCancelVisits", 10.0)

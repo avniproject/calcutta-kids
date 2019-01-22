@@ -56,6 +56,13 @@
     "comment": "Pregnancy program (core mother program), Post abortion"
   },
   {
+    "uuid": "4735bd6d-fd98-4d2a-b7b5-4f70b12e4b1d",
+    "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
+    "programUUID": "076ddb2d-a499-4314-af95-4178553d279b",
+    "encounterTypeUUID": "3f5898b9-aeb9-400e-9440-2c91cb29c551",
+    "comment": "Pregnancy program (core mother program), Post abortion cancel"
+  },
+  {
     "uuid": "cf185c9a-15b0-4b88-bd73-144d2bed3958",
     "formUUID": "b80646b2-b74e-415f-974c-f8f48d67b27e",
     "encounterTypeUUID": "5a18fd93-7db8-47a2-9c26-4807d89d13e7",
