@@ -18,7 +18,7 @@ class ANCDoctorVisits {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let followupDate = programEncounter.getObservationReadableValue('Followup date');
         if (!_.isNil(followupDate)) {
-            RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home', 'Doctor Visit Followup at Home', followupDate, 3);
+            RuleHelper.addSchedule(scheduleBuilder, 'ANC Doctor Checkup Followup', 'ANC', followupDate, 3);
         }
         RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home', 'Doctor Visit Followup at Home', moment(programEncounter.encounterDateTime).add(3, 'days').toDate(), 2);
         return scheduleBuilder.getAllUnique("encounterType");
@@ -30,14 +30,17 @@ class ANCDoctorVisits {
 class PregnancyPostEnrolmentVisits {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
-        let firstOfNextMonth = RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
-        RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', firstOfNextMonth, 21);
-
         const enrolmentDayOfMonth = moment(programEnrolment.enrolmentDateTime).date();
-        const earliestDate = enrolmentDayOfMonth < 22 ? moment(RuleHelper.firstOfCurrentMonth(programEnrolment.enrolmentDateTime)).add(21, 'days').toDate() : programEnrolment.enrolmentDateTime;
+
+        const homeVisitEarliestDate = enrolmentDayOfMonth < 22 ? programEnrolment.enrolmentDateTime : RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
+        const homeVisitNumberOfDaysForMaxOffset = (21 - moment(homeVisitEarliestDate).date());
+        RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', homeVisitEarliestDate, homeVisitNumberOfDaysForMaxOffset);
+
+
+        const gmpVisitEarliestDate = enrolmentDayOfMonth < 22 ? moment(RuleHelper.firstOfCurrentMonth(programEnrolment.enrolmentDateTime)).add(21, 'days').toDate() : programEnrolment.enrolmentDateTime;
         const lastDayOfMonth = moment(programEnrolment.enrolmentDateTime).endOf('month').date();
-        const numberOfDaysForMaxOffset = (lastDayOfMonth - moment(earliestDate).date());
-        RuleHelper.addSchedule(scheduleBuilder, 'First ANC GMP', 'ANC GMP', earliestDate, numberOfDaysForMaxOffset);
+        const gmpVisitNumberOfDaysForMaxOffset = (lastDayOfMonth - moment(gmpVisitEarliestDate).date());
+        RuleHelper.addSchedule(scheduleBuilder, 'First ANC GMP', 'ANC GMP', gmpVisitEarliestDate, gmpVisitNumberOfDaysForMaxOffset);
 
         return scheduleBuilder.getAllUnique("encounterType");
     }
@@ -72,7 +75,7 @@ class PregnancyPostDeliveryVisits {
         if (programEncounter.programEnrolment.hasEncounterOfType('PNC')) return visitSchedule;
 
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        RuleHelper.addSchedule(scheduleBuilder, 'PNC 1', 'PNC', programEncounter.encounterDateTime, 1);
+        RuleHelper.addSchedule(scheduleBuilder, 'PNC 1', 'PNC', programEncounter.encounterDateTime, 7);
         return scheduleBuilder.getAllUnique("encounterType");
     }
 }
@@ -81,14 +84,10 @@ class PregnancyPostDeliveryVisits {
 class PregnancyPostPNCVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        let deliveryDateAsOfDate = programEncounter.programEnrolment.findObservationValueInEntireEnrolment("Date of delivery", false);
-        if (_.isNil(deliveryDateAsOfDate) && programEncounter.name === 'PNC 1') {
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', programEncounter.encounterDateTime, 5);
-        } else if (programEncounter.name === 'PNC 1') {
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', moment(deliveryDateAsOfDate.value).add(7, 'days').toDate(), 8);
-        } else {
-            return visitSchedule;
+        if (programEncounter.name === 'PNC 1') {
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'PNC 2', 'PNC', moment(programEncounter.encounterDateTime).add(7, 'days').toDate(), 7);
         }
+        return visitSchedule;
     }
 }
 

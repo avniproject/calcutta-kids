@@ -183,6 +183,8 @@ deploy_rules: ##
 deploy_rules_prod:
 	make deps auth deploy_rules poolId=$(OPENCHS_PROD_USER_POOL_ID) clientId=$(OPENCHS_PROD_APP_CLIENT_ID) server=https://server.openchs.org port=443 username=ck-admin password=$(password)
 
+deploy_rules_staging: staging by_org_admin auth deploy_rules
+
 # </deploy>
 
 # <c_d>
