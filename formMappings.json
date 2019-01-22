@@ -109,7 +109,8 @@
     "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
     "encounterTypeUUID": "21f346a4-dc45-4aa1-a34c-aff9c12438f8",
     "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
-    "comment": "Child, Home Visit Cancel"
+    "comment": "Child, Home Visit Cancel",
+    "voided": true
   },
   {
     "uuid": "72c105bb-865e-4767-933d-183ca8abced6",
