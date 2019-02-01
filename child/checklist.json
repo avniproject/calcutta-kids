@@ -939,6 +939,7 @@
       "uuid": "f46584c4-d9f2-4999-b836-150629903476",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "20e85eb7-0156-4fc3-b910-e8441c25b06e",
+      "scheduleOnExpiryOfDependency": true,
       "minDaysFromStartDate": 487,
       "concept": {
         "uuid": "1ec966e3-96d9-4725-b67a-614a4261ff0a",
