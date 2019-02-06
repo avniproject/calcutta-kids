@@ -21,4 +21,6 @@ module.exports = _.merge({},
     require('./pregnancy/EnrolmentFilter'),
     require('./pregnancy/PNCFormHandler'),
     require('./sesHandler'),
-    require('./visitSchedule'));
+    require('./visitSchedule'),
+    require('./encounterCancelHandler'),
+);
