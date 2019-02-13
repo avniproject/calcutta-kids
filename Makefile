@@ -150,6 +150,7 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@sesForm.json)
 
 	$(call _curl,POST,formMappings,@formMappings.json)
+	$(call _curl,POST,operationalSubjectTypes,@operationalSubjectTypes.json)
 # </refdata>
 
 # <deploy>
