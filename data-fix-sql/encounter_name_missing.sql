@@ -23,7 +23,7 @@ where earliest_visit_date_time notnull
       and encounter_type_id = (select encounter_type_id from operational_encounter_type where name = 'Child GMP')
 returning audit_id)
 update audit as a
-set last_modified_date_time = current_timestamp
+set last_modified_date_time = current_timestamp + a.id * ('1 millisecond' :: interval)
 from audits as audits
 where audits.audit_id = a.id;
 
