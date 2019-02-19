@@ -1,0 +1,16 @@
+[
+  {
+    "uuid": "7409fc6f-da39-4f08-8982-5f4f33c031e8",
+    "name": "dataimporter@ck",
+    "password": "password",
+    "email": "openchssupport+dataimporter+ck@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "2a0cc644-5a8f-4bc3-8483-dc1e00adaba4",
+    "catchmentUUID": "221fc850-2351-4848-a834-b4e3134e08f2",
+    "operatingIndividualScope": "ByCatchment",
+    "isAdmin": "false",
+    "isOrgAdmin": "false",
+    "emailVerified": "true",
+    "phoneNumberVerified": "true"
+  }
+]
