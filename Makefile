@@ -93,6 +93,9 @@ deploy_admin_user:
 deploy_test_users:
 	$(call _curl,POST,users,@users/test-users.json)
 
+deploy_subjects:
+	$(call _curl,POST,operationalSubjectTypes,@operationalSubjectTypes.json)
+
 deploy_concepts:
 	$(if $(shell command -v node 2> /dev/null),make deploy_non_coded_concepts token=$(token) poolId=$(poolId) clientId=$(clientId) server=$(server) username=$(username) password=$(password))
 	$(call _curl,POST,concepts,@concepts.json)
@@ -107,7 +110,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@pregnancy/pncConcepts.json)
 	$(call _curl,POST,concepts,@migrationConcepts.json)
 
-deploy_refdata: deploy_concepts
+deploy_refdata: deploy_subjects deploy_concepts
 	$(call _curl,POST,locations,@locations.json)
 	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,programs,@programs.json)
@@ -150,7 +153,6 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,forms,@sesForm.json)
 
 	$(call _curl,POST,formMappings,@formMappings.json)
-	$(call _curl,POST,operationalSubjectTypes,@operationalSubjectTypes.json)
 # </refdata>
 
 # <deploy>
