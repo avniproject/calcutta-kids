@@ -9,6 +9,38 @@
     "catchmentUUID": "9815f0a5-2af0-4d3a-bbc7-7e754512278c",
     "operatingIndividualScope": "ByCatchment",
     "isAdmin": "false",
+    "isOrgAdmin": "false",
+    "settings": {
+      "trackLocation": false,
+      "locale": "gu_IN"
+    }
+  },
+  {
+    "uuid": "36686663-8a3b-4eaf-8985-83d5a1ca7c85",
+    "name": "ck-test-master-2",
+    "password": "password",
+    "email": "openchssupport+ck+test+2@samanvayfoundation.org",
+    "phoneNumber": "+919991999919",
+    "organisationUUID": "2a0cc644-5a8f-4bc3-8483-dc1e00adaba4",
+    "catchmentUUID": "9815f0a5-2af0-4d3a-bbc7-7e754512278c",
+    "operatingIndividualScope": "ByCatchment",
+    "isAdmin": "false",
+    "isOrgAdmin": "false",
+    "settings": {
+      "trackLocation": false,
+      "locale": "en"
+    }
+  },
+  {
+    "uuid": "a425b341-c5b3-4731-997d-2603507951c5",
+    "name": "ck-test-master-3",
+    "password": "password",
+    "email": "openchssupport+ck+test+2@samanvayfoundation.org",
+    "phoneNumber": "+919991999919",
+    "organisationUUID": "2a0cc644-5a8f-4bc3-8483-dc1e00adaba4",
+    "catchmentUUID": "9815f0a5-2af0-4d3a-bbc7-7e754512278c",
+    "operatingIndividualScope": "ByCatchment",
+    "isAdmin": "false",
     "isOrgAdmin": "false"
   }
 ]
