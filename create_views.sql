@@ -1,3 +1,5 @@
+set role calcutta_kids;
+
 drop view if exists calcutta_kids_individual_away_status;
 
 create view calcutta_kids_individual_away_status as
@@ -20,4 +22,9 @@ select i.* from individual i
            or enrolment.enrolment_date_time > (current_timestamp - interval '5 months 1 seconds'))
   group by i.id;
 
-GRANT ALL ON ALL TABLES IN SCHEMA public TO calcutta_kids;
+set role none;
+
+select grant_all_on_views(array [
+                            'calcutta_kids_individual_away_status',
+                            'active_individuals'
+                            ], 'calcutta_kids');
