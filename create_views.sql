@@ -1384,6 +1384,15 @@ create view ck_mother_pnc as (
 set role none;
 
 select grant_all_on_views(array [
-                            'calcutta_kids_individual_away_status',
-                            'active_individuals'
+                            'ck_mother_pnc',
+                            'ck_mother_abortion',
+                            'ck_mother_delivery',
+                            'ck_anc_gmp',
+                            'ck_child_gmp',
+                            'ck_child_doctor_visit',
+                            'ck_child_home_visit_view',
+                            'ck_child_pnc_view',
+                            'ck_birth_view',
+                            'active_individuals',
+                            'calcutta_kids_individual_away_status'
                             ], 'calcutta_kids');
