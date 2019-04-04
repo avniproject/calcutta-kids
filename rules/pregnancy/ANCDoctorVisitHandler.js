@@ -40,6 +40,11 @@ class ANCDoctorVisitAbdominalExamination {
     }
 
     @WithStatusBuilder
+    pregnancyComplications([], statusBuilder) {
+        statusBuilder.skipAnswers('Convulsions');
+    }
+
+    @WithStatusBuilder
     otherPregnancyComplications([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter('Pregnancy complications').containsAnyAnswerConceptName('Other');
     }

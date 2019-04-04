@@ -20,6 +20,13 @@ class ANCHomeVisitFilterHandler {
         return statusBuilder.build();
     }
 
+    doYouHaveAnyOfTheFollowingHealthIssues(programEncounter, formElement) {
+        let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
+        statusBuilder.skipAnswers('Convulsions');
+        return statusBuilder.build();
+    }
+
+
     otherHealthIssues(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Pregnancy complications', 'Other');
     }
