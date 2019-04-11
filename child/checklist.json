@@ -949,10 +949,10 @@
         {
           "displayOrder": 1.0,
           "from": {
-            "day": 487
+            "day": 365
           },
           "to": {
-            "day": 508
+            "day": 386
           },
           "state": "Due",
           "color": "#FBF9DA"
@@ -960,10 +960,10 @@
         {
           "displayOrder": 2.0,
           "from": {
-            "day": 508
+            "day": 386
           },
           "to": {
-            "day": 515
+            "day": 393
           },
           "state": "Critical",
           "color": "#F9DBBF"
@@ -971,7 +971,7 @@
         {
           "displayOrder": 3.0,
           "from": {
-            "day": 515
+            "day": 393
           },
           "to": {
             "day": 1095

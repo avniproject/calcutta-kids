@@ -50,7 +50,7 @@ to_be_voided as (
           order by enrolment_id, schedule_date, oet_name, enc_id) foo
 where foo.row_num <> 1)
 -- below line is to check that the update worked
--- select enc_id from to_be_voided;
+-- select count(enc_id) from to_be_voided;
 
 , updates as (
   update program_encounter set is_voided=true
@@ -59,6 +59,6 @@ where foo.row_num <> 1)
 )
 
 update audit a
-set last_modified_date_time = current_timestamp + id * ('1 millisecond' :: interval), last_modified_by_id = 85, created_by_id = 85
+set last_modified_date_time = current_timestamp + id * ('1 millisecond' :: interval), last_modified_by_id = 85
 from updates
 where updates.audit_id = a.id;
