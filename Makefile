@@ -191,7 +191,7 @@ deploy_rules_staging: staging by_org_admin auth deploy_rules
 # </deploy>
 
 # <c_d>
-create_deploy: create_org create_views deploy ##
+create_deploy: create_org deploy ##
 # </c_d>
 
 deps:
