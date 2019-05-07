@@ -1,6 +1,9 @@
 set role calcutta_kids;
 
 drop view if exists calcutta_kids_individual_away_status;
+/*
+-- Do not create the calcutta_kids_individual_away_status view
+-- It is not used anymore. Just drop it if exists.
 
 create view calcutta_kids_individual_away_status as
 
@@ -11,7 +14,7 @@ create view calcutta_kids_individual_away_status as
 from latest_program_encounter encounter
       inner join program_enrolment enrolment on enrolment.id = encounter.program_enrolment_id
       right join individual i on enrolment.individual_id = i.id);
-
+*/
 drop view if exists active_individuals;
 
 create or replace view active_individuals as
@@ -1382,17 +1385,3 @@ create view ck_mother_pnc as (
 -- ----------------------------------------------------
 
 set role none;
-
-select grant_all_on_views(array [
-                            'ck_mother_pnc',
-                            'ck_mother_abortion',
-                            'ck_mother_delivery',
-                            'ck_anc_gmp',
-                            'ck_child_gmp',
-                            'ck_child_doctor_visit',
-                            'ck_child_home_visit_view',
-                            'ck_child_pnc_view',
-                            'ck_birth_view',
-                            'active_individuals',
-                            'calcutta_kids_individual_away_status'
-                            ], 'calcutta_kids');
