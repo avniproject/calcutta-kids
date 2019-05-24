@@ -1,44 +1,5 @@
 [
   {
-    "name": "Vitamin intake",
-    "uuid": "78509061-12c1-480f-9ed3-2a5b4b02e6d7",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
-      },
-      {
-        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-      }
-    ]
-  },
-  {
-    "name": "Iron",
-    "uuid": "e5a11f2d-85c7-475c-99f9-4057005d172d",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
-      },
-      {
-        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-      }
-    ]
-  },
-  {
-    "name": "Calcium",
-    "uuid": "f16747ff-2a3d-4878-90cd-8f21e3fb59b9",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
-      },
-      {
-        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-      }
-    ]
-  },
-  {
     "name": "Congenital or developmental",
     "uuid": "4fae5191-c85b-4a01-b655-a36170c03762"
   },
@@ -93,6 +54,70 @@
   {
     "name": "Respiratory",
     "uuid": "b1c58306-0535-4cc6-b231-8a0c9c002f9a"
+  },
+  {
+    "name": "Other health problem / classification",
+    "uuid": "687e183e-2026-49cc-ba21-783695c313e6",
+    "dataType": "Text"
+  },
+  {
+    "name": "Chief complaint",
+    "uuid": "6caeddd6-ffb4-4824-80cc-f7dbda85e9db",
+    "dataType": "Text"
+  },
+  {
+    "name": "Open/Loose stitches",
+    "uuid": "a8b70653-ac63-4170-bdeb-39ba5b51d75d",
+    "dataType": "NA"
+  },
+  {
+    "name": "Discharge from stitches wound",
+    "uuid": "6135149b-f390-47b3-bc43-c39e53410c4a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Followup date",
+    "uuid": "1aeda2b1-25e6-4f65-8225-e25293b08344",
+    "dataType": "Date"
+  },
+  {
+    "name": "Vitamin intake",
+    "uuid": "78509061-12c1-480f-9ed3-2a5b4b02e6d7",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Iron",
+    "uuid": "e5a11f2d-85c7-475c-99f9-4057005d172d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Calcium",
+    "uuid": "f16747ff-2a3d-4878-90cd-8f21e3fb59b9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   },
   {
     "name": "Health problem / Classification",
@@ -166,26 +191,6 @@
     ]
   },
   {
-    "name": "Other health problem / classification",
-    "uuid": "687e183e-2026-49cc-ba21-783695c313e6",
-    "dataType": "Text"
-  },
-  {
-    "name": "Chief complaint",
-    "uuid": "6caeddd6-ffb4-4824-80cc-f7dbda85e9db",
-    "dataType": "Text"
-  },
-  {
-    "name": "Open/Loose stitches",
-    "uuid": "a8b70653-ac63-4170-bdeb-39ba5b51d75d",
-    "dataType": "NA"
-  },
-  {
-    "name": "Discharge from stitches wound",
-    "uuid": "6135149b-f390-47b3-bc43-c39e53410c4a",
-    "dataType": "NA"
-  },
-  {
     "comment": "Refer to the hospital for",
     "uuid": "18cfc41a-2110-484e-a3c6-3f5592387324",
     "dataType": "Coded",
@@ -199,10 +204,5 @@
         "uuid": "6135149b-f390-47b3-bc43-c39e53410c4a"
       }
     ]
-  },
-  {
-    "name": "Followup date",
-    "uuid": "1aeda2b1-25e6-4f65-8225-e25293b08344",
-    "dataType": "Date"
   }
 ]

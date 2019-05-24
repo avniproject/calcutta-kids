@@ -1,5 +1,20 @@
 [
   {
+    "uuid": "dd4e86e4-3c9b-41e2-9852-59d77558b1b8",
+    "name": "Other things baby was fed since beginning breastfeeding",
+    "dataType": "Text"
+  },
+  {
+    "name": "Number of times breastfed in the last 24 hours",
+    "uuid": "16e7abb8-1dee-4f1f-88e0-d9e24f43f720",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Number of times urinated in the last 24 hours",
+    "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
+    "dataType": "Numeric"
+  },
+  {
     "comment": "Child PNC activity related complaints",
     "uuid": "ad5d7bf8-932a-4eb2-8e8a-7c38dc4bbe2b",
     "dataType": "Coded",
@@ -49,21 +64,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "uuid": "dd4e86e4-3c9b-41e2-9852-59d77558b1b8",
-    "name": "Other things baby was fed since beginning breastfeeding",
-    "dataType": "Text"
-  },
-  {
-    "name": "Number of times breastfed in the last 24 hours",
-    "uuid": "16e7abb8-1dee-4f1f-88e0-d9e24f43f720",
-    "dataType": "Numeric"
-  },
-  {
-    "name": "Number of times urinated in the last 24 hours",
-    "uuid": "cd06dba4-0319-4a0d-a304-9f87908e18a2",
-    "dataType": "Numeric"
   },
   {
     "uuid": "f123fea3-5051-4b1f-9431-332e76e622f0",

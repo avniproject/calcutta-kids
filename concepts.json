@@ -1,5 +1,156 @@
 [
   {
+    "name": "Convulsions without fever",
+    "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Name of institution",
+    "uuid": "13c1458f-b4fe-442a-9b0b-b5ec6e62da11",
+    "dataType": "Text"
+  },
+  {
+    "name": "TT",
+    "uuid": "42a6728b-947a-438f-9192-189ff9d8651b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Urine test",
+    "uuid": "8f2741f1-28ec-458d-9f86-8b968bf950f4",
+    "dataType": "NA"
+  },
+  {
+    "name": "Blood tests",
+    "uuid": "e53b6e6c-9351-4d2c-876b-cf7e9d28e137",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ultrasonography",
+    "uuid": "26fa9d6b-4184-4d54-a7de-a5821f0fecaa",
+    "dataType": "NA"
+  },
+  {
+    "name": "Abdominal examination",
+    "uuid": "fbf759b7-ca99-4b2b-85f5-6be8e01b7037",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other services received outside",
+    "uuid": "af4d58ae-7233-4c68-9caa-7ba53a6c5f94",
+    "dataType": "Text"
+  },
+  {
+    "name": "Number of FA tablets consumed since last visit",
+    "uuid": "1a28299c-de6e-4c4d-9afd-1c8129b40c77",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "More",
+    "uuid": "42146907-9b2b-45c7-ada0-ce4db4a0e224",
+    "dataType": "NA"
+  },
+  {
+    "name": "Same",
+    "uuid": "57f67648-23dd-4d83-96dc-481b7e219a75",
+    "dataType": "NA"
+  },
+  {
+    "name": "Less",
+    "uuid": "46c5a087-db39-43f8-bbdd-778c70eeaf91",
+    "dataType": "NA"
+  },
+  {
+    "name": "Food not available or sufficient",
+    "uuid": "957ea4ab-d3a0-4b52-a056-dd103d9a164f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other reason for eating less than pre-pregnancy",
+    "uuid": "70cad8f7-722e-4186-aa89-4acc7acb2ed7",
+    "dataType": "Text"
+  },
+  {
+    "name": "Nothing",
+    "uuid": "050c0ac0-9f03-4302-9b3c-2a451cdb0471",
+    "dataType": "NA"
+  },
+  {
+    "name": "Reason for not eating yesterday",
+    "uuid": "ea7cd073-704c-4551-a251-5c656f56bc24",
+    "dataType": "Text"
+  },
+  {
+    "name": "Hours of rest yesterday",
+    "uuid": "8543f637-c896-4082-8fc9-6fa3f8263c0a",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Work inside the home",
+    "uuid": "8e86a749-39d0-4a4c-a9fd-3acb3f7298e9",
+    "dataType": "NA"
+  },
+  {
+    "name": "Work outside the home",
+    "uuid": "d3b3e242-1085-4114-a3f4-1183a8ae084f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other reason for resting less than 2 hours",
+    "uuid": "dda37984-052d-41e2-b255-0cb9a67d580f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Nobody at home to help",
+    "uuid": "a3456f51-9722-412b-b4ef-402cddd8c160",
+    "dataType": "NA"
+  },
+  {
+    "name": "No extra money to save",
+    "uuid": "89757176-5146-41c5-bd1f-4a36e7d0709b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family not interested in saving",
+    "uuid": "9c3ca6d6-e749-4992-876b-8548f02d0ecf",
+    "dataType": "NA"
+  },
+  {
+    "name": "Money saved so far",
+    "uuid": "4362911d-ac02-447c-9812-dfc5271eb499",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "Date of decrease in foetal movements",
+    "uuid": "599190b5-1875-48e4-961b-b653177b8aa5",
+    "dataType": "Date"
+  },
+  {
+    "name": "Number of calcium tablets consumed since last last visit",
+    "uuid": "c2b21d7d-447a-4f97-9775-199c316921e4",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Other reason for manual labour",
+    "uuid": "cd5a83e3-b5f0-4179-8c9e-d00c0af1602a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other reason for not saving money",
+    "uuid": "642685db-63dc-4abd-94bf-333bda7a96a8",
+    "dataType": "Text"
+  },
+  {
+    "name": "Dizziness",
+    "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Excess fatigue",
+    "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e",
+    "dataType": "NA"
+  },
+  {
     "name": "Beneficiary id",
     "uuid": "8e1a06db-3e84-4065-8531-e25d1972f5d5",
     "dataType": "Text"
@@ -32,6 +183,948 @@
   {
     "uuid": "91c10991-7c13-42f6-a07f-6b16addc8764",
     "name": "Hypothyroidism (weight gain/loss)",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other marital status",
+    "uuid": "04f0888b-d0b5-43ac-905d-ae3b5a9b1015",
+    "dataType": "Text"
+  },
+  {
+    "name": "Age at first marriage",
+    "uuid": "f1919fdc-5003-4ebc-82c7-059e6a4e8a21",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Other religion",
+    "uuid": "02461cb2-7d21-4225-a6ce-42357804a7e4",
+    "dataType": "Text"
+  },
+  {
+    "name": "Number of household members (eating together)",
+    "uuid": "25b73ca1-e268-452f-ba05-2595af28ac04",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "UP",
+    "uuid": "1ad7d41b-8dd4-4bc3-a43b-1adbc26a0c5b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Bihar",
+    "uuid": "413dcaa5-6344-446d-8d6b-1842a368fd17",
+    "dataType": "NA"
+  },
+  {
+    "name": "Jharkhand",
+    "uuid": "b67e60b4-565c-4e03-b97c-7e12412ae93c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Odisha",
+    "uuid": "64bab23b-7e15-4ccd-a204-fdfa70b4a881",
+    "dataType": "NA"
+  },
+  {
+    "name": "South India",
+    "uuid": "5330adde-b60b-48cd-a196-816628cbbc38",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other place of migration",
+    "uuid": "a3e4ab44-9f95-4aaa-8dd7-c0d93e391a14",
+    "dataType": "Text"
+  },
+  {
+    "name": "Woman’s last class completed",
+    "uuid": "f6f1610b-30c2-4e7b-af70-8cd456a3e6ee",
+    "dataType": "Text"
+  },
+  {
+    "name": "Housewife (only)",
+    "uuid": "33509493-5ea0-4590-89eb-2741eb614ac8",
+    "dataType": "NA"
+  },
+  {
+    "name": "Housewife plus additional work",
+    "uuid": "9968cc0e-bc87-46ce-b6a7-5284e9e4b14a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other occupation",
+    "uuid": "9d16f047-3108-468a-a9cb-10b392f8b012",
+    "dataType": "Text"
+  },
+  {
+    "name": "Additional work done besides housework",
+    "uuid": "c202bc3a-8e15-45af-9bc2-50f070997cd6",
+    "dataType": "Text"
+  },
+  {
+    "name": "At home",
+    "uuid": "84897d9b-d35b-4ab6-ae1f-7248401c270c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Outside of home",
+    "uuid": "05df47f7-0376-4f58-a519-b683900c3fef",
+    "dataType": "NA"
+  },
+  {
+    "name": "Husband’s occupation",
+    "uuid": "bec93815-01a3-46de-afc3-4bdb9bb63e2e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Occupation of other income earner",
+    "uuid": "5a5cb414-483d-4c4f-bc7f-7b96c505d9b5",
+    "dataType": "Text"
+  },
+  {
+    "name": "Labourers",
+    "uuid": "b2fee576-5b13-478c-a64d-f48edff37d54",
+    "dataType": "NA"
+  },
+  {
+    "name": "Professionals",
+    "uuid": "f609f227-6bec-440e-adcb-e07b54ab0c31",
+    "dataType": "NA"
+  },
+  {
+    "name": "Household income",
+    "uuid": "76c1a980-9a20-462f-aa77-3f815a319727",
+    "dataType": "Numeric",
+    "unit": "Rs."
+  },
+  {
+    "name": "Weekly",
+    "uuid": "e4473e3d-608c-4142-9f51-8a6578a963b9",
+    "dataType": "NA"
+  },
+  {
+    "name": "Monthly",
+    "uuid": "9ec63ce6-c410-44c6-b2f8-d86229489bbd",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ground level, Talibari",
+    "uuid": "125058c2-b9c1-4b3d-b896-f39012c923b7",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ground level, flat",
+    "uuid": "178eb5e6-5ca7-4623-b675-98dbca4b9e12",
+    "dataType": "NA"
+  },
+  {
+    "name": "Above ground level",
+    "uuid": "fa5505cc-0a44-4b71-ba86-3e6d722f5a22",
+    "dataType": "NA"
+  },
+  {
+    "name": "Owner",
+    "uuid": "65fa94ef-f6db-485c-8f4c-502974c11f08",
+    "dataType": "NA"
+  },
+  {
+    "name": "Tenant",
+    "uuid": "607b9ad0-c4bb-4d34-9c37-7ec65f3d9b06",
+    "dataType": "NA"
+  },
+  {
+    "name": "Squatter",
+    "uuid": "bb291219-1051-4b9c-aacd-eb7feeaf4809",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other accommodation",
+    "uuid": "c2f29f03-38eb-48d7-8d90-32b25dbf3e9a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Two or more",
+    "uuid": "c65a610d-fa8f-43e2-a17e-e255589c95e5",
+    "dataType": "NA"
+  },
+  {
+    "name": "Firewood and chips, charcoal",
+    "uuid": "c640b54c-e446-4351-b660-070406d14770",
+    "dataType": "NA"
+  },
+  {
+    "name": "LPG",
+    "uuid": "30a8bdf9-c7b3-43a3-a255-ec88aecdb55a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Electric",
+    "uuid": "4b50299d-af92-4a70-b9f4-b16a850cb03e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Flush",
+    "uuid": "729368e2-9ced-4f6e-8c1c-1eb1cde837cb",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pour flush",
+    "uuid": "86a3c230-f0ea-4122-b212-31f97cd11e6e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Open",
+    "uuid": "cc0e80b3-4e9f-4305-8789-326da2af4a1a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Private",
+    "uuid": "f866daf5-9e36-4ec5-976c-b4a73a5ed45a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Shared",
+    "uuid": "efc0b682-0d90-4643-867b-175d1c829789",
+    "dataType": "NA"
+  },
+  {
+    "name": "Calcutta Kids",
+    "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
+    "dataType": "NA"
+  },
+  {
+    "name": "ICDS",
+    "uuid": "30de2a66-746e-4d36-92b9-ce72acd02f97",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ward Health Center",
+    "uuid": "7a5b00c3-e693-4510-ae8a-25fbd2905c74",
+    "dataType": "NA"
+  },
+  {
+    "name": "Jaiswal Hospital",
+    "uuid": "658ccd6f-5c7c-4214-a29e-9e2e526f71bd",
+    "dataType": "NA"
+  },
+  {
+    "name": "Satyabala Hospital",
+    "uuid": "57c583bf-fd86-4e8e-8475-78c527a5259d",
+    "dataType": "NA"
+  },
+  {
+    "name": "Private Nursing Home",
+    "uuid": "ed45b918-885a-4874-94e7-3aa397876b10",
+    "dataType": "NA"
+  },
+  {
+    "name": "NGOs",
+    "uuid": "99e43d73-3a44-49f4-83c6-e8536984f8f6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other facility where ANC was provided",
+    "uuid": "a02b5d7b-f883-47f7-b4c2-8a945986c00c",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other facility where GMP services were provided",
+    "uuid": "125fae1f-d0c7-465b-8546-f021a66a1141",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other facility where food rations were provided",
+    "uuid": "ec266fb3-9221-412b-a7a8-048488ebcea8",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other facility where curative health services were provided",
+    "uuid": "becfa0ba-1bc9-426d-a25d-b88f2591bf11",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other facility where immunization was provided",
+    "uuid": "fea01561-6275-43d2-907e-c0530306686d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other facility where emergency services were provided",
+    "uuid": "fb7d1279-74c3-4d77-b8cc-d38691a4ea35",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other facility where other medical assistance was provided",
+    "uuid": "91f43230-a79c-41f7-88bc-9c8c8c0f0917",
+    "dataType": "Text"
+  },
+  {
+    "name": "Number of children currently enrolled in Calcutta Kids",
+    "uuid": "0bee8ffd-8189-4871-978e-d9ae934a4775",
+    "dataType": "Numeric",
+    "lowAbsolute": 0,
+    "highAbsolute": 6
+  },
+  {
+    "name": "ID of child #1",
+    "uuid": "7250b61c-990e-463f-9f5f-0126055bf46b",
+    "dataType": "Text"
+  },
+  {
+    "name": "ID of child #2",
+    "uuid": "f2a77574-f1d0-4640-abd6-644e4c356e1b",
+    "dataType": "Text"
+  },
+  {
+    "name": "ID of child #3",
+    "uuid": "ce8959dc-76fe-444c-a62f-a6e81e6b7692",
+    "dataType": "Text"
+  },
+  {
+    "name": "ID of child #4",
+    "uuid": "f55c6134-53d6-4f61-8d06-a66dcaed3c22",
+    "dataType": "Text"
+  },
+  {
+    "name": "ID of child #5",
+    "uuid": "0050175d-f941-48cd-bd34-a9b22eeaa07e",
+    "dataType": "Text"
+  },
+  {
+    "name": "ID of child #6",
+    "uuid": "e1b3d978-af24-436c-87b6-4d0e902b195c",
+    "dataType": "Text"
+  },
+  {
+    "name": "Number of children NOT enrolled in Calcutta Kids",
+    "uuid": "bdcc9120-3b00-45dc-a46c-12fbb6475dd3",
+    "dataType": "Numeric",
+    "lowAbsolute": 0,
+    "highAbsolute": 6
+  },
+  {
+    "name": "DOB of oldest child not enrolled in CK",
+    "uuid": "c680e52f-71f9-47a3-88a2-bb00aaa27cb0",
+    "dataType": "Date"
+  },
+  {
+    "name": "DOB of second oldest child not enrolled in CK",
+    "uuid": "d0bd869c-014d-4c13-8ee9-849c707dd3bf",
+    "dataType": "Date"
+  },
+  {
+    "name": "DOB of third oldest child not enrolled in CK",
+    "uuid": "567e270c-e59c-4082-bc08-8cd33c23c16e",
+    "dataType": "Date"
+  },
+  {
+    "name": "DOB of fourth oldest child not enrolled in CK",
+    "uuid": "28c36c26-4974-44f3-93a2-fab4584e25e8",
+    "dataType": "Date"
+  },
+  {
+    "name": "DOB of fifth oldest child not enrolled in CK",
+    "uuid": "3255ba10-ac60-4deb-9ecb-e8eb2ace4717",
+    "dataType": "Date"
+  },
+  {
+    "name": "DOB of sixth oldest child not enrolled in CK",
+    "uuid": "19fcd68e-a8f5-4d3a-addf-322a2198e58b",
+    "dataType": "Date"
+  },
+  {
+    "uuid": "d7af7694-e0d1-4f03-9876-b2410dff0e29",
+    "name": "Drug use",
+    "dataType": "NA"
+  },
+  {
+    "name": "Drug allergies",
+    "uuid": "41c792c1-3038-4baa-a71e-946de3131bc6",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "331de3bd-7dc6-43ee-a8b8-45ee1d8a8617",
+    "name": "Other medical history",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "86c51ab1-7f19-4fa7-b5e1-980f3aff73eb",
+    "name": "Date of urine/stool test",
+    "dataType": "Date"
+  },
+  {
+    "uuid": "8bdc2cfe-d754-488f-a236-7ad2dcd62037",
+    "name": "Urine routine examination",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "df70db7d-6cc6-44c2-a78a-facc1ff09eeb",
+    "name": "Urine culture",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "ed49a5a3-dc1d-4277-a71c-c1b73f444f3d",
+    "name": "Stool OPC",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "81d0ef28-8a9f-4a09-bc66-1ed81aa02386",
+    "name": "First trimester (0-3 months)",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "7191645f-c836-4755-beab-ca3c6cec5665",
+    "name": "Second trimester (4-6 months)",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "364e9f9b-5e81-4ec3-a935-89b239967840",
+    "name": "Third trimester (7+ months)",
+    "dataType": "NA"
+  },
+  {
+    "name": "Service commitment number",
+    "uuid": "73a3fdd7-3087-4d53-b8be-753e2cdfa6c2",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Age at first pregnancy",
+    "uuid": "73037237-15b7-43ba-b375-2a34af9cc1f5",
+    "dataType": "Numeric",
+    "unit": "years"
+  },
+  {
+    "name": "TT3 Date",
+    "uuid": "d9861ff2-3ba2-4296-8ada-4a1773412e3d",
+    "dataType": "Date"
+  },
+  {
+    "name": "Date of deworming",
+    "uuid": "e638d96b-ad09-4fec-9e01-2e4b1a243c6d",
+    "dataType": "Date"
+  },
+  {
+    "uuid": "25215000-d603-41e3-af2e-c395bca80ea9",
+    "name": "Intrapartum fetal death",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "214d7302-d655-45cd-909e-2fdc0a64ee11",
+    "name": "Obstructed labor",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "baff8c4d-9ab6-4da2-9a41-54ce2b7ec583",
+    "name": "Perineal injuries/tears",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "a01565bf-da80-427f-a9cd-a0923d80528b",
+    "name": "Admission for hypertension or pre-eclampsia/eclampsia in the previous pregnancy",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "1952095f-776c-47a8-b96c-cbc77aa7d7b3",
+    "name": "Surgery on the reproductive tract",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "1092e3aa-80b9-4dec-b5cd-9318fd7c0fb2",
+    "name": "Spinal deformities, such as scoliosis/kyphosis/polio",
+    "dataType": "NA"
+  },
+  {
+    "name": "Malaria in the past 6 months",
+    "uuid": "595ba20e-1ab5-45fa-8a75-8b84a6b9b41a",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "72b3816f-f362-42bf-b858-10e4d505a25d",
+    "name": "Thalassaemia",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "142f62b3-f41f-40f8-aea6-99b41859f07b",
+    "name": "Repeated blood transfusion",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "e620fe74-525e-4c9d-ab88-41a549e19aa6",
+    "name": "Twin birth",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "c2704449-4981-47f1-b6e8-9d68884334c6",
+    "name": "Infant with congenital malformation",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "2ea977b5-23cb-4833-a5ca-831b12409e41",
+    "name": "Other family history",
+    "dataType": "Text"
+  },
+  {
+    "comment": "Family history",
+    "uuid": "18fa9773-bf4b-47f8-9535-f1573a477940",
+    "answers": [
+      {
+        "uuid": "72b3816f-f362-42bf-b858-10e4d505a25d",
+        "comment": "Thalassaemia"
+      },
+      {
+        "uuid": "142f62b3-f41f-40f8-aea6-99b41859f07b",
+        "comment": "Repeated blood transfusion"
+      },
+      {
+        "uuid": "e620fe74-525e-4c9d-ab88-41a549e19aa6",
+        "comment": "Twin birth"
+      },
+      {
+        "uuid": "c2704449-4981-47f1-b6e8-9d68884334c6",
+        "comment": "Infant with congenital malformation"
+      },
+      {
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "comment": "None",
+        "unique": true
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "comment": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Refer to Hospital or Calcutta Kids doctor for",
+    "uuid": "abf8ba39-d12d-421e-aab1-e36e88bcd89a"
+  },
+  {
+    "name": "High fever (above 102°C)",
+    "uuid": "f6628b6c-0c6e-4deb-bc5c-faaf6d22a4be",
+    "dataType": "NA"
+  },
+  {
+    "name": "Moderate to severe abdominal pain",
+    "uuid": "94a22fed-e9a5-438e-8a17-ec4ae40c5d4f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Vaginal/urethral problems",
+    "uuid": "e3acaede-e67c-4d72-a1a7-06954b862408",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other health problems",
+    "uuid": "7d708690-ba0a-41f7-87ff-cbe0e45f6008",
+    "dataType": "Text"
+  },
+  {
+    "name": "How many IFA tablets mother consumed since last visit?",
+    "uuid": "0dcf9cee-b2c7-4751-86a2-142fd924068f",
+    "dataType": "Numeric",
+    "unit": "tablet(s)"
+  },
+  {
+    "name": "How many Calcium tablets mother consumed since last visit?",
+    "uuid": "7ec86ef7-36a2-4643-91c6-06838891fedb",
+    "dataType": "Numeric",
+    "unit": "tablet(s)"
+  },
+  {
+    "name": "More than pre-pregnancy",
+    "uuid": "7f47a447-6cfc-4c9e-bb8c-482eadc47d4b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Same as pre-pregnancy",
+    "uuid": "00cd6cc2-00d9-4c1a-8d9d-73b4de026159",
+    "dataType": "NA"
+  },
+  {
+    "name": "Less than pre-pregnancy",
+    "uuid": "bb957725-fb96-49c1-861c-65a46cbf22c6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Food is not available/sufficient",
+    "uuid": "e584cf1a-4cbf-4fef-aa5f-c91fb0dea64b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family pressure or belief to eat less",
+    "uuid": "7a53dcb6-23c9-4995-bda7-7cc1722e59fc",
+    "dataType": "NA"
+  },
+  {
+    "name": "Work pressure",
+    "uuid": "9e58c378-e27e-4ba7-81f3-349c1c17c984",
+    "dataType": "NA"
+  },
+  {
+    "name": "Lack of family support",
+    "uuid": "5e7da32d-42cb-410c-a17f-38af82e6c858",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other reasons for eating same or less than pre-pregnancy",
+    "uuid": "aea13efa-f200-4bcc-b613-f24b341ff50a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Tubectomy",
+    "uuid": "6c02c7cd-b067-401c-80eb-25e6b0b9ed09",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other family planning methods used by mother",
+    "uuid": "c89a29a9-7ff9-4f23-8030-b86253b3d11e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Engorged breast",
+    "uuid": "99c858bc-b257-476a-b7ce-fd4e239b6b2a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Mother unwilling to breastfeed",
+    "uuid": "d3f67692-2fa9-486c-bc8e-97e470f1736a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Possible breast infection (severe pain, abscess, foul smelling discharge, fever)",
+    "uuid": "765a3256-78c3-4a5f-9a6c-d4334eb5e8a5",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other breast-feeding problems",
+    "uuid": "9901bdcc-d562-4486-a5d4-b6e9681e9da8",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "e825f97d-26d4-4a44-b2fe-024d9e26d875",
+    "name": "Animal protein",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "14405510-d8ea-45c0-a0cb-d5dc55260d33",
+    "name": "Vegetable protein",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "323c3c9b-a4a6-40e1-938f-f62755805ecc",
+    "name": "Fruit",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "351f31c1-5f14-4859-8585-3d395556b1f8",
+    "name": "Dairy",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "a8c837f4-345c-4041-ac0a-b91945bad804",
+    "name": "Starch",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "d74412da-9cce-41fa-a141-c07cc8c60ec0",
+    "name": "Instant food",
+    "dataType": "NA"
+  },
+  {
+    "name": "Vegetable",
+    "uuid": "90f29252-2dc9-42c5-b30f-9cfb53c8448c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Snack food",
+    "uuid": "f72c86f9-8c58-4887-b588-cc903f02d141",
+    "dataType": "NA"
+  },
+  {
+    "name": "Doctor",
+    "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60",
+    "abnormal": false
+  },
+  {
+    "name": "Hospital",
+    "uuid": "8359bf16-d329-4752-927c-24a9364f12bf",
+    "abnormal": false
+  },
+  {
+    "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
+    "name": "Lethargy",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
+    "name": "Redness or discharge on the skin around the belly button",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "b2b23da9-17f3-4c77-8e20-5f91652d50ab",
+    "name": "Insufficient urination",
+    "dataType": "NA"
+  },
+  {
+    "name": "ALL of the prescribed medicines",
+    "uuid": "0ddcfa9a-a193-4bd4-a52b-c42f851dff90",
+    "dataType": "NA"
+  },
+  {
+    "name": "SOME of the prescribed medicines",
+    "uuid": "47f0bff2-bf52-4e13-bbaa-5db2b5aff021",
+    "dataType": "NA"
+  },
+  {
+    "name": "NONE of the prescribed medicines",
+    "uuid": "fac8bfbc-87af-4a3c-8015-b1e8f6efda93",
+    "dataType": "NA"
+  },
+  {
+    "name": "Took some of the medicines and felt improved",
+    "uuid": "59e10213-4220-45f0-9adc-5c315b8188b2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Did not have time to buy all the prescribed medicines",
+    "uuid": "a594a75d-0cec-437e-b2b0-59680c5e5007",
+    "dataType": "NA"
+  },
+  {
+    "name": "Did not want to buy all the prescribed medicines",
+    "uuid": "29cdf797-df0f-4032-ad47-1da44156e906",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other reasons for taking only some prescribed medicines",
+    "uuid": "fba49ad0-cb8f-4bc9-b709-370c49e801a3",
+    "dataType": "Text"
+  },
+  {
+    "name": "Stopped taking the medicine before completing the full treatment course",
+    "uuid": "f2ea839d-9340-4899-9860-ae9107ae3eaf",
+    "dataType": "NA"
+  },
+  {
+    "name": "Taking the medicine but not according to the treatment guidelines",
+    "uuid": "da248b09-3e05-4561-abeb-e8aba846f60f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Names of non-prescribed medicines being taken",
+    "uuid": "55b03a4a-0546-400e-a9ba-e6afe6a61267",
+    "dataType": "Text"
+  },
+  {
+    "name": "Reasons for patient referral to hospital",
+    "uuid": "9598b758-b8dd-4609-b891-1216596c8cfc",
+    "dataType": "Text"
+  },
+  {
+    "name": "Has fully improved",
+    "uuid": "1aa2ef9a-24c5-40b8-83d7-c9a3dc00c4ec",
+    "dataType": "NA"
+  },
+  {
+    "name": "Didn’t have time",
+    "uuid": "1d045d57-062f-4ccd-8e8a-6541738b43a2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Refuses to go",
+    "uuid": "e3851e20-fa3b-47dc-89d4-3fb8bdcb4da0",
+    "dataType": "NA"
+  },
+  {
+    "name": "Improving/ has fully improved",
+    "uuid": "f247de9e-a6cf-444b-a2e8-d60a6d0b7fc6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Should revisit doctor",
+    "uuid": "5dffeb7b-d271-465d-a3e2-fef3463f4199",
+    "dataType": "NA"
+  },
+  {
+    "name": "Should visit the hospital",
+    "uuid": "dec0d1a6-2200-42bc-89cb-f395f8cc66f8",
+    "dataType": "NA"
+  },
+  {
+    "name": "Is improving/ has fully improved from this health issue but should visit the doctor for a new health issue",
+    "uuid": "90b81764-1d81-4b20-8958-3388246cd5ba",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family pressure or belief",
+    "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3"
+  },
+  {
+    "name": "Medical issue",
+    "uuid": "c1b08b43-1ac9-4ae1-b908-ace9c8345ae3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other reasons for baby not receiving colostrum",
+    "uuid": "635884c4-dcd6-41a9-85d0-39b19735f80a",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "502dcb33-a589-4e9d-99c7-29f5659f5074",
+    "name": "Cow's milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "128d0a18-37c5-4243-a6ea-1794765fa1cd",
+    "name": "Water",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "7b07a014-53f8-44fb-adac-0740c2c2f109",
+    "name": "Buffalo's milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "980d5b47-8cd2-4c03-9f76-ce7bc77c8797",
+    "name": "Packet milk",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "7df97c63-a2e9-472c-90f2-584f2e64015b",
+    "name": "Formula",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "851c9fb8-af13-4205-91e4-6a63dc1b91fa",
+    "name": "Water based liquids (sugar water, juice etc)",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "223badf4-2fa5-4eb9-abac-c7ba443ba4fa",
+    "name": "Semi-Solid liquid (barley, sago etc)",
+    "dataType": "NA"
+  },
+  {
+    "name": "Any other thing baby was fed before breastfeeding",
+    "uuid": "d1466ada-80e5-4a35-8f7b-a3c7567b685c",
+    "dataType": "Text"
+  },
+  {
+    "name": "myCHI Id",
+    "uuid": "1d6ac236-2ab4-4eaa-aa3d-e18924d93ba3",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other pregnancy complaints",
+    "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
+    "dataType": "Text"
+  },
+  {
+    "name": "Assessment - Notes",
+    "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
+    "dataType": "Notes"
+  },
+  {
+    "name": "Checkup notes",
+    "uuid": "d658b4a4-8ec3-4eb7-9ef3-dd3a73ca29f9",
+    "dataType": "Notes"
+  },
+  {
+    "name": "Para",
+    "uuid": "62a1bac8-6bd8-4cb7-9482-97716928cfe8",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Abortions",
+    "uuid": "f8321cb3-df3b-4cec-92ae-8eed77c059e3",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Doctor's name",
+    "uuid": "c068248d-81cd-4f1e-922f-486be51312ad",
+    "dataType": "Text"
+  },
+  {
+    "name": "Most critical",
+    "uuid": "274eb51b-6c3e-4d5b-9fe3-e1646094fa7c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Active",
+    "uuid": "6b50ae8f-f962-4a47-af3a-a0db7cd3ad75",
+    "dataType": "NA"
+  },
+  {
+    "name": "Inactive",
+    "uuid": "afedc9c2-bd51-48f0-b526-33c8ca52892b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Visit notes",
+    "uuid": "4f1c32ee-16fa-4f13-a363-fd0fbc45b4a0",
+    "dataType": "Notes"
+  },
+  {
+    "name": "Could not afford to buy medicines",
+    "uuid": "cc50891b-2664-43d1-bf2c-bb73e712e2d0",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family history of diabetes",
+    "uuid": "2f6f471a-36f6-4e5f-9115-fb077b7ad8fd",
+    "dataType": "NA"
+  },
+  {
+    "name": "Family history of thalessemia",
+    "uuid": "e7526d66-8661-43ee-9413-0987d8438d81",
+    "dataType": "NA"
+  },
+  {
+    "name": "Hypothyroidism",
+    "uuid": "3972ed54-8d8f-45b7-8817-457cd161afec",
+    "dataType": "NA"
+  },
+  {
+    "name": "Episiotomy",
+    "uuid": "d3591b97-f88f-4125-94e0-aa65ad7fb6dd",
+    "dataType": "NA"
+  },
+  {
+    "name": "GA (free text)",
+    "uuid": "3c56cdd0-e07a-457a-a247-9a95432afd01",
+    "dataType": "Text"
+  },
+  {
+    "name": "Hb (free text)",
+    "uuid": "ffb8bc9b-b8fd-48a2-874e-486f1737e176",
+    "dataType": "Text"
+  },
+  {
+    "name": "VDRL (free text)",
+    "uuid": "cd1c1922-c351-43ea-8cb2-106d906df9a9",
+    "dataType": "Text"
+  },
+  {
+    "name": "Blood Type (free text)",
+    "uuid": "2fba6f3a-a519-4946-a900-66a255335f47",
+    "dataType": "Text"
+  },
+  {
+    "name": "HBsAg (free text)",
+    "uuid": "2552617d-8b70-46d5-8085-a610c314c089",
+    "dataType": "Text"
+  },
+  {
+    "name": "Blood Sugar - Random (free text)",
+    "uuid": "9ac802d4-de37-4cd9-b53a-90af2f93fbe6",
+    "dataType": "Text"
+  },
+  {
+    "name": "Blood Sugar - Fasting (free text)",
+    "uuid": "935f3d46-3611-4fe8-aaee-c42e89074440",
+    "dataType": "Text"
+  },
+  {
+    "name": "Not Adequate",
+    "uuid": "5ecbe201-43c2-4aff-94a5-d088220d7d1a",
     "dataType": "NA"
   },
   {
@@ -82,21 +1175,6 @@
     ]
   },
   {
-    "name": "Other marital status",
-    "uuid": "04f0888b-d0b5-43ac-905d-ae3b5a9b1015",
-    "dataType": "Text"
-  },
-  {
-    "name": "Age at first marriage",
-    "uuid": "f1919fdc-5003-4ebc-82c7-059e6a4e8a21",
-    "dataType": "Numeric"
-  },
-  {
-    "name": "Other religion",
-    "uuid": "02461cb2-7d21-4225-a6ce-42357804a7e4",
-    "dataType": "Text"
-  },
-  {
     "name": "Do you have a BPL card?",
     "uuid": "6f33e933-a9f9-4ad9-8bd8-286c9223c934",
     "dataType": "Coded",
@@ -125,11 +1203,6 @@
         "comment": "No"
       }
     ]
-  },
-  {
-    "name": "Number of household members (eating together)",
-    "uuid": "25b73ca1-e268-452f-ba05-2595af28ac04",
-    "dataType": "Numeric"
   },
   {
     "name": "Number of people aged 0-17 years in the household",
@@ -178,31 +1251,6 @@
     ]
   },
   {
-    "name": "UP",
-    "uuid": "1ad7d41b-8dd4-4bc3-a43b-1adbc26a0c5b",
-    "dataType": "NA"
-  },
-  {
-    "name": "Bihar",
-    "uuid": "413dcaa5-6344-446d-8d6b-1842a368fd17",
-    "dataType": "NA"
-  },
-  {
-    "name": "Jharkhand",
-    "uuid": "b67e60b4-565c-4e03-b97c-7e12412ae93c",
-    "dataType": "NA"
-  },
-  {
-    "name": "Odisha",
-    "uuid": "64bab23b-7e15-4ccd-a204-fdfa70b4a881",
-    "dataType": "NA"
-  },
-  {
-    "name": "South India",
-    "uuid": "5330adde-b60b-48cd-a196-816628cbbc38",
-    "dataType": "NA"
-  },
-  {
     "name": "Migrated from",
     "uuid": "ceaef306-a4bd-4e8e-b9d2-6baec7dc8d66",
     "dataType": "Coded",
@@ -234,11 +1282,6 @@
     ]
   },
   {
-    "name": "Other place of migration",
-    "uuid": "a3e4ab44-9f95-4aaa-8dd7-c0d93e391a14",
-    "dataType": "Text"
-  },
-  {
     "name": "Could the woman read the passage?",
     "uuid": "08c1c5bc-5e6c-4811-8aea-d980379ae450",
     "dataType": "Coded",
@@ -252,11 +1295,6 @@
         "comment": "No"
       }
     ]
-  },
-  {
-    "name": "Woman’s last class completed",
-    "uuid": "f6f1610b-30c2-4e7b-af70-8cd456a3e6ee",
-    "dataType": "Text"
   },
   {
     "name": "Can husband read?",
@@ -274,16 +1312,6 @@
     ]
   },
   {
-    "name": "Housewife (only)",
-    "uuid": "33509493-5ea0-4590-89eb-2741eb614ac8",
-    "dataType": "NA"
-  },
-  {
-    "name": "Housewife plus additional work",
-    "uuid": "9968cc0e-bc87-46ce-b6a7-5284e9e4b14a",
-    "dataType": "NA"
-  },
-  {
     "name": "Occupation",
     "uuid": "cd83afec-d147-42b2-bd50-0ca460dbd55f",
     "dataType": "Coded",
@@ -297,26 +1325,6 @@
         "uuid": "9968cc0e-bc87-46ce-b6a7-5284e9e4b14a"
       }
     ]
-  },
-  {
-    "name": "Other occupation",
-    "uuid": "9d16f047-3108-468a-a9cb-10b392f8b012",
-    "dataType": "Text"
-  },
-  {
-    "name": "Additional work done besides housework",
-    "uuid": "c202bc3a-8e15-45af-9bc2-50f070997cd6",
-    "dataType": "Text"
-  },
-  {
-    "name": "At home",
-    "uuid": "84897d9b-d35b-4ab6-ae1f-7248401c270c",
-    "dataType": "NA"
-  },
-  {
-    "name": "Outside of home",
-    "uuid": "05df47f7-0376-4f58-a519-b683900c3fef",
-    "dataType": "NA"
   },
   {
     "name": "Is this work done at home or outside of the home?",
@@ -334,11 +1342,6 @@
     ]
   },
   {
-    "name": "Husband’s occupation",
-    "uuid": "bec93815-01a3-46de-afc3-4bdb9bb63e2e",
-    "dataType": "Text"
-  },
-  {
     "name": "Any other income earner in the household?",
     "uuid": "2cc56b84-460c-4e5e-8ee2-74db082e9759",
     "dataType": "Coded",
@@ -352,21 +1355,6 @@
         "comment": "No"
       }
     ]
-  },
-  {
-    "name": "Occupation of other income earner",
-    "uuid": "5a5cb414-483d-4c4f-bc7f-7b96c505d9b5",
-    "dataType": "Text"
-  },
-  {
-    "name": "Labourers",
-    "uuid": "b2fee576-5b13-478c-a64d-f48edff37d54",
-    "dataType": "NA"
-  },
-  {
-    "name": "Professionals",
-    "uuid": "f609f227-6bec-440e-adcb-e07b54ab0c31",
-    "dataType": "NA"
   },
   {
     "name": "Principal occupation of the household",
@@ -388,22 +1376,6 @@
     ]
   },
   {
-    "name": "Household income",
-    "uuid": "76c1a980-9a20-462f-aa77-3f815a319727",
-    "dataType": "Numeric",
-    "unit": "Rs."
-  },
-  {
-    "name": "Weekly",
-    "uuid": "e4473e3d-608c-4142-9f51-8a6578a963b9",
-    "dataType": "NA"
-  },
-  {
-    "name": "Monthly",
-    "uuid": "9ec63ce6-c410-44c6-b2f8-d86229489bbd",
-    "dataType": "NA"
-  },
-  {
     "name": "Wage frequency",
     "uuid": "2534f7cb-b4ae-4aa5-938c-9855c99b0a2b",
     "dataType": "Coded",
@@ -418,21 +1390,6 @@
         "uuid": "9ec63ce6-c410-44c6-b2f8-d86229489bbd"
       }
     ]
-  },
-  {
-    "name": "Ground level, Talibari",
-    "uuid": "125058c2-b9c1-4b3d-b896-f39012c923b7",
-    "dataType": "NA"
-  },
-  {
-    "name": "Ground level, flat",
-    "uuid": "178eb5e6-5ca7-4623-b675-98dbca4b9e12",
-    "dataType": "NA"
-  },
-  {
-    "name": "Above ground level",
-    "uuid": "fa5505cc-0a44-4b71-ba86-3e6d722f5a22",
-    "dataType": "NA"
   },
   {
     "name": "Location of house",
@@ -452,21 +1409,6 @@
         "uuid": "fa5505cc-0a44-4b71-ba86-3e6d722f5a22"
       }
     ]
-  },
-  {
-    "name": "Owner",
-    "uuid": "65fa94ef-f6db-485c-8f4c-502974c11f08",
-    "dataType": "NA"
-  },
-  {
-    "name": "Tenant",
-    "uuid": "607b9ad0-c4bb-4d34-9c37-7ec65f3d9b06",
-    "dataType": "NA"
-  },
-  {
-    "name": "Squatter",
-    "uuid": "bb291219-1051-4b9c-aacd-eb7feeaf4809",
-    "dataType": "NA"
   },
   {
     "name": "Accommodation",
@@ -490,11 +1432,6 @@
         "comment": "Other"
       }
     ]
-  },
-  {
-    "name": "Other accommodation",
-    "uuid": "c2f29f03-38eb-48d7-8d90-32b25dbf3e9a",
-    "dataType": "Text"
   },
   {
     "name": "Is the residence pucca?",
@@ -570,11 +1507,6 @@
     ]
   },
   {
-    "name": "Two or more",
-    "uuid": "c65a610d-fa8f-43e2-a17e-e255589c95e5",
-    "dataType": "NA"
-  },
-  {
     "name": "Pressure cookers or pressure pans owned by household",
     "uuid": "c8fa6f94-956f-4988-b12b-93f4367a050d",
     "dataType": "Coded",
@@ -613,21 +1545,6 @@
     ]
   },
   {
-    "name": "Firewood and chips, charcoal",
-    "uuid": "c640b54c-e446-4351-b660-070406d14770",
-    "dataType": "NA"
-  },
-  {
-    "name": "LPG",
-    "uuid": "30a8bdf9-c7b3-43a3-a255-ec88aecdb55a",
-    "dataType": "NA"
-  },
-  {
-    "name": "Electric",
-    "uuid": "4b50299d-af92-4a70-b9f4-b16a850cb03e",
-    "dataType": "NA"
-  },
-  {
     "name": "Primary source of energy for cooking in the household",
     "uuid": "bf982fb0-a128-4e99-9172-484861f2bcd7",
     "dataType": "Coded",
@@ -649,31 +1566,6 @@
         "comment": "Other"
       }
     ]
-  },
-  {
-    "name": "Flush",
-    "uuid": "729368e2-9ced-4f6e-8c1c-1eb1cde837cb",
-    "dataType": "NA"
-  },
-  {
-    "name": "Pour flush",
-    "uuid": "86a3c230-f0ea-4122-b212-31f97cd11e6e",
-    "dataType": "NA"
-  },
-  {
-    "name": "Open",
-    "uuid": "cc0e80b3-4e9f-4305-8789-326da2af4a1a",
-    "dataType": "NA"
-  },
-  {
-    "name": "Private",
-    "uuid": "f866daf5-9e36-4ec5-976c-b4a73a5ed45a",
-    "dataType": "NA"
-  },
-  {
-    "name": "Shared",
-    "uuid": "efc0b682-0d90-4643-867b-175d1c829789",
-    "dataType": "NA"
   },
   {
     "name": "What type of toilet facility do you usually use for defecation?",
@@ -701,41 +1593,6 @@
         "uuid": "efc0b682-0d90-4643-867b-175d1c829789"
       }
     ]
-  },
-  {
-    "name": "Calcutta Kids",
-    "uuid": "b51ee2de-af5b-443f-8693-4deb773db2c6",
-    "dataType": "NA"
-  },
-  {
-    "name": "ICDS",
-    "uuid": "30de2a66-746e-4d36-92b9-ce72acd02f97",
-    "dataType": "NA"
-  },
-  {
-    "name": "Ward Health Center",
-    "uuid": "7a5b00c3-e693-4510-ae8a-25fbd2905c74",
-    "dataType": "NA"
-  },
-  {
-    "name": "Jaiswal Hospital",
-    "uuid": "658ccd6f-5c7c-4214-a29e-9e2e526f71bd",
-    "dataType": "NA"
-  },
-  {
-    "name": "Satyabala Hospital",
-    "uuid": "57c583bf-fd86-4e8e-8475-78c527a5259d",
-    "dataType": "NA"
-  },
-  {
-    "name": "Private Nursing Home",
-    "uuid": "ed45b918-885a-4874-94e7-3aa397876b10",
-    "dataType": "NA"
-  },
-  {
-    "name": "NGOs",
-    "uuid": "99e43d73-3a44-49f4-83c6-e8536984f8f6",
-    "dataType": "NA"
   },
   {
     "name": "ANC service received from",
@@ -1054,11 +1911,6 @@
     ]
   },
   {
-    "name": "Other facility where ANC was provided",
-    "uuid": "a02b5d7b-f883-47f7-b4c2-8a945986c00c",
-    "dataType": "Text"
-  },
-  {
     "name": "Receiving GMP services for child?",
     "uuid": "e65b2360-c965-44b9-91f1-9a0467bc34a2",
     "dataType": "Coded",
@@ -1072,11 +1924,6 @@
         "comment": "No"
       }
     ]
-  },
-  {
-    "name": "Other facility where GMP services were provided",
-    "uuid": "125fae1f-d0c7-465b-8546-f021a66a1141",
-    "dataType": "Text"
   },
   {
     "name": "Receiving food rations for child?",
@@ -1094,11 +1941,6 @@
     ]
   },
   {
-    "name": "Other facility where food rations were provided",
-    "uuid": "ec266fb3-9221-412b-a7a8-048488ebcea8",
-    "dataType": "Text"
-  },
-  {
     "name": "Receiving curative health services for self and child?",
     "uuid": "3873335f-d20d-498b-b174-61b14c0b40f2",
     "dataType": "Coded",
@@ -1112,11 +1954,6 @@
         "comment": "No"
       }
     ]
-  },
-  {
-    "name": "Other facility where curative health services were provided",
-    "uuid": "becfa0ba-1bc9-426d-a25d-b88f2591bf11",
-    "dataType": "Text"
   },
   {
     "name": "Received immunizations for child",
@@ -1134,11 +1971,6 @@
     ]
   },
   {
-    "name": "Other facility where immunization was provided",
-    "uuid": "fea01561-6275-43d2-907e-c0530306686d",
-    "dataType": "Text"
-  },
-  {
     "name": "Used emergency services for self or child",
     "uuid": "cd4a9f19-f914-4939-a144-a63732e8d534",
     "dataType": "Coded",
@@ -1154,11 +1986,6 @@
     ]
   },
   {
-    "name": "Other facility where emergency services were provided",
-    "uuid": "fb7d1279-74c3-4d77-b8cc-d38691a4ea35",
-    "dataType": "Text"
-  },
-  {
     "name": "Received other medical assistance",
     "uuid": "ebe61471-b499-4b2c-9aa5-7a3c3b43767c",
     "dataType": "Coded",
@@ -1172,60 +1999,6 @@
         "comment": "No"
       }
     ]
-  },
-  {
-    "name": "Other facility where other medical assistance was provided",
-    "uuid": "91f43230-a79c-41f7-88bc-9c8c8c0f0917",
-    "dataType": "Text"
-  },
-  {
-    "name": "Number of children currently enrolled in Calcutta Kids",
-    "uuid": "0bee8ffd-8189-4871-978e-d9ae934a4775",
-    "dataType": "Numeric",
-    "lowAbsolute": 0,
-    "highAbsolute": 6
-  },
-  {
-    "name": "ID of child #1",
-    "uuid": "7250b61c-990e-463f-9f5f-0126055bf46b",
-    "dataType": "Text"
-  },
-  {
-    "name": "ID of child #2",
-    "uuid": "f2a77574-f1d0-4640-abd6-644e4c356e1b",
-    "dataType": "Text"
-  },
-  {
-    "name": "ID of child #3",
-    "uuid": "ce8959dc-76fe-444c-a62f-a6e81e6b7692",
-    "dataType": "Text"
-  },
-  {
-    "name": "ID of child #4",
-    "uuid": "f55c6134-53d6-4f61-8d06-a66dcaed3c22",
-    "dataType": "Text"
-  },
-  {
-    "name": "ID of child #5",
-    "uuid": "0050175d-f941-48cd-bd34-a9b22eeaa07e",
-    "dataType": "Text"
-  },
-  {
-    "name": "ID of child #6",
-    "uuid": "e1b3d978-af24-436c-87b6-4d0e902b195c",
-    "dataType": "Text"
-  },
-  {
-    "name": "Number of children NOT enrolled in Calcutta Kids",
-    "uuid": "bdcc9120-3b00-45dc-a46c-12fbb6475dd3",
-    "dataType": "Numeric",
-    "lowAbsolute": 0,
-    "highAbsolute": 6
-  },
-  {
-    "name": "DOB of oldest child not enrolled in CK",
-    "uuid": "c680e52f-71f9-47a3-88a2-bb00aaa27cb0",
-    "dataType": "Date"
   },
   {
     "name": "Gender of oldest child not enrolled in CK",
@@ -1244,11 +2017,6 @@
     ]
   },
   {
-    "name": "DOB of second oldest child not enrolled in CK",
-    "uuid": "d0bd869c-014d-4c13-8ee9-849c707dd3bf",
-    "dataType": "Date"
-  },
-  {
     "name": "Gender of second oldest child not enrolled in CK",
     "uuid": "82a5f5bf-711d-4a14-88e6-eb989615c51a",
     "dataType": "Coded",
@@ -1263,11 +2031,6 @@
         "uuid": "d56700ea-fac8-4255-8403-7f8f3b755335"
       }
     ]
-  },
-  {
-    "name": "DOB of third oldest child not enrolled in CK",
-    "uuid": "567e270c-e59c-4082-bc08-8cd33c23c16e",
-    "dataType": "Date"
   },
   {
     "name": "Gender of third oldest child not enrolled in CK",
@@ -1286,11 +2049,6 @@
     ]
   },
   {
-    "name": "DOB of fourth oldest child not enrolled in CK",
-    "uuid": "28c36c26-4974-44f3-93a2-fab4584e25e8",
-    "dataType": "Date"
-  },
-  {
     "name": "Gender of fourth oldest child not enrolled in CK",
     "uuid": "f46cb123-5bd7-4952-9fe8-87dc2b464c24",
     "dataType": "Coded",
@@ -1305,11 +2063,6 @@
         "uuid": "d56700ea-fac8-4255-8403-7f8f3b755335"
       }
     ]
-  },
-  {
-    "name": "DOB of fifth oldest child not enrolled in CK",
-    "uuid": "3255ba10-ac60-4deb-9ecb-e8eb2ace4717",
-    "dataType": "Date"
   },
   {
     "name": "Gender of fifth oldest child not enrolled in CK",
@@ -1328,11 +2081,6 @@
     ]
   },
   {
-    "name": "DOB of sixth oldest child not enrolled in CK",
-    "uuid": "19fcd68e-a8f5-4d3a-addf-322a2198e58b",
-    "dataType": "Date"
-  },
-  {
     "name": "Gender of sixth oldest child not enrolled in CK",
     "uuid": "d51a049a-2091-4de7-83f6-0389c48cc411",
     "dataType": "Coded",
@@ -1349,11 +2097,6 @@
     ]
   },
   {
-    "uuid": "d7af7694-e0d1-4f03-9876-b2410dff0e29",
-    "name": "Drug use",
-    "dataType": "NA"
-  },
-  {
     "comment": "Addiction Details",
     "uuid": "2ebca9be-3be3-4d11-ada0-187563ff04f8",
     "dataType": "Coded",
@@ -1364,51 +2107,6 @@
         "abnormal": true
       }
     ]
-  },
-  {
-    "name": "Drug allergies",
-    "uuid": "41c792c1-3038-4baa-a71e-946de3131bc6",
-    "dataType": "Text"
-  },
-  {
-    "uuid": "331de3bd-7dc6-43ee-a8b8-45ee1d8a8617",
-    "name": "Other medical history",
-    "dataType": "Text"
-  },
-  {
-    "uuid": "86c51ab1-7f19-4fa7-b5e1-980f3aff73eb",
-    "name": "Date of urine/stool test",
-    "dataType": "Date"
-  },
-  {
-    "uuid": "8bdc2cfe-d754-488f-a236-7ad2dcd62037",
-    "name": "Urine routine examination",
-    "dataType": "Text"
-  },
-  {
-    "uuid": "df70db7d-6cc6-44c2-a78a-facc1ff09eeb",
-    "name": "Urine culture",
-    "dataType": "Text"
-  },
-  {
-    "uuid": "ed49a5a3-dc1d-4277-a71c-c1b73f444f3d",
-    "name": "Stool OPC",
-    "dataType": "Text"
-  },
-  {
-    "uuid": "81d0ef28-8a9f-4a09-bc66-1ed81aa02386",
-    "name": "First trimester (0-3 months)",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "7191645f-c836-4755-beab-ca3c6cec5665",
-    "name": "Second trimester (4-6 months)",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "364e9f9b-5e81-4ec3-a935-89b239967840",
-    "name": "Third trimester (7+ months)",
-    "dataType": "NA"
   },
   {
     "name": "Service commitment type",
@@ -1430,11 +2128,6 @@
     ]
   },
   {
-    "name": "Service commitment number",
-    "uuid": "73a3fdd7-3087-4d53-b8be-753e2cdfa6c2",
-    "dataType": "Numeric"
-  },
-  {
     "uuid": "c357b704-49e2-4c4b-a153-21b8867c152b",
     "name": "Is this your first pregnancy?",
     "dataType": "Coded",
@@ -1448,57 +2141,6 @@
         "comment": "No"
       }
     ]
-  },
-  {
-    "name": "Age at first pregnancy",
-    "uuid": "73037237-15b7-43ba-b375-2a34af9cc1f5",
-    "dataType": "Numeric",
-    "unit": "years"
-  },
-  {
-    "name": "TT3 Date",
-    "uuid": "d9861ff2-3ba2-4296-8ada-4a1773412e3d",
-    "dataType": "Date"
-  },
-  {
-    "name": "Date of deworming",
-    "uuid": "e638d96b-ad09-4fec-9e01-2e4b1a243c6d",
-    "dataType": "Date"
-  },
-  {
-    "uuid": "25215000-d603-41e3-af2e-c395bca80ea9",
-    "name": "Intrapartum fetal death",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "214d7302-d655-45cd-909e-2fdc0a64ee11",
-    "name": "Obstructed labor",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "baff8c4d-9ab6-4da2-9a41-54ce2b7ec583",
-    "name": "Perineal injuries/tears",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "a01565bf-da80-427f-a9cd-a0923d80528b",
-    "name": "Admission for hypertension or pre-eclampsia/eclampsia in the previous pregnancy",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "1952095f-776c-47a8-b96c-cbc77aa7d7b3",
-    "name": "Surgery on the reproductive tract",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "1092e3aa-80b9-4dec-b5cd-9318fd7c0fb2",
-    "name": "Spinal deformities, such as scoliosis/kyphosis/polio",
-    "dataType": "NA"
-  },
-  {
-    "name": "Malaria in the past 6 months",
-    "uuid": "595ba20e-1ab5-45fa-8a75-8b84a6b9b41a",
-    "dataType": "NA"
   },
   {
     "name": "Obstetrics history",
@@ -1548,62 +2190,6 @@
     ]
   },
   {
-    "uuid": "72b3816f-f362-42bf-b858-10e4d505a25d",
-    "name": "Thalassaemia",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "142f62b3-f41f-40f8-aea6-99b41859f07b",
-    "name": "Repeated blood transfusion",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "e620fe74-525e-4c9d-ab88-41a549e19aa6",
-    "name": "Twin birth",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "c2704449-4981-47f1-b6e8-9d68884334c6",
-    "name": "Infant with congenital malformation",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "2ea977b5-23cb-4833-a5ca-831b12409e41",
-    "name": "Other family history",
-    "dataType": "Text"
-  },
-  {
-    "comment": "Family history",
-    "uuid": "18fa9773-bf4b-47f8-9535-f1573a477940",
-    "answers": [
-      {
-        "uuid": "72b3816f-f362-42bf-b858-10e4d505a25d",
-        "comment": "Thalassaemia"
-      },
-      {
-        "uuid": "142f62b3-f41f-40f8-aea6-99b41859f07b",
-        "comment": "Repeated blood transfusion"
-      },
-      {
-        "uuid": "e620fe74-525e-4c9d-ab88-41a549e19aa6",
-        "comment": "Twin birth"
-      },
-      {
-        "uuid": "c2704449-4981-47f1-b6e8-9d68884334c6",
-        "comment": "Infant with congenital malformation"
-      },
-      {
-        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
-        "comment": "None",
-        "unique": true
-      },
-      {
-        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
-        "comment": "Other"
-      }
-    ]
-  },
-  {
     "name": "Away at village",
     "uuid": "5b30a5b5-8ab5-4643-a424-2992f2b8df11",
     "dataType": "Coded",
@@ -1618,30 +2204,6 @@
         "comment": "No"
       }
     ]
-  },
-  {
-    "name": "Refer to Hospital or Calcutta Kids doctor for",
-    "uuid": "abf8ba39-d12d-421e-aab1-e36e88bcd89a"
-  },
-  {
-    "name": "High fever (above 102°C)",
-    "uuid": "f6628b6c-0c6e-4deb-bc5c-faaf6d22a4be",
-    "dataType": "NA"
-  },
-  {
-    "name": "Moderate to severe abdominal pain",
-    "uuid": "94a22fed-e9a5-438e-8a17-ec4ae40c5d4f",
-    "dataType": "NA"
-  },
-  {
-    "name": "Vaginal/urethral problems",
-    "uuid": "e3acaede-e67c-4d72-a1a7-06954b862408",
-    "dataType": "NA"
-  },
-  {
-    "name": "Other health problems",
-    "uuid": "7d708690-ba0a-41f7-87ff-cbe0e45f6008",
-    "dataType": "Text"
   },
   {
     "name": "Mother's health problems",
@@ -1739,12 +2301,6 @@
     ]
   },
   {
-    "name": "How many IFA tablets mother consumed since last visit?",
-    "uuid": "0dcf9cee-b2c7-4751-86a2-142fd924068f",
-    "dataType": "Numeric",
-    "unit": "tablet(s)"
-  },
-  {
     "name": "Where does mother get Calcium tablets from?",
     "uuid": "3c31a93d-d731-49b3-8adf-5d7fdb930fb9",
     "dataType": "Coded",
@@ -1770,27 +2326,6 @@
     ]
   },
   {
-    "name": "How many Calcium tablets mother consumed since last visit?",
-    "uuid": "7ec86ef7-36a2-4643-91c6-06838891fedb",
-    "dataType": "Numeric",
-    "unit": "tablet(s)"
-  },
-  {
-    "name": "More than pre-pregnancy",
-    "uuid": "7f47a447-6cfc-4c9e-bb8c-482eadc47d4b",
-    "dataType": "NA"
-  },
-  {
-    "name": "Same as pre-pregnancy",
-    "uuid": "00cd6cc2-00d9-4c1a-8d9d-73b4de026159",
-    "dataType": "NA"
-  },
-  {
-    "name": "Less than pre-pregnancy",
-    "uuid": "bb957725-fb96-49c1-861c-65a46cbf22c6",
-    "dataType": "NA"
-  },
-  {
     "name": "Food consumption compared to pre-pregnancy food intake?",
     "uuid": "43f91cf9-2d6e-4926-9286-dae94351c353",
     "dataType": "Coded",
@@ -1808,26 +2343,6 @@
         "abnormal": true
       }
     ]
-  },
-  {
-    "name": "Food is not available/sufficient",
-    "uuid": "e584cf1a-4cbf-4fef-aa5f-c91fb0dea64b",
-    "dataType": "NA"
-  },
-  {
-    "name": "Family pressure or belief to eat less",
-    "uuid": "7a53dcb6-23c9-4995-bda7-7cc1722e59fc",
-    "dataType": "NA"
-  },
-  {
-    "name": "Work pressure",
-    "uuid": "9e58c378-e27e-4ba7-81f3-349c1c17c984",
-    "dataType": "NA"
-  },
-  {
-    "name": "Lack of family support",
-    "uuid": "5e7da32d-42cb-410c-a17f-38af82e6c858",
-    "dataType": "NA"
   },
   {
     "name": "Reasons for eating the same or less than pre-pregnancy",
@@ -1861,11 +2376,6 @@
     ]
   },
   {
-    "name": "Other reasons for eating same or less than pre-pregnancy",
-    "uuid": "aea13efa-f200-4bcc-b613-f24b341ff50a",
-    "dataType": "Text"
-  },
-  {
     "name": "Is mother drinking at least one glass of milk per day?",
     "uuid": "d60670cb-becd-4a25-b854-14f9e7e60add",
     "dataType": "Coded",
@@ -1890,16 +2400,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "name": "Tubectomy",
-    "uuid": "6c02c7cd-b067-401c-80eb-25e6b0b9ed09",
-    "dataType": "NA"
-  },
-  {
-    "name": "Other family planning methods used by mother",
-    "uuid": "c89a29a9-7ff9-4f23-8030-b86253b3d11e",
-    "dataType": "Text"
   },
   {
     "name": "Type of family planning methods used by mother",
@@ -1927,21 +2427,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Engorged breast",
-    "uuid": "99c858bc-b257-476a-b7ce-fd4e239b6b2a",
-    "dataType": "NA"
-  },
-  {
-    "name": "Mother unwilling to breastfeed",
-    "uuid": "d3f67692-2fa9-486c-bc8e-97e470f1736a",
-    "dataType": "NA"
-  },
-  {
-    "name": "Possible breast infection (severe pain, abscess, foul smelling discharge, fever)",
-    "uuid": "765a3256-78c3-4a5f-9a6c-d4334eb5e8a5",
-    "dataType": "NA"
   },
   {
     "name": "Breast-feeding problems",
@@ -1982,11 +2467,6 @@
     ]
   },
   {
-    "name": "Other breast-feeding problems",
-    "uuid": "9901bdcc-d562-4486-a5d4-b6e9681e9da8",
-    "dataType": "Text"
-  },
-  {
     "name": "Child is ill",
     "uuid": "e366e7b5-9c6d-46c3-b3d4-47caecdaa521",
     "dataType": "Coded",
@@ -2017,56 +2497,6 @@
     ]
   },
   {
-    "uuid": "e825f97d-26d4-4a44-b2fe-024d9e26d875",
-    "name": "Animal protein",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "14405510-d8ea-45c0-a0cb-d5dc55260d33",
-    "name": "Vegetable protein",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "323c3c9b-a4a6-40e1-938f-f62755805ecc",
-    "name": "Fruit",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "351f31c1-5f14-4859-8585-3d395556b1f8",
-    "name": "Dairy",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "a8c837f4-345c-4041-ac0a-b91945bad804",
-    "name": "Starch",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "d74412da-9cce-41fa-a141-c07cc8c60ec0",
-    "name": "Instant food",
-    "dataType": "NA"
-  },
-  {
-    "name": "Vegetable",
-    "uuid": "90f29252-2dc9-42c5-b30f-9cfb53c8448c",
-    "dataType": "NA"
-  },
-  {
-    "name": "Snack food",
-    "uuid": "f72c86f9-8c58-4887-b588-cc903f02d141",
-    "dataType": "NA"
-  },
-  {
-    "name": "Doctor",
-    "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60",
-    "abnormal": false
-  },
-  {
-    "name": "Hospital",
-    "uuid": "8359bf16-d329-4752-927c-24a9364f12bf",
-    "abnormal": false
-  },
-  {
     "name": "Mother referred to",
     "uuid": "d5372690-d699-4bd0-ad6e-6d8f0ba559a0",
     "dataType": "Coded",
@@ -2095,36 +2525,6 @@
     ]
   },
   {
-    "uuid": "2f2339c0-9405-4da5-b6c3-4a2e99033a23",
-    "name": "Lethargy",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "3d41437e-3a00-44df-9190-9d87e37deb41",
-    "name": "Redness or discharge on the skin around the belly button",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "b2b23da9-17f3-4c77-8e20-5f91652d50ab",
-    "name": "Insufficient urination",
-    "dataType": "NA"
-  },
-  {
-    "name": "ALL of the prescribed medicines",
-    "uuid": "0ddcfa9a-a193-4bd4-a52b-c42f851dff90",
-    "dataType": "NA"
-  },
-  {
-    "name": "SOME of the prescribed medicines",
-    "uuid": "47f0bff2-bf52-4e13-bbaa-5db2b5aff021",
-    "dataType": "NA"
-  },
-  {
-    "name": "NONE of the prescribed medicines",
-    "uuid": "fac8bfbc-87af-4a3c-8015-b1e8f6efda93",
-    "dataType": "NA"
-  },
-  {
     "name": "Patient taking medicines as prescribed",
     "uuid": "e6afc39f-33d3-43f9-8654-47eafac05d1f",
     "dataType": "Coded",
@@ -2142,21 +2542,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Took some of the medicines and felt improved",
-    "uuid": "59e10213-4220-45f0-9adc-5c315b8188b2",
-    "dataType": "NA"
-  },
-  {
-    "name": "Did not have time to buy all the prescribed medicines",
-    "uuid": "a594a75d-0cec-437e-b2b0-59680c5e5007",
-    "dataType": "NA"
-  },
-  {
-    "name": "Did not want to buy all the prescribed medicines",
-    "uuid": "29cdf797-df0f-4032-ad47-1da44156e906",
-    "dataType": "NA"
   },
   {
     "name": "Reasons for patient taking only some of the prescribed medicines",
@@ -2186,11 +2571,6 @@
     ]
   },
   {
-    "name": "Other reasons for taking only some prescribed medicines",
-    "uuid": "fba49ad0-cb8f-4bc9-b709-370c49e801a3",
-    "dataType": "Text"
-  },
-  {
     "name": "Patient taking correct dose of medicine and completing course fully",
     "uuid": "e9ab26e2-9285-4206-9bec-0f030e7af662",
     "dataType": "Coded",
@@ -2202,16 +2582,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "name": "Stopped taking the medicine before completing the full treatment course",
-    "uuid": "f2ea839d-9340-4899-9860-ae9107ae3eaf",
-    "dataType": "NA"
-  },
-  {
-    "name": "Taking the medicine but not according to the treatment guidelines",
-    "uuid": "da248b09-3e05-4561-abeb-e8aba846f60f",
-    "dataType": "NA"
   },
   {
     "name": "Incorrect way patient is taking medicine",
@@ -2255,11 +2625,6 @@
     ]
   },
   {
-    "name": "Names of non-prescribed medicines being taken",
-    "uuid": "55b03a4a-0546-400e-a9ba-e6afe6a61267",
-    "dataType": "Text"
-  },
-  {
     "name": "Was patient referred to the hospital during their visit to clinic?",
     "uuid": "0d4f3fb2-cf02-4041-8674-7422d0688b6e",
     "dataType": "Coded",
@@ -2273,11 +2638,6 @@
     ]
   },
   {
-    "name": "Reasons for patient referral to hospital",
-    "uuid": "9598b758-b8dd-4609-b891-1216596c8cfc",
-    "dataType": "Text"
-  },
-  {
     "name": "Patient went to hospital on referral advice",
     "uuid": "4ff3e6b8-eedb-491b-a94c-57825bc52e2b",
     "dataType": "Coded",
@@ -2289,21 +2649,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "name": "Has fully improved",
-    "uuid": "1aa2ef9a-24c5-40b8-83d7-c9a3dc00c4ec",
-    "dataType": "NA"
-  },
-  {
-    "name": "Didn’t have time",
-    "uuid": "1d045d57-062f-4ccd-8e8a-6541738b43a2",
-    "dataType": "NA"
-  },
-  {
-    "name": "Refuses to go",
-    "uuid": "e3851e20-fa3b-47dc-89d4-3fb8bdcb4da0",
-    "dataType": "NA"
   },
   {
     "name": "Reason patient didn't go to hospital as per referral advice",
@@ -2323,26 +2668,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Improving/ has fully improved",
-    "uuid": "f247de9e-a6cf-444b-a2e8-d60a6d0b7fc6",
-    "dataType": "NA"
-  },
-  {
-    "name": "Should revisit doctor",
-    "uuid": "5dffeb7b-d271-465d-a3e2-fef3463f4199",
-    "dataType": "NA"
-  },
-  {
-    "name": "Should visit the hospital",
-    "uuid": "dec0d1a6-2200-42bc-89cb-f395f8cc66f8",
-    "dataType": "NA"
-  },
-  {
-    "name": "Is improving/ has fully improved from this health issue but should visit the doctor for a new health issue",
-    "uuid": "90b81764-1d81-4b20-8958-3388246cd5ba",
-    "dataType": "NA"
   },
   {
     "name": "Improvement in patient",
@@ -2407,10 +2732,6 @@
     ]
   },
   {
-    "name": "Family pressure or belief",
-    "uuid": "ebfe47b9-e144-4db8-a31b-b491401e8cc3"
-  },
-  {
     "name": "Did the baby receive colostrums (first milk)?",
     "uuid": "81c4fa06-e287-4d99-873f-8dd23141ed6a",
     "dataType": "Coded",
@@ -2422,11 +2743,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "name": "Medical issue",
-    "uuid": "c1b08b43-1ac9-4ae1-b908-ace9c8345ae3",
-    "dataType": "NA"
   },
   {
     "name": "Baby did not receive colostrum because",
@@ -2467,11 +2783,6 @@
     ]
   },
   {
-    "name": "Other reasons for baby not receiving colostrum",
-    "uuid": "635884c4-dcd6-41a9-85d0-39b19735f80a",
-    "dataType": "Text"
-  },
-  {
     "name": "Was the baby fed anything else before breastfeeding?",
     "uuid": "c41d7a74-716b-4b59-a2eb-61fc688c68bb",
     "dataType": "Coded",
@@ -2483,41 +2794,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "uuid": "502dcb33-a589-4e9d-99c7-29f5659f5074",
-    "name": "Cow's milk",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "128d0a18-37c5-4243-a6ea-1794765fa1cd",
-    "name": "Water",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "7b07a014-53f8-44fb-adac-0740c2c2f109",
-    "name": "Buffalo's milk",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "980d5b47-8cd2-4c03-9f76-ce7bc77c8797",
-    "name": "Packet milk",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "7df97c63-a2e9-472c-90f2-584f2e64015b",
-    "name": "Formula",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "851c9fb8-af13-4205-91e4-6a63dc1b91fa",
-    "name": "Water based liquids (sugar water, juice etc)",
-    "dataType": "NA"
-  },
-  {
-    "uuid": "223badf4-2fa5-4eb9-abac-c7ba443ba4fa",
-    "name": "Semi-Solid liquid (barley, sago etc)",
-    "dataType": "NA"
   },
   {
     "name": "Other things baby was fed before breastfeeding",
@@ -2545,11 +2821,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Any other thing baby was fed before breastfeeding",
-    "uuid": "d1466ada-80e5-4a35-8f7b-a3c7567b685c",
-    "dataType": "Text"
   },
   {
     "uuid": "739f9a56-c02c-4f81-927b-69842d78c1e8",
@@ -2583,11 +2854,6 @@
     ]
   },
   {
-    "name": "myCHI Id",
-    "uuid": "1d6ac236-2ab4-4eaa-aa3d-e18924d93ba3",
-    "dataType": "Text"
-  },
-  {
     "name": "Refer to hospital",
     "uuid": "ab7ad316-6b8a-4860-be3f-16acf3bf707e",
     "dataType": "Coded",
@@ -2601,31 +2867,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "name": "Other pregnancy complaints",
-    "uuid": "dc9d9866-a797-4c3f-b26b-e34d628825d8",
-    "dataType": "Text"
-  },
-  {
-    "name": "Assessment - Notes",
-    "uuid": "7d50833d-4823-4ef2-be52-8b360e75598e",
-    "dataType": "Notes"
-  },
-  {
-    "name": "Checkup notes",
-    "uuid": "d658b4a4-8ec3-4eb7-9ef3-dd3a73ca29f9",
-    "dataType": "Notes"
-  },
-  {
-    "name": "Para",
-    "uuid": "62a1bac8-6bd8-4cb7-9482-97716928cfe8",
-    "dataType": "Numeric"
-  },
-  {
-    "name": "Abortions",
-    "uuid": "f8321cb3-df3b-4cec-92ae-8eed77c059e3",
-    "dataType": "Numeric"
   },
   {
     "name": "Feels hot",
@@ -2658,26 +2899,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "name": "Doctor's name",
-    "uuid": "c068248d-81cd-4f1e-922f-486be51312ad",
-    "dataType": "Text"
-  },
-  {
-    "name": "Most critical",
-    "uuid": "274eb51b-6c3e-4d5b-9fe3-e1646094fa7c",
-    "dataType": "NA"
-  },
-  {
-    "name": "Active",
-    "uuid": "6b50ae8f-f962-4a47-af3a-a0db7cd3ad75",
-    "dataType": "NA"
-  },
-  {
-    "name": "Inactive",
-    "uuid": "afedc9c2-bd51-48f0-b526-33c8ca52892b",
-    "dataType": "NA"
   },
   {
     "name": "Activation status",
@@ -2998,76 +3219,6 @@
         "abnormal": true
       }
     ]
-  },
-  {
-    "name": "Visit notes",
-    "uuid": "4f1c32ee-16fa-4f13-a363-fd0fbc45b4a0",
-    "dataType": "Notes"
-  },
-  {
-    "name": "Could not afford to buy medicines",
-    "uuid": "cc50891b-2664-43d1-bf2c-bb73e712e2d0",
-    "dataType": "NA"
-  },
-  {
-    "name": "Family history of diabetes",
-    "uuid": "2f6f471a-36f6-4e5f-9115-fb077b7ad8fd",
-    "dataType": "NA"
-  },
-  {
-    "name": "Family history of thalessemia",
-    "uuid": "e7526d66-8661-43ee-9413-0987d8438d81",
-    "dataType": "NA"
-  },
-  {
-    "name": "Hypothyroidism",
-    "uuid": "3972ed54-8d8f-45b7-8817-457cd161afec",
-    "dataType": "NA"
-  },
-  {
-    "name": "Episiotomy",
-    "uuid": "d3591b97-f88f-4125-94e0-aa65ad7fb6dd",
-    "dataType": "NA"
-  },
-  {
-    "name": "GA (free text)",
-    "uuid": "3c56cdd0-e07a-457a-a247-9a95432afd01",
-    "dataType": "Text"
-  },
-  {
-    "name": "Hb (free text)",
-    "uuid": "ffb8bc9b-b8fd-48a2-874e-486f1737e176",
-    "dataType": "Text"
-  },
-  {
-    "name": "VDRL (free text)",
-    "uuid": "cd1c1922-c351-43ea-8cb2-106d906df9a9",
-    "dataType": "Text"
-  },
-  {
-    "name": "Blood Type (free text)",
-    "uuid": "2fba6f3a-a519-4946-a900-66a255335f47",
-    "dataType": "Text"
-  },
-  {
-    "name": "HBsAg (free text)",
-    "uuid": "2552617d-8b70-46d5-8085-a610c314c089",
-    "dataType": "Text"
-  },
-  {
-    "name": "Blood Sugar - Random (free text)",
-    "uuid": "9ac802d4-de37-4cd9-b53a-90af2f93fbe6",
-    "dataType": "Text"
-  },
-  {
-    "name": "Blood Sugar - Fasting (free text)",
-    "uuid": "935f3d46-3611-4fe8-aaee-c42e89074440",
-    "dataType": "Text"
-  },
-  {
-    "name": "Not Adequate",
-    "uuid": "5ecbe201-43c2-4aff-94a5-d088220d7d1a",
-    "dataType": "NA"
   },
   {
     "name": "Whether attended last community meetup",

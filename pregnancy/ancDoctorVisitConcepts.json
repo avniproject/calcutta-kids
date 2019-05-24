@@ -15,6 +15,50 @@
     "dataType": "NA"
   },
   {
+    "name": "USG Scanning Report - Remarks",
+    "uuid": "65fbbd13-0126-45cc-b1a2-a5db40843d16",
+    "dataType": "Notes"
+  },
+  {
+    "name": "Blood Sugar - Random",
+    "uuid": "6a069dc8-2ace-4ad3-a481-f4afff4fb276",
+    "dataType": "Numeric",
+    "highNormal": 139,
+    "unit": "mg/dl"
+  },
+  {
+    "name": "Blood Sugar - Fasting",
+    "uuid": "3de126a4-719a-4dbe-b884-85f7196b5b54",
+    "dataType": "Numeric",
+    "highNormal": 139,
+    "unit": "mg/dl"
+  },
+  {
+    "uuid": "c4b3cee7-e338-4cc5-9027-d105495afbc5",
+    "name": "Assessment - Diagnosis",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "9e2f03e4-d504-406c-8da7-27eb33e2e298",
+    "name": "Assessment - Medicine & frequency",
+    "dataType": "Notes"
+  },
+  {
+    "uuid": "b4096b8d-7b81-4fb6-989c-4a02189c20b6",
+    "name": "Assessment - Lab tests advice",
+    "dataType": "Notes"
+  },
+  {
+    "uuid": "f4b308d3-24a7-4f4a-b06c-bb5432ab989e",
+    "name": "Assessment - Clinical advice",
+    "dataType": "Notes"
+  },
+  {
+    "uuid": "0d9cc8ee-fd6e-4516-aa16-bf158edee132",
+    "name": "Other chief complaints",
+    "dataType": "Text"
+  },
+  {
     "name": "USG Scanning Report - Viability",
     "uuid": "401e603c-e5a9-4612-98eb-5a7faf9a4f8b",
     "dataType": "Coded",
@@ -62,49 +106,5 @@
         "comment": "Calcium"
       }
     ]
-  },
-  {
-    "name": "USG Scanning Report - Remarks",
-    "uuid": "65fbbd13-0126-45cc-b1a2-a5db40843d16",
-    "dataType": "Notes"
-  },
-  {
-    "name": "Blood Sugar - Random",
-    "uuid": "6a069dc8-2ace-4ad3-a481-f4afff4fb276",
-    "dataType": "Numeric",
-    "highNormal": 139,
-    "unit": "mg/dl"
-  },
-  {
-    "name": "Blood Sugar - Fasting",
-    "uuid": "3de126a4-719a-4dbe-b884-85f7196b5b54",
-    "dataType": "Numeric",
-    "highNormal": 139,
-    "unit": "mg/dl"
-  },
-  {
-    "uuid": "c4b3cee7-e338-4cc5-9027-d105495afbc5",
-    "name": "Assessment - Diagnosis",
-    "dataType": "Text"
-  },
-  {
-    "uuid": "9e2f03e4-d504-406c-8da7-27eb33e2e298",
-    "name": "Assessment - Medicine & frequency",
-    "dataType": "Notes"
-  },
-  {
-    "uuid": "b4096b8d-7b81-4fb6-989c-4a02189c20b6",
-    "name": "Assessment - Lab tests advice",
-    "dataType": "Notes"
-  },
-  {
-    "uuid": "f4b308d3-24a7-4f4a-b06c-bb5432ab989e",
-    "name": "Assessment - Clinical advice",
-    "dataType": "Notes"
-  },
-  {
-    "uuid": "0d9cc8ee-fd6e-4516-aa16-bf158edee132",
-    "name": "Other chief complaints",
-    "dataType": "Text"
   }
 ]

@@ -1,20 +1,5 @@
 [
   {
-    "name": "Convulsions without fever",
-    "uuid": "132a04ad-3f76-462a-99d8-29144aa977a6",
-    "dataType": "NA"
-  },
-  {
-    "name": "Dizziness",
-    "uuid": "e9a1709b-41fe-4c6c-ab23-c325f71b394a",
-    "dataType": "NA"
-  },
-  {
-    "name": "Excess fatigue",
-    "uuid": "b309f6d3-5db5-4415-8b26-84dd0689f55e",
-    "dataType": "NA"
-  },
-  {
     "name": "Registered for institutional delivery",
     "uuid": "1d3d368a-3180-4bda-bf42-bee1351844f3",
     "dataType": "Coded",
@@ -26,36 +11,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "name": "Name of institution",
-    "uuid": "13c1458f-b4fe-442a-9b0b-b5ec6e62da11",
-    "dataType": "Text"
-  },
-  {
-    "name": "TT",
-    "uuid": "42a6728b-947a-438f-9192-189ff9d8651b",
-    "dataType": "NA"
-  },
-  {
-    "name": "Urine test",
-    "uuid": "8f2741f1-28ec-458d-9f86-8b968bf950f4",
-    "dataType": "NA"
-  },
-  {
-    "name": "Blood tests",
-    "uuid": "e53b6e6c-9351-4d2c-876b-cf7e9d28e137",
-    "dataType": "NA"
-  },
-  {
-    "name": "Ultrasonography",
-    "uuid": "26fa9d6b-4184-4d54-a7de-a5821f0fecaa",
-    "dataType": "NA"
-  },
-  {
-    "name": "Abdominal examination",
-    "uuid": "fbf759b7-ca99-4b2b-85f5-6be8e01b7037",
-    "dataType": "NA"
   },
   {
     "name": "Services received outside or at Calcutta Kids",
@@ -93,11 +48,6 @@
     ]
   },
   {
-    "name": "Other services received outside",
-    "uuid": "af4d58ae-7233-4c68-9caa-7ba53a6c5f94",
-    "dataType": "Text"
-  },
-  {
     "name": "FA tablets received from",
     "uuid": "c6053dc3-593b-4f24-91f9-3d0e33b4af36",
     "dataType": "Coded",
@@ -122,26 +72,6 @@
     ]
   },
   {
-    "name": "Number of FA tablets consumed since last visit",
-    "uuid": "1a28299c-de6e-4c4d-9afd-1c8129b40c77",
-    "dataType": "Numeric"
-  },
-  {
-    "name": "More",
-    "uuid": "42146907-9b2b-45c7-ada0-ce4db4a0e224",
-    "dataType": "NA"
-  },
-  {
-    "name": "Same",
-    "uuid": "57f67648-23dd-4d83-96dc-481b7e219a75",
-    "dataType": "NA"
-  },
-  {
-    "name": "Less",
-    "uuid": "46c5a087-db39-43f8-bbdd-778c70eeaf91",
-    "dataType": "NA"
-  },
-  {
     "name": "Eating compared to your pre-pregnancy food intake",
     "uuid": "bd925c49-1315-405a-999b-cd6509668281",
     "dataType": "Coded",
@@ -159,11 +89,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Food not available or sufficient",
-    "uuid": "957ea4ab-d3a0-4b52-a056-dd103d9a164f",
-    "dataType": "NA"
   },
   {
     "name": "Reason for eating less than pre-pregnancy",
@@ -191,16 +116,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Other reason for eating less than pre-pregnancy",
-    "uuid": "70cad8f7-722e-4186-aa89-4acc7acb2ed7",
-    "dataType": "Text"
-  },
-  {
-    "name": "Nothing",
-    "uuid": "050c0ac0-9f03-4302-9b3c-2a451cdb0471",
-    "dataType": "NA"
   },
   {
     "name": "Food eaten yesterday",
@@ -242,29 +157,9 @@
       {
         "uuid": "050c0ac0-9f03-4302-9b3c-2a451cdb0471",
         "abnormal": true,
-        "unique":true
+        "unique": true
       }
     ]
-  },
-  {
-    "name": "Reason for not eating yesterday",
-    "uuid": "ea7cd073-704c-4551-a251-5c656f56bc24",
-    "dataType": "Text"
-  },
-  {
-    "name": "Hours of rest yesterday",
-    "uuid": "8543f637-c896-4082-8fc9-6fa3f8263c0a",
-    "dataType": "Numeric"
-  },
-  {
-    "name": "Work inside the home",
-    "uuid": "8e86a749-39d0-4a4c-a9fd-3acb3f7298e9",
-    "dataType": "NA"
-  },
-  {
-    "name": "Work outside the home",
-    "uuid": "d3b3e242-1085-4114-a3f4-1183a8ae084f",
-    "dataType": "NA"
   },
   {
     "name": "Reason for resting less than 2 hours",
@@ -290,11 +185,6 @@
     ]
   },
   {
-    "name": "Other reason for resting less than 2 hours",
-    "uuid": "dda37984-052d-41e2-b255-0cb9a67d580f",
-    "dataType": "Text"
-  },
-  {
     "name": "Manual labour being done compared to pre-pregnancy",
     "uuid": "cac85c5d-d0eb-46a7-b30a-0a01836f8c0c",
     "dataType": "Coded",
@@ -312,11 +202,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Nobody at home to help",
-    "uuid": "a3456f51-9722-412b-b4ef-402cddd8c160",
-    "dataType": "NA"
   },
   {
     "name": "Reason for same or more manual labour",
@@ -351,16 +236,6 @@
     ]
   },
   {
-    "name": "No extra money to save",
-    "uuid": "89757176-5146-41c5-bd1f-4a36e7d0709b",
-    "dataType": "NA"
-  },
-  {
-    "name": "Family not interested in saving",
-    "uuid": "9c3ca6d6-e749-4992-876b-8548f02d0ecf",
-    "dataType": "NA"
-  },
-  {
     "name": "Reason for not saving money",
     "uuid": "74eb771a-f9e8-4b51-a078-3a13e2044b0d",
     "dataType": "Coded",
@@ -378,17 +253,6 @@
         "abnormal": false
       }
     ]
-  },
-  {
-    "name": "Money saved so far",
-    "uuid": "4362911d-ac02-447c-9812-dfc5271eb499",
-    "dataType": "Numeric",
-    "unit": "Rs"
-  },
-  {
-    "name": "Date of decrease in foetal movements",
-    "uuid": "599190b5-1875-48e4-961b-b653177b8aa5",
-    "dataType": "Date"
   },
   {
     "name": "Calcium tablets received from",
@@ -413,20 +277,5 @@
         "unique": true
       }
     ]
-  },
-  {
-    "name": "Number of calcium tablets consumed since last last visit",
-    "uuid": "c2b21d7d-447a-4f97-9775-199c316921e4",
-    "dataType": "Numeric"
-  },
-  {
-    "name": "Other reason for manual labour",
-    "uuid": "cd5a83e3-b5f0-4179-8c9e-d00c0af1602a",
-    "dataType": "Text"
-  },
-  {
-    "name": "Other reason for not saving money",
-    "uuid": "642685db-63dc-4abd-94bf-333bda7a96a8",
-    "dataType": "Text"
   }
 ]
