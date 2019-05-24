@@ -111,6 +111,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@migrationConcepts.json)
 
 deploy_refdata: deploy_subjects deploy_concepts
+	$(call _curl,POST,addressLevelTypes,@addressLevelTypes.json)
 	$(call _curl,POST,locations,@locations.json)
 	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,programs,@programs.json)
