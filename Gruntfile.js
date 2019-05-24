@@ -66,7 +66,6 @@ module.exports = IDI.configure({
             "./migrationConcepts.json",
             //"./patchConcepts.json",
         ],
-        "addressLevelTypes": ["./addressLevelTypes.json"],
         "locations": ["./locations.json"],
         "programs": ["./programs.json"],
         "encounterTypes": ["./encounterTypes.json"],
