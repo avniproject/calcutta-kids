@@ -250,5 +250,11 @@
     "encounterTypeUUID": null,
     "programUUID": "5103e1e2-a4df-498b-818d-61df4db3fb97",
     "comment": "CK Mother (not core mother) program, Exit"
+  },
+  {
+    "uuid": "da840afe-a843-4901-9555-616fed1a1bca",
+    "formUUID": "0ea3e070-39c5-48c8-ab9b-73e91c419d68",
+    "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3",
+    "comment": "Individual Registration"
   }
 ]
