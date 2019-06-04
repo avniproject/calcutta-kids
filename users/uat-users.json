@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "b185d069-4112-4d7c-91a1-37c5a4cf8eb9",
+    "name": "ck-uat",
+    "password": "password",
+    "email": "openchssupport+ck+uat@samanvayfoundation.org",
+    "phoneNumber": "+919991999919",
+    "organisationUUID": "2a0cc644-5a8f-4bc3-8483-dc1e00adaba4",
+    "catchmentUUID": "9815f0a5-2af0-4d3a-bbc7-7e754512278c",
+    "operatingIndividualScope": "ByCatchment",
+    "isAdmin": "false",
+    "isOrgAdmin": "false"
+  }
+]

@@ -11,6 +11,7 @@ module.exports = IDI.configure({
     "files": {
         "adminUsers": {
             "dev": ["./users/admin-user.json"],
+            "uat": ["./users/admin-user.json"],
         },
         "forms": [
             "./registrationForm.json",
@@ -74,6 +75,7 @@ module.exports = IDI.configure({
         "operationalSubjectTypes": ["operationalSubjectTypes.json"],
         "users": {
             "dev": ["./users/test-users.json"],
+            "uat": ["./users/uat-users.json"],
             // "prod": ["./users/importer-user.json"],
         },
         "rules": [
