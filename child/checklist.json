@@ -375,7 +375,7 @@
       "uuid": "0856c43e-4560-468b-86c5-370c99db3270",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "6fb0e733-0207-418d-93b6-fa5529e233db",
-      "minDaysFromStartDate": 487,
+      "minDaysFromStartDate": 548,
       "minDaysFromDependent": 183,
       "concept": {
         "uuid": "d59db0c3-36d3-4c2a-9f34-484b5c215202",
