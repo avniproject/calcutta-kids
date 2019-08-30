@@ -20,7 +20,7 @@ class ANCDoctorVisits {
         if (!_.isNil(followupDate)) {
             RuleHelper.addSchedule(scheduleBuilder, 'ANC Doctor Checkup Followup', 'ANC', followupDate, 3);
         }
-        RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home', 'Doctor Visit Followup at Home', moment(programEncounter.encounterDateTime).add(3, 'days').toDate(), 2);
+        RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home', 'Doctor Visit Followup at Home', moment(programEncounter.encounterDateTime).add(3, 'days').toDate(), 7);
         return scheduleBuilder.getAllUnique("encounterType");
     }
 }
