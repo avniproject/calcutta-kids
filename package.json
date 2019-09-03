@@ -10,7 +10,7 @@
   "scripts": {},
   "dependencies": {
     "openchs-idi": "github:openchs/openchs-idi#a05bfbd6acf55bcc878023e154c96d9ac72e61d9",
-    "rules-config": "github:openchs/rules-config#c83e1e47f1618c56c5839de6708915d76db32056",
+    "rules-config": "github:openchs/rules-config#45e1b241b5d5ee1106633ea475c9515263b8ce4a",
     "webpack": "^4.12.0"
   }
 }
