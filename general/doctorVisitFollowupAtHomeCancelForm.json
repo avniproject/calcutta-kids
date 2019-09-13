@@ -1,0 +1,37 @@
+{
+  "name": "Doctor visit followup at home cancel form",
+  "uuid": "0f72e14f-15c6-4293-b47c-af96b2fb7a79",
+  "formType": "ProgramEncounterCancellation",
+  "formElementGroups": [
+    {
+      "uuid": "003eb2ac-2384-4f3a-bdff-3b1d21448edb",
+      "name": "Cancel details",
+      "display": "Cancel details",
+      "displayOrder": 1,
+      "formElements": [
+        {
+          "name": "Cancel reason",
+          "uuid": "9ae4c3d7-4d0d-4a99-a5c9-e6f34126a691",
+          "keyValues": [],
+          "concept": {
+            "name": "Doctor visit follow up at home cancel reason",
+            "uuid": "ea775008-ee3f-48f0-9591-4a73783958cb"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        },
+        {
+          "name": "Other, please specify",
+          "uuid": "096785db-eba6-4a30-b6d3-8f75c38a7259",
+          "keyValues": [],
+          "concept": {
+            "name": "Other reason for Doctor visit follow up at home cancel",
+            "uuid": "4bacab85-c837-430c-ae0c-e7a2f9f6de84"
+          },
+          "displayOrder": 2,
+          "mandatory": true
+        }
+      ]
+    }
+  ]
+}

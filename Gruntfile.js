@@ -26,6 +26,7 @@ module.exports = IDI.configure({
             "./pregnancy/ancGMP.json",
             "./mother/motherHomeVisitForm.json",
             "./mother/motherProgramEnrolmentNullForm.json",
+            "./general/doctorVisitFollowupAtHomeCancelForm.json"
         ],
         "formMappings": ["./formMappings.json"],
         "formDeletions": [
@@ -65,6 +66,7 @@ module.exports = IDI.configure({
             "./pregnancy/pncConcepts.json",
             "./pregnancy/pregnancyConcepts.json",
             "./migrationConcepts.json",
+            "./general/cancelConcepts.json"
             //"./patchConcepts.json",
         ],
         "locations": ["./locations.json"],

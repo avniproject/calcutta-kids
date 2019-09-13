@@ -1,0 +1,51 @@
+[
+  {
+    "uuid": "0b145b64-eb3e-468e-bf12-cc584546db80",
+    "name": "Patient is improved"
+  },
+  {
+    "uuid": "63a6e7bc-fae1-4968-9256-7f664885cf9f",
+    "name": "Visited other doctor"
+  },
+  {
+    "uuid": "36b718bd-ea66-4a35-9f48-a8a2655363ad",
+    "name": "Away from Fakir Bagan"
+  },
+  {
+    "uuid": "57e4d44d-0c60-485a-bc63-0fe335b39bd1",
+    "name": "Not interested to follow up"
+  },
+  {
+    "name": "Other reason for Doctor visit follow up at home cancel",
+    "uuid": "4bacab85-c837-430c-ae0c-e7a2f9f6de84",
+    "dataType": "Text"
+  },
+
+  {
+    "name": "Doctor visit follow up at home cancel reason",
+    "uuid": "ea775008-ee3f-48f0-9591-4a73783958cb",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "0b145b64-eb3e-468e-bf12-cc584546db80",
+        "name": "Patient is improved"
+      },
+      {
+        "uuid": "63a6e7bc-fae1-4968-9256-7f664885cf9f",
+        "name": "Visited other doctor"
+      },
+      {
+        "uuid": "36b718bd-ea66-4a35-9f48-a8a2655363ad",
+        "name": "Away from Fakir Bagan"
+      },
+      {
+        "uuid": "57e4d44d-0c60-485a-bc63-0fe335b39bd1",
+        "name": "Not interested to follow up"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  }
+]
