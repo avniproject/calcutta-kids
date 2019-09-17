@@ -157,6 +157,11 @@
       {
         "uuid": "f6628b6c-0c6e-4deb-bc5c-faaf6d22a4be",
         "abnormal": true
+      },
+      {
+        "name": "Child cries before or while passing urine",
+        "uuid": "c97a10fb-10ac-421e-a352-3244ef1753a7",
+        "abnormal": true
       }
     ]
   }
