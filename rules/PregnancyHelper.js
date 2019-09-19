@@ -3,7 +3,8 @@ const TRIMESTER_MAPPING = new Map([[1, {from: 0, to: 12}], [2, {from: 13, to: 28
 
 class PregnancyHelper {
     static gestationalAge(enrolment, toDate) {
-        return FormElementsStatusHelper.weeksBetween(toDate, enrolment.getObservationValue("Last menstrual period"));
+        //cases like 28.7 are skipped hence converting to full round number
+        return Math.round(FormElementsStatusHelper.weeksBetween(toDate, enrolment.getObservationValue("Last menstrual period")));
     }
 
     static currentTrimester(enrolment, asOfDate) {

@@ -1,13 +1,12 @@
 const rulesConfigInfra = require('rules-config/infra');
 const IDI = require('openchs-idi');
-const secrets = require('../secrets.json');
 
 module.exports = IDI.configure({
     "name": "calcutta_kids",
     "chs-admin": "admin",
     "org-name": "Calcutta Kids",
     "org-admin": "ck-admin",
-    "secrets": secrets,
+    "secrets": '../secrets.json',
     "files": {
         "adminUsers": {
             "dev": ["./users/admin-user.json"],
