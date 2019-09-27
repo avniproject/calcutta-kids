@@ -46,10 +46,7 @@ class ChildPostBirthVisitsCK {
 class ChildPostPNCVisits {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        if (programEncounter.name === 'Child PNC 2') {
-            let earliestDate = RuleHelper.firstOfNextMonth(programEncounter.programEnrolment.individual.dateOfBirth);
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child Home Visit - ' + visitNameSuffix(programEncounter.programEnrolment.individual, earliestDate), 'Child Home Visit', earliestDate, 21);
-        } else if (programEncounter.name === 'Child PNC 1') {
+        if (programEncounter.name === 'Child PNC 1') {
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Child PNC 2', 'Child PNC', moment(programEncounter.encounterDateTime).add(7, 'days').toDate(), 7);
         } else {
             return visitSchedule;
