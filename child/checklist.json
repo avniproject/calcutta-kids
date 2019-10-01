@@ -11,32 +11,8 @@
         "comment": "Polio 0"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 15,
-          "from": {
-            "day": 0
-          },
-          "to": {
-            "day": 15
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 99.0,
-          "start": 15,
-          "end": 1825,
-          "from": {
-            "day": 15
-          },
-          "to": {
-            "day": 1825
-          },
-          "state": "Expired",
-          "color": "grey"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 15, "from": {"day": 0}, "to": {"day": 15}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 99.0, "start": 15, "end": 1825, "from": {"day": 15}, "to": {"day": 1825}, "state": "Expired", "color": "grey"}
       ]
     },
     {
@@ -51,45 +27,9 @@
         "comment": "Polio 1"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 28
-          },
-          "to": {
-            "day": 49
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 49
-          },
-          "to": {
-            "day": 56
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 56
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 28}, "to": {"day": 49}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 49}, "to": {"day": 56}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 56}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -103,45 +43,9 @@
         "comment": "Polio 2"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 28
-          },
-          "to": {
-            "day": 49
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 49
-          },
-          "to": {
-            "day": 56
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 56
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 28}, "to": {"day": 49}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 49}, "to": {"day": 56}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 56}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -155,45 +59,9 @@
         "comment": "Polio 3"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 28
-          },
-          "to": {
-            "day": 49
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 49
-          },
-          "to": {
-            "day": 56
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 56
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 28}, "to": {"day": 49}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 49}, "to": {"day": 56}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 56}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -207,45 +75,9 @@
         "comment": "Polio Booster"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 365
-          },
-          "to": {
-            "day": 386
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 386
-          },
-          "to": {
-            "day": 393
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 393
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 365}, "to": {"day": 386}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 386}, "to": {"day": 393}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 393}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -257,32 +89,8 @@
         "comment": "HEPB 0"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 1,
-          "from": {
-            "day": 0
-          },
-          "to": {
-            "day": 1
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 99.0,
-          "start": 2,
-          "end": 1825,
-          "from": {
-            "day": 2
-          },
-          "to": {
-            "day": 1825
-          },
-          "state": "Expired",
-          "color": "grey"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 1, "from": {"day": 0}, "to": {"day": 1}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 99.0, "start": 2, "end": 1825, "from": {"day": 2}, "to": {"day": 1825}, "state": "Expired", "color": "grey"}
       ]
     },
     {
@@ -294,32 +102,8 @@
         "comment": "BCG"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 1095,
-          "from": {
-            "day": 0
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 1095,
-          "end": 1825,
-          "from": {
-            "day": 1095
-          },
-          "to": {
-            "day": 1825
-          },
-          "state": "Expired",
-          "color": "grey"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 1095, "from": {"day": 0}, "to": {"day": 1095}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 1095, "end": 1825, "from": {"day": 1095}, "to": {"day": 1825}, "state": "Expired", "color": "grey"}
       ]
     },
     {
@@ -330,45 +114,9 @@
         "comment": "Measles 1"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 274,
-          "end": 295,
-          "from": {
-            "day": 274
-          },
-          "to": {
-            "day": 295
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 295,
-          "end": 302,
-          "from": {
-            "day": 295
-          },
-          "to": {
-            "day": 302
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 302,
-          "end": 1825,
-          "from": {
-            "day": 302
-          },
-          "to": {
-            "day": 1825
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 274, "end": 295, "from": {"day": 274}, "to": {"day": 295}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 295, "end": 302, "from": {"day": 295}, "to": {"day": 302}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 302, "end": 1825, "from": {"day": 302}, "to": {"day": 1825}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -382,45 +130,9 @@
         "comment": "Measles 2"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -431,45 +143,9 @@
         "comment": "Vitamin A 1"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 274,
-          "end": 295,
-          "from": {
-            "day": 274
-          },
-          "to": {
-            "day": 295
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 295,
-          "end": 302,
-          "from": {
-            "day": 295
-          },
-          "to": {
-            "day": 302
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 302,
-          "end": 1095,
-          "from": {
-            "day": 302
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 274, "end": 295, "from": {"day": 274}, "to": {"day": 295}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 295, "end": 302, "from": {"day": 295}, "to": {"day": 302}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 302, "end": 1095, "from": {"day": 302}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -483,45 +159,9 @@
         "comment": "Vitamin A 2"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -535,45 +175,9 @@
         "comment": "Vitamin A 3"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -587,45 +191,9 @@
         "comment": "Vitamin A 4"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -639,45 +207,9 @@
         "comment": "Vitamin A 5"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -688,45 +220,9 @@
         "comment": "Albendazole 1"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 365,
-          "end": 386,
-          "from": {
-            "day": 365
-          },
-          "to": {
-            "day": 386
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 386,
-          "end": 393,
-          "from": {
-            "day": 386
-          },
-          "to": {
-            "day": 393
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 393,
-          "end": 1825,
-          "from": {
-            "day": 393
-          },
-          "to": {
-            "day": 1825
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 365, "end": 386, "from": {"day": 365}, "to": {"day": 386}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 386, "end": 393, "from": {"day": 386}, "to": {"day": 393}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 393, "end": 1825, "from": {"day": 393}, "to": {"day": 1825}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -740,45 +236,9 @@
         "comment": "Albendazole 2"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "start": 28,
-          "end": 1095,
-          "displayOrder": 3.0,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"start": 28, "end": 1095, "displayOrder": 3.0, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -792,45 +252,9 @@
         "comment": "Albendazole 3"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -844,45 +268,9 @@
         "comment": "Albendazole 4"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -896,45 +284,9 @@
         "comment": "Albendazole 5"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 183
-          },
-          "to": {
-            "day": 204
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 204
-          },
-          "to": {
-            "day": 211
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 211
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 183}, "to": {"day": 204}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 204}, "to": {"day": 211}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 211}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -945,45 +297,9 @@
         "comment": "Pentavalent 1"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 42,
-          "end": 63,
-          "from": {
-            "day": 42
-          },
-          "to": {
-            "day": 63
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 63,
-          "end": 70,
-          "from": {
-            "day": 63
-          },
-          "to": {
-            "day": 70
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 70,
-          "end": 1825,
-          "from": {
-            "day": 70
-          },
-          "to": {
-            "day": 1825
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 42, "end": 63, "from": {"day": 42}, "to": {"day": 63}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 63, "end": 70, "from": {"day": 63}, "to": {"day": 70}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 70, "end": 1825, "from": {"day": 70}, "to": {"day": 1825}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -997,45 +313,9 @@
         "comment": "Pentavalent 2"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 28
-          },
-          "to": {
-            "day": 49
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 49
-          },
-          "to": {
-            "day": 56
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1825,
-          "from": {
-            "day": 56
-          },
-          "to": {
-            "day": 1825
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 28}, "to": {"day": 49}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 49}, "to": {"day": 56}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1825, "from": {"day": 56}, "to": {"day": 1825}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
@@ -1050,32 +330,8 @@
         "comment": "Pentavalent 3"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 365,
-          "from": {
-            "day": 28
-          },
-          "to": {
-            "day": 365
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 365,
-          "end": 1825,
-          "from": {
-            "day": 365
-          },
-          "to": {
-            "day": 1825
-          },
-          "state": "Expired",
-          "color": "grey"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 365, "from": {"day": 28}, "to": {"day": 365}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 365, "end": 1825, "from": {"day": 365}, "to": {"day": 1825}, "state": "Expired", "color": "grey"}
       ]
     },
     {
@@ -1090,45 +346,9 @@
         "comment": "DPT B1"
       },
       "status": [
-        {
-          "displayOrder": 1.0,
-          "start": 0,
-          "end": 21,
-          "from": {
-            "day": 365
-          },
-          "to": {
-            "day": 386
-          },
-          "state": "Due",
-          "color": "#FBF9DA"
-        },
-        {
-          "displayOrder": 2.0,
-          "start": 21,
-          "end": 28,
-          "from": {
-            "day": 386
-          },
-          "to": {
-            "day": 393
-          },
-          "state": "Critical",
-          "color": "#F9DBBF"
-        },
-        {
-          "displayOrder": 3.0,
-          "start": 28,
-          "end": 1095,
-          "from": {
-            "day": 393
-          },
-          "to": {
-            "day": 1095
-          },
-          "state": "Overdue",
-          "color": "#FFC2C2"
-        }
+        {"displayOrder": 1.0, "start": 0, "end": 21, "from": {"day": 365}, "to": {"day": 386}, "state": "Due", "color": "#FBF9DA"},
+        {"displayOrder": 2.0, "start": 21, "end": 28, "from": {"day": 386}, "to": {"day": 393}, "state": "Critical", "color": "#F9DBBF"},
+        {"displayOrder": 3.0, "start": 28, "end": 1095, "from": {"day": 393}, "to": {"day": 1095}, "state": "Overdue", "color": "#FFC2C2"}
       ]
     },
     {
