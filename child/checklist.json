@@ -12,27 +12,27 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 15,
           "from": {
             "day": 0
           },
           "to": {
-            "day": 15
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 99.0,
+          "displayOrder": 99,
           "start": 15,
           "end": 1825,
           "from": {
-            "day": 15
+            "day": 0
           },
           "to": {
-            "day": 1825
+            "day": 0
           },
           "state": "Expired",
           "color": "grey"
@@ -52,40 +52,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 28
+            "day": 0
           },
           "to": {
-            "day": 49
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 49
+            "day": 0
           },
           "to": {
-            "day": 56
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 56
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -104,40 +104,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 28
+            "day": 0
           },
           "to": {
-            "day": 49
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 49
+            "day": 0
           },
           "to": {
-            "day": 56
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 56
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -156,40 +156,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 28
+            "day": 0
           },
           "to": {
-            "day": 49
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 49
+            "day": 0
           },
           "to": {
-            "day": 56
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 56
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -208,40 +208,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 365
+            "day": 0
           },
           "to": {
-            "day": 386
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 386
+            "day": 0
           },
           "to": {
-            "day": 393
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 393
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -258,27 +258,27 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 1,
           "from": {
             "day": 0
           },
           "to": {
-            "day": 1
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 99.0,
+          "displayOrder": 99,
           "start": 2,
           "end": 1825,
           "from": {
-            "day": 2
+            "day": 0
           },
           "to": {
-            "day": 1825
+            "day": 0
           },
           "state": "Expired",
           "color": "grey"
@@ -295,27 +295,27 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 1095,
           "from": {
             "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 1095,
           "end": 1825,
           "from": {
-            "day": 1095
+            "day": 0
           },
           "to": {
-            "day": 1825
+            "day": 0
           },
           "state": "Expired",
           "color": "grey"
@@ -331,40 +331,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 274,
           "end": 295,
           "from": {
-            "day": 274
+            "day": 0
           },
           "to": {
-            "day": 295
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 295,
           "end": 302,
           "from": {
-            "day": 295
+            "day": 0
           },
           "to": {
-            "day": 302
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 302,
           "end": 1825,
           "from": {
-            "day": 302
+            "day": 0
           },
           "to": {
-            "day": 1825
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -383,40 +383,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -432,40 +432,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 274,
           "end": 295,
           "from": {
-            "day": 274
+            "day": 0
           },
           "to": {
-            "day": 295
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 295,
           "end": 302,
           "from": {
-            "day": 295
+            "day": 0
           },
           "to": {
-            "day": 302
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 302,
           "end": 1095,
           "from": {
-            "day": 302
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -484,40 +484,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -536,40 +536,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -588,40 +588,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -640,40 +640,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -689,40 +689,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 365,
           "end": 386,
           "from": {
-            "day": 365
+            "day": 0
           },
           "to": {
-            "day": 386
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 386,
           "end": 393,
           "from": {
-            "day": 386
+            "day": 0
           },
           "to": {
-            "day": 393
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 393,
           "end": 1825,
           "from": {
-            "day": 393
+            "day": 0
           },
           "to": {
-            "day": 1825
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -741,27 +741,27 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
@@ -769,12 +769,12 @@
         {
           "start": 28,
           "end": 1095,
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -793,40 +793,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -845,40 +845,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -897,40 +897,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 183
+            "day": 0
           },
           "to": {
-            "day": 204
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 204
+            "day": 0
           },
           "to": {
-            "day": 211
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 211
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -946,40 +946,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 42,
           "end": 63,
           "from": {
-            "day": 42
+            "day": 0
           },
           "to": {
-            "day": 63
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 63,
           "end": 70,
           "from": {
-            "day": 63
+            "day": 0
           },
           "to": {
-            "day": 70
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 70,
           "end": 1825,
           "from": {
-            "day": 70
+            "day": 0
           },
           "to": {
-            "day": 1825
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -998,40 +998,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 28
+            "day": 0
           },
           "to": {
-            "day": 49
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 49
+            "day": 0
           },
           "to": {
-            "day": 56
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1825,
           "from": {
-            "day": 56
+            "day": 0
           },
           "to": {
-            "day": 1825
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -1051,27 +1051,27 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 365,
           "from": {
-            "day": 28
+            "day": 0
           },
           "to": {
-            "day": 365
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 365,
           "end": 1825,
           "from": {
-            "day": 365
+            "day": 0
           },
           "to": {
-            "day": 1825
+            "day": 0
           },
           "state": "Expired",
           "color": "grey"
@@ -1091,40 +1091,40 @@
       },
       "status": [
         {
-          "displayOrder": 1.0,
+          "displayOrder": 1,
           "start": 0,
           "end": 21,
           "from": {
-            "day": 365
+            "day": 0
           },
           "to": {
-            "day": 386
+            "day": 0
           },
           "state": "Due",
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2.0,
+          "displayOrder": 2,
           "start": 21,
           "end": 28,
           "from": {
-            "day": 386
+            "day": 0
           },
           "to": {
-            "day": 393
+            "day": 0
           },
           "state": "Critical",
           "color": "#F9DBBF"
         },
         {
-          "displayOrder": 3.0,
+          "displayOrder": 3,
           "start": 28,
           "end": 1095,
           "from": {
-            "day": 393
+            "day": 0
           },
           "to": {
-            "day": 1095
+            "day": 0
           },
           "state": "Overdue",
           "color": "#FFC2C2"
@@ -1138,8 +1138,7 @@
         "comment": "DPT 1",
         "uuid": "bbc6bb33-bb59-474a-b071-f347b369de8f"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1149,8 +1148,7 @@
         "comment": "DPT 2",
         "uuid": "bfe522be-1c44-4a05-be84-7ddeaec66d4d"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1160,8 +1158,7 @@
         "comment": "DPT 3",
         "uuid": "441daa39-13b4-4675-b864-7201c67139f6"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1171,8 +1168,7 @@
         "comment": "HEP B1",
         "uuid": "91ad0eb6-a14d-48df-b5ef-9e3290f327f4"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1182,8 +1178,7 @@
         "comment": "HEP B2",
         "uuid": "1e40c089-72d9-4f82-8216-c859f317cb0f"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1193,8 +1188,7 @@
         "comment": "HEP B3",
         "uuid": "caf3621a-a434-43dc-9627-c403432a52ec"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1204,8 +1198,7 @@
         "comment": "IPV 1",
         "uuid": "b56b8747-9f6c-4b16-ac8e-7554e64689a5"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1215,8 +1208,7 @@
         "comment": "IPV 2",
         "uuid": "a5f54681-291c-4f43-85ee-8f61e1b1f3ca"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1226,8 +1218,7 @@
         "comment": "IPV 3",
         "uuid": "12fb70a9-a323-4d6d-a145-2ba7ce63ff22"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     },
     {
@@ -1237,8 +1228,7 @@
         "comment": "IPV B1",
         "uuid": "8bee6867-a148-429f-a009-ed524cb1bca5"
       },
-      "status": [
-      ],
+      "status": [],
       "voided": true
     }
   ]
