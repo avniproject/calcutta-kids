@@ -3,9 +3,7 @@ import lib from './lib';
 import moment from 'moment';
 
 const addSchedule = (builder, visitSchedule) => {
-    if (moment().isSameOrBefore(visitSchedule.maxDate, 'day')) {
-        builder.add(visitSchedule);
-    }
+    builder.add(visitSchedule);
 };
 
 const addSchedules = (builder, visitSchedules) => visitSchedules.forEach((vs) => addSchedule(builder, vs));
@@ -92,9 +90,9 @@ class RuleHelper {
         return scheduleBuilder;
     }
 
-    static addSchedule(scheduleBuilder, name, encounterType, earliestDate, numberOfDaysForMaxOffset) {
+    static addSchedule(scheduleBuilder, name, encounterType, earliestDate, numberOfDaysForMaxOffset, visitCreationStrategy) {
         const maxDate = moment(earliestDate).add(numberOfDaysForMaxOffset, 'days').toDate();
-        addSchedule(scheduleBuilder, {name, encounterType, earliestDate, maxDate});
+        addSchedule(scheduleBuilder, {name, encounterType, earliestDate, maxDate, visitCreationStrategy});
     }
 
     static hideFormElementGroup(formElementGroup) {

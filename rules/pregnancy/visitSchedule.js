@@ -1,6 +1,7 @@
 const {RuleFactory} = require('rules-config/rules');
 const moment = require("moment");
 const RuleHelper = require('../RuleHelper');
+const _ = require('lodash');
 
 const EnrolmentRule = RuleFactory("026e2f5c-8670-4e4b-9a54-cb03bbf3093d", "VisitSchedule");
 const ANCHomeVisitRule = RuleFactory("5565a4d1-ef0e-4ff5-bce5-fc4f7d94ce99", "VisitSchedule");
@@ -16,12 +17,34 @@ const ANCDoctorVisitRule = RuleFactory("3a95e9b0-731a-4714-ae7c-10e1d03cebfe", "
 class ANCDoctorVisits {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+
+        ANCDoctorVisits.scheduleFollowupDoctorVisit(programEncounter, scheduleBuilder);
+        ANCDoctorVisits.scheduleFollowupHomeVisit(programEncounter, scheduleBuilder);
+
+        return scheduleBuilder.getAll();
+    }
+
+    static scheduleFollowupDoctorVisit(programEncounter, scheduleBuilder) {
+        const scheduledFollowupVisits = programEncounter.programEnrolment.scheduledEncountersOfType('Doctor Visit');
         let followupDate = programEncounter.getObservationReadableValue('Followup date');
         if (!_.isNil(followupDate)) {
-            RuleHelper.addSchedule(scheduleBuilder, 'ANC Doctor Checkup Followup', 'ANC', followupDate, 3);
+            const visitAlreadyScheduled = _.find(scheduledFollowupVisits, (enc) => moment(enc.earliestVisitDateTime).isSame(moment(followupDate), 'day'));
+            if (!visitAlreadyScheduled) {
+                RuleHelper.addSchedule(scheduleBuilder, 'ANC Doctor Checkup Followup', 'ANC', followupDate, 3, 'createNew');
+            }
         }
-        RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home', 'Doctor Visit Followup at Home', moment(programEncounter.encounterDateTime).add(3, 'days').toDate(), 7);
-        return scheduleBuilder.getAllUnique("encounterType");
+    }
+
+    static scheduleFollowupHomeVisit(programEncounter, scheduleBuilder) {
+        const scheduledFollowupVisits = programEncounter.programEnrolment.scheduledEncountersOfType('Doctor Visit Followup at Home');
+        const followupDate = moment(programEncounter.encounterDateTime).add(3, 'days');
+
+        const visitAlreadyScheduled = _.find(scheduledFollowupVisits, (enc) => moment(enc.earliestVisitDateTime).isSame(followupDate, 'day'));
+
+        if (!visitAlreadyScheduled) {
+            RuleHelper.addSchedule(scheduleBuilder, 'Doctor Visit Followup at Home',
+                'Doctor Visit Followup at Home', followupDate.toDate(), 7, 'createNew');
+        }
     }
 }
 
