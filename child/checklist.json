@@ -332,8 +332,8 @@
       "status": [
         {
           "displayOrder": 1,
-          "start": 274,
-          "end": 295,
+          "start": 270,
+          "end": 291,
           "from": {
             "day": 0
           },
@@ -345,8 +345,8 @@
         },
         {
           "displayOrder": 2,
-          "start": 295,
-          "end": 302,
+          "start": 291,
+          "end": 298,
           "from": {
             "day": 0
           },
@@ -358,7 +358,7 @@
         },
         {
           "displayOrder": 3,
-          "start": 302,
+          "start": 298,
           "end": 1825,
           "from": {
             "day": 0
@@ -375,8 +375,8 @@
       "uuid": "0856c43e-4560-468b-86c5-370c99db3270",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "6fb0e733-0207-418d-93b6-fa5529e233db",
-      "minDaysFromStartDate": 548,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 540,
+      "minDaysFromDependent": 180,
       "concept": {
         "uuid": "d59db0c3-36d3-4c2a-9f34-484b5c215202",
         "comment": "Measles 2"
@@ -433,8 +433,8 @@
       "status": [
         {
           "displayOrder": 1,
-          "start": 274,
-          "end": 295,
+          "start": 270,
+          "end": 291,
           "from": {
             "day": 0
           },
@@ -446,8 +446,8 @@
         },
         {
           "displayOrder": 2,
-          "start": 295,
-          "end": 302,
+          "start": 291,
+          "end": 298,
           "from": {
             "day": 0
           },
@@ -459,7 +459,7 @@
         },
         {
           "displayOrder": 3,
-          "start": 302,
+          "start": 298,
           "end": 1095,
           "from": {
             "day": 0
@@ -476,8 +476,8 @@
       "uuid": "48378307-6242-446c-bcab-25f17acb4f62",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "67b78ebf-96c7-4693-a319-f560ef2eee1a",
-      "minDaysFromStartDate": 548,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 540,
+      "minDaysFromDependent": 270,
       "concept": {
         "uuid": "3e6401a0-61db-4118-8dcb-943e71471424",
         "comment": "Vitamin A 2"
@@ -528,8 +528,8 @@
       "uuid": "17f92c0c-0e70-4263-8628-889dead6310c",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "48378307-6242-446c-bcab-25f17acb4f62",
-      "minDaysFromStartDate": 730,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 720,
+      "minDaysFromDependent": 180,
       "concept": {
         "uuid": "4a59ede8-2d65-4f40-a9b9-d68916c25777",
         "comment": "Vitamin A 3"
@@ -580,8 +580,8 @@
       "uuid": "468dc8e5-62b9-4e80-855c-3255e305ac28",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "17f92c0c-0e70-4263-8628-889dead6310c",
-      "minDaysFromStartDate": 913,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 900,
+      "minDaysFromDependent": 180,
       "concept": {
         "uuid": "e17e6750-ea01-4f66-b3ad-976093d438eb",
         "comment": "Vitamin A 4"
@@ -632,8 +632,8 @@
       "uuid": "67a3e914-274e-4364-a5ec-197474b5b783",
       "dependentOn": "468dc8e5-62b9-4e80-855c-3255e305ac28",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
-      "minDaysFromStartDate": 1095,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 1080,
+      "minDaysFromDependent": 180,
       "concept": {
         "uuid": "5c2bc0c0-24e6-47ac-a597-4a0d7f5cc728",
         "comment": "Vitamin A 5"
@@ -690,8 +690,8 @@
       "status": [
         {
           "displayOrder": 1,
-          "start": 365,
-          "end": 386,
+          "start": 360,
+          "end": 381,
           "from": {
             "day": 0
           },
@@ -702,9 +702,9 @@
           "color": "#FBF9DA"
         },
         {
-          "displayOrder": 2,
-          "start": 386,
-          "end": 393,
+          "displayOrder": 2.0,
+          "start": 381,
+          "end": 388,
           "from": {
             "day": 0
           },
@@ -716,7 +716,7 @@
         },
         {
           "displayOrder": 3,
-          "start": 393,
+          "start": 388,
           "end": 1825,
           "from": {
             "day": 0
@@ -733,8 +733,8 @@
       "uuid": "bf5d2cdb-0713-4005-8135-d757e8b68707",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "de03e48f-0e1c-4472-8fec-8e40b0627c76",
-      "minDaysFromStartDate": 548,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 540,
+      "minDaysFromDependent": 180,
       "concept": {
         "uuid": "40237b2d-6961-4c67-bf21-c0ff9960774b",
         "comment": "Albendazole 2"
@@ -785,8 +785,8 @@
       "uuid": "ea4a2663-4a1f-4a59-b76e-c996a49a35af",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "bf5d2cdb-0713-4005-8135-d757e8b68707",
-      "minDaysFromStartDate": 731,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 720,
+      "minDaysFromDependent": 180,
       "concept": {
         "uuid": "fa2b4466-bb15-4a10-b9b4-5c1a7677af7d",
         "comment": "Albendazole 3"
@@ -837,8 +837,8 @@
       "uuid": "b61a34c7-e37c-431e-874e-5cfa2535a381",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "ea4a2663-4a1f-4a59-b76e-c996a49a35af",
-      "minDaysFromStartDate": 914,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 900,
+      "minDaysFromDependent": 180,
       "concept": {
         "uuid": "164969ed-a284-40b9-9e5b-d29abeef549a",
         "comment": "Albendazole 4"
@@ -889,8 +889,8 @@
       "uuid": "b51bb920-afed-4c15-a172-0ddea2b643bf",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "b61a34c7-e37c-431e-874e-5cfa2535a381",
-      "minDaysFromStartDate": 1097,
-      "minDaysFromDependent": 183,
+      "minDaysFromStartDate": 1080,
+      "minDaysFromDependent": 180,
       "concept": {
         "uuid": "3158bbbd-d9ef-4405-ba9d-559748f2bdb1",
         "comment": "Albendazole 5"
@@ -1041,7 +1041,6 @@
     {
       "uuid": "20e85eb7-0156-4fc3-b910-e8441c25b06e",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
-      "expiresAfter": 365,
       "dependentOn": "8691eff5-2318-4716-a54c-1ccb7377d080",
       "minDaysFromStartDate": 98,
       "minDaysFromDependent": 28,
@@ -1053,7 +1052,7 @@
         {
           "displayOrder": 1,
           "start": 0,
-          "end": 365,
+          "end": 21,
           "from": {
             "day": 0
           },
@@ -1065,7 +1064,20 @@
         },
         {
           "displayOrder": 2,
-          "start": 365,
+          "start": 21,
+          "end": 28,
+          "from": {
+            "day": 0
+          },
+          "to": {
+            "day": 0
+          },
+          "state": "Critical",
+          "color": "#F9DBBF"
+        },
+        {
+          "displayOrder": 3,
+          "start": 28,
           "end": 1825,
           "from": {
             "day": 0
@@ -1073,8 +1085,8 @@
           "to": {
             "day": 0
           },
-          "state": "Expired",
-          "color": "grey"
+          "state": "Overdue",
+          "color": "#FFC2C2"
         }
       ]
     },
@@ -1082,8 +1094,7 @@
       "uuid": "f46584c4-d9f2-4999-b836-150629903476",
       "formUUID": "9d8a1627-09fb-4867-8431-659d2477d768",
       "dependentOn": "20e85eb7-0156-4fc3-b910-e8441c25b06e",
-      "minDaysFromDependent": 365,
-      "scheduleOnExpiryOfDependency": true,
+      "minDaysFromDependent": 180,
       "minDaysFromStartDate": 487,
       "concept": {
         "uuid": "1ec966e3-96d9-4725-b67a-614a4261ff0a",
