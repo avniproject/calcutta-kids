@@ -458,6 +458,17 @@
           },
           "displayOrder": 1,
           "mandatory": true
+        },
+        {
+          "name": "Other reason for not attending last community meetup",
+          "uuid": "e125713b-90db-4e19-bee8-ef36832f68d9",
+          "keyValues": [],
+          "concept": {
+            "name": "Other reason for not attending last community meetup",
+            "uuid": "7467e767-b0be-4228-bf8b-911b2a774787"
+          },
+          "displayOrder": 2.1,
+          "mandatory": true
         }
       ]
     },

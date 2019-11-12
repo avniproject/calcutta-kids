@@ -259,6 +259,11 @@ class ChildHomeVisitFilter {
         statusBuilder.show().when.valueInEncounter('What snacks are being fed?').containsAnswerConceptName("Other");
     }
 
+    @WithStatusBuilder
+    otherReasonForNotAttendingLastCommunityMeetup([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Whether attended last community meetup').containsAnswerConceptName("Other");
+    }
+
     _statusBuilder(programEncounter, formElement) {
         return new FormElementStatusBuilder({
             programEncounter: programEncounter,

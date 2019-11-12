@@ -159,6 +159,12 @@ class ANCHomeVisitFilterHandler {
         return RuleHelper.encounterCodedObsNotHave(programEncounter, formElement, "FA tablets received from", "NA");
     }
 
+    
+    otherReasonForNotAttendingLastCommunityMeetup(programEncounter, formElement) {
+        return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Whether attended last community meetup', 'Other');
+    }
+
+
 }
 
 module.exports = {ANCHomeVisitFilterHandler};

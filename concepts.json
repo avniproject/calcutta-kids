@@ -3226,15 +3226,54 @@
     ]
   },
   {
+    "name": "Newly Registered",
+    "uuid": "fd22b0df-2b14-496d-b9e3-b6c6d3d2065c"
+  },
+  {
+    "name": "Hospitalized",
+    "uuid": "5a53ff7c-dc47-4c93-8a59-be759dcc435c"
+  },
+  {
+    "name": "Other reason for not attending last community meetup",
+    "uuid": "7467e767-b0be-4228-bf8b-911b2a774787",
+    "dataType": "Text"
+  },
+  {
     "name": "Whether attended last community meetup",
     "uuid": "1eb2875c-8956-4c50-96dd-d53815397cd9",
     "dataType": "Coded",
     "answers": [
       {
-        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "voided": true
       },
       {
-        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "voided": true
+      },
+      {
+        "name": "Absent",
+        "uuid": "10885638-561a-42b6-8b24-8daa01864c89"
+      },
+      {
+        "name": "Present",
+        "uuid": "57b51d52-981f-4af2-b133-aeffa6d00757"
+      },
+      {
+        "uuid": "72fd70f8-65ae-4ac4-8339-6faf455e04f5",
+        "name": "Away from village"
+      },
+      {
+        "name": "Newly Registered",
+        "uuid": "fd22b0df-2b14-496d-b9e3-b6c6d3d2065c"
+      },
+      {
+        "name": "Hospitalized",
+        "uuid": "5a53ff7c-dc47-4c93-8a59-be759dcc435c"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
       }
     ]
   }

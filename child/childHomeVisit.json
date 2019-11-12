@@ -397,6 +397,17 @@
           },
           "displayOrder": 1,
           "mandatory": true
+        },
+        {
+          "name": "Other reason for not attending last community meetup",
+          "uuid": "c587c09b-e4ff-47fd-92fe-d0a9a2e4b9d3",
+          "keyValues": [],
+          "concept": {
+            "name": "Other reason for not attending last community meetup",
+            "uuid": "7467e767-b0be-4228-bf8b-911b2a774787"
+          },
+          "displayOrder": 2.1,
+          "mandatory": true
         }
       ]
     },
@@ -426,6 +437,25 @@
             "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 2,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "45a390f4-8560-4b78-9904-6cbb4e50028a",
+      "name": "Notes",
+      "display": "Notes",
+      "displayOrder": 6,
+      "formElements": [
+        {
+          "name": "Notes",
+          "uuid": "a9bdf82a-c172-44e3-b82a-401f679a6d82",
+          "keyValues": [],
+          "concept": {
+            "comment": "Visit notes",
+            "uuid": "4f1c32ee-16fa-4f13-a363-fd0fbc45b4a0"
+          },
+          "displayOrder": 0,
           "mandatory": false
         }
       ]
