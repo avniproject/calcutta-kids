@@ -260,7 +260,7 @@ class ChildHomeVisitFilter {
     }
 
     @WithStatusBuilder
-    otherReasonForNotAttendingLastCommunityMeetup([], statusBuilder) {
+    otherPleaseSpecify([], statusBuilder) {
         statusBuilder.show().when.valueInEncounter('Whether attended last community meetup').containsAnswerConceptName("Other");
     }
 

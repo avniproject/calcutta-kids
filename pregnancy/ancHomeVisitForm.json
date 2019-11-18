@@ -460,7 +460,7 @@
           "mandatory": true
         },
         {
-          "name": "Other reason for not attending last community meetup",
+          "name": "Other, please specify",
           "uuid": "e125713b-90db-4e19-bee8-ef36832f68d9",
           "keyValues": [],
           "concept": {

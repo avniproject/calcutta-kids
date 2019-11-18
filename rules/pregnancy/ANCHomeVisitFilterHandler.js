@@ -160,7 +160,7 @@ class ANCHomeVisitFilterHandler {
     }
 
     
-    otherReasonForNotAttendingLastCommunityMeetup(programEncounter, formElement) {
+    otherPleaseSpecify(programEncounter, formElement) {
         return RuleHelper.encounterCodedObsHas(programEncounter, formElement, 'Whether attended last community meetup', 'Other');
     }
 
