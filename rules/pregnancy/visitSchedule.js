@@ -57,13 +57,21 @@ class PregnancyPostEnrolmentVisits {
 
         const homeVisitEarliestDate = enrolmentDayOfMonth < 22 ? programEnrolment.enrolmentDateTime : RuleHelper.firstOfNextMonth(programEnrolment.enrolmentDateTime);
         const homeVisitNumberOfDaysForMaxOffset = (21 - moment(homeVisitEarliestDate).date());
-        RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', homeVisitEarliestDate, homeVisitNumberOfDaysForMaxOffset);
+        const previousEnrolmentEncounterHomeVisit = programEnrolment.findEncounter('ANC Home Visit', 'ANC Home Visit');
+        if(_.isNil(previousEnrolmentEncounterHomeVisit))
+        {
+            RuleHelper.addSchedule(scheduleBuilder, 'ANC Home Visit', 'ANC Home Visit', homeVisitEarliestDate, homeVisitNumberOfDaysForMaxOffset);
+        }
 
 
         const gmpVisitEarliestDate = enrolmentDayOfMonth < 22 ? moment(RuleHelper.firstOfCurrentMonth(programEnrolment.enrolmentDateTime)).add(21, 'days').toDate() : programEnrolment.enrolmentDateTime;
         const lastDayOfMonth = moment(programEnrolment.enrolmentDateTime).endOf('month').date();
         const gmpVisitNumberOfDaysForMaxOffset = (lastDayOfMonth - moment(gmpVisitEarliestDate).date());
-        RuleHelper.addSchedule(scheduleBuilder, 'First ANC GMP', 'ANC GMP', gmpVisitEarliestDate, gmpVisitNumberOfDaysForMaxOffset);
+        const previousEnrolmentEncounterGMPVisit = programEnrolment.findEncounter('ANC GMP', 'First ANC GMP');
+        if(_.isNil(previousEnrolmentEncounterGMPVisit))
+        {
+            RuleHelper.addSchedule(scheduleBuilder, 'First ANC GMP', 'ANC GMP', gmpVisitEarliestDate, gmpVisitNumberOfDaysForMaxOffset);
+        }
 
         return scheduleBuilder.getAllUnique("encounterType");
     }
