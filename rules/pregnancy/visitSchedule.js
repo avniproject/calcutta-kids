@@ -126,7 +126,7 @@ class PregnancyPostPNCVisits {
 class PregnancyPostAbortionVisits {
     static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'First post abortion home visit', 'Post abortion home visit', programEncounter.encounterDateTime, 7);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, 'First post abortion home visit', 'Post abortion home visit', moment(programEncounter.encounterDateTime).add(7, 'days').toDate(), 7);
     }
 }
 
@@ -136,7 +136,7 @@ class PregnancyPostPostAbortionVisits {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let numberOfPostAbortionEncounters = programEncounter.programEnrolment.numberOfEncountersOfType('Post abortion home visit');
         if (numberOfPostAbortionEncounters < 3) {
-            let earliestDateTime = numberOfPostAbortionEncounters > 1 ? moment(programEncounter.getRealEventDate()).add(14, 'days').toDate() : programEncounter.getRealEventDate();
+            let earliestDateTime = numberOfPostAbortionEncounters > 1 ? moment(programEncounter.getRealEventDate()).add(14, 'days').toDate() :  moment(programEncounter.getRealEventDate()).add(7, 'days').toDate();
             let name = numberOfPostAbortionEncounters > 1 ? 'Third post abortion home visit' : 'Second post abortion home visit';
             return RuleHelper.scheduleOneVisit(scheduleBuilder, name, 'Post abortion home visit', earliestDateTime, 7);
         }
