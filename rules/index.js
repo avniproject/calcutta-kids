@@ -24,4 +24,5 @@ module.exports = _.merge({},
     require('./sesHandler'),
     require('./visitSchedule'),
     require('./encounterCancelHandler'),
+    require('./pregnancy/AbortionHandler')
 );
