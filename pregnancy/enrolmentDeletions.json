@@ -58,6 +58,10 @@
         {
           "uuid": "cadad826-0b4c-4474-b256-697b49159111",
           "comment": "ANC registration no"
+        },
+        {
+          "name": "Height",
+          "uuid": "1e3afc0f-4f40-46f5-ab20-0739c30f99cd"
         }
       ]
     }
