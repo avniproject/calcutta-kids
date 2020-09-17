@@ -16,6 +16,15 @@
           },
           "displayOrder": 3.1,
           "mandatory": true
+        },
+        {
+          "uuid": "71056469-66cd-4a54-aa71-c567c0ff9964",
+          "name": "Provide current weight",
+          "concept": {
+            "uuid": "75b1656e-2777-4753-9612-ce03a766a5e1"
+          },
+          "displayOrder": 5.5,
+          "mandatory": false
         }
       ]
     }

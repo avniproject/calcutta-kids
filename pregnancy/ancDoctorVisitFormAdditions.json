@@ -23,6 +23,16 @@
           "displayOrder": 3.2
         },
         {
+          "name": "Weight",
+          "uuid": "ad2ccb56-1306-4e08-aed1-5c4e7689f5c1",
+          "keyValues": [],
+          "concept": {
+            "uuid": "75b1656e-2777-4753-9612-ce03a766a5e1"
+          },
+          "displayOrder": 3.1,
+          "mandatory": false
+        },
+        {
           "name": "Nutrients",
           "uuid": "b4198c4d-cf9c-419c-b2c7-009a308367fc",
           "keyValues": [],

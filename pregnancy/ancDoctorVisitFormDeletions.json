@@ -138,6 +138,10 @@
         {
           "comment": "Have you enrolled in any government scheme?",
           "uuid": "f95fedd2-1dc1-4952-91be-f08ef80e11c1"
+        },
+        {
+         "name": "Weight",
+          "uuid": "3c38e7a2-f273-4a3c-a0c8-040e06401a87"
         }
       ]
     },

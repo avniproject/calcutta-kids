@@ -32,6 +32,7 @@ module.exports = IDI.configure({
             "./child/anthroAssessmentFormDeletions.json",
             "./child/birthFormDeletions.json",
             "./child/pncDeletions.json",
+            "./child/enrolmentDeletions.json",
             "./general/labTestsDeletions.json",
             "./pregnancy/abortionDeletions.json",
             "./pregnancy/ancDoctorVisitFormDeletions.json",
