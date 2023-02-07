@@ -10,24 +10,30 @@ import lib from '../lib';
 const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 
 const isAbnormalWeightGain = (programEncounter) => {
-    const {programEnrolment, encounterDateTime} = programEncounter;
+    const {
+        programEnrolment,
+        encounterDateTime
+    } = programEncounter;
     return !lib.calculations.isNormalWeightGain(programEnrolment, programEncounter, encounterDateTime);
 };
 
 const isBelowNormalWeightGain = (programEncounter) => {
-    const {programEnrolment, encounterDateTime} = programEncounter;
+    const {
+        programEnrolment,
+        encounterDateTime
+    } = programEncounter;
     return lib.calculations.isBelowNormalWeightGain(programEnrolment, programEncounter, encounterDateTime);
 };
 
 const calculateBMI = (programEncounter) => {
-    const latestHeightObs = programEncounter.programEnrolment.findLatestObservationInEntireEnrolment('Height', programEncounter);
+    const latestHeightObs = programEncounter.programEnrolment.findLatestObservationInEntireEnrolment('Height', programEncounter) || 0;
     const currentWeightObs = programEncounter.findObservation("Weight");
 
     const latestHeight = latestHeightObs && latestHeightObs.getReadableValue();
     const currentWeight = currentWeightObs && currentWeightObs.getReadableValue();
     return _.some([currentWeight, latestHeight], _.isNil) ?
-                null
-                : lib.C.calculateBMI(currentWeight, latestHeight);
+        null :
+        lib.C.calculateBMI(currentWeight, latestHeight);
 };
 
 const pregnancyGMPDecision = RuleFactory("4632c1f5-59cd-4e65-899c-beb2c87a3bff", "Decision");
@@ -37,7 +43,10 @@ const viewFilters = RuleFactory("4632c1f5-59cd-4e65-899c-beb2c87a3bff", 'ViewFil
 class GMPDecision {
     static bmiDecision(programEncounter) {
         const bmi = calculateBMI(programEncounter);
-        return _.isNil(bmi) ? {} : {name: 'BMI', value: bmi};
+        return _.isNil(bmi) ? {} : {
+            name: 'BMI',
+            value: bmi
+        };
     }
 
     static highRisks(programEncounter) {
@@ -59,7 +68,10 @@ class GMPDecision {
     }
 
     static referral(programEncounter) {
-        const {programEnrolment, encounterDateTime} = programEncounter;
+        const {
+            programEnrolment,
+            encounterDateTime
+        } = programEncounter;
         const complicationsBuilder = new ComplicationsBuilder({
             programEncounter: programEncounter,
             complicationsConcept: 'Refer to the hospital for'
@@ -95,5 +107,7 @@ class Filters {
     }
 }
 
-module.exports = {GMPDecision};
+module.exports = {
+    GMPDecision
+};
 module.exports[FiltersUuid] = Filters;
