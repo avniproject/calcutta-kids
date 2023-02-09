@@ -26,12 +26,14 @@ const isBelowNormalWeightGain = (programEncounter) => {
 };
 
 const calculateBMI = (programEncounter) => {
-    const latestHeightObs = programEncounter.programEnrolment.findLatestObservationInEntireEnrolment('Height', programEncounter) || 0;
+
+    const latestHeightObs = programEncounter.programEnrolment.findLatestObservationInEntireEnrolment('Height', programEncounter);
     const currentWeightObs = programEncounter.findObservation("Weight");
 
     const latestHeight = latestHeightObs && latestHeightObs.getReadableValue();
     const currentWeight = currentWeightObs && currentWeightObs.getReadableValue();
-    return _.some([currentWeight, latestHeight], _.isNil) ?
+
+    return typeof (latestHeight) == undefined ?
         null :
         lib.C.calculateBMI(currentWeight, latestHeight);
 };
