@@ -33,7 +33,7 @@ The following spreadsheet is used to track and manage the changes:
 https://docs.google.com/spreadsheets/d/1flz3J_fWqbvFw3RnX0S4Mtsh-qfZtJRcJbY3KJsKbiY/edit?usp=sharing
 
 
-#### Step 3: Entities that are updated:
+#### Step 3: Migration of base tables that use `organisation_id` column:
 On doing so the previous step, the following is a list of entities that require update queries to be written and executed:
 
 - `concept`
@@ -1057,4 +1057,179 @@ where poc_source.uuid in (select uuid
   and poc_target.uuid = poc_source.uuid
   and poc_target.organisation_id = 19;
 ```
+
+#### Step 4: Migration of base tables that use `subject_type_id` column:
+After completing the migration of base tables that use the `organisation_id` column, the next step is to migrate related tables that use `subject_type_id`, `program_id` and `encounter_type_id` columns.
+
+```sql
+select distinct columns.table_name
+from information_schema.columns columns
+         join information_schema.tables tables on columns.table_name = tables.table_name
+where column_name = 'subject_type_id'
+  and tables.table_schema = 'public'
+  and columns.table_schema = 'public'
+  and table_type = 'BASE TABLE';
+```
+
+```sql
+select distinct columns.table_name
+from information_schema.columns columns
+         join information_schema.tables tables on columns.table_name = tables.table_name
+where column_name = 'program_id'
+  and tables.table_schema = 'public'
+  and columns.table_schema = 'public'
+  and table_type = 'BASE TABLE';
+```
+
+```sql
+select distinct columns.table_name
+from information_schema.columns columns
+         join information_schema.tables tables on columns.table_name = tables.table_name
+where column_name = 'encounter_type_id'
+  and tables.table_schema = 'public'
+  and columns.table_schema = 'public'
+  and table_type = 'BASE TABLE';
+```
+The following is a list of entities that require update queries to be written and executed:
+- `form_mapping`: needs `subject_type_id` column to be updated to the new corresponding id.
+- `group_privilege`:  `subject_type_id `, `program_id`, `program_encounter_type_id`, `encounter_type_id` columns to be updated
+- ~`individual`~: to be ignored and do not require updates
+- `operational_subject_type`: `subject_type_id` column to be updated
+- ~`reset_sync`~: to be ignored and do not require updates
+- `subject_migration`: `subject_type_id` column to be updated
+- `operational_program`:  `program_id` column to be updated
+- ~`program_enrolment`~: to be ignored and do not require updates
+- `program_organisation_config`: `program_id` column to be updated
+- `subject_program_eligibility`: `program_id` column to be updated
+- ~`encounter`~: to be ignored and do not require updates
+- `operational_encounter_type`: `encounter_type_id` column to be updated
+- ~`program_encounter`~: to be ignored and do not require updates
+
+#### Step 5: Entities that are to be updated:
+On doing so the previous step, the following is a list of entities that require update queries to be written and executed:
+- `form_mapping`
+- `group_privilege`
+- `operational_subject_type`
+- `subject_migration`
+- `operational_program`
+- `program_organisation_config`
+- `subject_program_eligibility`
+- `operational_encounter_type`
+
+Firstly, our goal is to update `form_mapping`, `group_privilege`, `operational_subject_type`, and `subject_migration` tables. Each of these tables has a column for `subject_type_id` that needs to be consistent with the correct entity for the organization. Given that there is only one subject type to deal with, the process of aligning this `subject_type_id` across all four entities is relatively straightforward.
+
+**1. Updating the `form_mapping` Table:**
+```sql
+update form_mapping
+set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+where organisation_id = 19
+  and subject_type_id = 1;
+```
+**2. Updating the `group_privilege` table's `subject_type_id` column:**
+```sql
+update group_privilege
+set subject_type_id = case
+                          when subject_type_id = 1 then (select id
+                                                         from subject_type
+                                                         where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+                          else subject_type_id end;
+```
+**3. Updating the `operational_subject_type` Table:**
+```sql
+update operational_subject_type
+set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+where uuid = '5ff9c6e0-ed73-4b40-8109-95d4b2a1d042'
+  and organisation_id = 19;
+```
+**4. Updating the `subject_migration` Table:**
+```sql
+update subject_migration
+set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+where organisation_id = 19;
+```
+
+Similarly, `program_id ` needs to be updated across `group_privilege`, `operational_program`, `program_organisation_config`, and `subject_program_eligibility`. 
+
+**5. Updating the `group_privilege` Table:**
+```sql
+update group_privilege gp_target
+set program_id = newprog.id
+from group_privilege gp_source
+         join program org1prog on gp_source.program_id = org1prog.id
+         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
+where gp_source.uuid in (select uuid
+                         from group_privilege
+                         where group_privilege.program_id = 1
+                         or group_privilege.program_id = 2)
+  and gp_target.uuid = gp_source.uuid;
+```
+**6. Updating the `operational_program` Table:**
+```sql
+update operational_program op_target
+set program_id = newprog.id
+from operational_program op_source
+         join program org1prog on op_source.program_id = org1prog.id
+         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
+where op_source.uuid in (
+                         '61383d58-82b4-44fb-96d0-6449f0e68c1b',
+                         'fc3cfcbe-9427-49d0-a497-8294d16725af'
+    )
+  and op_target.uuid = op_source.uuid
+  and op_target.organisation_id = 19;
+```
+**7. Updating the `program_organisation_config` Table:**
+```sql
+update program_organisation_config poc_target
+set program_id = newprog.id
+from program_organisation_config poc_source
+         join program org1prog on poc_source.program_id = org1prog.id
+         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
+where poc_source.uuid in (select uuid
+                          from program_organisation_config
+                          where program_organisation_config.organisation_id = 19)
+  and poc_target.uuid = poc_source.uuid
+  and poc_target.organisation_id = 19;
+```
+**8. Updating the `subject_program_eligibility` Table:**
+Ignoring! since there are no records associated with organization_id 1
+
+Similarly, the `program_encounter_type_id` and `encounter_type_id` columns in the `group_privilege` table, along with the `encounter_type_id` in the `operational_encounter_type` table, require updating to align with the new organizational structure.
+
+**9. Updating the `group_privilege` Table:**
+Migration is unnecessary for `encounter_type_id` since the records are already updated with org 19.
+
+```sql
+update group_privilege gp_target
+set program_encounter_type_id = newet.id
+from group_privilege gp_source
+         join encounter_type org1et on gp_source.program_encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid
+where gp_source.uuid in (select uuid
+                         from group_privilege
+                         where program_encounter_type_id in (2, 3, 4, 5, 6, 13, 20, 21))
+  and gp_target.uuid = gp_source.uuid;
+```
+
+**10. Updating the `operational_encounter_type` Table:**
+```sql
+update operational_encounter_type oet_target
+set encounter_type_id = newet.id
+from operational_encounter_type oet_source
+         join encounter_type org1et on oet_source.encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where oet_target.uuid in (
+                          '160c7f42-392c-41f9-af82-5e483109918a',
+                          '9b4fa8ec-fd62-487a-aa35-8f74f3c20db2',
+                          'ec3d643a-6da4-417e-8ee5-2654344f1756',
+                          'f30945dd-7768-4a7e-bce9-2c96a6834373',
+                          '73854e01-75db-4043-acbd-c9d4838e4705',
+                          '37ad819f-3700-466d-9af9-565c1a43b52c',
+                          '8281d9a4-9a44-4869-8b92-47feefc5d1f6',
+                          '93617150-2536-46ad-9879-0ba4fccd1f4e'
+    )
+  and oet_target.uuid = oet_source.uuid;
+```
+
+
+
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1 can be successfully removed without causing any disruptions or issues.
