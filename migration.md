@@ -1058,7 +1058,7 @@ where poc_source.uuid in (select uuid
   and poc_target.organisation_id = 19;
 ```
 
-#### Step 4: Migration of base tables that use `subject_type_id` column:
+#### Step 4: Migration of base tables that use `subject_type_id`, `program_id` and `encounter_type_id` columns:
 After completing the migration of base tables that use the `organisation_id` column, the next step is to migrate related tables that use `subject_type_id`, `program_id` and `encounter_type_id` columns.
 
 ```sql
@@ -1116,16 +1116,17 @@ On doing so the previous step, the following is a list of entities that require 
 - `subject_program_eligibility`
 - `operational_encounter_type`
 
-Firstly, our goal is to update `form_mapping`, `group_privilege`, `operational_subject_type`, and `subject_migration` tables. Each of these tables has a column for `subject_type_id` that needs to be consistent with the correct entity for the organization. Given that there is only one subject type to deal with, the process of aligning this `subject_type_id` across all four entities is relatively straightforward.
 
-**1. Updating the `form_mapping` Table:**
+Firstly, the goal was to update the `form_mapping`, `group_privilege`, `operational_subject_type`, and `subject_migration` tables. Each of these tables had a column for `subject_type_id` that needed to be consistent with the correct entity for the organization. Given that there was only one subject type to deal with, the process of aligning this `subject_type_id` across all four entities was relatively straightforward.
+
+**1. To update the `form_mapping` Table:**
 ```sql
 update form_mapping
 set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
 where organisation_id = 19
   and subject_type_id = 1;
 ```
-**2. Updating the `group_privilege` table's `subject_type_id` column:**
+**2. To update the `group_privilege` table's `subject_type_id` column:**
 ```sql
 update group_privilege
 set subject_type_id = case
@@ -1134,23 +1135,23 @@ set subject_type_id = case
                                                          where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
                           else subject_type_id end;
 ```
-**3. Updating the `operational_subject_type` Table:**
+**3. To update the `operational_subject_type` Table:**
 ```sql
 update operational_subject_type
 set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
 where uuid = '5ff9c6e0-ed73-4b40-8109-95d4b2a1d042'
   and organisation_id = 19;
 ```
-**4. Updating the `subject_migration` Table:**
+**4. To update the `subject_migration` Table:**
 ```sql
 update subject_migration
 set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
 where organisation_id = 19;
 ```
 
-Similarly, `program_id ` needs to be updated across `group_privilege`, `operational_program`, `program_organisation_config`, and `subject_program_eligibility`. 
+Similarly, `program_id ` needed to be updated across `group_privilege`, `operational_program`, `program_organisation_config`, and `subject_program_eligibility`. 
 
-**5. Updating the `group_privilege` Table:**
+**5. To update the `group_privilege` Table:**
 ```sql
 update group_privilege gp_target
 set program_id = newprog.id
@@ -1163,7 +1164,7 @@ where gp_source.uuid in (select uuid
                          or group_privilege.program_id = 2)
   and gp_target.uuid = gp_source.uuid;
 ```
-**6. Updating the `operational_program` Table:**
+**6. To update the `operational_program` Table:**
 ```sql
 update operational_program op_target
 set program_id = newprog.id
@@ -1177,7 +1178,7 @@ where op_source.uuid in (
   and op_target.uuid = op_source.uuid
   and op_target.organisation_id = 19;
 ```
-**7. Updating the `program_organisation_config` Table:**
+**7. To update the `program_organisation_config` Table:**
 ```sql
 update program_organisation_config poc_target
 set program_id = newprog.id
@@ -1190,13 +1191,13 @@ where poc_source.uuid in (select uuid
   and poc_target.uuid = poc_source.uuid
   and poc_target.organisation_id = 19;
 ```
-**8. Updating the `subject_program_eligibility` Table:**
-Ignoring! since there are no records associated with organization_id 1
+**8. To update the `subject_program_eligibility` Table:**
+Ignoring! since there were no records associated with organization_id 1
 
-Similarly, the `program_encounter_type_id` and `encounter_type_id` columns in the `group_privilege` table, along with the `encounter_type_id` in the `operational_encounter_type` table, require updating to align with the new organizational structure.
+Similarly, the `program_encounter_type_id` and `encounter_type_id` columns in the `group_privilege` table, along with the `encounter_type_id` in the `operational_encounter_type` table, required updating to align with the new organizational structure.
 
-**9. Updating the `group_privilege` Table:**
-Migration is unnecessary for `encounter_type_id` since the records are already updated with org 19.
+**9. To update the `group_privilege` Table:**
+Migration was not required for `encounter_type_id` as the records were already updated with organization 19, but it was necessary for `program_encounter_type_id`.
 
 ```sql
 update group_privilege gp_target
@@ -1210,7 +1211,7 @@ where gp_source.uuid in (select uuid
   and gp_target.uuid = gp_source.uuid;
 ```
 
-**10. Updating the `operational_encounter_type` Table:**
+**10. To update the `operational_encounter_type` Table:**
 ```sql
 update operational_encounter_type oet_target
 set encounter_type_id = newet.id
@@ -1230,6 +1231,105 @@ where oet_target.uuid in (
   and oet_target.uuid = oet_source.uuid;
 ```
 
+Upon review, it was identified that the columns `entity_id` and `observations_type_entity_id` were not being referenced during the initial table creation schema. These columns are integral as they establish references to the `program` and `encounter_type` entities, respectively. Due to this, these incorrect references led to the error 'Unable to find org.avni.server.domain.Program with id 1'.
 
+To address these issues,  updates were applied to these columns to ensure they correctly refer to the corresponding entity IDs as per the new organizational structure.
 
+```sql
+update form_mapping fm_target
+set entity_id = newprogram.id
+from form_mapping fm_source
+         join program org1program on fm_source.entity_id = org1program.id
+         join program newprogram on org1program.uuid = newprogram.uuid and newprogram.organisation_id = 19
+where fm_source.uuid in (select uuid
+                         from form_mapping
+                         where entity_id in (1, 2))
+  and fm_target.uuid = fm_source.uuid
+  and fm_target.organisation_id = 19;
+```
+
+```sql
+update form_mapping fm_target
+set observations_type_entity_id = newet.id
+from form_mapping fm_source
+         join encounter_type org1et on fm_source.observations_type_entity_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where fm_source.uuid in (select uuid
+                         from form_mapping)
+  and fm_target.uuid = fm_source.uuid
+  and fm_target.organisation_id = 19;
+```
+
+After futher review, when we again stuck with same kinda issue, we realized that our initial updates were incomplete. We updated entities with new records for our current organization, Org 19, but some existing records were still linked to the old organization, Org 1. This means we still had some leftover connections to Org 1, which could cause data mismatches.
+
+To fix this, we need to update all the relevant records in each entity, not just the ones we added in step 2. This will include changing references in existing records that might still point to Org 1, ensuring that every piece of our data is now correctly linked to Org 19.
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1 can be successfully removed without causing any disruptions or issues.
+
+Example: Theere was a table form_mapping, and in this table, a record is supposed to link to a form specific to Org 19. However, this record is incorrectly linked to a form from Org 1. Because Org 19 doesn't have a form with the same ID as in Org 1, this mismatch triggers an error like 'Unable to find org.avni.server.domain.Form with id 21'.
+
+```sql
+update form_mapping fm_target
+set form_id = newform.id
+from form_mapping fm_source
+         join form org1form on fm_source.form_id = org1form.id
+         join form newform on org1form.uuid = newform.uuid and newform.organisation_id = 19
+where fm_source.uuid in (select uuid
+                         from form_mapping)
+  and fm_target.uuid = fm_source.uuid
+  and fm_target.organisation_id = 19;
+```
+
+```sql
+update form_element fe_target
+set concept_id = newconcept.id
+from form_element fe_source
+         join concept org1concept on fe_source.form_element_group_id = org1concept.id
+         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+where fe_source.uuid in (select uuid
+                         from form_element)
+  and fe_target.uuid = fe_source.uuid
+  and fe_target.organisation_id = 19;
+```
+
+```sql
+update concept_answer ca_target
+set concept_id = newconcept.id
+from concept_answer ca_source
+         join concept org1concept on ca_source.concept_id = org1concept.id
+         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+where ca_source.uuid in (select uuid
+                         from concept_answer)
+  and ca_target.uuid = ca_source.uuid
+  and ca_target.organisation_id = 19;
+```
+
+```sql
+update concept_answer ca_target
+set answer_concept_id = newconcept.id
+from concept_answer ca_source
+         join concept org1concept on ca_source.answer_concept_id = org1concept.id
+         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+where ca_source.uuid in (select uuid
+                         from concept_answer)
+  and ca_target.uuid = ca_source.uuid
+  and ca_target.organisation_id = 19;
+```
+
+```sql
+update checklist_item_detail cid_target
+set concept_id = newconcept.id
+from checklist_item_detail cid_source
+         join concept org1concept on cid_source.concept_id = org1concept.id
+         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+where cid_source.uuid in (select uuid
+                          from checklist_item_detail)
+  and cid_target.uuid = cid_source.uuid
+  and cid_target.organisation_id = 19;
+```
+
+
+By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1 was successfully removed without causing any issues.
+
+With the previous steps completed, the remaining task is to write and implement the skip logic and rules specific to the Calcutta Kids organization's implementation. 
+
+Once the skip logic and rules are written and tested, the Calcutta Kids organization's database and application setup will be entirely independent of Org 1 and fully customized to their specific operational needs.
