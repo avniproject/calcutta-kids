@@ -1230,6 +1230,7 @@ where oet_target.uuid in (
     )
   and oet_target.uuid = oet_source.uuid;
 ```
+#### Step 5: Resolving Reference Issues:
 
 Upon review, it was identified that the columns `entity_id` and `observations_type_entity_id` were not being referenced during the initial table creation schema. These columns are integral as they establish references to the `program` and `encounter_type` entities, respectively. Due to this, these incorrect references led to the error 'Unable to find org.avni.server.domain.Program with id 1'.
 
