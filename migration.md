@@ -33,7 +33,7 @@ The following spreadsheet is used to track and manage the changes:
 https://docs.google.com/spreadsheets/d/1flz3J_fWqbvFw3RnX0S4Mtsh-qfZtJRcJbY3KJsKbiY/edit?usp=sharing
 
 
-#### Step 3: Migration of base tables that use `organisation_id` column:
+####  3: Migration of base tables that use `organisation_id` column:
 On doing so the previous step, the following is a list of entities that require update queries to be written and executed:
 
 - `concept`
@@ -1058,7 +1058,7 @@ where poc_source.uuid in (select uuid
   and poc_target.organisation_id = 19;
 ```
 
-#### Step 4: Migration of base tables that use `subject_type_id`, `program_id` and `encounter_type_id` columns:
+#### Step 3: Migration of base tables that use `subject_type_id`, `program_id` and `encounter_type_id` columns:
 After completing the migration of base tables that use the `organisation_id` column, the next step is to migrate related tables that use `subject_type_id`, `program_id` and `encounter_type_id` columns.
 
 ```sql
@@ -1105,7 +1105,7 @@ The following is a list of entities that require update queries to be written an
 - `operational_encounter_type`: `encounter_type_id` column to be updated
 - ~`program_encounter`~: to be ignored and do not require updates
 
-#### Step 5: Entities that are to be updated:
+#### Step 4: Entities that are to be updated:
 On doing so the previous step, the following is a list of entities that require update queries to be written and executed:
 - `form_mapping`
 - `group_privilege`
@@ -1230,7 +1230,16 @@ where oet_target.uuid in (
     )
   and oet_target.uuid = oet_source.uuid;
 ```
-#### Step 5: Resolving Reference Issues:
+
+#### Step 5: Removing Parent Organization Dependency:
+Finally, dependency on the parent organization was removed, ensuring that Calcutta Kids no longer inherited settings, permissions, or data from Org 1.
+```sql
+update organisation
+set parent_organisation_id = null
+where id = 19;
+```
+
+#### Step 6: Resolving Reference Issues:
 
 Upon review, it was identified that the columns `entity_id` and `observations_type_entity_id` were not being referenced during the initial table creation schema. These columns are integral as they establish references to the `program` and `encounter_type` entities, respectively. Due to this, these incorrect references led to the error 'Unable to find org.avni.server.domain.Program with id 1'.
 
