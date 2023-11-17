@@ -1,3 +1,4 @@
+
 ## **Removing Dependency from Org 1 for Calcutta Kids Implementation**
 
 ### Objective:
@@ -610,7 +611,8 @@ where fg_source.uuid in (
     )
   and fg_source.organisation_id = 1
   and fg_target.uuid = fg_source.uuid
-  and fg_target.organisation_id = 19;
+  and fg_target.organisation_id = 19
+  and fg_target.form_id != newform.id;
 ```
 
 **13.  form_element:** 
@@ -1024,7 +1026,9 @@ where fe_source.uuid in (
     )
   and fe_source.organisation_id = 1
   and fe_target.uuid = fe_source.uuid
-  and fe_target.organisation_id = 19;
+  and fe_target.organisation_id = 19
+  and fe_target.form_element_group_id != newfg.id;
+
 ```
 
 **14.  program_organisation_config:** 
@@ -1127,30 +1131,35 @@ Firstly, the goal was to update the `form_mapping`, `group_privilege`, `operatio
 **1. To update the `form_mapping` Table:**
 ```sql
 update form_mapping
-set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+set subject_type_id = (select id from subject_type where organisation_id = 19 and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
 where organisation_id = 19
-  and subject_type_id = 1;
+  and is_voided = false
+  and subject_type_id = 1;  
 ```
 **2. To update the `group_privilege` table's `subject_type_id` column:**
 ```sql
 update group_privilege
 set subject_type_id = case
-                          when subject_type_id = 1 then (select id
-                                                         from subject_type
-                                                         where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
-                          else subject_type_id end;
+                        when subject_type_id = 1 then (select id
+                                                       from subject_type
+                                                       where organisation_id = 19 and
+                                                         subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+                        else subject_type_id end
+where organisation_id = 19
+  and subject_type_id = 1
+  and is_voided = false;
 ```
 **3. To update the `operational_subject_type` Table:**
 ```sql
 update operational_subject_type
-set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+set subject_type_id = (select id from subject_type where organisation_id = 19 and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
 where uuid = '5ff9c6e0-ed73-4b40-8109-95d4b2a1d042'
   and organisation_id = 19;
 ```
 **4. To update the `subject_migration` Table:**
 ```sql
 update subject_migration
-set subject_type_id = (select id from subject_type where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+set subject_type_id = (select id from subject_type where organisation_id = 19 and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
 where organisation_id = 19;
 ```
 
@@ -1161,13 +1170,14 @@ Similarly, `program_id ` needed to be updated across `group_privilege`, `operati
 update group_privilege gp_target
 set program_id = newprog.id
 from group_privilege gp_source
-         join program org1prog on gp_source.program_id = org1prog.id
-         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
+       join program org1prog on gp_source.program_id = org1prog.id
+       join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
 where gp_source.uuid in (select uuid
                          from group_privilege
                          where group_privilege.program_id = 1
-                         or group_privilege.program_id = 2)
-  and gp_target.uuid = gp_source.uuid;
+                            or group_privilege.program_id = 2)
+  and gp_target.uuid = gp_source.uuid
+  and gp_target.program_id <> newprog.id;
 ```
 **6. To update the `operational_program` Table:**
 ```sql
@@ -1208,12 +1218,14 @@ Migration was not required for `encounter_type_id` as the records were already u
 update group_privilege gp_target
 set program_encounter_type_id = newet.id
 from group_privilege gp_source
-         join encounter_type org1et on gp_source.program_encounter_type_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid
+       join encounter_type org1et on gp_source.program_encounter_type_id = org1et.id
+       join encounter_type newet on org1et.uuid = newet.uuid
 where gp_source.uuid in (select uuid
                          from group_privilege
-                         where program_encounter_type_id in (2, 3, 4, 5, 6, 13, 20, 21))
-  and gp_target.uuid = gp_source.uuid;
+                         where organisation_id = 19 and
+                           program_encounter_type_id in (2, 3, 4, 5, 6, 13, 20, 21))
+  and gp_target.uuid = gp_source.uuid
+  and gp_target.program_encounter_type_id <> newet.id;
 ```
 
 **10. To update the `operational_encounter_type` Table:**
@@ -1221,8 +1233,8 @@ where gp_source.uuid in (select uuid
 update operational_encounter_type oet_target
 set encounter_type_id = newet.id
 from operational_encounter_type oet_source
-         join encounter_type org1et on oet_source.encounter_type_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+       join encounter_type org1et on oet_source.encounter_type_id = org1et.id
+       join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
 where oet_target.uuid in (
                           '160c7f42-392c-41f9-af82-5e483109918a',
                           '9b4fa8ec-fd62-487a-aa35-8f74f3c20db2',
@@ -1232,7 +1244,7 @@ where oet_target.uuid in (
                           '37ad819f-3700-466d-9af9-565c1a43b52c',
                           '8281d9a4-9a44-4869-8b92-47feefc5d1f6',
                           '93617150-2536-46ad-9879-0ba4fccd1f4e'
-    )
+  )
   and oet_target.uuid = oet_source.uuid;
 ```
 
@@ -1254,25 +1266,27 @@ To address these issues,  updates were applied to these columns to ensure they c
 update form_mapping fm_target
 set entity_id = newprogram.id
 from form_mapping fm_source
-         join program org1program on fm_source.entity_id = org1program.id
-         join program newprogram on org1program.uuid = newprogram.uuid and newprogram.organisation_id = 19
+       join program org1program on fm_source.entity_id = org1program.id
+       join program newprogram on org1program.uuid = newprogram.uuid and newprogram.organisation_id = 19
 where fm_source.uuid in (select uuid
                          from form_mapping
-                         where entity_id in (1, 2))
+                         where organisation_id = 19  and entity_id in (1, 2))
   and fm_target.uuid = fm_source.uuid
-  and fm_target.organisation_id = 19;
+  and fm_target.organisation_id = 19
+  and fm_target.entity_id <> newprogram.id;
 ```
 
 ```sql
 update form_mapping fm_target
 set observations_type_entity_id = newet.id
 from form_mapping fm_source
-         join encounter_type org1et on fm_source.observations_type_entity_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+       join encounter_type org1et on fm_source.observations_type_entity_id = org1et.id
+       join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
 where fm_source.uuid in (select uuid
-                         from form_mapping)
+                         from form_mapping where organisation_id = 19)
   and fm_target.uuid = fm_source.uuid
-  and fm_target.organisation_id = 19;
+  and fm_target.organisation_id = 19
+  and fm_target.observations_type_entity_id <> newet.id;
 ```
 
 After futher review, when we again stuck with same kinda issue, we realized that our initial updates were incomplete. We updated entities with new records for our current organization, Org 19, but some existing records were still linked to the old organization, Org 1. This means we still had some leftover connections to Org 1, which could cause data mismatches.
@@ -1286,60 +1300,66 @@ Example: Theere was a table form_mapping, and in this table, a record is suppose
 update form_mapping fm_target
 set form_id = newform.id
 from form_mapping fm_source
-         join form org1form on fm_source.form_id = org1form.id
-         join form newform on org1form.uuid = newform.uuid and newform.organisation_id = 19
+       join form org1form on fm_source.form_id = org1form.id
+       join form newform on org1form.uuid = newform.uuid and newform.organisation_id = 19
 where fm_source.uuid in (select uuid
-                         from form_mapping)
+                         from form_mapping where organisation_id = 19)
   and fm_target.uuid = fm_source.uuid
-  and fm_target.organisation_id = 19;
+  and fm_target.organisation_id = 19
+  and fm_target.form_id = newform.id;
 ```
 
 ```sql
 update form_element fe_target
 set concept_id = newconcept.id
 from form_element fe_source
-         join concept org1concept on fe_source.form_element_group_id = org1concept.id
-         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+       join concept org1concept on fe_source.form_element_group_id = org1concept.id
+       join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
 where fe_source.uuid in (select uuid
-                         from form_element)
+                         from form_element where organisation_id = 19)
   and fe_target.uuid = fe_source.uuid
-  and fe_target.organisation_id = 19;
+  and fe_target.organisation_id = 19
+  and fe_target.concept_id <> newconcept.id;
 ```
 
 ```sql
 update concept_answer ca_target
 set concept_id = newconcept.id
 from concept_answer ca_source
-         join concept org1concept on ca_source.concept_id = org1concept.id
-         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+       join concept org1concept on ca_source.concept_id = org1concept.id
+       join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
 where ca_source.uuid in (select uuid
-                         from concept_answer)
+                         from concept_answer  where organisation_id = 19)
   and ca_target.uuid = ca_source.uuid
-  and ca_target.organisation_id = 19;
+  and ca_target.organisation_id = 19
+  and ca_target.concept_id <> newconcept.id;
 ```
 
 ```sql
 update concept_answer ca_target
 set answer_concept_id = newconcept.id
 from concept_answer ca_source
-         join concept org1concept on ca_source.answer_concept_id = org1concept.id
-         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+       join concept org1concept on ca_source.answer_concept_id = org1concept.id
+       join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
 where ca_source.uuid in (select uuid
-                         from concept_answer)
+                         from concept_answer  where organisation_id = 19)
   and ca_target.uuid = ca_source.uuid
-  and ca_target.organisation_id = 19;
+  and ca_target.organisation_id = 19
+  and ca_target.answer_concept_id <> newconcept.id;
 ```
 
 ```sql
 update checklist_item_detail cid_target
 set concept_id = newconcept.id
 from checklist_item_detail cid_source
-         join concept org1concept on cid_source.concept_id = org1concept.id
-         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+       join concept org1concept on cid_source.concept_id = org1concept.id
+       join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
 where cid_source.uuid in (select uuid
-                          from checklist_item_detail)
+                          from checklist_item_detail  where organisation_id = 19)
   and cid_target.uuid = cid_source.uuid
-  and cid_target.organisation_id = 19;
+  and cid_target.organisation_id = 19
+  and cid_target.concept_id = newconcept.id;
+
 ```
 
 
