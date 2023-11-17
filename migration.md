@@ -359,7 +359,11 @@ where irt_source.uuid in (select uuid
                            where organisation_id = 1)
   and irt_source.organisation_id = 1
   and irt_target.uuid = irt_source.uuid
-  and irt_target.organisation_id = 19;
+  and irt_target.organisation_id = 19
+  and (
+        irt_target.individual_a_is_to_b_relation_id != newiratob.id
+       OR irt_target.individual_b_is_to_a_relation_id != newirbtoa.id
+    );
 ```
 
 **10.  form:** 
@@ -464,7 +468,8 @@ where fm_source.uuid in ('23a1f57f-1dca-46d0-b44f-c729789cd84c',
                          'a881addf-fdc7-4b6a-ad79-225396594ecd')
   and fm_target.uuid = fm_source.uuid
   and fm_source.organisation_id = 1
-  and fm_target.organisation_id = 19;
+  and fm_target.organisation_id = 19
+  and fm_target.form_id         <> newform.id;
 ```
 
 **12.  form_element_group:** 
