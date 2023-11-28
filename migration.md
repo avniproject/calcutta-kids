@@ -5,11 +5,17 @@
 The primary objective of this documentation is to remove the dependency of the Calcutta Kids organization's
 implementation from Org1.
 
+** IMPORTANT NOTE: 
+We have to have confirmation from the Organisation that all users will be logging out and then doing a clean fresh sync from the scratch after the migration. This is required as we are not going to update the last_modified_date_time in the migration update commands. This would retain historical timestamp information.
+If not, we need to update last_modified_date_time migration update command, to force sync the modified entries for already logged-in users.
+**
+
 ### Steps Taken:
 
-#### Step 1: Database Backup
+#### Step 1: Database Backup and Storage rest
 
-Create a manual backup of prod db just before starting the migration steps
+    1. Create a manual backup of prod db just before starting the migration steps
+    2. Clear all contents within "calcutta_kids/" folder of prod-user-media s3 folder
 
 #### Step 2: Upload Org1 Metadata.zip file into Org2
 
@@ -75,16 +81,11 @@ INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, aud
 
 #### Step 3: Metadata Entities that are to be updated:
 
-** IMPORTANT NOTE: If we have received confirmation from the Organisation that all users will be logging out and then doing a clean fresh sync from the scratch after the migration, we should remove all last_modified_date_time set query-sections from below update commands. 
-This would retain historical timestamp information, if not, we need to update them to force sync of modified entries.
-**
-
 **1. To update the `form_mapping` Table:**
 
 ```sql
 update form_mapping
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    subject_type_id         = (select id
+set subject_type_id         = (select id
                                from subject_type
                                where organisation_id = 19
                                  and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
@@ -97,8 +98,7 @@ where organisation_id = 19
 
 ```sql
 update group_privilege
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    subject_type_id         = case
+set subject_type_id         = case
                                   when subject_type_id = 1 then (select id
                                                                  from subject_type
                                                                  where organisation_id = 19
@@ -113,8 +113,7 @@ where organisation_id = 19
 
 ```sql
 update operational_subject_type
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    subject_type_id         = (select id
+set subject_type_id         = (select id
                                from subject_type
                                where organisation_id = 19
                                  and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
@@ -126,8 +125,7 @@ where subject_type_id = 1
 
 ```sql
 update subject_migration
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    subject_type_id         = (select id
+set subject_type_id         = (select id
                                from subject_type
                                where organisation_id = 19
                                  and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
@@ -139,8 +137,7 @@ where subject_type_id = 1
 
 ```sql
 update group_privilege gp_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    program_id              = newprog.id
+set program_id              = newprog.id
 from group_privilege gp_source
          join program org1prog on gp_source.program_id = org1prog.id
          join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
@@ -155,8 +152,7 @@ where gp_source.uuid in (select uuid
 
 ```sql
 update operational_program op_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    program_id              = newprog.id
+set program_id              = newprog.id
 from operational_program op_source
          join program org1prog on op_source.program_id = org1prog.id
          join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
@@ -170,8 +166,7 @@ where op_source.program_id in (1, 2, 3)
 
 ```sql
 update program_organisation_config poc_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    program_id              = newprog.id
+set program_id              = newprog.id
 from program_organisation_config poc_source
          join program org1prog on poc_source.program_id = org1prog.id
          join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
@@ -197,8 +192,7 @@ necessary for `program_encounter_type_id`.
 
 ```sql
 update group_privilege gp_target
-set last_modified_date_time   = now() + id * ('1 millisecond' :: interval),
-    program_encounter_type_id = newet.id
+set program_encounter_type_id = newet.id
 from group_privilege gp_source
          join encounter_type org1et on gp_source.program_encounter_type_id = org1et.id
          join encounter_type newet on org1et.uuid = newet.uuid
@@ -219,8 +213,7 @@ where gp_source.uuid in (select uuid
 
 ```sql
 update operational_encounter_type oet_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    encounter_type_id       = newet.id
+set encounter_type_id       = newet.id
 from operational_encounter_type oet_source
          join encounter_type org1et on oet_source.encounter_type_id = org1et.id
          join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
@@ -246,8 +239,7 @@ where cid.organisation_id = 19;
 
 
 update checklist_item_detail cid_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    concept_id              = newcon.id
+set concept_id              = newcon.id
 from checklist_item_detail as cid_source
          join concept org1con on cid_source.concept_id = org1con.id
          join concept newcon on org1con.uuid = newcon.uuid and newcon.organisation_id = 19
@@ -260,8 +252,7 @@ where cid_target.id = cid_source.id
 
 ```sql
 update form_element_group fg_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    form_id                 = newform.id
+set form_id                 = newform.id
 from form_element_group as fg_source
          join form "org1form" on fg_source.form_id = org1form.id
          join form newform on org1form.uuid = newform.uuid and newform.organisation_id = 19
@@ -282,8 +273,7 @@ where id in (1422, 1423, 1424);
 
 ```sql
 update form_element fe_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    form_element_group_id   = newfeg.id
+set form_element_group_id   = newfeg.id
 from form_element as fe_source
          join form_element_group org1feg on fe_source.form_element_group_id = org1feg.id
          join form_element_group newfeg on org1feg.uuid = newfeg.uuid and newfeg.organisation_id = 19
@@ -295,8 +285,7 @@ where fe_target.id = fe_source.id
 
 ```sql
 update form_element fe_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    concept_id              = newconcept.id
+set concept_id              = newconcept.id
 from form_element fe_source
          join concept org1concept on fe_source.concept_id = org1concept.id
          join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
@@ -309,8 +298,7 @@ where fe_target.id = fe_source.id
 
 ```sql
 update form_mapping
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    subject_type_id         =
+set subject_type_id         =
         (select id
          from subject_type
          where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3'
@@ -321,8 +309,7 @@ where subject_type_id = 1
 
 ```sql
 update form_mapping fg_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    form_id                 = newform.id
+set form_id                 = newform.id
 from form_mapping as fg_source
          join form "org1form" on fg_source.form_id = org1form.id
          join form newform on org1form.uuid = newform.uuid and newform.organisation_id = 19
@@ -333,8 +320,7 @@ where fg_target.id = fg_source.id
 
 ```sql
 update form_mapping fm_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    entity_id               = newprogram.id
+set entity_id               = newprogram.id
 from form_mapping fm_source
          join program org1program on fm_source.entity_id = org1program.id
          join program newprogram on org1program.uuid = newprogram.uuid and newprogram.organisation_id = 19
@@ -349,8 +335,7 @@ where fm_source.uuid in (select uuid
 
 ```sql
 update form_mapping fm_target
-set last_modified_date_time     = now() + id * ('1 millisecond' :: interval),
-    observations_type_entity_id = newet.id
+set observations_type_entity_id = newet.id
 from form_mapping fm_source
          join encounter_type org1et on fm_source.observations_type_entity_id = org1et.id
          join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
@@ -366,8 +351,7 @@ where fm_source.uuid in (select uuid
 
 ```sql
 update concept_answer ca_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    concept_id              = newconcept.id
+set concept_id              = newconcept.id
 from concept_answer ca_source
          join concept org1concept on ca_source.concept_id = org1concept.id
          join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
@@ -381,8 +365,7 @@ where ca_source.uuid in (select uuid
 
 ```sql
 update concept_answer ca_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    answer_concept_id       = newconcept.id
+set answer_concept_id       = newconcept.id
 from concept_answer ca_source
          join concept org1concept on ca_source.answer_concept_id = org1concept.id
          join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
@@ -396,10 +379,6 @@ where ca_source.uuid in (select uuid
 
 #### Step 4: Update transactional data's type_ids
 
-** IMPORTANT NOTE: If we have received confirmation from the Organisation that all users will be logging out and then doing a clean fresh sync from the scratch after the migration, we should remove all last_modified_date_time set query-sections from below update commands.
-This would retain historical timestamp information, if not, we need to update them to force sync of modified entries.
-**
-
 **1. Update subject_type of Individual**
 
 ```sql
@@ -408,8 +387,7 @@ from public.individual
 group by 1;
 
 update public.individual
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    subject_type_id         =
+set subject_type_id         =
         (select id
          from subject_type
          where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3'
@@ -445,8 +423,7 @@ where org1Prog.organisation_id = 1
 group by 1, 2, 3;
 
 update public.program_enrolment p_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    program_id              = newprog.id
+set program_id              = newprog.id
 from public.program_enrolment p_source
          join program org1prog on p_source.program_id = org1prog.id
          join program newprog on org1prog.uuid = newprog.uuid and newprog.organisation_id = 19
@@ -470,8 +447,7 @@ group by 1, 2, 3;
 
 
 update public.program_encounter e_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    encounter_type_id       = newet.id
+set encounter_type_id       = newet.id
 from public.program_encounter e_source
          join encounter_type org1et on e_source.encounter_type_id = org1et.id
          join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
@@ -486,8 +462,7 @@ where org1et.organisation_id = 1
 
 ```sql
 update public.individual ind_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    gender_id               = newgen.id
+set gender_id               = newgen.id
 from public.individual as inf_source
          join gender org1gen on inf_source.gender_id = org1gen.id
          join gender newgen on org1gen.name = newgen.name and newgen.organisation_id = 19
@@ -500,8 +475,7 @@ where ind_target.id = inf_source.id
 
 ```sql
 update public.individual_relationship ir_target
-set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
-    relationship_type_id    = newirt.id
+set relationship_type_id    = newirt.id
 from public.individual_relationship as ir_source
          join individual_relationship_type org1irt on ir_source.relationship_type_id = org1irt.id
          join individual_relationship_type newirt on org1irt.uuid = newirt.uuid and newirt.organisation_id = 19
