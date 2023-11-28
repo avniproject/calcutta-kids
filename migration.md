@@ -30,16 +30,26 @@ Create a manual backup of prod db just before starting the migration steps
   ```
     3. Create default genders for the org
   ```sql
+  set role calcutta_kids;
   insert into public.gender (id, uuid, name, concept_id, version, audit_id, is_voided, organisation_id, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time)
   values  (default, 'ad7d1d14-54fd-45a2-86b7-ea329b744484', 'Female', null, 1, create_audit(), false, 19, 1, 1, now(), now()),
           (default, '840de9fb-e565-4d7d-b751-90335ba20490', 'Male', null, 1, create_audit(), false, 19, 1, 1, now(), now()),
           (default, '188ad77e-fe46-4328-b0e2-98f3a05c554c', 'Other', null, 1, create_audit(), false, 19, 1, 1, now(), now());
   ```
     4. Login to app as superadmin and download bundle from Org1
-    5. **Logout** and Login to app as org2 admin user
+       1. Create orgConfig entry temporarily for org1
+       ```sql
+       INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, audit_id, version, is_voided, worklist_updation_rule, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time, export_settings) VALUES (DEFAULT, '012771cf-910e-45c5-9a33-26a83a72e031', 1, '{"languages": ["en", "hi_IN"], "searchFilters": [{"type": "Name", "titleKey": "Name", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Age", "titleKey": "Age", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "SearchAll", "titleKey": "SearchAll", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}], "myDashboardFilters": [{"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}]}', 699426, 0, false, '', 39, 2451, '2019-11-06 06:33:51.920 +00:00', '2023-11-17 07:19:01.576 +00:00', '{}');
+       ```
+       2. Login as superadmin and download bundle
+       3. delete orgConfig entry for org1
+          ```sql
+             DELETE FROM public.organisation_config WHERE id = 436
+          ```
+    5. **Logout** and Login to app as org2 admin user, navigate to bundle upload screen
     6. Update and Set parent_orgnization_id as null
        ```update public.organisation set parent_organisation_id = null where id = <calcutta_kids_org_id>;```
-    7. upload Metadata.zip file, ensure there are no failures other than those mentioned below.
+    7. upload Metadata.zip file, ensure there are no failures other than those mentioned below. Access S3 to view the error csv file.
         - Ignore the following failures:
             - AddressLevelTypes.json : All types are voided and org uses its own defined AddressLevelTypes
     8. Ensure that the organisation_config is not overwritten, if yes, correct it
@@ -242,7 +252,15 @@ where fg_target.id = fg_source.id
   and fg_source.form_id != newform.id;
 ```
 
-**13. Update form_element_group for form_element**
+**13. Fix data issue overlapping display order of unused form_elements**
+
+```sql
+delete
+from form_element
+where id in (1422, 1423, 1424);
+```
+
+**14. Update form_element_group for form_element**
 
 ```sql
 update form_element fe_target
@@ -262,22 +280,14 @@ update form_element fe_target
 set last_modified_date_time = now(),
     concept_id              = newconcept.id
 from form_element fe_source
-         join concept org1concept on fe_source.form_element_group_id = org1concept.id
+         join concept org1concept on fe_source.concept_id = org1concept.id
          join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
 where fe_source.uuid in (select uuid
                          from form_element
                          where organisation_id = 19)
   and fe_target.uuid = fe_source.uuid
   and fe_target.organisation_id = 19
-  and fe_target.concept_id <> newconcept.id;
-```
-
-**14. Fix data issue overlapping display order of unused form_elements**
-
-```sql
-delete
-from form_element
-where id in (1422, 1423, 1424);
+  and fe_target.concept_id != newconcept.id;
 ```
 
 **15. Update form_mapping**
