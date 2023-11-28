@@ -21,13 +21,25 @@ Create a manual backup of prod db just before starting the migration steps
            ```INSERT INTO public.account_admin (id, name, account_id, admin_id) VALUES (DEFAULT, 'superadmin'::varchar(255), 1::integer, 64::integer)```
     2. Backup explicit group_privileges for "Everyone" group. For calcutta_kids org, remove explicit group_privileges
        for "Everyone" group
-  ```sql
-  UPDATE public.groups
-  SET last_modified_date_time = now(), is_voided = true::boolean
-  WHERE id = 796::integer;
-  
-  update group_privilege set last_modified_date_time = now(), is_voided = true where id in (21,22,23,24,105,106,107,108,109,110,111,112,113,114,115,116,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,664,665,23830,23831,23832,23833,23834,23835,23837,23838,23839,23840,23841,23842,23843,23844,23845,23846,23847,23848,23849,23850,23851,23852,23853,23854,23856,23857,23858,23859,23860,33161,33162,33163,33164,33165,33166,33168,33169,33170,33171,33172,33173,33174,33175,33176,33177,33178,33179,33180,33181,33182,33183,33184,33185,33187,33188,33189,33190,33191,35672,35673,35674,35675,35804,35805,35806,35807,112556,112611,112612,112628,112741);
-  ```
+       -    Make a note of group_privilege ids_list using below query
+```sql
+    select gp.id
+    from group_privilege gp
+    join groups g on gp.group_id = g.id
+    where gp.organisation_id = 19
+    and gp.is_voided = false;
+--     Store above output as <ids_list>
+
+    UPDATE public.groups
+    SET last_modified_date_time = now(),
+        is_voided               = true::boolean
+    WHERE id = 796::integer;
+    
+    UPDATE group_privilege
+    set last_modified_date_time = now(),
+        is_voided               = true
+    where id in (<ids_list>);
+```
     3. Create default genders for the org
   ```sql
   set role calcutta_kids;
@@ -38,17 +50,19 @@ Create a manual backup of prod db just before starting the migration steps
   ```
     4. Login to app as superadmin and download bundle from Org1
        1. Create orgConfig entry temporarily for org1
-       ```sql
-       INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, audit_id, version, is_voided, worklist_updation_rule, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time, export_settings) VALUES (DEFAULT, '012771cf-910e-45c5-9a33-26a83a72e031', 1, '{"languages": ["en", "hi_IN"], "searchFilters": [{"type": "Name", "titleKey": "Name", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Age", "titleKey": "Age", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "SearchAll", "titleKey": "SearchAll", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}], "myDashboardFilters": [{"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}]}', 699426, 0, false, '', 39, 2451, '2019-11-06 06:33:51.920 +00:00', '2023-11-17 07:19:01.576 +00:00', '{}');
-       ```
+```sql
+INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, audit_id, version, is_voided, worklist_updation_rule, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time, export_settings) VALUES (DEFAULT, '012771cf-910e-45c5-9a33-26a83a72e031', 1, '{"languages": ["en", "hi_IN"], "searchFilters": [{"type": "Name", "titleKey": "Name", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Age", "titleKey": "Age", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "SearchAll", "titleKey": "SearchAll", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}], "myDashboardFilters": [{"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}]}', 699426, 0, false, '', 39, 2451, '2019-11-06 06:33:51.920 +00:00', '2023-11-17 07:19:01.576 +00:00', '{}');
+```
        2. Login as superadmin and download bundle
        3. delete orgConfig entry for org1
-          ```sql
-             DELETE FROM public.organisation_config WHERE id = 436
-          ```
+```sql
+ DELETE FROM public.organisation_config WHERE id = 436
+```
     5. **Logout** and Login to app as org2 admin user, navigate to bundle upload screen
     6. Update and Set parent_orgnization_id as null
-       ```update public.organisation set parent_organisation_id = null where id = <calcutta_kids_org_id>;```
+```sql
+    update public.organisation set parent_organisation_id = null where id = <calcutta_kids_org_id>;
+```
     7. upload Metadata.zip file, ensure there are no failures other than those mentioned below. Access S3 to view the error csv file.
         - Ignore the following failures:
             - AddressLevelTypes.json : All types are voided and org uses its own defined AddressLevelTypes
@@ -61,11 +75,15 @@ Create a manual backup of prod db just before starting the migration steps
 
 #### Step 3: Metadata Entities that are to be updated:
 
+** IMPORTANT NOTE: If we have received confirmation from the Organisation that all users will be logging out and then doing a clean fresh sync from the scratch after the migration, we should remove all last_modified_date_time set query-sections from below update commands. 
+This would retain historical timestamp information, if not, we need to update them to force sync of modified entries.
+**
+
 **1. To update the `form_mapping` Table:**
 
 ```sql
 update form_mapping
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     subject_type_id         = (select id
                                from subject_type
                                where organisation_id = 19
@@ -79,7 +97,7 @@ where organisation_id = 19
 
 ```sql
 update group_privilege
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     subject_type_id         = case
                                   when subject_type_id = 1 then (select id
                                                                  from subject_type
@@ -95,7 +113,7 @@ where organisation_id = 19
 
 ```sql
 update operational_subject_type
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     subject_type_id         = (select id
                                from subject_type
                                where organisation_id = 19
@@ -108,7 +126,7 @@ where subject_type_id = 1
 
 ```sql
 update subject_migration
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     subject_type_id         = (select id
                                from subject_type
                                where organisation_id = 19
@@ -121,7 +139,7 @@ where subject_type_id = 1
 
 ```sql
 update group_privilege gp_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     program_id              = newprog.id
 from group_privilege gp_source
          join program org1prog on gp_source.program_id = org1prog.id
@@ -137,7 +155,7 @@ where gp_source.uuid in (select uuid
 
 ```sql
 update operational_program op_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     program_id              = newprog.id
 from operational_program op_source
          join program org1prog on op_source.program_id = org1prog.id
@@ -152,7 +170,7 @@ where op_source.program_id in (1, 2, 3)
 
 ```sql
 update program_organisation_config poc_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     program_id              = newprog.id
 from program_organisation_config poc_source
          join program org1prog on poc_source.program_id = org1prog.id
@@ -179,7 +197,7 @@ necessary for `program_encounter_type_id`.
 
 ```sql
 update group_privilege gp_target
-set last_modified_date_time   = now(),
+set last_modified_date_time   = now() + id * ('1 millisecond' :: interval),
     program_encounter_type_id = newet.id
 from group_privilege gp_source
          join encounter_type org1et on gp_source.program_encounter_type_id = org1et.id
@@ -201,7 +219,7 @@ where gp_source.uuid in (select uuid
 
 ```sql
 update operational_encounter_type oet_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     encounter_type_id       = newet.id
 from operational_encounter_type oet_source
          join encounter_type org1et on oet_source.encounter_type_id = org1et.id
@@ -228,7 +246,7 @@ where cid.organisation_id = 19;
 
 
 update checklist_item_detail cid_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     concept_id              = newcon.id
 from checklist_item_detail as cid_source
          join concept org1con on cid_source.concept_id = org1con.id
@@ -242,7 +260,7 @@ where cid_target.id = cid_source.id
 
 ```sql
 update form_element_group fg_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     form_id                 = newform.id
 from form_element_group as fg_source
          join form "org1form" on fg_source.form_id = org1form.id
@@ -264,7 +282,7 @@ where id in (1422, 1423, 1424);
 
 ```sql
 update form_element fe_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     form_element_group_id   = newfeg.id
 from form_element as fe_source
          join form_element_group org1feg on fe_source.form_element_group_id = org1feg.id
@@ -277,16 +295,13 @@ where fe_target.id = fe_source.id
 
 ```sql
 update form_element fe_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     concept_id              = newconcept.id
 from form_element fe_source
          join concept org1concept on fe_source.concept_id = org1concept.id
          join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
-where fe_source.uuid in (select uuid
-                         from form_element
-                         where organisation_id = 19)
-  and fe_target.uuid = fe_source.uuid
-  and fe_target.organisation_id = 19
+where fe_target.id = fe_source.id
+  and fe_source.organisation_id = 19
   and fe_target.concept_id != newconcept.id;
 ```
 
@@ -294,7 +309,7 @@ where fe_source.uuid in (select uuid
 
 ```sql
 update form_mapping
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     subject_type_id         =
         (select id
          from subject_type
@@ -306,7 +321,7 @@ where subject_type_id = 1
 
 ```sql
 update form_mapping fg_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     form_id                 = newform.id
 from form_mapping as fg_source
          join form "org1form" on fg_source.form_id = org1form.id
@@ -318,7 +333,7 @@ where fg_target.id = fg_source.id
 
 ```sql
 update form_mapping fm_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     entity_id               = newprogram.id
 from form_mapping fm_source
          join program org1program on fm_source.entity_id = org1program.id
@@ -334,7 +349,7 @@ where fm_source.uuid in (select uuid
 
 ```sql
 update form_mapping fm_target
-set last_modified_date_time     = now(),
+set last_modified_date_time     = now() + id * ('1 millisecond' :: interval),
     observations_type_entity_id = newet.id
 from form_mapping fm_source
          join encounter_type org1et on fm_source.observations_type_entity_id = org1et.id
@@ -351,7 +366,7 @@ where fm_source.uuid in (select uuid
 
 ```sql
 update concept_answer ca_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     concept_id              = newconcept.id
 from concept_answer ca_source
          join concept org1concept on ca_source.concept_id = org1concept.id
@@ -366,7 +381,7 @@ where ca_source.uuid in (select uuid
 
 ```sql
 update concept_answer ca_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     answer_concept_id       = newconcept.id
 from concept_answer ca_source
          join concept org1concept on ca_source.answer_concept_id = org1concept.id
@@ -381,6 +396,10 @@ where ca_source.uuid in (select uuid
 
 #### Step 4: Update transactional data's type_ids
 
+** IMPORTANT NOTE: If we have received confirmation from the Organisation that all users will be logging out and then doing a clean fresh sync from the scratch after the migration, we should remove all last_modified_date_time set query-sections from below update commands.
+This would retain historical timestamp information, if not, we need to update them to force sync of modified entries.
+**
+
 **1. Update subject_type of Individual**
 
 ```sql
@@ -389,7 +408,7 @@ from public.individual
 group by 1;
 
 update public.individual
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     subject_type_id         =
         (select id
          from subject_type
@@ -426,7 +445,7 @@ where org1Prog.organisation_id = 1
 group by 1, 2, 3;
 
 update public.program_enrolment p_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     program_id              = newprog.id
 from public.program_enrolment p_source
          join program org1prog on p_source.program_id = org1prog.id
@@ -442,7 +461,6 @@ where org1prog.organisation_id = 1
 
 ```sql
 select e_source.encounter_type_id, org1et.organisation_id, newet.id, count(*)
-
 from public.program_encounter e_source
          join encounter_type org1et on e_source.encounter_type_id = org1et.id
          join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
@@ -452,7 +470,7 @@ group by 1, 2, 3;
 
 
 update public.program_encounter e_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     encounter_type_id       = newet.id
 from public.program_encounter e_source
          join encounter_type org1et on e_source.encounter_type_id = org1et.id
@@ -468,11 +486,11 @@ where org1et.organisation_id = 1
 
 ```sql
 update public.individual ind_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     gender_id               = newgen.id
 from public.individual as inf_source
-         join gender org1con on inf_source.gender_id = org1con.id
-         join gender newgen on org1con.name = newgen.name and newgen.organisation_id = 19
+         join gender org1gen on inf_source.gender_id = org1gen.id
+         join gender newgen on org1gen.name = newgen.name and newgen.organisation_id = 19
 where ind_target.id = inf_source.id
   and inf_source.organisation_id = 19
   and inf_source.gender_id != newgen.id;
@@ -482,7 +500,7 @@ where ind_target.id = inf_source.id
 
 ```sql
 update public.individual_relationship ir_target
-set last_modified_date_time = now(),
+set last_modified_date_time = now() + id * ('1 millisecond' :: interval),
     relationship_type_id    = newirt.id
 from public.individual_relationship as ir_source
          join individual_relationship_type org1irt on ir_source.relationship_type_id = org1irt.id
@@ -504,17 +522,7 @@ update group_privilege
 set last_modified_date_time = now(),
     is_voided               = false
 where id in
-      (21, 22, 23, 24, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 307, 308, 309, 310, 311, 312, 313,
-       314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335,
-       336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357,
-       358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379,
-       380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401,
-       402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 664, 665,
-       23830, 23831, 23832, 23833, 23834, 23835, 23837, 23838, 23839, 23840, 23841, 23842, 23843, 23844, 23845, 23846,
-       23847, 23848, 23849, 23850, 23851, 23852, 23853, 23854, 23856, 23857, 23858, 23859, 23860, 33161, 33162, 33163,
-       33164, 33165, 33166, 33168, 33169, 33170, 33171, 33172, 33173, 33174, 33175, 33176, 33177, 33178, 33179, 33180,
-       33181, 33182, 33183, 33184, 33185, 33187, 33188, 33189, 33190, 33191, 35672, 35673, 35674, 35675, 35804, 35805,
-       35806, 35807, 112556, 112611, 112612, 112628, 112741);
+      (<ids_list>);
 ```
 
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1
