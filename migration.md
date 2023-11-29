@@ -497,6 +497,57 @@ set last_modified_date_time = now(),
     is_voided               = false
 where id in
       (<ids_list>);
+
+UPDATE group_privilege
+set last_modified_date_time = now(),
+    subject_type_id = (select id
+                       from subject_type
+                       where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3'
+                         and organisation_id = 19)
+where subject_type_id = 1 and organisation_id = 19;
+
+UPDATE public.group_privilege p_target
+set last_modified_date_time = now(),
+    program_id              = newprog.id
+from public.group_privilege p_source
+         join program org1prog on p_source.program_id = org1prog.id
+         join program newprog on org1prog.uuid = newprog.uuid and newprog.organisation_id = 19
+where org1prog.organisation_id = 1
+  and p_source.organisation_id = 19
+  and p_target.organisation_id = 19
+  and p_target.id = p_source.id
+  and p_target.program_id != newprog.id;
+
+update public.group_privilege e_target
+set last_modified_date_time = now(),
+    program_encounter_type_id = newet.id
+from public.group_privilege e_source
+         join encounter_type org1et on e_source.program_encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where org1et.organisation_id = 1
+  and e_source.organisation_id = 19
+  and e_target.organisation_id = 19
+  and e_target.id = e_source.id
+  and e_target.program_encounter_type_id != newet.id;
+
+update public.group_privilege e_target
+set last_modified_date_time = now(),
+    encounter_type_id = newet.id
+from public.group_privilege e_source
+         join encounter_type org1et on e_source.encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where org1et.organisation_id = 1
+  and e_source.organisation_id = 19
+  and e_target.organisation_id = 19
+  and e_target.id = e_source.id
+  and e_target.encounter_type_id != newet.id;
+
+-- Delete group_privileges mapped to org 10 Ashwini from org19
+delete from public.group_privilege where encounter_type_id > 400 and encounter_type_id < 418 and organisation_id = 19;
+
+delete from public.group_privilege where program_encounter_type_id > 400 and program_encounter_type_id < 418 and organisation_id = 19;
+
+
 ```
 
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1
