@@ -539,8 +539,4 @@ where program_encounter_type_id  in (<program_encounter_type_ids>)
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1
 was successfully removed without causing any issues.
 
-With the previous steps completed, the remaining task is to write and implement the skip logic and rules specific to the
-Calcutta Kids organization's implementation.
-
-Once the skip logic and rules are written and tested, the Calcutta Kids organization's database and application setup
-will be entirely independent of Org 1 and fully customized to their specific operational needs.
+With the previous steps completed, the remaining task is to move Calcutta Kids organization to new Rules setup and not use the old bundled rules.
