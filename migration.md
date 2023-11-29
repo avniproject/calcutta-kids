@@ -67,7 +67,7 @@ INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, aud
     5. **Logout** and Login to app as org2 admin user, navigate to bundle upload screen
     6. Update and Set parent_orgnization_id as null
 ```sql
-    update public.organisation set parent_organisation_id = null where id = <calcutta_kids_org_id>;
+    update public.organisation set parent_organisation_id = null where id = 19;
 ```
     7. upload Metadata.zip file, ensure there are no failures other than those mentioned below. Access S3 to view the error csv file.
         - Ignore the following failures:
@@ -165,13 +165,9 @@ where poc_source.uuid in (select uuid
 **7. To update the `subject_program_eligibility` Table:**
 Ignoring! since there were no records associated with organization_id 1
 
-Similarly, the `program_encounter_type_id` and `encounter_type_id` columns in the `group_privilege` table, along with
-the `encounter_type_id` in the `operational_encounter_type` table, required updating to align with the new
-organizational structure.
-
 **8. To update the `group_privilege` Table:**
 Migration was not required for `encounter_type_id` as the records were already updated with organization 19, but it was
-necessary for `program_encounter_type_id`.
+necessary for `subject_type_id` and `program_encounter_type_id`.
 
 ```sql
 
