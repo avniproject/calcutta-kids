@@ -358,7 +358,7 @@ where fm_source.uuid in (select uuid
   and fm_target.observations_type_entity_id <> newet.id;
 ```
 
-**15. Update concept_answer **
+**15. Update concept_answer**
 
 ```sql
 update concept_answer ca_target
@@ -509,7 +509,7 @@ set last_modified_date_time = now(),
 where id in
       (<ids_list>);
 ```
-**7. Delete invalid userGroup privileges that are mapped to entities outside target organisation **
+**8. (Optional) Delete invalid userGroup privileges that are mapped to entities outside target organisation**
 
 ```sql
 
