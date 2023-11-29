@@ -85,226 +85,6 @@ INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, aud
 #### Step 3: Metadata Entities that are to be updated:
 
 **1. To update the `form_mapping` Table:**
-
-```sql
-update form_mapping
-set subject_type_id         = (select id
-                               from subject_type
-                               where organisation_id = 19
-                                 and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
-where organisation_id = 19
-  and is_voided = false
-  and subject_type_id = 1;
-```
-
-**2. To update the `group_privilege` table's `subject_type_id` column:**
-
-```sql
-update group_privilege
-set subject_type_id         = case
-                                  when subject_type_id = 1 then (select id
-                                                                 from subject_type
-                                                                 where organisation_id = 19
-                                                                   and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
-                                  else subject_type_id end
-where organisation_id = 19
-  and subject_type_id = 1
-  and is_voided = false;
-```
-
-**3. To update the `operational_subject_type` Table:**
-
-```sql
-update operational_subject_type
-set subject_type_id         = (select id
-                               from subject_type
-                               where organisation_id = 19
-                                 and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
-where subject_type_id = 1
-  and organisation_id = 19;
-```
-
-**4. To update the `subject_migration` Table:**
-
-```sql
-update subject_migration
-set subject_type_id         = (select id
-                               from subject_type
-                               where organisation_id = 19
-                                 and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
-where subject_type_id = 1
-  and organisation_id = 19;
-```
-
-**5. To update the `operational_program` Table:**
-
-```sql
-update operational_program op_target
-set program_id              = newprog.id
-from operational_program op_source
-         join program org1prog on op_source.program_id = org1prog.id
-         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
-where op_source.program_id in (1, 2, 3)
-  and op_target.uuid = op_source.uuid
-  and op_target.organisation_id = 19
-  and op_target.program_id != newprog.id;
-```
-
-**6. To update the `program_organisation_config` Table:**
-
-```sql
-update program_organisation_config poc_target
-set program_id              = newprog.id
-from program_organisation_config poc_source
-         join program org1prog on poc_source.program_id = org1prog.id
-         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
-where poc_source.uuid in (select uuid
-                          from program_organisation_config
-                          where program_organisation_config.organisation_id = 19)
-  and poc_target.uuid = poc_source.uuid
-  and poc_target.organisation_id = 19;
-```
-
-**7. To update the `subject_program_eligibility` Table:**
-Ignoring! since there were no records associated with organization_id 1
-
-**8. To update the `group_privilege` Table:**
-Migration was not required for `encounter_type_id` as the records were already updated with organization 19, but it was
-necessary for `subject_type_id` and `program_encounter_type_id`.
-
-```sql
-
-UPDATE group_privilege
-set subject_type_id = (select id
-                       from subject_type
-                       where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3'
-                         and organisation_id = 19)
-where subject_type_id = 1 and organisation_id = 19;
-
-UPDATE public.group_privilege p_target
-set program_id              = newprog.id
-from public.group_privilege p_source
-         join program org1prog on p_source.program_id = org1prog.id
-         join program newprog on org1prog.uuid = newprog.uuid and newprog.organisation_id = 19
-where org1prog.organisation_id = 1
-  and p_source.organisation_id = 19
-  and p_target.organisation_id = 19
-  and p_target.id = p_source.id
-  and p_target.program_id != newprog.id;
-
-update public.group_privilege e_target
-set program_encounter_type_id = newet.id
-from public.group_privilege e_source
-         join encounter_type org1et on e_source.program_encounter_type_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
-where org1et.organisation_id = 1
-  and e_source.organisation_id = 19
-  and e_target.organisation_id = 19
-  and e_target.id = e_source.id
-  and e_target.program_encounter_type_id != newet.id;
-
-update public.group_privilege e_target
-set encounter_type_id = newet.id
-from public.group_privilege e_source
-         join encounter_type org1et on e_source.encounter_type_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
-where org1et.organisation_id = 1
-  and e_source.organisation_id = 19
-  and e_target.organisation_id = 19
-  and e_target.id = e_source.id
-  and e_target.encounter_type_id != newet.id;
-  
-```
-
-**9. To update the `operational_encounter_type` Table:**
-
-```sql
-update operational_encounter_type oet_target
-set encounter_type_id       = newet.id
-from operational_encounter_type oet_source
-         join encounter_type org1et on oet_source.encounter_type_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
-where oet_target.uuid in (
-    select oet.uuid
-    from operational_encounter_type oet
-             join encounter_type et on oet.encounter_type_id = et.id
-    where et.organisation_id = 1
-)
-  and oet_target.uuid = oet_source.uuid
-  and oet_target.organisation_id = 19
-  and oet_target.encounter_type_id != newet.id;
-```
-
-**10. Update concept_id for checklist_item_detail**
-
-```sql
-select c.id, newc.id
-from checklist_item_detail cid
-         join concept c on cid.concept_id = c.id
-         left join concept newc on newc.uuid = c.uuid and newc.organisation_id = 19
-where cid.organisation_id = 19;
-
-
-update checklist_item_detail cid_target
-set concept_id              = newcon.id
-from checklist_item_detail as cid_source
-         join concept org1con on cid_source.concept_id = org1con.id
-         join concept newcon on org1con.uuid = newcon.uuid and newcon.organisation_id = 19
-where cid_target.id = cid_source.id
-  and cid_source.organisation_id = 19
-  and cid_source.concept_id != newcon.id;
-```
-
-**11. Update form_id for form_element_group**
-
-```sql
-update form_element_group fg_target
-set form_id                 = newform.id
-from form_element_group as fg_source
-         join form "org1form" on fg_source.form_id = org1form.id
-         join form newform on org1form.uuid = newform.uuid and newform.organisation_id = 19
-where fg_target.id = fg_source.id
-  and fg_source.organisation_id = 19
-  and fg_source.form_id != newform.id;
-```
-
-**12. Fix data issue with overlapping display order of unused form_elements**
-Fix data issue with overlapping display order of unused form_elements created in calcutta_kids org through webapp.
-Issue occurs due to org id now being merged.
-
-```sql
-delete
-from form_element
-where id in (1422, 1423, 1424);
-```
-
-**13. Update form_element_group for form_element**
-
-```sql
-update form_element fe_target
-set form_element_group_id   = newfeg.id
-from form_element as fe_source
-         join form_element_group org1feg on fe_source.form_element_group_id = org1feg.id
-         join form_element_group newfeg on org1feg.uuid = newfeg.uuid and newfeg.organisation_id = 19
-where fe_target.id = fe_source.id
-  and fe_source.organisation_id = 19
-  and fe_source.display_order != newfeg.id
-  and fe_source.form_element_group_id != newfeg.id;
-```
-
-```sql
-update form_element fe_target
-set concept_id              = newconcept.id
-from form_element fe_source
-         join concept org1concept on fe_source.concept_id = org1concept.id
-         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
-where fe_target.id = fe_source.id
-  and fe_source.organisation_id = 19
-  and fe_target.concept_id != newconcept.id;
-```
-
-**14. Update form_mapping**
-
 Loading Avni webapp for target org will fail until the below commands are run to correct the form mappings.
 
 ```sql
@@ -353,12 +133,186 @@ from form_mapping fm_source
 where fm_source.uuid in (select uuid
                          from form_mapping
                          where organisation_id = 19)
-  and fm_target.uuid = fm_source.uuid
+  and fm_target.id = fm_source.id
   and fm_target.organisation_id = 19
   and fm_target.observations_type_entity_id <> newet.id;
 ```
 
-**15. Update concept_answer**
+**2. To update the `operational_subject_type` Table:**
+
+```sql
+update operational_subject_type
+set subject_type_id         = (select id
+                               from subject_type
+                               where organisation_id = 19
+                                 and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+where subject_type_id = 1
+  and organisation_id = 19;
+```
+
+**3. To update the `operational_program` Table:**
+
+```sql
+update operational_program op_target
+set program_id              = newprog.id
+from operational_program op_source
+         join program org1prog on op_source.program_id = org1prog.id
+         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
+where op_source.program_id in (1, 2, 3)
+  and op_target.id = op_source.id
+  and op_target.organisation_id = 19
+  and op_target.program_id != newprog.id;
+```
+
+**4. To update the `program_organisation_config` Table:**
+
+```sql
+update program_organisation_config poc_target
+set program_id              = newprog.id
+from program_organisation_config poc_source
+         join program org1prog on poc_source.program_id = org1prog.id
+         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
+where poc_target.id = poc_source.id
+  and poc_target.organisation_id = 19
+  and poc_target.program_id != newprog.id;
+```
+
+**5. To update the `group_privilege` Table:**
+Migration was not required for `encounter_type_id` as the records were already updated with organization 19, but it was
+necessary for `subject_type_id` and `program_encounter_type_id`.
+
+```sql
+
+UPDATE public.group_privilege
+set subject_type_id = (select id
+                       from subject_type
+                       where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3'
+                         and organisation_id = 19)
+where subject_type_id = 1 and organisation_id = 19;
+
+UPDATE public.group_privilege p_target
+set program_id              = newprog.id
+from public.group_privilege p_source
+         join program org1prog on p_source.program_id = org1prog.id
+         join program newprog on org1prog.uuid = newprog.uuid and newprog.organisation_id = 19
+where org1prog.organisation_id = 1
+  and p_source.organisation_id = 19
+  and p_target.organisation_id = 19
+  and p_target.id = p_source.id
+  and p_target.program_id != newprog.id;
+
+update public.group_privilege e_target
+set program_encounter_type_id = newet.id
+from public.group_privilege e_source
+         join encounter_type org1et on e_source.program_encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where org1et.organisation_id = 1
+  and e_source.organisation_id = 19
+  and e_target.organisation_id = 19
+  and e_target.id = e_source.id
+  and e_target.program_encounter_type_id != newet.id;
+
+update public.group_privilege e_target
+set encounter_type_id = newet.id
+from public.group_privilege e_source
+         join encounter_type org1et on e_source.encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where org1et.organisation_id = 1
+  and e_source.organisation_id = 19
+  and e_target.organisation_id = 19
+  and e_target.id = e_source.id
+  and e_target.encounter_type_id != newet.id;
+  
+```
+
+**6. To update the `operational_encounter_type` Table:**
+
+```sql
+update operational_encounter_type oet_target
+set encounter_type_id       = newet.id
+from operational_encounter_type oet_source
+         join encounter_type org1et on oet_source.encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where oet_target.uuid in (
+    select oet.uuid
+    from operational_encounter_type oet
+             join encounter_type et on oet.encounter_type_id = et.id
+    where et.organisation_id = 1
+)
+  and oet_target.uuid = oet_source.uuid
+  and oet_target.organisation_id = 19
+  and oet_target.encounter_type_id != newet.id;
+```
+
+**7. Update concept_id for checklist_item_detail**
+
+```sql
+select c.id, newc.id
+from checklist_item_detail cid
+         join concept c on cid.concept_id = c.id
+         left join concept newc on newc.uuid = c.uuid and newc.organisation_id = 19
+where cid.organisation_id = 19;
+
+
+update checklist_item_detail cid_target
+set concept_id              = newcon.id
+from checklist_item_detail as cid_source
+         join concept org1con on cid_source.concept_id = org1con.id
+         join concept newcon on org1con.uuid = newcon.uuid and newcon.organisation_id = 19
+where cid_target.id = cid_source.id
+  and cid_source.organisation_id = 19
+  and cid_source.concept_id != newcon.id;
+```
+
+**8. Update form_id for form_element_group**
+
+```sql
+update form_element_group fg_target
+set form_id                 = newform.id
+from form_element_group as fg_source
+         join form "org1form" on fg_source.form_id = org1form.id
+         join form newform on org1form.uuid = newform.uuid and newform.organisation_id = 19
+where fg_target.id = fg_source.id
+  and fg_source.organisation_id = 19
+  and fg_source.form_id != newform.id;
+```
+
+**9. Fix data issue with overlapping display order of unused form_elements**
+Fix data issue with overlapping display order of unused form_elements created in calcutta_kids org through webapp.
+Issue occurs due to org id now being merged.
+
+```sql
+delete
+from form_element
+where id in (1422, 1423, 1424);
+```
+
+**10. Update form_element_group for form_element**
+
+```sql
+update form_element fe_target
+set form_element_group_id   = newfeg.id
+from form_element as fe_source
+         join form_element_group org1feg on fe_source.form_element_group_id = org1feg.id
+         join form_element_group newfeg on org1feg.uuid = newfeg.uuid and newfeg.organisation_id = 19
+where fe_target.id = fe_source.id
+  and fe_source.organisation_id = 19
+  and fe_source.display_order != newfeg.id
+  and fe_source.form_element_group_id != newfeg.id;
+```
+
+```sql
+update form_element fe_target
+set concept_id              = newconcept.id
+from form_element fe_source
+         join concept org1concept on fe_source.concept_id = org1concept.id
+         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+where fe_target.id = fe_source.id
+  and fe_source.organisation_id = 19
+  and fe_target.concept_id != newconcept.id;
+```
+
+**11. Update concept_answer**
 
 ```sql
 update concept_answer ca_target
@@ -388,6 +342,19 @@ where ca_source.uuid in (select uuid
   and ca_target.answer_concept_id <> newconcept.id;
 ```
 
+**12. Update relationship_type_id for individual_relationship**
+
+```sql
+update public.individual_relationship ir_target
+set relationship_type_id    = newirt.id
+from public.individual_relationship as ir_source
+         join individual_relationship_type org1irt on ir_source.relationship_type_id = org1irt.id
+         join individual_relationship_type newirt on org1irt.uuid = newirt.uuid and newirt.organisation_id = 19
+where ir_target.id = ir_source.id
+  and ir_source.organisation_id = 19
+  and ir_source.relationship_type_id != newirt.id;
+```
+
 #### Step 4: Update transactional data's type_ids
 
 **1. Update subject_type of Individual**
@@ -398,7 +365,9 @@ from public.individual
 group by 1;
 
 update public.individual
-set subject_type_id         =
+set manual_update_history   = append_manual_update_history(manual_update_history,
+                                                           'avni-server#655 - Remove Calcutta Kids dependency on its parent'),
+    subject_type_id         =
         (select id
          from subject_type
          where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3'
@@ -434,7 +403,9 @@ where org1Prog.organisation_id = 1
 group by 1, 2, 3;
 
 update public.program_enrolment p_target
-set program_id              = newprog.id
+set manual_update_history   = append_manual_update_history(manual_update_history,
+                                                           'avni-server#655 - Remove Calcutta Kids dependency on its parent'),
+    program_id              = newprog.id
 from public.program_enrolment p_source
          join program org1prog on p_source.program_id = org1prog.id
          join program newprog on org1prog.uuid = newprog.uuid and newprog.organisation_id = 19
@@ -458,7 +429,9 @@ group by 1, 2, 3;
 
 
 update public.program_encounter e_target
-set encounter_type_id       = newet.id
+set manual_update_history   = append_manual_update_history(manual_update_history,
+                                                           'avni-server#655 - Remove Calcutta Kids dependency on its parent'),
+    encounter_type_id       = newet.id
 from public.program_encounter e_source
          join encounter_type org1et on e_source.encounter_type_id = org1et.id
          join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
@@ -473,7 +446,9 @@ where org1et.organisation_id = 1
 
 ```sql
 update public.individual ind_target
-set gender_id               = newgen.id
+set manual_update_history   = append_manual_update_history(manual_update_history,
+                                                           'avni-server#655 - Remove Calcutta Kids dependency on its parent'),
+    gender_id               = newgen.id
 from public.individual as inf_source
          join gender org1gen on inf_source.gender_id = org1gen.id
          join gender newgen on org1gen.name = newgen.name and newgen.organisation_id = 19
@@ -482,20 +457,37 @@ where ind_target.id = inf_source.id
   and inf_source.gender_id != newgen.id;
 ```
 
-**6. Update relationship_type_id for individual_relationship**
+**6. To update the `subject_migration` Table:**
 
 ```sql
-update public.individual_relationship ir_target
-set relationship_type_id    = newirt.id
-from public.individual_relationship as ir_source
-         join individual_relationship_type org1irt on ir_source.relationship_type_id = org1irt.id
-         join individual_relationship_type newirt on org1irt.uuid = newirt.uuid and newirt.organisation_id = 19
-where ir_target.id = ir_source.id
-  and ir_source.organisation_id = 19
-  and ir_source.relationship_type_id != newirt.id;
+update subject_migration
+set manual_update_history   = append_manual_update_history(manual_update_history,
+                                                           'avni-server#655 - Remove Calcutta Kids dependency on its parent'),
+    subject_type_id         = (select id
+                               from subject_type
+                               where organisation_id = 19
+                                 and subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3')
+where subject_type_id = 1
+  and organisation_id = 19;
 ```
 
-**7. Reapply explicit userGroup privileges for Everyone group**
+**7. To update the `subject_program_eligibility` Table:**
+Ignoring! since there were no records associated with organization_id 1 or 19
+
+```sql
+update subject_program_eligibility spe_target
+set program_id              = newprog.id
+from subject_program_eligibility spe_source
+         join program org1prog on spe_source.program_id = org1prog.id
+         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
+where spe_target.id = spe_source.id
+  and spe_target.organisation_id = 19
+  and spe_target.program_id != newprog.id;
+```
+
+#### Step 5: Post migration clean up tasks
+
+**1. Reapply explicit userGroup privileges for Everyone group**
 
 ```sql
 UPDATE public.groups
@@ -509,7 +501,7 @@ set last_modified_date_time = now(),
 where id in
       (<ids_list>);
 ```
-**8. (Optional) Delete invalid userGroup privileges that are mapped to entities outside target organisation**
+**2. (Optional) Delete invalid userGroup privileges that are mapped to entities outside target organisation**
 
 ```sql
 
