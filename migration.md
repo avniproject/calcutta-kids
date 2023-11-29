@@ -538,5 +538,3 @@ where program_encounter_type_id  in (<program_encounter_type_ids>)
 ------------------------------
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1
 was successfully removed without causing any issues.
-
-With the previous steps completed, the remaining task is to move Calcutta Kids organization to new Rules setup and not use the old bundled rules.
