@@ -19,12 +19,15 @@ If not, we need to update last_modified_date_time migration update command, to f
 
 #### Step 2: Upload Org1 Metadata.zip file into Org2
 
-- **Task**:
     1. Fix users to avoid login issues
         1. To set superadmin organization_id to null
-           ```UPDATE users SET organisation_id = null::integer WHERE id = 64::integer```
+```sql
+UPDATE users SET organisation_id = null::integer WHERE id = 64::integer
+```
         2. Create accountAdmin entry
-           ```INSERT INTO public.account_admin (id, name, account_id, admin_id) VALUES (DEFAULT, 'superadmin'::varchar(255), 1::integer, 64::integer)```
+```sql
+INSERT INTO public.account_admin (id, name, account_id, admin_id) VALUES (DEFAULT, 'superadmin'::varchar(255), 1::integer, 64::integer)
+```
     2. Backup explicit group_privileges for "Everyone" group. For calcutta_kids org, remove explicit group_privileges
        for "Everyone" group
        -    Make a note of group_privilege ids_list using below query
@@ -47,13 +50,13 @@ If not, we need to update last_modified_date_time migration update command, to f
     where id in (<ids_list>);
 ```
     3. Create default genders for the org
-  ```sql
+```sql
   set role calcutta_kids;
   insert into public.gender (id, uuid, name, concept_id, version, audit_id, is_voided, organisation_id, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time)
   values  (default, 'ad7d1d14-54fd-45a2-86b7-ea329b744484', 'Female', null, 1, create_audit(), false, 19, 1, 1, now(), now()),
           (default, '840de9fb-e565-4d7d-b751-90335ba20490', 'Male', null, 1, create_audit(), false, 19, 1, 1, now(), now()),
           (default, '188ad77e-fe46-4328-b0e2-98f3a05c554c', 'Other', null, 1, create_audit(), false, 19, 1, 1, now(), now());
-  ```
+```
     4. Login to app as superadmin and download bundle from Org1
        1. Create orgConfig entry temporarily for org1
 ```sql
@@ -265,7 +268,7 @@ where fg_target.id = fg_source.id
   and fg_source.form_id != newform.id;
 ```
 
-**12. Fix data issue with overlapping display order of unused form_elements **
+**12. Fix data issue with overlapping display order of unused form_elements**
 Fix data issue with overlapping display order of unused form_elements created in calcutta_kids org through webapp.
 Issue occurs due to org id now being merged.
 
@@ -540,6 +543,7 @@ where program_encounter_type_id  in (<program_encounter_type_ids>)
   and organisation_id = 19;
 ```
 
+------------------------------
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1
 was successfully removed without causing any issues.
 
