@@ -403,7 +403,7 @@ where org1Prog.organisation_id = 1
 group by 1, 2, 3;
 
 update public.program_enrolment p_target
-set manual_update_history   = append_manual_update_history(manual_update_history,
+set manual_update_history   = append_manual_update_history(p_target.manual_update_history,
                                                            'avni-server#655 - Remove Calcutta Kids dependency on its parent'),
     program_id              = newprog.id
 from public.program_enrolment p_source
@@ -429,7 +429,7 @@ group by 1, 2, 3;
 
 
 update public.program_encounter e_target
-set manual_update_history   = append_manual_update_history(manual_update_history,
+set manual_update_history   = append_manual_update_history(e_target.manual_update_history,
                                                            'avni-server#655 - Remove Calcutta Kids dependency on its parent'),
     encounter_type_id       = newet.id
 from public.program_encounter e_source
@@ -446,7 +446,7 @@ where org1et.organisation_id = 1
 
 ```sql
 update public.individual ind_target
-set manual_update_history   = append_manual_update_history(manual_update_history,
+set manual_update_history   = append_manual_update_history(ind_target.manual_update_history,
                                                            'avni-server#655 - Remove Calcutta Kids dependency on its parent'),
     gender_id               = newgen.id
 from public.individual as inf_source
