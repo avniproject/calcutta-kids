@@ -505,13 +505,39 @@ set last_modified_date_time = now(),
     is_voided               = false
 where id in
       (<ids_list>);
+```
+**7. Delete invalid userGroup privileges that are mapped to entities outside target organisation **
+
+```sql
+
+select gp.is_voided, gp.program_id, p.organisation_id, count(*)
+from group_privilege gp
+         join program p on gp.program_id = p.id
+where gp.organisation_id = 19
+group by 1, 2, 3;
+
+select gp.is_voided, gp.program_encounter_type_id, p.organisation_id, count(*)
+from group_privilege gp
+         join encounter_type p on gp.program_encounter_type_id = p.id
+where gp.organisation_id = 19
+group by 1, 2, 3;
+
+select gp.is_voided, gp.encounter_type_id, p.organisation_id, count(*)
+from group_privilege gp
+         join encounter_type p on gp.encounter_type_id = p.id
+where gp.organisation_id = 19
+group by 1, 2, 3;
 
 -- Delete group_privileges mapped to org 10 Ashwini from org19
-delete from public.group_privilege where encounter_type_id > 400 and encounter_type_id < 418 and organisation_id = 19;
+delete
+from public.group_privilege
+where encounter_type_id  in (<encounter_type_ids>)
+  and organisation_id = 19;
 
-delete from public.group_privilege where program_encounter_type_id > 400 and program_encounter_type_id < 418 and organisation_id = 19;
-
-
+delete
+from public.group_privilege
+where program_encounter_type_id  in (<program_encounter_type_ids>)
+  and organisation_id = 19;
 ```
 
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1
