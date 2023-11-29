@@ -133,22 +133,7 @@ where subject_type_id = 1
   and organisation_id = 19;
 ```
 
-**5. To update the `group_privilege` Table:**
-
-```sql
-update group_privilege gp_target
-set program_id              = newprog.id
-from group_privilege gp_source
-         join program org1prog on gp_source.program_id = org1prog.id
-         join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
-where gp_source.uuid in (select uuid
-                         from group_privilege
-                         where group_privilege.program_id in (1, 2, 3))
-  and gp_target.uuid = gp_source.uuid
-  and gp_target.program_id <> newprog.id;
-```
-
-**6. To update the `operational_program` Table:**
+**5. To update the `operational_program` Table:**
 
 ```sql
 update operational_program op_target
@@ -162,7 +147,7 @@ where op_source.program_id in (1, 2, 3)
   and op_target.program_id != newprog.id;
 ```
 
-**7. To update the `program_organisation_config` Table:**
+**6. To update the `program_organisation_config` Table:**
 
 ```sql
 update program_organisation_config poc_target
@@ -177,39 +162,62 @@ where poc_source.uuid in (select uuid
   and poc_target.organisation_id = 19;
 ```
 
-**8. To update the `subject_program_eligibility` Table:**
+**7. To update the `subject_program_eligibility` Table:**
 Ignoring! since there were no records associated with organization_id 1
 
 Similarly, the `program_encounter_type_id` and `encounter_type_id` columns in the `group_privilege` table, along with
 the `encounter_type_id` in the `operational_encounter_type` table, required updating to align with the new
 organizational structure.
 
-**9. To update the `group_privilege` Table:**
+**8. To update the `group_privilege` Table:**
 Migration was not required for `encounter_type_id` as the records were already updated with organization 19, but it was
 necessary for `program_encounter_type_id`.
 
-[//]: # (TODO handle for encounter_type_id)
-
 ```sql
-update group_privilege gp_target
+
+UPDATE group_privilege
+set subject_type_id = (select id
+                       from subject_type
+                       where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3'
+                         and organisation_id = 19)
+where subject_type_id = 1 and organisation_id = 19;
+
+UPDATE public.group_privilege p_target
+set program_id              = newprog.id
+from public.group_privilege p_source
+         join program org1prog on p_source.program_id = org1prog.id
+         join program newprog on org1prog.uuid = newprog.uuid and newprog.organisation_id = 19
+where org1prog.organisation_id = 1
+  and p_source.organisation_id = 19
+  and p_target.organisation_id = 19
+  and p_target.id = p_source.id
+  and p_target.program_id != newprog.id;
+
+update public.group_privilege e_target
 set program_encounter_type_id = newet.id
-from group_privilege gp_source
-         join encounter_type org1et on gp_source.program_encounter_type_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid
-where gp_source.uuid in (select uuid
-                         from group_privilege
-                         where organisation_id = 19
-                           and program_encounter_type_id in (
-                             select et.id
-                             from encounter_type et
-                                      join operational_encounter_type oet on et.id = oet.encounter_type_id
-                             where et.organisation_id = 1
-                         ))
-  and gp_target.uuid = gp_source.uuid
-  and gp_target.program_encounter_type_id != newet.id;
+from public.group_privilege e_source
+         join encounter_type org1et on e_source.program_encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where org1et.organisation_id = 1
+  and e_source.organisation_id = 19
+  and e_target.organisation_id = 19
+  and e_target.id = e_source.id
+  and e_target.program_encounter_type_id != newet.id;
+
+update public.group_privilege e_target
+set encounter_type_id = newet.id
+from public.group_privilege e_source
+         join encounter_type org1et on e_source.encounter_type_id = org1et.id
+         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
+where org1et.organisation_id = 1
+  and e_source.organisation_id = 19
+  and e_target.organisation_id = 19
+  and e_target.id = e_source.id
+  and e_target.encounter_type_id != newet.id;
+  
 ```
 
-**10. To update the `operational_encounter_type` Table:**
+**9. To update the `operational_encounter_type` Table:**
 
 ```sql
 update operational_encounter_type oet_target
@@ -228,7 +236,7 @@ where oet_target.uuid in (
   and oet_target.encounter_type_id != newet.id;
 ```
 
-**11. Update concept_id for checklist_item_detail**
+**10. Update concept_id for checklist_item_detail**
 
 ```sql
 select c.id, newc.id
@@ -248,7 +256,7 @@ where cid_target.id = cid_source.id
   and cid_source.concept_id != newcon.id;
 ```
 
-**12. Update form_id for form_element_group**
+**11. Update form_id for form_element_group**
 
 ```sql
 update form_element_group fg_target
@@ -261,7 +269,9 @@ where fg_target.id = fg_source.id
   and fg_source.form_id != newform.id;
 ```
 
-**13. Fix data issue overlapping display order of unused form_elements**
+**12. Fix data issue with overlapping display order of unused form_elements **
+Fix data issue with overlapping display order of unused form_elements created in calcutta_kids org through webapp.
+Issue occurs due to org id now being merged.
 
 ```sql
 delete
@@ -269,7 +279,7 @@ from form_element
 where id in (1422, 1423, 1424);
 ```
 
-**14. Update form_element_group for form_element**
+**13. Update form_element_group for form_element**
 
 ```sql
 update form_element fe_target
@@ -294,7 +304,9 @@ where fe_target.id = fe_source.id
   and fe_target.concept_id != newconcept.id;
 ```
 
-**15. Update form_mapping**
+**14. Update form_mapping**
+
+Loading Avni webapp for target org will fail until the below commands are run to correct the form mappings.
 
 ```sql
 update form_mapping
@@ -497,50 +509,6 @@ set last_modified_date_time = now(),
     is_voided               = false
 where id in
       (<ids_list>);
-
-UPDATE group_privilege
-set last_modified_date_time = now(),
-    subject_type_id = (select id
-                       from subject_type
-                       where subject_type.uuid = '9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3'
-                         and organisation_id = 19)
-where subject_type_id = 1 and organisation_id = 19;
-
-UPDATE public.group_privilege p_target
-set last_modified_date_time = now(),
-    program_id              = newprog.id
-from public.group_privilege p_source
-         join program org1prog on p_source.program_id = org1prog.id
-         join program newprog on org1prog.uuid = newprog.uuid and newprog.organisation_id = 19
-where org1prog.organisation_id = 1
-  and p_source.organisation_id = 19
-  and p_target.organisation_id = 19
-  and p_target.id = p_source.id
-  and p_target.program_id != newprog.id;
-
-update public.group_privilege e_target
-set last_modified_date_time = now(),
-    program_encounter_type_id = newet.id
-from public.group_privilege e_source
-         join encounter_type org1et on e_source.program_encounter_type_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
-where org1et.organisation_id = 1
-  and e_source.organisation_id = 19
-  and e_target.organisation_id = 19
-  and e_target.id = e_source.id
-  and e_target.program_encounter_type_id != newet.id;
-
-update public.group_privilege e_target
-set last_modified_date_time = now(),
-    encounter_type_id = newet.id
-from public.group_privilege e_source
-         join encounter_type org1et on e_source.encounter_type_id = org1et.id
-         join encounter_type newet on org1et.uuid = newet.uuid and newet.organisation_id = 19
-where org1et.organisation_id = 1
-  and e_source.organisation_id = 19
-  and e_target.organisation_id = 19
-  and e_target.id = e_source.id
-  and e_target.encounter_type_id != newet.id;
 
 -- Delete group_privileges mapped to org 10 Ashwini from org19
 delete from public.group_privilege where encounter_type_id > 400 and encounter_type_id < 418 and organisation_id = 19;
