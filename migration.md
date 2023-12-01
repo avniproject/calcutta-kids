@@ -51,7 +51,6 @@ INSERT INTO public.account_admin (id, name, account_id, admin_id) VALUES (DEFAUL
 ```
     3. Create default genders for the org
 ```sql
-  set role calcutta_kids;
   insert into public.gender (id, uuid, name, concept_id, version, audit_id, is_voided, organisation_id, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time)
   values  (default, 'ad7d1d14-54fd-45a2-86b7-ea329b744484', 'Female', null, 1, create_audit(), false, 19, 1, 1, now(), now()),
           (default, '840de9fb-e565-4d7d-b751-90335ba20490', 'Male', null, 1, create_audit(), false, 19, 1, 1, now(), now()),
@@ -78,7 +77,7 @@ INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, aud
     8. Ensure that the organisation_config is not overwritten, if yes, correct it
   ```sql
   UPDATE public.organisation_config
-  SET last_modified_date_time = now(), uuid = '012771cf-910e-45c5-9a33-26a83a72e032', settings = '{"languages": ["en", "hi_IN"], "searchFilters": [{"type": "Name", "titleKey": "Name", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Age", "titleKey": "Age", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "SearchAll", "titleKey": "SearchAll", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}], "myDashboardFilters": [{"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}]}', last_modified_date_time = now()
+  SET last_modified_date_time = now(), uuid = '012771cf-910e-45c5-9a33-26a83a72e032', settings = '{"languages": ["en", "hi_IN"], "searchFilters": [{"type": "Name", "titleKey": "Name", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Age", "titleKey": "Age", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "SearchAll", "titleKey": "SearchAll", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}], "myDashboardFilters": [{"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}]}'
   WHERE id = 8;
   ```
 
@@ -340,6 +339,31 @@ where ca_source.uuid in (select uuid
   and ca_target.uuid = ca_source.uuid
   and ca_target.organisation_id = 19
   and ca_target.answer_concept_id <> newconcept.id;
+```
+
+Below sql is used to correct the difference in uuids between the new and old concept_answer entities caused due to spring recreating them during bundle upload. Otherwise, after performing sync from users who are already logged in before migration, they'll observe duplicate answers for the org1 sourced coded concept questions
+```sql
+with duplicates as (select c.uuid conuuid, cc.uuid ansuuid, count(*)
+                    from concept c
+                             join concept_answer ca on ca.concept_id = c.id
+                             join concept cc on ca.answer_concept_id = cc.id
+                    where
+--       c.name = 'Floor'
+-- and
+c.organisation_id in (1, 19)
+                    group by 1, 2
+                    having count(*) > 1)
+update concept_answer ca_target
+set uuid = ca_source.uuid
+from concept_answer ca_source
+         join concept org1concept on ca_source.concept_id = org1concept.id and org1concept.organisation_id = 1
+         join concept org1answer on ca_source.answer_concept_id = org1answer.id and org1answer.organisation_id = 1
+         join concept newconcept on org1concept.uuid = newconcept.uuid and newconcept.organisation_id = 19
+         join concept newanswer on org1answer.uuid = newanswer.uuid and newanswer.organisation_id = 19
+         join duplicates dup on dup.conuuid = org1concept.uuid and dup.ansuuid = org1answer.uuid
+where ca_target.concept_id = newconcept.id
+  and ca_target.answer_concept_id = newanswer.id
+  and ca_target.uuid != ca_source.uuid;
 ```
 
 **12. Update relationship_type_id for individual_relationship**
