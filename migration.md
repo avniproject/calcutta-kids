@@ -65,7 +65,7 @@ INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, aud
        2. Login as superadmin and download bundle
        3. delete orgConfig entry for org1
 ```sql
- DELETE FROM public.organisation_config WHERE id = 436
+ DELETE FROM public.organisation_config WHERE openchs.public.organisation_config.organisation_id = 1;
 ```
     5. **Logout** and Login to app as org2 admin user, navigate to bundle upload screen
     6. Update and Set parent_orgnization_id as null
