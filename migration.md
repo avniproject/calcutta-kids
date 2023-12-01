@@ -379,6 +379,30 @@ where ir_target.id = ir_source.id
   and ir_source.relationship_type_id != newirt.id;
 ```
 
+**13. Update uuid for individual_relation_gender_mapping**
+Below sql is used to correct the difference in uuids between the new and old individual_relation_gender_mapping entities caused due to spring recreating them during bundle upload. Otherwise, after performing sync from users who are already logged in before migration, they'll observe duplicate stale mappings.
+
+```sql
+with duplicates as (select g.uuid genuuid, ir.uuid reluuid from gender g
+                             join individual_relation_gender_mapping irgm on irgm.gender_id = g.id
+                             join individual_relation ir on irgm.relation_id = ir.id
+                    where
+                            irgm.organisation_id in (1, 19)
+                    group by 1, 2
+                    having count(*) > 1)
+update individual_relation_gender_mapping irgm_target
+set uuid = irgm_source.uuid
+from individual_relation_gender_mapping irgm_source
+         join gender org1gender on irgm_source.gender_id = org1gender.id and org1gender.organisation_id = 1
+         join individual_relation org1relation on irgm_source.relation_id = org1relation.id and org1relation.organisation_id = 1
+         join gender newgender on org1gender.uuid = newgender.uuid and newgender.organisation_id = 19
+         join individual_relation newrelation on org1relation.uuid = newrelation.uuid and newrelation.organisation_id = 19
+         join duplicates dup on dup.genuuid = org1gender.uuid and dup.reluuid = org1relation.uuid
+where irgm_target.gender_id = newgender.id
+  and irgm_target.relation_id = newrelation.id
+  and irgm_target.uuid != irgm_source.uuid;
+```
+
 #### Step 4: Update transactional data's type_ids
 
 **1. Update subject_type of Individual**
