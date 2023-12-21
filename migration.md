@@ -5,17 +5,12 @@
 The primary objective of this documentation is to remove the dependency of the Calcutta Kids organization's
 implementation from Org1.
 
-** IMPORTANT NOTE: 
-We have to have confirmation from the Organisation that all users will be logging out and then doing a clean fresh sync from the scratch after the migration. This is required as we are not going to update the last_modified_date_time in the migration update commands. This would retain historical timestamp information.
-If not, we need to update last_modified_date_time migration update command, to force sync the modified entries for already logged-in users.
-**
-
 ### Steps Taken:
 
 #### Step 1: Database Backup and Storage rest
 
     1. Create a manual backup of prod db just before starting the migration steps
-    2. Clear all contents within "calcutta_kids/" folder of prod-user-media s3 folder
+    2. Ask users to perform fast-sync setup for their catchments
 
 #### Step 2: Upload Org1 Metadata.zip file into Org2
 
