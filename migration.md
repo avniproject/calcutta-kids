@@ -403,19 +403,23 @@ where irgm_target.gender_id = newgender.id
 Below sql is used to re-map the form_element_id column from org1 values to new form_elements created for child Organisation.
 
 ```sql
+-- Below Query should return empty list after the fix
+set role calcutta_kids;
+select f.name,c.name, c.id,count(*), min(fe.id)
+from form f
+         join form_element_group feg on f.id = feg.form_id
+         join form_element fe on feg.id = fe.form_element_group_id
+         join concept c on fe.concept_id = c.id
+         left join non_applicable_form_element nafe on fe.id = nafe.form_element_id
+where f.is_voided = false
+  and feg.is_voided = false
+  and fe.is_voided = false
+  and (nafe is null or nafe.is_voided = true)
+  and c.name != 'Placeholder for counselling form element'
+group by f.name,c.id
+having count(*) > 1;
 
-select nafe.id, fe_source.id, fe_target.id
-from non_applicable_form_element nafe
-         join form_element fe_source on nafe.form_element_id = fe_source.id and fe_source.organisation_id = 1
-         join form_element_group feg_source on feg_source.id = fe_source.form_element_group_id
-         join form f_source on f_source.id = feg_source.form_id
-         join form_element fe_target on fe_target.name = fe_source.name and fe_target.organisation_id = 19
-         join form_element_group feg_target on feg_target.id = fe_target.form_element_group_id and feg_source.name = feg_target.name and feg_target.organisation_id = 19
-         join form f_target on f_target.id = feg_target.form_id and f_source.name = f_target.name and f_target.organisation_id = 19
-
-where nafe.organisation_id = 19
-  and fe_source.uuid = fe_target.uuid;
-
+-- Fix Query 
 update non_applicable_form_element nafe_target
 set form_element_id = fe_target.id
 from non_applicable_form_element nafe_source
