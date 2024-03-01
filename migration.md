@@ -464,6 +464,7 @@ where f.is_voided = false
   and c.name != 'Placeholder for counselling form element'
 group by f.name,c.id
 having count(*) > 1;
+reset role;
 
 ```
 
