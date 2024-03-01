@@ -56,7 +56,7 @@ INSERT INTO public.account_admin (id, name, account_id, admin_id) VALUES (DEFAUL
 ```sql
 INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, audit_id, version, is_voided, worklist_updation_rule, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time, export_settings) VALUES (DEFAULT, '012771cf-910e-45c5-9a33-26a83a72e031', 1, '{"languages": ["en", "hi_IN"], "searchFilters": [{"type": "Name", "titleKey": "Name", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Age", "titleKey": "Age", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "SearchAll", "titleKey": "SearchAll", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}], "myDashboardFilters": [{"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}]}', 699426, 0, false, '', 39, 2451, '2019-11-06 06:33:51.920 +00:00', '2023-11-17 07:19:01.576 +00:00', '{}');
 ```
-       2. Login as superadmin and download bundle
+       2. Login as superadmin and download bundle (avni-webapp-basepath/#/appdesigner/bundle)
        3. delete orgConfig entry for org1
 ```sql
  DELETE FROM public.organisation_config WHERE openchs.public.organisation_config.organisation_id = 1;
