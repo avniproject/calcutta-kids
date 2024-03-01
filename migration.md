@@ -419,7 +419,8 @@ where f.is_voided = false
 group by f.name,c.id
 having count(*) > 1;
 
--- Fix Query 
+-- Fix Query
+reset role;
 update non_applicable_form_element nafe_target
 set form_element_id = fe_target.id
 from non_applicable_form_element nafe_source
@@ -434,6 +435,24 @@ where nafe_source.organisation_id = 19
   and fe_source.uuid = fe_target.uuid
   and nafe_source.id = nafe_target.id
 ;
+--COMMIT TRANSACTION
+
+-- Below Query should return empty list after the fix
+set role calcutta_kids;
+select f.name,c.name, c.id,count(*), min(fe.id)
+from form f
+         join form_element_group feg on f.id = feg.form_id
+         join form_element fe on feg.id = fe.form_element_group_id
+         join concept c on fe.concept_id = c.id
+         left join non_applicable_form_element nafe on fe.id = nafe.form_element_id
+where f.is_voided = false
+  and feg.is_voided = false
+  and fe.is_voided = false
+  and (nafe is null or nafe.is_voided = true)
+  and c.name != 'Placeholder for counselling form element'
+group by f.name,c.id
+having count(*) > 1;
+
 ```
     
 #### Step 4: Update transactional data's type_ids
