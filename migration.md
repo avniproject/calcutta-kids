@@ -466,6 +466,55 @@ group by f.name,c.id
 having count(*) > 1;
 
 ```
+
+**15. Delete forms and related entities corresponding to Org1 Vaccincation_checklist_form,as we only use Calcutta_kids version**
+```sql
+-- where form_id in (59, 8549);
+-- No dependencies of checklist form on form_mapping or rule_failure_log, checklist_item_detail, decision_concept tables
+
+delete from form_element fe
+         using form_element_group feg
+where fe.form_element_group_id = feg.id
+  and fe.organisation_id = 19
+ and feg.form_id in (select id from form where uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826' and organisation_id = 19);
+
+delete from form_element_group feg
+    using form f
+where feg.form_id = f.id
+  and feg.organisation_id = 19
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from form_mapping fm
+    using form f
+where fm.form_id = f.id
+  and fm.organisation_id = 19
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from rule_failure_log rfl
+    using form f
+where rfl.form_id = f.id::text
+  and rfl.organisation_id = 19
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from checklist_item_detail cid
+    using form f
+where cid.form_id = f.id
+  and cid.organisation_id = 19
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from decision_concept dc
+    using form f
+where dc.form_id = f.id
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from form where uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826' and organisation_id = 19;
+
+```
     
 #### Step 4: Update transactional data's type_ids
 
