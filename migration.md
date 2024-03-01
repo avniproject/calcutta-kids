@@ -264,6 +264,12 @@ where cid_target.id = cid_source.id
   and cid_source.concept_id != newcon.id;
 ```
 
+**7.b. Void Extraneous Checklist form**
+
+```sql
+update form set is_voided = true where uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826' and organisation_id = 19;
+```
+
 **8. Update form_id for form_element_group**
 
 ```sql
