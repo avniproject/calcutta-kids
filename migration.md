@@ -161,14 +161,20 @@ where op_source.program_id in (1, 2, 3)
 **4. To update the `program_organisation_config` Table:**
 
 ```sql
+select * from program_organisation_config;
+
+insert into public.program_organisation_config (id, uuid, program_id, organisation_id, visit_schedule, version, audit_id, is_voided, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time) values (DEFAULT, uuid_generate_v4(), 1, 19, '[]', 0, create_audit(), false, 1, 1, '2018-11-05 11:49:27.062 +00:00', '2018-11-05 11:49:27.062 +00:00');
+insert into public.program_organisation_config (id, uuid, program_id, organisation_id, visit_schedule, version, audit_id, is_voided, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time) values (DEFAULT, uuid_generate_v4(), 3, 19, '[]', 0, create_audit(), false, 1, 1, '2018-11-05 11:49:42.481 +00:00', '2018-11-05 11:49:42.481 +00:00');
+
 update program_organisation_config poc_target
 set program_id              = newprog.id
 from program_organisation_config poc_source
-         join program org1prog on poc_source.program_id = org1prog.id
+         join program org1prog on poc_source.program_id = org1prog.id and org1Prog.organisation_id = 1
          join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
 where poc_target.id = poc_source.id
   and poc_target.organisation_id = 19
   and poc_target.program_id != newprog.id;
+
 ```
 
 **5. To update the `group_privilege` Table:**
