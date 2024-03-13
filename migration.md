@@ -708,8 +708,10 @@ where program_encounter_type_id  in (<program_encounter_type_ids>)
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1
 was successfully removed without causing any issues.
 
+## Post Migration steps
 1. Ensure Avni-server is working fine
 2. Ensure webapp and media are working fine
 3. Change app.avniproject.org and server.avniproject.org to apps.avniproject.org and servers.avniproject.org
 4. Start Avni-integration-server
 5. Start Avni-etl server
+6. Trigger Prod RDS Snapshot for post migration
