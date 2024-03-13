@@ -9,8 +9,11 @@ implementation from Org1.
 
 #### Step 1: Database Backup and Storage rest
 
-    1. Create a manual backup of prod db just before starting the migration steps
-    2. Ask users to perform fast-sync setup for their catchments
+1. Create a manual backup of prod db just before starting the migration steps
+2. Ask users to perform fast-sync setup for their catchments
+3. Stop Avni-etl server
+4. Stop Avni-integration-server
+5. Change app.avniproject.org and server.avniproject.org to apps.avniproject.org and servers.avniproject.org
 
 #### Step 2: Upload Org1 Metadata.zip file into Org2
 
@@ -62,10 +65,14 @@ INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, aud
  DELETE FROM public.organisation_config WHERE openchs.public.organisation_config.organisation_id = 1;
 ```
     5. **Logout** and Login to app as org2 admin user, navigate to bundle upload screen
+BREATHE - 1,2,3,4,5
+
     6. Update and Set parent_orgnization_id as null
 ```sql
     update public.organisation set parent_organisation_id = null where id = 19;
 ```
+BREATHE, commit transaction
+
     7. upload Metadata.zip file, ensure there are no failures other than those mentioned below. Access S3 to view the error csv file.
         - Ignore the following failures:
             - AddressLevelTypes.json : All types are voided and org uses its own defined AddressLevelTypes
@@ -619,3 +626,9 @@ where program_encounter_type_id  in (<program_encounter_type_ids>)
 ------------------------------
 By following the above steps and recommendations, the dependency of Calcutta Kids organization's implementation on Org 1
 was successfully removed without causing any issues.
+
+1. Ensure Avni-server is working fine
+2. Ensure webapp and media are working fine
+3. Change app.avniproject.org and server.avniproject.org to apps.avniproject.org and servers.avniproject.org
+4. Start Avni-integration-server
+5. Start Avni-etl server
