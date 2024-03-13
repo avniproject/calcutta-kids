@@ -59,7 +59,7 @@ INSERT INTO public.account_admin (id, name, account_id, admin_id) VALUES (DEFAUL
 ```sql
 INSERT INTO public.organisation_config (id, uuid, organisation_id, settings, audit_id, version, is_voided, worklist_updation_rule, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time, export_settings) VALUES (DEFAULT, '012771cf-910e-45c5-9a33-26a83a72e031', 1, '{"languages": ["en", "hi_IN"], "searchFilters": [{"type": "Name", "titleKey": "Name", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Age", "titleKey": "Age", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}, {"type": "SearchAll", "titleKey": "SearchAll", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}], "myDashboardFilters": [{"type": "Address", "titleKey": "Address", "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"}]}', 699426, 0, false, '', 39, 2451, '2019-11-06 06:33:51.920 +00:00', '2023-11-17 07:19:01.576 +00:00', '{}');
 ```
-       2. Login as superadmin and download bundle
+       2. Login as "openchs_org_admin@openchs_impl" and download bundle (avni-webapp-basepath/#/appdesigner/bundle)
        3. delete orgConfig entry for org1
 ```sql
  DELETE FROM public.organisation_config WHERE openchs.public.organisation_config.organisation_id = 1;
@@ -168,14 +168,20 @@ where op_source.program_id in (1, 2, 3)
 **4. To update the `program_organisation_config` Table:**
 
 ```sql
+select * from program_organisation_config;
+
+insert into public.program_organisation_config (id, uuid, program_id, organisation_id, visit_schedule, version, audit_id, is_voided, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time) values (DEFAULT, uuid_generate_v4(), 1, 19, '[]', 0, create_audit(), false, 1, 1, '2018-11-05 11:49:27.062 +00:00', '2018-11-05 11:49:27.062 +00:00');
+insert into public.program_organisation_config (id, uuid, program_id, organisation_id, visit_schedule, version, audit_id, is_voided, created_by_id, last_modified_by_id, created_date_time, last_modified_date_time) values (DEFAULT, uuid_generate_v4(), 3, 19, '[]', 0, create_audit(), false, 1, 1, '2018-11-05 11:49:42.481 +00:00', '2018-11-05 11:49:42.481 +00:00');
+
 update program_organisation_config poc_target
 set program_id              = newprog.id
 from program_organisation_config poc_source
-         join program org1prog on poc_source.program_id = org1prog.id
+         join program org1prog on poc_source.program_id = org1prog.id and org1Prog.organisation_id = 1
          join program newprog on org1prog.name = newprog.name and newprog.organisation_id = 19
 where poc_target.id = poc_source.id
   and poc_target.organisation_id = 19
   and poc_target.program_id != newprog.id;
+
 ```
 
 **5. To update the `group_privilege` Table:**
@@ -263,6 +269,12 @@ from checklist_item_detail as cid_source
 where cid_target.id = cid_source.id
   and cid_source.organisation_id = 19
   and cid_source.concept_id != newcon.id;
+```
+
+**7.b. Void Extraneous Checklist form**
+
+```sql
+update form set is_voided = true where uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826' and organisation_id = 19;
 ```
 
 **8. Update form_id for form_element_group**
@@ -426,7 +438,8 @@ where f.is_voided = false
 group by f.name,c.id
 having count(*) > 1;
 
--- Fix Query 
+-- Fix Query
+reset role;
 update non_applicable_form_element nafe_target
 set form_element_id = fe_target.id
 from non_applicable_form_element nafe_source
@@ -441,6 +454,74 @@ where nafe_source.organisation_id = 19
   and fe_source.uuid = fe_target.uuid
   and nafe_source.id = nafe_target.id
 ;
+--COMMIT TRANSACTION
+
+-- Below Query should return empty list after the fix
+set role calcutta_kids;
+select f.name,c.name, c.id,count(*), min(fe.id)
+from form f
+         join form_element_group feg on f.id = feg.form_id
+         join form_element fe on feg.id = fe.form_element_group_id
+         join concept c on fe.concept_id = c.id
+         left join non_applicable_form_element nafe on fe.id = nafe.form_element_id
+where f.is_voided = false
+  and feg.is_voided = false
+  and fe.is_voided = false
+  and (nafe is null or nafe.is_voided = true)
+  and c.name != 'Placeholder for counselling form element'
+group by f.name,c.id
+having count(*) > 1;
+reset role;
+
+```
+
+**15. Delete forms and related entities corresponding to Org1 Vaccincation_checklist_form,as we only use Calcutta_kids version**
+```sql
+-- where form_id in (59, 8549);
+-- No dependencies of checklist form on form_mapping or rule_failure_log, checklist_item_detail, decision_concept tables
+
+delete from form_element fe
+         using form_element_group feg
+where fe.form_element_group_id = feg.id
+  and fe.organisation_id = 19
+ and feg.form_id in (select id from form where uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826' and organisation_id = 19);
+
+delete from form_element_group feg
+    using form f
+where feg.form_id = f.id
+  and feg.organisation_id = 19
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from form_mapping fm
+    using form f
+where fm.form_id = f.id
+  and fm.organisation_id = 19
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from rule_failure_log rfl
+    using form f
+where rfl.form_id = f.id::text
+  and rfl.organisation_id = 19
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from checklist_item_detail cid
+    using form f
+where cid.form_id = f.id
+  and cid.organisation_id = 19
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from decision_concept dc
+    using form f
+where dc.form_id = f.id
+  and f.uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826'
+  and f.organisation_id = 19;
+
+delete from form where uuid = '1579166d-b7ec-49ca-a60f-08f68ee27826' and organisation_id = 19;
+
 ```
     
 #### Step 4: Update transactional data's type_ids
