@@ -6,7 +6,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
@@ -50,7 +50,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
@@ -94,7 +94,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
@@ -138,7 +138,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
@@ -182,7 +182,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
@@ -226,7 +226,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
@@ -270,7 +270,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
@@ -314,7 +314,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
@@ -358,7 +358,7 @@ INSERT INTO checklist_item(completion_date, checklist_id, uuid, version , organi
 SELECT
 	NULL,
 	checklist.id,
-	uuid_generate_v4(),?
+	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
 	create_audit((SELECT id FROM users WHERE username = 'adam@calcutta_kids')),
