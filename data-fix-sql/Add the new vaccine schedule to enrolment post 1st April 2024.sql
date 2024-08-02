@@ -11,7 +11,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = '0360c9f6-dad8-45a8-91c6-ca8c0f8b9f4d'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -21,7 +21,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE 
+    	checklist.is_voided = FALSE 
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -33,18 +33,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = '0360c9f6-dad8-45a8-91c6-ca8c0f8b9f4d'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01'
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
@@ -63,7 +63,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = '30de9255-f205-442c-8491-6f72ab705f37'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -73,7 +73,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE
+	checklist.is_voided = FALSE
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -85,18 +85,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = '30de9255-f205-442c-8491-6f72ab705f37'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01' 
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
@@ -115,7 +115,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = '7e13e2f1-3a8a-4be3-9a31-6dd8e7535107'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -125,7 +125,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE
+	checklist.is_voided = FALSE
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -137,18 +137,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = '7e13e2f1-3a8a-4be3-9a31-6dd8e7535107'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01' 
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
@@ -167,7 +167,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = '9dc5dd88-ff22-4e35-97d3-d6d0ee0f3648'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -177,7 +177,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE
+	checklist.is_voided = FALSE
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -189,18 +189,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = '9dc5dd88-ff22-4e35-97d3-d6d0ee0f3648'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01' 
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
@@ -219,7 +219,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = '6967bb7c-9054-4ae7-b0c0-766f079e2807'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -229,7 +229,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE
+	checklist.is_voided = FALSE
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -241,18 +241,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = '6967bb7c-9054-4ae7-b0c0-766f079e2807'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01' 
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
@@ -271,7 +271,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = '2f6542ba-4446-4ff5-aae7-d566835ebd74'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -281,7 +281,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE
+	checklist.is_voided = FALSE
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -293,18 +293,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = '2f6542ba-4446-4ff5-aae7-d566835ebd74'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01' 
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
@@ -323,7 +323,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = 'e91ebdda-9d39-40b0-aa3c-31e5d5b8bb3a'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -333,7 +333,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE
+	checklist.is_voided = FALSE
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -345,18 +345,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = 'e91ebdda-9d39-40b0-aa3c-31e5d5b8bb3a'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01' 
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
@@ -375,7 +375,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = 'db9a6f47-6287-4d04-9887-769a8ebc6b94'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -385,7 +385,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE
+	checklist.is_voided = FALSE
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -397,18 +397,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = 'db9a6f47-6287-4d04-9887-769a8ebc6b94'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01' 
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
@@ -427,7 +427,7 @@ SELECT
 	uuid_generate_v4(),
 	0,
 	(SELECT id FROM organisation o WHERE o."name" = 'Calcutta Kids'),
-    '{}'::jsonb,
+	'{}'::jsonb,
 	(SELECT id FROM checklist_item_detail WHERE uuid = 'a3fae072-d341-478d-9cc7-60a2576873f8'),
 	(SELECT id FROM users WHERE username = 'adam@calcutta_kids'),
 	current_timestamp + (random() * 5000 * (interval '1 millisecond')),
@@ -437,7 +437,7 @@ FROM
 	program_enrolment enl
 JOIN checklist ON
 	checklist.program_enrolment_id = enl.id AND
-    checklist.is_voided = FALSE
+	checklist.is_voided = FALSE
 WHERE
 	enl.id NOT IN (
 		SELECT
@@ -449,18 +449,18 @@ WHERE
 			p.name = 'Child'
 		JOIN checklist ON
 			checklist.program_enrolment_id = enl.id AND
-            checklist.is_voided = FALSE
+			checklist.is_voided = FALSE
 		JOIN checklist_item ON
 			checklist.id = checklist_item.checklist_id
-            AND checklist_item.is_voided = FALSE
+			AND checklist_item.is_voided = FALSE
 		JOIN checklist_item_detail cid ON
 			checklist_item.checklist_item_detail_id = cid.id
 		WHERE
 			cid.uuid = 'a3fae072-d341-478d-9cc7-60a2576873f8'
-            AND enl.is_voided = FALSE
+			AND enl.is_voided = FALSE
 	)
-	AND enl.enrolment_date_time > '2024-04-01' 
-    AND enl.is_voided = FALSE;
+	AND enl.enrolment_date_time >= '2024-04-01' 
+	AND enl.is_voided = FALSE;
 
 ROLLBACK;
 COMMIT;
